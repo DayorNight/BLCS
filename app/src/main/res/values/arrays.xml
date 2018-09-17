@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--菜单栏-->
+    <string-array name="bottom_menu">
+        <item>工具</item>
+        <item>View</item>
+        <item>其他</item>
+    </string-array>
+    <!--工具栏-->
+    <string-array name="Utils">
+        <item>LogUtils</item>
+        <item>EditTextUtils</item>
+        <item>IntentUtils</item>
+        <item>StringUtils</item>
+    </string-array>
+    <!--View-->
+    <string-array name="View">
+        <item>BottomNavigation菜单栏</item>
+        <item>RecyclerView</item>
+        <item>toolbar</item>
+    </string-array>
+    <!--other-->
+    <string-array name="Other">
+        <item>采用MVP模式</item>
+        <item>友盟统计</item>
+    </string-array>
+</resources>

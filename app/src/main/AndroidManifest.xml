@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="blcs.lwb.utils">
+    <!--友盟统计-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".MainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTask"
+            android:label="MainActivity"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".PublicFragmentActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="PublicFragmentActivity"
+            android:launchMode="singleTask"
+            android:hardwareAccelerated="true"
+            />
+
+        <!--友盟统计-->
+        <meta-data android:value="5b98c6f98f4a9d317b00002f" android:name="UMENG_APPKEY"/>
+        <meta-data android:value="HuaWei" android:name="UMENG_CHANNEL"/>
+    </application>
+
+</manifest>
