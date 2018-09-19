@@ -89,12 +89,21 @@ public class HomeTabFragment extends Fragment implements IHomeTabView{
                 Bundle bundle = new Bundle();
                 bundle.putString(Constants.Item_Name,(String)bean);
                 switch ((String)bean){
-                    case FramentManages.DemoFragment:
-                        getActivity().startActivity(PublicFragmentActivity.createIntent(getActivity(), FramentManages.DemoFragment, bundle));
+                    case FramentManages.Demo:
+                        toDemo(bundle);
+                        break;
+                    case FramentManages.Umeng:
+                        bundle.putString(Constants.URL,Constants.URL_Umeng);
+                        toDemo(bundle);
                         break;
                         default:break;
                 }
             }
         });
+    }
+
+
+    public void toDemo(Bundle bundle){
+        getActivity().startActivity(PublicFragmentActivity.createIntent(getActivity(), FramentManages.Demo, bundle));
     }
 }

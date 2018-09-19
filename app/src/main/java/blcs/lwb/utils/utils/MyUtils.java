@@ -1,5 +1,6 @@
 package blcs.lwb.utils.utils;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.internal.BottomNavigationMenuView;
@@ -16,6 +17,7 @@ public class MyUtils {
      *  BottomNavigationView去除动画
      * @param view
      */
+    @SuppressLint("RestrictedApi")
     public static void disableShiftMode(BottomNavigationView view) {
         //获取子View BottomNavigationMenuView的对象
         BottomNavigationMenuView menuView = (BottomNavigationMenuView) view.getChildAt(0);

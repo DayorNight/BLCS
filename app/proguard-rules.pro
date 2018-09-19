@@ -11,3 +11,9 @@
 -keep public class blcs.lwb.lwbtool.R$*{
 public static final int *;
 }
+#========Agentweb=============
+-keep class com.just.agentweb.** {
+    *;
+}
+-dontwarn com.just.agentweb.**
+-keepclassmembers class com.just.agentweb.sample.common.AndroidInterface{ *; }

@@ -23,7 +23,8 @@ public class FramentManages
 	/**
 	 *  片段名
 	 */
-	public final static String DemoFragment="我的片段";
+	public final static String Demo="我的片段";
+	public final static String Umeng="友盟统计";
 
 	/**
 	 * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -40,8 +41,10 @@ public class FramentManages
 		{
 			default:
 				return null;
-			case FramentManages.DemoFragment://主界面
+			case FramentManages.Demo:
+            case FramentManages.Umeng:
 				return new MyFragment();
+
 //			case FramentManages.UtilsDetail://工具详情界面
 //				return new HomeTab1DetailFragment();
 		}

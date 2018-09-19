@@ -2,22 +2,32 @@ package blcs.lwb.utils.fragment;
 
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.widget.TextView;
+import android.view.KeyEvent;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
+import com.just.agentweb.AgentWeb;
+
+import blcs.lwb.lwbtool.LogUtils;
 import blcs.lwb.lwbtool.base.BasePresenter;
+import blcs.lwb.utils.Constants;
 import blcs.lwb.utils.R;
-import blcs.lwb.utils.mvp.view.IMyFragment;
 import blcs.lwb.utils.mvp.presenter.MyFragmentPresenter;
+import blcs.lwb.utils.mvp.view.IMyFragment;
 import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * Created by WESTAKE on 2017/5/19.
  */
 public class MyFragment extends BaseFragment implements IMyFragment {
 
-    @BindView(R.id.tv_item_home_name)
-    TextView tvItemHomeName;
-
+    @BindView(R.id.ll_Agentview)
+    LinearLayout llAgentview;
+    private AgentWeb mAgentWeb;
 
     @Override
     public void setMiddleTitle(Toolbar title) {
@@ -31,7 +41,7 @@ public class MyFragment extends BaseFragment implements IMyFragment {
 
     @Override
     protected int bindLayout() {
-        return R.layout.textview;
+        return R.layout.fragment_my;
     }
 
     @Override
@@ -41,7 +51,37 @@ public class MyFragment extends BaseFragment implements IMyFragment {
 
     @Override
     public void Text() {
-        tvItemHomeName.setText("1111111");
+        Bundle arguments = getArguments();
+        String url = arguments.getString(Constants.URL);
+        LogUtils.e(url);
+        mAgentWeb = AgentWeb.with(this)
+                .setAgentWebParent(llAgentview, new LinearLayout.LayoutParams(-1, -1))
+                .useDefaultIndicator()
+                .createAgentWeb()
+                .ready()
+                .go(url);
+
+//        if (!mAgentWeb.back()){
+//            AgentWebFragment.this.getActivity().finish();
+//        }
     }
 
+
+    @Override
+    public void onPause() {
+        mAgentWeb.getWebLifeCycle().onPause();
+        super.onPause();
+    }
+
+    @Override
+    public void onResume() {
+        mAgentWeb.getWebLifeCycle().onResume();
+        super.onResume();
+    }
+
+    @Override
+    public void onDestroy() {
+        mAgentWeb.getWebLifeCycle().onDestroy();
+        super.onDestroy();
+    }
 }

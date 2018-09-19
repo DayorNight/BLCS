@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
+
     compileSdkVersion 28
     buildToolsVersion '28.0.1'
     defaultConfig {
@@ -39,6 +40,9 @@ dependencies {
     // ========关联butterknife=======
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    //==============友盟================
     implementation files('libs/umeng-common-1.5.3.jar')
     implementation files('libs/umeng-analytics-7.5.3.jar')
+    //==============AgentWeb================https://github.com/Justson/AgentWeb
+    implementation 'com.just.agentweb:agentweb:4.0.2'
 }
