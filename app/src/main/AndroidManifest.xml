@@ -37,7 +37,9 @@
 
         <!--友盟统计-->
         <meta-data android:value="5b98c6f98f4a9d317b00002f" android:name="UMENG_APPKEY"/>
-        <meta-data android:value="HuaWei" android:name="UMENG_CHANNEL"/>
+        <meta-data android:name="UMENG_CHANNEL" android:value="${UMENG_CHANNEL_VALUE}" />
+        <!--<meta-data android:value="HuaWei" android:name="UMENG_CHANNEL"/>-->
+
     </application>
 
 </manifest>

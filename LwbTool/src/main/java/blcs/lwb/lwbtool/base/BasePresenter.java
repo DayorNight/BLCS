@@ -2,7 +2,7 @@ package blcs.lwb.lwbtool.base;
 
 /**
  * P层的 基类
- * @author CPC
+ * @author CPC   https://www.jianshu.com/p/3a17382d44de
  */
 public abstract class BasePresenter<T> {
 
@@ -15,7 +15,11 @@ public abstract class BasePresenter<T> {
 	/**
 	 * 解绑 view 层
  	 */
-	public void onDetch(){this.view = null;}
+	public void onDetch(){
+		if(view!=null){
+			this.view = null;
+		}
+	}
 
 	/**
 	 * 获取view层

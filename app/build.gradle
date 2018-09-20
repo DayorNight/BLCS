@@ -10,6 +10,7 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
+        flavorDimensions "versionCode"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -20,6 +21,24 @@ android {
         }
         debug {
             debuggable true
+
+        }
+    }
+
+//    多渠道打包
+    productFlavors {
+        wandoujia {}
+        xiaomi {}
+    }
+    productFlavors.all { flavor ->
+        flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+    }
+
+    //    修改命名规则
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            def formattedDate = new Date().format('yyyy_MM_dd')
+            outputFileName = rootProject.getName()+"-"+variant.flavorName+"-"+buildType.name+"-"+formattedDate+"-v"+defaultConfig.versionName+"-"+ defaultConfig.versionCode+ ".apk";
         }
     }
 
