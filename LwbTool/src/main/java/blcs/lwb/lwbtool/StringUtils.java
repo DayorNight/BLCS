@@ -1,17 +1,3 @@
-/*Copyright ©2015 TommyLemon(https://github.com/TommyLemon)
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.*/
-
 package blcs.lwb.lwbtool;
 
 import android.support.annotation.Nullable;
@@ -138,7 +124,7 @@ public class StringUtils {
 	}
 	/**获取去掉前后空格后的string,为null则返回""
 	 * @param cs
-	 * @return
+0	0 * @return
 	 */
 	public static String getTrimedString(CharSequence cs) {
 		return getTrimedString(getString(cs));
@@ -220,7 +206,9 @@ public class StringUtils {
 	 * @return
 	 */
 	public static int getLength(String s, boolean trim) {
-		s = trim ? getTrimedString(s) : s;
+
+	    if (trim) return getNoBlankString(s).length();
+
 		return getString(s).length();
 	}
 
@@ -285,9 +273,7 @@ public class StringUtils {
 		if (isNotEmpty(phone, true) == false) {
 			return false;
 		}
-
 		Pattern p = Pattern.compile("^((13[0-9])|(15[^4,\\D])|(18[0-2,5-9])|(17[0-9]))\\d{8}$");
-
 		currentString = phone;
 
 		return p.matcher(phone).matches();

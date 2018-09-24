@@ -16,4 +16,10 @@ public class Constants {
     public final static String URL="URL";
     //友盟
     public final static String URL_Umeng="https://blog.csdn.net/cs_lwb/article/details/82749682";
+    //友盟多渠道打包
+    public final static String URL_UmengPackage="https://blog.csdn.net/cs_lwb/article/details/82813909";
+    //APK签名
+    public final static String APK_Sign="https://blog.csdn.net/cs_lwb/article/details/81386595";
+    //Log日志封装
+    public final static String LOG_Utils="https://blog.csdn.net/cs_lwb/article/details/82823536";
 }

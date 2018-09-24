@@ -9,9 +9,9 @@
     <!--工具栏-->
     <string-array name="Utils">
         <item>LogUtils</item>
+        <item>StringUtils</item>
         <item>EditTextUtils</item>
         <item>IntentUtils</item>
-        <item>StringUtils</item>
     </string-array>
     <!--View-->
     <string-array name="View">
@@ -23,5 +23,7 @@
     <string-array name="Other">
         <item>采用MVP模式</item>
         <item>友盟统计</item>
+        <item>友盟多渠道打包</item>
+        <item>APK签名打包</item>
     </string-array>
 </resources>

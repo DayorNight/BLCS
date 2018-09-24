@@ -19,7 +19,6 @@
         <activity android:name=".MainActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:launchMode="singleTask"
-            android:label="MainActivity"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,10 +34,14 @@
             android:hardwareAccelerated="true"
             />
 
+        <activity
+            android:name=".SplashActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            />
+
         <!--友盟统计-->
         <meta-data android:value="5b98c6f98f4a9d317b00002f" android:name="UMENG_APPKEY"/>
-        <meta-data android:name="UMENG_CHANNEL" android:value="${UMENG_CHANNEL_VALUE}" />
-        <!--<meta-data android:value="HuaWei" android:name="UMENG_CHANNEL"/>-->
+        <meta-data android:value="${UMENG_CHANNEL_VALUE}"  android:name="UMENG_CHANNEL"  />
 
     </application>
 

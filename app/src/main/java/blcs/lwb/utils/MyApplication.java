@@ -5,17 +5,11 @@ import android.app.Application;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
 
-import blcs.lwb.lwbtool.LogUtils;
-
 public class MyApplication extends Application {
-
     @Override
     public void onCreate() {
         super.onCreate();
-        LogUtils.e("开启");
-
         initU_APP();
-
     }
 
     /**

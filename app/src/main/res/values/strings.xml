@@ -2,4 +2,26 @@
     <string name="app_name">BLCS</string>
     <string name="app_Title">常用工具类</string>
     <string name="Util">常用工具类</string>
+    <string name="input_str">请输入任意字符串</string>
+    <string name="delete_trim">去掉前后空格</string>
+    <string name="getStr">获取处理后的字符串：</string>
+    <string name="getTrimStr">获取去掉前后空格后的字符串：</string>
+    <string name="getNoBlanStr">获取去掉所有空格后的字符串：</string>
+    <string name="getLengthStr">获取字符串的长度：</string>
+    <string name="IsNotEmptyStr">判断字符是否非空：</string>
+    <string name="IsPhoneStr">判断手机格式是否正确：</string>
+    <string name="IsEmailStr">判断Email格式是否正确：</string>
+    <string name="IsNumerStr">判断是否全是数字：</string>
+    <string name="IsNumberOrAlpha">判断字符类型是否是号码或字母：</string>
+    <string name="isIDCard">判断字符类型是否是身份证号：</string>
+    <string name="isUrl">判断字符类型是否是网址：</string>
+    <string name="isFilePathExist">判断文件路径是否存在：</string>
+    <string name="getNumber">去掉str内所有非数字类型字符：</string>
+    <string name="getCorrectUrl">自动补全网址：</string>
+    <string name="getCorrectPhone">去掉所有空格 、"-" 、"+86" 后的phone：</string>
+    <string name="getCorrectEmail">自动补全邮箱：</string>
+    <string name="getPrice">获取价格，保留两位小数：</string>
+    <string name="stringToDouble">字符串转换成double,失败返回0：</string>
+    <string name="stringToInt">字符串转换成整数,失败返回0;：</string>
+
 </resources>

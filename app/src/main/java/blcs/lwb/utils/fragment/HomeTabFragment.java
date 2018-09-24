@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.just.agentweb.LogUtils;
+
 import blcs.lwb.lwbtool.base.BaseAdapter;
 import blcs.lwb.utils.Constants;
 import blcs.lwb.utils.manager.FramentManages;
@@ -83,6 +85,9 @@ public class HomeTabFragment extends Fragment implements IHomeTabView{
 
     @Override
     public void Recycler_click() {
+        /**
+         * 点击Item
+         */
         adapter.setOnItemClickListener(new BaseAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, Object bean) {
@@ -96,6 +101,21 @@ public class HomeTabFragment extends Fragment implements IHomeTabView{
                         bundle.putString(Constants.URL,Constants.URL_Umeng);
                         toDemo(bundle);
                         break;
+                    case FramentManages.Umeng_Package:
+                        bundle.putString(Constants.URL,Constants.URL_UmengPackage);
+                        toDemo(bundle);
+                        break;
+                    case FramentManages.APK_Sign:
+                        bundle.putString(Constants.URL,Constants.APK_Sign);
+                        toDemo(bundle);
+                        break;
+                    case FramentManages.Log_Utils:
+                        bundle.putString(Constants.URL,Constants.LOG_Utils);
+                        toDemo(bundle);
+                        break;
+                    case FramentManages.String_Utils:
+                        toFragment(bundle,FramentManages.String_Utils);
+                        break;
                         default:break;
                 }
             }
@@ -105,5 +125,9 @@ public class HomeTabFragment extends Fragment implements IHomeTabView{
 
     public void toDemo(Bundle bundle){
         getActivity().startActivity(PublicFragmentActivity.createIntent(getActivity(), FramentManages.Demo, bundle));
+    }
+
+    public void toFragment(Bundle bundle,String tag){
+        getActivity().startActivity(PublicFragmentActivity.createIntent(getActivity(),tag, bundle));
     }
 }
