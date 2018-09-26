@@ -68,18 +68,21 @@ public class HomeTabFragment extends Fragment implements IHomeTabView{
         manager.setOrientation(OrientationHelper.VERTICAL);
         recycler.addItemDecoration(new DividerItemDecoration(getActivity(), OrientationHelper.VERTICAL));
         int position = getArguments().getInt(Constants.Adapter_Pos);
+        int view;
         switch (position){
             case 0:
-                adapter = new HomeTabAdapter(getActivity(), MyUtils.getArray(getActivity(), R.array.Utils));
+                view= R.array.Utils;
                 break;
             case 1:
-                adapter = new HomeTabAdapter(getActivity(), MyUtils.getArray(getActivity(), R.array.View));
+                view = R.array.View;
                 break;
             case 2:
-                adapter = new HomeTabAdapter(getActivity(), MyUtils.getArray(getActivity(), R.array.Other));
+                view = R.array.Other;
                 break;
-            default:adapter = new HomeTabAdapter(getActivity(), MyUtils.getArray(getActivity(),R.array.Utils));
+            default:
+                view = R.array.Utils;break;
         }
+        adapter = new HomeTabAdapter(getActivity(), MyUtils.getArray(getActivity(), view));
         recycler.setAdapter(adapter);
     }
 
@@ -115,6 +118,9 @@ public class HomeTabFragment extends Fragment implements IHomeTabView{
                         break;
                     case FramentManages.String_Utils:
                         toFragment(bundle,FramentManages.String_Utils);
+                        break;
+                    case FramentManages.EditText_Utils:
+                        toFragment(bundle,FramentManages.EditText_Utils);
                         break;
                         default:break;
                 }

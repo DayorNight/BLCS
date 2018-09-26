@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.fragment.BaseFragment;
+import blcs.lwb.utils.fragment.EditTextUtilsFragment;
 import blcs.lwb.utils.fragment.MyFragment;
 import blcs.lwb.utils.fragment.StringUtilsFragment;
 import blcs.lwb.utils.mvp.BaseFragmentActivity;
@@ -30,6 +31,7 @@ public class FramentManages
 	public final static String APK_Sign="APK签名打包";
 	public final static String Log_Utils="LogUtils";
 	public final static String String_Utils="StringUtils";
+	public final static String EditText_Utils="EditTextUtils";
 
 	/**
 	 * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -54,6 +56,8 @@ public class FramentManages
 				return new MyFragment();
 			case FramentManages.String_Utils:
 				return new StringUtilsFragment();
+			case FramentManages.EditText_Utils:
+				return new EditTextUtilsFragment();
 //			case FramentManages.UtilsDetail://工具详情界面
 //				return new HomeTab1DetailFragment();
 		}

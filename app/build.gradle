@@ -48,7 +48,7 @@ android {
             debuggable true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
+//            signingConfig signingConfigs.release
         }
     }
 //    多渠道打包

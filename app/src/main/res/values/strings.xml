@@ -23,5 +23,6 @@
     <string name="getPrice">获取价格，保留两位小数：</string>
     <string name="stringToDouble">字符串转换成double,失败返回0：</string>
     <string name="stringToInt">字符串转换成整数,失败返回0;：</string>
+    <string name="showKeyboard">显示键盘</string>
 
 </resources>

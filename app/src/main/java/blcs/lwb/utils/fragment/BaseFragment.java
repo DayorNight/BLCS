@@ -5,6 +5,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import blcs.lwb.lwbtool.StringUtils;
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.lwbtool.base.BaseView;
 import blcs.lwb.utils.Constants;
@@ -45,8 +47,12 @@ public abstract class BaseFragment extends Fragment implements IPopBackStackList
 			bind = ButterKnife.bind(this, mView);
 			if(baseP==null){
 				baseP = bindPresenter();
+				if (baseP != null) {
+                    baseP.onAttach(this);
+                }
+			}else{
+				baseP.onAttach(this);
 			}
-			baseP.onAttach(this);
 			//每个Activity的中间标题必须都用这个id
 			Bundle arguments = getArguments();
 			if(arguments!=null){
