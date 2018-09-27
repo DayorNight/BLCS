@@ -2,6 +2,7 @@ package blcs.lwb.utils.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
@@ -37,11 +38,13 @@ public class HomeTabFragment extends Fragment implements IHomeTabView{
     private View mView;
     private HomeTabAdapter adapter;
     private HomeTabPresenter presenter;
+    private FragmentActivity activity;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         if (mView == null) {
+            activity = getActivity();
             mView = inflater.inflate(R.layout.tool_recyclerview, container, false);
             bind = ButterKnife.bind(this, mView);
             presenter = new HomeTabPresenter(this);
@@ -82,7 +85,7 @@ public class HomeTabFragment extends Fragment implements IHomeTabView{
             default:
                 view = R.array.Utils;break;
         }
-        adapter = new HomeTabAdapter(getActivity(), MyUtils.getArray(getActivity(), view));
+        adapter = new HomeTabAdapter(activity, MyUtils.getArray(getActivity(), view));
         recycler.setAdapter(adapter);
     }
 
@@ -130,10 +133,10 @@ public class HomeTabFragment extends Fragment implements IHomeTabView{
 
 
     public void toDemo(Bundle bundle){
-        getActivity().startActivity(PublicFragmentActivity.createIntent(getActivity(), FramentManages.Demo, bundle));
+        activity.startActivity(PublicFragmentActivity.createIntent(activity, FramentManages.Demo, bundle));
     }
 
     public void toFragment(Bundle bundle,String tag){
-        getActivity().startActivity(PublicFragmentActivity.createIntent(getActivity(),tag, bundle));
+        activity.startActivity(PublicFragmentActivity.createIntent(activity,tag, bundle));
     }
 }

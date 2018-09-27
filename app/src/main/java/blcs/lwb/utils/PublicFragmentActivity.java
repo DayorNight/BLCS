@@ -1,5 +1,6 @@
 package blcs.lwb.utils;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,7 +25,7 @@ public class PublicFragmentActivity extends BaseFragmentActivity implements IPub
      * @param context
      * @return
      */
-    public static Intent createIntent(Context context, String arg, Bundle bundle) {
+    public static Intent createIntent(Activity context, String arg, Bundle bundle) {
         return new Intent(context, PublicFragmentActivity.class).putExtra(Constants.Intent_Go, arg).putExtras(bundle);
     }
 

@@ -41,7 +41,7 @@ public class EditTextUtils {
 
 	/**1隐藏输入法
 	 * @param context
-	 * @param toGetWindowTokenView
+	 * @param toGetWindowTokenView 包含et的父View，键盘根据toGetWindowTokenView的位置来弹出/隐藏
 	 */
 	public static void hideKeyboard(Context context, View toGetWindowTokenView){
 		showKeyboard(context, null, toGetWindowTokenView, false);
@@ -221,7 +221,6 @@ public class EditTextUtils {
 				}
 				break;
 		}
-
 		et.setHintTextColor(oringinalHintColor);
 		return true;
 	}

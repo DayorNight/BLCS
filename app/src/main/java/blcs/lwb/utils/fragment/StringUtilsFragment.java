@@ -22,10 +22,6 @@ import butterknife.OnClick;
 public class StringUtilsFragment extends BaseFragment implements IStringView {
     @BindView(R.id.et_input)
     EditText etInput;
-    @BindView(R.id.btn_getStr)
-    Button btnGetStr;
-    @BindView(R.id.tv_getStr)
-    TextView tvGetStr;
     @BindView(R.id.btn_getTrimStr)
     Button btnGetTrimStr;
     @BindView(R.id.tv_getNoBlanStr)
@@ -95,16 +91,16 @@ public class StringUtilsFragment extends BaseFragment implements IStringView {
 
     }
 
-    @OnClick({R.id.btn_getStr, R.id.btn_getTrimStr, R.id.btn_getNoBlanStr, R.id.btn_getLengthStr, R.id.btn_getIsNotEmptyStr, R.id.btn_getIsPhoneStr,
+    @OnClick({ R.id.btn_getTrimStr, R.id.btn_getNoBlanStr, R.id.btn_getLengthStr, R.id.btn_getIsNotEmptyStr, R.id.btn_getIsPhoneStr,
             R.id.btn_getIsEmailStr, R.id.btn_getIsNumerStr, R.id.btn_getNumberOrAlpha, R.id.btn_isIDCard, R.id.btn_isUrl, R.id.btn_isFilePathExist,
             R.id.btn_getNumber, R.id.btn_getCorrectUrl, R.id.btn_getCorrectPhone, R.id.btn_getCorrectEmail, R.id.btn_getPrice,
             R.id.btn_stringToDouble, R.id.btn_stringToInt})
     public void onViewClicked(View view) {
         etString = etInput.getText().toString();
         switch (view.getId()) {
-            case R.id.btn_getStr:
-                tvGetStr.setText(StringUtils.getCurrentString());
-                break;
+//            case R.id.btn_getStr:
+//                tvGetStr.setText(StringUtils.getCurrentString());
+//                break;
             case R.id.btn_getTrimStr:
                 tvGetTrimStr.setText(StringUtils.getTrimedString(etInput));
                 break;

@@ -3,6 +3,7 @@ package blcs.lwb.lwbtool;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 
 public class IntentUtils {
     /**
@@ -10,6 +11,7 @@ public class IntentUtils {
      */
     public static void toActivity(Activity activity,Class<?> cls) {
         Intent intent = new Intent(activity,cls);
+        intent.putExtra("Bundle",new Bundle());
         toActivity(activity,intent, true);
     }
     /**

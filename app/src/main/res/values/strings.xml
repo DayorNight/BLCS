@@ -24,5 +24,15 @@
     <string name="stringToDouble">字符串转换成double,失败返回0：</string>
     <string name="stringToInt">字符串转换成整数,失败返回0;：</string>
     <string name="showKeyboard">显示键盘</string>
+    <string name="hideKeyboard">隐藏键盘</string>
+    <string name="hideShowKeyboard">隐藏/显示键盘</string>
+    <string name="judgeInvalidCode">判断验证码是否合法</string>
+    <string name="judgeInvalidPassword">判断密码是否合法</string>
+    <string name="judgeInvalidPhone">判断手机号码是否合法</string>
+    <string name="judgeInvalidEmail">判断邮箱是否合法</string>
+    <string name="input_code">请输入验证码</string>
+    <string name="input_password">请输入密码</string>
+    <string name="input_phone">请输入手机号码</string>
+    <string name="input_Email">请输入邮箱</string>
 
 </resources>
