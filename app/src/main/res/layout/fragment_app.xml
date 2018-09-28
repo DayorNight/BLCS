@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/space_line">
+
+        <LinearLayout style="@style/Lin_text">
+
+            <Button
+                android:id="@+id/btn_getPackage"
+                style="@style/Button_text"
+                android:text="@string/getPackage" />
+
+            <TextView
+                android:id="@+id/tv_getPackage"
+                style="@style/standerd_text" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/Lin_text">
+
+            <Button
+                android:id="@+id/btn_getVersionName"
+                style="@style/Button_text"
+                android:text="@string/getVersionName" />
+
+            <TextView
+                android:id="@+id/tv_getVersionName"
+                style="@style/standerd_text" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/Lin_text">
+
+            <Button
+                android:id="@+id/btn_getVersionCode"
+                style="@style/Button_text"
+                android:text="@string/getVersionCode" />
+
+            <TextView
+                android:id="@+id/tv_getVersionCode"
+                style="@style/standerd_text" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_getInstalledPackages"
+            style="@style/Button_text"
+            android:text="@string/getInstalledPackages" />
+
+        <TextView
+            android:id="@+id/tv_getInstalledPackages"
+            style="@style/standerd_text" />
+
+        <LinearLayout style="@style/Lin_text">
+
+            <Button
+                android:id="@+id/btn_getApplicationIcon"
+                style="@style/Button_text"
+                android:text="@string/getApplicationIcon" />
+
+            <ImageView
+                android:id="@+id/tv_getApplicationIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_installApk"
+            style="@style/EditText_text"
+            android:hint="@string/input_path"
+            android:text="" />
+
+        <Button
+            android:id="@+id/btn_installApk"
+            style="@style/Button_text"
+            android:text="@string/installAPK" />
+
+        <LinearLayout style="@style/Lin_text">
+
+            <Button
+                android:id="@+id/btn_getChannel"
+                style="@style/Button_text"
+                android:text="@string/getChannel" />
+
+            <TextView
+                android:id="@+id/tv_getChannel"
+                style="@style/standerd_text" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

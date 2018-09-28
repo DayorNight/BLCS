@@ -35,6 +35,11 @@ public class MyFragment extends BaseFragment implements IMyFragment {
     }
 
     @Override
+    protected void initView() {
+
+    }
+
+    @Override
     protected BasePresenter bindPresenter() {
         return new MyFragmentPresenter(this);
     }

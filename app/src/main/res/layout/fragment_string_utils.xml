@@ -1,58 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:padding="@dimen/space_line">
 
     <EditText
         android:id="@+id/et_input"
-        style="@style/standerd_text"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/bottom_space"
-        android:layout_gravity="center_horizontal"
+        style="@style/EditText_text"
         android:hint="@string/input_str"
         android:singleLine="true" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/bottom_space"
-        >
+        android:layout_marginTop="@dimen/bottom_space">
+
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            style="@style/Lin_text"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center">
+            <Button
+                android:id="@+id/btn_getTrimStr"
+                style="@style/Button_text"
+                android:text="@string/getTrimStr" />
 
-                <Button
-                    android:id="@+id/btn_getTrimStr"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/getTrimStr" />
+            <TextView
+                android:id="@+id/tv_getTrimStr"
+                style="@style/standerd_text"
+                />
 
-                <TextView
-                    android:id="@+id/tv_getTrimStr"
-                    style="@style/standerd_text" />
-            </LinearLayout>
+            <Button
+                android:id="@+id/btn_getNoBlanStr"
+                style="@style/Button_text"
+                android:text="@string/getNoBlanStr" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center">
-
-                <Button
-                    android:id="@+id/btn_getNoBlanStr"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/getNoBlanStr" />
-
-                <TextView
-                    android:id="@+id/tv_getNoBlanStr"
-                    style="@style/standerd_text" />
-            </LinearLayout>
+            <TextView
+                android:id="@+id/tv_getNoBlanStr"
+                style="@style/standerd_text" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -61,8 +45,7 @@
 
                 <Button
                     android:id="@+id/btn_getLengthStr"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/Button_text"
                     android:text="@string/getLengthStr" />
 
                 <CheckBox
@@ -71,9 +54,6 @@
                     android:layout_height="wrap_content"
                     android:text="@string/delete_trim" />
 
-                <TextView
-                    android:id="@+id/tv_getLengthStr"
-                    style="@style/standerd_text" />
             </LinearLayout>
 
             <LinearLayout
@@ -83,8 +63,7 @@
 
                 <Button
                     android:id="@+id/btn_getIsNotEmptyStr"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/Button_text"
                     android:text="@string/IsNotEmptyStr" />
 
                 <CheckBox
@@ -92,237 +71,111 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/delete_trim" />
-
-                <TextView
-                    android:id="@+id/tv_getIsNotEmptyStr"
-                    style="@style/standerd_text" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center">
+            <Button
+                android:id="@+id/btn_getIsPhoneStr"
+                style="@style/Button_text"
+                android:text="@string/IsPhoneStr" />
 
-                <Button
-                    android:id="@+id/btn_getIsPhoneStr"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/IsPhoneStr" />
+            <Button
+                android:id="@+id/btn_getIsEmailStr"
+                style="@style/Button_text"
+                android:text="@string/IsEmailStr" />
 
-                <TextView
-                    android:id="@+id/tv_getIsPhoneStr"
-                    style="@style/standerd_text" />
-            </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center">
 
-                <Button
-                    android:id="@+id/btn_getIsEmailStr"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/IsEmailStr" />
+            <Button
+                android:id="@+id/btn_getIsNumerStr"
+                style="@style/Button_text"
+                android:text="@string/IsNumerStr" />
 
-                <TextView
-                    android:id="@+id/tv_getIsEmailStr"
-                    style="@style/standerd_text" />
-            </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center">
 
-                <Button
-                    android:id="@+id/btn_getIsNumerStr"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/IsNumerStr" />
+            <Button
+                android:id="@+id/btn_getNumberOrAlpha"
+                style="@style/Button_text"
+                android:text="@string/IsNumberOrAlpha" />
 
-                <TextView
-                    android:id="@+id/tv_getIsNumerStr"
-                    style="@style/standerd_text" />
-            </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center">
+            <Button
+                android:id="@+id/btn_isIDCard"
+                style="@style/Button_text"
+                android:text="@string/isIDCard" />
 
-                <Button
-                    android:id="@+id/btn_getNumberOrAlpha"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/IsNumberOrAlpha" />
 
-                <TextView
-                    android:id="@+id/tv_getNumberOrAlpha"
-                    style="@style/standerd_text" />
-            </LinearLayout>
+            <Button
+                android:id="@+id/btn_isUrl"
+                style="@style/Button_text"
+                android:text="@string/isUrl" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center">
+            <Button
+                android:id="@+id/btn_isFilePathExist"
+                style="@style/Button_text"
+                android:text="@string/isFilePathExist" />
 
-                <Button
-                    android:id="@+id/btn_isIDCard"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/isIDCard" />
+            <Button
+                android:id="@+id/btn_getNumber"
+                style="@style/Button_text"
+                android:text="@string/getNumber" />
 
-                <TextView
-                    android:id="@+id/tv_isIDCard"
-                    style="@style/standerd_text" />
-            </LinearLayout>
+            <TextView
+                android:id="@+id/tv_getNumber"
+                style="@style/standerd_text" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center">
+            <Button
+                android:id="@+id/btn_getCorrectUrl"
+                style="@style/Button_text"
+                android:text="@string/getCorrectUrl" />
 
-                <Button
-                    android:id="@+id/btn_isUrl"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/isUrl" />
+            <TextView
+                android:id="@+id/tv_getCorrectUrl"
+                style="@style/standerd_text" />
 
-                <TextView
-                    android:id="@+id/tv_isUrl"
-                    style="@style/standerd_text" />
-            </LinearLayout>
+            <Button
+                android:id="@+id/btn_getCorrectPhone"
+                style="@style/Button_text"
+                android:text="@string/getCorrectPhone" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center">
+            <TextView
+                android:id="@+id/tv_getCorrectPhone"
+                style="@style/standerd_text" />
 
-                <Button
-                    android:id="@+id/btn_isFilePathExist"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/isFilePathExist" />
+            <Button
+                android:id="@+id/btn_getCorrectEmail"
+                style="@style/Button_text"
+                android:text="@string/getCorrectEmail" />
 
-                <TextView
-                    android:id="@+id/tv_isFilePathExist"
-                    style="@style/standerd_text" />
-            </LinearLayout>
+            <TextView
+                android:id="@+id/tv_getCorrectEmail"
+                style="@style/standerd_text" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center">
+            <Button
+                android:id="@+id/btn_getPrice"
+                style="@style/Button_text"
+                android:text="@string/getPrice" />
 
-                <Button
-                    android:id="@+id/btn_getNumber"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/getNumber" />
+            <TextView
+                android:id="@+id/tv_getPrice"
+                style="@style/standerd_text" />
 
-                <TextView
-                    android:id="@+id/tv_getNumber"
-                    style="@style/standerd_text" />
-            </LinearLayout>
+            <Button
+                android:id="@+id/btn_stringToDouble"
+                style="@style/Button_text"
+                android:text="@string/stringToDouble" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center">
+            <TextView
+                android:id="@+id/tv_stringToDouble"
+                style="@style/standerd_text" />
 
-                <Button
-                    android:id="@+id/btn_getCorrectUrl"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/getCorrectUrl" />
+            <Button
+                android:id="@+id/btn_stringToInt"
+                style="@style/Button_text"
+                android:text="@string/stringToInt" />
 
-                <TextView
-                    android:id="@+id/tv_getCorrectUrl"
-                    style="@style/standerd_text" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center">
-
-                <Button
-                    android:id="@+id/btn_getCorrectPhone"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/getCorrectPhone" />
-
-                <TextView
-                    android:id="@+id/tv_getCorrectPhone"
-                    style="@style/standerd_text" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center">
-
-                <Button
-                    android:id="@+id/btn_getCorrectEmail"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/getCorrectEmail" />
-
-                <TextView
-                    android:id="@+id/tv_getCorrectEmail"
-                    style="@style/standerd_text" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center">
-
-                <Button
-                    android:id="@+id/btn_getPrice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/getPrice" />
-
-                <TextView
-                    android:id="@+id/tv_getPrice"
-                    style="@style/standerd_text" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center">
-
-                <Button
-                    android:id="@+id/btn_stringToDouble"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/stringToDouble" />
-
-                <TextView
-                    android:id="@+id/tv_stringToDouble"
-                    style="@style/standerd_text" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center">
-
-                <Button
-                    android:id="@+id/btn_stringToInt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/stringToInt" />
-
-                <TextView
-                    android:id="@+id/tv_stringToInt"
-                    style="@style/standerd_text" />
-            </LinearLayout>
-
+            <TextView
+                android:id="@+id/tv_stringToInt"
+                style="@style/standerd_text" />
         </LinearLayout>
     </ScrollView>
-
 </FrameLayout>

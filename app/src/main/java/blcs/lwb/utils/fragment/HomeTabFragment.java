@@ -125,6 +125,18 @@ public class HomeTabFragment extends Fragment implements IHomeTabView{
                     case FramentManages.EditText_Utils:
                         toFragment(bundle,FramentManages.EditText_Utils);
                         break;
+                    case FramentManages.Intent_Utils:
+                        toFragment(bundle,FramentManages.Intent_Utils);
+                        break;
+                    case FramentManages.App_Utils:
+                        toFragment(bundle,FramentManages.App_Utils);
+                        break;
+                    case FramentManages.Screen_Utils:
+                        toFragment(bundle,FramentManages.Screen_Utils);
+                        break;
+                    case FramentManages.Bitmap_Utils:
+                        toFragment(bundle,FramentManages.Bitmap_Utils);
+                        break;
                         default:break;
                 }
             }

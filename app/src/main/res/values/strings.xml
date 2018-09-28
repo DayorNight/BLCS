@@ -22,7 +22,7 @@
     <string name="getCorrectEmail">自动补全邮箱：</string>
     <string name="getPrice">获取价格，保留两位小数：</string>
     <string name="stringToDouble">字符串转换成double,失败返回0：</string>
-    <string name="stringToInt">字符串转换成整数,失败返回0;：</string>
+    <string name="stringToInt">字符串转换成整数,失败返回0：</string>
     <string name="showKeyboard">显示键盘</string>
     <string name="hideKeyboard">隐藏键盘</string>
     <string name="hideShowKeyboard">隐藏/显示键盘</string>
@@ -34,5 +34,17 @@
     <string name="input_password">请输入密码</string>
     <string name="input_phone">请输入手机号码</string>
     <string name="input_Email">请输入邮箱</string>
+    <string name="startNewActivity">打开新的Activity</string>
+    <string name="whether_open_Animation">是否开启动画</string>
+    <string name="whether_RequestCode">是否带请求码</string>
+    <string name="input_args">请输入参数</string>
+    <string name="getChannel">获取渠道名</string>
+    <string name="installAPK">启动安装应用程序</string>
+    <string name="input_path">请输入Apk路径</string>
+    <string name="getApplicationIcon">获取应用程序的Icon图标</string>
+    <string name="getInstalledPackages">获取所有安装的应用程序</string>
+    <string name="getVersionCode">获取版本号</string>
+    <string name="getVersionName">获取应用版本名称</string>
+    <string name="getPackage">获取应用包名</string>
 
 </resources>

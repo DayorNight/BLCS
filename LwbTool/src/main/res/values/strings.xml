@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">LwbTool</string>
+    <string name="FileNoExist">找不到该文件</string>
+    <string name="installApkError">解析软件包时出现问题</string>
 </resources>

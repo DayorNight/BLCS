@@ -12,6 +12,9 @@
         <item>StringUtils</item>
         <item>EditTextUtils</item>
         <item>IntentUtils</item>
+        <item>AppUtils</item>
+        <item>ScreenUtils</item>
+        <item>BitmapUtils</item>
     </string-array>
     <!--View-->
     <string-array name="View">

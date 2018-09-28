@@ -7,9 +7,13 @@ import android.support.v4.app.FragmentTransaction;
 import java.util.ArrayList;
 
 import blcs.lwb.utils.R;
+import blcs.lwb.utils.fragment.AppUtilsFragment;
 import blcs.lwb.utils.fragment.BaseFragment;
+import blcs.lwb.utils.fragment.BitmapUtilsFragment;
 import blcs.lwb.utils.fragment.EditTextUtilsFragment;
+import blcs.lwb.utils.fragment.IntentUtilsFragment;
 import blcs.lwb.utils.fragment.MyFragment;
+import blcs.lwb.utils.fragment.ScreenUtilsFragment;
 import blcs.lwb.utils.fragment.StringUtilsFragment;
 import blcs.lwb.utils.mvp.BaseFragmentActivity;
 
@@ -32,6 +36,10 @@ public class FramentManages
 	public final static String Log_Utils="LogUtils";
 	public final static String String_Utils="StringUtils";
 	public final static String EditText_Utils="EditTextUtils";
+	public final static String Intent_Utils="IntentUtils";
+	public final static String App_Utils="AppUtils";
+	public final static String Screen_Utils="ScreenUtils";
+	public final static String Bitmap_Utils="BitmapUtils";
 
 	/**
 	 * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -58,6 +66,14 @@ public class FramentManages
 				return new StringUtilsFragment();
 			case FramentManages.EditText_Utils:
 				return new EditTextUtilsFragment();
+			case FramentManages.Intent_Utils:
+				return new IntentUtilsFragment();
+			case FramentManages.App_Utils:
+				return new AppUtilsFragment();
+			case FramentManages.Screen_Utils:
+				return new ScreenUtilsFragment();
+			case FramentManages.Bitmap_Utils:
+				return new BitmapUtilsFragment();
 //			case FramentManages.UtilsDetail://工具详情界面
 //				return new HomeTab1DetailFragment();
 		}

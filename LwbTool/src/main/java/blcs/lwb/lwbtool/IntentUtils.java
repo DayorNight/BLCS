@@ -9,10 +9,23 @@ public class IntentUtils {
     /**
      * 打开新的Activity
      */
-    public static void toActivity(Activity activity,Class<?> cls) {
+    public static void toActivity(Activity activity,Class<?> cls,Boolean showAnimation) {
         Intent intent = new Intent(activity,cls);
-        intent.putExtra("Bundle",new Bundle());
-        toActivity(activity,intent, true);
+        toActivity(activity,intent, showAnimation);
+    }
+
+    /**
+     * 打开新的Activity
+     * @param activity
+     * @param cls 目标Activity
+     * @param bundle 参数
+     * @param requestCode 请求码
+     * @param showAnimation 是否开启动画
+     */
+    public static void toActivity(Activity activity,Class<?> cls,Bundle bundle,int requestCode,Boolean showAnimation) {
+        Intent intent = new Intent(activity,cls);
+        intent.putExtra("Bundle",bundle);
+        toActivity(activity,intent,requestCode, showAnimation);
     }
     /**
      * 打开新的Activity 动画默认打开
@@ -29,8 +42,9 @@ public class IntentUtils {
     /**
      * 打开新的Activity  带请求码
      */
-    public static void toActivity(Activity activity,final Intent intent, final int requestCode) {
-        toActivity(activity,intent, requestCode, true);
+    public static void toActivity(Activity activity,Class<?> cls, final int requestCode,Boolean showAnimation) {
+        Intent intent = new Intent(activity,cls);
+        toActivity(activity,intent, requestCode, showAnimation);
     }
 
     /**

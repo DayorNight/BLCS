@@ -24,26 +24,28 @@ public class StringUtilsFragment extends BaseFragment implements IStringView {
     EditText etInput;
     @BindView(R.id.btn_getTrimStr)
     Button btnGetTrimStr;
+    @BindView(R.id.btn_getIsNotEmptyStr)
+    Button btnGetIsNotEmptyStr;
+    @BindView(R.id.btn_getIsPhoneStr)
+    Button btnGetIsPhoneStr;
+    @BindView(R.id.btn_getIsEmailStr)
+    Button btnGetIsEmailStr;
+    @BindView(R.id.btn_getIsNumerStr)
+    Button btnGetIsNumerStr;
+    @BindView(R.id.btn_getNumberOrAlpha)
+    Button btnGetNumberOrAlpha;
+    @BindView(R.id.btn_isIDCard)
+    Button btnIsIDCard;
+    @BindView(R.id.btn_isUrl)
+    Button btnIsUrl;
+    @BindView(R.id.btn_isFilePathExist)
+    Button btnIsFilePathExist;
+    @BindView(R.id.btn_getLengthStr)
+    Button btnGetLengthStr;
     @BindView(R.id.tv_getNoBlanStr)
     TextView tvGetNoBlanStr;
     @BindView(R.id.tv_getTrimStr)
     TextView tvGetTrimStr;
-    @BindView(R.id.tv_getLengthStr)
-    TextView tvGetLengthStr;
-    @BindView(R.id.tv_getIsNotEmptyStr)
-    TextView tv_getIsNotEmptyStr;
-    @BindView(R.id.tv_getIsPhoneStr)
-    TextView tvGetIsPhoneStr;
-    @BindView(R.id.tv_getIsEmailStr)
-    TextView tvGetIsEmailStr;
-    @BindView(R.id.tv_getIsNumerStr)
-    TextView tvGetIsNumerStr;
-    @BindView(R.id.tv_getNumberOrAlpha)
-    TextView tvGetNumberOrAlpha;
-    @BindView(R.id.tv_isIDCard)
-    TextView tvIsIDCard;
-    @BindView(R.id.tv_isUrl)
-    TextView tvIsUrl;
     @BindView(R.id.tv_getCorrectUrl)
     TextView tvGetCorrectUrl;
     @BindView(R.id.tv_getCorrectEmail)
@@ -58,8 +60,6 @@ public class StringUtilsFragment extends BaseFragment implements IStringView {
     TextView tvStringToInt;
     @BindView(R.id.tv_getCorrectPhone)
     TextView tvGetCorrectPhone;
-    @BindView(R.id.tv_isFilePathExist)
-    TextView tvIsFilePathExist;
     @BindView(R.id.cb_getLengthStr)
     CheckBox cbGetLengthStr;
     @BindView(R.id.cb_getIsNotEmptyStr)
@@ -68,6 +68,11 @@ public class StringUtilsFragment extends BaseFragment implements IStringView {
 
     @Override
     public void setMiddleTitle(Toolbar title) {
+
+    }
+
+    @Override
+    protected void initView() {
 
     }
 
@@ -98,41 +103,38 @@ public class StringUtilsFragment extends BaseFragment implements IStringView {
     public void onViewClicked(View view) {
         etString = etInput.getText().toString();
         switch (view.getId()) {
-//            case R.id.btn_getStr:
-//                tvGetStr.setText(StringUtils.getCurrentString());
-//                break;
             case R.id.btn_getTrimStr:
                 tvGetTrimStr.setText(StringUtils.getTrimedString(etInput));
                 break;
             case R.id.btn_getNoBlanStr:
-                tvGetNoBlanStr.setText(StringUtils.getTrimedString(etInput));
+                tvGetNoBlanStr.setText(StringUtils.getNoBlankString(etInput));
                 break;
             case R.id.btn_getLengthStr:
-                tvGetLengthStr.setText(""+StringUtils.getLength(etInput,cbGetLengthStr.isChecked()));
+                btnGetLengthStr.setText(getString(R.string.getLengthStr)+StringUtils.getLength(etInput,cbGetLengthStr.isChecked()));
                 break;
             case R.id.btn_getIsNotEmptyStr:
-                tv_getIsNotEmptyStr.setText(""+StringUtils.isNotEmpty(etInput,cbGetIsNotEmptyStr.isChecked()));
+                btnGetIsNotEmptyStr.setText(getString(R.string.IsNotEmptyStr)+StringUtils.isNotEmpty(etInput,cbGetIsNotEmptyStr.isChecked()));
                 break;
             case R.id.btn_getIsPhoneStr:
-                tvGetIsPhoneStr.setText(""+StringUtils.isPhone(etString));
+                btnGetIsPhoneStr.setText(getString(R.string.IsPhoneStr)+StringUtils.isPhone(etString));
                 break;
             case R.id.btn_getIsEmailStr:
-                tvGetIsEmailStr.setText(""+StringUtils.isEmail(etString));
+                btnGetIsEmailStr.setText(getString(R.string.IsEmailStr)+StringUtils.isEmail(etString));
                 break;
             case R.id.btn_getIsNumerStr:
-                tvGetIsNumerStr.setText(""+StringUtils.isNumer(etString));
+                btnGetIsNumerStr.setText(getString(R.string.IsNumerStr)+StringUtils.isNumer(etString));
                 break;
             case R.id.btn_getNumberOrAlpha:
-                tvGetNumberOrAlpha.setText(""+StringUtils.isNumberOrAlpha(etString));
+                btnGetNumberOrAlpha.setText(getString(R.string.IsNumberOrAlpha)+StringUtils.isNumberOrAlpha(etString));
                 break;
             case R.id.btn_isIDCard:
-                tvIsIDCard.setText(""+StringUtils.isIDCard(etString));
+                btnIsIDCard.setText(getString(R.string.isIDCard)+StringUtils.isIDCard(etString));
                 break;
             case R.id.btn_isUrl:
-                tvIsUrl.setText(""+StringUtils.isUrl(etString));
+                btnIsUrl.setText(getString(R.string.isUrl)+StringUtils.isUrl(etString));
                 break;
             case R.id.btn_isFilePathExist:
-                tvIsFilePathExist.setText(""+StringUtils.isFilePathExist(etString));
+                btnIsFilePathExist.setText(getString(R.string.isFilePathExist)+StringUtils.isFilePathExist(etString));
                 break;
             case R.id.btn_getNumber:
                 tvGetNumber.setText(""+StringUtils.getNumber(etString));

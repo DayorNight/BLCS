@@ -46,6 +46,11 @@ public class EditTextUtilsFragment extends BaseFragment {
     }
 
     @Override
+    protected void initView() {
+
+    }
+
+    @Override
     protected BasePresenter bindPresenter() {
         return null;
     }
