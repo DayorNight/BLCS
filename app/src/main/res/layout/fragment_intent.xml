@@ -1,54 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    style="@style/match_match"
     android:orientation="vertical"
     android:padding="@dimen/space_line2">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="15"
-        android:gravity="center_horizontal"
+        style="@style/match_wrap"
+        android:gravity="center"
         android:text="@string/startNewActivity"
-        android:textColor="@color/colorPrimaryDark" />
-
+        android:textSize="@dimen/standard_title"
+        android:textColor="@color/colorPrimaryDark"
+        />
     <CheckBox
         android:id="@+id/cb_open_Animation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/wrap_wrap"
         android:text="@string/whether_open_Animation" />
     <Button
         android:id="@+id/btn_startActivity"
-        style="@style/Button_text"
+        style="@style/Button_wrap"
         android:text="StartActivity" />
-
     <Button
         android:id="@+id/btn_startActivityForResult"
-        style="@style/Button_text"
+        style="@style/Button_wrap"
         android:text="AtartActivityForResult" />
-
-
     <CheckBox
         android:id="@+id/cb_requestCode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+       style="@style/wrap_wrap"
         android:text="@string/whether_RequestCode" />
     <EditText
         android:id="@+id/et_input_args"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/wrap_wrap"
         android:textColor="@color/colorPrimaryDark"
         android:hint="@string/input_args"
         />
     <Button
         android:id="@+id/btn_start"
-        style="@style/Button_text"
+        style="@style/Button_wrap"
         android:text="Start" />
     <TextView
         android:id="@+id/tv_resultCode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/wrap_wrap"
         android:textColor="@color/colorPrimaryDark"
         />
 </LinearLayout>

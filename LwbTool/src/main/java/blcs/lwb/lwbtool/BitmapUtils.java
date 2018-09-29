@@ -33,19 +33,15 @@ import java.lang.ref.WeakReference;
  * 7、压缩图片
  * 8、缩放/裁剪图片
  * 9、获得本地的图片
- * 10、获取当前屏幕截图，不包含状态栏
- * 11、根据资源id获取指定大小的Bitmap对象
- * 12、根据文件路径获取指定大小的Bitmap对象
- * 13、获取指定大小的Bitmap对象
- * 14、将压缩的bitmap保存到SDCard卡临时文件夹，用于上传
+ * 10、根据资源id获取指定大小的Bitmap对象
+ * 11、根据文件路径获取指定大小的Bitmap对象
+ * 12、获取指定大小的Bitmap对象
+ * 13、将压缩的bitmap保存到SDCard卡临时文件夹，用于上传
  */
 public class BitmapUtils
 {
 	/**
 	 * 1、Bitmap转化为Drawable
-	 * 
-	 * @param bmp
-	 * @return
 	 */
 	public static Drawable bitmap2Drawable(Bitmap bmp)
 	{
@@ -55,8 +51,6 @@ public class BitmapUtils
 
 	/**
 	 * 2、Drawable转化为Bitmap
-	 * @param d
-	 * @return
 	 */
 	public static Bitmap drawable2Bitmap(Drawable d)
 	{
@@ -67,10 +61,6 @@ public class BitmapUtils
 
 	/**
 	 * 3、获得Resources的Bitmap资源
-	 * 
-	 * @param act
-	 * @param resId
-	 * @return
 	 */
 	public static Bitmap getBitmapFromResources(Activity act, int resId)
 	{
@@ -79,10 +69,7 @@ public class BitmapUtils
 	}
 
 	/**
-	 * 4、byte[] 字节 吗转为 Bitmap
-	 * 
-	 * @param b
-	 * @return
+	 * 4、byte[]字节码转为Bitmap
 	 */
 	public static Bitmap convertBytes2Bimap(byte[] b)
 	{
@@ -94,10 +81,7 @@ public class BitmapUtils
 	}
 
 	/**
-	 * 5、Bitmap 转为字节码 byte[]
-	 * 
-	 * @param bm
-	 * @return
+	 * 5、Bitmap转为字节码byte[]
 	 */
 	public static byte[] convertBitmap2Bytes(Bitmap bm)
 	{
@@ -106,35 +90,7 @@ public class BitmapUtils
 		return baos.toByteArray();
 	}
 
-	/**
-	 * 6、通过文件路径获取到bitmap
-	 * @param path
-	 * @param w 显示 的 宽
-	 * @param h 显示的 高
-	 */
-	public static Bitmap getBitmapFromPath(String path, int w, int h)
-	{
-		BitmapFactory.Options opts = new BitmapFactory.Options();
-		// 设置为ture只获取图片大小
-		opts.inJustDecodeBounds = true;
-		opts.inPreferredConfig = Bitmap.Config.ARGB_8888;
-		// 返回为空
-		BitmapFactory.decodeFile(path, opts);
-		int width = opts.outWidth;
-		int height = opts.outHeight;
-		float scaleWidth = 0.f, scaleHeight = 0.f;
-		if (width > w || height > h)
-		{
-			// 缩放
-			scaleWidth = ((float) width) / w;
-			scaleHeight = ((float) height) / h;
-		}
-		opts.inJustDecodeBounds = false;
-		float scale = Math.max(scaleWidth, scaleHeight);
-		opts.inSampleSize = (int) scale;
-		WeakReference<Bitmap> weak = new WeakReference<Bitmap>(BitmapFactory.decodeFile(path, opts));
-		return Bitmap.createScaledBitmap(weak.get(), w, h, true);
-	}
+
 
 	/**
 	 * 7、压缩图片
@@ -200,6 +156,7 @@ public class BitmapUtils
 	 */
 	public static Bitmap getLoacalBitmap(String url)
 	{
+
 		try
 		{
 			FileInputStream fis = new FileInputStream(url);
@@ -212,30 +169,10 @@ public class BitmapUtils
 		}
 	}
 
-	/**
-	 * 10获取当前屏幕截图，不包含状态栏
-	 * @param activity
-	 * @return
-	 */
-	public static Bitmap snapShotWithoutStatusBar(Activity activity)
-	{
-		View view = activity.getWindow().getDecorView();
-		view.setDrawingCacheEnabled(true);
-		view.buildDrawingCache();
-		Bitmap bmp = view.getDrawingCache();
-		Rect frame = new Rect();
-		activity.getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);
-		int statusBarHeight = frame.top;
-		int width = ScreenUtils.getScreenWidth(activity);
-		int height = ScreenUtils.getScreenHeight(activity);
-		Bitmap bp = null;
-		bp = Bitmap.createBitmap(bmp, 0, statusBarHeight, width, height - statusBarHeight);
-		view.destroyDrawingCache();
-		return bp;
-	}
+
 
 	/**
-	 *  11、根据资源id获取指定大小的Bitmap对象
+	 *  10、根据资源id获取指定大小的Bitmap对象
 	 * @param context   应用程序上下文
 	 * @param id        资源id
 	 * @param height    高度
@@ -252,7 +189,7 @@ public class BitmapUtils
 		return bitmap;
 	}
 	/**
-	 *  12、根据文件路径获取指定大小的Bitmap对象
+	 *  11、根据文件路径获取指定大小的Bitmap对象
 	 * @param path      文件路径
 	 * @param height    高度
 	 * @param width     宽度
@@ -271,7 +208,7 @@ public class BitmapUtils
 		return bitmap;
 	}
 	/**
-	 *  13、获取指定大小的Bitmap对象
+	 *  12、获取指定大小的Bitmap对象
 	 * @param bitmap    Bitmap对象
 	 * @param height    高度
 	 * @param width     宽度
@@ -304,7 +241,7 @@ public class BitmapUtils
 	}
 
 	/**
-	 * 14、将压缩的bitmap保存到SDCard卡临时文件夹，用于上传
+	 * 13、将压缩的bitmap保存到SDCard卡临时文件夹，用于上传
 	 * @param bit
 	 * @param scale 压缩大小为该控件大小的的N倍，主要用于放大后不失真
 	 * @return

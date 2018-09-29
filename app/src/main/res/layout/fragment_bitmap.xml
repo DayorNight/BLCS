@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Lin_vertical"
+    android:gravity="center_horizontal">
+
+    <ImageView
+        android:id="@+id/img_BitmapShow"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        />
+
+    <ScrollView style="@style/match_match">
+
+        <LinearLayout style="@style/Lin_vertical">
+
+            <Button
+                android:id="@+id/btn_b2d"
+                style="@style/Button_wrap"
+                android:text="@string/b2d" />
+
+            <Button
+                android:id="@+id/btn_d2b"
+                style="@style/Button_wrap"
+                android:text="@string/d2b" />
+
+            <Button
+                android:id="@+id/btn_getBitmapFromResources"
+                style="@style/Button_wrap"
+                android:text="@string/getBitmapFromResources" />
+
+            <Button
+                android:id="@+id/btn_byte2Bimap"
+                style="@style/Button_wrap"
+                android:text="@string/byte2Bimap" />
+
+            <Button
+                android:id="@+id/btn_Bimap2byte"
+                style="@style/Button_wrap"
+                android:text="@string/Bimap2byte" />
+
+            <LinearLayout style="@style/Lin_horizontal">
+
+                <EditText
+                    android:id="@+id/et_input_filepath"
+                    style="@style/EditText_text"
+                    android:layout_weight="1"
+                    android:hint="@string/input_filepath" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_getBitmapFromPath"
+                style="@style/Button_wrap"
+                android:text="@string/getBitmapFromPath" />
+
+            <Button
+                android:id="@+id/btn_compressImageFromFile"
+                style="@style/Button_wrap"
+                android:text="@string/compressImageFromFile" />
+
+            <Button
+                android:id="@+id/btn_zoomImg"
+                style="@style/Button_wrap"
+                android:text="@string/zoomImg" />
+
+            <Button
+                android:id="@+id/btn_getBitmapFromResource"
+                style="@style/Button_wrap"
+                android:text="@string/getBitmapFromResource" />
+
+            <Button
+                android:id="@+id/btn_getThumbnailsBitmap"
+                style="@style/Button_wrap"
+                android:text="@string/getThumbnailsBitmap" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

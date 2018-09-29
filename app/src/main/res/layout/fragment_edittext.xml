@@ -4,64 +4,68 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        style="@style/Lin_text"
+        style="@style/match_wrap"
         android:orientation="vertical"
         android:padding="@dimen/space_line">
 
         <Button
             android:id="@+id/btn_showKeyboard"
-            style="@style/Button_text"
+            style="@style/match_wrap"
             android:text="@string/showKeyboard" />
 
         <Button
             android:id="@+id/btn_hideKeyboard"
-            style="@style/Button_text"
+            style="@style/match_wrap"
             android:text="@string/hideKeyboard" />
 
         <Button
             android:id="@+id/hide_showKeyboard"
-            style="@style/Button_text"
+            style="@style/match_wrap"
             android:text="@string/hideShowKeyboard" />
 
         <Button
             android:id="@+id/judge_Invalid_Code"
-            style="@style/Button_text"
+            style="@style/match_wrap"
             android:text="@string/judgeInvalidCode" />
 
         <EditText
             android:id="@+id/et_input_code"
             style="@style/EditText_text"
+            android:layout_gravity="center_horizontal"
             android:hint="@string/input_code"
             android:inputType="number" />
 
         <Button
             android:id="@+id/judge_Invalid_password"
-            style="@style/Button_text"
+            style="@style/match_wrap"
             android:text="@string/judgeInvalidPassword" />
 
         <EditText
             android:id="@+id/et_input_password"
             style="@style/EditText_text"
+            android:layout_gravity="center_horizontal"
             android:hint="@string/input_password" />
 
         <Button
             android:id="@+id/judge_Invalid_phone"
-            style="@style/Button_text"
+            style="@style/match_wrap"
             android:text="@string/judgeInvalidPhone" />
 
         <EditText
             android:id="@+id/et_input_phone"
             style="@style/EditText_text"
+            android:layout_gravity="center_horizontal"
             android:hint="@string/input_phone" />
 
         <Button
             android:id="@+id/judge_Invalid_Email"
-            style="@style/Button_text"
+            style="@style/match_wrap"
             android:text="@string/judgeInvalidEmail" />
 
         <EditText
             android:id="@+id/et_input_Email"
             style="@style/EditText_text"
+            android:layout_gravity="center_horizontal"
             android:hint="@string/input_Email" />
 
     </LinearLayout>

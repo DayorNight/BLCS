@@ -16,12 +16,12 @@
         android:layout_marginTop="@dimen/bottom_space">
 
         <LinearLayout
-            style="@style/Lin_text"
+            style="@style/Lin_vertical"
             android:orientation="vertical">
 
             <Button
                 android:id="@+id/btn_getTrimStr"
-                style="@style/Button_text"
+                style="@style/match_wrap"
                 android:text="@string/getTrimStr" />
 
             <TextView
@@ -31,7 +31,7 @@
 
             <Button
                 android:id="@+id/btn_getNoBlanStr"
-                style="@style/Button_text"
+                style="@style/match_wrap"
                 android:text="@string/getNoBlanStr" />
 
             <TextView
@@ -39,13 +39,13 @@
                 style="@style/standerd_text" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/match_wrap"
                 android:gravity="center">
 
                 <Button
                     android:id="@+id/btn_getLengthStr"
-                    style="@style/Button_text"
+                    android:layout_weight="1"
+                    style="@style/match_wrap"
                     android:text="@string/getLengthStr" />
 
                 <CheckBox
@@ -57,13 +57,13 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/match_wrap"
                 android:gravity="center">
 
                 <Button
                     android:id="@+id/btn_getIsNotEmptyStr"
-                    style="@style/Button_text"
+                    android:layout_weight="1"
+                    style="@style/match_wrap"
                     android:text="@string/IsNotEmptyStr" />
 
                 <CheckBox
@@ -75,48 +75,47 @@
 
             <Button
                 android:id="@+id/btn_getIsPhoneStr"
-                style="@style/Button_text"
+                style="@style/match_wrap"
                 android:text="@string/IsPhoneStr" />
 
             <Button
                 android:id="@+id/btn_getIsEmailStr"
-                style="@style/Button_text"
+                style="@style/match_wrap"
                 android:text="@string/IsEmailStr" />
-
 
 
             <Button
                 android:id="@+id/btn_getIsNumerStr"
-                style="@style/Button_text"
+                style="@style/match_wrap"
                 android:text="@string/IsNumerStr" />
 
 
 
             <Button
                 android:id="@+id/btn_getNumberOrAlpha"
-                style="@style/Button_text"
+                style="@style/match_wrap"
                 android:text="@string/IsNumberOrAlpha" />
 
 
             <Button
                 android:id="@+id/btn_isIDCard"
-                style="@style/Button_text"
+                style="@style/match_wrap"
                 android:text="@string/isIDCard" />
 
 
             <Button
                 android:id="@+id/btn_isUrl"
-                style="@style/Button_text"
+                style="@style/match_wrap"
                 android:text="@string/isUrl" />
 
             <Button
                 android:id="@+id/btn_isFilePathExist"
-                style="@style/Button_text"
+                style="@style/match_wrap"
                 android:text="@string/isFilePathExist" />
 
             <Button
                 android:id="@+id/btn_getNumber"
-                style="@style/Button_text"
+                style="@style/match_wrap"
                 android:text="@string/getNumber" />
 
             <TextView
@@ -125,7 +124,7 @@
 
             <Button
                 android:id="@+id/btn_getCorrectUrl"
-                style="@style/Button_text"
+                style="@style/match_wrap"
                 android:text="@string/getCorrectUrl" />
 
             <TextView
@@ -134,7 +133,7 @@
 
             <Button
                 android:id="@+id/btn_getCorrectPhone"
-                style="@style/Button_text"
+                style="@style/match_wrap"
                 android:text="@string/getCorrectPhone" />
 
             <TextView
@@ -143,7 +142,7 @@
 
             <Button
                 android:id="@+id/btn_getCorrectEmail"
-                style="@style/Button_text"
+                style="@style/match_wrap"
                 android:text="@string/getCorrectEmail" />
 
             <TextView
@@ -152,7 +151,7 @@
 
             <Button
                 android:id="@+id/btn_getPrice"
-                style="@style/Button_text"
+                style="@style/match_wrap"
                 android:text="@string/getPrice" />
 
             <TextView
@@ -161,7 +160,7 @@
 
             <Button
                 android:id="@+id/btn_stringToDouble"
-                style="@style/Button_text"
+                style="@style/match_wrap"
                 android:text="@string/stringToDouble" />
 
             <TextView
@@ -170,7 +169,7 @@
 
             <Button
                 android:id="@+id/btn_stringToInt"
-                style="@style/Button_text"
+                style="@style/match_wrap"
                 android:text="@string/stringToInt" />
 
             <TextView

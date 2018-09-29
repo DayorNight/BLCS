@@ -37,7 +37,6 @@ import java.lang.reflect.Field;
  * 7、获取当前屏幕截图，不包含状态栏
  * 8、获取DisplayMetrics对象
  * 9、获取屏幕像素点
- * 10、获取状态栏高度
  */
 public class ScreenUtils {
 	/**
@@ -87,7 +86,7 @@ public class ScreenUtils {
 	/**
 	 * 6、获取当前屏幕截图，包含状态栏
 	 */
-	public static Bitmap snapShotWithStatusBar(Activity activity){
+	public static Bitmap getSnapShotWithStatusBar(Activity activity){
 		View decorView = activity.getWindow().getDecorView();
 		decorView.setDrawingCacheEnabled(true);
 		decorView.buildDrawingCache();
@@ -103,11 +102,11 @@ public class ScreenUtils {
 	/**
 	 * 7、获取当前屏幕截图，不包含状态栏
 	 */
-	public static Bitmap snapShotWithoutStatusBar(Activity activity){
-		View decorView = activity.getWindow().getDecorView();
-		decorView.setDrawingCacheEnabled(true);
-		decorView.buildDrawingCache();
-		Bitmap bmp = decorView.getDrawingCache();
+	public static Bitmap getSnapShotWithoutStatusBar(Activity activity){
+		View view = activity.getWindow().getDecorView();
+		view.setDrawingCacheEnabled(true);
+		view.buildDrawingCache();
+		Bitmap bmp = view.getDrawingCache();
 		Rect frame = new Rect();
 		activity.getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);
 		int statusHeight = frame.top;
@@ -115,7 +114,7 @@ public class ScreenUtils {
 		int height = getScreenHeight(activity);
 		Bitmap bitmap = null;
 		bitmap = Bitmap.createBitmap(bmp, 0, statusHeight, width, height - statusHeight);
-		decorView.destroyDrawingCache();
+		view.destroyDrawingCache();
 		return bitmap;
 	}
 
@@ -156,28 +155,5 @@ public class ScreenUtils {
 			}
 		}
 		return screenSize;
-	}
-	/**
-	 * 10、获取状态栏高度
- 	 */
-	public static int getStatusBarHeight(Context context) {
-		if (statusBarHeight <= 0) {
-			Rect frame = new Rect();
-			((Activity) context).getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);
-			statusBarHeight = frame.top;
-		}
-		if (statusBarHeight <= 0) {
-			try {
-				Class<?> c = Class.forName("com.android.internal.R$dimen");
-				Object obj = c.newInstance();
-				Field field = c.getField("status_bar_height");
-				int x = Integer.parseInt(field.get(obj).toString());
-				statusBarHeight = context.getResources().getDimensionPixelSize(x);
-
-			} catch (Exception e1) {
-				e1.printStackTrace();
-			}
-		}
-		return statusBarHeight;
 	}
 }

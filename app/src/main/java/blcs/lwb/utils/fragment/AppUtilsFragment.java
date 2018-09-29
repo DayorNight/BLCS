@@ -24,6 +24,7 @@ import blcs.lwb.lwbtool.AppUtils;
 import blcs.lwb.lwbtool.LogUtils;
 import blcs.lwb.lwbtool.StringUtils;
 import blcs.lwb.lwbtool.base.BasePresenter;
+import blcs.lwb.utils.Constants;
 import blcs.lwb.utils.R;
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -31,32 +32,24 @@ import butterknife.OnClick;
 public class AppUtilsFragment extends BaseFragment {
     @BindView(R.id.btn_getPackage)
     Button btnGetPackage;
-    @BindView(R.id.tv_getPackage)
-    TextView tvGetPackage;
     @BindView(R.id.btn_getVersionName)
     Button btnGetVersionName;
-    @BindView(R.id.tv_getVersionName)
-    TextView tvGetVersionName;
     @BindView(R.id.btn_getVersionCode)
     Button btnGetVersionCode;
-    @BindView(R.id.tv_getVersionCode)
-    TextView tvGetVersionCode;
     @BindView(R.id.btn_getInstalledPackages)
     Button btnGetInstalledPackages;
     @BindView(R.id.tv_getInstalledPackages)
     TextView tvGetInstalledPackages;
     @BindView(R.id.btn_getApplicationIcon)
     Button btnGetApplicationIcon;
-    @BindView(R.id.tv_getApplicationIcon)
-    ImageView tvGetApplicationIcon;
     @BindView(R.id.et_installApk)
     EditText etInstallApk;
     @BindView(R.id.btn_installApk)
     Button btnInstallApk;
     @BindView(R.id.btn_getChannel)
     Button btnGetChannel;
-    @BindView(R.id.tv_getChannel)
-    TextView tvGetChannel;
+    @BindView(R.id.img_getApplicationIcon)
+    ImageView imgGetApplicationIcon;
 
     @Override
     public void setMiddleTitle(Toolbar title) {
@@ -65,8 +58,7 @@ public class AppUtilsFragment extends BaseFragment {
 
     @Override
     protected void initView() {
-//        etInstallApk.setText(activity.getPackageCodePath());
-        etInstallApk.setText(""+ Environment.getExternalStorageDirectory().getAbsolutePath() + "/app.apk");
+        etInstallApk.setText(Constants.phonePath + "/app.apk");
     }
 
     @Override
@@ -88,13 +80,13 @@ public class AppUtilsFragment extends BaseFragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_getPackage:
-                tvGetPackage.setText(AppUtils.getAppPackageName(activity));
+                btnGetPackage.setText(getString(R.string.getPackage)+AppUtils.getAppPackageName(activity));
                 break;
             case R.id.btn_getVersionName:
-                tvGetVersionName.setText(AppUtils.getVersionName(activity));
+                btnGetVersionName.setText(getString(R.string.getVersionName)+AppUtils.getVersionName(activity));
                 break;
             case R.id.btn_getVersionCode:
-                tvGetVersionCode.setText("" + AppUtils.getVersionCode(activity));
+                btnGetVersionCode.setText(getString(R.string.getVersionCode) + AppUtils.getVersionCode(activity));
                 break;
             case R.id.btn_getInstalledPackages:
                 List<PackageInfo> installedPackages = AppUtils.getInstalledPackages(activity);
@@ -107,7 +99,7 @@ public class AppUtilsFragment extends BaseFragment {
                 }
                 break;
             case R.id.btn_getApplicationIcon:
-                tvGetApplicationIcon.setImageDrawable(AppUtils.getApplicationIcon(activity));
+                 imgGetApplicationIcon.setImageDrawable(AppUtils.getApplicationIcon(activity));
                 break;
             case R.id.btn_installApk:
                 if(StringUtils.isNotEmpty(etInstallApk,true)){
@@ -115,7 +107,7 @@ public class AppUtilsFragment extends BaseFragment {
                 }
                 break;
             case R.id.btn_getChannel:
-                tvGetChannel.setText(AppUtils.getChannel(activity));
+                btnGetChannel.setText(getString(R.string.getChannel)+AppUtils.getChannel(activity));
                 break;
         }
     }
