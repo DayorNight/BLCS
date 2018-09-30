@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/green"
+    style="@style/match_wrap">
+    <!--底部导航栏-->
+    <!--itemBackground导航栏的背景颜色-->
+    <!--itemIconTint导航栏中图片的颜色-->
+    <!--itemTextColor导航栏中文字的颜色-->
+    <android.support.design.widget.BottomNavigationView
+        android:layout_weight="1"
+        style="@style/match_wrap"
+        android:id="@+id/bottomNavigationView"
+        app:itemBackground="@color/gray"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/black"
+        app:menu="@menu/menu_bottom_navigation_view" />
+</LinearLayout>

@@ -140,6 +140,9 @@ public class HomeTabFragment extends Fragment implements IHomeTabView{
                     case FramentManages.RxToast:
                         toFragment(bundle,FramentManages.RxToast);
                         break;
+                    case FramentManages.BottomNavigation:
+                        toFragment(bundle,FramentManages.BottomNavigation);
+                        break;
                         default:break;
                 }
             }

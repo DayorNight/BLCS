@@ -10,6 +10,7 @@ import blcs.lwb.utils.R;
 import blcs.lwb.utils.fragment.AppUtilsFragment;
 import blcs.lwb.utils.fragment.BaseFragment;
 import blcs.lwb.utils.fragment.BitmapUtilsFragment;
+import blcs.lwb.utils.fragment.BottomNavigationFragment;
 import blcs.lwb.utils.fragment.EditTextUtilsFragment;
 import blcs.lwb.utils.fragment.IntentUtilsFragment;
 import blcs.lwb.utils.fragment.MyFragment;
@@ -41,6 +42,7 @@ public class FramentManages
 	public final static String Screen_Utils="ScreenUtils";
 	public final static String Bitmap_Utils="BitmapUtils";
 	public final static String RxToast="RxToast";
+	public final static String BottomNavigation="BottomNavigationView";
 
 	/**
 	 * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -77,6 +79,8 @@ public class FramentManages
 				return new BitmapUtilsFragment();
 			case FramentManages.RxToast:
 				return new RxToastFragment();
+			case FramentManages.BottomNavigation:
+				return new BottomNavigationFragment();
 //			case FramentManages.UtilsDetail://工具详情界面
 //				return new HomeTab1DetailFragment();
 		}

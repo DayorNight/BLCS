@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Lin_vertical">
+
+    <Button
+        android:id="@+id/btn_Recommend"
+        style="@style/Button_wrap"
+        android:text="@string/BottomNavigation_Recommend" />
+
+    <include layout="@layout/bottom_navigation" />
+
+    <LinearLayout
+        style="@style/Lin_horizontal">
+        <Button
+            android:id="@+id/btn_add"
+            style="@style/wrap_wrap"
+            android:textAllCaps="false"
+            android:text="+"
+            />
+        <Button
+            android:id="@+id/btn_reduce"
+            style="@style/wrap_wrap"
+            android:textAllCaps="false"
+            android:text="-"
+            />
+    </LinearLayout>
+</LinearLayout>

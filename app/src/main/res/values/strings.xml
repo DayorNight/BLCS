@@ -77,5 +77,6 @@
     <string name="normal_toast">普通的提示（没有ICON）</string>
     <string name="normal_toast_img">普通的提示（有ICON）</string>
     <string name="sys_toast">系统的提示</string>
+    <string name="BottomNavigation_Recommend">BottomNavigation介绍</string>
 
 </resources>

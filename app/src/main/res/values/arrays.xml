@@ -18,7 +18,7 @@
     </string-array>
     <!--View-->
     <string-array name="View">
-        <item>BottomNavigation菜单栏</item>
+        <!--<item>BottomNavigationView</item>-->
         <item>RecyclerView</item>
         <item>toolbar</item>
         <item>RxToast</item>
