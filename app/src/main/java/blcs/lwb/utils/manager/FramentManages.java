@@ -40,6 +40,7 @@ public class FramentManages
 	public final static String App_Utils="AppUtils";
 	public final static String Screen_Utils="ScreenUtils";
 	public final static String Bitmap_Utils="BitmapUtils";
+	public final static String RxToast="RxToast";
 
 	/**
 	 * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -74,6 +75,8 @@ public class FramentManages
 				return new ScreenUtilsFragment();
 			case FramentManages.Bitmap_Utils:
 				return new BitmapUtilsFragment();
+			case FramentManages.RxToast:
+				return new RxToastFragment();
 //			case FramentManages.UtilsDetail://工具详情界面
 //				return new HomeTab1DetailFragment();
 		}

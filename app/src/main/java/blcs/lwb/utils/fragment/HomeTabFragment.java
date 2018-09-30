@@ -137,6 +137,9 @@ public class HomeTabFragment extends Fragment implements IHomeTabView{
                     case FramentManages.Bitmap_Utils:
                         toFragment(bundle,FramentManages.Bitmap_Utils);
                         break;
+                    case FramentManages.RxToast:
+                        toFragment(bundle,FramentManages.RxToast);
+                        break;
                         default:break;
                 }
             }

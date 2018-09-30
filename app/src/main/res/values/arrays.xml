@@ -21,6 +21,7 @@
         <item>BottomNavigation菜单栏</item>
         <item>RecyclerView</item>
         <item>toolbar</item>
+        <item>RxToast</item>
     </string-array>
     <!--other-->
     <string-array name="Other">

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout style="@style/Lin_vertical">
+
+        <Button
+            android:id="@+id/btn_error_toast"
+            style="@style/Button_wrap"
+            android:layout_margin="@dimen/space_line"
+            android:background="@color/red"
+            android:text="@string/error_toast" />
+
+        <Button
+            android:id="@+id/btn_success_toast"
+            style="@style/Button_wrap"
+            android:layout_margin="@dimen/space_line"
+            android:background="@color/green"
+            android:text="@string/success_toast" />
+
+        <Button
+            android:id="@+id/btn_info_toast"
+            style="@style/Button_wrap"
+            android:layout_margin="@dimen/space_line"
+            android:background="@color/blue"
+            android:text="@string/info_toast" />
+
+        <Button
+            android:id="@+id/btn_warning_toast"
+            style="@style/Button_wrap"
+            android:layout_margin="@dimen/space_line"
+            android:background="@color/yellow"
+            android:text="@string/warning_toast" />
+
+        <Button
+            android:id="@+id/btn_normal_toast"
+            style="@style/Button_wrap"
+            android:layout_margin="@dimen/space_line"
+            android:background="@color/gray"
+            android:text="@string/normal_toast" />
+
+        <Button
+            android:id="@+id/btn_normal_toast_img"
+            style="@style/Button_wrap"
+            android:layout_margin="@dimen/space_line"
+            android:background="@color/gray"
+            android:text="@string/normal_toast_img" />
+        <Button
+            android:id="@+id/btn_sys_toast"
+            style="@style/Button_wrap"
+            android:layout_margin="@dimen/space_line"
+            android:background="@color/gray"
+            android:text="@string/sys_toast" />
+    </LinearLayout>
+</ScrollView>

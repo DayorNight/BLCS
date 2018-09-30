@@ -70,5 +70,12 @@
     <string name="getBitmapFromResource">根据资源id获取指定大小的Bitmap对象</string>
     <string name="getThumbnailsBitmap">获取指定大小的Bitmap对象</string>
     <string name="fileNoExit">未发现该文件</string>
+    <string name="error_toast">错误的提示</string>
+    <string name="success_toast">成功的提示</string>
+    <string name="info_toast">信息的提示</string>
+    <string name="warning_toast">警告的提示</string>
+    <string name="normal_toast">普通的提示（没有ICON）</string>
+    <string name="normal_toast_img">普通的提示（有ICON）</string>
+    <string name="sys_toast">系统的提示</string>
 
 </resources>
