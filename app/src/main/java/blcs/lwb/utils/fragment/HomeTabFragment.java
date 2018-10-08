@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 
 import com.just.agentweb.LogUtils;
 
+import blcs.lwb.lwbtool.RxToast;
 import blcs.lwb.lwbtool.base.BaseAdapter;
 import blcs.lwb.utils.Constants;
 import blcs.lwb.utils.manager.FramentManages;
@@ -143,7 +144,9 @@ public class HomeTabFragment extends Fragment implements IHomeTabView{
                     case FramentManages.BottomNavigation:
                         toFragment(bundle,FramentManages.BottomNavigation);
                         break;
-                        default:break;
+                        default:
+                            RxToast.warning(activity,getString(R.string.function_unopen));
+                            break;
                 }
             }
         });

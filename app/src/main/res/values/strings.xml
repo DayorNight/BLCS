@@ -78,5 +78,10 @@
     <string name="normal_toast_img">普通的提示（有ICON）</string>
     <string name="sys_toast">系统的提示</string>
     <string name="BottomNavigation_Recommend">BottomNavigation介绍</string>
+    <string name="function_unopen">功能暂未开放</string>
+    <string name="whether_remove_animation">是否去除动画</string>
+    <string name="addView">添加Item</string>
+    <string name="reduceView">移除Item</string>
+    <string name="addImte">动态添加Item：</string>
 
 </resources>

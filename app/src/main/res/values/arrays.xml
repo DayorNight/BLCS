@@ -18,7 +18,7 @@
     </string-array>
     <!--View-->
     <string-array name="View">
-        <!--<item>BottomNavigationView</item>-->
+        <item>BottomNavigationView</item>
         <item>RecyclerView</item>
         <item>toolbar</item>
         <item>RxToast</item>
@@ -30,4 +30,14 @@
         <item>友盟多渠道打包</item>
         <item>APK签名打包</item>
     </string-array>
+
+    <!--BottomNavigationView-->
+    <string-array name="BottomNavigationView">
+        <item>工具</item>
+        <item>View</item>
+        <item>其他</item>
+        <item>设置</item>
+        <item>信息</item>
+    </string-array>
+
 </resources>

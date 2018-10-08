@@ -27,4 +27,6 @@ public class Constants {
     public final static String APK_Sign="https://blog.csdn.net/cs_lwb/article/details/81386595";
     //Log日志封装
     public final static String LOG_Utils="https://blog.csdn.net/cs_lwb/article/details/82823536";
+    //图片
+    public final static int[] img_menu={R.mipmap.img_util,R.mipmap.img_view,R.mipmap.img_other,R.mipmap.set,R.mipmap.ic_check_white_48dp};
 }

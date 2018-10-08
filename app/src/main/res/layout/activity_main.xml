@@ -36,6 +36,7 @@
         android:background="@color/colorPrimary"
         app:itemIconTint="@drawable/main_bottom"
         app:itemTextColor="@drawable/main_bottom"
+        app:labelVisibilityMode="labeled"
         />
     <!--app:menu="@menu/menu_main"-->
 

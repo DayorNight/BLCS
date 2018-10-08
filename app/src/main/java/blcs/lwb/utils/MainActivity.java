@@ -7,6 +7,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import com.umeng.analytics.MobclickAgent;
 import java.util.List;
+
+import blcs.lwb.lwbtool.BottomNavigationUtils;
 import blcs.lwb.lwbtool.base.BaseAppCompatActivity;
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.utils.adapter.ViewPagerHomeAdapter;
@@ -48,7 +50,6 @@ public class MainActivity extends BaseAppCompatActivity implements IMainView {
             MenuItem item = menu.findItem(i);
             item.setIcon(img_menu[i]);
         }
-        MyUtils.disableShiftMode(mainBottom);
         mainBottom.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {

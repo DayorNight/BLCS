@@ -24,5 +24,45 @@
             android:textAllCaps="false"
             android:text="-"
             />
+        <CheckBox
+            android:id="@+id/cb_whether_remove_animation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/whether_remove_animation"/>
+
     </LinearLayout>
+    <TextView
+        style="@style/TextView_wrap"
+        android:text="@string/addImte"
+        />
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bnv_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:itemBackground="@color/colorPrimary"
+        app:itemIconTint="@drawable/main_bottom"
+        app:itemTextColor="@drawable/main_bottom"
+        />
+    <LinearLayout
+        style="@style/Lin_horizontal">
+        <Button
+            android:id="@+id/btn_add_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/addView"/>
+        <Button
+            android:id="@+id/btn_reduce_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reduceView"/>
+        <CheckBox
+            android:id="@+id/cb_whether_remove_animation1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/whether_remove_animation"/>
+    </LinearLayout>
+
 </LinearLayout>
