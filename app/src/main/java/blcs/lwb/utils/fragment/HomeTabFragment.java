@@ -144,6 +144,15 @@ public class HomeTabFragment extends Fragment implements IHomeTabView{
                     case FramentManages.BottomNavigation:
                         toFragment(bundle,FramentManages.BottomNavigation);
                         break;
+                    case FramentManages.RecyclerView:
+                        toFragment(bundle,FramentManages.RecyclerView);
+                        break;
+                    case FramentManages.TurnTableView:
+                        toFragment(bundle,FramentManages.TurnTableView);
+                        break;
+                    case FramentManages.JavaDesignPattern:
+                        toFragment(bundle,FramentManages.JavaDesignPattern);
+                        break;
                         default:
                             RxToast.warning(activity,getString(R.string.function_unopen));
                             break;

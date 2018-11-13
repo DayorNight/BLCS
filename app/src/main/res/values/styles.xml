@@ -45,6 +45,10 @@
         <item name="android:textAllCaps">false</item>
     </style>
 
+    <style name="Button_ww" parent="wrap_wrap">
+        <item name="android:textAllCaps">false</item>
+    </style>
+
     <style name="Lin_vertical" parent="match_wrap" >
         <item name="android:orientation">vertical</item>
     </style>

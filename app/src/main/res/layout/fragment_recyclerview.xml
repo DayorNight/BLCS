@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Lin_vertical">
+    <Button
+        style="@style/Button_wrap"
+        android:text="RecyclerView介绍"/>
+    <LinearLayout
+        style="@style/Lin_horizontal">
+        <Button
+            android:id="@+id/btn_changeOrientation"
+            style="@style/Button_ww"
+            android:text="@string/changeOrientation"/>
+        <Button
+            android:id="@+id/btn_table_Layout"
+            style="@style/Button_ww"
+            android:text="@string/table_Layout"/>
+        <Button
+            android:id="@+id/btn_WaterFall_View"
+            style="@style/Button_ww"
+            android:text="@string/WaterFall_View"/>
+    </LinearLayout>
+    <include layout="@layout/tool_recyclerview"/>
+</LinearLayout>

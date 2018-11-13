@@ -13,11 +13,13 @@ import android.widget.CompoundButton;
 
 import java.util.List;
 
+import blcs.lwb.lwbtool.BottomNavigationUtils;
 import blcs.lwb.lwbtool.LogUtils;
 import blcs.lwb.lwbtool.RxToast;
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.utils.Constants;
 import blcs.lwb.utils.R;
+import blcs.lwb.utils.manager.FramentManages;
 import blcs.lwb.utils.utils.MyUtils;
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -50,9 +52,9 @@ public class BottomNavigationFragment extends BaseFragment {
     @Override
     protected void initView() {
         //设置默认选中item
-        bottomNavigationView.getMenu().getItem(1).setChecked(true);
-        bottomNavigationView.setLabelVisibilityMode(0);//默认动画
-        //设置导航条目选中监听
+        BottomNavigationUtils.setItem(bottomNavigationView,1);
+//        bottomNavigationView.setLabelVisibilityMode(0);//默认动画
+        //设置导航栏菜单项Item选中监听
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -81,9 +83,9 @@ public class BottomNavigationFragment extends BaseFragment {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
-                    bottomNavigationView.setLabelVisibilityMode(1);
+                    BottomNavigationUtils.openAnimation(bottomNavigationView,false);
                 } else {
-                    bottomNavigationView.setLabelVisibilityMode(0);
+                    BottomNavigationUtils.openAnimation(bottomNavigationView,true);
                 }
             }
         });
@@ -91,9 +93,9 @@ public class BottomNavigationFragment extends BaseFragment {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
-                    bnvMenu.setLabelVisibilityMode(1);
+                    BottomNavigationUtils.openAnimation(bottomNavigationView,false);
                 } else {
-                    bnvMenu.setLabelVisibilityMode(0);
+                    BottomNavigationUtils.openAnimation(bottomNavigationView,true);
                 }
             }
         });
@@ -141,8 +143,13 @@ public class BottomNavigationFragment extends BaseFragment {
     @OnClick({R.id.btn_add, R.id.btn_reduce, R.id.btn_Recommend, R.id.btn_add_layout, R.id.btn_reduce_layout})
     public void onViewClicked(View view) {
         int size = bottomNavigationView.getMenu().size();
-        LogUtils.e(""+size);
         switch (view.getId()) {
+            case R.id.btn_Recommend:
+                Bundle bundle = new Bundle();
+                bundle.putString(Constants.Item_Name,"BottomNavigationView");
+                bundle.putString(Constants.URL,Constants.BottomNavigation_Utils);
+                addFrament(R.id.fr_contain,  FramentManages.Demo, bundle, true);
+                break;
             case R.id.btn_add:
                 if (size == 5) {
                     RxToast.warning(activity, "不能超过5");

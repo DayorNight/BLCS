@@ -13,9 +13,12 @@ import blcs.lwb.utils.fragment.BitmapUtilsFragment;
 import blcs.lwb.utils.fragment.BottomNavigationFragment;
 import blcs.lwb.utils.fragment.EditTextUtilsFragment;
 import blcs.lwb.utils.fragment.IntentUtilsFragment;
+import blcs.lwb.utils.fragment.JavaDesignPatternFragment;
 import blcs.lwb.utils.fragment.MyFragment;
+import blcs.lwb.utils.fragment.RecyclerViewFragment;
 import blcs.lwb.utils.fragment.ScreenUtilsFragment;
 import blcs.lwb.utils.fragment.StringUtilsFragment;
+import blcs.lwb.utils.fragment.TurnTableViewFragment;
 import blcs.lwb.utils.mvp.BaseFragmentActivity;
 
 /**
@@ -43,6 +46,9 @@ public class FramentManages
 	public final static String Bitmap_Utils="BitmapUtils";
 	public final static String RxToast="RxToast";
 	public final static String BottomNavigation="BottomNavigationView";
+	public final static String RecyclerView="RecyclerView";
+	public final static String TurnTableView="转盘小游戏";
+	public final static String JavaDesignPattern="Java常用设计模式";
 
 	/**
 	 * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -81,6 +87,12 @@ public class FramentManages
 				return new RxToastFragment();
 			case FramentManages.BottomNavigation:
 				return new BottomNavigationFragment();
+			case FramentManages.RecyclerView:
+				return new RecyclerViewFragment();
+			case FramentManages.TurnTableView:
+				return new TurnTableViewFragment();
+			case FramentManages.JavaDesignPattern:
+				return new JavaDesignPatternFragment();
 //			case FramentManages.UtilsDetail://工具详情界面
 //				return new HomeTab1DetailFragment();
 		}

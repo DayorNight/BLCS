@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="names">
+        <item>爬山</item>
+        <item>游戏</item>
+        <item>电影</item>
+        <item>单车</item>
+    </string-array>
+
+    <string-array name="icons">
+        <item>img_climb</item>
+        <item>img_game</item>
+        <item>img_movies</item>
+        <item>img_bike</item>
+    </string-array>
+
+
+</resources>

@@ -15,6 +15,7 @@
         <item>AppUtils</item>
         <item>ScreenUtils</item>
         <item>BitmapUtils</item>
+
     </string-array>
     <!--View-->
     <string-array name="View">
@@ -22,6 +23,7 @@
         <item>RecyclerView</item>
         <item>toolbar</item>
         <item>RxToast</item>
+        <item>转盘小游戏</item>
     </string-array>
     <!--other-->
     <string-array name="Other">
@@ -29,6 +31,7 @@
         <item>友盟统计</item>
         <item>友盟多渠道打包</item>
         <item>APK签名打包</item>
+        <!--<item>Java常用设计模式</item>-->
     </string-array>
 
     <!--BottomNavigationView-->
@@ -40,4 +43,34 @@
         <item>信息</item>
     </string-array>
 
+    <!--小游戏名称-->
+    <string-array name="games">
+        <item>爬山</item>
+        <item>游戏</item>
+        <item>睡觉</item>
+        <item>唱歌</item>
+        <item>电影</item>
+        <item>逛街</item>
+        <item>吃饭</item>
+        <item>旅游</item>
+        <item>单车</item>
+        <item>野炊</item>
+        <item>打球</item>
+        <item>看书</item>
+    </string-array>
+    <!--小游戏图片-->
+    <string-array name="imgs">
+        <item>img_climb</item>
+        <item>img_game</item>
+        <item>img_sleep</item>
+        <item>img_sing</item>
+        <item>img_movies</item>
+        <item>img_shopping</item>
+        <item>img_eat</item>
+        <item>img_travel</item>
+        <item>img_bike</item>
+        <item>img_picnic</item>
+        <item>img_play</item>
+        <item>img_book</item>
+    </string-array>
 </resources>

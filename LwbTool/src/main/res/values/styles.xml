@@ -16,4 +16,12 @@
         <item name="android:layout_height">match_parent</item>
     </style>
 
+
+
+
+    <declare-styleable name="luckpan">
+        <attr name="pannum"  format="integer"/>
+        <attr name="names" format="reference"/>
+        <attr name="icons"  format="reference"/>
+    </declare-styleable>
 </resources>

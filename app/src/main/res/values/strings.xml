@@ -83,5 +83,8 @@
     <string name="addView">添加Item</string>
     <string name="reduceView">移除Item</string>
     <string name="addImte">动态添加Item：</string>
+    <string name="changeOrientation">水平垂直切换</string>
+    <string name="table_Layout">表格布局</string>
+    <string name="WaterFall_View">瀑布流布局</string>
 
 </resources>

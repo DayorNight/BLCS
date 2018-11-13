@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:luckpan="http://schemas.android.com/apk/res-auto"
+    style="@style/match_match"
+    android:orientation="vertical">
+    <TextView
+        style="@style/wrap_wrap"
+        android:text="项目:"
+        android:textColor="@color/black"
+        android:textSize="@dimen/standard_title" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rl_project"
+        style="@style/match_wrap"/>
+
+
+    <blcs.lwb.lwbtool.View.LuckPanLayout
+        android:id="@+id/luckpan_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/space_line"
+        android:background="@android:color/transparent">
+
+        <blcs.lwb.lwbtool.View.RotatePan
+            android:id="@+id/rotatePan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            luckpan:icons="@array/icons"
+            luckpan:names="@array/names"
+            luckpan:pannum="4"
+            />
+
+
+        <ImageView
+            android:id="@+id/go"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/node"
+            android:tag="startbtn" />
+    </blcs.lwb.lwbtool.View.LuckPanLayout>
+</LinearLayout>

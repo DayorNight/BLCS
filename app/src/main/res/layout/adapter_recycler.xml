@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    style="@style/Lin_horizontal">
+
+    <TextView
+        android:id="@+id/tv_adapter_item"
+        android:textSize="@dimen/standard_title"
+        android:padding="@dimen/space_line2"
+        style="@style/TextView_wrap" />
+    <Button
+        android:id="@+id/btn_adapter_item"
+        android:layout_gravity="center"
+        style="@style/Button_ww" />
+
+</LinearLayout>
