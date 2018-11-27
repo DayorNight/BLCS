@@ -9,7 +9,6 @@ import blcs.lwb.utils.R;
 public class JavaDesignPatternFragment extends BaseFragment {
     @Override
     public void setMiddleTitle(Toolbar title) {
-
     }
 
     @Override

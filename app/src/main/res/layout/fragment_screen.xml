@@ -31,14 +31,20 @@
             android:text="@string/getSnapShotWithStatusBar"/>
         <ImageView
             android:id="@+id/img_getSnapShotWithStatusBar"
-            style="@style/wrap_wrap" />
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone"
+            android:layout_margin="@dimen/bottom_space"
+            style="@style/wrap_wrap"
+            />
         <Button
             android:id="@+id/btn_getSnapShotWithoutStatusBar"
             style="@style/Button_wrap"
             android:text="@string/getSnapShotWithoutStatusBar"/>
         <ImageView
             android:id="@+id/img_getSnapShotWithoutStatusBar"
-            android:background="@color/black"
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone"
+            android:layout_margin="@dimen/bottom_space"
             style="@style/wrap_wrap" />
         <Button
             android:id="@+id/btn_getScreenSize"

@@ -8,6 +8,10 @@ import java.util.ArrayList;
 
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.fragment.AppUtilsFragment;
+import blcs.lwb.utils.fragment.BaseAdapterFragment.AnimationRecyclerFragment;
+import blcs.lwb.utils.fragment.BaseAdapterFragment.Header_FooterFragment;
+import blcs.lwb.utils.fragment.BaseAdapterFragment.MultipleItemRecyclerFragment;
+import blcs.lwb.utils.fragment.BaseAdapterFragment.PullToRefreshFragment;
 import blcs.lwb.utils.fragment.BaseFragment;
 import blcs.lwb.utils.fragment.BitmapUtilsFragment;
 import blcs.lwb.utils.fragment.BottomNavigationFragment;
@@ -49,6 +53,18 @@ public class FramentManages
 	public final static String RecyclerView="RecyclerView";
 	public final static String TurnTableView="转盘小游戏";
 	public final static String JavaDesignPattern="Java常用设计模式";
+	public final static String AnimationRecycler="AnimationRecycler";
+	public final static String MultipleItemRecycler="MultipleItemRecycler";
+	public final static String Header_FooterRecycler="Header/FooterRecycler";
+	public final static String PullToRefreshRecycler="PullToRefreshRecycler";
+	public final static String SectionRecycler="SectionRecycler";
+	public final static String EmptyViewRecycler="EmptyViewRecycler";
+	public final static String DragAndSwipeRecycler="DragAndSwipeRecycler";
+	public final static String ItemClickRecycler="ItemClickRecycler";
+	public final static String ExpandableItemRecycler="ExpandableItemRecycler";
+	public final static String DataBindingRecycler="DataBindingRecycler";
+	public final static String UpFetchDataRecycler="UpFetchDataRecycler";
+	public final static String SectionMultipleItemRecycler="SectionMultipleItemRecycler";
 
 	/**
 	 * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -93,6 +109,14 @@ public class FramentManages
 				return new TurnTableViewFragment();
 			case FramentManages.JavaDesignPattern:
 				return new JavaDesignPatternFragment();
+			case FramentManages.AnimationRecycler:
+				return new AnimationRecyclerFragment();
+			case FramentManages.MultipleItemRecycler:
+				return new MultipleItemRecyclerFragment();
+			case FramentManages.Header_FooterRecycler:
+				return new Header_FooterFragment();
+			case FramentManages.PullToRefreshRecycler:
+				return new PullToRefreshFragment();
 //			case FramentManages.UtilsDetail://工具详情界面
 //				return new HomeTab1DetailFragment();
 		}

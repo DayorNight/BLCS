@@ -73,4 +73,13 @@
         <item>img_play</item>
         <item>img_book</item>
     </string-array>
+    <!--Recycler动画-->
+    <string-array name="Recycler_Animation">
+        <item>Alphaln</item>
+        <item>Scaleln</item>
+        <item>SlidelnBottom</item>
+        <item>SlidelnLeft</item>
+        <item>SlidenlnRight</item>
+        <item>Custom</item>
+    </string-array>
 </resources>

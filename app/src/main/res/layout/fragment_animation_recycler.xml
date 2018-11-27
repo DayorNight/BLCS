@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/match_match"
+    android:background="@color/white"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        style="@style/Lin_horizontal"
+        >
+        <Spinner
+            android:id="@+id/spinner"
+            style="@style/wrap_wrap"
+            android:spinnerMode="dropdown"
+            android:background="@color/gray"
+            android:gravity="center"
+            android:entries="@array/Recycler_Animation"
+            />
+        <Switch
+            android:id="@+id/switch1"
+            style="@style/wrap_wrap"
+            android:text="仅显示一次动画" />
+    </LinearLayout>
+
+
+    <include layout="@layout/tool_recyclerview"/>
+
+</LinearLayout>

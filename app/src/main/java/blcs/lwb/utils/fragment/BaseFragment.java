@@ -6,10 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import blcs.lwb.lwbtool.StringUtils;
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.lwbtool.base.BaseView;
 import blcs.lwb.utils.Constants;
+import blcs.lwb.utils.R;
 import blcs.lwb.utils.manager.FramentManages;
 import blcs.lwb.utils.Interfaces.IPopBackStackListener;
 import blcs.lwb.utils.PublicFragmentActivity;
@@ -134,7 +134,6 @@ public abstract class BaseFragment extends Fragment implements IPopBackStackList
 
     /**
      * 添加一个片段
-     *
      * @param viewId 添加的控件位置
      * @param alias  别名
      * @param bundle 数据
@@ -143,4 +142,8 @@ public abstract class BaseFragment extends Fragment implements IPopBackStackList
         fragmentManager.addFrament(viewId, activity, alias, bundle, isAnim);
     }
 
+
+    public void addFrament(String alias, Bundle bundle) {
+        fragmentManager.addFrament(R.id.fr_contain, activity, alias, bundle, true);
+    }
 }

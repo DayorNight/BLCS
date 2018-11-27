@@ -22,8 +22,8 @@ public class LogUtils {
 
     private static String createLog(String log ) {
         StringBuffer buffer = new StringBuffer();
-        buffer.append("================"+methodName);
-        buffer.append("(").append(className).append(":").append(lineNumber).append(")================:");
+        buffer.append("==").append(methodName);
+        buffer.append("(").append(className).append(":").append(lineNumber).append(")==:");
         buffer.append(log);
         return buffer.toString();
     }

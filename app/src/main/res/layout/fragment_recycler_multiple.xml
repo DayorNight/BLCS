@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/match_match"
+    android:background="@color/white"
+    android:orientation="vertical">
+    <RadioGroup
+        android:id="@+id/rg_multiple"
+        style="@style/match_wrap"
+        android:background="@color/gray"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/rb_multiple1"
+            style="@style/wrap_wrap"
+            android:text="BaseMultiItemQuick"/>
+        <RadioButton
+            android:id="@+id/rb_multiple2"
+            style="@style/wrap_wrap"
+            android:text="MultipleItemRv"/>
+    </RadioGroup>
+    <include layout="@layout/tool_recyclerview"/>
+</LinearLayout>

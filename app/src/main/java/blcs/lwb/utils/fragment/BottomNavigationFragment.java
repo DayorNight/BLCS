@@ -89,13 +89,14 @@ public class BottomNavigationFragment extends BaseFragment {
                 }
             }
         });
+
         cbWRemoveA1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
-                    BottomNavigationUtils.openAnimation(bottomNavigationView,false);
+                    BottomNavigationUtils.openAnimation(bnvMenu,false);
                 } else {
-                    BottomNavigationUtils.openAnimation(bottomNavigationView,true);
+                    BottomNavigationUtils.openAnimation(bnvMenu,true);
                 }
             }
         });

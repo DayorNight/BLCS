@@ -85,9 +85,11 @@ public class ScreenUtilsFragment extends BaseFragment {
                 break;
             case R.id.btn_getSnapShotWithStatusBar:
                 imgGetSnapShotWithStatusBar.setImageBitmap(ScreenUtils.getSnapShotWithStatusBar(activity));
+                imgGetSnapShotWithStatusBar.setVisibility(View.VISIBLE);
                 break;
             case R.id.btn_getSnapShotWithoutStatusBar:
                 imgGetSnapShotWithoutStatusBar.setImageBitmap(ScreenUtils.getSnapShotWithoutStatusBar(activity));
+                imgGetSnapShotWithoutStatusBar.setVisibility(View.VISIBLE);
                 break;
             case R.id.btn_getScreenSize:
                 btnGetScreenSize.setText(getString(R.string.getScreenSize)+ ScreenUtils.getScreenSize(activity));

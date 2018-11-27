@@ -40,7 +40,8 @@ android {
     buildTypes {
         release {
             debuggable false
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true   //排除没有引用到的资源  APK瘦身
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
         }
@@ -89,4 +90,6 @@ dependencies {
     implementation 'com.umeng.sdk:analytics:latest.integration'
     //==============AgentWeb================https://github.com/Justson/AgentWeb
     implementation 'com.just.agentweb:agentweb:4.0.2'
+    //==============BaseRecyclerViewAdapterHelper====https://github.com/CymChad/BaseRecyclerViewAdapterHelper
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.42'
 }
