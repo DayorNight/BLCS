@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/match_match"
+    android:background="@color/white"
+    android:orientation="vertical"
+    >
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btn_reset"
+        style="@style/wrap_wrap"
+        app:backgroundTint="@color/blue"
+        android:src="@mipmap/reset_icon"
+        android:layout_margin="20dp"
+        android:layout_gravity="end|bottom"
+        />
+
+    <include layout="@layout/tool_recyclerview"/>
+
+</FrameLayout>

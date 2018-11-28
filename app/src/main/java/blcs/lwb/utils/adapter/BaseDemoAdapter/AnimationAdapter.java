@@ -18,5 +18,7 @@ public class AnimationAdapter extends BaseQuickAdapter<String,BaseViewHolder> {
     @Override
     protected void convert(BaseViewHolder helper, String item) {
         helper.setText(R.id.tweetName,item);
+        helper.addOnClickListener(R.id.adapter_item_img);
+        helper.addOnLongClickListener(R.id.adapter_item_img);
     }
 }

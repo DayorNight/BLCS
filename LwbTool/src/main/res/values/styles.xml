@@ -24,4 +24,10 @@
         <attr name="names" format="reference"/>
         <attr name="icons"  format="reference"/>
     </declare-styleable>
+
+    <style name="empty_img">
+        <item name="android:layout_width">@dimen/page_drag_min_width</item>
+        <item name="android:layout_height">@dimen/page_drag_min_width</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
 </resources>

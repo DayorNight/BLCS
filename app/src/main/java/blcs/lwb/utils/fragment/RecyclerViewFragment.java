@@ -27,10 +27,9 @@ public class RecyclerViewFragment extends BaseFragment {
     RecyclerView recyclerView;
 
     private ArrayList<HomeItem> mDataList;
-    private static final Class<?>[] ACTIVITY = {SplashActivity.class, SplashActivity.class, SplashActivity.class, SplashActivity.class, SplashActivity.class, SplashActivity.class, SplashActivity.class, SplashActivity.class, SplashActivity.class, SplashActivity.class,SplashActivity.class,SplashActivity.class};
-    private static final String[] TITLE = {"Animation", "MultipleItem", "Header/Footer", "PullToRefresh", "Section", "EmptyView", "DragAndSwipe", "ItemClick", "ExpandableItem", "DataBinding", "UpFetchData", "SectionMultipleItem"};
-    private static final String[] Fragment = {"AnimationRecycler", "MultipleItemRecycler", "Header/FooterRecycler", "PullToRefreshRecycler", "SectionRecycler", "EmptyViewRecycler", "DragAndSwipeRecycler", "ItemClickRecycler", "ExpandableItemRecycler", "DataBindingRecycler", "UpFetchDataRecycler", "SectionMultipleItemRecycler"};
-    private static final int[] IMG = {R.mipmap.gv_animation, R.mipmap.gv_multipleltem, R.mipmap.gv_header_and_footer, R.mipmap.gv_pulltorefresh, R.mipmap.gv_section, R.mipmap.gv_empty, R.mipmap.gv_drag_and_swipe, R.mipmap.gv_item_click, R.mipmap.gv_expandable, R.mipmap.gv_databinding,R.drawable.gv_up_fetch, R.mipmap.gv_multipleltem};
+    private static final String[] TITLE = {"Animation", "MultipleItem", "Header/Footer", "PullToRefresh", "Section", "EmptyView", "DragAndSwipe", "ItemClick", "ExpandableItem", "UpFetchData"};
+    private static final String[] Fragment = {"AnimationRecycler", "MultipleItemRecycler", "Header/FooterRecycler", "PullToRefreshRecycler", "SectionRecycler", "EmptyViewRecycler", "DragAndSwipeRecycler", "ItemClickRecycler", "ExpandableItemRecycler", "UpFetchDataRecycler", };
+    private static final int[] IMG = {R.mipmap.gv_animation, R.mipmap.gv_multipleltem, R.mipmap.gv_header_and_footer, R.mipmap.gv_pulltorefresh, R.mipmap.gv_section, R.mipmap.gv_empty, R.mipmap.gv_drag_and_swipe, R.mipmap.gv_item_click, R.mipmap.gv_expandable, R.drawable.gv_up_fetch};
 
     @Override
     public void setMiddleTitle(Toolbar title) {
@@ -60,7 +59,6 @@ public class RecyclerViewFragment extends BaseFragment {
         for (int i = 0; i < TITLE.length; i++) {
             HomeItem item = new HomeItem();
             item.setTitle(TITLE[i]);
-            item.setActivity(ACTIVITY[i]);
             item.setImageResource(IMG[i]);
             mDataList.add(item);
         }

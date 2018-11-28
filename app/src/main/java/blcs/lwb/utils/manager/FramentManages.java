@@ -9,9 +9,15 @@ import java.util.ArrayList;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.fragment.AppUtilsFragment;
 import blcs.lwb.utils.fragment.BaseAdapterFragment.AnimationRecyclerFragment;
+import blcs.lwb.utils.fragment.BaseAdapterFragment.DragAndSwipeFragment;
+import blcs.lwb.utils.fragment.BaseAdapterFragment.EmptyViewFragment;
+import blcs.lwb.utils.fragment.BaseAdapterFragment.ExpandableItemFragment;
 import blcs.lwb.utils.fragment.BaseAdapterFragment.Header_FooterFragment;
+import blcs.lwb.utils.fragment.BaseAdapterFragment.ItemClickRecyclerFragment;
 import blcs.lwb.utils.fragment.BaseAdapterFragment.MultipleItemRecyclerFragment;
 import blcs.lwb.utils.fragment.BaseAdapterFragment.PullToRefreshFragment;
+import blcs.lwb.utils.fragment.BaseAdapterFragment.SectionFragment;
+import blcs.lwb.utils.fragment.BaseAdapterFragment.UpFetchDataFragment;
 import blcs.lwb.utils.fragment.BaseFragment;
 import blcs.lwb.utils.fragment.BitmapUtilsFragment;
 import blcs.lwb.utils.fragment.BottomNavigationFragment;
@@ -62,9 +68,7 @@ public class FramentManages
 	public final static String DragAndSwipeRecycler="DragAndSwipeRecycler";
 	public final static String ItemClickRecycler="ItemClickRecycler";
 	public final static String ExpandableItemRecycler="ExpandableItemRecycler";
-	public final static String DataBindingRecycler="DataBindingRecycler";
 	public final static String UpFetchDataRecycler="UpFetchDataRecycler";
-	public final static String SectionMultipleItemRecycler="SectionMultipleItemRecycler";
 
 	/**
 	 * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -117,6 +121,18 @@ public class FramentManages
 				return new Header_FooterFragment();
 			case FramentManages.PullToRefreshRecycler:
 				return new PullToRefreshFragment();
+			case FramentManages.SectionRecycler:
+				return new SectionFragment();
+			case FramentManages.EmptyViewRecycler:
+				return new EmptyViewFragment();
+			case FramentManages.DragAndSwipeRecycler:
+				return new DragAndSwipeFragment();
+			case FramentManages.ItemClickRecycler:
+				return new ItemClickRecyclerFragment();
+			case FramentManages.ExpandableItemRecycler:
+				return new ExpandableItemFragment();
+			case FramentManages.UpFetchDataRecycler:
+				return new UpFetchDataFragment();
 //			case FramentManages.UtilsDetail://工具详情界面
 //				return new HomeTab1DetailFragment();
 		}

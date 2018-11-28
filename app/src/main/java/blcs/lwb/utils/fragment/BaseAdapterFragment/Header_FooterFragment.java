@@ -111,7 +111,7 @@ public class Header_FooterFragment extends BaseFragment {
 
     @Override
     protected int bindLayout() {
-        return R.layout.fragment_header_footer;
+        return R.layout.tool_recyclerview;
     }
 
     @Override

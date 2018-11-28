@@ -19,7 +19,7 @@
         android:layout_gravity="center"
         >
         <ImageView
-            android:id="@+id/img"
+            android:id="@+id/adapter_item_img"
             android:layout_width="match_parent"
             android:layout_height="@dimen/Img_big"
             android:scaleType="centerCrop"
@@ -30,7 +30,7 @@
             style="@style/TextView_wrap"
             android:paddingLeft="@dimen/space_line2"
             android:text="xxx"
-            android:layout_below="@+id/img"
+            android:layout_below="@+id/adapter_item_img"
             />
 
         <TextView

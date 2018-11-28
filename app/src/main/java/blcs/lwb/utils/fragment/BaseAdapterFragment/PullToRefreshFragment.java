@@ -49,13 +49,14 @@ public class PullToRefreshFragment extends BaseFragment {
         addHeadView();
 //        mRefresh.setRefreshing(true);
         //添加点击事件
+        mAdapter.setEnableLoadMore(false);
+//        mRefresh.setRefreshing(true);
         mRecyclerView.addOnItemTouchListener(new OnItemClickListener() {
             @Override
             public void onSimpleItemClick(final BaseQuickAdapter adapter, final View view, final int position) {
                 Toast.makeText(activity, Integer.toString(position), Toast.LENGTH_LONG).show();
             }
         });
-
         mAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
             @Override
             public void onLoadMoreRequested() {
@@ -63,7 +64,6 @@ public class PullToRefreshFragment extends BaseFragment {
                 loadMore();
             }
         });
-
         mRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -103,22 +103,16 @@ public class PullToRefreshFragment extends BaseFragment {
      * 刷新
      */
     private void refresh() {
-        mRefresh.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Toast.makeText(activity,"Refresh Complete",Toast.LENGTH_SHORT).show();
-                mRefresh.setRefreshing(false);
-            }
-        }, 3000);
+        mRefresh.setRefreshing(false);
+        mAdapter.setEnableLoadMore(true);
+
     }
 
     /**
      * 加载更多
      */
     private void loadMore() {
-//        mAdapter.setNewData(MyUtils.getArray(activity,R.array.Other));
-//        mAdapter.addData(MyUtils.getArray(activity,R.array.Other));
-//        mAdapter.loadMoreComplete();
+
     }
 
     @Override
