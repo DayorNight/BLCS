@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="120dp"
+    android:layout_height="wrap_content"
     android:layout_marginBottom="1dp"
-    android:background="@mipmap/ic4"
+    android:background="@mipmap/animation_img1"
     android:gravity="center"
     android:orientation="vertical">
 

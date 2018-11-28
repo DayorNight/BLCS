@@ -45,7 +45,6 @@ public class Header_FooterFragment extends BaseFragment {
         });
         mAdapter.addFooterView(footerView, 0);
         mRecyclerView.setAdapter(mAdapter);
-
     }
 
     /**
@@ -101,7 +100,6 @@ public class Header_FooterFragment extends BaseFragment {
     @Override
     protected void initView() {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(activity));
-
     }
 
     @Override
