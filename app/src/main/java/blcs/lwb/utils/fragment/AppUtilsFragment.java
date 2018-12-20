@@ -1,28 +1,19 @@
 package blcs.lwb.utils.fragment;
 
-import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
-import android.support.v4.content.FileProvider;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.io.File;
 import java.util.List;
 
-import blcs.lwb.lwbtool.AppUtils;
-import blcs.lwb.lwbtool.LogUtils;
-import blcs.lwb.lwbtool.StringUtils;
+import blcs.lwb.lwbtool.utils.AppUtils;
+import blcs.lwb.lwbtool.utils.StringUtils;
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.utils.Constants;
 import blcs.lwb.utils.R;

@@ -15,7 +15,6 @@ import android.graphics.RectF;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.ScrollerCompat;
-import android.system.ErrnoException;
 import android.util.AttributeSet;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -24,11 +23,9 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import blcs.lwb.lwbtool.R;
-import blcs.lwb.lwbtool.RxToast;
 
 /**
  * 描述：

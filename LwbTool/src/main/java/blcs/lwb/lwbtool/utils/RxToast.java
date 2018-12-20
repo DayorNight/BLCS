@@ -1,4 +1,4 @@
-package blcs.lwb.lwbtool;
+package blcs.lwb.lwbtool.utils;
 
 import android.app.Activity;
 import android.content.Context;
@@ -17,6 +17,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import blcs.lwb.lwbtool.R;
 
 import static android.support.v4.view.ViewCompat.setBackground;
 

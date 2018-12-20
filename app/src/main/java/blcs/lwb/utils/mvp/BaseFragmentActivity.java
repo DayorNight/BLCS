@@ -8,7 +8,7 @@ import android.view.View;
 
 import com.umeng.analytics.MobclickAgent;
 
-import blcs.lwb.lwbtool.EditTextUtils;
+import blcs.lwb.lwbtool.utils.EditTextUtils;
 import blcs.lwb.lwbtool.R;
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.utils.manager.FramentManages;

@@ -92,4 +92,7 @@ dependencies {
     implementation 'com.just.agentweb:agentweb:4.0.2'
     //==============BaseRecyclerViewAdapterHelper====https://github.com/CymChad/BaseRecyclerViewAdapterHelper
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.42'
+    ////==============跑马灯================https://github.com/sunfusheng/MarqueeView
+    implementation 'com.sunfusheng:marqueeview:1.3.3'
+
 }

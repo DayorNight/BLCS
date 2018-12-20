@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tv_marquee"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:singleLine="true"
+    android:ellipsize="marquee"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:text="@string/marquee"
+    />

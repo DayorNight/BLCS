@@ -1,6 +1,8 @@
-package blcs.lwb.lwbtool;
+package blcs.lwb.lwbtool.utils;
 
 import android.util.Log;
+
+import blcs.lwb.lwbtool.BuildConfig;
 
 /**
  * Created by lwb on 2017/12/25.

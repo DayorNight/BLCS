@@ -8,13 +8,13 @@
     </string-array>
     <!--工具栏-->
     <string-array name="Utils">
-        <item>LogUtils</item>
-        <item>StringUtils</item>
+        <item>AppUtils</item>
+        <item>BitmapUtils</item>
         <item>EditTextUtils</item>
         <item>IntentUtils</item>
-        <item>AppUtils</item>
+        <item>LogUtils</item>
+        <item>StringUtils</item>
         <item>ScreenUtils</item>
-        <item>BitmapUtils</item>
 
     </string-array>
     <!--View-->
@@ -24,6 +24,7 @@
         <item>toolbar</item>
         <item>RxToast</item>
         <item>转盘小游戏</item>
+        <item>跑马灯</item>
     </string-array>
     <!--other-->
     <string-array name="Other">

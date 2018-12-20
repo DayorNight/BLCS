@@ -6,12 +6,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import blcs.lwb.lwbtool.IntentUtils;
 import blcs.lwb.lwbtool.base.BaseActivity;
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.utils.fragment.IntentUtilsFragment;
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 

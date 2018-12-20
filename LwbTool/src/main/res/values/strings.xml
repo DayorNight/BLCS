@@ -2,6 +2,7 @@
     <string name="app_name">LwbTool</string>
     <string name="FileNoExist">找不到该文件</string>
     <string name="installApkError">解析软件包时出现问题</string>
+    <string name="marquee">单个跑马灯介绍：宽度大于字符串长度，注意触摸事件，ellipsize="marquee"，限制很多。有需要需重新自定义</string>
     <string name="empty_network_error">Network error, Click Retry</string>
     <string name="empty_no_data">There is no data, Click Retry</string>
 </resources>

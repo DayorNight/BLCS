@@ -1,4 +1,4 @@
-package blcs.lwb.lwbtool;
+package blcs.lwb.lwbtool.utils;
 
 import android.app.Activity;
 import android.content.Context;

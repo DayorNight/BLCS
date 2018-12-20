@@ -17,8 +17,8 @@ import com.chad.library.adapter.base.listener.OnItemSwipeListener;
 
 import java.util.ArrayList;
 
-import blcs.lwb.lwbtool.LogUtils;
-import blcs.lwb.lwbtool.RxToast;
+import blcs.lwb.lwbtool.utils.LogUtils;
+import blcs.lwb.lwbtool.utils.RxToast;
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.adapter.BaseDemoAdapter.ItemDragAdapter;

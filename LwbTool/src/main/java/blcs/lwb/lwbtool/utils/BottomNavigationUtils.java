@@ -1,4 +1,4 @@
-package blcs.lwb.lwbtool;
+package blcs.lwb.lwbtool.utils;
 
 import android.annotation.SuppressLint;
 import android.support.design.internal.BottomNavigationItemView;

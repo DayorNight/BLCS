@@ -24,6 +24,7 @@ import blcs.lwb.utils.fragment.BottomNavigationFragment;
 import blcs.lwb.utils.fragment.EditTextUtilsFragment;
 import blcs.lwb.utils.fragment.IntentUtilsFragment;
 import blcs.lwb.utils.fragment.JavaDesignPatternFragment;
+import blcs.lwb.utils.fragment.MarqueeViewFragment;
 import blcs.lwb.utils.fragment.MyFragment;
 import blcs.lwb.utils.fragment.RecyclerViewFragment;
 import blcs.lwb.utils.fragment.ScreenUtilsFragment;
@@ -69,6 +70,7 @@ public class FramentManages
 	public final static String ItemClickRecycler="ItemClickRecycler";
 	public final static String ExpandableItemRecycler="ExpandableItemRecycler";
 	public final static String UpFetchDataRecycler="UpFetchDataRecycler";
+	public final static String MarqueeView="跑马灯";
 
 	/**
 	 * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -133,6 +135,8 @@ public class FramentManages
 				return new ExpandableItemFragment();
 			case FramentManages.UpFetchDataRecycler:
 				return new UpFetchDataFragment();
+			case FramentManages.MarqueeView:
+				return new MarqueeViewFragment();
 //			case FramentManages.UtilsDetail://工具详情界面
 //				return new HomeTab1DetailFragment();
 		}
@@ -149,7 +153,6 @@ public class FramentManages
 	 */
 	public void replaceFrament(int viewId, BaseFragmentActivity activity, String alias)
 	{
-
 		BaseFragment base = getFrament(activity, alias);
 		if (base == null)
 		{
@@ -162,7 +165,6 @@ public class FramentManages
 				.add(viewId, base,alias).addToBackStack(null)
 				// 提交
 				.commit();
-
 	}
 
 	/**
@@ -207,7 +209,6 @@ public class FramentManages
 				// 提交
 				.commitAllowingStateLoss();
 	}
-
 	public void popBackStack()
 	{
 		if (list_Frament.size() > 1)

@@ -1,27 +1,22 @@
 package blcs.lwb.utils.fragment;
 
 import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import blcs.lwb.lwbtool.BitmapUtils;
-import blcs.lwb.lwbtool.StringUtils;
+import blcs.lwb.lwbtool.utils.BitmapUtils;
+import blcs.lwb.lwbtool.utils.StringUtils;
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.utils.Constants;
 import blcs.lwb.utils.R;
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
-import butterknife.Unbinder;
 
 public class BitmapUtilsFragment extends BaseFragment {
     @BindView(R.id.btn_b2d)

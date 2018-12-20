@@ -12,16 +12,17 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.*/
 
-package blcs.lwb.lwbtool;
+package blcs.lwb.lwbtool.utils;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.ColorStateList;
-import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import blcs.lwb.lwbtool.R;
 
 /**
  * TODO 通用密码、手机号、验证码输入框输入字符判断及错误提示 类

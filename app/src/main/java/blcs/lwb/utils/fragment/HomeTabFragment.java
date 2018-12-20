@@ -11,9 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.just.agentweb.LogUtils;
-
-import blcs.lwb.lwbtool.RxToast;
+import blcs.lwb.lwbtool.utils.IntentUtils;
+import blcs.lwb.lwbtool.utils.RxToast;
 import blcs.lwb.lwbtool.base.BaseAdapter;
 import blcs.lwb.utils.Constants;
 import blcs.lwb.utils.manager.FramentManages;
@@ -67,10 +66,10 @@ public class HomeTabFragment extends Fragment implements IHomeTabView{
 
     @Override
     public void Recycler_init() {
-        LinearLayoutManager manager = new LinearLayoutManager(getActivity());
+        LinearLayoutManager manager = new LinearLayoutManager(activity);
         recycler.setLayoutManager(manager);
         manager.setOrientation(OrientationHelper.VERTICAL);
-        recycler.addItemDecoration(new DividerItemDecoration(getActivity(), OrientationHelper.VERTICAL));
+        recycler.addItemDecoration(new DividerItemDecoration(activity, OrientationHelper.VERTICAL));
         int position = getArguments().getInt(Constants.Adapter_Pos);
         int view;
         switch (position){
@@ -86,7 +85,7 @@ public class HomeTabFragment extends Fragment implements IHomeTabView{
             default:
                 view = R.array.Utils;break;
         }
-        adapter = new HomeTabAdapter(activity, MyUtils.getArray(getActivity(), view));
+        adapter = new HomeTabAdapter(activity, MyUtils.getArray(activity, view));
         recycler.setAdapter(adapter);
     }
 
@@ -153,6 +152,9 @@ public class HomeTabFragment extends Fragment implements IHomeTabView{
                     case FramentManages.JavaDesignPattern:
                         toFragment(bundle,FramentManages.JavaDesignPattern);
                         break;
+                    case FramentManages.MarqueeView:
+                        toFragment(bundle,FramentManages.MarqueeView);
+                        break;
                         default:
                             RxToast.warning(activity,getString(R.string.function_unopen));
                             break;
@@ -163,10 +165,10 @@ public class HomeTabFragment extends Fragment implements IHomeTabView{
 
 
     public void toDemo(Bundle bundle){
-        activity.startActivity(PublicFragmentActivity.createIntent(activity, FramentManages.Demo, bundle));
+        IntentUtils.toActivity(activity,PublicFragmentActivity.createIntent(activity, FramentManages.Demo, bundle));
     }
 
     public void toFragment(Bundle bundle,String tag){
-        activity.startActivity(PublicFragmentActivity.createIntent(activity,tag, bundle));
+        IntentUtils.toActivity(activity,PublicFragmentActivity.createIntent(activity,tag, bundle));
     }
 }

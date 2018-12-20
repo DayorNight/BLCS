@@ -3,23 +3,18 @@ package blcs.lwb.utils.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import blcs.lwb.lwbtool.IntentUtils;
-import blcs.lwb.lwbtool.LogUtils;
+import blcs.lwb.lwbtool.utils.IntentUtils;
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.SplashActivity;
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
-import butterknife.Unbinder;
 
 public class IntentUtilsFragment extends BaseFragment {
     @BindView(R.id.cb_open_Animation)

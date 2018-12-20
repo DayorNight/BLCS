@@ -2,23 +2,17 @@ package blcs.lwb.utils.fragment;
 
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.KeyEvent;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.just.agentweb.AgentWeb;
 
-import blcs.lwb.lwbtool.LogUtils;
+import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.utils.Constants;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.mvp.presenter.MyFragmentPresenter;
 import blcs.lwb.utils.mvp.view.IMyFragment;
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
 /**
  * Created by WESTAKE on 2017/5/19.

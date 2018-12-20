@@ -8,7 +8,6 @@ import android.view.MenuItem;
 import com.umeng.analytics.MobclickAgent;
 import java.util.List;
 
-import blcs.lwb.lwbtool.BottomNavigationUtils;
 import blcs.lwb.lwbtool.base.BaseAppCompatActivity;
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.utils.adapter.ViewPagerHomeAdapter;

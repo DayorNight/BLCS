@@ -1,9 +1,11 @@
-package blcs.lwb.lwbtool;
+package blcs.lwb.lwbtool.utils;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+
+import blcs.lwb.lwbtool.R;
 
 public class IntentUtils {
     /**

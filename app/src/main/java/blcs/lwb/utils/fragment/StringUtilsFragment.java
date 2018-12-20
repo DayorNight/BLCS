@@ -5,12 +5,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import blcs.lwb.lwbtool.LogUtils;
-import blcs.lwb.lwbtool.StringUtils;
+import blcs.lwb.lwbtool.utils.StringUtils;
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.mvp.presenter.StringPresenter;

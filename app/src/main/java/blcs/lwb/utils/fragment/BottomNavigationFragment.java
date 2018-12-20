@@ -13,9 +13,9 @@ import android.widget.CompoundButton;
 
 import java.util.List;
 
-import blcs.lwb.lwbtool.BottomNavigationUtils;
-import blcs.lwb.lwbtool.LogUtils;
-import blcs.lwb.lwbtool.RxToast;
+import blcs.lwb.lwbtool.utils.BottomNavigationUtils;
+import blcs.lwb.lwbtool.utils.LogUtils;
+import blcs.lwb.lwbtool.utils.RxToast;
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.utils.Constants;
 import blcs.lwb.utils.R;

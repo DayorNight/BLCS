@@ -2,8 +2,6 @@ package blcs.lwb.utils.fragment.BaseAdapterFragment;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -16,12 +14,8 @@ import android.widget.Toast;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import blcs.lwb.lwbtool.LogUtils;
+import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.lwbtool.base.BasePresenter;
-import blcs.lwb.utils.Bean.Status;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.adapter.BaseDemoAdapter.PullToRefreshAdapter;
 import blcs.lwb.utils.fragment.BaseFragment;

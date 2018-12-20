@@ -2,20 +2,15 @@ package blcs.lwb.utils.fragment;
 
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.DisplayMetrics;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import blcs.lwb.lwbtool.ScreenUtils;
+import blcs.lwb.lwbtool.utils.ScreenUtils;
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.utils.R;
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
-import butterknife.Unbinder;
 
 public class ScreenUtilsFragment extends BaseFragment {
     @BindView(R.id.btn_getScreenWidth)

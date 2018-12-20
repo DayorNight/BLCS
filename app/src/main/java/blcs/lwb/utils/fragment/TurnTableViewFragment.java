@@ -5,16 +5,13 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.RadioGroup;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import blcs.lwb.lwbtool.LogUtils;
-import blcs.lwb.lwbtool.RxToast;
+import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.lwbtool.View.LuckPanLayout;
 import blcs.lwb.lwbtool.View.RotatePan;
 import blcs.lwb.lwbtool.base.BasePresenter;

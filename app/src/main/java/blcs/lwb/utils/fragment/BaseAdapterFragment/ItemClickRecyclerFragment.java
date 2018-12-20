@@ -6,7 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import blcs.lwb.lwbtool.RxToast;
+import blcs.lwb.lwbtool.utils.RxToast;
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.adapter.BaseDemoAdapter.AnimationAdapter;

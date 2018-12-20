@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/space_line2"
+    style="@style/Lin_vertical">
+    <!--mvAnimDuration	一行文字动画执行时间-->
+    <!--mvInterval	两行文字翻页时间间隔-->
+    <!--mvTextSize	文字大小-->
+    <!--mvTextColor	文字颜色-->
+    <!--mvGravity	文字位置:left、center、right-->
+    <!--mvSingleLine	单行设置-->
+    <!--mvDirection	动画滚动方向:bottom_to_top、top_to_bottom、right_to_left、left_to_right-->
+    <com.sunfusheng.marqueeview.MarqueeView
+        android:id="@+id/marqueeView"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        app:mvAnimDuration="1000"
+        app:mvDirection="bottom_to_top"
+        app:mvInterval="3000"
+        app:mvTextColor="@color/black"
+        app:mvTextSize="14sp"
+        app:mvSingleLine="true"/>
+    <com.sunfusheng.marqueeview.MarqueeView
+        android:id="@+id/marqueeView1"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        app:mvAnimDuration="1000"
+        app:mvDirection="bottom_to_top"
+        app:mvInterval="3000"
+        app:mvTextColor="@color/black"
+        app:mvTextSize="14sp"
+        app:mvSingleLine="true"/>
+    <com.sunfusheng.marqueeview.MarqueeView
+        android:id="@+id/marqueeView2"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        app:mvAnimDuration="1000"
+        app:mvDirection="bottom_to_top"
+        app:mvInterval="3000"
+        app:mvTextColor="@color/black"
+        app:mvTextSize="14sp"
+        app:mvSingleLine="true"/>
+</LinearLayout>
