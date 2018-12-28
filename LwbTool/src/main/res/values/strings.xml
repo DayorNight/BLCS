@@ -5,4 +5,10 @@
     <string name="marquee">单个跑马灯介绍：宽度大于字符串长度，注意触摸事件，ellipsize="marquee"，限制很多。有需要需重新自定义</string>
     <string name="empty_network_error">Network error, Click Retry</string>
     <string name="empty_no_data">There is no data, Click Retry</string>
+    <string name="error_title">Something went wrong!</string>
+    <string name="error_occurred">An error occurred. We\'re deeply sorry.</string>
+    <string name="error_details">Error details:</string>
+    <string name="unknown_exception">Unknown exception</string>
+    <string name="restart_app">Restart app</string>
+    <string name="close_app">Close app</string>
 </resources>

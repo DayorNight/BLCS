@@ -22,7 +22,7 @@ import java.util.TreeSet;
 import blcs.lwb.lwbtool.manager.AppManager;
 
 /**
- * 全局异常捕获
+ * 全局异常捕获类
  * Created by lwb on 2018/1/3.
  */
 public class CrashHandler implements Thread.UncaughtExceptionHandler {

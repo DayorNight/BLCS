@@ -155,6 +155,9 @@ public class HomeTabFragment extends Fragment implements IHomeTabView{
                     case FramentManages.MarqueeView:
                         toFragment(bundle,FramentManages.MarqueeView);
                         break;
+                    case FramentManages.CustomActivityOnCrash:
+                        toFragment(bundle,FramentManages.CustomActivityOnCrash);
+                        break;
                         default:
                             RxToast.warning(activity,getString(R.string.function_unopen));
                             break;

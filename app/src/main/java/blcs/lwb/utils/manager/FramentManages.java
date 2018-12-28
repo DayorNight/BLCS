@@ -26,6 +26,7 @@ import blcs.lwb.utils.fragment.IntentUtilsFragment;
 import blcs.lwb.utils.fragment.JavaDesignPatternFragment;
 import blcs.lwb.utils.fragment.MarqueeViewFragment;
 import blcs.lwb.utils.fragment.MyFragment;
+import blcs.lwb.utils.fragment.OnCrashFragment;
 import blcs.lwb.utils.fragment.RecyclerViewFragment;
 import blcs.lwb.utils.fragment.ScreenUtilsFragment;
 import blcs.lwb.utils.fragment.StringUtilsFragment;
@@ -71,6 +72,7 @@ public class FramentManages
 	public final static String ExpandableItemRecycler="ExpandableItemRecycler";
 	public final static String UpFetchDataRecycler="UpFetchDataRecycler";
 	public final static String MarqueeView="跑马灯";
+	public final static String CustomActivityOnCrash="全局异常捕获";
 
 	/**
 	 * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -137,6 +139,8 @@ public class FramentManages
 				return new UpFetchDataFragment();
 			case FramentManages.MarqueeView:
 				return new MarqueeViewFragment();
+			case FramentManages.CustomActivityOnCrash:
+				return new OnCrashFragment();
 //			case FramentManages.UtilsDetail://工具详情界面
 //				return new HomeTab1DetailFragment();
 		}

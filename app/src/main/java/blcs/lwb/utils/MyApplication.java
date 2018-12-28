@@ -1,11 +1,12 @@
 package blcs.lwb.utils;
 
-import android.app.Application;
 
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
 
-public class MyApplication extends Application {
+import blcs.lwb.lwbtool.base.BaseApplication;
+
+public class MyApplication extends BaseApplication {
     @Override
     public void onCreate() {
         super.onCreate();
@@ -27,4 +28,7 @@ public class MyApplication extends Application {
 //      设置日志加密
         UMConfigure.setEncryptEnabled(true);
     }
+
+
+
 }
