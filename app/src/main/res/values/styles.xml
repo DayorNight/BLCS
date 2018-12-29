@@ -7,7 +7,7 @@
         <!--导航栏底色-->
         <item name="colorPrimary">@color/colorPrimary</item>
         <!--导航栏上的标题颜色-->
-        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorPrimary">@color/black</item>
         <!--Activity窗口的颜色-->
         <!--<item name="android:windowBackground">@color/white</item>-->
         <!--按钮选中或者点击获得焦点后的颜色-->

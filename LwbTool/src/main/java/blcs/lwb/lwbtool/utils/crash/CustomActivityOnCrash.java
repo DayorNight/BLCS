@@ -609,7 +609,7 @@ public final class CustomActivityOnCrash {
 
         //Else, get the default error activity
         if (resolvedActivityClass == null) {
-            resolvedActivityClass = CustomErrorActivity.class;
+            resolvedActivityClass = DefaultErrorActivity.class;
         }
 
         return resolvedActivityClass;

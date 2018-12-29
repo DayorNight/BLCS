@@ -1,5 +1,6 @@
 package blcs.lwb.utils.fragment;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -53,6 +54,7 @@ public abstract class BaseFragment extends Fragment implements IPopBackStackList
             if (arguments != null) {
                 String title = (String) arguments.get(Constants.Item_Name);
                 activity.tlToolbar.setTitle(title);
+                activity.tlToolbar.setTitleTextColor(Color.WHITE);
             }
             setMiddleTitle(activity.tlToolbar);//设置标题
             initView();

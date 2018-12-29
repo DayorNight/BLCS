@@ -6,9 +6,11 @@
     <string name="empty_network_error">Network error, Click Retry</string>
     <string name="empty_no_data">There is no data, Click Retry</string>
     <string name="error_title">Something went wrong!</string>
-    <string name="error_occurred">An error occurred. We\'re deeply sorry.</string>
-    <string name="error_details">Error details:</string>
+    <string name="error_occurred">An unexpected error occurred.\nSorry for the inconvenience.</string>
+    <string name="error_details">Error details</string>
+    <string name="error_information">Error information</string>
     <string name="unknown_exception">Unknown exception</string>
     <string name="restart_app">Restart app</string>
-    <string name="close_app">Close app</string>
+    <string name="close_app">关闭</string>
+    <string name="error_details_copy">复制</string>
 </resources>

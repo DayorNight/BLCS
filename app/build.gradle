@@ -83,7 +83,6 @@ dependencies {
     // ========关联工具=======
     implementation project(':LwbTool')
     // ========关联butterknife=======
-//    implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     //==============友盟================
     implementation 'com.umeng.sdk:common:latest.integration'
