@@ -78,7 +78,6 @@ public final class CustomActivityOnCrash {
 
     /**
      * Installs CustomActivityOnCrash on the application using the default error activity.
-     *
      * @param context Context to use for obtaining the ApplicationContext. Must not be null.
      */
     @RestrictTo(RestrictTo.Scope.LIBRARY)

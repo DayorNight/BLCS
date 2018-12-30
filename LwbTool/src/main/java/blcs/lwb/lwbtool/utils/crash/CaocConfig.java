@@ -152,7 +152,6 @@ public class CaocConfig implements Serializable {
         public static Builder create() {
             Builder builder = new Builder();
             CaocConfig currentConfig = CustomActivityOnCrash.getConfig();
-
             CaocConfig config = new CaocConfig();
             config.backgroundMode = currentConfig.backgroundMode;
             config.enabled = currentConfig.enabled;
@@ -165,7 +164,6 @@ public class CaocConfig implements Serializable {
             config.errorActivityClass = currentConfig.errorActivityClass;
             config.restartActivityClass = currentConfig.restartActivityClass;
             config.eventListener = currentConfig.eventListener;
-
             builder.config = config;
 
             return builder;
@@ -173,10 +171,10 @@ public class CaocConfig implements Serializable {
 
         /**
          * Defines if the error activity must be launched when the app is on background.
-         * BackgroundMode.BACKGROUND_MODE_SHOW_CUSTOM: launch the error activity when the app is in background,
-         * BackgroundMode.BACKGROUND_MODE_CRASH: launch the default system error when the app is in background,
-         * BackgroundMode.BACKGROUND_MODE_SILENT: crash silently when the app is in background,
-         * The default is BackgroundMode.BACKGROUND_MODE_SHOW_CUSTOM (the app will be brought to front when a crash occurs).
+         * BackgroundMode.BACKGROUND_MODE_SHOW_CUSTOM: 当应用程序处于后台时崩溃，也会启动错误页面
+         * BackgroundMode.BACKGROUND_MODE_CRASH: 当应用程序处于后台崩溃时显示默认系统错误
+         * BackgroundMode.BACKGROUND_MODE_SILENT: 当应用程序处于后台时崩溃，默默地关闭程序
+         * 默认模式：BackgroundMode.BACKGROUND_MODE_SHOW_CUSTOM
          */
         @NonNull
         public Builder backgroundMode(@BackgroundMode int backgroundMode) {
@@ -185,10 +183,7 @@ public class CaocConfig implements Serializable {
         }
 
         /**
-         * Defines if CustomActivityOnCrash crash interception mechanism is enabled.
-         * Set it to true if you want CustomActivityOnCrash to intercept crashes,
-         * false if you want them to be treated as if the library was not installed.
-         * The default is true.
+         * 这阻止了对崩溃的拦截,false表示阻止。用它来禁用customactivityoncrash框架
          */
         @NonNull
         public Builder enabled(boolean enabled) {
@@ -197,10 +192,7 @@ public class CaocConfig implements Serializable {
         }
 
         /**
-         * Defines if the error activity must shown the error details button.
-         * Set it to true if you want to show the full stack trace and device info,
-         * false if you want it to be hidden.
-         * The default is true.
+         * 这将隐藏错误活动中的“错误详细信息”按钮，从而隐藏堆栈跟踪。
          */
         @NonNull
         public Builder showErrorDetails(boolean showErrorDetails) {

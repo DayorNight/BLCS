@@ -86,6 +86,6 @@
     <string name="changeOrientation">水平垂直切换</string>
     <string name="table_Layout">表格布局</string>
     <string name="WaterFall_View">瀑布流布局</string>
-    <string name="click_crash">点击异常</string>
+    <string name="click_crash">点击异常效果演示</string>
 
 </resources>

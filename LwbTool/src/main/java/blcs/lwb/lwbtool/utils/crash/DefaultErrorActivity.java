@@ -51,19 +51,20 @@ public final class DefaultErrorActivity extends AppCompatActivity implements Vie
         config = CustomActivityOnCrash.getConfigFromIntent(getIntent());
         if (config == null) finish();
 
-        Integer defaultErrorActivityDrawableId = config.getErrorDrawable();
-        ImageView errorImageView = findViewById(R.id.img_error_crash);
-
-        if (defaultErrorActivityDrawableId != null) {
-            errorImageView.setImageDrawable(ResourcesCompat.getDrawable(getResources(), defaultErrorActivityDrawableId, getTheme()));
-        }
+//        Integer defaultErrorActivityDrawableId = config.getErrorDrawable();
+//        ImageView errorImageView = findViewById(R.id.img_error_crash);
+//
+//        if (defaultErrorActivityDrawableId != null) {
+//            errorImageView.setImageDrawable(ResourcesCompat.getDrawable(getResources(), defaultErrorActivityDrawableId, getTheme()));
+//        }
     }
 
+    /**
+     * 复制异常信息
+     */
     private void copyErrorToClipboard() {
         String errorInformation = CustomActivityOnCrash.getAllErrorDetailsFromIntent(DefaultErrorActivity.this, getIntent());
-
         ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
-
         if (clipboard != null) {
             ClipData clip = ClipData.newPlainText(getString(R.string.error_information), errorInformation);
             clipboard.setPrimaryClip(clip);

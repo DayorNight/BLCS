@@ -2,6 +2,7 @@ package blcs.lwb.lwbtool.base;
 
 import android.app.Application;
 
+import blcs.lwb.lwbtool.R;
 import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.lwbtool.utils.crash.CaocConfig;
 import blcs.lwb.lwbtool.utils.crash.CustomActivityOnCrash;
@@ -15,48 +16,29 @@ public abstract class BaseApplication extends Application {
 
     private void initCrash() {
         CaocConfig.Builder.create()
-                //Customizes what to do when the app crashes while it is in background. Possible values:
-                //BackgroundMode.BACKGROUND_MODE_SHOW_CUSTOM: launch the error activity when the app is in background,
-                //BackgroundMode.BACKGROUND_MODE_CRASH: launch the default system error when the app is in background,
-                //BackgroundMode.BACKGROUND_MODE_SILENT: crash silently when the app is in background,
-//                .backgroundMode(CaocConfig.BACKGROUND_MODE_SILENT)
-                //This disables the interception of crashes. Use it to disable CustomActivityOnCrash (for example, depending on your buildType).
-//                .enabled(false)
-                //This hides the "error details" button in the error activity, thus hiding the stack trace
-//                .showErrorDetails(false)
-                //This avoids the app from using the "Restart app" button and displaying a "Close app" button directly.
-                //Even with restart app enabled, the Close app can still be displayed if your app has no launch activity.
-//                .showRestartButton(false)
-                //This makes the library track the activites visited by the user and their lifecycle calls.
-                //Use it if you want that info in the error details screen shown on the error activity.
-//                .trackActivities(true)
-                //This hides the additional log shown when the error activity is launched.
-                //It is shown by default because the Android Studio Logcat view by default only shows
-                //the current process output, and this makes the stack trace more obvious to find.
-//                .logErrorOnRestart(false)
-                //Defines the time that must pass between app crashes to determine that we are not in a crash loop.
-                //If a crash has occurred less that this time ago, the error activity will not be launched
-                //and the system crash screen will be invoked.
-//                .minTimeBetweenCrashesMs(2000)
-                //This shows a different image on the error activity, instead of the default upside-down bug.
-                //You may use a drawable or a mipmap.
-//                .errorDrawable(R.mipmap.ic_launcher)
-                //This sets the restart activity.
-                //If you set this, this will be used. However, you can also set it with an intent-filter:
-                //  <action android:name="cat.ereza.customactivityoncrash.RESTART" />
-                //If none are set, the default launch activity will be used.
-//                .restartActivity(MainActivity.class)
-                //This sets a custom error activity class instead of the default one.
-                //If you set this, this will be used. However, you can also set it with an intent-filter:
-                //  <action android:name="cat.ereza.customactivityoncrash.ERROR" />
-                //If none are set, the default launch activity will be used.
-                //Comment it (and disable the intent filter) to see the customization effects on the default error activity.
-                //Uncomment to use the custom error activity
-//                .errorActivity(CustomErrorActivity.class)
-                //This sets a EventListener to be notified of events regarding the error activity,
-                //so you can, for example, report them to Google Analytics.
-//                .eventListener(new CustomEventListener())
-                .apply();
+//        当应用程序处于后台时崩溃，默默地关闭程序！//default: CaocConfig.BACKGROUND_MODE_SHOW_CUSTOM
+//        .backgroundMode(CaocConfig.BACKGROUND_MODE_SILENT)
+//        这阻止了对崩溃的拦截,false表示阻止。用它来禁用customactivityoncrash框架
+//        .enabled(false)//default: true
+//        设置是否显示“错误详细信息”按钮
+//        .showErrorDetails(false)//default: true
+//        设置是否显示重启按钮
+//        .showRestartButton(false)//default: true
+//        设置是否显示错误日志
+//        .logErrorOnRestart(false)//default: true
+//        错误页面中显示错误详细信息
+//        .trackActivities(true)//default: false
+//        定义应用程序崩溃之间的最短时间，以确定我们不在崩溃循环中。比如：在规定的时间内再次崩溃，框架将不处理，让系统处理！
+//        .minTimeBetweenCrashesMs(2000)//default: 3000
+//        崩溃页面显示的图标
+//        .errorDrawable(R.mipmap.ic_error)//default: bug image
+//        重新启动后的页面
+//        .restartActivity(MainActivity.class)//default: null
+//        程序崩溃后显示的页面
+//        .errorActivity(CustomErrorActivity.class)//default: null
+//        设置监听
+//        .eventListener(new CustomEventListener())//default: null
+          .apply();
     }
 
 

@@ -1,10 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="@dimen/space_line"
+    style="@style/match_wrap">
     <Button
         android:id="@+id/btn_crash"
         style="@style/match_wrap"
         android:text="@string/click_crash"
         />
-</android.support.constraint.ConstraintLayout>
+
+    <TextView
+        style="@style/TextView_wrap"
+        android:text="实现步骤:"
+        app:layout_constraintTop_toBottomOf="@+id/btn_crash" />
+    <ScrollView
+        style="@style/match_wrap"
+        android:scrollbars="none"
+        android:layout_marginLeft="@dimen/space_line2">
+        <LinearLayout
+            style="@style/Lin_vertical">
+            <TextView
+                style="@style/wrap_wrap"
+                android:text="第一种方法：\n 1、Github地址：https://github.com/Ereza/CustomActivityOnCrash
+                \n 2、添加依赖：compile 'cat.ereza:customactivityoncrash:2.2.0'
+                \n 3、Application配置："/>
+            <ImageView
+                style="@style/wrap_wrap"
+                android:src="@mipmap/img_crash_2"/>
+            <TextView
+                style="@style/wrap_wrap"
+                android:text="第二种方法：\n 1、AndroidManifest.xml中加入："/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/img_crash_3"/>
+            <TextView
+                style="@style/wrap_wrap"
+                android:text=" 2、从Github上拷贝以下源码放入自己的包中"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/img_crash_4"/>
+            <TextView
+                style="@style/wrap_wrap"
+                android:text=" 3、Application配置与第一种方式相同"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
