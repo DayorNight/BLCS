@@ -92,6 +92,7 @@ public class MainActivity extends BaseAppCompatActivity implements IMainView {
             public void onPageScrollStateChanged(int state) {
             }
         });
+
     }
 
     @Override

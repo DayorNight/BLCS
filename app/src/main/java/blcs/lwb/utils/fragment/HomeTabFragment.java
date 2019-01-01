@@ -1,5 +1,6 @@
 package blcs.lwb.utils.fragment;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -11,10 +12,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import blcs.lwb.lwbtool.base.BaseApplication;
 import blcs.lwb.lwbtool.utils.IntentUtils;
 import blcs.lwb.lwbtool.utils.RxToast;
 import blcs.lwb.lwbtool.base.BaseAdapter;
 import blcs.lwb.utils.Constants;
+import blcs.lwb.utils.MyApplication;
 import blcs.lwb.utils.manager.FramentManages;
 import blcs.lwb.utils.PublicFragmentActivity;
 import blcs.lwb.utils.R;
@@ -35,11 +41,10 @@ public class HomeTabFragment extends Fragment implements IHomeTabView{
     @BindView(R.id.tool_recyclerView)
     RecyclerView recycler;
     private Unbinder bind;
-    private View mView;
+    private View mView=null;
     private HomeTabAdapter adapter;
     private HomeTabPresenter presenter;
     private FragmentActivity activity;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -59,6 +64,7 @@ public class HomeTabFragment extends Fragment implements IHomeTabView{
         super.onDestroyView();
         presenter.onDetch();
         if(bind != null){
+            mView=null;
             bind.unbind();
             bind = null;
         }
@@ -83,9 +89,11 @@ public class HomeTabFragment extends Fragment implements IHomeTabView{
                 view = R.array.Other;
                 break;
             default:
-                view = R.array.Utils;break;
+                view = R.array.Utils;
+                break;
         }
-        adapter = new HomeTabAdapter(activity, MyUtils.getArray(activity, view));
+
+        adapter = new HomeTabAdapter(activity, MyUtils.getArray(activity, view) );
         recycler.setAdapter(adapter);
     }
 
@@ -158,6 +166,9 @@ public class HomeTabFragment extends Fragment implements IHomeTabView{
                     case FramentManages.CustomActivityOnCrash:
                         toFragment(bundle,FramentManages.CustomActivityOnCrash);
                         break;
+                    case FramentManages.LeakCanary:
+                        toFragment(bundle,FramentManages.LeakCanary);
+                        break;
                         default:
                             RxToast.warning(activity,getString(R.string.function_unopen));
                             break;
@@ -165,7 +176,6 @@ public class HomeTabFragment extends Fragment implements IHomeTabView{
             }
         });
     }
-
 
     public void toDemo(Bundle bundle){
         IntentUtils.toActivity(activity,PublicFragmentActivity.createIntent(activity, FramentManages.Demo, bundle));

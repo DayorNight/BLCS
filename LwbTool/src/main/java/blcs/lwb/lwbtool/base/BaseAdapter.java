@@ -24,17 +24,17 @@ public abstract class BaseAdapter<T extends RecyclerView.ViewHolder> extends Rec
 		return datas.size();
 	}
 
-	public static interface OnItemClickListener<E> {
+	public  interface OnItemClickListener<E> {
 		void onItemClick(View view, E bean);
 	}
-	public static interface OnItemLongClickListener<E> {
+	public  interface OnItemLongClickListener<E> {
 		void onItemLongClick(View view, E bean);
 
 	}
-	public static interface OnItemClickListener1 {
+	public   interface OnItemClickListener1 {
 		void onItemClick(View view, int pos);
 	}
-	public static interface OnItemLongClickListener1 {
+	public   interface OnItemLongClickListener1 {
 		void onItemLongClick(View view, int pos);
 
 	}

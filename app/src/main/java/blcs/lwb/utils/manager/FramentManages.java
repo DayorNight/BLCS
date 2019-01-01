@@ -24,6 +24,7 @@ import blcs.lwb.utils.fragment.BottomNavigationFragment;
 import blcs.lwb.utils.fragment.EditTextUtilsFragment;
 import blcs.lwb.utils.fragment.IntentUtilsFragment;
 import blcs.lwb.utils.fragment.JavaDesignPatternFragment;
+import blcs.lwb.utils.fragment.LeakCanaryFragment;
 import blcs.lwb.utils.fragment.MarqueeViewFragment;
 import blcs.lwb.utils.fragment.MyFragment;
 import blcs.lwb.utils.fragment.OnCrashFragment;
@@ -73,6 +74,7 @@ public class FramentManages
 	public final static String UpFetchDataRecycler="UpFetchDataRecycler";
 	public final static String MarqueeView="跑马灯";
 	public final static String CustomActivityOnCrash="全局异常捕获";
+	public final static String LeakCanary="内存泄漏检测";
 
 	/**
 	 * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -141,6 +143,8 @@ public class FramentManages
 				return new MarqueeViewFragment();
 			case FramentManages.CustomActivityOnCrash:
 				return new OnCrashFragment();
+			case FramentManages.LeakCanary:
+				return new LeakCanaryFragment();
 //			case FramentManages.UtilsDetail://工具详情界面
 //				return new HomeTab1DetailFragment();
 		}

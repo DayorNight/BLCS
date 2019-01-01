@@ -7,11 +7,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import java.lang.ref.WeakReference;
 import java.util.List;
 import blcs.lwb.lwbtool.base.BaseAdapter;
 import blcs.lwb.utils.R;
 
 public class HomeTabAdapter extends BaseAdapter<HomeTabAdapter.HomeTab1Holder>{
+
     public HomeTabAdapter(Context context, List<String> data) {
         super(context, data);
     }

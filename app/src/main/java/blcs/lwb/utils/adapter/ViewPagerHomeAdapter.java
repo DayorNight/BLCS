@@ -3,6 +3,7 @@ package blcs.lwb.utils.adapter;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,12 +16,16 @@ import blcs.lwb.utils.fragment.HomeTabFragment;
  * 首页viewPage适配
  */
 
-public class ViewPagerHomeAdapter extends FragmentStatePagerAdapter {
+public class ViewPagerHomeAdapter extends FragmentPagerAdapter {
 
-    private List<Fragment> list_Fragment=new ArrayList<>();//viewpager中适配的 item
+    private  List<Fragment> list_Fragment;//viewpager中适配的 item
 
     public ViewPagerHomeAdapter(FragmentManager fm) {
         super(fm);
+        if(list_Fragment==null){
+            list_Fragment = new ArrayList<>();
+        }
+        list_Fragment.clear();
         for (int i=0;i<3;i++){
             HomeTabFragment homeTabFragment = new HomeTabFragment();
             Bundle bundle = new Bundle();

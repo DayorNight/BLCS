@@ -2,6 +2,8 @@ package blcs.lwb.lwbtool.base;
 
 import android.app.Application;
 
+import com.squareup.leakcanary.LeakCanary;
+
 import blcs.lwb.lwbtool.R;
 import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.lwbtool.utils.crash.CaocConfig;
@@ -12,8 +14,23 @@ public abstract class BaseApplication extends Application {
     public void onCreate() {
         super.onCreate();
         initCrash();
+        initLeakCanary();
     }
 
+    /**
+     * 内存泄漏
+     */
+    private void initLeakCanary(){
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            // This process is dedicated to LeakCanary for heap analysis.
+            // You should not init your app in this process.
+            return;
+        }
+        LeakCanary.install(this);
+    }
+    /**
+     * 全局异常捕获
+     */
     private void initCrash() {
         CaocConfig.Builder.create()
 //        当应用程序处于后台时崩溃，默默地关闭程序！//default: CaocConfig.BACKGROUND_MODE_SHOW_CUSTOM

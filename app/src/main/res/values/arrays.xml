@@ -33,6 +33,7 @@
         <item>友盟多渠道打包</item>
         <item>APK签名打包</item>
         <item>全局异常捕获</item>
+        <item>内存泄漏检测</item>
         <!--<item>Java常用设计模式</item>-->
     </string-array>
 

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/match_wrap"
+    android:orientation="vertical"
+    android:padding="@dimen/space_line">
+
+    <TextView
+        style="@style/wrap_wrap"
+        android:text="实现步骤："
+        android:textSize="@dimen/standard_work" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/space_line2"
+        android:scrollbars="none">
+
+        <LinearLayout style="@style/Lin_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1、Github地址：\n https://github.com/square/leakcanary \n 2、添加依赖：\n
+        debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.2' \n
+        releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.2' \n
+        debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.2' \n 3、 Application配置：\n if (LeakCanary.isInAnalyzerProcess(this)) { \n      return; \n } \n LeakCanary.install(this);" />
+
+            <TextView
+                style="@style/wrap_wrap"
+                android:text=" 4、运行程序后：会在手机界面产生额外的一个应用Leaks" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/img_leak_canary" />
+
+            <TextView
+                style="@style/wrap_wrap"
+                android:text=" 5、打开leaks工具,可查看泄漏情况" />
+
+            <ImageView
+                style="@style/wrap_wrap"
+                android:src="@mipmap/img_leak_canary1" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
