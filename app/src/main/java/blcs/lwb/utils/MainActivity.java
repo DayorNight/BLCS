@@ -1,18 +1,23 @@
 package blcs.lwb.utils;
 
+import android.os.Build;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
+
 import com.umeng.analytics.MobclickAgent;
+
 import java.util.List;
 
 import blcs.lwb.lwbtool.base.BaseAppCompatActivity;
 import blcs.lwb.lwbtool.base.BasePresenter;
+import blcs.lwb.lwbtool.utils.LeakCanaryUtils;
 import blcs.lwb.utils.adapter.ViewPagerHomeAdapter;
-import blcs.lwb.utils.mvp.view.IMainView;
 import blcs.lwb.utils.mvp.presenter.MainPresenter;
+import blcs.lwb.utils.mvp.view.IMainView;
 import blcs.lwb.utils.utils.MyUtils;
 import butterknife.BindView;
 
@@ -23,7 +28,6 @@ public class MainActivity extends BaseAppCompatActivity implements IMainView {
     @BindView(R.id.main_viewpage)
     ViewPager mainViewpage;
     int[] img_menu={R.mipmap.img_util,R.mipmap.img_view,R.mipmap.img_other};
-
     private int pos;//当前页面
     @Override
     protected BasePresenter bindPresenter() {
@@ -105,5 +109,12 @@ public class MainActivity extends BaseAppCompatActivity implements IMainView {
     protected void onPause() {
         super.onPause();
         MobclickAgent.onPause(this);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        LeakCanaryUtils.fixFocusedViewLeak(getApplication());
     }
 }

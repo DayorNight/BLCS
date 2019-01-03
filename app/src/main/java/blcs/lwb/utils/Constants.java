@@ -12,7 +12,6 @@ public class Constants {
 
 
     public final static String Item_Name="Item_Name";
-    public final static String Adapter_Pos="Adapter_Pos";
 
 //    友盟统计appkey
     public final static String U_Appkey="5b98c6f98f4a9d317b00002f";

@@ -41,4 +41,69 @@
         app:mvTextColor="@color/black"
         app:mvTextSize="14sp"
         app:mvSingleLine="true"/>
+
+    <blcs.lwb.lwbtool.View.titanic.TitanicTextView
+        android:id="@+id/Titanic_TextView"
+        android:text="@string/loading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/standard_title" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <blcs.lwb.lwbtool.View.LabelView
+            app:num="9:00"
+            app:text="早场"
+            app:numSize="14sp"
+            app:textSize3="9sp"
+            app:numStyle="normal"
+            app:labelTopPadding="15dp"
+            app:labelCenterPadding="15dp"
+            app:direction="leftTop"
+            app:backgroundColor="@color/colorAccent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <blcs.lwb.lwbtool.View.LabelView
+            app:num="20:00"
+            app:text="晚场"
+            app:numStyle="italic"
+            app:numSize="14sp"
+            app:textSize3="9sp"
+            app:direction="rightTop"
+            app:labelTopPadding="15dp"
+            app:labelCenterPadding="5dp"
+            app:labelBottomPadding="10dp"
+            app:backgroundColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <blcs.lwb.lwbtool.View.LabelView
+            app:num="01"
+            app:text="Top"
+            app:textSize3="10sp"
+            app:numSize="20sp"
+            app:numStyle="bold"
+            app:direction="leftTop"
+            app:labelTopPadding="6dp"
+            app:backgroundColor="#ff483a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <blcs.lwb.lwbtool.View.LabelView
+            app:num="02"
+            app:text="Top"
+            app:numSize="14sp"
+            app:textSize3="9sp"
+            app:backgroundColor="@color/colorPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
 </LinearLayout>

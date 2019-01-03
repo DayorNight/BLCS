@@ -2,16 +2,20 @@ package blcs.lwb.utils.utils;
 
 import android.app.Activity;
 import android.app.Application;
+import android.os.Bundle;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import blcs.lwb.lwbtool.utils.IntentUtils;
 import blcs.lwb.utils.Bean.MySection;
 import blcs.lwb.utils.Bean.Status;
 import blcs.lwb.utils.Bean.Video;
+import blcs.lwb.utils.PublicFragmentActivity;
 import blcs.lwb.utils.adapter.BaseDemoAdapter.MultipleItem;
 import blcs.lwb.utils.adapter.BaseDemoAdapter.NormalMultipleEntity;
+import blcs.lwb.utils.manager.FramentManages;
 
 public class MyUtils {
     private static final String CYM_CHAD = "CymChad";
@@ -97,5 +101,14 @@ public class MyUtils {
             list.add(status);
         }
         return list;
+    }
+
+
+    public static void toDemo(Activity activity,Bundle bundle){
+        IntentUtils.toActivity(activity, PublicFragmentActivity.createIntent(activity, FramentManages.Demo, bundle));
+    }
+
+    public static void toFragment(Activity activity,Bundle bundle,String tag){
+        IntentUtils.toActivity(activity,PublicFragmentActivity.createIntent(activity,tag, bundle));
     }
 }

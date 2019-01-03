@@ -24,7 +24,8 @@
         <item>toolbar</item>
         <item>RxToast</item>
         <item>转盘小游戏</item>
-        <item>跑马灯</item>
+        <item>跑马灯/水波纹/标签</item>
+        <item>滑动菜单/悬浮按钮</item>
     </string-array>
     <!--other-->
     <string-array name="Other">

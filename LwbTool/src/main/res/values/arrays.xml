@@ -13,6 +13,37 @@
         <item>img_movies</item>
         <item>img_bike</item>
     </string-array>
+    <!--简单的标签控件LabelView-->
+    <declare-styleable name="LabelTextView">
+        <attr name="textColor" format="color"/>
+        <attr name="text" format="string"/>
+        <attr name="backgroundColor" format="color"/>
+        <attr name="textSize3" format="dimension"/>
+        <attr name="numColor" format="color"/>
 
+        <attr name="num" format="string"/>
+
+        <attr name="numSize" format="dimension"/>
+
+        <attr name="labelTopPadding" format="dimension"/>
+        <attr name="labelCenterPadding" format="dimension"/>
+        <attr name="labelBottomPadding" format="dimension"/>
+        <attr name="numStyle">
+            <enum name="normal" value="0"/>
+            <enum name="italic" value="1"/>
+            <enum name="bold" value="2"/>
+        </attr>
+
+        <attr name="textStyle">
+            <enum name="normal" value="0"/>
+            <enum name="italic" value="1"/>
+            <enum name="bold" value="2"/>
+        </attr>
+
+        <attr name="direction">
+            <enum name="leftTop" value="-45"/>
+            <enum name="rightTop" value="45"/>
+        </attr>
+    </declare-styleable>
 
 </resources>

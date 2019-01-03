@@ -65,4 +65,12 @@
             android:text="@string/whether_remove_animation"/>
     </LinearLayout>
 
+    <!--BottomNavigationBar-->
+    <com.ashokvarma.bottomnavigation.BottomNavigationBar
+        android:id="@+id/bottomNavigationBar"
+        android:layout_width="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content"
+        />
+
 </LinearLayout>

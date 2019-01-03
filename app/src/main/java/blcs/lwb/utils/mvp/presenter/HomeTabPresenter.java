@@ -8,7 +8,7 @@ public class HomeTabPresenter extends BasePresenter<IHomeTabView> {
     private IHomeTabView v;
     public HomeTabPresenter(IHomeTabView v){
         this.v = v;
-        init();
+        onAttach(v);
     }
 
     public void init() {

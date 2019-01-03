@@ -21,6 +21,7 @@ import blcs.lwb.utils.fragment.BaseAdapterFragment.UpFetchDataFragment;
 import blcs.lwb.utils.fragment.BaseFragment;
 import blcs.lwb.utils.fragment.BitmapUtilsFragment;
 import blcs.lwb.utils.fragment.BottomNavigationFragment;
+import blcs.lwb.utils.fragment.DrawerLayoutFragment;
 import blcs.lwb.utils.fragment.EditTextUtilsFragment;
 import blcs.lwb.utils.fragment.IntentUtilsFragment;
 import blcs.lwb.utils.fragment.JavaDesignPatternFragment;
@@ -31,6 +32,7 @@ import blcs.lwb.utils.fragment.OnCrashFragment;
 import blcs.lwb.utils.fragment.RecyclerViewFragment;
 import blcs.lwb.utils.fragment.ScreenUtilsFragment;
 import blcs.lwb.utils.fragment.StringUtilsFragment;
+import blcs.lwb.utils.fragment.ToolbarFragment;
 import blcs.lwb.utils.fragment.TurnTableViewFragment;
 import blcs.lwb.utils.mvp.BaseFragmentActivity;
 
@@ -58,6 +60,7 @@ public class FramentManages
 	public final static String Screen_Utils="ScreenUtils";
 	public final static String Bitmap_Utils="BitmapUtils";
 	public final static String RxToast="RxToast";
+	public final static String Toolbar="toolbar";
 	public final static String BottomNavigation="BottomNavigationView";
 	public final static String RecyclerView="RecyclerView";
 	public final static String TurnTableView="转盘小游戏";
@@ -72,9 +75,10 @@ public class FramentManages
 	public final static String ItemClickRecycler="ItemClickRecycler";
 	public final static String ExpandableItemRecycler="ExpandableItemRecycler";
 	public final static String UpFetchDataRecycler="UpFetchDataRecycler";
-	public final static String MarqueeView="跑马灯";
+	public final static String MarqueeView="跑马灯/水波纹TextView/标签LabelView";
 	public final static String CustomActivityOnCrash="全局异常捕获";
 	public final static String LeakCanary="内存泄漏检测";
+	public final static String DrawerLayout="滑动菜单/悬浮按钮";
 
 	/**
 	 * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -145,6 +149,10 @@ public class FramentManages
 				return new OnCrashFragment();
 			case FramentManages.LeakCanary:
 				return new LeakCanaryFragment();
+			case FramentManages.Toolbar:
+				return new ToolbarFragment();
+			case FramentManages.DrawerLayout:
+				return new DrawerLayoutFragment();
 //			case FramentManages.UtilsDetail://工具详情界面
 //				return new HomeTab1DetailFragment();
 		}

@@ -2,6 +2,9 @@ package blcs.lwb.utils.fragment;
 
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -10,6 +13,9 @@ import com.sunfusheng.marqueeview.MarqueeView;
 import java.util.ArrayList;
 import java.util.List;
 
+import blcs.lwb.lwbtool.View.titanic.Titanic;
+import blcs.lwb.lwbtool.View.titanic.TitanicTextView;
+import blcs.lwb.lwbtool.View.titanic.Typefaces;
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.utils.R;
 import butterknife.BindView;
@@ -21,6 +27,9 @@ public class MarqueeViewFragment extends BaseFragment {
     MarqueeView marqueeView1;
     @BindView(R.id.marqueeView2)
     MarqueeView marqueeView2;
+    @BindView(R.id.Titanic_TextView)
+    TitanicTextView titanicTextView;
+
 
     @Override
     public void setMiddleTitle(Toolbar title) {
@@ -29,6 +38,35 @@ public class MarqueeViewFragment extends BaseFragment {
 
     @Override
     protected void initView() {
+
+        marquee();
+
+        titanic();
+
+    }
+
+
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_bottom_navigation_view,menu);
+    }
+
+
+    /**
+     * 水平波纹
+     */
+    private void titanic() {
+        titanicTextView.setTypeface(Typefaces.get(getActivity(), "Satisfy-Regular.ttf"));
+        Titanic titanic = new Titanic();
+        titanic.start(titanicTextView);
+//        titanic.cancel();/取消
+    }
+
+    /**
+     * 跑马灯
+     */
+    private void marquee() {
         List<String> info = new ArrayList<>();
         info.add("1. 大家好，我是跑马灯。");
         info.add("2. 单个跑马灯实现。");
@@ -47,6 +85,7 @@ public class MarqueeViewFragment extends BaseFragment {
             }
         });
     }
+
     @Override
     public void onStart() {
         super.onStart();

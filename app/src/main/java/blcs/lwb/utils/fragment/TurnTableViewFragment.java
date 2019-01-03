@@ -55,7 +55,7 @@ public class TurnTableViewFragment extends BaseFragment {
         LinearLayoutManager manager = new LinearLayoutManager(activity);
         manager.setOrientation(OrientationHelper.HORIZONTAL);
         rlProject.setLayoutManager(manager);
-        adapter = new TurnTableAdapter(activity, Arrays.asList(strs));
+        adapter = new TurnTableAdapter(Arrays.asList(strs));
         rlProject.setAdapter(adapter);
         adapter.setOnItemClick(new TurnTableAdapter.OnItemClickListener() {
             @Override

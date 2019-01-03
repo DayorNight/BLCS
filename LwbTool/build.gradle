@@ -31,8 +31,19 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     implementation 'com.android.support:recyclerview-v7:28.0.0-rc02'
 
+    //==============AgentWeb================https://github.com/Justson/AgentWeb
+    api 'com.just.agentweb:agentweb:4.0.2'
+    //==============跑马灯================https://github.com/sunfusheng/MarqueeView
+    api 'com.sunfusheng:marqueeview:1.3.3'
+
+    //==============BaseRecyclerViewAdapterHelper====https://github.com/CymChad/BaseRecyclerViewAdapterHelper
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.42'
+
     //==============LeakCanary================https://github.com/square/leakcanary
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.2'
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.2'
     debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.2'
+
+    //==============BottomNavigationBar底部导航栏================
+    api 'com.ashokvarma.android:bottom-navigation-bar:2.0.4'
 }
