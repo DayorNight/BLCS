@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/scrollable_tab"
+        style="@style/match_wrap"
+        android:text="@string/scrollable_tab" />
+
+    <Button
+        android:id="@+id/fixed_tab"
+        style="@style/match_wrap"
+        android:text="@string/fixed_tab" />
+
+    <Button
+        android:id="@+id/dynamic_tab"
+        style="@style/match_wrap"
+        android:text="@string/dynamic_tab" />
+
+    <Button
+        android:id="@+id/no_tab_only_indicator"
+        style="@style/match_wrap"
+        android:text="@string/no_tab_only_indicator" />
+
+    <Button
+        android:id="@+id/work_with_fragment_container"
+        style="@style/match_wrap"
+        android:text="@string/work_with_fragment_container" />
+
+    <Button
+        android:id="@+id/tab_with_badge_view"
+        style="@style/match_wrap"
+        android:text="@string/tab_with_badge_view" />
+
+    <Button
+        android:id="@+id/load_custom_layout"
+        style="@style/match_wrap"
+        android:text="@string/tab_with_custom_layout" />
+
+    <Button
+        android:id="@+id/custom_navigator"
+        style="@style/match_wrap"
+        android:text="@string/custom_navigator" />
+</LinearLayout>

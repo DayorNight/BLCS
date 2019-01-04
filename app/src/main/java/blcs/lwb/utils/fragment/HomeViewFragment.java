@@ -107,6 +107,9 @@ public class HomeViewFragment extends Fragment implements IHomeTabView{
                     case FramentManages.DrawerLayout:
                         MyUtils.toFragment(activity,bundle,FramentManages.DrawerLayout);
                         break;
+                    case FramentManages.MagicIndicator:
+                        MyUtils.toFragment(activity,bundle,FramentManages.MagicIndicator);
+                        break;
                     default:
                         RxToast.warning(activity,getString(R.string.function_unopen));
                         break;

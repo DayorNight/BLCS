@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+
 import java.util.ArrayList;
 
 import blcs.lwb.utils.R;
@@ -26,6 +27,15 @@ import blcs.lwb.utils.fragment.EditTextUtilsFragment;
 import blcs.lwb.utils.fragment.IntentUtilsFragment;
 import blcs.lwb.utils.fragment.JavaDesignPatternFragment;
 import blcs.lwb.utils.fragment.LeakCanaryFragment;
+import blcs.lwb.utils.fragment.MagicIndicator.BadgeTabFragment;
+import blcs.lwb.utils.fragment.MagicIndicator.CustomNavigatorFragment;
+import blcs.lwb.utils.fragment.MagicIndicator.DynamicTabFragment;
+import blcs.lwb.utils.fragment.MagicIndicator.FixedTabFragment;
+import blcs.lwb.utils.fragment.MagicIndicator.FragmentContainerFragment;
+import blcs.lwb.utils.fragment.MagicIndicator.LoadCustomLayoutFragment;
+import blcs.lwb.utils.fragment.MagicIndicator.MagicIndicatorFragment;
+import blcs.lwb.utils.fragment.MagicIndicator.NoTabOnlyIndicatorFragment;
+import blcs.lwb.utils.fragment.MagicIndicator.ScrollableTabFragment;
 import blcs.lwb.utils.fragment.MarqueeViewFragment;
 import blcs.lwb.utils.fragment.MyFragment;
 import blcs.lwb.utils.fragment.OnCrashFragment;
@@ -79,6 +89,15 @@ public class FramentManages
 	public final static String CustomActivityOnCrash="全局异常捕获";
 	public final static String LeakCanary="内存泄漏检测";
 	public final static String DrawerLayout="滑动菜单/悬浮按钮";
+	public final static String MagicIndicator="ViewPager指示器";
+	public final static String ScrollableTab="指示器1";
+	public final static String FixedTab="指示器2";
+	public final static String DynamicTab="指示器3";
+	public final static String NoTabOnlyIndicator="指示器4";
+	public final static String BadgeTab="指示器5";
+	public final static String FragmentContainer="指示器6";
+	public final static String LoadCustomLayout="指示器7";
+	public final static String CustomNavigator="指示器8";
 
 	/**
 	 * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -153,6 +172,24 @@ public class FramentManages
 				return new ToolbarFragment();
 			case FramentManages.DrawerLayout:
 				return new DrawerLayoutFragment();
+			case FramentManages.MagicIndicator:
+				return new MagicIndicatorFragment();
+			case FramentManages.ScrollableTab:
+				return new ScrollableTabFragment();
+			case FramentManages.FixedTab:
+				return new FixedTabFragment();
+			case FramentManages.DynamicTab:
+				return new DynamicTabFragment();
+			case FramentManages.NoTabOnlyIndicator:
+				return new NoTabOnlyIndicatorFragment();
+			case FramentManages.BadgeTab:
+				return new BadgeTabFragment();
+			case FramentManages.FragmentContainer:
+				return new FragmentContainerFragment();
+			case FramentManages.LoadCustomLayout:
+				return new LoadCustomLayoutFragment();
+			case FramentManages.CustomNavigator:
+				return new CustomNavigatorFragment();
 //			case FramentManages.UtilsDetail://工具详情界面
 //				return new HomeTab1DetailFragment();
 		}

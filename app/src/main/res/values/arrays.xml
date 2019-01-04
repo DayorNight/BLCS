@@ -26,6 +26,7 @@
         <item>转盘小游戏</item>
         <item>跑马灯/水波纹/标签</item>
         <item>滑动菜单/悬浮按钮</item>
+        <item>ViewPager指示器</item>
     </string-array>
     <!--other-->
     <string-array name="Other">
@@ -86,4 +87,17 @@
         <item>SlidenlnRight</item>
         <item>Custom</item>
     </string-array>
+
+    <!--MagicIndicator指示器-->
+    <string-array name="MagicIndicator">
+        <item>ScrollableTab</item>
+        <item>FixedTab</item>
+        <item>DynamicTab</item>
+        <item>NoTabOnlyIndicator</item>
+        <item>BadgeTab</item>
+        <item>FragmentContainer</item>
+        <item>LoadCustomLayout</item>
+        <item>CustomNavigator</item>
+    </string-array>
+
 </resources>

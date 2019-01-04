@@ -103,11 +103,16 @@ public class MyUtils {
         return list;
     }
 
-
+    /**
+     * 跳转Demo
+     */
     public static void toDemo(Activity activity,Bundle bundle){
         IntentUtils.toActivity(activity, PublicFragmentActivity.createIntent(activity, FramentManages.Demo, bundle));
     }
 
+    /**
+     * 跳转指定Fragment
+     */
     public static void toFragment(Activity activity,Bundle bundle,String tag){
         IntentUtils.toActivity(activity,PublicFragmentActivity.createIntent(activity,tag, bundle));
     }
