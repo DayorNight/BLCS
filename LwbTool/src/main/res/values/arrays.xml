@@ -45,5 +45,32 @@
             <enum name="rightTop" value="45"/>
         </attr>
     </declare-styleable>
+    <declare-styleable name="ColorPickerPreference">
+        <attr name="alphaSlider" format="boolean"/>
+        <attr name="lightnessSlider" format="boolean"/>
+        <attr name="density" format="integer"/>
+        <attr name="initialColor" format="integer"/>
+        <attr name="wheelType" format="enum">
+            <enum name="FLOWER" value="0"/>
+            <enum name="CIRCLE" value="1"/>
+        </attr>
+        <attr name="lightnessSliderView" format="reference"/>
+        <attr name="alphaSliderView" format="reference"/>
+        <attr name="pickerColorEditTextColor" format="integer"/>
+        <attr name="pickerTitle" format="reference|string"/>
+        <attr name="pickerButtonOk" format="reference|string"/>
+        <attr name="pickerButtonCancel" format="reference|string"/>
+    </declare-styleable>
 
+    <declare-styleable name="RxCobwebView">
+        <attr name="spiderColor" format="color"/>
+        <attr name="spiderRadiusColor" format="color"/>
+        <attr name="spiderLevelColor" format="color"/>
+        <attr name="spiderLevelStroke" format="boolean"/>
+        <attr name="spiderRotate" format="boolean"/>
+        <attr name="spiderLevelStrokeWidth" format="float"/>
+        <attr name="spiderMaxLevel" format="integer"/>
+        <attr name="spiderNameSize" format="dimension"/>
+
+    </declare-styleable>
 </resources>

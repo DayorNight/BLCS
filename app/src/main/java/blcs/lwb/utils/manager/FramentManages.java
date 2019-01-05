@@ -22,6 +22,8 @@ import blcs.lwb.utils.fragment.BaseAdapterFragment.UpFetchDataFragment;
 import blcs.lwb.utils.fragment.BaseFragment;
 import blcs.lwb.utils.fragment.BitmapUtilsFragment;
 import blcs.lwb.utils.fragment.BottomNavigationFragment;
+import blcs.lwb.utils.fragment.Color_SpiderFragment;
+import blcs.lwb.utils.fragment.Common_DialogFragment;
 import blcs.lwb.utils.fragment.DrawerLayoutFragment;
 import blcs.lwb.utils.fragment.EditTextUtilsFragment;
 import blcs.lwb.utils.fragment.IntentUtilsFragment;
@@ -39,11 +41,17 @@ import blcs.lwb.utils.fragment.MagicIndicator.ScrollableTabFragment;
 import blcs.lwb.utils.fragment.MarqueeViewFragment;
 import blcs.lwb.utils.fragment.MyFragment;
 import blcs.lwb.utils.fragment.OnCrashFragment;
+import blcs.lwb.utils.fragment.OpenGlSquareFragment;
+import blcs.lwb.utils.fragment.OpenGlTriangleFragment;
+import blcs.lwb.utils.fragment.ProgressBarFragment;
 import blcs.lwb.utils.fragment.RecyclerViewFragment;
 import blcs.lwb.utils.fragment.ScreenUtilsFragment;
 import blcs.lwb.utils.fragment.StringUtilsFragment;
 import blcs.lwb.utils.fragment.ToolbarFragment;
 import blcs.lwb.utils.fragment.TurnTableViewFragment;
+import blcs.lwb.utils.fragment.Viewpage.SwipeCardFragment;
+import blcs.lwb.utils.fragment.Viewpage.ViewpageFragment;
+import blcs.lwb.utils.fragment.Viewpage.jellyViewPagerFragment;
 import blcs.lwb.utils.mvp.BaseFragmentActivity;
 
 /**
@@ -98,6 +106,14 @@ public class FramentManages
 	public final static String FragmentContainer="指示器6";
 	public final static String LoadCustomLayout="指示器7";
 	public final static String CustomNavigator="指示器8";
+	public final static String Viewpage="Viewpage";
+	public final static String jellyViewPager="jellyViewPager";
+	public final static String SwipeCard="SwipeCard";
+	public final static String OpenGl_Triangle="OpenGl三角形";
+	public final static String OpenGl_Square="OpenGl矩形";
+	public final static String Dialog="常用Dialog";
+	public final static String ProgressBar="进度条";
+	public final static String Color_Spider="蛛网等级及颜色选取";
 
 	/**
 	 * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -190,6 +206,22 @@ public class FramentManages
 				return new LoadCustomLayoutFragment();
 			case FramentManages.CustomNavigator:
 				return new CustomNavigatorFragment();
+			case FramentManages.Viewpage:
+				return new ViewpageFragment();
+			case FramentManages.jellyViewPager:
+				return new jellyViewPagerFragment();
+			case FramentManages.SwipeCard:
+				return new SwipeCardFragment();
+			case FramentManages.OpenGl_Triangle:
+				return new OpenGlTriangleFragment();
+			case FramentManages.OpenGl_Square:
+				return new OpenGlSquareFragment();
+			case FramentManages.Dialog:
+				return new Common_DialogFragment();
+			case FramentManages.ProgressBar:
+				return new ProgressBarFragment();
+			case FramentManages.Color_Spider:
+				return new Color_SpiderFragment();
 //			case FramentManages.UtilsDetail://工具详情界面
 //				return new HomeTab1DetailFragment();
 		}

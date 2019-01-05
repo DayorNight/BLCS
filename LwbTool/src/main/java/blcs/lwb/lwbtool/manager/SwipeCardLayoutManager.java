@@ -6,9 +6,11 @@ import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 
+import blcs.lwb.lwbtool.utils.CardConfig;
+
+
 /**
  * Created by ls on 2017/11/25.
- *  层叠卡片
  */
 
 public class SwipeCardLayoutManager extends RecyclerView.LayoutManager {
@@ -54,30 +56,19 @@ public class SwipeCardLayoutManager extends RecyclerView.LayoutManager {
             //层级的位置关系1/2/3/4
             int level=itemCount-i-1;
             if(level>0){
-                if(level< MAX_SHOW_COUNT){
+                if(level< CardConfig.MAX_SHOW_COUNT){
                     view.setTranslationY(TRANS_Y_GAP*level);
                     view.setTranslationX(TRANS_Y_GAP*level);
-                    view.setScaleX(1-SCALE_GAP*level);
-                    view.setScaleY(1-SCALE_GAP*level);
+                    view.setScaleX(1-CardConfig.SCALE_GAP*level);
+                    view.setScaleY(1-CardConfig.SCALE_GAP*level);
                 }
             }else {
                 view.setTranslationY(TRANS_Y_GAP*(level-1));
                 view.setTranslationX(TRANS_Y_GAP*(level-1));
-                view.setScaleX(1-SCALE_GAP*(level-1));
-                view.setScaleY(1-SCALE_GAP*(level-1));
+                view.setScaleX(1-CardConfig.SCALE_GAP*(level-1));
+                view.setScaleY(1-CardConfig.SCALE_GAP*(level-1));
             }
         }
-    }
 
-    //屏幕最对同时显示几个item
-    public static int  MAX_SHOW_COUNT=3;
-    //没一级Scale相差0.05f，translation相差7dp左右
-    public static  float SCALE_GAP;
-    public static int TRANS_V_GAP;
-
-    public static void initConfig(Context context){
-        MAX_SHOW_COUNT=3;
-        SCALE_GAP=0.05f;
-        TRANS_V_GAP=(int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,15,context.getResources().getDisplayMetrics());
     }
 }

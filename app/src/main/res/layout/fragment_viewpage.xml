@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Lin_vertical">
+    <Button
+        android:id="@+id/btn_jelly"
+        style="@style/match_wrap"
+        android:text="jellyViewPager"/>
+
+    <Button
+        android:id="@+id/btn_swipe"
+        style="@style/match_wrap"
+        android:text="SwipeCard"/>
+
+</LinearLayout>

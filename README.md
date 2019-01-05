@@ -5,13 +5,13 @@
 #### 子菜单
 
 ###### 工具
-> 1、LogUtils
-> 2、StringUtils
+> 1、AppUtils
+> 2、BitmapUtils
 > 3、EditTextUtils
 > 4、IntentUtils
-> 5、AppUtils
-> 6、ScreenUtils
-> 7、BitmapUtils
+> 5、LogUtils
+> 6、StringUtils
+> 7、ScreenUtils
 
 ###### View
 > 1、BottomNavigationView
@@ -19,8 +19,15 @@
 > 3、toolbar
 > 4、RxToast
 > 5、转盘小游戏
-> 6、跑马灯
-
+> 6、跑马灯/水波纹/标签
+> 7、滑动菜单/悬浮按钮
+> 8、ViewPager指示器
+> 9、ViewPager
+> 10、OpenGl三角形
+> 11、OpenGl矩形
+> 12、常用Dialog
+> 13、进度条
+> 14、蛛网等级及颜色选取
 
 ###### 其他
 > 1、采用MVP模式

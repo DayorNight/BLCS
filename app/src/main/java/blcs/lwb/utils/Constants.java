@@ -30,4 +30,9 @@ public class Constants {
     public final static String BottomNavigation_Utils="https://blog.csdn.net/cs_lwb/article/details/82979521";
     //图片
     public final static int[] img_menu={R.mipmap.img_util,R.mipmap.img_view,R.mipmap.img_other,R.mipmap.set,R.mipmap.ic_check_white_48dp};
+
+    //JellyViewPager
+    public static final String KEY = "image";
+    public static int [] images = {R.mipmap.ic1, R.mipmap.ic2,R.mipmap.ic3, R.mipmap.ic4, R.mipmap.ic5};
+
 }

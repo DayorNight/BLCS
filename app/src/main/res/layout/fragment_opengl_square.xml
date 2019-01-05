@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/match_match">
+    <android.opengl.GLSurfaceView
+        android:id="@+id/gl_surface_square"
+        style="@style/match_match" />
+</android.support.constraint.ConstraintLayout>
