@@ -33,6 +33,7 @@
         <item>常用Dialog</item>
         <item>进度条</item>
         <item>蛛网等级及颜色选取</item>
+        <item>Banner轮播图</item>
     </string-array>
     <!--other-->
     <string-array name="Other">

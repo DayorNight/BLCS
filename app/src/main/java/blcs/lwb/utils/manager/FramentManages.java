@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.fragment.AppUtilsFragment;
+import blcs.lwb.utils.fragment.BannerFragment;
 import blcs.lwb.utils.fragment.BaseAdapterFragment.AnimationRecyclerFragment;
 import blcs.lwb.utils.fragment.BaseAdapterFragment.DragAndSwipeFragment;
 import blcs.lwb.utils.fragment.BaseAdapterFragment.EmptyViewFragment;
@@ -114,6 +115,7 @@ public class FramentManages
 	public final static String Dialog="常用Dialog";
 	public final static String ProgressBar="进度条";
 	public final static String Color_Spider="蛛网等级及颜色选取";
+	public final static String Banner="Banner轮播图";
 
 	/**
 	 * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -222,6 +224,8 @@ public class FramentManages
 				return new ProgressBarFragment();
 			case FramentManages.Color_Spider:
 				return new Color_SpiderFragment();
+			case FramentManages.Banner:
+				return new BannerFragment();
 //			case FramentManages.UtilsDetail://工具详情界面
 //				return new HomeTab1DetailFragment();
 		}

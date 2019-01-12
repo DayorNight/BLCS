@@ -86,4 +86,6 @@ dependencies {
     implementation 'com.umeng.sdk:common:latest.integration'
     implementation 'com.umeng.sdk:analytics:latest.integration'
 
+    // ========glide=======
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
 }

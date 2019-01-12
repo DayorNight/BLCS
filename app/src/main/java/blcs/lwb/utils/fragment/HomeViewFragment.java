@@ -128,6 +128,9 @@ public class HomeViewFragment extends Fragment implements IHomeTabView{
                     case FramentManages.Color_Spider:
                         MyUtils.toFragment(activity,bundle,FramentManages.Color_Spider);
                         break;
+                    case FramentManages.Banner:
+                        MyUtils.toFragment(activity,bundle,FramentManages.Banner);
+                        break;
                     default:
                         RxToast.warning(activity,getString(R.string.function_unopen));
                         break;

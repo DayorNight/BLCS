@@ -42,8 +42,6 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             />
 
-
-
         <!--友盟统计-->
         <meta-data android:value="5b98c6f98f4a9d317b00002f" android:name="UMENG_APPKEY"/>
         <meta-data android:value="${UMENG_CHANNEL_VALUE}"  android:name="UMENG_CHANNEL"  />
