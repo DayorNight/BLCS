@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center_vertical"
+    android:padding="@dimen/space_line2"
+    style="@style/Lin_horizontal">
+    <TextView
+        android:id="@+id/tv_adapter_name"
+        style="@style/text_stander"
+        android:layout_weight="1"
+        android:text="@string/app_name"/>
+    <ImageView
+        android:layout_width="@dimen/Img_min"
+        android:layout_height="@dimen/Img_min"
+        android:src="@mipmap/ic_into"/>
+</LinearLayout>

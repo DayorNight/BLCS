@@ -43,7 +43,7 @@ public abstract class PublicFragmentActivity extends BaseFragmentActivity implem
     public void Toolbar_init() {
         fm = FramentManages.getInstance(this,this);
         tlToolbar = findViewById(R.id.tl_toolbar);
-        tlToolbar.setNavigationIcon(R.mipmap.back);
+        tlToolbar.setNavigationIcon(R.mipmap.ic_back_white);
         tlToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -16,6 +16,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import java.util.List;
 
 import blcs.lwb.lwbtool.utils.IntentUtils;
+import blcs.lwb.lwbtool.utils.RecyclerUtil;
 import blcs.lwb.lwbtool.utils.RxToast;
 import blcs.lwb.utils.Constants;
 import blcs.lwb.utils.manager.FramentManages;
@@ -69,12 +70,8 @@ public class HomeUtilsFragment extends Fragment implements IHomeTabView{
 
     @Override
     public void Recycler_init() {
-        LinearLayoutManager manager = new LinearLayoutManager(activity);
-        recycler.setLayoutManager(manager);
-        manager.setOrientation(OrientationHelper.VERTICAL);
-        recycler.addItemDecoration(new DividerItemDecoration(activity, OrientationHelper.VERTICAL));
         adapter = new HomeTabAdapter(MyUtils.getArray(activity, R.array.Utils) );
-        recycler.setAdapter(adapter);
+        RecyclerUtil.init(activity,OrientationHelper.VERTICAL,adapter,recycler);
     }
 
     @Override

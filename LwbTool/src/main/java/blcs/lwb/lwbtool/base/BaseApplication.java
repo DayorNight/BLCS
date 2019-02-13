@@ -14,7 +14,7 @@ public abstract class BaseApplication extends Application {
     public void onCreate() {
         super.onCreate();
         initCrash();
-        initLeakCanary();
+//        initLeakCanary();
     }
 
     /**

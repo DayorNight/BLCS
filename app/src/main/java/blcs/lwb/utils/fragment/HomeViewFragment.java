@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 
 import blcs.lwb.lwbtool.utils.IntentUtils;
+import blcs.lwb.lwbtool.utils.RecyclerUtil;
 import blcs.lwb.lwbtool.utils.RxToast;
 import blcs.lwb.utils.Constants;
 import blcs.lwb.utils.PublicFragmentActivity;
@@ -66,12 +67,8 @@ public class HomeViewFragment extends Fragment implements IHomeTabView{
 
     @Override
     public void Recycler_init() {
-        LinearLayoutManager manager = new LinearLayoutManager(activity);
-        recycler.setLayoutManager(manager);
-        manager.setOrientation(OrientationHelper.VERTICAL);
-        recycler.addItemDecoration(new DividerItemDecoration(activity, OrientationHelper.VERTICAL));
         adapter = new HomeTabAdapter(MyUtils.getArray(activity, R.array.View) );
-        recycler.setAdapter(adapter);
+        RecyclerUtil.init(activity,OrientationHelper.VERTICAL,adapter,recycler);
     }
 
     @Override
@@ -91,6 +88,9 @@ public class HomeViewFragment extends Fragment implements IHomeTabView{
                         break;
                     case FramentManages.BottomNavigation:
                         MyUtils.toFragment(activity,bundle,FramentManages.BottomNavigation);
+                        break;
+                    case FramentManages.WeChatFunction:
+                        MyUtils.toFragment(activity,bundle,FramentManages.WeChatFunction);
                         break;
                     case FramentManages.RecyclerView:
                         MyUtils.toFragment(activity,bundle,FramentManages.RecyclerView);

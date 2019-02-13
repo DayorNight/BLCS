@@ -19,6 +19,7 @@
     </string-array>
     <!--View-->
     <string-array name="View">
+        <item>仿微信功能及控件</item>
         <item>BottomNavigationView</item>
         <item>RecyclerView</item>
         <item>toolbar</item>
@@ -107,4 +108,12 @@
         <item>CustomNavigator</item>
     </string-array>
 
+
+    <!--仿微信功能列表-->
+    <string-array name="WeChat_Function">
+        <item>字体大小</item>
+        <item>存储空间</item>
+        <item>多语言</item>
+        <item>流量统计</item>
+    </string-array>
 </resources>

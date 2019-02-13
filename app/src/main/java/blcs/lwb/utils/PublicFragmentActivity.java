@@ -42,7 +42,7 @@ public class PublicFragmentActivity extends BaseFragmentActivity implements IPub
     @Override
     public void Toolbar_init() {
 
-        tlToolbar.setNavigationIcon(R.mipmap.back);
+        tlToolbar.setNavigationIcon(R.mipmap.ic_back_white);
         tlToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

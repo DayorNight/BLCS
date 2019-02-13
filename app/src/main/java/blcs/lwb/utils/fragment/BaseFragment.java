@@ -63,28 +63,29 @@ public abstract class BaseFragment extends Fragment implements IPopBackStackList
     }
 
     /**
-     * 中心的标题设置
+     * 绑定界面
+     *
+     * @return
      */
-    public abstract void setMiddleTitle(android.support.v7.widget.Toolbar title);
+    protected abstract int bindLayout();
 
     /**
      * UI
      * @return
      */
     protected abstract void initView();
+
+    /**
+     * 中心的标题设置
+     */
+    public abstract void setMiddleTitle(android.support.v7.widget.Toolbar title);
+
     /**
      * 绑定P层
      *
      * @return
      */
     protected abstract BasePresenter bindPresenter();
-
-    /**
-     * 绑定界面
-     *
-     * @return
-     */
-    protected abstract int bindLayout();
 
 
     @Override
