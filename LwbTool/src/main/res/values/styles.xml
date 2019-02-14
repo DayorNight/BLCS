@@ -122,6 +122,12 @@
         <attr name="totalCount" format="integer" />
         <attr name="circleColor" format="color|reference" />
         <attr name="circleRadius" format="dimension|reference" />
+
+        <attr name="textFontColor" format="color|reference" />
+        <attr name="smallSize" format="integer" />
+        <attr name="standerSize" format="integer" />
+        <attr name="bigSize" format="integer" />
+        <attr name="defaultPosition" format="integer" />
     </declare-styleable>
 
 

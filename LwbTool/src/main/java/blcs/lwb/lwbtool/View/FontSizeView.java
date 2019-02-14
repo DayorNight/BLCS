@@ -9,14 +9,27 @@ import android.graphics.Point;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import blcs.lwb.lwbtool.R;
 import blcs.lwb.lwbtool.utils.DensityUtils;
+import blcs.lwb.lwbtool.utils.LogUtils;
 
 /**
  * TODO 仿微信字体大小调整
- * 自定义属性有：1.一共多少格 2.线条颜色与粗细 3.圆的半径和颜色
+ * 自定义属性：
+ * lineWidth        线条粗细
+ * lineColor        线条颜色
+ * totalCount       线条格数
+ * circleColor      球型颜色
+ * circleRadius     球型颜色半径
+ * textFontColor    文字颜色
+ * smallSize        小“A” 字体大小
+ * standerSize      “标准” 字体大小
+ * bigSize          大“A” 字体大小
+ * defaultPosition  默认位置
  */
 public class FontSizeView extends View {
 
@@ -25,36 +38,49 @@ public class FontSizeView extends View {
     private int defaultMax = 5;
     private int defaultCircleColor = Color.WHITE;
     private int defaultCircleRadius;
+    // 当前所在位置
+    private int currentProgress;
+
+    // 默认位置
     private int defaultPosition = 1;
 
     // 一共有多少格
     private int max = 7;
     // 线条颜色
-    private int lineColor;
+    private int lineColor = Color.BLACK;
     // 线条粗细
     private int lineWidth;
-    // 突出部分的线条高度
-    private int lineHeight;
+
+    //字体颜色
+    private int textColor = Color.BLACK;
+    //字体大小
+    private int smallSize = 14;
+    private int standerSize = 16;
+    private int bigSize = 28;
+
     // 圆半径
     private int circleRadius;
-    private int circleColor;
+    private int circleColor = Color.WHITE;
     // 一段的宽度，根据总宽度和总格数计算得来
     private int itemWidth;
     // 控件的宽高
     private int height;
     private int width;
-    // 当前所在位置
-    private int currentProgress = defaultPosition;
     // 画笔
     private Paint mLinePaint;
+    private Paint mTextPaint;
+    private Paint mText1Paint;
+    private Paint mText2Paint;
     private Paint mCirclePaint;
     // 滑动过程中x坐标
     private float currentX = 0;
     // 有效数据点
     private List<Point> points = new ArrayList<>();
 
-    private float circleX;
     private float circleY;
+    private float textScaleX;
+    private float text1ScaleX;
+    private float text2ScaleX;
 
     public FontSizeView(Context context) {
         this(context, null);
@@ -66,31 +92,48 @@ public class FontSizeView extends View {
     }
 
     private void init(Context context, AttributeSet attrs) {
+
         // initDefault
         defaultLineWidth = DensityUtils.dp2px(context, 2);
         defaultCircleRadius = DensityUtils.dp2px(context, 35);
-
-        lineColor = Color.rgb(33, 33, 33);
         lineWidth = DensityUtils.dp2px(context, 1);
-        circleColor = Color.WHITE;
-
-        // initCustomAttrs
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.FontSizeView);
         final int N = typedArray.getIndexCount();
         for (int i = 0; i < N; i++) {
             initCustomAttr(typedArray.getIndex(i), typedArray);
         }
         typedArray.recycle();
-
         // 初始化画笔
         mLinePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mLinePaint.setColor(lineColor);
         mLinePaint.setStyle(Paint.Style.FILL_AND_STROKE);
         mLinePaint.setStrokeWidth(lineWidth);
 
+        //文字画笔
+        mTextPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        mTextPaint.setColor(textColor);
+        mTextPaint.setStyle(Paint.Style.FILL_AND_STROKE);
+//        mTextPaint.setStrokeWidth(DensityUtils.dp2px(context, 1));
+        mTextPaint.setTextSize(DensityUtils.sp2px(context, smallSize));
+        textScaleX = mTextPaint.measureText("A");
+        //文字画笔
+        mText1Paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        mText1Paint.setColor(textColor);
+        mText1Paint.setStyle(Paint.Style.FILL_AND_STROKE);
+        mText1Paint.setTextSize(DensityUtils.sp2px(context, bigSize));
+        text1ScaleX = mText1Paint.measureText("A");
+
+        //文字画笔
+        mText2Paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        mText2Paint.setColor(textColor);
+        mText2Paint.setStyle(Paint.Style.FILL_AND_STROKE);
+        mText2Paint.setTextSize(DensityUtils.sp2px(context, standerSize));
+        text2ScaleX = mText2Paint.measureText("标准");
+
         mCirclePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mCirclePaint.setColor(circleColor);
         mCirclePaint.setStyle(Paint.Style.FILL);
+
         // 设置阴影效果
         setLayerType(LAYER_TYPE_SOFTWARE, null);
         mCirclePaint.setShadowLayer(2, 0, 0, Color.rgb(33, 33, 33));
@@ -107,6 +150,16 @@ public class FontSizeView extends View {
             circleRadius = typedArray.getDimensionPixelSize(attr, defaultCircleRadius);
         } else if (attr == R.styleable.FontSizeView_totalCount) {
             max = typedArray.getInteger(attr, defaultMax);
+        } else if (attr == R.styleable.FontSizeView_textFontColor) {
+            textColor = typedArray.getColor(attr, textColor);
+        } else if (attr == R.styleable.FontSizeView_smallSize) {
+            smallSize = typedArray.getInteger(attr, smallSize);
+        } else if (attr == R.styleable.FontSizeView_standerSize) {
+            standerSize = typedArray.getInteger(attr, standerSize);
+        } else if (attr == R.styleable.FontSizeView_bigSize) {
+            bigSize = typedArray.getInteger(attr, bigSize);
+        }else if (attr == R.styleable.FontSizeView_defaultPosition) {
+            defaultPosition = typedArray.getInteger(attr, defaultPosition);
         }
     }
 
@@ -116,96 +169,75 @@ public class FontSizeView extends View {
         height = h;
         width = w;
         circleY = height / 2;
-        lineHeight = height / 4;
         // 横线宽度是总宽度-2个圆的半径
         itemWidth = (w - 2 * circleRadius) / max;
         // 把可点击点保存起来
         for (int i = 0; i <= max; i++) {
             points.add(new Point(circleRadius + i * itemWidth, height / 2));
         }
+        //初始刻度
+        currentX = points.get(defaultPosition).x;
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        //画字
+        canvas.drawText("A", points.get(0).x - textScaleX / 2, height / 2 - 50, mTextPaint);
+
+        //画字
+        canvas.drawText("标准", points.get(1).x - text2ScaleX / 2, height / 2 - 50, mText2Paint);
+
+        //画字
+        canvas.drawText("A", points.get(points.size() - 1).x - text1ScaleX / 2, height / 2 - 50, mText1Paint);
+
         // 先画中间的横线
         canvas.drawLine(points.get(0).x, height / 2, points.get(points.size() - 1).x, height / 2, mLinePaint);
         // 绘制刻度
         for (Point point : points) {
-            canvas.drawLine(point.x, height / 2 - lineHeight, point.x, height / 2 + lineHeight, mLinePaint);
+            canvas.drawLine(point.x + 1, height / 2 - 20, point.x + 1, height / 2 + 20, mLinePaint);
         }
-        // 画圆
-        if (canMove) {
-            // 随手指滑动过程
-            if (currentX < circleRadius) {
-                currentX = circleRadius;
-            }
-            if (currentX > width - circleRadius) {
-                currentX = width - circleRadius;
-            }
-            circleX = currentX;
-        } else {
-            // 最终
-            circleX = points.get(currentProgress).x;
-        }
-        // 实体圆
-        canvas.drawCircle(circleX, circleY, circleRadius, mCirclePaint);
-    }
 
-    float downX = 0;
-    private boolean canMove = false;
+        // 画圆
+        if (currentX < circleRadius) {
+            currentX = circleRadius;
+        }
+        if (currentX > width - circleRadius) {
+            currentX = width - circleRadius;
+        }
+
+        // 实体圆
+        canvas.drawCircle(currentX + 1, circleY, circleRadius, mCirclePaint);
+    }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        // 过滤掉不合法的坐标
-//        if (event.getX() < circleRadius || event.getX() > width - circleRadius) {
-//            return false;
-//        }
+        currentX = event.getX();
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                // 判断是否是数据点
-                downX = event.getX();
-                canMove = isDownOnCircle(downX);
+                invalidate();
                 break;
             case MotionEvent.ACTION_MOVE:
-                if (canMove) {
-                    currentX = event.getX();
-                    invalidate();
-                }
+                invalidate();
                 break;
             case MotionEvent.ACTION_UP:
-                // 手指抬起之后就圆就不能在非有效点
-                currentX = 0;
-                float upX = event.getX();
-                if (canMove) {
-                    // 是滑动过来的，要判断距离哪个有效点最近，就滑动到哪个点
-                    Point targetPoint = getNearestPoint(upX);
-                    if (targetPoint != null) {
-                        invalidate();
-                    }
-                } else {
-                    if (Math.abs(downX - upX) < 30) {
-                        Point point = isValidPoint(upX);
-                        if (point != null) {
-                            invalidate();
-                        }
-                    }
+                //回到最近的一个刻度点
+                Point targetPoint = getNearestPoint(currentX);
+                if (targetPoint != null) {
+                    // 最终
+                    currentX = points.get(currentProgress).x;
+                    invalidate();
                 }
-                if (onPointResultListener != null) {
-                    onPointResultListener.onPointResult(currentProgress);
+                if (onChangeCallbackListener != null) {
+                    onChangeCallbackListener.onChangeListener(currentProgress);
                 }
-                downX = 0;
-                canMove = false;
                 break;
         }
         return true;
     }
 
     /**
-     * 滑动抬起之后，要滑动到最近的一个点那里
-     *
-     * @param x
-     * @return
+     * 获取最近的刻度
      */
     private Point getNearestPoint(float x) {
         for (int i = 0; i < points.size(); i++) {
@@ -218,39 +250,21 @@ public class FontSizeView extends View {
         return null;
     }
 
-    /**
-     * 判断是否点击到圆上
-     *
-     * @param x
-     * @return
-     */
-    private boolean isDownOnCircle(float x) {
-        return Math.abs(points.get(currentProgress).x - x) < circleRadius;
+    public void setChangeCallbackListener(OnChangeCallbackListener listener) {
+        this.onChangeCallbackListener = listener;
     }
 
-    /**
-     * 判断是否是有效的点击点
-     *
-     * @param x
-     */
-    private Point isValidPoint(float x) {
-        for (int i = 0; i < points.size(); i++) {
-            Point point = points.get(i);
-            if (Math.abs(point.x - x) < 30) {
-                currentProgress = i;
-                return point;
-            }
+    private OnChangeCallbackListener onChangeCallbackListener;
+
+    public interface OnChangeCallbackListener {
+        void onChangeListener(int position);
+    }
+
+    public void setDefaultPosition(int position){
+        defaultPosition=position;
+        if (onChangeCallbackListener != null) {
+            onChangeCallbackListener.onChangeListener(defaultPosition);
         }
-        return null;
-    }
-
-    public void setOnPointResultListener(OnPointResultListener onPointResultListener) {
-        this.onPointResultListener = onPointResultListener;
-    }
-
-    private OnPointResultListener onPointResultListener;
-
-    public interface OnPointResultListener {
-        void onPointResult(int position);
+        invalidate();
     }
 }

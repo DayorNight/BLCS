@@ -64,6 +64,8 @@ public class WeChatFunctionFragment extends BaseFragment {
                 }
             }
         });
+
+
     }
 
     @Override
