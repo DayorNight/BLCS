@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.umeng.analytics.MobclickAgent;
 
+import blcs.lwb.lwbtool.manager.AppManager;
 import blcs.lwb.lwbtool.utils.EditTextUtils;
 import blcs.lwb.lwbtool.R;
 import blcs.lwb.lwbtool.base.BasePresenter;
@@ -32,6 +33,7 @@ public abstract class BaseFragmentActivity extends AppCompatActivity implements 
     @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		AppManager.getAppManager().addActivity(this);
 //		requestWindowFeature(Window.FEATURE_NO_TITLE);
 //		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);// 设定为竖屏
 		setContentView(bindLayout(),this);

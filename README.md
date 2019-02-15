@@ -1,7 +1,7 @@
 # BLCS
 ## 首页显示
-![Image text](https://github.com/DayorNight/BLCS/blob/master/home.png)
-
+![Image text](https://github.com/DayorNight/BLCS/blob/master/png/工具.png)
+![Image text](https://github.com/DayorNight/BLCS/blob/master/png/View-仿微信功能-字体大小.png)
 #### 子菜单
 
 ###### 工具
@@ -14,21 +14,22 @@
 > 7、ScreenUtils
 
 ###### View
-> 1、BottomNavigationView
-> 2、RecyclerView
-> 3、toolbar
-> 4、RxToast
-> 5、转盘小游戏
-> 6、跑马灯/水波纹/标签
-> 7、滑动菜单/悬浮按钮
-> 8、ViewPager指示器
-> 9、ViewPager
-> 10、OpenGl三角形
-> 11、OpenGl矩形
-> 12、常用Dialog
-> 13、进度条
-> 14、蛛网等级及颜色选取
-> 15、Banner轮播图
+> 1、仿微信功能及控件
+> 2、BottomNavigationView
+> 3、RecyclerView
+> 4、toolbar
+> 5、RxToast
+> 6、转盘小游戏
+> 7、跑马灯/水波纹/标签
+> 8、滑动菜单/悬浮按钮
+> 9、ViewPager指示器
+> 10、ViewPager
+> 11、OpenGl三角形
+> 12、OpenGl矩形
+> 13、常用Dialog
+> 14、进度条
+> 15、蛛网等级及颜色选取
+> 16、Banner轮播图
 
 ###### 其他
 > 1、采用MVP模式
@@ -50,4 +51,4 @@
 
 
 ### BLCS下载地址 
-![Image text](https://github.com/DayorNight/BLCS/blob/master/BLCS.png)
+![Image text](https://github.com/DayorNight/BLCS/blob/master/png/BLCS.png)

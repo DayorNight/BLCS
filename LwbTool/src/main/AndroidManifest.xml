@@ -22,11 +22,11 @@
         <activity
             android:name=".utils.crash.DefaultErrorActivity"
             android:process=":error_activity" />
+
         <provider
             android:name=".utils.crash.CaocInitProvider"
             android:authorities="${applicationId}.customactivityoncrashinitprovider"
             android:exported="false"
             android:initOrder="101" />
-
     </application>
 </manifest>

@@ -1,6 +1,11 @@
 package blcs.lwb.utils;
 
 
+import android.content.Context;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.os.Build;
+
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
 
@@ -28,7 +33,5 @@ public class MyApplication extends BaseApplication {
 //      设置日志加密
         UMConfigure.setEncryptEnabled(true);
     }
-
-
 
 }

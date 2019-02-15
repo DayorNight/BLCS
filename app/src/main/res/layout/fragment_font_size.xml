@@ -19,7 +19,7 @@
             android:orientation="vertical"
             android:paddingTop="20dp">
 
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/ll_font_size_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -37,14 +37,16 @@
                     android:gravity="center_vertical"
                     android:padding="@dimen/space_line2"
                     android:textSize="@dimen/sp_stander"
+                    android:layout_toLeftOf="@+id/iv_font_size"
                     android:text="预览字体大小"
                     android:textColor="@color/black" />
-
                 <ImageView
+                    android:id="@+id/iv_font_size"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
                     android:src="@mipmap/ic_launcher" />
-            </LinearLayout>
+            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -64,7 +66,7 @@
                     android:id="@+id/tv_font_size2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/space_line"
+                    android:layout_marginLeft="@dimen/space_line"
                     android:background="@mipmap/ic_chat_left"
                     android:gravity="center_vertical"
                     android:padding="@dimen/space_line2"
@@ -92,7 +94,7 @@
                     android:id="@+id/tv_font_size3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/space_line"
+                    android:layout_marginLeft="@dimen/space_line"
                     android:background="@mipmap/ic_chat_left"
                     android:gravity="center_vertical"
                     android:padding="@dimen/space_line2"

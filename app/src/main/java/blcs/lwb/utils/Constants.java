@@ -35,4 +35,8 @@ public class Constants {
     public static final String KEY = "image";
     public static int [] images = {R.mipmap.ic1, R.mipmap.ic2,R.mipmap.ic3, R.mipmap.ic4, R.mipmap.ic5};
 
+
+
+    public static final String SP_FontScale="字体大小调整";
+
 }

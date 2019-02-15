@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import blcs.lwb.lwbtool.R;
+import blcs.lwb.lwbtool.manager.AppManager;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
@@ -19,6 +20,7 @@ public abstract class BaseAppCompatActivity<T extends BaseView, P extends BasePr
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(bindLayout());
+        AppManager.getAppManager().addActivity(this);
         bind = ButterKnife.bind(this);
         presenter = bindPresenter();
         if (presenter != null) {

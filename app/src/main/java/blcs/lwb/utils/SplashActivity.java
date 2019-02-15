@@ -1,6 +1,8 @@
 package blcs.lwb.utils;
 
 
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -48,4 +50,5 @@ public class SplashActivity extends BaseActivity {
                 break;
         }
     }
+
 }

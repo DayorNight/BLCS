@@ -8,20 +8,26 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import blcs.lwb.lwbtool.base.BasePresenter;
+import blcs.lwb.lwbtool.utils.LogUtils;
+import blcs.lwb.lwbtool.utils.RxBus;
 import blcs.lwb.utils.fragment.BaseFragment;
 import blcs.lwb.utils.mvp.BaseFragmentActivity;
 import blcs.lwb.utils.mvp.view.IPublicFragment;
 import blcs.lwb.utils.mvp.presenter.PublicFragmentPresenter;
 import butterknife.BindView;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 
 
 public class PublicFragmentActivity extends BaseFragmentActivity implements IPublicFragment {
 
     @BindView(R.id.tl_toolbar)
     public Toolbar tlToolbar;
+    private Disposable disposable;
 
     /**
      * 启动这个Activity的Intent 带参数
+     *
      * @param context
      * @return
      */
@@ -42,6 +48,16 @@ public class PublicFragmentActivity extends BaseFragmentActivity implements IPub
     @Override
     public void Toolbar_init() {
 
+        //注册eventbus
+        disposable = RxBus.getDefault()
+                .register(RxBus.Event.class, new Consumer<RxBus.Event>() {
+                    @Override
+                    public void accept(RxBus.Event event) {
+                        int eventCode = event.getCode();
+                        LogUtils.e("Code= "+eventCode);
+                    }
+                });
+
         tlToolbar.setNavigationIcon(R.mipmap.ic_back_white);
         tlToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +72,7 @@ public class PublicFragmentActivity extends BaseFragmentActivity implements IPub
             }
         });
     }
+
 
     @Override
     public void Show_Fragment() {
@@ -77,4 +94,9 @@ public class PublicFragmentActivity extends BaseFragmentActivity implements IPub
         super.onActivityResult(requestCode, resultCode, data);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        RxBus.getDefault().unregister(disposable);
+    }
 }

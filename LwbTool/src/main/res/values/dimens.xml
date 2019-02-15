@@ -42,12 +42,20 @@
 
 
     <!--字体大小-->
+    <!--0.875-->
     <dimen name="sp_small">14sp</dimen>
+    <!--1-->
     <dimen name="sp_stander">16sp</dimen>
+    <!--1.125-->
     <dimen name="sp_big1">18sp</dimen>
+    <!--1.25-->
     <dimen name="sp_big2">20sp</dimen>
+    <!--1.375-->
     <dimen name="sp_big3">22sp</dimen>
+    <!--1.5-->
     <dimen name="sp_big4">24sp</dimen>
+    <!--1.625-->
     <dimen name="sp_big5">26sp</dimen>
+    <!--1.75-->
     <dimen name="sp_big6">28sp</dimen>
 </resources>

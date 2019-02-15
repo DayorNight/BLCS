@@ -1,5 +1,7 @@
 package blcs.lwb.utils;
 
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
@@ -15,6 +17,8 @@ import java.util.List;
 import blcs.lwb.lwbtool.base.BaseAppCompatActivity;
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.lwbtool.utils.LeakCanaryUtils;
+import blcs.lwb.lwbtool.utils.LogUtils;
+import blcs.lwb.lwbtool.utils.SPUtils;
 import blcs.lwb.utils.adapter.ViewPagerHomeAdapter;
 import blcs.lwb.utils.mvp.presenter.MainPresenter;
 import blcs.lwb.utils.mvp.view.IMainView;
@@ -29,6 +33,8 @@ public class MainActivity extends BaseAppCompatActivity implements IMainView {
     ViewPager mainViewpage;
     int[] img_menu={R.mipmap.img_util,R.mipmap.img_view,R.mipmap.img_other};
     private int pos;//当前页面
+    private float fontSizeScale;
+
     @Override
     protected BasePresenter bindPresenter() {
         return new MainPresenter(this);
@@ -46,6 +52,8 @@ public class MainActivity extends BaseAppCompatActivity implements IMainView {
 
     @Override
     public void BottomMenu() {
+        fontSizeScale = (float) SPUtils.get(this, Constants.SP_FontScale, 0.0f);
+        LogUtils.e("======="+fontSizeScale);
         List<String> menus = MyUtils.getArray(this,R.array.bottom_menu);
         Menu menu = mainBottom.getMenu();
         for (int i = 0; i < menus.size(); i++) {
@@ -53,6 +61,7 @@ public class MainActivity extends BaseAppCompatActivity implements IMainView {
             MenuItem item = menu.findItem(i);
             item.setIcon(img_menu[i]);
         }
+
         mainBottom.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -117,4 +126,17 @@ public class MainActivity extends BaseAppCompatActivity implements IMainView {
         super.onDestroy();
         LeakCanaryUtils.fixFocusedViewLeak(getApplication());
     }
+
+    @Override
+    public Resources getResources() {
+        Resources res =super.getResources();
+        Configuration config = res.getConfiguration();
+
+        if(fontSizeScale>0.5){
+            config.fontScale= fontSizeScale;//1 设置正常字体大小的倍数
+        }
+        res.updateConfiguration(config,res.getDisplayMetrics());
+        return res;
+    }
+
 }
