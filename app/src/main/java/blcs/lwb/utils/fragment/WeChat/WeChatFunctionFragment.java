@@ -1,7 +1,7 @@
 package blcs.lwb.utils.fragment.WeChat;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -9,11 +9,9 @@ import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import blcs.lwb.lwbtool.base.BasePresenter;
 
+import blcs.lwb.lwbtool.utils.IntentUtils;
 import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.lwbtool.utils.RecyclerUtil;
 import blcs.lwb.lwbtool.utils.RxToast;
@@ -56,8 +54,11 @@ public class WeChatFunctionFragment extends BaseFragment {
                 LogUtils.e(item);
                 switch (item){
                     case FramentManages.FontSize:
-                        addFrament(FramentManages.FontSize,bundle);
+//                        addFrament(FramentManages.FontSize,bundle);
+                        IntentUtils.toActivity(activity,new Intent(activity, FontSizeActivity.class));
+
                         break;
+
                         default:
                             RxToast.info(activity,getString(R.string.function_unopen));
                             break;

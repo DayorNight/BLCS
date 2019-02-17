@@ -9,6 +9,21 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.subjects.PublishSubject;
 import io.reactivex.subjects.Subject;
 
+/**
+ *          RxBus.getDefault().post(new RxBus.Event<>(1));
+ *          RxBus.getDefault().unregister(disposable);
+ *
+ *         //注册eventbus
+ *         disposable = RxBus.getDefault()
+ *                 .register(RxBus.Event.class, new Consumer<RxBus.Event>() {
+ *                     @Override
+ *                     public void accept(RxBus.Event event) {
+ *                         int eventCode = event.getCode();
+ *                         LogUtils.e("Code= " + eventCode);
+ *
+ *                     }
+ *                 });
+ */
 public class RxBus {
 
     private Subject<Object> mBus = null;

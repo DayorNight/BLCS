@@ -97,4 +97,6 @@
     <string name="custom_navigator">custom navigator</string>
     <string name="tab_with_custom_layout">load custom layout</string>
     <string name="WeChatFunction">仿微信功能及控件</string>
+    <string name="SplashActivity">欢迎界面</string>
+    <string name="FontSizeActivity">字体大小</string>
 </resources>

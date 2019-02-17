@@ -131,7 +131,6 @@ public class MainActivity extends BaseAppCompatActivity implements IMainView {
     public Resources getResources() {
         Resources res =super.getResources();
         Configuration config = res.getConfiguration();
-
         if(fontSizeScale>0.5){
             config.fontScale= fontSizeScale;//1 设置正常字体大小的倍数
         }

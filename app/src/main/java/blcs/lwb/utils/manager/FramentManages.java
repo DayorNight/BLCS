@@ -53,7 +53,6 @@ import blcs.lwb.utils.fragment.TurnTableViewFragment;
 import blcs.lwb.utils.fragment.Viewpage.SwipeCardFragment;
 import blcs.lwb.utils.fragment.Viewpage.ViewpageFragment;
 import blcs.lwb.utils.fragment.Viewpage.jellyViewPagerFragment;
-import blcs.lwb.utils.fragment.WeChat.FontSizeFragment;
 import blcs.lwb.utils.fragment.WeChat.WeChatFunctionFragment;
 import blcs.lwb.utils.mvp.BaseFragmentActivity;
 
@@ -232,8 +231,7 @@ public class FramentManages
 				return new BannerFragment();
 			case FramentManages.WeChatFunction:
 				return new WeChatFunctionFragment();
-			case FramentManages.FontSize:
-				return new FontSizeFragment();
+
 //			case FramentManages.UtilsDetail://工具详情界面
 //				return new HomeTab1DetailFragment();
 		}

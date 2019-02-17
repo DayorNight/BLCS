@@ -38,7 +38,7 @@ public abstract class BaseActivity<T extends BaseView, P extends BasePresenter<T
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
+//		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(bindLayout());
 		bind = ButterKnife.bind(this);
 		presenter = bindPresenter();
