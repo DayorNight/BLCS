@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--首页-->
+    <string name="Tool">工具</string>
+    <string name="View">View</string>
+    <string name="Other">其他</string>
+    <string name="Title">常用工具类</string>
+    <!--发现-->
+    <string name="Monments">朋友圈</string>
+    <string name="Scan">扫一扫</string>
+    <string name="Shake">摇一摇</string>
+    <string name="Top_Stories">看一看</string>
+    <string name="Search">搜一搜</string>
+    <string name="People_Nearby">附近的人</string>
+    <string name="Message_in_a_Bottle">漂流瓶</string>
+    <string name="Shopping">购物</string>
+    <string name="Games">游戏</string>
+    <string name="Mini_Programs">小程序</string>
+</resources>

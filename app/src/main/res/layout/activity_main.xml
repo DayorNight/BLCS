@@ -19,7 +19,7 @@
             android:textSize="@dimen/standard_title"
             android:textColor="@color/white"
             android:textStyle="bold"
-            android:text="@string/app_Title"
+            android:text="@string/Title"
             />
     </android.support.v7.widget.Toolbar>
 

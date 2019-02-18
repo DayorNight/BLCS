@@ -13,5 +13,10 @@ public class Constants {
     public final static String Item_Name="Item_Name";
     public final static String Adapter_Pos="Adapter_Pos";
 
+    /**
+     * SP
+     */
 
+    public final static String SP_LANGUAGE="SP_LANGUAGE";
+    public final static String SP_COUNTRY="SP_COUNTRY";
 }

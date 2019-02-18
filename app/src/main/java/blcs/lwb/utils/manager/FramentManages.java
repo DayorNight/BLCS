@@ -53,6 +53,7 @@ import blcs.lwb.utils.fragment.TurnTableViewFragment;
 import blcs.lwb.utils.fragment.Viewpage.SwipeCardFragment;
 import blcs.lwb.utils.fragment.Viewpage.ViewpageFragment;
 import blcs.lwb.utils.fragment.Viewpage.jellyViewPagerFragment;
+import blcs.lwb.utils.fragment.WeChat.MultiLanguageFragment;
 import blcs.lwb.utils.fragment.WeChat.WeChatFunctionFragment;
 import blcs.lwb.utils.mvp.BaseFragmentActivity;
 
@@ -119,6 +120,7 @@ public class FramentManages
 	public final static String Banner="Banner轮播图";
 	public final static String WeChatFunction="仿微信功能及控件";
 	public final static String FontSize="字体大小";
+	public final static String MultiLanguage="多语言";
 
 	/**
 	 * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -231,6 +233,8 @@ public class FramentManages
 				return new BannerFragment();
 			case FramentManages.WeChatFunction:
 				return new WeChatFunctionFragment();
+			case FramentManages.MultiLanguage:
+				return new MultiLanguageFragment();
 
 //			case FramentManages.UtilsDetail://工具详情界面
 //				return new HomeTab1DetailFragment();

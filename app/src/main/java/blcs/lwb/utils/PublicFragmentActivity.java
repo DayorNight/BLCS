@@ -1,24 +1,20 @@
 package blcs.lwb.utils;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import blcs.lwb.lwbtool.base.BasePresenter;
-import blcs.lwb.lwbtool.utils.LogUtils;
-import blcs.lwb.lwbtool.utils.RxBus;
+import blcs.lwb.lwbtool.utils.RxToast;
 import blcs.lwb.utils.fragment.BaseFragment;
 import blcs.lwb.utils.mvp.BaseFragmentActivity;
-import blcs.lwb.utils.mvp.view.IPublicFragment;
 import blcs.lwb.utils.mvp.presenter.PublicFragmentPresenter;
+import blcs.lwb.utils.mvp.view.IPublicFragment;
 import butterknife.BindView;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 
 
 public class PublicFragmentActivity extends BaseFragmentActivity implements IPublicFragment {
@@ -51,6 +47,7 @@ public class PublicFragmentActivity extends BaseFragmentActivity implements IPub
     public void Toolbar_init() {
 
         tlToolbar.setNavigationIcon(R.mipmap.ic_back_white);
+        tlToolbar.inflateMenu(R.menu.menu_multi_language);
         tlToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,6 +60,7 @@ public class PublicFragmentActivity extends BaseFragmentActivity implements IPub
                 }
             }
         });
+
     }
 
 

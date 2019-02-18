@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">BLCS</string>
     <string name="app_Title">常用工具类</string>
+    <string name="Title">常用工具类</string>
     <string name="Util">常用工具类</string>
     <string name="input_str">请输入任意字符串</string>
     <string name="delete_trim">去掉前后空格</string>
@@ -99,4 +100,11 @@
     <string name="WeChatFunction">仿微信功能及控件</string>
     <string name="SplashActivity">欢迎界面</string>
     <string name="FontSizeActivity">字体大小</string>
+    <string name="save">保存</string>
+    <string name="Multi_Language">多语言</string>
+    <string name="Tool">工具</string>
+    <string name="View">View</string>
+    <string name="Other">其他</string>
+
+
 </resources>

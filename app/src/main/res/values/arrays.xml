@@ -2,9 +2,9 @@
 <resources>
     <!--菜单栏-->
     <string-array name="bottom_menu">
-        <item>工具</item>
-        <item>View</item>
-        <item>其他</item>
+        <item>@string/Tool</item>
+        <item>@string/View</item>
+        <item>@string/Other</item>
     </string-array>
     <!--工具栏-->
     <string-array name="Utils">

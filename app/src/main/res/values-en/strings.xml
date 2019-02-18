@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--首页-->
+    <string name="Tool">Tool</string>
+    <string name="View">View</string>
+    <string name="Other">Other</string>
+    <string name="Title">Common Tool</string>
+
+    <!--发现-->
+    <string name="Monments">Monments</string>
+    <string name="Scan">Scan</string>
+    <string name="Shake">Shake</string>
+    <string name="Top_Stories">Top Stories</string>
+    <string name="Search">Search</string>
+    <string name="People_Nearby">People Nearby</string>
+    <string name="Message_in_a_Bottle">Message in a Bottle</string>
+    <string name="Shopping">Shopping</string>
+    <string name="Games">Games</string>
+    <string name="Mini_Programs">Mini Programs</string>
+
+</resources>

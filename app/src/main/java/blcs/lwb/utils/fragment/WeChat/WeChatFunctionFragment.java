@@ -34,11 +34,10 @@ public class WeChatFunctionFragment extends BaseFragment {
     public void popBackListener(int returnCode, Bundle bundle) {
         activity.tlToolbar.setTitle(R.string.WeChatFunction);
     }
-
     @Override
     public void setMiddleTitle(Toolbar title) {
-    }
 
+    }
     @Override
     protected void initView() {
         WeChatAdapter mAdapter = new WeChatAdapter();
@@ -54,11 +53,11 @@ public class WeChatFunctionFragment extends BaseFragment {
                 LogUtils.e(item);
                 switch (item){
                     case FramentManages.FontSize:
-//                        addFrament(FramentManages.FontSize,bundle);
                         IntentUtils.toActivity(activity,new Intent(activity, FontSizeActivity.class));
-
                         break;
-
+                    case FramentManages.MultiLanguage:
+                        addFrament(FramentManages.MultiLanguage,bundle);
+                        break;
                         default:
                             RxToast.info(activity,getString(R.string.function_unopen));
                             break;

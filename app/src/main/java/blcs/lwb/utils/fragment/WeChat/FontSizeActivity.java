@@ -1,5 +1,6 @@
 package blcs.lwb.utils.fragment.WeChat;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Color;
@@ -32,7 +33,6 @@ public class FontSizeActivity extends BaseActivity {
     TextView tv_font_size2;
     @BindView(R.id.tv_font_size3)
     TextView tv_font_size3;
-
     private float fontSizeScale;
 
     @Override
@@ -79,9 +79,10 @@ public class FontSizeActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 SPUtils.put(FontSizeActivity.this,Constants.SP_FontScale,fontSizeScale);
-                //重启应用
-                AppManager.getAppManager().finishAllActivity();
-                IntentUtils.toActivity(FontSizeActivity.this, MainActivity.class,true);
+                    //重启应用
+                    AppManager.getAppManager().finishAllActivity();
+                    IntentUtils.toActivity(FontSizeActivity.this, MainActivity.class,true);
+
             }
         });
         tlToolbar.setTitle("字体大小");

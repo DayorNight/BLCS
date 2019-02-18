@@ -10,12 +10,15 @@ import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
 
 import blcs.lwb.lwbtool.base.BaseApplication;
+import blcs.lwb.lwbtool.utils.MultiLanguageUtils;
 
 public class MyApplication extends BaseApplication {
     @Override
     public void onCreate() {
         super.onCreate();
         initU_APP();
+        //多语言设置
+        registerActivityLifecycleCallbacks(MultiLanguageUtils.callbacks);
     }
 
     /**
@@ -34,4 +37,9 @@ public class MyApplication extends BaseApplication {
         UMConfigure.setEncryptEnabled(true);
     }
 
+    @Override
+    protected void attachBaseContext(Context base) {
+        //系统语言等设置发生改变时会调用此方法，需要要重置app语言
+        super.attachBaseContext(MultiLanguageUtils.attachBaseContext(base));
+    }
 }
