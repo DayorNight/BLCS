@@ -2,8 +2,12 @@ package blcs.lwb.utils.fragment.WeChat;
 
 import android.annotation.SuppressLint;
 import android.content.res.ColorStateList;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.os.ConfigurationCompat;
+import android.support.v4.os.LocaleListCompat;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -71,26 +75,27 @@ public class MultiLanguageFragment extends BaseFragment {
 
                 if (item.getItemId() == R.id.item_save) {
                     RxToast.info(activity, "保存");
-                    String type;
                     //保存选中位置
                     SPUtils.put(activity, Constants.SP_MultiLanguage, checkPos);
                     switch (datas.get(checkPos)) {
                         case "跟随系统":
-                            Locale localLanguage = MultiLanguageUtils.getLocalLanguage(activity);
-                            type =  localLanguage.getLanguage();
-                            LogUtils.e(type);
+                            Locale locale = MultiLanguageUtils.getSystemLanguage().get(0);
+                            String language = locale.getLanguage();
+                            String country = locale.getCountry();
+                            MultiLanguageUtils.changeLanguage(activity,language, country);
+                            MultiLanguageUtils.changeLanguage(activity,null,null);
                             break;
                         case "简体中文":
-                            type = "zh";
+                            MultiLanguageUtils.changeLanguage(activity, "zh", "ZH");
                             break;
                         case "English":
-                            type = "en";
+                            MultiLanguageUtils.changeLanguage(activity, "en", "US");
                             break;
                         default:
-                            type = "zh";
+                            MultiLanguageUtils.changeLanguage(activity, "zh", "ZH");
                             break;
                     }
-                    MultiLanguageUtils.changeLanguage(activity, type, type);
+
                     AppManager.getAppManager().finishAllActivity();
                     IntentUtils.toActivity(activity, MainActivity.class,true);
                 }

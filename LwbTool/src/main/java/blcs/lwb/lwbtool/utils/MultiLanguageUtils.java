@@ -11,6 +11,8 @@ import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.LocaleList;
+import android.support.v4.os.ConfigurationCompat;
+import android.support.v4.os.LocaleListCompat;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 
@@ -200,8 +202,8 @@ public class MultiLanguageUtils {
      * 保存多语言信息到sp中
      */
     public static void saveLanguageSetting(Context context, Locale locale) {
-        SPUtils.put(context, Constants.SP_LANGUAGE,"");
-        SPUtils.put(context, Constants.SP_COUNTRY,"");
+        SPUtils.put(context, Constants.SP_LANGUAGE,locale.getLanguage());
+        SPUtils.put(context, Constants.SP_COUNTRY,locale.getCountry());
     }
 
     //注册Activity生命周期监听回调，此部分一定加上，因为有些版本不加的话多语言切换不回来
@@ -211,6 +213,7 @@ public class MultiLanguageUtils {
         public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
             String language = (String) SPUtils.get(activity, Constants.SP_LANGUAGE,"");
             String country = (String) SPUtils.get(activity, Constants.SP_COUNTRY,"");
+            LogUtils.e(language);
             if (!TextUtils.isEmpty(language) && !TextUtils.isEmpty(country)) {
                 //强制修改应用语言
                 if (!isSameWithSetting(activity)) {
@@ -253,7 +256,7 @@ public class MultiLanguageUtils {
     };
 
     /**
-     * 获取系统语言
+     * 获取应用语言
      */
     public static Locale getLocalLanguage(Context context){
         Locale local;
@@ -262,7 +265,15 @@ public class MultiLanguageUtils {
         } else {
             local =context.getResources().getConfiguration().locale;
         }
-        //或者仅仅使用 locale = Locale.getDefault(); 不需要考虑接口 deprecated(弃用)问题
       return local;
+    }
+
+    /**
+     * 获取系统语言
+     */
+    public static LocaleListCompat getSystemLanguage(){
+        Configuration configuration = Resources.getSystem().getConfiguration();
+        LocaleListCompat locales = ConfigurationCompat.getLocales(configuration);
+      return locales;
     }
 }

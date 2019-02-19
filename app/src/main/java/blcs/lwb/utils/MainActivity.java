@@ -53,7 +53,7 @@ public class MainActivity extends BaseAppCompatActivity implements IMainView {
     @Override
     public void BottomMenu() {
         fontSizeScale = (float) SPUtils.get(this, Constants.SP_FontScale, 0.0f);
-        LogUtils.e("======="+fontSizeScale);
+
         List<String> menus = MyUtils.getArray(this,R.array.bottom_menu);
         Menu menu = mainBottom.getMenu();
         for (int i = 0; i < menus.size(); i++) {
