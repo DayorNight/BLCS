@@ -55,6 +55,7 @@ import blcs.lwb.utils.fragment.Viewpage.ViewpageFragment;
 import blcs.lwb.utils.fragment.Viewpage.jellyViewPagerFragment;
 import blcs.lwb.utils.fragment.WeChat.MultiLanguageFragment;
 import blcs.lwb.utils.fragment.WeChat.WeChatFunctionFragment;
+import blcs.lwb.utils.fragment.WeChat.WeChatStorageFragment;
 import blcs.lwb.utils.mvp.BaseFragmentActivity;
 
 /**
@@ -121,6 +122,7 @@ public class FramentManages
 	public final static String WeChatFunction="仿微信功能及控件";
 	public final static String FontSize="字体大小";
 	public final static String MultiLanguage="多语言";
+	public final static String WeChatStorage="存储空间";
 
 	/**
 	 * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -235,6 +237,8 @@ public class FramentManages
 				return new WeChatFunctionFragment();
 			case FramentManages.MultiLanguage:
 				return new MultiLanguageFragment();
+			case FramentManages.WeChatStorage:
+				return new WeChatStorageFragment();
 
 //			case FramentManages.UtilsDetail://工具详情界面
 //				return new HomeTab1DetailFragment();

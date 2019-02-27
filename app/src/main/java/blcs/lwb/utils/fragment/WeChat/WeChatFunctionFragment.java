@@ -15,6 +15,7 @@ import blcs.lwb.lwbtool.utils.IntentUtils;
 import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.lwbtool.utils.RecyclerUtil;
 import blcs.lwb.lwbtool.utils.RxToast;
+import blcs.lwb.lwbtool.utils.dialog.fragment.BottomDialogFragment;
 import blcs.lwb.utils.Constants;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.adapter.WeChatAdapter;
@@ -54,6 +55,9 @@ public class WeChatFunctionFragment extends BaseFragment {
                 switch (item){
                     case FramentManages.FontSize:
                         IntentUtils.toActivity(activity,new Intent(activity, FontSizeActivity.class));
+                        break;
+                    case FramentManages.WeChatStorage:
+                        addFrament(FramentManages.WeChatStorage,bundle);
                         break;
                     case FramentManages.MultiLanguage:
                         addFrament(FramentManages.MultiLanguage,bundle);

@@ -27,6 +27,8 @@ import java.util.List;
  * 4、获取所有安装的应用程序,不包含系统应用
  * 5、获取应用程序的icon图标
  * 6、启动安装应用程序
+ * 7、获取渠道名
+ * 8、双击退出
  */
 public class AppUtils
 {
@@ -189,5 +191,20 @@ public class AppUtils
         } catch (PackageManager.NameNotFoundException ignored) {
         }
         return "";
+    }
+
+
+    /**
+     * 8、双击退出
+     */
+    private  static long firstTime=0;
+    public static void againstClick(Activity context){
+        long secondTime = System.currentTimeMillis();
+        if(secondTime-firstTime>2000){
+            Toast.makeText(context,"再按一次退出程序", Toast.LENGTH_SHORT).show();
+            firstTime=secondTime;
+        }else{
+            context.finish();
+        }
     }
 }

@@ -29,6 +29,7 @@ import blcs.lwb.lwbtool.utils.IntentUtils;
 import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.lwbtool.utils.MultiLanguageUtils;
 import blcs.lwb.lwbtool.utils.RecyclerUtil;
+import blcs.lwb.lwbtool.utils.RxBus;
 import blcs.lwb.lwbtool.utils.RxToast;
 import blcs.lwb.lwbtool.utils.SPUtils;
 import blcs.lwb.utils.Constants;
@@ -39,6 +40,8 @@ import blcs.lwb.utils.fragment.BaseFragment;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 
 /**
  * TODO 多语言

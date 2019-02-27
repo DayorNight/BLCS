@@ -1,4 +1,4 @@
-package blcs.lwb.lwbtool.utils;
+package blcs.lwb.lwbtool.utils.systemSetting;
 
 import android.content.Context;
 import android.os.Environment;
@@ -180,7 +180,7 @@ public class SDCardUtils
      * 11获得手机内存总大小
      * @return
      */
-    public long getRomTotalSize() {
+    public static long getRomTotalSize() {
         File path = Environment.getDataDirectory();
         StatFs statFs = new StatFs(path.getPath());
         if (android.os.Build.VERSION.SDK_INT < 18) {
@@ -198,7 +198,7 @@ public class SDCardUtils
      * 12获得手机可用内存
      * @return
      */
-    public long getRomAvailableSize() {
+    public static long getRomAvailableSize() {
         File path = Environment.getDataDirectory();
         StatFs statFs = new StatFs(path.getPath());
         if (android.os.Build.VERSION.SDK_INT < 18) {

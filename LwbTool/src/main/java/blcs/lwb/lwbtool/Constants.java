@@ -12,7 +12,7 @@ public class Constants {
 
     public final static String Item_Name="Item_Name";
     public final static String Adapter_Pos="Adapter_Pos";
-
+    public final static String URL="URL";
     /**
      * SP
      */
