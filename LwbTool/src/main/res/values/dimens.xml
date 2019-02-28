@@ -41,21 +41,21 @@
     <dimen name="default_slider_margin_btw_title">20dp</dimen>
 
 
-    <!--字体大小-->
-    <!--0.875-->
+    <!--字体大小 及倍数-->
+    <!--0.875=14/16 -->
     <dimen name="sp_small">14sp</dimen>
-    <!--1-->
+    <!--1  标准-->
     <dimen name="sp_stander">16sp</dimen>
-    <!--1.125-->
+    <!--1.125=18/16-->
     <dimen name="sp_big1">18sp</dimen>
-    <!--1.25-->
+    <!--1.25=20/16-->
     <dimen name="sp_big2">20sp</dimen>
-    <!--1.375-->
+    <!--1.375=22/16-->
     <dimen name="sp_big3">22sp</dimen>
-    <!--1.5-->
+    <!--1.5=24/16-->
     <dimen name="sp_big4">24sp</dimen>
-    <!--1.625-->
+    <!--1.625=26/16-->
     <dimen name="sp_big5">26sp</dimen>
-    <!--1.75-->
+    <!--1.75=28/16-->
     <dimen name="sp_big6">28sp</dimen>
 </resources>

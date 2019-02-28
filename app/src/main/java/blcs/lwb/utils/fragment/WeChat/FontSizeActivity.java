@@ -43,16 +43,21 @@ public class FontSizeActivity extends BaseActivity {
     @Override
     public void initView() {
         initToolbar();
+        //滑动返回监听
         fsvFontSize.setChangeCallbackListener(new FontSizeView.OnChangeCallbackListener() {
             @Override
             public void onChangeListener(int position) {
                 int dimension = getResources().getDimensionPixelSize(R.dimen.sp_stander);
-                //字体倍数
+                //根据position 获取字体倍数
                 fontSizeScale = (float) (0.875 + 0.125 * position);
+                //放大后的sp单位
                 double v = fontSizeScale * (int) DensityUtils.px2sp(FontSizeActivity.this, dimension);
+                //改变当前页面大小
                 changeTextSize((int) v);
             }
         });
+
+
         float  scale = (float) SPUtils.get(this, Constants.SP_FontScale, 0.0f);
         if(scale>0.5){
             int pos = (int) ((scale - 0.875) / 0.125);

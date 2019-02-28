@@ -118,5 +118,5 @@
         android:background="@color/white"
         app:circleRadius="11dp"
         app:lineColor="@color/round_corner_progress_bar_progress_default"
-        app:standerSize="14" />
+        app:standerSize="16" />
 </LinearLayout>

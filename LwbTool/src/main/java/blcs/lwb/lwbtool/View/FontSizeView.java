@@ -9,13 +9,10 @@ import android.graphics.Point;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import blcs.lwb.lwbtool.R;
 import blcs.lwb.lwbtool.utils.DensityUtils;
-import blcs.lwb.lwbtool.utils.LogUtils;
 
 /**
  * TODO 仿微信字体大小调整
