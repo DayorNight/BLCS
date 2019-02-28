@@ -2,10 +2,12 @@ package blcs.lwb.utils.fragment;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+
+import com.trello.rxlifecycle2.components.support.RxFragment;
 
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.lwbtool.base.BaseView;
@@ -20,7 +22,7 @@ import butterknife.Unbinder;
 /**
  * BaseFrament
  */
-public abstract class BaseFragment extends Fragment implements IPopBackStackListener, BaseView {
+public abstract class BaseFragment extends RxFragment implements IPopBackStackListener, BaseView {
     private Bundle BackBundle;
     /**
      * 该fragment全局视图，不能在子Fragment中创建

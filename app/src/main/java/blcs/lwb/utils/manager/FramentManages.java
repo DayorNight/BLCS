@@ -46,6 +46,7 @@ import blcs.lwb.utils.fragment.OpenGlSquareFragment;
 import blcs.lwb.utils.fragment.OpenGlTriangleFragment;
 import blcs.lwb.utils.fragment.ProgressBarFragment;
 import blcs.lwb.utils.fragment.RecyclerViewFragment;
+import blcs.lwb.utils.fragment.RxjavaRetrofitFragment;
 import blcs.lwb.utils.fragment.ScreenUtilsFragment;
 import blcs.lwb.utils.fragment.StringUtilsFragment;
 import blcs.lwb.utils.fragment.ToolbarFragment;
@@ -100,6 +101,7 @@ public class FramentManages
 	public final static String MarqueeView="跑马灯/水波纹TextView/标签LabelView";
 	public final static String CustomActivityOnCrash="全局异常捕获";
 	public final static String LeakCanary="内存泄漏检测";
+	public final static String RxjavaRetrofit="Rxjava+Retrofit封装";
 	public final static String DrawerLayout="滑动菜单/悬浮按钮";
 	public final static String MagicIndicator="ViewPager指示器";
 	public final static String ScrollableTab="指示器1";
@@ -239,6 +241,8 @@ public class FramentManages
 				return new MultiLanguageFragment();
 			case FramentManages.WeChatStorage:
 				return new WeChatStorageFragment();
+			case FramentManages.RxjavaRetrofit:
+				return new RxjavaRetrofitFragment();
 
 //			case FramentManages.UtilsDetail://工具详情界面
 //				return new HomeTab1DetailFragment();

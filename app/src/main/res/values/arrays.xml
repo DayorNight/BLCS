@@ -44,6 +44,7 @@
         <item>APK签名打包</item>
         <item>全局异常捕获</item>
         <item>内存泄漏检测</item>
+        <item>Rxjava+Retrofit封装</item>
         <!--<item>Java常用设计模式</item>-->
     </string-array>
 

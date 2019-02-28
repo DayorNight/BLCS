@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <Button
+        android:id="@+id/btn_retrofit_intro"
+        style="@style/Button_wrap"
+        android:textColor="@color/white"
+        android:text="Rxjava+Retrofit网络请求框架封装介绍"/>
+    <Button
+        android:id="@+id/btn_retrofit_get"
+        style="@style/Button_wrap"
+        android:text="Retrofit获取数据"/>
+    <Button
+        android:id="@+id/btn_retrofit_getList"
+        style="@style/Button_wrap"
+        android:text="Retrofit获取数组"/>
+    <TextView
+        android:id="@+id/tv_retrofit"
+        android:layout_gravity="center"
+        style="@style/text_stander"
+        />
+</LinearLayout>

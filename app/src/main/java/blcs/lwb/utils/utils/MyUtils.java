@@ -14,8 +14,10 @@ import blcs.lwb.utils.Bean.MySection;
 import blcs.lwb.utils.Bean.Status;
 import blcs.lwb.utils.Bean.Video;
 import blcs.lwb.utils.PublicFragmentActivity;
+import blcs.lwb.utils.R;
 import blcs.lwb.utils.adapter.BaseDemoAdapter.MultipleItem;
 import blcs.lwb.utils.adapter.BaseDemoAdapter.NormalMultipleEntity;
+import blcs.lwb.utils.fragment.BaseFragment;
 import blcs.lwb.utils.manager.FramentManages;
 
 public class MyUtils {
@@ -104,6 +106,15 @@ public class MyUtils {
         return list;
     }
 
+    /**
+     * 跳转Url
+     */
+    public static void toUrl(BaseFragment activity,String title,String url){
+        Bundle bundle = new Bundle();
+        bundle.putString(Constants.Item_Name,title);
+        bundle.putString(Constants.URL, url);
+        activity.addFrament(R.id.fr_contain,  FramentManages.Demo, bundle, true);
+    }
     /**
      * 跳转Demo
      */

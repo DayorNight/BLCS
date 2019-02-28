@@ -27,7 +27,6 @@ android {
         }
     }
     compileSdkVersion 28
-
     defaultConfig {
         applicationId "blcs.lwb.utils"
         minSdkVersion 18
@@ -68,12 +67,17 @@ android {
             outputFileName = rootProject.getName() + "-" + variant.flavorName + "-" + buildType.name + "-" + formattedDate + "-v" + defaultConfig.versionName + "-" + defaultConfig.versionCode + ".apk";
         }
     }
+    buildToolsVersion '28.0.1'
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
 }
 
 dependencies {
     // ========基本关联=======
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
@@ -85,7 +89,6 @@ dependencies {
     //==============友盟================
     implementation 'com.umeng.sdk:common:latest.integration'
     implementation 'com.umeng.sdk:analytics:latest.integration'
-
     // ========glide=======
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
 }

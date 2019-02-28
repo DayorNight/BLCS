@@ -30,6 +30,9 @@ public class Constants {
     public final static String BottomNavigation_Utils="https://blog.csdn.net/cs_lwb/article/details/82979521";
     //仿微信字体大小
     public final static String FontSize="https://www.jianshu.com/p/f13b08da22d1";
+
+    //Rxjava+Retrofit
+    public final static String Retrofit="https://blog.csdn.net/cs_lwb/article/details/82016997";
     //图片
     public final static int[] img_menu={R.mipmap.img_util,R.mipmap.img_view,R.mipmap.img_other,R.mipmap.set,R.mipmap.ic_check_white_48dp};
 

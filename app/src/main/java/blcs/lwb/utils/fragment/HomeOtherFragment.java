@@ -99,6 +99,9 @@ public class HomeOtherFragment extends Fragment implements IHomeTabView{
                     case FramentManages.LeakCanary:
                         MyUtils.toFragment(activity,bundle,FramentManages.LeakCanary);
                         break;
+                    case FramentManages.RxjavaRetrofit:
+                        MyUtils.toFragment(activity,bundle,FramentManages.RxjavaRetrofit);
+                        break;
                     default:
                         RxToast.warning(activity,getString(R.string.function_unopen));
                         break;

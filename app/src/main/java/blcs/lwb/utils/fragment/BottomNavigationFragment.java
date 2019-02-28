@@ -222,10 +222,8 @@ public class BottomNavigationFragment extends BaseFragment {
         int size = bottomNavigationView.getMenu().size();
         switch (view.getId()) {
             case R.id.btn_Recommend:
-                Bundle bundle = new Bundle();
-                bundle.putString(Constants.Item_Name,FramentManages.BottomNavigation);
-                bundle.putString(Constants.URL,Constants.BottomNavigation_Utils);
-                addFrament(R.id.fr_contain,  FramentManages.Demo, bundle, true);
+                MyUtils.toUrl(this,FramentManages.BottomNavigation,Constants.BottomNavigation_Utils);
+
                 break;
             case R.id.btn_add:
                 if (size == 5) {
