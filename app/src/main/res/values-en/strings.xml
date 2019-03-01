@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">BLCS</string>
     <!--首页-->
     <string name="Tool">Tool</string>
     <string name="View">View</string>

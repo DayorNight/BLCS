@@ -7,6 +7,7 @@
         android:id="@+id/item_save"
         android:icon="@mipmap/ic_save"
         android:title="@string/save"
+        android:visible="false"
         app:showAsAction="ifRoom" />
 
 </menu>

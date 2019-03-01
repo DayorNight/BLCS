@@ -2,14 +2,11 @@ package blcs.lwb.utils;
 
 
 import android.content.Context;
-import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.os.Build;
-
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
 
 import blcs.lwb.lwbtool.base.BaseApplication;
+import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.lwbtool.utils.MultiLanguageUtils;
 
 public class MyApplication extends BaseApplication {

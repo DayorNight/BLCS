@@ -73,6 +73,7 @@ public class RxjavaRetrofitFragment extends BaseFragment {
 
                     @Override
                     public void onFailure(Throwable e, String errorMsg) {
+
                     }
                 });
                 break;

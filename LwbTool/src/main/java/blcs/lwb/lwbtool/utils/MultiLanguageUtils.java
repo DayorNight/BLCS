@@ -1,11 +1,8 @@
 package blcs.lwb.lwbtool.utils;
 
-import android.annotation.TargetApi;
 import android.app.Activity;
-import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Build;
@@ -19,11 +16,10 @@ import android.util.DisplayMetrics;
 import java.util.Locale;
 
 import blcs.lwb.lwbtool.Constants;
-import blcs.lwb.lwbtool.manager.AppManager;
 
 /**
  * Todo 多语言设置
- * https://blog.csdn.net/m0_38074457/article/details/84993366
+ * 来自：https://blog.csdn.net/m0_38074457/article/details/84993366
  * 使用步骤：
  * 1、Application中onCreate添加registerActivityLifecycleCallbacks(MultiLanguageUtils.callbacks);
          @Override
@@ -32,10 +28,9 @@ import blcs.lwb.lwbtool.manager.AppManager;
          super.attachBaseContext(MultiLanguageUtils.attachBaseContext(base));
          }
  * 2、改变应用语言调用MultiLanguageUtils.changeLanguage(activity,type,type);
- *
- *
  */
-
+//public final static String SP_LANGUAGE="SP_LANGUAGE";
+//public final static String SP_COUNTRY="SP_COUNTRY";
 public class MultiLanguageUtils {
     /**
      * TODO 1、 修改应用内语言设置
@@ -50,12 +45,11 @@ public class MultiLanguageUtils {
         } else {
             //不为空，那么修改app语言，并true是把语言信息保存到sp中，false是不保存到sp中
             Locale newLocale = new Locale(language, area);
-            MultiLanguageUtils.changeAppLanguage(context, newLocale, true);
+            changeAppLanguage(context, newLocale, true);
         }
          // 重启应用
 //        AppManager.getAppManager().finishAllActivity();
 //        IntentUtils.toActivity(context,MainActivity.Class,true);
-
     }
 
     /**
@@ -67,6 +61,16 @@ public class MultiLanguageUtils {
         Resources resources = context.getResources();
         DisplayMetrics metrics = resources.getDisplayMetrics();
         Configuration configuration = resources.getConfiguration();
+        setLanguage(context, locale, configuration);
+
+        resources.updateConfiguration(configuration, metrics);
+
+        if (persistence) {
+            saveLanguageSetting(context, locale);
+        }
+    }
+
+    private static void setLanguage(Context context, Locale locale, Configuration configuration) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             configuration.setLocale(locale);
             configuration.setLocales(new LocaleList(locale));
@@ -76,98 +80,32 @@ public class MultiLanguageUtils {
         } else {
             configuration.locale = locale;
         }
-        resources.updateConfiguration(configuration, metrics);
-
-        if (persistence) {
-            saveLanguageSetting(context, locale);
-        }
     }
 
-
-
     /**
-     * TODO 3、更改应用语言 跟随系统语言
+     * TODO 3、 跟随系统语言
      */
     public static Context attachBaseContext(Context context) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            return createConfigurationResources(context);
-        } else {
-            setConfiguration(context);
-            return context;
-        }
-    }
-
-    /**
-     * 设置语言(适配7.0)
-     */
-    @TargetApi(Build.VERSION_CODES.N)
-    private static Context createConfigurationResources(Context context) {
-        Resources resources = context.getResources();
-        Configuration configuration = resources.getConfiguration();
-        Locale appLocale = getAppLocale(context);
-        //如果本地有语言信息，以本地为主，如果本地没有使用默认Locale
-        Locale locale = null;
         String spLanguage = (String) SPUtils.get(context, Constants.SP_LANGUAGE,"");
         String spCountry = (String) SPUtils.get(context, Constants.SP_COUNTRY,"");
-        if (!TextUtils.isEmpty(spLanguage) && !TextUtils.isEmpty(spCountry)) {
-            if (isSameLocal(appLocale, spLanguage, spCountry)) {
-                locale = appLocale;
-            } else {
-                locale = new Locale(spLanguage, spCountry);
-            }
-        } else {
-            locale = appLocale;
-        }
-        configuration.setLocale(locale);
-        configuration.setLocales(new LocaleList(locale));
-        return context.createConfigurationContext(configuration);
-    }
-
-    /**
-     * 设置语言
-     */
-    public static void setConfiguration(Context context) {
-        Locale appLocale = getAppLocale(context);
-        //如果本地有语言信息，以本地为主，如果本地没有使用默认Locale
-        Locale locale = null;
-        String spLanguage = (String) SPUtils.get(context, Constants.SP_LANGUAGE,"");
-        String spCountry = (String) SPUtils.get(context, Constants.SP_COUNTRY,"");
-        if (!TextUtils.isEmpty(spLanguage) && !TextUtils.isEmpty(spCountry)) {
-            if (isSameLocal(appLocale, spLanguage, spCountry)) {
-                locale = appLocale;
-            } else {
-                locale = new Locale(spLanguage, spCountry);
-            }
-        } else {
-            locale = appLocale;
-        }
-
-        Configuration configuration = context.getResources().getConfiguration();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            configuration.setLocale(locale);
-        } else {
-            configuration.locale = locale;
-        }
         Resources resources = context.getResources();
         DisplayMetrics dm = resources.getDisplayMetrics();
-        resources.updateConfiguration(configuration, dm);//语言更换生效的代码!
-    }
-
-
-    /**
-     * 获取本地应用的实际的多语言信息
-     */
-    public static Locale getAppLocale(Context context) {
-        //获取应用语言
-        Resources resources = context.getResources();
         Configuration configuration = resources.getConfiguration();
+        Locale appLocale = getAppLocale(context);
+        //如果本地有语言信息，以本地为主，如果本地没有使用默认Locale
         Locale locale = null;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            locale = configuration.getLocales().get(0);
+        if (!TextUtils.isEmpty(spLanguage) && !TextUtils.isEmpty(spCountry)) {
+            if (isSameLocal(appLocale, spLanguage, spCountry)) {
+                locale = appLocale;
+            } else {
+                locale = new Locale(spLanguage, spCountry);
+            }
         } else {
-            locale = configuration.locale;
+            locale = appLocale;
         }
-        return locale;
+        setLanguage(context, locale, configuration);
+        resources.updateConfiguration(configuration, dm);
+        return context;
     }
 
     /**
@@ -204,6 +142,29 @@ public class MultiLanguageUtils {
     public static void saveLanguageSetting(Context context, Locale locale) {
         SPUtils.put(context, Constants.SP_LANGUAGE,locale.getLanguage());
         SPUtils.put(context, Constants.SP_COUNTRY,locale.getCountry());
+    }
+
+
+    /**
+     * 获取应用语言
+     */
+    public static Locale getAppLocale(Context context){
+        Locale local;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            local =context.getResources().getConfiguration().getLocales().get(0);
+        } else {
+            local =context.getResources().getConfiguration().locale;
+        }
+      return local;
+    }
+
+    /**
+     * 获取系统语言
+     */
+    public static LocaleListCompat getSystemLanguage(){
+        Configuration configuration = Resources.getSystem().getConfiguration();
+        LocaleListCompat locales = ConfigurationCompat.getLocales(configuration);
+      return locales;
     }
 
     //注册Activity生命周期监听回调，此部分一定加上，因为有些版本不加的话多语言切换不回来
@@ -252,28 +213,6 @@ public class MultiLanguageUtils {
         public void onActivityDestroyed(Activity activity) {
 
         }
-        //Activity 其它生命周期的回调
     };
 
-    /**
-     * 获取应用语言
-     */
-    public static Locale getLocalLanguage(Context context){
-        Locale local;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            local =context.getResources().getConfiguration().getLocales().get(0);
-        } else {
-            local =context.getResources().getConfiguration().locale;
-        }
-      return local;
-    }
-
-    /**
-     * 获取系统语言
-     */
-    public static LocaleListCompat getSystemLanguage(){
-        Configuration configuration = Resources.getSystem().getConfiguration();
-        LocaleListCompat locales = ConfigurationCompat.getLocales(configuration);
-      return locales;
-    }
 }

@@ -23,6 +23,7 @@
         <item name="android:textSize">@dimen/standard_title</item>
     </style>
 
+
     <declare-styleable name="luckpan">
         <attr name="pannum"  format="integer"/>
         <attr name="names" format="reference"/>

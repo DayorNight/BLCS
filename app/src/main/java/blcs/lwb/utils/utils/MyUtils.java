@@ -31,7 +31,7 @@ public class MyUtils {
      * @return
      */
     public static List<String> getArray(Activity activity, int a){
-        return Arrays.asList(activity.getApplicationContext().getResources().getStringArray(a));
+        return Arrays.asList(activity.getResources().getStringArray(a));
     }
 
     /**

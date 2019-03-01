@@ -60,7 +60,6 @@ public class PublicFragmentActivity extends BaseFragmentActivity implements IPub
                 }
             }
         });
-
     }
 
 

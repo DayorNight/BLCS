@@ -2,34 +2,22 @@ package blcs.lwb.utils.fragment.WeChat;
 
 import android.annotation.SuppressLint;
 import android.content.res.ColorStateList;
-import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.os.ConfigurationCompat;
-import android.support.v4.os.LocaleListCompat;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.RadioButton;
-
 import com.chad.library.adapter.base.BaseQuickAdapter;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.lwbtool.manager.AppManager;
 import blcs.lwb.lwbtool.utils.IntentUtils;
-import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.lwbtool.utils.MultiLanguageUtils;
 import blcs.lwb.lwbtool.utils.RecyclerUtil;
-import blcs.lwb.lwbtool.utils.RxBus;
 import blcs.lwb.lwbtool.utils.RxToast;
 import blcs.lwb.lwbtool.utils.SPUtils;
 import blcs.lwb.utils.Constants;
@@ -38,10 +26,6 @@ import blcs.lwb.utils.R;
 import blcs.lwb.utils.adapter.BaseDemoAdapter.MultiLanguageAdapter;
 import blcs.lwb.utils.fragment.BaseFragment;
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 
 /**
  * TODO 多语言
@@ -75,37 +59,41 @@ public class MultiLanguageFragment extends BaseFragment {
         activity.tlToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-
                 if (item.getItemId() == R.id.item_save) {
                     RxToast.info(activity, "保存");
                     //保存选中位置
                     SPUtils.put(activity, Constants.SP_MultiLanguage, checkPos);
+
+                    //区分是选中哪种语言
                     switch (datas.get(checkPos)) {
-                        case "跟随系统":
+                        case "跟随系统"://切换到 跟随系统
+                            //获取手机系统语言
                             Locale locale = MultiLanguageUtils.getSystemLanguage().get(0);
                             String language = locale.getLanguage();
                             String country = locale.getCountry();
+                            //切换成手机系统语言  例：手机系统是中文则换成中文
                             MultiLanguageUtils.changeLanguage(activity,language, country);
+                            //清空SP数据 ，用于当系统切换语言时 应用可以同步保持切换 例：系统转换成英文 则应用语言也会变成英文
                             MultiLanguageUtils.changeLanguage(activity,null,null);
                             break;
-                        case "简体中文":
+                        case "简体中文":// 切换到 中文
                             MultiLanguageUtils.changeLanguage(activity, "zh", "ZH");
                             break;
-                        case "English":
+                        case "English"://切换到 英文
                             MultiLanguageUtils.changeLanguage(activity, "en", "US");
                             break;
-                        default:
+                        default://默认切换成中文
                             MultiLanguageUtils.changeLanguage(activity, "zh", "ZH");
                             break;
                     }
-
+                    //关闭应用所有Activity
                     AppManager.getAppManager().finishAllActivity();
+                    //启动 MainActivity
                     IntentUtils.toActivity(activity, MainActivity.class,true);
                 }
                 return true;
             }
         });
-
 
         mAdapter = new MultiLanguageAdapter(activity);
         RecyclerUtil.init(activity, OrientationHelper.VERTICAL, mAdapter, mRecyclerView);

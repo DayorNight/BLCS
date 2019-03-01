@@ -39,6 +39,7 @@
 > 4、APK签名打包
 > 5、全局异常捕获
 > 6、内存泄漏检测
+> 7、Rxjava+Retrofit封装
 
 ###### 集成开源库：
 > 1、butterknife
