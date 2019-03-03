@@ -129,25 +129,6 @@ public class AppSizeUtils {
     }
 
     /**
-     * 获取应用大小  File : getDataDirectory()
-     */
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    public static void getAppTotalsizeO(Activity activity, File file) {
-        try {
-            StorageStatsManager manager = (StorageStatsManager) activity.getSystemService(Context.STORAGE_STATS_SERVICE);
-            StorageManager storageManager = (StorageManager) activity.getSystemService(Context.STORAGE_SERVICE);
-            UUID uuid = storageManager.getUuidForPath(file);
-            //通过包名获取uid
-            int uid = getUid(activity, activity.getPackageName());
-            StorageStats storageStats = manager.queryStatsForUid(uuid, uid);
-            //获取到App的总大小
-//            Size = storageStats.getAppBytes() + storageStats.getCacheBytes() + storageStats.getDataBytes();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    /**
      * 获取应用大小8.0以下 permission.GET_PACKAGE_SIZE
      */
     public static void getAppsize(Context context) {

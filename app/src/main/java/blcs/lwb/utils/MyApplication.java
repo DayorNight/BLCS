@@ -34,9 +34,9 @@ public class MyApplication extends BaseApplication {
         UMConfigure.setEncryptEnabled(true);
     }
 
-    @Override
-    protected void attachBaseContext(Context base) {
-        //系统语言等设置发生改变时会调用此方法，需要要重置app语言
-        super.attachBaseContext(MultiLanguageUtils.attachBaseContext(base));
-    }
+//    @Override
+//    protected void attachBaseContext(Context base) {
+//        //系统语言等设置发生改变时会调用此方法，需要要重置app语言
+//        super.attachBaseContext(MultiLanguageUtils.attachBaseContext(base));
+//    }
 }

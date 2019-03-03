@@ -87,7 +87,6 @@ public class FontSizeActivity extends BaseActivity {
                     //重启应用
                     AppManager.getAppManager().finishAllActivity();
                     IntentUtils.toActivity(FontSizeActivity.this, MainActivity.class,true);
-
             }
         });
         tlToolbar.setTitle("字体大小");
