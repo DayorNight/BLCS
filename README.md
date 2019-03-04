@@ -1,7 +1,9 @@
 # BLCS
 ## 首页显示
 ![Image text](https://github.com/DayorNight/BLCS/blob/master/png/工具.png)
-![Image text](https://github.com/DayorNight/BLCS/blob/master/png/View-仿微信功能-多语言1.gif)
+> 1、View-仿微信功能-多语言
+![Image text](https://github.com/DayorNight/BLCS/blob/master/png/View-仿微信功能-多语言.gif)
+> 2、View-仿微信功能-字体大小
 ![Image text](https://github.com/DayorNight/BLCS/blob/master/png/View-仿微信功能-字体大小.gif)
 
 
