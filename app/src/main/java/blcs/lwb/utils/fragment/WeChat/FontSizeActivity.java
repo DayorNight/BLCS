@@ -5,6 +5,7 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
 
@@ -111,5 +112,12 @@ public class FontSizeActivity extends BaseActivity {
         config.fontScale= 1;//1 设置正常字体大小的倍数
         res.updateConfiguration(config,res.getDisplayMetrics());
         return res;
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        LogUtils.e("keyCode " +keyCode);
+        LogUtils.e("event " +event.getAction());
+        return super.onKeyDown(keyCode, event);
     }
 }

@@ -62,9 +62,7 @@ public class MultiLanguageUtils {
         DisplayMetrics metrics = resources.getDisplayMetrics();
         Configuration configuration = resources.getConfiguration();
         setLanguage(context, locale, configuration);
-
         resources.updateConfiguration(configuration, metrics);
-
         if (persistence) {
             saveLanguageSetting(context, locale);
         }
@@ -144,7 +142,6 @@ public class MultiLanguageUtils {
         SPUtils.put(context, Constants.SP_COUNTRY,locale.getCountry());
     }
 
-
     /**
      * 获取应用语言
      */
@@ -174,7 +171,6 @@ public class MultiLanguageUtils {
         public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
             String language = (String) SPUtils.get(activity, Constants.SP_LANGUAGE,"");
             String country = (String) SPUtils.get(activity, Constants.SP_COUNTRY,"");
-            LogUtils.e(language);
             if (!TextUtils.isEmpty(language) && !TextUtils.isEmpty(country)) {
                 //强制修改应用语言
                 if (!isSameWithSetting(activity)) {

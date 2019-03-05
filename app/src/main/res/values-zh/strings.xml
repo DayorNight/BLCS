@@ -17,4 +17,5 @@
     <string name="Shopping">购物</string>
     <string name="Games">游戏</string>
     <string name="Mini_Programs">小程序</string>
+    <string name="WeChatStorageActivity">存储空间</string>
 </resources>

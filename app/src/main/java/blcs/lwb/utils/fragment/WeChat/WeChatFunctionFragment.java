@@ -57,19 +57,17 @@ public class WeChatFunctionFragment extends BaseFragment {
                         IntentUtils.toActivity(activity,new Intent(activity, FontSizeActivity.class));
                         break;
                     case FramentManages.WeChatStorage:
-                        addFrament(FramentManages.WeChatStorage,bundle);
+                        IntentUtils.toActivity(activity,new Intent(activity, WeChatStorageActivity.class));
                         break;
                     case FramentManages.MultiLanguage:
                         addFrament(FramentManages.MultiLanguage,bundle);
                         break;
-                        default:
-                            RxToast.info(activity,getString(R.string.function_unopen));
-                            break;
+                    default:
+                        RxToast.info(activity,getString(R.string.function_unopen));
+                        break;
                 }
             }
         });
-
-
     }
 
     @Override
@@ -81,5 +79,4 @@ public class WeChatFunctionFragment extends BaseFragment {
     protected int bindLayout() {
         return R.layout.tool_recyclerview;
     }
-
 }

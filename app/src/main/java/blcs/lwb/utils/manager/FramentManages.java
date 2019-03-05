@@ -56,7 +56,6 @@ import blcs.lwb.utils.fragment.Viewpage.ViewpageFragment;
 import blcs.lwb.utils.fragment.Viewpage.jellyViewPagerFragment;
 import blcs.lwb.utils.fragment.WeChat.MultiLanguageFragment;
 import blcs.lwb.utils.fragment.WeChat.WeChatFunctionFragment;
-import blcs.lwb.utils.fragment.WeChat.WeChatStorageFragment;
 import blcs.lwb.utils.mvp.BaseFragmentActivity;
 
 /**
@@ -239,8 +238,6 @@ public class FramentManages
 				return new WeChatFunctionFragment();
 			case FramentManages.MultiLanguage:
 				return new MultiLanguageFragment();
-			case FramentManages.WeChatStorage:
-				return new WeChatStorageFragment();
 			case FramentManages.RxjavaRetrofit:
 				return new RxjavaRetrofitFragment();
 
