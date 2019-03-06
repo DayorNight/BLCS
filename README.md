@@ -5,6 +5,8 @@
 ![Image text](https://github.com/DayorNight/BLCS/blob/master/png/View-仿微信功能-多语言.gif)
 > 2、View-仿微信功能-字体大小
 ![Image text](https://github.com/DayorNight/BLCS/blob/master/png/View-仿微信功能-字体大小.gif)
+> 2、View-仿微信功能-存储空间
+![Image text](https://github.com/DayorNight/BLCS/blob/master/png/View-仿微信功能-存储空间.gif)
 
 
 #### 子菜单

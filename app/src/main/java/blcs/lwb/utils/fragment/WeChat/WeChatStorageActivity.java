@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -50,7 +51,7 @@ public class WeChatStorageActivity extends BaseActivity {
                 finish();
             }
         });
-        tlToolbar.setTitle("字体大小");
+        tlToolbar.setTitle(getString(R.string.WeChatStorageActivity));
         tlToolbar.setTitleTextColor(Color.WHITE);
         mAdapter = new WeChatStorageAdapter(this);
         RecyclerUtil.init(this, OrientationHelper.VERTICAL, mAdapter, rv_storage);

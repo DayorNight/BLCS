@@ -19,6 +19,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 
+import blcs.lwb.lwbtool.R;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
@@ -70,5 +71,11 @@ public abstract class BaseActivity<T extends BaseView, P extends BasePresenter<T
 			presenter = null;
 		}
 		bind.unbind();
+	}
+
+	@Override
+	public void finish() {
+		super.finish();
+		overridePendingTransition(R.anim.right_push_out, R.anim.hold);
 	}
 }
