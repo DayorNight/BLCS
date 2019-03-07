@@ -62,6 +62,9 @@ public class WeChatFunctionFragment extends BaseFragment {
                     case FramentManages.MultiLanguage:
                         addFrament(FramentManages.MultiLanguage,bundle);
                         break;
+                    case FramentManages.BottomDialog:
+                        addFrament(FramentManages.BottomDialog,bundle);
+                        break;
                     default:
                         RxToast.info(activity,getString(R.string.function_unopen));
                         break;

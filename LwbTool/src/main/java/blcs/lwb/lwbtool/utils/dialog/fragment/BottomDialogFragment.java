@@ -45,8 +45,8 @@ public class BottomDialogFragment extends DialogFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setStyle(R.style.bottom_dialog);
         setStyle(DialogFragment.STYLE_NORMAL,R.style.bottom_dialog);
+
     }
 
     @Override
@@ -64,8 +64,8 @@ public class BottomDialogFragment extends DialogFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        initDialog();
         if (view == null) {
+            initDialog();
             view = LayoutInflater.from(getActivity()).inflate(R.layout.dialog_fragment_bottom, container, false);
             RecyclerView rv = view.findViewById(R.id.rv_dialog_fragment);
             initRv(rv);

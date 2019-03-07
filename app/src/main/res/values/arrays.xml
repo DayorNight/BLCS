@@ -19,23 +19,23 @@
     </string-array>
     <!--View-->
     <string-array name="View">
-    <item>仿微信功能及控件</item>
-    <item>BottomNavigationView</item>
-    <item>RecyclerView</item>
-    <item>toolbar</item>
-    <item>RxToast</item>
-    <item>转盘小游戏</item>
-    <item>跑马灯/水波纹/标签</item>
-    <item>滑动菜单/悬浮按钮</item>
-    <item>ViewPager指示器</item>
-    <item>Viewpage</item>
-    <item>OpenGl三角形</item>
-    <item>OpenGl矩形</item>
-    <item>常用Dialog</item>
-    <item>进度条</item>
-    <item>蛛网等级及颜色选取</item>
-    <item>Banner轮播图</item>
-</string-array>
+        <item>仿微信功能及控件</item>
+        <item>BottomNavigationView</item>
+        <item>RecyclerView</item>
+        <item>toolbar</item>
+        <item>RxToast</item>
+        <item>转盘小游戏</item>
+        <item>跑马灯/水波纹/标签</item>
+        <item>滑动菜单/悬浮按钮</item>
+        <item>ViewPager指示器</item>
+        <item>Viewpage</item>
+        <item>OpenGl三角形</item>
+        <item>OpenGl矩形</item>
+        <item>常用Dialog</item>
+        <item>进度条</item>
+        <item>蛛网等级及颜色选取</item>
+        <item>Banner轮播图</item>
+    </string-array>
     <!--other-->
     <string-array name="Other">
         <item>采用MVP模式</item>
@@ -115,6 +115,6 @@
         <item>字体大小</item>
         <item>存储空间</item>
         <item>多语言</item>
-        <item>流量统计</item>
+        <item>底部弹出框</item>
     </string-array>
 </resources>

@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentTransaction;
 
 import java.util.ArrayList;
 
+import blcs.lwb.lwbtool.utils.dialog.fragment.BottomDialogFragment;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.fragment.AppUtilsFragment;
 import blcs.lwb.utils.fragment.BannerFragment;
@@ -25,6 +26,7 @@ import blcs.lwb.utils.fragment.BitmapUtilsFragment;
 import blcs.lwb.utils.fragment.BottomNavigationFragment;
 import blcs.lwb.utils.fragment.Color_SpiderFragment;
 import blcs.lwb.utils.fragment.Common_DialogFragment;
+import blcs.lwb.utils.fragment.DialogBottomFragment;
 import blcs.lwb.utils.fragment.DrawerLayoutFragment;
 import blcs.lwb.utils.fragment.EditTextUtilsFragment;
 import blcs.lwb.utils.fragment.IntentUtilsFragment;
@@ -124,6 +126,7 @@ public class FramentManages
 	public final static String FontSize="字体大小";
 	public final static String MultiLanguage="多语言";
 	public final static String WeChatStorage="存储空间";
+	public final static String BottomDialog="底部弹出框";
 
 	/**
 	 * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -240,6 +243,8 @@ public class FramentManages
 				return new MultiLanguageFragment();
 			case FramentManages.RxjavaRetrofit:
 				return new RxjavaRetrofitFragment();
+			case FramentManages.BottomDialog:
+				return new DialogBottomFragment();
 
 //			case FramentManages.UtilsDetail://工具详情界面
 //				return new HomeTab1DetailFragment();
