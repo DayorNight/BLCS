@@ -111,7 +111,9 @@ public class AppSizeUtils {
     }
 
     public AppSizeUtils setDatasListent(OnBackListent listent) {
-        onBackListent = listent;
+        if(onBackListent!=null){
+            onBackListent = listent;
+        }
         return this;
     }
 }

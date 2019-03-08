@@ -15,7 +15,6 @@ import blcs.lwb.lwbtool.utils.IntentUtils;
 import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.lwbtool.utils.RecyclerUtil;
 import blcs.lwb.lwbtool.utils.RxToast;
-import blcs.lwb.lwbtool.utils.dialog.fragment.BottomDialogFragment;
 import blcs.lwb.utils.Constants;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.adapter.WeChatAdapter;
@@ -31,14 +30,17 @@ import butterknife.BindView;
 public class WeChatFunctionFragment extends BaseFragment {
     @BindView(R.id.tool_recyclerView)
     RecyclerView mRecycyler;
+
     @Override
     public void popBackListener(int returnCode, Bundle bundle) {
         activity.tlToolbar.setTitle(R.string.WeChatFunction);
     }
+
     @Override
     public void setMiddleTitle(Toolbar title) {
 
     }
+
     @Override
     protected void initView() {
         WeChatAdapter mAdapter = new WeChatAdapter();

@@ -28,5 +28,16 @@
         android:textColor="@color/white"
         android:text="右"
         />
-
+    <Button
+        android:id="@+id/btn_dialog_center"
+        style="@style/Button_wrap"
+        android:textColor="@color/white"
+        android:text="中"
+        />
+    <Button
+        android:id="@+id/btn_dialog_custom"
+        style="@style/Button_wrap"
+        android:textColor="@color/white"
+        android:text="自定义"
+        />
 </LinearLayout>

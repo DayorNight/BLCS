@@ -6,6 +6,7 @@
     android:paddingLeft="@dimen/space_line3"
     android:paddingTop="@dimen/space_line2"
     android:paddingBottom="@dimen/space_line2"
+    android:paddingRight="@dimen/space_line3"
     android:textColor="@color/black"
     android:textSize="@dimen/sp_big2"
     android:id="@+id/tv_adapter_dialog_fragment"

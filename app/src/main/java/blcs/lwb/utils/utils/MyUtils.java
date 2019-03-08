@@ -30,8 +30,10 @@ public class MyUtils {
      * @param a
      * @return
      */
-    public static List<String> getArray(Activity activity, int a){
-        return Arrays.asList(activity.getResources().getStringArray(a));
+    public static ArrayList<String> getArray(Activity activity, int a){
+        ArrayList<String> lists = new ArrayList<>();
+        lists.addAll(Arrays.asList(activity.getResources().getStringArray(a)));
+        return lists;
     }
 
     /**

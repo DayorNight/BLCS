@@ -7,7 +7,6 @@ import android.support.v4.app.FragmentTransaction;
 
 import java.util.ArrayList;
 
-import blcs.lwb.lwbtool.utils.dialog.fragment.BottomDialogFragment;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.fragment.AppUtilsFragment;
 import blcs.lwb.utils.fragment.BannerFragment;
