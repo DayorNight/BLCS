@@ -2,14 +2,14 @@
 <set xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <objectAnimator
-        android:duration="@android:integer/config_mediumAnimTime"
+        android:duration="@android:integer/config_shortAnimTime"
         android:interpolator="@android:interpolator/decelerate_quint"
         android:propertyName="translationX"
         android:valueFrom="0dp"
         android:valueTo="-100dp"
         android:valueType="floatType" />
     <objectAnimator
-        android:duration="@android:integer/config_mediumAnimTime"
+        android:duration="@android:integer/config_shortAnimTime"
         android:interpolator="@android:interpolator/decelerate_quint"
         android:propertyName="alpha"
         android:valueFrom="1.0"

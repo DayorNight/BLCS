@@ -4,12 +4,21 @@
     android:id="@+id/rv_dialog_fragment"
     android:background="@drawable/shape_round_white"
     android:layout_width="wrap_content"
+    android:gravity="center"
+    android:padding="@dimen/space_line3"
     android:layout_height="wrap_content"
     android:orientation="vertical">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="@dimen/space_line3"
+        android:padding="@dimen/space_line"
+        android:textSize="@dimen/sp_big3"
+        android:text="是否退出"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/sp_stander"
+        android:padding="@dimen/space_line"
         android:text="确定"/>
 </LinearLayout>
 

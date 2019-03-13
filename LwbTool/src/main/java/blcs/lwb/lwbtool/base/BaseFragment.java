@@ -23,7 +23,7 @@ public abstract class BaseFragment extends Fragment implements IPopBackStackList
     /**
      * 该fragment全局视图，不能在子Fragment中创建
      */
-    private View mView = null;
+    private View mView ;
 
     /**
      * 可用于 打开activity以及activity之间的通讯（传值）等；一些通讯相关基本操作（打电话、发短信等）

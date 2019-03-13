@@ -207,4 +207,5 @@
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowAnimationStyle">@style/Animation_Bottom_Dialog</item>
     </style>
+
 </resources>

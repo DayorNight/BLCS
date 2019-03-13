@@ -98,7 +98,7 @@ public class FramentManages
 	public final static String ItemClickRecycler="ItemClickRecycler";
 	public final static String ExpandableItemRecycler="ExpandableItemRecycler";
 	public final static String UpFetchDataRecycler="UpFetchDataRecycler";
-	public final static String MarqueeView="跑马灯/水波纹TextView/标签LabelView";
+	public final static String MarqueeView="跑马灯/水波纹/标签";
 	public final static String CustomActivityOnCrash="全局异常捕获";
 	public final static String LeakCanary="内存泄漏检测";
 	public final static String RxjavaRetrofit="Rxjava+Retrofit封装";

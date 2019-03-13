@@ -66,7 +66,6 @@ public class WeChatStorageActivity extends BaseActivity {
                 String mysize = StringUtils.format2Decimals(String.valueOf(cound));
                 datas.add(new StorageSpace(AppUtils.getAppName(MyApplication.getContext()) + "已用空间", FileUtils.size(appsize), "占据手机" + mysize + "%存储空间", "管理存储空间"));
                 datas.add(new StorageSpace("手机已用空间", FileUtils.size(sdCardSize - sdCardAvailableSize), "剩余" + FileUtils.size(sdCardAvailableSize) + "可用空间", "使用手机管家，清理系统空间"));
-                LogUtils.e("datas "+datas.size());
                 mAdapter.setNewData(datas);
             }
         }).init(MyApplication.getContext());

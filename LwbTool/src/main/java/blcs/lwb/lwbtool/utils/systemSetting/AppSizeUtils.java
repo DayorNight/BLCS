@@ -22,7 +22,10 @@ import java.util.UUID;
 
 public class AppSizeUtils {
     private static AppSizeUtils mApiUrl;
-    private AppSizeUtils() { }
+
+    private AppSizeUtils() {
+    }
+
     public static AppSizeUtils getInstance() {
         if (mApiUrl == null) {
             synchronized (AppSizeUtils.class) {
@@ -39,7 +42,7 @@ public class AppSizeUtils {
      */
     public void init(Context context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-           getAppSizeO(context);
+            getAppSizeO(context);
         } else {
             getAppsize(context);
         }
@@ -70,7 +73,10 @@ public class AppSizeUtils {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            onBackListent.backData(storageStats.getCacheBytes(), storageStats.getDataBytes(), storageStats.getAppBytes());
+            if (onBackListent != null) {
+                onBackListent.backData(storageStats.getCacheBytes(), storageStats.getDataBytes(), storageStats.getAppBytes());
+            }
+
         }
     }
 
@@ -96,7 +102,10 @@ public class AppSizeUtils {
             method.invoke(context.getPackageManager(), context.getPackageName(), new IPackageStatsObserver.Stub() {
                 @Override
                 public void onGetStatsCompleted(PackageStats pStats, boolean succeeded) {
-                    onBackListent.backData(pStats.cacheSize, pStats.dataSize, pStats.codeSize);
+                    if (onBackListent != null) {
+                        onBackListent.backData(pStats.cacheSize, pStats.dataSize, pStats.codeSize);
+                    }
+
                 }
             });
         } catch (Exception e) {
@@ -111,9 +120,7 @@ public class AppSizeUtils {
     }
 
     public AppSizeUtils setDatasListent(OnBackListent listent) {
-        if(onBackListent!=null){
-            onBackListent = listent;
-        }
+        onBackListent = listent;
         return this;
     }
 }

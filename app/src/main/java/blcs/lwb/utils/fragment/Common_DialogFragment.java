@@ -157,7 +157,6 @@ public class Common_DialogFragment extends BaseFragment {
                 });
         mRxDialogWheelYearMonthDay.getCancleView().setOnClickListener(
                 new View.OnClickListener() {
-
                     @Override
                     public void onClick(View arg0) {
                         mRxDialogWheelYearMonthDay.cancel();
