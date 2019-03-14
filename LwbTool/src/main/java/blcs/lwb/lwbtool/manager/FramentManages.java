@@ -103,8 +103,8 @@ public class FramentManages
 		if (isAnim)
 		{
 			// 添加动画
-			bt.setCustomAnimations(R.anim.push_left_in, R.anim.push_left_out,
-					R.anim.push_right_in, R.anim.push_right_out);
+			bt.setCustomAnimations(R.anim.right_push_in, R.anim.left_push_out,
+					R.anim.left_push_in, R.anim.right_push_out);
 		}
 		// 添加Frament
 		bt.add(viewId, base,alias)

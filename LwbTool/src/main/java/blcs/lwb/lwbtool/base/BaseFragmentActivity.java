@@ -47,15 +47,6 @@ public abstract class BaseFragmentActivity extends AppCompatActivity implements 
 	//滑动返回>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 	/**
-	 * 退出时之前的界面进入动画,可在finish();前通过改变它的值来改变动画效果
-	 */
-	protected int enterAnim = R.anim.fade;
-	/**
-	 * 退出时该界面动画,可在finish();前通过改变它的值来改变动画效果
-	 */
-	protected int exitAnim = R.anim.right_push_out;
-
-	/**
 	 * 绑定P层
 	 *
 	 * @return
@@ -78,14 +69,10 @@ public abstract class BaseFragmentActivity extends AppCompatActivity implements 
 				if (toGetWindowTokenView != null) {
 					EditTextUtils.hideKeyboard(BaseFragmentActivity.this, toGetWindowTokenView);
 				}
-				if (enterAnim > 0 && exitAnim > 0) {
-					try {
-						overridePendingTransition(enterAnim, exitAnim);
-					} catch (Exception e) {
-					}
-				}
+
 			}
 		});
+//		overridePendingTransition(R.anim.right_push_out, R.anim.null_anim);
 		//里面的代码不需要重写，通过super.finish();即可得到>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 	}
 

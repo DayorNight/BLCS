@@ -30,6 +30,8 @@ public class Constants {
     public final static String BottomNavigation_Utils="https://blog.csdn.net/cs_lwb/article/details/82979521";
     //仿微信字体大小
     public final static String FontSize="https://www.jianshu.com/p/f13b08da22d1";
+    //仿微信多语言切换
+    public final static String MultiLanguage="https://www.jianshu.com/p/0f957ead4fa0";
 
     //Rxjava+Retrofit
     public final static String Retrofit="https://blog.csdn.net/cs_lwb/article/details/82016997";

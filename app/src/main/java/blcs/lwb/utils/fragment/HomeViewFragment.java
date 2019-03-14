@@ -95,6 +95,9 @@ public class HomeViewFragment extends Fragment implements IHomeTabView{
                     case FramentManages.RecyclerView:
                         MyUtils.toFragment(activity,bundle,FramentManages.RecyclerView);
                         break;
+                    case FramentManages.DialogFragment:
+                        MyUtils.toFragment(activity,bundle,FramentManages.DialogFragment);
+                        break;
                     case FramentManages.Toolbar:
                         MyUtils.toFragment(activity,bundle,FramentManages.Toolbar);
                         break;

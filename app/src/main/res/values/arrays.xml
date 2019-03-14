@@ -22,6 +22,7 @@
         <item>仿微信功能及控件</item>
         <item>BottomNavigationView</item>
         <item>RecyclerView</item>
+        <item>DialogFragment</item>
         <item>toolbar</item>
         <item>RxToast</item>
         <item>转盘小游戏</item>

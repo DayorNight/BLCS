@@ -125,7 +125,7 @@ public class FramentManages
 	public final static String FontSize="字体大小";
 	public final static String MultiLanguage="多语言";
 	public final static String WeChatStorage="存储空间";
-	public final static String BottomDialog="底部弹出框";
+	public final static String DialogFragment="DialogFragment";
 
 	/**
 	 * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -242,7 +242,7 @@ public class FramentManages
 				return new MultiLanguageFragment();
 			case FramentManages.RxjavaRetrofit:
 				return new RxjavaRetrofitFragment();
-			case FramentManages.BottomDialog:
+			case FramentManages.DialogFragment:
 				return new DialogBottomFragment();
 
 //			case FramentManages.UtilsDetail://工具详情界面
@@ -307,8 +307,8 @@ public class FramentManages
 		if (isAnim)
 		{
 			// 添加动画
-			bt.setCustomAnimations(R.anim.push_left_in, R.anim.push_left_out,
-					R.anim.push_right_in, R.anim.push_right_out);
+			bt.setCustomAnimations(R.anim.right_push_in, R.anim.left_push_out,
+					R.anim.left_push_in,R.anim.right_push_out);
 		}
 		// 添加Frament
 		bt.add(viewId, base,alias)

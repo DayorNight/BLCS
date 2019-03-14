@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.View;
@@ -20,7 +21,10 @@ import blcs.lwb.lwbtool.utils.SPUtils;
 import blcs.lwb.utils.Constants;
 import blcs.lwb.utils.MainActivity;
 import blcs.lwb.utils.R;
+import blcs.lwb.utils.manager.FramentManages;
+import blcs.lwb.utils.utils.MyUtils;
 import butterknife.BindView;
+import butterknife.OnClick;
 
 public class FontSizeActivity extends BaseActivity {
 
@@ -122,4 +126,5 @@ public class FontSizeActivity extends BaseActivity {
         LogUtils.e("event " +event.getAction());
         return super.onKeyDown(keyCode, event);
     }
+
 }

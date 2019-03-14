@@ -117,6 +117,7 @@ public class MyUtils {
         bundle.putString(Constants.URL, url);
         activity.addFrament(R.id.fr_contain,  FramentManages.Demo, bundle, true);
     }
+
     /**
      * 跳转Demo
      */
