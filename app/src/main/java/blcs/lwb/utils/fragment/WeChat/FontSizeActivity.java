@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
 
@@ -19,7 +21,10 @@ import blcs.lwb.lwbtool.utils.SPUtils;
 import blcs.lwb.utils.Constants;
 import blcs.lwb.utils.MainActivity;
 import blcs.lwb.utils.R;
+import blcs.lwb.utils.manager.FramentManages;
+import blcs.lwb.utils.utils.MyUtils;
 import butterknife.BindView;
+import butterknife.OnClick;
 
 public class FontSizeActivity extends BaseActivity {
 
@@ -34,7 +39,8 @@ public class FontSizeActivity extends BaseActivity {
     @BindView(R.id.tv_font_size3)
     TextView tv_font_size3;
     private float fontSizeScale;
-
+    private boolean isChange;//用于监听字体大小是否有改动
+    private int defaultPos;
     @Override
     protected BasePresenter bindPresenter() {
         return null;
@@ -54,19 +60,17 @@ public class FontSizeActivity extends BaseActivity {
                 double v = fontSizeScale * (int) DensityUtils.px2sp(FontSizeActivity.this, dimension);
                 //改变当前页面大小
                 changeTextSize((int) v);
+                isChange = !(position==defaultPos);
             }
         });
-
-
         float  scale = (float) SPUtils.get(this, Constants.SP_FontScale, 0.0f);
-        if(scale>0.5){
-            int pos = (int) ((scale - 0.875) / 0.125);
-            //注意： 写在改变监听下面 —— 否则初始字体不会改变
-            fsvFontSize.setDefaultPosition(pos);
-        }else{
-            //注意： 写在改变监听下面 —— 否则初始字体不会改变
-            fsvFontSize.setDefaultPosition(1);
+        if (scale > 0.5) {
+            defaultPos = (int) ((scale - 0.875) / 0.125);
+        } else {
+            defaultPos=1;
         }
+        //注意： 写在改变监听下面 —— 否则初始字体不会改变
+        fsvFontSize.setDefaultPosition(defaultPos);
     }
 
     /**
@@ -83,10 +87,14 @@ public class FontSizeActivity extends BaseActivity {
         tlToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SPUtils.put(FontSizeActivity.this,Constants.SP_FontScale,fontSizeScale);
+                if(isChange){
+                    SPUtils.put(FontSizeActivity.this,Constants.SP_FontScale,fontSizeScale);
                     //重启应用
                     AppManager.getAppManager().finishAllActivity();
                     IntentUtils.toActivity(FontSizeActivity.this, MainActivity.class,true);
+                }else{
+                    finish();
+                }
             }
         });
         tlToolbar.setTitle("字体大小");
@@ -111,4 +119,12 @@ public class FontSizeActivity extends BaseActivity {
         res.updateConfiguration(config,res.getDisplayMetrics());
         return res;
     }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        LogUtils.e("keyCode " +keyCode);
+        LogUtils.e("event " +event.getAction());
+        return super.onKeyDown(keyCode, event);
+    }
+
 }

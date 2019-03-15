@@ -82,15 +82,15 @@ public class HomeOtherFragment extends Fragment implements IHomeTabView{
                         MyUtils.toDemo(activity,bundle);
                         break;
                     case FramentManages.Umeng:
-                        bundle.putString(Constants.URL,Constants.URL_Umeng);
+                        bundle.putString(Constants.URL,getString(R.string.URL_Umeng));
                         MyUtils.toDemo(activity,bundle);
                         break;
                     case FramentManages.Umeng_Package:
-                        bundle.putString(Constants.URL,Constants.URL_UmengPackage);
+                        bundle.putString(Constants.URL,getString(R.string.URL_UmengPackage));
                         MyUtils.toDemo(activity,bundle);
                         break;
                     case FramentManages.APK_Sign:
-                        bundle.putString(Constants.URL,Constants.APK_Sign);
+                        bundle.putString(Constants.URL,getString(R.string.URL_APK_Sign));
                         MyUtils.toDemo(activity,bundle);
                         break;
                     case FramentManages.CustomActivityOnCrash:
@@ -101,6 +101,9 @@ public class HomeOtherFragment extends Fragment implements IHomeTabView{
                         break;
                     case FramentManages.RxjavaRetrofit:
                         MyUtils.toFragment(activity,bundle,FramentManages.RxjavaRetrofit);
+                        break;
+                    case FramentManages.BLOGS:
+                        MyUtils.toFragment(activity,bundle,FramentManages.BLOGS);
                         break;
                     default:
                         RxToast.warning(activity,getString(R.string.function_unopen));

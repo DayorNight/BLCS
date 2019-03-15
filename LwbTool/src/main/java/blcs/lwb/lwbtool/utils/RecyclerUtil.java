@@ -13,12 +13,24 @@ import blcs.lwb.lwbtool.View.DividerItem;
 
 public class RecyclerUtil {
 
+
+
+
     /**
      * 初始化配置
      */
     public static void init(Context context, int orientation, RecyclerView.Adapter mAdapter,RecyclerView mRecycyler){
-        mRecycyler.setLayoutManager(new LinearLayoutManager(context, OrientationHelper.VERTICAL,false));
+        init(context,orientation,mAdapter,mRecycyler,true);
+    }
+
+    /**
+     * 初始化配置
+     */
+    public static void init(Context context, int orientation, RecyclerView.Adapter mAdapter,RecyclerView mRecycyler,boolean showDecoration){
+        mRecycyler.setLayoutManager(new LinearLayoutManager(context, orientation,false));
         mRecycyler.setAdapter(mAdapter);
-        mRecycyler.addItemDecoration(new DividerItem(context,OrientationHelper.VERTICAL));
+        if(showDecoration){
+            mRecycyler.addItemDecoration(new DividerItem(context,orientation));
+        }
     }
 }

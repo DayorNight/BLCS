@@ -87,7 +87,7 @@ public class HomeUtilsFragment extends Fragment implements IHomeTabView{
                         MyUtils.toDemo(activity,bundle);
                         break;
                     case FramentManages.Log_Utils:
-                        bundle.putString(Constants.URL,Constants.LOG_Utils);
+                        bundle.putString(Constants.URL,getString(R.string.URL_LOG));
                         MyUtils.toDemo(activity,bundle);
                         break;
                     case FramentManages.String_Utils:

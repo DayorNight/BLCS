@@ -142,7 +142,6 @@ public final class FileUtils
 	 */
 	public static String size(long size)
 	{
-
 		if (size / (1024 * 1024 * 1024) > 0)
 		{
 			float tmpSize = (float) (size) / (float) (1024 * 1024 * 1024);

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/ic4"
+    android:orientation="vertical">
+    <EditText
+        android:id="@+id/et_notification_content"
+        style="@style/Button_alpha"
+        android:textColorHint="@color/green"
+        android:gravity="center"
+        android:padding="@dimen/space_line3"
+        android:hint="请输入通知内容"/>
+    <Button
+        android:id="@+id/btn_notification_send_one"
+        style="@style/Button_alpha"
+        android:text="发送同一个通知"/>
+
+    <Button
+        android:id="@+id/btn_notification_send"
+        style="@style/Button_alpha"
+        android:text="发送多条通知"/>
+    <TextView
+        style="@style/Button_alpha"
+        android:text="适配Android(8.0) O"
+        android:gravity="center"
+        android:padding="@dimen/space_line3"
+        />
+    <Button
+        android:id="@+id/btn_notification_channel_send_one"
+        style="@style/Button_alpha"
+        android:text="发送另一个渠道同一个通知"/>
+    <Button
+        android:id="@+id/btn_notification_channel_send"
+        style="@style/Button_alpha"
+        android:text="发送另一个渠道多条通知"/>
+</LinearLayout>

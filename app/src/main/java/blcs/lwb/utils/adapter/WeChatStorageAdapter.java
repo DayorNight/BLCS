@@ -37,7 +37,6 @@ public class WeChatStorageAdapter extends BaseQuickAdapter<StorageSpace,BaseView
                 int tag = (int) v.getTag();
                 Log.e(TAG, "onClick: "+tag);
                 RxToast.info(activity,activity.getString(R.string.function_unopen));
-
             }
         });
     }

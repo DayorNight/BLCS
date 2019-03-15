@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@mipmap/ic4">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/btn_dialog_default"
+            style="@style/Button_alpha"
+
+            android:text="默认"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btn_dialog_top"
+            style="@style/Button_alpha"
+            android:text="上"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btn_dialog_bottom"
+            style="@style/Button_alpha"
+            android:text="下"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btn_dialog_left"
+            style="@style/Button_alpha"
+            android:text="左"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btn_dialog_right"
+            style="@style/Button_alpha"
+            android:text="右"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btn_dialog_center"
+            style="@style/Button_alpha"
+            android:text="中"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btn_dialog_custom_image"
+            style="@style/Button_alpha"
+            android:text="透明图片"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btn_dialog_custom_sure"
+            style="@style/Button_alpha"
+            android:text="确定弹窗"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btn_dialog_custom_cancle"
+            style="@style/Button_alpha"
+            android:text="确定取消弹窗"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btn_dialog_custom_editext"
+            style="@style/Button_alpha"
+            android:text="输入弹窗"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btn_dialog_custom_loading"
+            style="@style/Button_alpha"
+            android:text="加载弹窗"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btn_dialog_custom_big_image"
+            style="@style/Button_alpha"
+            android:text="大图弹窗"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</ScrollView>

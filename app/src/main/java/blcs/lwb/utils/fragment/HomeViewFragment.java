@@ -95,6 +95,9 @@ public class HomeViewFragment extends Fragment implements IHomeTabView{
                     case FramentManages.RecyclerView:
                         MyUtils.toFragment(activity,bundle,FramentManages.RecyclerView);
                         break;
+                    case FramentManages.DialogFragment:
+                        MyUtils.toFragment(activity,bundle,FramentManages.DialogFragment);
+                        break;
                     case FramentManages.Toolbar:
                         MyUtils.toFragment(activity,bundle,FramentManages.Toolbar);
                         break;
@@ -130,6 +133,9 @@ public class HomeViewFragment extends Fragment implements IHomeTabView{
                         break;
                     case FramentManages.Banner:
                         MyUtils.toFragment(activity,bundle,FramentManages.Banner);
+                        break;
+                    case FramentManages.NotificationCompat:
+                        MyUtils.toFragment(activity,bundle,FramentManages.NotificationCompat);
                         break;
                     default:
                         RxToast.warning(activity,getString(R.string.function_unopen));

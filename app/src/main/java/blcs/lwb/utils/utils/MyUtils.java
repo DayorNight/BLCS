@@ -10,6 +10,7 @@ import java.util.List;
 
 import blcs.lwb.lwbtool.Constants;
 import blcs.lwb.lwbtool.utils.IntentUtils;
+import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.utils.Bean.MySection;
 import blcs.lwb.utils.Bean.Status;
 import blcs.lwb.utils.Bean.Video;
@@ -30,8 +31,10 @@ public class MyUtils {
      * @param a
      * @return
      */
-    public static List<String> getArray(Activity activity, int a){
-        return Arrays.asList(activity.getResources().getStringArray(a));
+    public static ArrayList<String> getArray(Activity activity, int a){
+        ArrayList<String> lists = new ArrayList<>();
+        lists.addAll(Arrays.asList(activity.getResources().getStringArray(a)));
+        return lists;
     }
 
     /**
@@ -115,6 +118,7 @@ public class MyUtils {
         bundle.putString(Constants.URL, url);
         activity.addFrament(R.id.fr_contain,  FramentManages.Demo, bundle, true);
     }
+
     /**
      * 跳转Demo
      */

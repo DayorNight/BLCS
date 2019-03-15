@@ -78,7 +78,7 @@ public class CommonUtil {
 		if (StringUtils.isNotEmpty(phone, true)) {
 			Uri uri = Uri.parse("tel:" + phone.trim());
 			intent  = new Intent(Intent.ACTION_CALL, uri);
-			toActivity(context, intent);
+			IntentUtils.toActivity(context, intent);
 			return;
 		}
 		showShortToast(context, "请先选择号码哦~");
@@ -117,8 +117,8 @@ public class CommonUtil {
 
 		intent = new Intent(Intent.ACTION_VIEW);  
 		intent.putExtra("address", phone);
-		intent.setType("vnd.android-dir/mms-sms");    
-		toActivity(context, intent);
+		intent.setType("vnd.android-dir/mms-sms");
+		IntentUtils.toActivity(context, intent);
 
 	}
 
@@ -138,8 +138,8 @@ public class CommonUtil {
 		intent.setType("text/plain");   
 		intent.putExtra(Intent.EXTRA_SUBJECT, "选择分享方式");   
 		intent.putExtra(Intent.EXTRA_TEXT, toShare.trim());    
-		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK); 
-		toActivity(context, intent, -1);
+		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		IntentUtils.toActivity(context, intent, -1);
 	}
 
 	/**TODO 发送邮件
@@ -155,7 +155,7 @@ public class CommonUtil {
 		intent = new Intent(Intent.ACTION_SENDTO); 
 		intent.setData(Uri.parse("mailto:"+ emailAddress));//缺少"mailto:"前缀导致找不到应用崩溃
 		intent.putExtra(Intent.EXTRA_TEXT, "内容");  //最近在MIUI7上无内容导致无法跳到编辑邮箱界面
-		toActivity(context, intent, -1);
+		IntentUtils.toActivity(context, intent, -1);
 	}
 	
 	/**TODO 打开网站
@@ -172,7 +172,7 @@ public class CommonUtil {
 			webSite = "http://" + webSite;}
 		final Uri uri = Uri.parse(webSite);          
 		intent = new Intent(Intent.ACTION_VIEW, uri);
-		toActivity(context, intent, -1);
+		IntentUtils.toActivity(context, intent, -1);
 	}
 
 	/**TODO 复制文字
@@ -190,57 +190,6 @@ public class CommonUtil {
 		clipboardManager.setPrimaryClip(cD);
 		showShortToast(context, "已复制\n" + value);
 	}
-
-
-	//TODO 启动新Activity方法<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-	/**TODO 打开新的Activity，向左滑入效果
-	 * @param intent
-	 */
-	public static void toActivity(final Activity context, final Intent intent) {
-		toActivity(context, intent, true);
-	}
-	/**TODO 打开新的Activity
-	 * @param intent
-	 * @param showAnimation
-	 */
-	public static void toActivity(final Activity context, final Intent intent, final boolean showAnimation) {
-		toActivity(context, intent, -1, showAnimation);
-	}
-	/**TODO 打开新的Activity，向左滑入效果
-	 * @param intent
-	 * @param requestCode
-	 */
-	public static void toActivity(final Activity context, final Intent intent, final int requestCode) {
-		toActivity(context, intent, requestCode, true);
-	}
-	/**TODO 打开新的Activity
-	 * @param intent
-	 * @param requestCode
-	 * @param showAnimation
-	 */
-	public static void toActivity(final Activity context, final Intent intent, final int requestCode, final boolean showAnimation) {
-		if (context == null || intent == null) {
-			return;
-		}
-		context.runOnUiThread(new Runnable() {
-			@Override
-			public void run() {
-
-				if (requestCode < 0) {
-					context.startActivity(intent);
-				} else {
-					context.startActivityForResult(intent, requestCode);
-				}
-				if (showAnimation) {
-					context.overridePendingTransition(R.anim.right_push_in, R.anim.hold);
-				} else {
-					context.overridePendingTransition(R.anim.null_anim, R.anim.null_anim);
-				}
-			}
-		});
-	}
-	//TODO 启动新Activity方法>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
 	//TODO 显示与关闭进度弹窗方法<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -367,7 +316,7 @@ public class CommonUtil {
 		intent.putExtra("outputY", height);
 		intent.putExtra("return-data", true);
 		Log.i(TAG, "startPhotoZoom"+ fileUri +" uri");
-		toActivity(context, intent, requestCode);
+		IntentUtils.toActivity(context, intent, requestCode);
 	}
 
 	/**TODO 保存照片到SD卡上面

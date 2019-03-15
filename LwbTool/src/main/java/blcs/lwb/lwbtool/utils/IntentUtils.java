@@ -61,12 +61,20 @@ public class IntentUtils {
                 } else {
                     activity.startActivityForResult(intent, requestCode);
                 }
-                if (showAnimation) {
-                    activity.overridePendingTransition(R.anim.right_push_in, R.anim.hold);
-                } else {
-                    activity.overridePendingTransition(R.anim.null_anim, R.anim.null_anim);
-                }
+//                if (showAnimation) {
+//                    activity.overridePendingTransition(R.anim.right_push_in, R.anim.left_push_out);
+//                }
             }
         });
     }
+
+
+    /**TODO 打开新的Activity，向左滑入效果
+     * @param intent
+     * @param requestCode
+     */
+    public static void toActivity(final Activity context, final Intent intent, final int requestCode) {
+        toActivity(context, intent, requestCode, true);
+    }
+
 }

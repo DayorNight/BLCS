@@ -2,22 +2,33 @@ package blcs.lwb.utils;
 
 
 import android.content.Context;
+
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
 
 import blcs.lwb.lwbtool.base.BaseApplication;
-import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.lwbtool.utils.MultiLanguageUtils;
+import blcs.lwb.lwbtool.utils.NotifyUtils;
 
 public class MyApplication extends BaseApplication {
+
+
+    public static MyApplication context;
+
     @Override
     public void onCreate() {
         super.onCreate();
+        context = this;
         initU_APP();
         //多语言设置
         registerActivityLifecycleCallbacks(MultiLanguageUtils.callbacks);
+        //通知栏初始化
+        NotifyUtils.setNotificationChannel(context);
     }
 
+    public static  Context getContext(){
+        return context;
+    }
     /**
      * 友盟统计集成
      */

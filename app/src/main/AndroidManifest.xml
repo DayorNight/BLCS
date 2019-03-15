@@ -43,10 +43,16 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/SplashActivity"
             />
+
         <activity
             android:name=".fragment.WeChat.FontSizeActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/FontSizeActivity"
+            />
+        <activity
+            android:name=".fragment.WeChat.WeChatStorageActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/WeChatStorageActivity"
             />
 
         <!--友盟统计-->

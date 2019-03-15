@@ -45,31 +45,38 @@ public class MultiLanguageUtils {
         } else {
             //不为空，那么修改app语言，并true是把语言信息保存到sp中，false是不保存到sp中
             Locale newLocale = new Locale(language, area);
-            setAppLanguage(context,newLocale);
-            saveLanguageSetting(context, newLocale);
+            changeAppLanguage(context, newLocale, true);
         }
+         // 重启应用
+//        AppManager.getAppManager().finishAllActivity();
+//        IntentUtils.toActivity(context,MainActivity.Class,true);
     }
 
-
     /**
-     * Todo 更新应用语言
-     * @param context
-     * @param locale
+     * TODO 2、更改应用语言
+     * @param locale      语言地区
+     * @param persistence 是否持久化
      */
-    private static void setAppLanguage(Context context, Locale locale) {
+    public static void changeAppLanguage(Context context, Locale locale, boolean persistence) {
         Resources resources = context.getResources();
         DisplayMetrics metrics = resources.getDisplayMetrics();
         Configuration configuration = resources.getConfiguration();
+        setLanguage(context, locale, configuration);
+        resources.updateConfiguration(configuration, metrics);
+        if (persistence) {
+            saveLanguageSetting(context, locale);
+        }
+    }
+
+    private static void setLanguage(Context context, Locale locale, Configuration configuration) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             configuration.setLocale(locale);
             configuration.setLocales(new LocaleList(locale));
             context.createConfigurationContext(configuration);
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             configuration.setLocale(locale);
-            resources.updateConfiguration(configuration,metrics);
         } else {
             configuration.locale = locale;
-            resources.updateConfiguration(configuration,metrics);
         }
     }
 
@@ -79,10 +86,23 @@ public class MultiLanguageUtils {
     public static Context attachBaseContext(Context context) {
         String spLanguage = (String) SPUtils.get(context, Constants.SP_LANGUAGE,"");
         String spCountry = (String) SPUtils.get(context, Constants.SP_COUNTRY,"");
-        if(!TextUtils.isEmpty(spLanguage)&&!TextUtils.isEmpty(spCountry)){
-            Locale  locale = new Locale(spLanguage, spCountry);
-            setAppLanguage(context, locale);
+        Resources resources = context.getResources();
+        DisplayMetrics dm = resources.getDisplayMetrics();
+        Configuration configuration = resources.getConfiguration();
+        Locale appLocale = getAppLocale(context);
+        //如果本地有语言信息，以本地为主，如果本地没有使用默认Locale
+        Locale locale = null;
+        if (!TextUtils.isEmpty(spLanguage) && !TextUtils.isEmpty(spCountry)) {
+            if (isSameLocal(appLocale, spLanguage, spCountry)) {
+                locale = appLocale;
+            } else {
+                locale = new Locale(spLanguage, spCountry);
+            }
+        } else {
+            locale = appLocale;
         }
+        setLanguage(context, locale, configuration);
+        resources.updateConfiguration(configuration, dm);
         return context;
     }
 
@@ -102,6 +122,18 @@ public class MultiLanguageUtils {
         }
     }
 
+    /**
+     * 判断应用于系统语言是否相同
+     */
+    public static boolean isSameLocal(Locale appLocale, String sp_language, String sp_country) {
+        String appLanguage = appLocale.getLanguage();
+        String appCountry = appLocale.getCountry();
+        if (appLanguage.equals(sp_language) && appCountry.equals(sp_country)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     /**
      * 保存多语言信息到sp中
      */
@@ -139,12 +171,11 @@ public class MultiLanguageUtils {
         public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
             String language = (String) SPUtils.get(activity, Constants.SP_LANGUAGE,"");
             String country = (String) SPUtils.get(activity, Constants.SP_COUNTRY,"");
-            LogUtils.e(language);
             if (!TextUtils.isEmpty(language) && !TextUtils.isEmpty(country)) {
                 //强制修改应用语言
                 if (!isSameWithSetting(activity)) {
                     Locale locale = new Locale(language, country);
-                    setAppLanguage(activity,locale);
+                    changeAppLanguage(activity, locale, false);
                 }
             }
         }
