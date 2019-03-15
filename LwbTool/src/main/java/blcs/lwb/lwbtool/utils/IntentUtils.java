@@ -61,9 +61,9 @@ public class IntentUtils {
                 } else {
                     activity.startActivityForResult(intent, requestCode);
                 }
-                if (showAnimation) {
-                    activity.overridePendingTransition(R.anim.right_push_in, R.anim.left_push_out);
-                }
+//                if (showAnimation) {
+//                    activity.overridePendingTransition(R.anim.right_push_in, R.anim.left_push_out);
+//                }
             }
         });
     }

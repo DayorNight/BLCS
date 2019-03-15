@@ -77,7 +77,6 @@ public abstract class BaseFragmentActivity extends AppCompatActivity implements 
 				}
 			}
 		});
-//		overridePendingTransition(R.anim.right_push_out,  R.anim.null_anim);
 	}
 
 	@Override

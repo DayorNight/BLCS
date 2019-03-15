@@ -58,12 +58,9 @@ public class RxjavaRetrofitFragment extends BaseFragment {
     }
 
 
-    @OnClick({R.id.btn_retrofit_intro, R.id.btn_retrofit_get, R.id.btn_retrofit_getList})
+    @OnClick({R.id.btn_retrofit_get, R.id.btn_retrofit_getList})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.btn_retrofit_intro:
-                MyUtils.toUrl(this, FramentManages.RxjavaRetrofit, Constants.Retrofit);
-                break;
             case R.id.btn_retrofit_get:
                 RequestUtils.getDemo(this,new MyObserver<Demo>(activity) {
                     @Override

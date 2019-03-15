@@ -107,5 +107,21 @@
     <string name="Other">其他</string>
     <string name="WeChatStorageActivity">存储空间</string>
 
+    <!--博客-->
+    <string name="URL_MultiLanguage">https://www.jianshu.com/p/0f957ead4fa0</string>
+    <string name="URL_FontSize">https://www.jianshu.com/p/f13b08da22d1</string>
+    <string name="URL_JUnit">https://www.jianshu.com/p/762890234f82</string>
+    <string name="URL_DataBinding">https://www.jianshu.com/p/7de37ca38d0e</string>
+    <string name="URL_BottomNavigation">https://www.jianshu.com/p/5993e8037d4d</string>
+    <string name="URL_LOG">https://www.jianshu.com/p/f947d6e77fd1</string>
+    <string name="URL_UmengPackage">https://www.jianshu.com/p/bb09d8e18782</string>
+    <string name="URL_Umeng">https://www.jianshu.com/p/d93767c806e3</string>
+    <string name="URL_Retrofit2">https://www.jianshu.com/p/cb2c375c9105</string>
+    <string name="URL_Retrofit1">https://www.jianshu.com/p/81149c0babd1</string>
+    <string name="URL_WebView">https://www.jianshu.com/p/3dc06c3dfb7d</string>
+    <string name="URL_APK_Sign">https://blog.csdn.net/cs_lwb/article/details/81386595</string>
+    <string name="URL_Arithmetic">https://www.jianshu.com/p/a43bd0f44f65</string>
+    <string name="URL_DesignMode">https://www.jianshu.com/p/c4c550b8d849</string>
+
 
 </resources>

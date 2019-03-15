@@ -22,6 +22,7 @@ import blcs.lwb.utils.fragment.BaseAdapterFragment.SectionFragment;
 import blcs.lwb.utils.fragment.BaseAdapterFragment.UpFetchDataFragment;
 import blcs.lwb.utils.fragment.BaseFragment;
 import blcs.lwb.utils.fragment.BitmapUtilsFragment;
+import blcs.lwb.utils.fragment.BlogsFragment;
 import blcs.lwb.utils.fragment.BottomNavigationFragment;
 import blcs.lwb.utils.fragment.Color_SpiderFragment;
 import blcs.lwb.utils.fragment.Common_DialogFragment;
@@ -42,6 +43,7 @@ import blcs.lwb.utils.fragment.MagicIndicator.NoTabOnlyIndicatorFragment;
 import blcs.lwb.utils.fragment.MagicIndicator.ScrollableTabFragment;
 import blcs.lwb.utils.fragment.MarqueeViewFragment;
 import blcs.lwb.utils.fragment.MyFragment;
+import blcs.lwb.utils.fragment.NotificationCompatFragment;
 import blcs.lwb.utils.fragment.OnCrashFragment;
 import blcs.lwb.utils.fragment.OpenGlSquareFragment;
 import blcs.lwb.utils.fragment.OpenGlTriangleFragment;
@@ -126,6 +128,8 @@ public class FramentManages
 	public final static String MultiLanguage="多语言";
 	public final static String WeChatStorage="存储空间";
 	public final static String DialogFragment="DialogFragment";
+	public final static String BLOGS="博客";
+	public final static String NotificationCompat="通知NotificationCompat";
 
 	/**
 	 * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -244,6 +248,10 @@ public class FramentManages
 				return new RxjavaRetrofitFragment();
 			case FramentManages.DialogFragment:
 				return new DialogBottomFragment();
+			case FramentManages.BLOGS:
+				return new BlogsFragment();
+			case FramentManages.NotificationCompat:
+				return new NotificationCompatFragment();
 
 //			case FramentManages.UtilsDetail://工具详情界面
 //				return new HomeTab1DetailFragment();

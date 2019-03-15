@@ -52,7 +52,6 @@ public class MyFragment extends BaseFragment implements IMyFragment {
     public void Text() {
         Bundle arguments = getArguments();
         String url = arguments.getString(Constants.URL);
-        LogUtils.e(url);
         mAgentWeb = AgentWeb.with(this)
                 .setAgentWebParent(llAgentview, new LinearLayout.LayoutParams(-1, -1))
                 .useDefaultIndicator()

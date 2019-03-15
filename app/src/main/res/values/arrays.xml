@@ -36,9 +36,11 @@
         <item>进度条</item>
         <item>蛛网等级及颜色选取</item>
         <item>Banner轮播图</item>
+        <item>通知NotificationCompat</item>
     </string-array>
     <!--other-->
     <string-array name="Other">
+        <item>博客</item>
         <item>采用MVP模式</item>
         <item>友盟统计</item>
         <item>友盟多渠道打包</item>
@@ -117,5 +119,40 @@
         <item>存储空间</item>
         <item>多语言</item>
         <item>底部弹出框</item>
+    </string-array>
+
+    <!--博客-->
+    <string-array name="BLOGS">
+        <item>Android 仿微信多语言切换</item>
+        <item>Android 仿微信全局字体大小调整</item>
+        <item>Android JUnit单元测试</item>
+        <item>Android 初识DataBinding</item>
+        <item>Android 底部导航栏BottomNavigationView</item>
+        <item>Android Log日志封装</item>
+        <item>Android 友盟多渠道打包</item>
+        <item>Android 友盟统计集成</item>
+        <item>Android Rxjava+Retrofit网络请求框架封装（二）</item>
+        <item>Android Rxjava+Retrofit网络请求框架封装（一）</item>
+        <item>Android WebView</item>
+        <item>Java 八种排序算法总结</item>
+        <item>Java 设计模式总结</item>
+    </string-array>
+
+    <!--博客URL-->
+    <string-array name="URL_BLOGS">
+        <item>@string/URL_MultiLanguage</item>
+        <item>@string/URL_FontSize</item>
+        <item>@string/URL_JUnit</item>
+        <item>@string/URL_DataBinding</item>
+        <item>@string/URL_BottomNavigation</item>
+        <item>@string/URL_LOG</item>
+        <item>@string/URL_UmengPackage</item>
+        <item>@string/URL_Umeng</item>
+        <item>@string/URL_Retrofit2</item>
+        <item>@string/URL_Retrofit1</item>
+        <item>@string/URL_WebView</item>
+        <item>@string/URL_APK_Sign</item>
+        <item>@string/URL_Arithmetic</item>
+        <item>@string/URL_DesignMode</item>
     </string-array>
 </resources>

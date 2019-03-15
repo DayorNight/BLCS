@@ -35,8 +35,6 @@ public class BottomNavigationFragment extends BaseFragment {
 
     @BindView(R.id.bottomNavigationBar)
     BottomNavigationBar bottomNavigationBar;
-    @BindView(R.id.btn_Recommend)
-    Button btnRecommend;
     @BindView(R.id.bottomNavigationView)
     BottomNavigationView bottomNavigationView;
     @BindView(R.id.bnv_menu)
@@ -217,14 +215,10 @@ public class BottomNavigationFragment extends BaseFragment {
 
     }
 
-    @OnClick({R.id.btn_add, R.id.btn_reduce, R.id.btn_Recommend, R.id.btn_add_layout, R.id.btn_reduce_layout})
+    @OnClick({R.id.btn_add, R.id.btn_reduce,  R.id.btn_add_layout, R.id.btn_reduce_layout})
     public void onViewClicked(View view) {
         int size = bottomNavigationView.getMenu().size();
         switch (view.getId()) {
-            case R.id.btn_Recommend:
-                MyUtils.toUrl(this,FramentManages.BottomNavigation,Constants.BottomNavigation_Utils);
-
-                break;
             case R.id.btn_add:
                 if (size == 5) {
                     RxToast.warning(activity, "不能超过5");

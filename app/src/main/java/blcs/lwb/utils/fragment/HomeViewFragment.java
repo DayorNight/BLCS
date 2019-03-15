@@ -134,6 +134,9 @@ public class HomeViewFragment extends Fragment implements IHomeTabView{
                     case FramentManages.Banner:
                         MyUtils.toFragment(activity,bundle,FramentManages.Banner);
                         break;
+                    case FramentManages.NotificationCompat:
+                        MyUtils.toFragment(activity,bundle,FramentManages.NotificationCompat);
+                        break;
                     default:
                         RxToast.warning(activity,getString(R.string.function_unopen));
                         break;

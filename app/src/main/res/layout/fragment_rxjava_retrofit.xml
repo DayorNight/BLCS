@@ -3,11 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <Button
-        android:id="@+id/btn_retrofit_intro"
-        style="@style/Button_wrap"
-        android:textColor="@color/white"
-        android:text="Rxjava+Retrofit网络请求框架封装介绍"/>
+
     <Button
         android:id="@+id/btn_retrofit_get"
         style="@style/Button_wrap"

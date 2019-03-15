@@ -18,7 +18,18 @@
         <item name="colorButtonNormal">@color/accent_material_light</item>
         <!--EditText 输入框中字体的颜色-->
         <!--<item name="editTextColor">@android:color/white</item>-->
+        <!--设置窗体切换动画-->
+        <item name="android:windowAnimationStyle">@style/activityAnimation</item>
     </style>
+    <!--Activity进入和退出动画-->
+    <!-- animation 样式 -->
+    <style name="activityAnimation" parent="@android:style/Animation">
+        <item name="android:activityOpenEnterAnimation">@anim/right_push_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/left_push_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/left_push_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/right_push_out</item>
+    </style>
+
 
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
