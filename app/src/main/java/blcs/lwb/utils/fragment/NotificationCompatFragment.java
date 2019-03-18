@@ -1,31 +1,33 @@
 package blcs.lwb.utils.fragment;
 
-import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 
 import blcs.lwb.lwbtool.base.BasePresenter;
-import blcs.lwb.lwbtool.utils.NotifyUtils;
+import blcs.lwb.lwbtool.utils.LinNotify;
 import blcs.lwb.lwbtool.utils.StringUtils;
+import blcs.lwb.utils.MainActivity;
 import blcs.lwb.utils.R;
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
-import butterknife.Unbinder;
 
 public class NotificationCompatFragment extends BaseFragment {
+    @BindView(R.id.et_notification_title)
+    EditText et_notification_title;
     @BindView(R.id.et_notification_content)
     EditText etNotificationContent;
-
+    @BindView(R.id.btn_notfication_show_tatus)
+    Button show_tatus;
 
     @Override
     protected int bindLayout() {
         return R.layout.fragment_notification;
     }
+
 
     @Override
     protected void initView() {
@@ -47,23 +49,34 @@ public class NotificationCompatFragment extends BaseFragment {
 
     }
 
-    @OnClick({R.id.btn_notification_send_one, R.id.btn_notification_send, R.id.btn_notification_channel_send_one, R.id.btn_notification_channel_send})
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            boolean open = LinNotify.isNotificationEnabled(activity);
+            show_tatus.setText("获取应用是否开启通知状态：" + String.valueOf(open));
+        }
+    }
+
+    @OnClick({R.id.btn_notfication_settings, R.id.btn_notification_send_one, R.id.btn_notification_send, R.id.btn_notification_channel_send_one, R.id.btn_notification_channel_send})
     public void onViewClicked(View view) {
         switch (view.getId()) {
+            case R.id.btn_notfication_settings:
+                LinNotify.toNotifySetting(activity, null);
+                break;
             case R.id.btn_notification_send_one:
-                NotifyUtils.show(activity, "您有一条新消息",  StringUtils.getString(etNotificationContent));
+                LinNotify.show(activity, StringUtils.getString(et_notification_title), StringUtils.getString(etNotificationContent), null);
                 break;
             case R.id.btn_notification_send:
-                NotifyUtils.show1(activity, "您有一条新消息",  StringUtils.getString(etNotificationContent));
+                LinNotify.showMuch(activity, StringUtils.getString(et_notification_title), StringUtils.getString(etNotificationContent), MainActivity.class);
                 break;
             case R.id.btn_notification_channel_send_one:
-                NotifyUtils.show(activity, "您收到一条系统消息",  StringUtils.getString(etNotificationContent),NotifyUtils.OTHER_MESSAGE);
+                LinNotify.show(activity, StringUtils.getString(et_notification_title), StringUtils.getString(etNotificationContent), LinNotify.OTHER_MESSAGE, MainActivity.class);
                 break;
             case R.id.btn_notification_channel_send:
-                NotifyUtils.show1(activity, "您收到一条系统消息",  StringUtils.getString(etNotificationContent),NotifyUtils.OTHER_MESSAGE);
+                LinNotify.showMuch(activity, StringUtils.getString(et_notification_title), StringUtils.getString(etNotificationContent), LinNotify.OTHER_MESSAGE, MainActivity.class);
                 break;
         }
-
     }
 
 }
