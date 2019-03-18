@@ -8,7 +8,7 @@ import com.umeng.commonsdk.UMConfigure;
 
 import blcs.lwb.lwbtool.base.BaseApplication;
 import blcs.lwb.lwbtool.utils.MultiLanguageUtils;
-import blcs.lwb.lwbtool.utils.NotifyUtils;
+import blcs.lwb.lwbtool.utils.LinNotify;
 
 public class MyApplication extends BaseApplication {
 
@@ -23,7 +23,7 @@ public class MyApplication extends BaseApplication {
         //多语言设置
         registerActivityLifecycleCallbacks(MultiLanguageUtils.callbacks);
         //通知栏初始化
-        NotifyUtils.setNotificationChannel(context);
+        LinNotify.setNotificationChannel(context);
     }
 
     public static  Context getContext(){

@@ -1,37 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@mipmap/ic4"
-    android:orientation="vertical">
-    <EditText
-        android:id="@+id/et_notification_content"
-        style="@style/Button_alpha"
-        android:textColorHint="@color/green"
-        android:gravity="center"
-        android:padding="@dimen/space_line3"
-        android:hint="请输入通知内容"/>
-    <Button
-        android:id="@+id/btn_notification_send_one"
-        style="@style/Button_alpha"
-        android:text="发送同一个通知"/>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/match_wrap"
+    android:background="@mipmap/ic4">
 
-    <Button
-        android:id="@+id/btn_notification_send"
-        style="@style/Button_alpha"
-        android:text="发送多条通知"/>
-    <TextView
-        style="@style/Button_alpha"
-        android:text="适配Android(8.0) O"
-        android:gravity="center"
-        android:padding="@dimen/space_line3"
-        />
-    <Button
-        android:id="@+id/btn_notification_channel_send_one"
-        style="@style/Button_alpha"
-        android:text="发送另一个渠道同一个通知"/>
-    <Button
-        android:id="@+id/btn_notification_channel_send"
-        style="@style/Button_alpha"
-        android:text="发送另一个渠道多条通知"/>
-</LinearLayout>
+    <LinearLayout
+        style="@style/match_match"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_notfication_settings"
+            style="@style/Button_alpha"
+            android:background="@drawable/progressbar_horizontal_white"
+            android:text="手动打开通知"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/btn_notfication_show_tatus"
+            style="@style/Button_alpha"
+            android:text="获取应用是否开启通知状态：false" />
+
+
+        <EditText
+            android:id="@+id/et_notification_title"
+            style="@style/Button_alpha"
+            android:gravity="center"
+            android:hint="请输入通知内栏标题"
+            android:padding="@dimen/space_line3"
+            android:textColorHint="@color/green" />
+
+
+        <EditText
+            android:id="@+id/et_notification_content"
+            style="@style/Button_alpha"
+            android:gravity="center"
+            android:hint="请输入通知内容"
+            android:padding="@dimen/space_line3"
+            android:textColorHint="@color/green" />
+
+        <Button
+            android:id="@+id/btn_notification_send_one"
+            style="@style/Button_alpha"
+            android:text="发送同一个通知" />
+
+        <Button
+            android:id="@+id/btn_notification_send"
+            style="@style/Button_alpha"
+            android:text="发送多条通知" />
+
+        <TextView
+            style="@style/Button_alpha"
+            android:gravity="center"
+            android:padding="@dimen/space_line3"
+            android:text="适配Android(8.0) O" />
+
+        <Button
+            android:id="@+id/btn_notification_channel_send_one"
+            style="@style/Button_alpha"
+            android:text="发送另一个渠道同一个通知" />
+
+        <Button
+            android:id="@+id/btn_notification_channel_send"
+            style="@style/Button_alpha"
+            android:text="发送另一个渠道多条通知" />
+    </LinearLayout>
+</ScrollView>
