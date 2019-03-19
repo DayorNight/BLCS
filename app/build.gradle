@@ -41,6 +41,7 @@ android {
             debuggable false
             minifyEnabled true
             shrinkResources true   //排除没有引用到的资源  APK瘦身
+            zipAlignEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
         }
@@ -48,7 +49,7 @@ android {
             debuggable true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-//            signingConfig signingConfigs.release
+            signingConfig signingConfigs.release
         }
     }
 //    多渠道打包
@@ -67,7 +68,6 @@ android {
             outputFileName = rootProject.getName() + "-" + variant.flavorName + "-" + buildType.name + "-" + formattedDate + "-v" + defaultConfig.versionName + "-" + defaultConfig.versionCode + ".apk";
         }
     }
-    buildToolsVersion '28.0.1'
 
     compileOptions {
         targetCompatibility 1.8

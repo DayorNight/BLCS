@@ -1,4 +1,4 @@
-package blcs.lwb.utils.Bean;
+package blcs.lwb.utils.bean;
 
 import com.chad.library.adapter.base.entity.SectionEntity;
 

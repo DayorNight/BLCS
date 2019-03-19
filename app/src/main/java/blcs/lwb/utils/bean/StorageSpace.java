@@ -1,4 +1,4 @@
-package blcs.lwb.utils.Bean;
+package blcs.lwb.utils.bean;
 
 /**
  * Created by mrd on 2019/1/30.

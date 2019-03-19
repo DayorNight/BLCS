@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import blcs.lwb.lwbtool.base.BasePresenter;
-import blcs.lwb.utils.Bean.Person;
+import blcs.lwb.utils.bean.Person;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.adapter.BaseDemoAdapter.ExpandableItemAdapter;
 import blcs.lwb.utils.adapter.BaseDemoAdapter.provider.Level0Item;

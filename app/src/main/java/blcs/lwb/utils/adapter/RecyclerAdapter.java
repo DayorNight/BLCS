@@ -4,7 +4,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import java.util.List;
 
-import blcs.lwb.utils.Bean.HomeItem;
+import blcs.lwb.utils.bean.HomeItem;
 import blcs.lwb.utils.R;
 
 public class RecyclerAdapter extends BaseQuickAdapter<HomeItem ,BaseViewHolder>{

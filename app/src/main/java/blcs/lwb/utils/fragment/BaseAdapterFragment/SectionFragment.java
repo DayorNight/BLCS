@@ -6,7 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import java.util.List;
 import blcs.lwb.lwbtool.base.BasePresenter;
-import blcs.lwb.utils.Bean.MySection;
+import blcs.lwb.utils.bean.MySection;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.adapter.BaseDemoAdapter.SectionAdapter;
 import blcs.lwb.utils.fragment.BaseFragment;

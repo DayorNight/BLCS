@@ -4,7 +4,6 @@ import android.graphics.Color;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -12,19 +11,13 @@ import java.util.List;
 
 import blcs.lwb.lwbtool.base.BaseActivity;
 import blcs.lwb.lwbtool.base.BasePresenter;
-import blcs.lwb.lwbtool.manager.AppManager;
 import blcs.lwb.lwbtool.utils.AppUtils;
 import blcs.lwb.lwbtool.utils.FileUtils;
-import blcs.lwb.lwbtool.utils.IntentUtils;
-import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.lwbtool.utils.RecyclerUtil;
-import blcs.lwb.lwbtool.utils.SPUtils;
 import blcs.lwb.lwbtool.utils.StringUtils;
 import blcs.lwb.lwbtool.utils.systemSetting.AppSizeUtils;
 import blcs.lwb.lwbtool.utils.systemSetting.SDCardUtils;
-import blcs.lwb.utils.Bean.StorageSpace;
-import blcs.lwb.utils.Constants;
-import blcs.lwb.utils.MainActivity;
+import blcs.lwb.utils.bean.StorageSpace;
 import blcs.lwb.utils.MyApplication;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.adapter.WeChatStorageAdapter;

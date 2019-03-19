@@ -1,10 +1,7 @@
 package blcs.lwb.utils.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -14,10 +11,9 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import java.util.ArrayList;
 
 import blcs.lwb.lwbtool.base.BasePresenter;
-import blcs.lwb.utils.Bean.HomeItem;
+import blcs.lwb.utils.bean.HomeItem;
 import blcs.lwb.utils.Constants;
 import blcs.lwb.utils.R;
-import blcs.lwb.utils.SplashActivity;
 import blcs.lwb.utils.adapter.RecyclerAdapter;
 import butterknife.BindView;
 

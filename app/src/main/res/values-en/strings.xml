@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">BLCS</string>
+
+    <!--首页-->
+    <string name="WeChatStorageActivity">存储空间</string>
+
     <!--首页-->
     <string name="Tool">Tool</string>
     <string name="View">View</string>
@@ -18,7 +22,109 @@
     <string name="Shopping">Shopping</string>
     <string name="Games">Games</string>
     <string name="Mini_Programs">Mini Programs</string>
-    <string name="WeChatStorageActivity">存储空间</string>
+
+
+    <string name="app_Title">常用工具类</string>
+    <string name="Util">常用工具类</string>
+    <string name="input_str">请输入任意字符串</string>
+    <string name="delete_trim">去掉前后空格</string>
+    <string name="getStr">获取处理后的字符串：</string>
+    <string name="getTrimStr">获取去掉前后空格后的字符串：</string>
+    <string name="getNoBlanStr">获取去掉所有空格后的字符串：</string>
+    <string name="getLengthStr">获取字符串的长度：</string>
+    <string name="IsNotEmptyStr">判断字符是否非空：</string>
+    <string name="IsPhoneStr">判断手机格式是否正确：</string>
+    <string name="IsEmailStr">判断Email格式是否正确：</string>
+    <string name="IsNumerStr">判断是否全是数字：</string>
+    <string name="IsNumberOrAlpha">判断字符类型是否是号码或字母：</string>
+    <string name="isIDCard">判断字符类型是否是身份证号：</string>
+    <string name="isUrl">判断字符类型是否是网址：</string>
+    <string name="isFilePathExist">判断文件路径是否存在：</string>
+    <string name="getNumber">去掉str内所有非数字类型字符：</string>
+    <string name="getCorrectUrl">自动补全网址：</string>
+    <string name="getCorrectPhone">去掉所有空格 、"-" 、"+86" 后的phone：</string>
+    <string name="getCorrectEmail">自动补全邮箱：</string>
+    <string name="getPrice">获取价格，保留两位小数：</string>
+    <string name="stringToDouble">字符串转换成double,失败返回0：</string>
+    <string name="stringToInt">字符串转换成整数,失败返回0：</string>
+    <string name="showKeyboard">显示键盘</string>
+    <string name="hideKeyboard">隐藏键盘</string>
+    <string name="hideShowKeyboard">隐藏/显示键盘</string>
+    <string name="judgeInvalidCode">判断验证码是否合法</string>
+    <string name="judgeInvalidPassword">判断密码是否合法</string>
+    <string name="judgeInvalidPhone">判断手机号码是否合法</string>
+    <string name="judgeInvalidEmail">判断邮箱是否合法</string>
+    <string name="input_code">请输入验证码</string>
+    <string name="input_password">请输入密码</string>
+    <string name="input_phone">请输入手机号码</string>
+    <string name="input_Email">请输入邮箱</string>
+    <string name="startNewActivity">打开新的Activity</string>
+    <string name="whether_open_Animation">是否开启动画</string>
+    <string name="whether_RequestCode">是否带请求码</string>
+    <string name="input_args">请输入参数</string>
+    <string name="getChannel">获取渠道名:</string>
+    <string name="installAPK">启动安装应用程序</string>
+    <string name="input_path">请输入Apk路径</string>
+    <string name="getApplicationIcon">获取应用程序的Icon图标:</string>
+    <string name="getInstalledPackages">获取所有安装的应用程序:</string>
+    <string name="getVersionCode">获取版本号:</string>
+    <string name="getVersionName">获取应用版本名称:</string>
+    <string name="getPackage">获取应用包名：</string>
+    <string name="getScreenWidth">获取屏幕宽度：</string>
+    <string name="getScreenHeight">获取屏幕高度：</string>
+    <string name="getDensity">获取系统dp尺寸密度值：</string>
+    <string name="getScaledDensity">获取系统字体sp密度值：</string>
+    <string name="getStatusHeight">获得状态栏的高度：</string>
+    <string name="getSnapShotWithStatusBar">获取当前屏幕截图,包含状态栏：</string>
+    <string name="getSnapShotWithoutStatusBar">获取当前屏幕截图,不包含状态栏：</string>
+    <string name="getDisplayMetrics">获取DisplayMetrics对象：</string>
+    <string name="getScreenSize">获取屏幕像素点：</string>
+    <string name="getStatusBarHeight">获取状态栏的高度：</string>
+    <string name="b2d">Bitmap转化为Drawable</string>
+    <string name="d2b">Drawable转化为Bitmap</string>
+    <string name="getBitmapFromResources">获得Resources的Bitmap资源</string>
+    <string name="byte2Bimap">byte[]字节码转为Bitmap</string>
+    <string name="Bimap2byte">Bitmap转为字节码byte[]</string>
+    <string name="input_filepath">请输入图片路径</string>
+    <string name="input_width">设置宽度</string>
+    <string name="input_height">设置高度</string>
+    <string name="getBitmapFromPath">根据文件路径获取指定大小的Bitmap对象</string>
+    <string name="compressImageFromFile">压缩图片</string>
+    <string name="zoomImg">缩放/裁剪图片</string>
+    <string name="getBitmapFromResource">根据资源id获取指定大小的Bitmap对象</string>
+    <string name="getThumbnailsBitmap">获取指定大小的Bitmap对象</string>
+    <string name="fileNoExit">未发现该文件</string>
+    <string name="error_toast">错误的提示</string>
+    <string name="success_toast">成功的提示</string>
+    <string name="info_toast">信息的提示</string>
+    <string name="warning_toast">警告的提示</string>
+    <string name="normal_toast">普通的提示（没有ICON）</string>
+    <string name="normal_toast_img">普通的提示（有ICON）</string>
+    <string name="sys_toast">系统的提示</string>
+    <string name="BottomNavigation_Recommend">BottomNavigation介绍</string>
+    <string name="function_unopen">功能暂未开放</string>
+    <string name="whether_remove_animation">是否去除动画</string>
+    <string name="addView">添加Item</string>
+    <string name="reduceView">移除Item</string>
+    <string name="addImte">动态添加Item：</string>
+    <string name="changeOrientation">水平垂直切换</string>
+    <string name="table_Layout">表格布局</string>
+    <string name="WaterFall_View">瀑布流布局</string>
+    <string name="click_crash">点击异常效果演示</string>
+    <string name="DrawerLayout">侧滑菜单</string>
+    <string name="scrollable_tab">scrollable tab</string>
+    <string name="fixed_tab">fixed tab</string>
+    <string name="dynamic_tab">dynamic tab</string>
+    <string name="no_tab_only_indicator">no tab, only indicator</string>
+    <string name="work_with_fragment_container">work with fragment container</string>
+    <string name="tab_with_badge_view">tab with badge view</string>
+    <string name="custom_navigator">custom navigator</string>
+    <string name="tab_with_custom_layout">load custom layout</string>
+    <string name="WeChatFunction">仿微信功能及控件</string>
+    <string name="SplashActivity">欢迎界面</string>
+    <string name="FontSizeActivity">字体大小</string>
+    <string name="save">保存</string>
+    <string name="Multi_Language">多语言</string>
 
 
     <!--博客-->

@@ -2,7 +2,7 @@ package blcs.lwb.utils.adapter.BaseDemoAdapter.provider;
 
 import com.chad.library.adapter.base.entity.AbstractExpandableItem;
 import com.chad.library.adapter.base.entity.MultiItemEntity;
-import blcs.lwb.utils.Bean.Person;
+import blcs.lwb.utils.bean.Person;
 import blcs.lwb.utils.adapter.BaseDemoAdapter.ExpandableItemAdapter;
 
 /**

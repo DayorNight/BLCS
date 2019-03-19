@@ -9,7 +9,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 
 import blcs.lwb.lwbtool.utils.RxToast;
-import blcs.lwb.utils.Bean.StorageSpace;
+import blcs.lwb.utils.bean.StorageSpace;
 import blcs.lwb.utils.R;
 
 
