@@ -1,14 +1,14 @@
 # BLCS
 ## 首页显示
-> 1、APK下载地址
+####1、APK下载地址
 ![Image text](https://github.com/DayorNight/BLCS/blob/master/png/BLCS.png)
-> 2、工具
+####2、工具
 ![Image text](https://github.com/DayorNight/BLCS/blob/master/png/工具.png)
-> 3、View-仿微信功能-多语言
+####3、View-仿微信功能-多语言
 ![Image text](https://github.com/DayorNight/BLCS/blob/master/png/View-仿微信功能-多语言.gif)
-> 4、View-仿微信功能-字体大小
+####4、View-仿微信功能-字体大小
 ![Image text](https://github.com/DayorNight/BLCS/blob/master/png/View-仿微信功能-字体大小.gif)
-> 5、View-仿微信功能-存储空间
+####5、View-仿微信功能-存储空间
 ![Image text](https://github.com/DayorNight/BLCS/blob/master/png/View-仿微信功能-存储空间.gif)
 
 
