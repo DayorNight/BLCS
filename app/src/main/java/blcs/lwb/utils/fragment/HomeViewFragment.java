@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 
+import java.util.ArrayList;
+
 import blcs.lwb.lwbtool.utils.IntentUtils;
 import blcs.lwb.lwbtool.utils.RecyclerUtil;
 import blcs.lwb.lwbtool.utils.RxToast;
@@ -41,6 +43,7 @@ public class HomeViewFragment extends Fragment implements IHomeTabView{
     private HomeTabAdapter adapter;
     private HomeTabPresenter presenter;
     private FragmentActivity activity;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -67,7 +70,7 @@ public class HomeViewFragment extends Fragment implements IHomeTabView{
 
     @Override
     public void Recycler_init() {
-        adapter = new HomeTabAdapter(MyUtils.getArray(activity, R.array.View) );
+        adapter = new HomeTabAdapter(MyUtils.getArray(activity, R.array.View));
         RecyclerUtil.init(activity,OrientationHelper.VERTICAL,adapter,recycler);
     }
 
@@ -79,68 +82,69 @@ public class HomeViewFragment extends Fragment implements IHomeTabView{
                 String item = (String) adapter.getItem(position);
                 Bundle bundle = new Bundle();
                 bundle.putString(Constants.Item_Name,item);
-                switch (item){
-                    case FramentManages.Demo:
-                        MyUtils.toDemo(activity,bundle);
-                        break;
-                    case FramentManages.RxToast:
-                        MyUtils.toFragment(activity,bundle,FramentManages.RxToast);
-                        break;
-                    case FramentManages.BottomNavigation:
-                        MyUtils.toFragment(activity,bundle,FramentManages.BottomNavigation);
-                        break;
-                    case FramentManages.WeChatFunction:
-                        MyUtils.toFragment(activity,bundle,FramentManages.WeChatFunction);
-                        break;
-                    case FramentManages.RecyclerView:
-                        MyUtils.toFragment(activity,bundle,FramentManages.RecyclerView);
-                        break;
-                    case FramentManages.DialogFragment:
-                        MyUtils.toFragment(activity,bundle,FramentManages.DialogFragment);
-                        break;
-                    case FramentManages.Toolbar:
-                        MyUtils.toFragment(activity,bundle,FramentManages.Toolbar);
-                        break;
-                    case FramentManages.TurnTableView:
-                        MyUtils.toFragment(activity,bundle,FramentManages.TurnTableView);
-                        break;
-                    case FramentManages.MarqueeView:
-                        MyUtils.toFragment(activity,bundle,FramentManages.MarqueeView);
-                        break;
-                    case FramentManages.DrawerLayout:
-                        MyUtils.toFragment(activity,bundle,FramentManages.DrawerLayout);
-                        break;
-                    case FramentManages.MagicIndicator:
-                        MyUtils.toFragment(activity,bundle,FramentManages.MagicIndicator);
-                        break;
-                    case FramentManages.Viewpage:
-                        MyUtils.toFragment(activity,bundle,FramentManages.Viewpage);
-                        break;
-                    case FramentManages.OpenGl_Triangle:
-                        MyUtils.toFragment(activity,bundle,FramentManages.OpenGl_Triangle);
-                        break;
-                    case FramentManages.OpenGl_Square:
-                        MyUtils.toFragment(activity,bundle,FramentManages.OpenGl_Square);
-                        break;
-                    case FramentManages.Dialog:
-                        MyUtils.toFragment(activity,bundle,FramentManages.Dialog);
-                        break;
-                    case FramentManages.ProgressBar:
-                        MyUtils.toFragment(activity,bundle,FramentManages.ProgressBar);
-                        break;
-                    case FramentManages.Color_Spider:
-                        MyUtils.toFragment(activity,bundle,FramentManages.Color_Spider);
-                        break;
-                    case FramentManages.Banner:
-                        MyUtils.toFragment(activity,bundle,FramentManages.Banner);
-                        break;
-                    case FramentManages.NotificationCompat:
-                        MyUtils.toFragment(activity,bundle,FramentManages.NotificationCompat);
-                        break;
-                    default:
-                        RxToast.warning(activity,getString(R.string.function_unopen));
-                        break;
-                }
+                MyUtils.toFragment(activity,bundle,item);
+//                switch (item){
+//                    case FramentManages.Demo:
+//                        MyUtils.toDemo(activity,bundle);
+//                        break;
+//                    case FramentManages.RxToast:
+//                        MyUtils.toFragment(activity,bundle,FramentManages.RxToast);
+//                        break;
+//                    case FramentManages.BottomNavigation:
+//                        MyUtils.toFragment(activity,bundle,FramentManages.BottomNavigation);
+//                        break;
+//                    case FramentManages.WeChatFunction:
+//                        MyUtils.toFragment(activity,bundle,FramentManages.WeChatFunction);
+//                        break;
+//                    case FramentManages.RecyclerView:
+//                        MyUtils.toFragment(activity,bundle,FramentManages.RecyclerView);
+//                        break;
+//                    case FramentManages.DialogFragment:
+//                        MyUtils.toFragment(activity,bundle,FramentManages.DialogFragment);
+//                        break;
+//                    case FramentManages.Toolbar:
+//                        MyUtils.toFragment(activity,bundle,FramentManages.Toolbar);
+//                        break;
+//                    case FramentManages.TurnTableView:
+//                        MyUtils.toFragment(activity,bundle,FramentManages.TurnTableView);
+//                        break;
+//                    case FramentManages.MarqueeView:
+//                        MyUtils.toFragment(activity,bundle,FramentManages.MarqueeView);
+//                        break;
+//                    case FramentManages.DrawerLayout:
+//                        MyUtils.toFragment(activity,bundle,FramentManages.DrawerLayout);
+//                        break;
+//                    case FramentManages.MagicIndicator:
+//                        MyUtils.toFragment(activity,bundle,FramentManages.MagicIndicator);
+//                        break;
+//                    case FramentManages.Viewpage:
+//                        MyUtils.toFragment(activity,bundle,FramentManages.Viewpage);
+//                        break;
+//                    case FramentManages.OpenGl_Triangle:
+//                        MyUtils.toFragment(activity,bundle,FramentManages.OpenGl_Triangle);
+//                        break;
+//                    case FramentManages.OpenGl_Square:
+//                        MyUtils.toFragment(activity,bundle,FramentManages.OpenGl_Square);
+//                        break;
+//                    case FramentManages.Dialog:
+//                        MyUtils.toFragment(activity,bundle,FramentManages.Dialog);
+//                        break;
+//                    case FramentManages.ProgressBar:
+//                        MyUtils.toFragment(activity,bundle,FramentManages.ProgressBar);
+//                        break;
+//                    case FramentManages.Color_Spider:
+//                        MyUtils.toFragment(activity,bundle,FramentManages.Color_Spider);
+//                        break;
+//                    case FramentManages.Banner:
+//                        MyUtils.toFragment(activity,bundle,FramentManages.Banner);
+//                        break;
+//                    case FramentManages.NotificationCompat:
+//                        MyUtils.toFragment(activity,bundle,FramentManages.NotificationCompat);
+//                        break;
+//                    default:
+//                        RxToast.warning(activity,getString(R.string.function_unopen));
+//                        break;
+//                }
             }
         });
     }

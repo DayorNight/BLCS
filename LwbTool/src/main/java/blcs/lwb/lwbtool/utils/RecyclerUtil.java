@@ -4,18 +4,12 @@ import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
-
 import blcs.lwb.lwbtool.View.DividerItem;
 
 /**
  * TODO RecycylerView 工具类
  */
-
 public class RecyclerUtil {
-
-
-
-
     /**
      * 初始化配置
      */

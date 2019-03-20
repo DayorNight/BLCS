@@ -10,6 +10,8 @@
 ![Image text](https://github.com/DayorNight/BLCS/blob/master/png/View-仿微信功能-字体大小.gif)
 ####5、View-仿微信功能-存储空间
 ![Image text](https://github.com/DayorNight/BLCS/blob/master/png/View-仿微信功能-存储空间.gif)
+####6、View-DialogFragment
+![Image text](https://github.com/DayorNight/BLCS/blob/master/png/View-DialogFragment.gif)
 
 
 #### 子菜单
@@ -42,6 +44,7 @@
 > 16、蛛网等级及颜色选取
 > 17、Banner轮播图
 > 18、通知NotificationCompat
+> 19、选择器Picker
 ###### 其他
 > 1、采用MVP模式
 > 2、友盟统计
@@ -66,6 +69,7 @@
 > fastjson
 > banner
 > androidsvg
+> PickerView
 
 
 ###### 集成第三方：

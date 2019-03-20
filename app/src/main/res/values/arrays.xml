@@ -12,10 +12,8 @@
         <item>BitmapUtils</item>
         <item>EditTextUtils</item>
         <item>IntentUtils</item>
-        <item>LogUtils</item>
         <item>StringUtils</item>
         <item>ScreenUtils</item>
-
     </string-array>
     <!--View-->
     <string-array name="View">
@@ -37,18 +35,14 @@
         <item>蛛网等级及颜色选取</item>
         <item>Banner轮播图</item>
         <item>通知NotificationCompat</item>
+        <item>选择器Picker</item>
     </string-array>
     <!--other-->
     <string-array name="Other">
         <item>博客</item>
-        <item>采用MVP模式</item>
-        <item>友盟统计</item>
-        <item>友盟多渠道打包</item>
-        <item>APK签名打包</item>
         <item>全局异常捕获</item>
         <item>内存泄漏检测</item>
         <item>Rxjava+Retrofit封装</item>
-        <!--<item>Java常用设计模式</item>-->
     </string-array>
 
     <!--BottomNavigationView-->

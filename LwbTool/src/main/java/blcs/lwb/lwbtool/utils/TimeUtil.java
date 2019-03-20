@@ -59,7 +59,7 @@ import java.util.TimeZone;
  * 28、获取当前年份
  * 29、获取本月份的天数
  * 30、获取指定月份的天数
- * 31/根据年 月 获取对应的月份 天数
+ * 31、根据年 月 获取对应的月份 天数
  */
 public class TimeUtil {
     private static final String TAG = "TimeUtil";
