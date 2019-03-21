@@ -9,7 +9,7 @@ import com.chad.library.adapter.base.entity.MultiItemEntity;
 
 import java.util.List;
 
-import blcs.lwb.utils.Bean.Person;
+import blcs.lwb.utils.bean.Person;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.adapter.BaseDemoAdapter.provider.Level0Item;
 import blcs.lwb.utils.adapter.BaseDemoAdapter.provider.Level1Item;

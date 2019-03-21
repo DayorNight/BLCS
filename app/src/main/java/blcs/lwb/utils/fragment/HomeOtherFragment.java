@@ -77,38 +77,7 @@ public class HomeOtherFragment extends Fragment implements IHomeTabView{
                 String item = (String) adapter.getItem(position);
                 Bundle bundle = new Bundle();
                 bundle.putString(Constants.Item_Name,item);
-                switch (item){
-                    case FramentManages.Demo:
-                        MyUtils.toDemo(activity,bundle);
-                        break;
-                    case FramentManages.Umeng:
-                        bundle.putString(Constants.URL,getString(R.string.URL_Umeng));
-                        MyUtils.toDemo(activity,bundle);
-                        break;
-                    case FramentManages.Umeng_Package:
-                        bundle.putString(Constants.URL,getString(R.string.URL_UmengPackage));
-                        MyUtils.toDemo(activity,bundle);
-                        break;
-                    case FramentManages.APK_Sign:
-                        bundle.putString(Constants.URL,getString(R.string.URL_APK_Sign));
-                        MyUtils.toDemo(activity,bundle);
-                        break;
-                    case FramentManages.CustomActivityOnCrash:
-                        MyUtils.toFragment(activity,bundle,FramentManages.CustomActivityOnCrash);
-                        break;
-                    case FramentManages.LeakCanary:
-                        MyUtils.toFragment(activity,bundle,FramentManages.LeakCanary);
-                        break;
-                    case FramentManages.RxjavaRetrofit:
-                        MyUtils.toFragment(activity,bundle,FramentManages.RxjavaRetrofit);
-                        break;
-                    case FramentManages.BLOGS:
-                        MyUtils.toFragment(activity,bundle,FramentManages.BLOGS);
-                        break;
-                    default:
-                        RxToast.warning(activity,getString(R.string.function_unopen));
-                        break;
-                }
+                MyUtils.toFragment(activity,bundle,item);
             }
         });
     }

@@ -1,7 +1,6 @@
 package blcs.lwb.utils.utils;
 
 import android.app.Activity;
-import android.app.Application;
 import android.os.Bundle;
 
 import java.util.ArrayList;
@@ -10,10 +9,9 @@ import java.util.List;
 
 import blcs.lwb.lwbtool.Constants;
 import blcs.lwb.lwbtool.utils.IntentUtils;
-import blcs.lwb.lwbtool.utils.LogUtils;
-import blcs.lwb.utils.Bean.MySection;
-import blcs.lwb.utils.Bean.Status;
-import blcs.lwb.utils.Bean.Video;
+import blcs.lwb.utils.bean.MySection;
+import blcs.lwb.utils.bean.Status;
+import blcs.lwb.utils.bean.Video;
 import blcs.lwb.utils.PublicFragmentActivity;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.adapter.BaseDemoAdapter.MultipleItem;

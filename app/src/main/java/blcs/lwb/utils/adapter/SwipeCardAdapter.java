@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import blcs.lwb.utils.Bean.SwipeCardBean;
+import blcs.lwb.utils.bean.SwipeCardBean;
 import blcs.lwb.utils.R;
 
 /**

@@ -21,7 +21,7 @@ import blcs.lwb.lwbtool.R;
  */
 public abstract class BaseDialogFragment extends DialogFragment {
     private static final String TAG = "BaseDialogFragment";
-    private int DefaultGravity ;
+    private int DefaultGravity;
     private GradientDrawable drawable;
     private View view;
 
@@ -98,7 +98,7 @@ public abstract class BaseDialogFragment extends DialogFragment {
         Window window = getDialog().getWindow();
         WindowManager.LayoutParams attributes = window.getAttributes();
         attributes.gravity = DefaultGravity;
-        attributes.width = WindowManager.LayoutParams.WRAP_CONTENT;
+        attributes.width = WindowManager.LayoutParams.MATCH_PARENT;
         attributes.height = WindowManager.LayoutParams.WRAP_CONTENT;
         window.setAttributes(attributes);
         setCancelable(true);
@@ -109,7 +109,7 @@ public abstract class BaseDialogFragment extends DialogFragment {
         show(fragmentManager, TAG);
     }
 
-    public void show(FragmentManager fragmentManager,int Gravity) {
+    public void show(FragmentManager fragmentManager, int Gravity) {
         setGravity(Gravity);
         show(fragmentManager, TAG);
     }

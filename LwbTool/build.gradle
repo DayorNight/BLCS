@@ -12,7 +12,9 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            debuggable false
+            minifyEnabled true
+            zipAlignEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -55,13 +57,9 @@ dependencies {
     implementation files('libs/nineoldandroids-2.4.0.jar')
     //==============Zxing核心包 二维码==============
     api 'com.google.zxing:core:3.3.0'
-    //    ========rxjava retrofit 请求框架==========
-    api 'com.squareup.retrofit2:retrofit:2.1.0'
-    api 'com.squareup.retrofit2:converter-gson:2.1.0'
-    api 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
-    api 'io.reactivex.rxjava2:rxjava:2.0.1'
-    api 'io.reactivex.rxjava2:rxandroid:2.0.1'
-    api 'com.trello.rxlifecycle2:rxlifecycle-components:2.1.0'
+
+//    api 'io.reactivex.rxjava2:rxjava:2.0.1'
+//    api 'io.reactivex.rxjava2:rxandroid:2.0.1'
     api 'com.alibaba:fastjson:1.1.59.android'
     //    ===============banner==================https://github.com/youth5201314/banner
     api 'com.youth.banner:banner:1.4.10'
@@ -70,12 +68,15 @@ dependencies {
     api 'com.github.bumptech.glide:glide:4.8.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
 
+    //    ========rxjava retrofit 请求框架==========
     //retrofit网络请求框架
-    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    api 'com.squareup.retrofit2:retrofit:2.5.0'
     //retrofit添加Json解析返回数据
-    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    api 'com.squareup.retrofit2:converter-gson:2.5.0'
     //retrofit添加Rxjava支持
-    implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+    api 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
     //rxjava框架
-    implementation 'com.trello.rxlifecycle2:rxlifecycle-components:2.1.0'
+    api 'com.trello.rxlifecycle2:rxlifecycle-components:2.1.0'
+    //PickerView https://github.com/Bigkoo/Android-PickerView
+    api 'com.contrarywind:Android-PickerView:4.1.7'
 }

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/match_wrap"
+    android:background="@mipmap/ic5"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_time_selector"
+        style="@style/Button_alpha"
+        android:text="时间选择器"/>
+
+    <Button
+        android:id="@+id/btn_date_selector"
+        style="@style/Button_alpha"
+        android:text="日期选择器"/>
+
+    <Button
+        android:id="@+id/btn_date_selector_open"
+        style="@style/Button_alpha"
+        android:text="开源日期选择器"/>
+
+    <Button
+        android:id="@+id/btn_options_selector_open"
+        style="@style/Button_alpha"
+        android:text="开源条件选择器"/>
+
+
+</LinearLayout>

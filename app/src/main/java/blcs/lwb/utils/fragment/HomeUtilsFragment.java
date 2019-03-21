@@ -82,36 +82,7 @@ public class HomeUtilsFragment extends Fragment implements IHomeTabView{
                 String item = (String) adapter.getItem(position);
                 Bundle bundle = new Bundle();
                 bundle.putString(Constants.Item_Name,item);
-                switch (item){
-                    case FramentManages.Demo:
-                        MyUtils.toDemo(activity,bundle);
-                        break;
-                    case FramentManages.Log_Utils:
-                        bundle.putString(Constants.URL,getString(R.string.URL_LOG));
-                        MyUtils.toDemo(activity,bundle);
-                        break;
-                    case FramentManages.String_Utils:
-                        MyUtils.toFragment(activity,bundle,FramentManages.String_Utils);
-                        break;
-                    case FramentManages.EditText_Utils:
-                        MyUtils.toFragment(activity,bundle,FramentManages.EditText_Utils);
-                        break;
-                    case FramentManages.Intent_Utils:
-                        MyUtils.toFragment(activity,bundle,FramentManages.Intent_Utils);
-                        break;
-                    case FramentManages.App_Utils:
-                        MyUtils.toFragment(activity,bundle,FramentManages.App_Utils);
-                        break;
-                    case FramentManages.Screen_Utils:
-                        MyUtils.toFragment(activity,bundle,FramentManages.Screen_Utils);
-                        break;
-                    case FramentManages.Bitmap_Utils:
-                        MyUtils.toFragment(activity,bundle,FramentManages.Bitmap_Utils);
-                        break;
-                    default:
-                        RxToast.warning(activity,getString(R.string.function_unopen));
-                        break;
-                }
+                MyUtils.toFragment(activity,bundle,item);
             }
         });
     }

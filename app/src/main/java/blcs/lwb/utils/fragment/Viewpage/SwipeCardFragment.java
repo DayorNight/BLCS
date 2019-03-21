@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.lwbtool.manager.SwipeCardLayoutManager;
 import blcs.lwb.lwbtool.utils.CardConfig;
-import blcs.lwb.utils.Bean.SwipeCardBean;
+import blcs.lwb.utils.bean.SwipeCardBean;
 import blcs.lwb.utils.Constants;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.adapter.SwipeCardAdapter;

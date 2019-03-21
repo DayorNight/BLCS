@@ -8,7 +8,7 @@ import android.view.View;
 import java.util.List;
 
 import blcs.lwb.lwbtool.utils.CardConfig;
-import blcs.lwb.utils.Bean.SwipeCardBean;
+import blcs.lwb.utils.bean.SwipeCardBean;
 import blcs.lwb.utils.adapter.SwipeCardAdapter;
 
 /**

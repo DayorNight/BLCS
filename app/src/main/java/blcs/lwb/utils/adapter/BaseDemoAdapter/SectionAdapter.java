@@ -2,7 +2,7 @@ package blcs.lwb.utils.adapter.BaseDemoAdapter;
 import com.chad.library.adapter.base.BaseSectionQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import java.util.List;
-import blcs.lwb.utils.Bean.MySection;
+import blcs.lwb.utils.bean.MySection;
 import blcs.lwb.utils.R;
 
 public class SectionAdapter extends BaseSectionQuickAdapter<MySection, BaseViewHolder> {

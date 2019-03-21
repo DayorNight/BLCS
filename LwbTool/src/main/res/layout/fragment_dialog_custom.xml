@@ -12,14 +12,12 @@
         android:src="@mipmap/ic_launcher"/>
     <!--TYPE_SURE  TYPE_CANCLE-->
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/match_wrap"
         android:background="@drawable/dialog_fragment_center_radious"
         >
         <LinearLayout
             android:id="@+id/ll_dialog_fragment_sure"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/match_wrap"
             android:visibility="gone"
             android:gravity="center_horizontal"
             android:orientation="vertical"
@@ -98,7 +96,7 @@
         <!--TYPE_LOADING-->
         <LinearLayout
             android:id="@+id/ll_dialog_fragment_loading"
-            style="@style/match_wrap"
+            style="@style/wrap_wrap"
             android:visibility="gone"
             android:orientation="vertical">
             <ProgressBar

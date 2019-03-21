@@ -3,10 +3,9 @@ package blcs.lwb.utils.fragment;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 
@@ -14,9 +13,8 @@ import java.util.ArrayList;
 
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.lwbtool.utils.RxToast;
-import blcs.lwb.lwbtool.utils.dialog.dialogFragment.BaseDialogFragment;
-import blcs.lwb.lwbtool.utils.dialog.dialogFragment.CustomDialogFragment;
-import blcs.lwb.lwbtool.utils.dialog.dialogFragment.ListDialogFragment;
+import blcs.lwb.lwbtool.utils.dialog.dialogFragment.LinCustomDialogFragment;
+import blcs.lwb.lwbtool.utils.dialog.dialogFragment.LinListDialogFragment;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.utils.MyUtils;
 import butterknife.BindView;
@@ -32,10 +30,8 @@ public class DialogBottomFragment extends BaseFragment {
     @BindView(R.id.btn_dialog_right)
     Button btnDialogRight;
     private ArrayList<String> datas;
-    private ListDialogFragment init;
-    private View layout;
-    private BaseDialogFragment dialogFragment;
-    private CustomDialogFragment comDialog;
+    private LinListDialogFragment init;
+    private LinCustomDialogFragment comDialog;
 
 
     @Override
@@ -46,14 +42,17 @@ public class DialogBottomFragment extends BaseFragment {
     @Override
     protected void initView() {
         datas = MyUtils.getArray(activity, R.array.WeChat_Function);
-        init = ListDialogFragment.init(datas).setOnClickListener(new ListDialogFragment.OnItemClickListener() {
+         init = LinListDialogFragment.init(datas).setOnClickListener(new LinListDialogFragment.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 RxToast.info(activity, datas.get(position));
+                Toast.makeText(activity,datas.get(position),Toast.LENGTH_SHORT).show();
                 init.dismiss();
             }
         });
-        comDialog = CustomDialogFragment.init();
+
+        comDialog = LinCustomDialogFragment.init();
+
     }
 
     @Override
@@ -93,13 +92,13 @@ public class DialogBottomFragment extends BaseFragment {
                 init.show(getFragmentManager(),Gravity.CENTER);
                 break;
             case R.id.btn_dialog_custom_image:
-                comDialog.setImage(R.mipmap.img_view).setType(CustomDialogFragment.TYPE_IMAGE).show(getFragmentManager());
+                comDialog.setImage(R.mipmap.img_view).setType(LinCustomDialogFragment.TYPE_IMAGE).show(getFragmentManager());
                 break;
             case R.id.btn_dialog_custom_sure:
                 comDialog.setTitle("提示").
                         setContent("内容不能为空").
-                        setType(CustomDialogFragment.TYPE_SURE)
-                        .setOnClickListener(new CustomDialogFragment.OnSureListener() {
+                        setType(LinCustomDialogFragment.TYPE_SURE)
+                        .setOnClickListener(new LinCustomDialogFragment.OnSureListener() {
                             @Override
                             public void clickSure() {
                                 RxToast.info(activity,"确定");
@@ -109,8 +108,8 @@ public class DialogBottomFragment extends BaseFragment {
             case R.id.btn_dialog_custom_cancle:
                 comDialog.setTitle(getString(R.string.app_name)).
                         setContent("是否退出登录？").
-                        setType(CustomDialogFragment.TYPE_CANCLE)
-                        .setOnClickListener(new CustomDialogFragment.OnSureCancleListener() {
+                        setType(LinCustomDialogFragment.TYPE_CANCLE)
+                        .setOnClickListener(new LinCustomDialogFragment.OnSureCancleListener() {
                             @Override
                             public void clickSure(String str) {
                                 RxToast.info(activity,"确定");
@@ -123,8 +122,8 @@ public class DialogBottomFragment extends BaseFragment {
                 break;
             case R.id.btn_dialog_custom_editext:
                 comDialog.setTitle(getString(R.string.app_name)).
-                        setType(CustomDialogFragment.TYPE_EDITEXT)
-                        .setOnClickListener(new CustomDialogFragment.OnSureCancleListener() {
+                        setType(LinCustomDialogFragment.TYPE_EDITEXT)
+                        .setOnClickListener(new LinCustomDialogFragment.OnSureCancleListener() {
                             @Override
                             public void clickSure(String str) {
                                 RxToast.info(activity,str);
@@ -137,10 +136,10 @@ public class DialogBottomFragment extends BaseFragment {
                 break;
 
             case R.id.btn_dialog_custom_loading:
-                comDialog.setType(CustomDialogFragment.TYPE_LOADING).show(getFragmentManager());
+                comDialog.setType(LinCustomDialogFragment.TYPE_LOADING).show(getFragmentManager());
                 break;
             case R.id.btn_dialog_custom_big_image:
-                comDialog.setImage(R.mipmap.ic1).setType(CustomDialogFragment.TYPE_IMAGE_BIG).show(getFragmentManager());
+                comDialog.setImage(R.mipmap.ic1).setType(LinCustomDialogFragment.TYPE_IMAGE_BIG).show(getFragmentManager());
                 break;
         }
     }
