@@ -55,6 +55,7 @@ import blcs.lwb.utils.fragment.ScreenUtilsFragment;
 import blcs.lwb.utils.fragment.StringUtilsFragment;
 import blcs.lwb.utils.fragment.ToolbarFragment;
 import blcs.lwb.utils.fragment.TurnTableViewFragment;
+import blcs.lwb.utils.fragment.VersionUpdateFragment;
 import blcs.lwb.utils.fragment.Viewpage.SwipeCardFragment;
 import blcs.lwb.utils.fragment.Viewpage.ViewpageFragment;
 import blcs.lwb.utils.fragment.Viewpage.jellyViewPagerFragment;
@@ -127,6 +128,7 @@ public class FramentManages {
     public final static String BLOGS = "博客";
     public final static String NotificationCompat = "通知NotificationCompat";
     public final static String Picker = "选择器Picker";
+    public final static String VersionUpdate = "版本更新";
 
     /**
      * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -244,6 +246,8 @@ public class FramentManages {
                 return new NotificationCompatFragment();
             case FramentManages.Picker:
                 return new PickerFragment();
+            case FramentManages.VersionUpdate:
+                return new VersionUpdateFragment();
 
 //			case FramentManages.UtilsDetail://工具详情界面
 //				return new HomeTab1DetailFragment();

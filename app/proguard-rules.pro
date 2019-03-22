@@ -136,6 +136,7 @@
 ##      确保JavaBean不被混淆-否则Gson将无法将数据解析成具体对象
 ## ----------------------------------
 -keep class blcs.lwb.utils.bean.** { *; }
+-keep class blcs.lwb.lwbtool.bean.** { *; }
 #-keep class com.rair.circle.db.bean.** { *; }
 
 ## ----------------------------------
