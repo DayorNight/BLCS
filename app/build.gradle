@@ -38,7 +38,7 @@ android {
     }
     buildTypes {
         release {
-            debuggable false
+            debuggable true
             minifyEnabled true
             shrinkResources true   //排除没有引用到的资源  APK瘦身
             zipAlignEnabled true

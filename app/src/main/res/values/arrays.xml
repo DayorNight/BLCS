@@ -14,6 +14,7 @@
         <item>IntentUtils</item>
         <item>StringUtils</item>
         <item>ScreenUtils</item>
+
     </string-array>
     <!--View-->
     <string-array name="View">
@@ -40,6 +41,7 @@
     <!--other-->
     <string-array name="Other">
         <item>博客</item>
+        <item>版本更新</item>
         <item>全局异常捕获</item>
         <item>内存泄漏检测</item>
         <item>Rxjava+Retrofit封装</item>
@@ -112,7 +114,7 @@
         <item>字体大小</item>
         <item>存储空间</item>
         <item>多语言</item>
-        <item>底部弹出框</item>
+
     </string-array>
 
     <!--博客-->

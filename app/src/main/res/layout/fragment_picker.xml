@@ -1,28 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/match_wrap"
-    android:background="@mipmap/ic5"
-    android:orientation="vertical">
+    android:background="@mipmap/ic5">
 
-    <Button
-        android:id="@+id/btn_time_selector"
-        style="@style/Button_alpha"
-        android:text="时间选择器"/>
+    <LinearLayout
+        style="@style/Lin_vertical">
+        <Button
+            android:id="@+id/btn_time_selector"
+            style="@style/Button_alpha"
+            android:text="时间选择器" />
 
-    <Button
-        android:id="@+id/btn_date_selector"
-        style="@style/Button_alpha"
-        android:text="日期选择器"/>
+        <Button
+            android:id="@+id/btn_date_selector"
+            style="@style/Button_alpha"
+            android:text="日期选择器" />
 
-    <Button
-        android:id="@+id/btn_date_selector_open"
-        style="@style/Button_alpha"
-        android:text="开源日期选择器"/>
+        <Button
+            android:id="@+id/btn_date_selector_open"
+            style="@style/Button_alpha"
+            android:text="开源日期选择器" />
 
-    <Button
-        android:id="@+id/btn_options_selector_open"
-        style="@style/Button_alpha"
-        android:text="开源条件选择器"/>
+        <Button
+            android:id="@+id/btn_options_selector_open"
+            style="@style/Button_alpha"
+            android:text="开源条件选择器" />
+        <Button
+            android:id="@+id/btn_PickerView"
+            style="@style/Button_alpha"
+            android:textColor="@color/yellow"
+            android:textStyle="bold"
+            android:text="Android-PickerView" />
+        <LinearLayout
+            android:id="@+id/ll_pickerview"
+            android:visibility="gone"
+            style="@style/Lin_vertical">
+            <Button
+                android:id="@+id/btn_pickerview_customfragment"
+                style="@style/Button_alpha"
+                android:text="自定义父布局" />
+            <FrameLayout
+                android:id="@+id/fragmen_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btn_pickerview_lunar"
+                style="@style/Button_alpha"
+                android:text="公农历切换" />
+
+            <Button
+                android:id="@+id/btn_pickerview_time"
+                style="@style/Button_alpha"
+                android:text="时间选择器" />
+
+            <Button
+                android:id="@+id/btn_pickerview_options"
+                style="@style/Button_alpha"
+                android:text="条件选择器" />
+
+            <Button
+                android:id="@+id/btn_pickerview_CustomTime"
+                style="@style/Button_alpha"
+                android:text="时间选择器自定义布局" />
+
+            <Button
+                android:id="@+id/btn_pickerview_CustomOptions"
+                style="@style/Button_alpha"
+                android:text="条件选择器自定义布局" />
+
+            <Button
+                android:id="@+id/btn_pickerview_no_linkage"
+                style="@style/Button_alpha"
+                android:text="条件选择器(不联动)" />
+
+            <Button
+                android:id="@+id/btn_pickerview_country"
+                style="@style/Button_alpha"
+                android:text="显示省市区选择器" />
 
 
-</LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

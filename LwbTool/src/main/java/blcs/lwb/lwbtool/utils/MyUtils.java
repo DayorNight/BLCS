@@ -2,11 +2,16 @@ package blcs.lwb.lwbtool.utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.graphics.Color;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  * Created by BlueSky on 2018/6/5.
@@ -14,6 +19,7 @@ import android.widget.Toast;
 
 public class MyUtils {
     private  static long firstTime=0;
+
     /**
      * 双击退出
      */
@@ -27,6 +33,24 @@ public class MyUtils {
         }
     }
 
+    /**
+     * 获取Assets文件夹下的JSON数据
+     */
+    public static String getJson(Context context, String fileName) {
+        StringBuilder stringBuilder = new StringBuilder();
+        try {
+            AssetManager assetManager = context.getAssets();
+            BufferedReader bf = new BufferedReader(new InputStreamReader(
+                    assetManager.open(fileName)));
+            String line;
+            while ((line = bf.readLine()) != null) {
+                stringBuilder.append(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return stringBuilder.toString();
+    }
     /**
      * 从控件所在位置移动到控件的底部
      * @return

@@ -64,7 +64,6 @@ public class LinNotify {
 
     /**
      * 创建配置通知渠道
-     *
      * @param channelId   渠道id
      * @param channelName 渠道nanme
      * @param importance  优先级
