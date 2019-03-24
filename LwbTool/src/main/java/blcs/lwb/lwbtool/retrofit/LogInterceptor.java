@@ -1,10 +1,8 @@
 package blcs.lwb.lwbtool.retrofit;
 
 import android.util.Log;
-
 import java.io.IOException;
 import java.util.Locale;
-
 import okhttp3.Interceptor;
 import okhttp3.Request;
 
@@ -16,7 +14,16 @@ public class LogInterceptor implements Interceptor {
 
     @Override
     public okhttp3.Response intercept(Chain chain) throws IOException {
-        Request request = chain.request();
+        Request request = chain.request()
+//                .newBuilder()
+//                .addHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8")
+//                .addHeader("Accept-Encoding", "gzip, deflate")
+//                .addHeader("Connection", "keep-alive")
+//                .addHeader("Accept", "*/*")
+//                .addHeader("Cookie", "add cookies here")
+//                .build()
+                  ;
+
         Log.e(TAG,"request:" + request.toString());
         long t1 = System.nanoTime();
         okhttp3.Response response = chain.proceed(chain.request());
@@ -28,6 +35,7 @@ public class LogInterceptor implements Interceptor {
         Log.e(TAG, "response body:" + content);
         return response.newBuilder()
                 .body(okhttp3.ResponseBody.create(mediaType, content))
+//                .header("Authorization", Your.sToken)
                 .build();
     }
 }
