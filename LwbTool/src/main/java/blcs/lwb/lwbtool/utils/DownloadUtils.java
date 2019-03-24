@@ -199,8 +199,8 @@ public class DownloadUtils
 		PendingIntent contentIntent = PendingIntent.getActivity(mContext, 0,intent, 0);
 		mNotifiviews = new RemoteViews(mContext.getPackageName(),
 				R.layout.custom_notify);
-		mNotifiviews.setViewVisibility(R.id.tv_subtitle, View.VISIBLE);
-		mNotifiviews.setViewVisibility(R.id.progressBar1, View.VISIBLE);
+		mNotifiviews.setViewVisibility(R.id.tv_custom_notify_number, View.VISIBLE);
+		mNotifiviews.setViewVisibility(R.id.pb_custom_notify, View.VISIBLE);
         NotificationCompat.Builder builder = (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) ? new NotificationCompat.Builder(mContext, LinNotify.NEW_MESSAGE) : new NotificationCompat.Builder(mContext);
         mNotifi = builder.setContent(mNotifiviews)
 				.setAutoCancel(true)
@@ -217,21 +217,21 @@ public class DownloadUtils
 	private static void updateNotify(int loadedLen)
 	{
 		int progress = loadedLen * 100 / FILE_LEN;
-		mNotifiviews.setTextViewText(R.id.tv_subtitle, progress + "%");
-		mNotifiviews.setProgressBar(R.id.progressBar1, FILE_LEN, loadedLen,
+		mNotifiviews.setTextViewText(R.id.tv_custom_notify_number, progress + "%");
+		mNotifiviews.setProgressBar(R.id.pb_custom_notify, FILE_LEN, loadedLen,
 				false);
 		mNotifiMgr.notify(12345, mNotifi);
 	}
 
 	private static void finishNotify()
 	{
-		mNotifiviews.setTextViewText(R.id.tv_subtitle,  "100%");
+		mNotifiviews.setTextViewText(R.id.tv_custom_notify_number,  "100%");
 		Intent installAppIntent = getInstallAppIntent(mContext, APK_UPGRADE);
 		PendingIntent contentIntent = PendingIntent.getActivity(mContext, 0,installAppIntent, 0);
 		mNotifi.contentIntent = contentIntent;
 		mNotifiviews.setTextViewText(R.id.tv_title, "下载完成，请点击完成升级");
-		mNotifiviews.setViewVisibility(R.id.tv_subtitle, View.INVISIBLE);
-		mNotifiviews.setViewVisibility(R.id.progressBar1, View.INVISIBLE);
+		mNotifiviews.setViewVisibility(R.id.tv_custom_notify_number, View.INVISIBLE);
+		mNotifiviews.setViewVisibility(R.id.pb_custom_notify, View.INVISIBLE);
 		mNotifiMgr.notify(12345, mNotifi);
 	}
 

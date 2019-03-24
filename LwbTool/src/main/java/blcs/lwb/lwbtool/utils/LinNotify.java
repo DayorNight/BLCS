@@ -18,10 +18,9 @@ import android.support.annotation.RequiresApi;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.text.TextUtils;
-
+import android.widget.RemoteViews;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-
 import blcs.lwb.lwbtool.R;
 
 import static android.app.PendingIntent.FLAG_UPDATE_CURRENT;
@@ -31,8 +30,6 @@ import static android.support.v4.app.NotificationCompat.PRIORITY_DEFAULT;
 /**
  * TODO 通知栏工具 BLCS
  * https://developer.android.google.cn/reference/android/support/v4/app/NotificationCompat.Builder
- * 悬浮窗适配 https://www.jianshu.com/p/1649c2bd249c
- * https://blog.csdn.net/u010111008/article/details/85258488
  */
 public class LinNotify {
 
@@ -111,7 +108,18 @@ public class LinNotify {
      * @param contentText  内容
      */
     public static void show(Context context, String contentTitle, String contentText, Class<?> cls) {
-        show(context, contentTitle, contentText, 0, NEW_MESSAGE, cls);
+        show(context, contentTitle, contentText,null, 0, NEW_MESSAGE, cls);
+    }
+
+    /**
+     * TODO: 发送自定义通知（刷新前面的通知）
+     *
+     * @param context
+     * @param contentTitle 标题
+     * @param contentText  内容
+     */
+    public static void show(Context context, String contentTitle, String contentText,RemoteViews views ,Class<?> cls) {
+        show(context, contentTitle, contentText, views,0, NEW_MESSAGE, cls);
     }
 
     /**
@@ -122,7 +130,18 @@ public class LinNotify {
      * @param channelId    渠道id
      */
     public static void show(Context context, String contentTitle, String contentText, String channelId, Class<?> cls) {
-        show(context, contentTitle, contentText, 0, channelId, cls);
+        show(context, contentTitle, contentText,null, 0, channelId, cls);
+    }
+
+    /**
+     * 发送自定义通知（刷新前面的通知，指定通知渠道）
+     *
+     * @param contentTitle 标题
+     * @param contentText  内容
+     * @param channelId    渠道id
+     */
+    public static void show(Context context, String contentTitle, String contentText,RemoteViews views, String channelId, Class<?> cls) {
+        show(context, contentTitle, contentText,views, 0, channelId, cls);
     }
 
     /**
@@ -132,7 +151,17 @@ public class LinNotify {
      * @param contentText  内容
      */
     public static void showMuch(Context context, String contentTitle, String contentText, Class<?> cls) {
-        show(context, contentTitle, contentText, ++notifyId, NEW_MESSAGE, cls);
+        show(context, contentTitle, contentText,null, ++notifyId, NEW_MESSAGE, cls);
+    }
+
+    /**
+     * 发送多条自定义通知（默认通知渠道）
+     *
+     * @param contentTitle 标题
+     * @param contentText  内容
+     */
+    public static void showMuch(Context context, String contentTitle, String contentText,RemoteViews views, Class<?> cls) {
+        show(context, contentTitle, contentText,views, ++notifyId, NEW_MESSAGE, cls);
     }
 
     /**
@@ -143,9 +172,20 @@ public class LinNotify {
      * @param channelId    渠道id
      */
     public static void showMuch(Context context, String contentTitle, String contentText, String channelId, Class<?> cls) {
-        show(context, contentTitle, contentText, ++notifyId, channelId, cls);
+        show(context, contentTitle, contentText,null, ++notifyId, channelId, cls);
     }
 
+
+    /**
+     * 发送多条自定义通知（指定通知渠道）
+     *
+     * @param contentTitle 标题
+     * @param contentText  内容
+     * @param channelId    渠道id
+     */
+    public static void showMuch(Context context, String contentTitle, String contentText, String channelId,RemoteViews views, Class<?> cls) {
+        show(context, contentTitle, contentText,views, ++notifyId, channelId, cls);
+    }
 
     /**
      * 发送通知（设置默认：大图标/小图标/小标题/副标题/优先级/首次弹出文本）
@@ -156,8 +196,8 @@ public class LinNotify {
      * @param channelId    设置渠道id
      * @param cls          意图类
      */
-    public static void show(Context context, String contentTitle, String contentText, int notifyId, String channelId, Class<?> cls) {
-        show(context, 0, 0, contentTitle, null, contentText, PRIORITY_DEFAULT, null, notifyId, channelId, cls);
+    public static void show(Context context, String contentTitle, String contentText, RemoteViews views,int notifyId, String channelId, Class<?> cls) {
+        show(context, 0, 0, contentTitle, null, contentText, PRIORITY_DEFAULT, null,views ,notifyId, channelId, cls);
     }
 
     /**
@@ -176,7 +216,7 @@ public class LinNotify {
     public static void show(Context context, int largeIcon,
                             int smallIcon, String contentTitle,
                             String subText, String contentText,
-                            int priority, String ticker,
+                            int priority, String ticker, RemoteViews view,
                             int notifyId, String channelId, Class<?> cls) {
         //flags
         // FLAG_ONE_SHOT:表示此PendingIntent只能使用一次的标志
@@ -196,9 +236,9 @@ public class LinNotify {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             if (!openNotificationChannel(context, manager, channelId)) return;
         }
-        NotificationCompat.Builder builder;
+
         //创建 NEW_MESSAGE 渠道通知栏  在API级别26.1.0中推荐使用此构造函数 Builder(context, 渠道名)
-        builder = (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) ? new NotificationCompat.Builder(context, channelId) : new NotificationCompat.Builder(context);
+        NotificationCompat.Builder builder = (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) ? new NotificationCompat.Builder(context, channelId) : new NotificationCompat.Builder(context);
         builder.setLargeIcon(BitmapFactory.decodeResource(context.getResources(), largeIcon == 0 ? R.mipmap.ic_launcher : largeIcon)) //设置自动收报机和通知中显示的大图标。
                 .setSmallIcon(smallIcon == 0 ? R.mipmap.ic_launcher : smallIcon) // 小图标
                 .setContentText(TextUtils.isEmpty(contentText)? null : contentText) // 内容
@@ -206,6 +246,7 @@ public class LinNotify {
                 .setSubText(TextUtils.isEmpty(subText) ? null : subText) // APP名称的副标题
                 .setPriority(priority) //设置优先级 PRIORITY_DEFAULT
                 .setTicker(TextUtils.isEmpty(ticker) ? Ticker : ticker) // 设置通知首次弹出时，状态栏上显示的文本
+                .setContent(view)
                 .setWhen(System.currentTimeMillis()) // 设置通知发送的时间戳
                 .setShowWhen(true)//设置是否显示时间戳
                 .setAutoCancel(true)// 点击通知后通知在通知栏上消失

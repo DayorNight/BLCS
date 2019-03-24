@@ -1,11 +1,21 @@
 package blcs.lwb.utils.fragment;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Icon;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RemoteViews;
 
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.lwbtool.utils.LinNotify;
@@ -15,6 +25,9 @@ import blcs.lwb.utils.R;
 import butterknife.BindView;
 import butterknife.OnClick;
 
+import static android.content.Context.NOTIFICATION_SERVICE;
+import static android.support.v4.app.NotificationCompat.PRIORITY_MIN;
+
 public class NotificationCompatFragment extends BaseFragment {
     @BindView(R.id.et_notification_title)
     EditText et_notification_title;
@@ -22,6 +35,10 @@ public class NotificationCompatFragment extends BaseFragment {
     EditText etNotificationContent;
     @BindView(R.id.btn_notfication_show_tatus)
     Button show_tatus;
+
+    private int progress = 0;
+    private RemoteViews mViews;
+
 
     @Override
     protected int bindLayout() {
@@ -31,7 +48,8 @@ public class NotificationCompatFragment extends BaseFragment {
 
     @Override
     protected void initView() {
-
+        mViews = new RemoteViews(activity.getPackageName(), R.layout.custom_notify);
+        mViews.setTextViewText(R.id.tv_custom_notify,"正在下载");
     }
 
     @Override
@@ -58,7 +76,9 @@ public class NotificationCompatFragment extends BaseFragment {
         }
     }
 
-    @OnClick({R.id.btn_notfication_settings, R.id.btn_notification_send_one, R.id.btn_notification_send, R.id.btn_notification_channel_send_one, R.id.btn_notification_channel_send})
+    @OnClick({R.id.btn_notfication_settings, R.id.btn_notification_send_one,
+            R.id.btn_notification_send, R.id.btn_notification_channel_send_one,
+            R.id.btn_notification_channel_send, R.id.btn_notification_custom, R.id.btn_notification_much_custom})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_notfication_settings:
@@ -76,7 +96,16 @@ public class NotificationCompatFragment extends BaseFragment {
             case R.id.btn_notification_channel_send:
                 LinNotify.showMuch(activity, StringUtils.getString(et_notification_title), StringUtils.getString(etNotificationContent), LinNotify.OTHER_MESSAGE, MainActivity.class);
                 break;
+            case R.id.btn_notification_custom:
+                mViews.setTextViewText(R.id.tv_custom_notify_number,++progress+"0%");
+                mViews.setProgressBar(R.id.pb_custom_notify,10,progress,false);
+                LinNotify.show(activity, StringUtils.getString(et_notification_title), StringUtils.getString(etNotificationContent),mViews, null);
+                break;
+            case R.id.btn_notification_much_custom:
+                mViews.setTextViewText(R.id.tv_custom_notify_number,++progress+"0%");
+                mViews.setProgressBar(R.id.pb_custom_notify,10,progress,false);
+                LinNotify.showMuch(activity, StringUtils.getString(et_notification_title), StringUtils.getString(etNotificationContent),mViews, null);
+                break;
         }
     }
-
 }

@@ -3,6 +3,23 @@
 ### APK下载地址
 ![Image text](https://github.com/DayorNight/BLCS/blob/master/png/BLCS.png)
 
+### 通知NotificationCompat
+![Image text](https://github.com/DayorNight/BLCS/blob/master/png/View-通知NotificationCompat.gif)
+
+### DialogFragment
+![Image text](https://github.com/DayorNight/BLCS/blob/master/png/View-DialogFragment.gif)
+
+### View-仿微信功能-多语言
+![Image text](https://github.com/DayorNight/BLCS/blob/master/png/View-仿微信功能-多语言.gif)
+
+### View-仿微信功能-字体大小
+![Image text](https://github.com/DayorNight/BLCS/blob/master/png/View-仿微信功能-字体大小.gif)
+
+### View-仿微信功能-存储空间
+![Image text](https://github.com/DayorNight/BLCS/blob/master/png/View-仿微信功能-存储空间.gif)
+
+
+
 #### 子菜单
 
 ###### 工具

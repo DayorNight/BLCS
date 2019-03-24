@@ -19,23 +19,42 @@
             style="@style/Button_alpha"
             android:text="获取应用是否开启通知状态：false" />
 
-
-        <EditText
-            android:id="@+id/et_notification_title"
+        <LinearLayout
             style="@style/Button_alpha"
             android:gravity="center"
-            android:hint="请输入通知内栏标题"
-            android:padding="@dimen/space_line3"
-            android:textColorHint="@color/green" />
+            android:padding="@dimen/space_line2">
+            <TextView
+                style="@style/wrap_wrap"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_stander"
+                android:text="请输入通知栏标题："/>
+            <EditText
+                android:id="@+id/et_notification_title"
+                style="@style/wrap_wrap"
+                android:hint="标题"
+                android:textColor="@color/white"
+                android:textColorHint="@color/green"
+                />
+        </LinearLayout>
 
-
-        <EditText
-            android:id="@+id/et_notification_content"
+        <LinearLayout
             style="@style/Button_alpha"
             android:gravity="center"
-            android:hint="请输入通知内容"
-            android:padding="@dimen/space_line3"
-            android:textColorHint="@color/green" />
+            android:padding="@dimen/space_line2">
+            <TextView
+                style="@style/wrap_wrap"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_stander"
+                android:text="请输入通知内容："/>
+            <EditText
+                android:id="@+id/et_notification_content"
+                style="@style/wrap_wrap"
+                android:textColor="@color/white"
+                android:hint="内容"
+                android:textColorHint="@color/green"
+                />
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/btn_notification_send_one"
@@ -62,5 +81,14 @@
             android:id="@+id/btn_notification_channel_send"
             style="@style/Button_alpha"
             android:text="发送另一个渠道多条通知" />
+
+        <Button
+            android:id="@+id/btn_notification_custom"
+            style="@style/Button_alpha"
+            android:text="发送自定义通知" />
+        <Button
+            android:id="@+id/btn_notification_much_custom"
+            style="@style/Button_alpha"
+            android:text="发送多条自定义通知" />
     </LinearLayout>
 </ScrollView>
