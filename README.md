@@ -51,6 +51,8 @@
 > 17.Banner轮播图
 > 18.通知NotificationCompat
 > 19.选择器Picker
+> 20.标签列表LabelList
+
 ###### 其他
 > 1.采用MVP模式
 > 2.友盟统计

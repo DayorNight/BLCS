@@ -1,7 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    style="@style/match_match"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:padding="@dimen/space_line3"
+    android:gravity="center"
+    >
+    <ImageView
+        style="@style/wrap_wrap"
+        android:layout_marginBottom="@dimen/space_line3"
+        android:src="@mipmap/ic_launcher"/>
+    <TextView
+        android:id="@+id/tv_version_name"
+        style="@style/wrap_wrap"
+        android:textSize="@dimen/sp_big5"
+        android:textColor="@color/black"
+        android:text="@string/app_name"/>
+    <TextView
+        android:id="@+id/tv_version_code"
+        style="@style/wrap_wrap"
+        android:textSize="@dimen/sp_big2"
+        android:textColor="@color/black"
+        android:text="@string/app_name"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="40dp"
+        android:background="@color/hint"/>
+
+    <LinearLayout
+        android:id="@+id/ll_version_update_function"
+        style="@style/Lin_horizontal"
+        android:padding="@dimen/space_line2"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="center_vertical">
+        <TextView
+            style="@style/wrap_wrap"
+            android:textSize="@dimen/sp_big3"
+            android:textColor="@color/black"
+            android:layout_weight="1"
+            android:text="功能介绍"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_go"/>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/hint"/>
+    <LinearLayout
+        android:id="@+id/ll_version_update"
+        style="@style/Lin_horizontal"
+        android:padding="@dimen/space_line2"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="center_vertical">
+        <TextView
+            style="@style/wrap_wrap"
+            android:textSize="@dimen/sp_big3"
+            android:textColor="@color/black"
+            android:layout_weight="1"
+            android:text="检查新版本"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_go"/>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/hint"/>
 </LinearLayout>

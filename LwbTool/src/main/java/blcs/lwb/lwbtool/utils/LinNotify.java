@@ -33,7 +33,6 @@ import static android.support.v4.app.NotificationCompat.PRIORITY_DEFAULT;
  */
 public class LinNotify {
 
-    public static final int RequestCode = 1;
     public static final String NEW_MESSAGE = "chat";
     public static final String NEW_GROUP = "chat_group";
     public static final String OTHER_MESSAGE = "other";
@@ -107,8 +106,8 @@ public class LinNotify {
      * @param contentTitle 标题
      * @param contentText  内容
      */
-    public static void show(Context context, String contentTitle, String contentText, Class<?> cls) {
-        show(context, contentTitle, contentText,null, 0, NEW_MESSAGE, cls);
+    public static void show(Context context, String contentTitle, String contentText, PendingIntent pendingIntent) {
+        show(context, contentTitle, contentText,null, 0, NEW_MESSAGE, pendingIntent);
     }
 
     /**
@@ -118,8 +117,8 @@ public class LinNotify {
      * @param contentTitle 标题
      * @param contentText  内容
      */
-    public static void show(Context context, String contentTitle, String contentText,RemoteViews views ,Class<?> cls) {
-        show(context, contentTitle, contentText, views,0, NEW_MESSAGE, cls);
+    public static void show(Context context, String contentTitle, String contentText,RemoteViews views ,PendingIntent pendingIntent) {
+        show(context, contentTitle, contentText, views,0, NEW_MESSAGE, pendingIntent);
     }
 
     /**
@@ -129,8 +128,8 @@ public class LinNotify {
      * @param contentText  内容
      * @param channelId    渠道id
      */
-    public static void show(Context context, String contentTitle, String contentText, String channelId, Class<?> cls) {
-        show(context, contentTitle, contentText,null, 0, channelId, cls);
+    public static void show(Context context, String contentTitle, String contentText, String channelId, PendingIntent pendingIntent) {
+        show(context, contentTitle, contentText,null, 0, channelId, pendingIntent);
     }
 
     /**
@@ -140,8 +139,8 @@ public class LinNotify {
      * @param contentText  内容
      * @param channelId    渠道id
      */
-    public static void show(Context context, String contentTitle, String contentText,RemoteViews views, String channelId, Class<?> cls) {
-        show(context, contentTitle, contentText,views, 0, channelId, cls);
+    public static void show(Context context, String contentTitle, String contentText,RemoteViews views, String channelId, PendingIntent pendingIntent) {
+        show(context, contentTitle, contentText,views, 0, channelId, pendingIntent);
     }
 
     /**
@@ -150,8 +149,8 @@ public class LinNotify {
      * @param contentTitle 标题
      * @param contentText  内容
      */
-    public static void showMuch(Context context, String contentTitle, String contentText, Class<?> cls) {
-        show(context, contentTitle, contentText,null, ++notifyId, NEW_MESSAGE, cls);
+    public static void showMuch(Context context, String contentTitle, String contentText, PendingIntent pendingIntent) {
+        show(context, contentTitle, contentText,null, ++notifyId, NEW_MESSAGE, pendingIntent);
     }
 
     /**
@@ -160,8 +159,8 @@ public class LinNotify {
      * @param contentTitle 标题
      * @param contentText  内容
      */
-    public static void showMuch(Context context, String contentTitle, String contentText,RemoteViews views, Class<?> cls) {
-        show(context, contentTitle, contentText,views, ++notifyId, NEW_MESSAGE, cls);
+    public static void showMuch(Context context, String contentTitle, String contentText,RemoteViews views, PendingIntent pendingIntent) {
+        show(context, contentTitle, contentText,views, ++notifyId, NEW_MESSAGE, pendingIntent);
     }
 
     /**
@@ -171,8 +170,8 @@ public class LinNotify {
      * @param contentText  内容
      * @param channelId    渠道id
      */
-    public static void showMuch(Context context, String contentTitle, String contentText, String channelId, Class<?> cls) {
-        show(context, contentTitle, contentText,null, ++notifyId, channelId, cls);
+    public static void showMuch(Context context, String contentTitle, String contentText, String channelId, PendingIntent pendingIntent) {
+        show(context, contentTitle, contentText,null, ++notifyId, channelId, pendingIntent);
     }
 
 
@@ -183,8 +182,8 @@ public class LinNotify {
      * @param contentText  内容
      * @param channelId    渠道id
      */
-    public static void showMuch(Context context, String contentTitle, String contentText, String channelId,RemoteViews views, Class<?> cls) {
-        show(context, contentTitle, contentText,views, ++notifyId, channelId, cls);
+    public static void showMuch(Context context, String contentTitle, String contentText, String channelId,RemoteViews views, PendingIntent pendingIntent) {
+        show(context, contentTitle, contentText,views, ++notifyId, channelId, pendingIntent);
     }
 
     /**
@@ -194,10 +193,10 @@ public class LinNotify {
      * @param contentText  内容
      * @param notifyId     通知栏id
      * @param channelId    设置渠道id
-     * @param cls          意图类
+     * @param pendingIntent          意图类
      */
-    public static void show(Context context, String contentTitle, String contentText, RemoteViews views,int notifyId, String channelId, Class<?> cls) {
-        show(context, 0, 0, contentTitle, null, contentText, PRIORITY_DEFAULT, null,views ,notifyId, channelId, cls);
+    public static void show(Context context, String contentTitle, String contentText, RemoteViews views,int notifyId, String channelId, PendingIntent pendingIntent) {
+        show(context, 0, 0, contentTitle, null, contentText, PRIORITY_DEFAULT, null,views ,notifyId, channelId, pendingIntent);
     }
 
     /**
@@ -211,25 +210,20 @@ public class LinNotify {
      * @param priority     优先级
      * @param ticker       通知首次弹出时，状态栏上显示的文本
      * @param notifyId     定义是否显示多条通知栏
-     * @param cls          意图类
+     * @param pendingIntent          意图类
      */
     public static void show(Context context, int largeIcon,
                             int smallIcon, String contentTitle,
                             String subText, String contentText,
                             int priority, String ticker, RemoteViews view,
-                            int notifyId, String channelId, Class<?> cls) {
+                            int notifyId, String channelId, PendingIntent pendingIntent) {
         //flags
         // FLAG_ONE_SHOT:表示此PendingIntent只能使用一次的标志
         // FLAG_IMMUTABLE:指示创建的PendingIntent应该是不可变的标志
         // FLAG_NO_CREATE : 指示如果描述的PendingIntent尚不存在，则只返回null而不是创建它。
         // FLAG_CANCEL_CURRENT :指示如果所描述的PendingIntent已存在，则应在生成新的PendingIntent,取消之前PendingIntent
         // FLAG_UPDATE_CURRENT : 指示如果所描述的PendingIntent已存在，则保留它，但将其额外数据替换为此新Intent中的内容
-        PendingIntent pendingIntent = null;
-        //添加隐示意图
-        if (cls != null) {
-            Intent intent = new Intent(context, cls);
-            pendingIntent = PendingIntent.getActivity(context, RequestCode, intent, FLAG_UPDATE_CURRENT);
-        }
+//
         //获取通知服务管理器
         NotificationManager manager = (NotificationManager) context.getSystemService(NOTIFICATION_SERVICE);
         //判断应用通知是否打开

@@ -30,8 +30,8 @@
         android:layout_marginRight="@dimen/space_line"
         android:layout_marginTop="@dimen/space_line2"
         android:layout_centerVertical="true"
-        android:textColor="@color/gray"
-        android:text="1%" />
+        android:textColor="@color/black"
+        android:text="0%" />
 
     <ProgressBar
         android:id="@+id/pb_custom_notify"

@@ -3,14 +3,14 @@ package blcs.lwb.utils;
 import android.os.Environment;
 
 public class Constants {
+
+//    public final static String InstallApk="http://xxxxxxxxxxx/BLCS.apk";
+    public final static String InstallApk="http://103.115.44.168:7777/xqd.apk";
     /**
      *  intent
      */
     public final static String Intent_Go="跳转到哪个片段";
-
     public final static String phonePath=Environment.getExternalStorageDirectory().getAbsolutePath();
-
-
     public final static String Item_Name="Item_Name";
 
 //    友盟统计appkey

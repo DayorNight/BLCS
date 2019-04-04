@@ -31,6 +31,7 @@ import blcs.lwb.utils.fragment.DrawerLayoutFragment;
 import blcs.lwb.utils.fragment.EditTextUtilsFragment;
 import blcs.lwb.utils.fragment.IntentUtilsFragment;
 import blcs.lwb.utils.fragment.JavaDesignPatternFragment;
+import blcs.lwb.utils.fragment.LabelListFragment;
 import blcs.lwb.utils.fragment.LeakCanaryFragment;
 import blcs.lwb.utils.fragment.MagicIndicator.BadgeTabFragment;
 import blcs.lwb.utils.fragment.MagicIndicator.CustomNavigatorFragment;
@@ -129,6 +130,7 @@ public class FramentManages {
     public final static String NotificationCompat = "通知NotificationCompat";
     public final static String Picker = "选择器Picker";
     public final static String VersionUpdate = "版本更新";
+    public final static String LabelList = "标签列表LabelList";
 
     /**
      * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -248,6 +250,8 @@ public class FramentManages {
                 return new PickerFragment();
             case FramentManages.VersionUpdate:
                 return new VersionUpdateFragment();
+            case FramentManages.LabelList:
+                return new LabelListFragment();
 
 //			case FramentManages.UtilsDetail://工具详情界面
 //				return new HomeTab1DetailFragment();

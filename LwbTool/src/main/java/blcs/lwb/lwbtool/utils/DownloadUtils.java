@@ -39,11 +39,10 @@ public class DownloadUtils
 {
 	private static int FILE_LEN = 0;
 	private static Context mContext;
-	private static NotificationManager mNotifiMgr;
-	private static Notification mNotifi;
 	private static RemoteViews mNotifiviews;
 	public static String APK_UPGRADE = Environment
 			.getExternalStorageDirectory() + "/DownLoad/apk/BLCS.apk";
+	private static PendingIntent nullIntent;
 
 	/**
 	 * 判断8.0 安装权限
@@ -194,24 +193,14 @@ public class DownloadUtils
 
 	private static void sendNotify()
 	{
-		mNotifiMgr = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
 		Intent intent = new Intent();
-		PendingIntent contentIntent = PendingIntent.getActivity(mContext, 0,intent, 0);
+		nullIntent = PendingIntent.getActivity(mContext, 0,
+				intent, 0);
 		mNotifiviews = new RemoteViews(mContext.getPackageName(),
 				R.layout.custom_notify);
 		mNotifiviews.setViewVisibility(R.id.tv_custom_notify_number, View.VISIBLE);
 		mNotifiviews.setViewVisibility(R.id.pb_custom_notify, View.VISIBLE);
-        NotificationCompat.Builder builder = (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) ? new NotificationCompat.Builder(mContext, LinNotify.NEW_MESSAGE) : new NotificationCompat.Builder(mContext);
-        mNotifi = builder.setContent(mNotifiviews)
-				.setAutoCancel(true)
-				.setDefaults(NotificationCompat.FLAG_ONLY_ALERT_ONCE)
-				.setSmallIcon(R.mipmap.ic_launcher).setTicker("ticker")
-				.setWhen(System.currentTimeMillis()).setSound(Uri.parse(""))
-				.setPriority(PRIORITY_MIN)
-				.setVibrate(new long[]{0})
-				.setSound(null)
-				.setContentIntent(contentIntent).build();
-		mNotifiMgr.notify(12345, mNotifi);
+        LinNotify.show(mContext,"","",mNotifiviews,LinNotify.NEW_MESSAGE,nullIntent);
 	}
 
 	private static void updateNotify(int loadedLen)
@@ -220,21 +209,27 @@ public class DownloadUtils
 		mNotifiviews.setTextViewText(R.id.tv_custom_notify_number, progress + "%");
 		mNotifiviews.setProgressBar(R.id.pb_custom_notify, FILE_LEN, loadedLen,
 				false);
-		mNotifiMgr.notify(12345, mNotifi);
+
+		LinNotify.show(mContext,"","",mNotifiviews,LinNotify.NEW_MESSAGE,nullIntent);
 	}
 
 	private static void finishNotify()
 	{
 		mNotifiviews.setTextViewText(R.id.tv_custom_notify_number,  "100%");
-		Intent installAppIntent = getInstallAppIntent(mContext, APK_UPGRADE);
-		PendingIntent contentIntent = PendingIntent.getActivity(mContext, 0,installAppIntent, 0);
-		mNotifi.contentIntent = contentIntent;
+//		Intent installAppIntent = getInstallAppIntent(mContext, APK_UPGRADE);
+//		PendingIntent contentIntent = PendingIntent.getActivity(mContext, 0,installAppIntent, 0);
 		mNotifiviews.setTextViewText(R.id.tv_title, "下载完成，请点击完成升级");
 		mNotifiviews.setViewVisibility(R.id.tv_custom_notify_number, View.INVISIBLE);
 		mNotifiviews.setViewVisibility(R.id.pb_custom_notify, View.INVISIBLE);
-		mNotifiMgr.notify(12345, mNotifi);
+		LinNotify.show(mContext,"","",mNotifiviews,LinNotify.NEW_MESSAGE,nullIntent);
 	}
 
+	/**
+	 * 调往系统APK安装界面（适配7.0）
+	 * @param context
+	 * @param filePath
+	 * @return
+	 */
 	public static Intent getInstallAppIntent(Context context, String filePath) {
 		//apk文件的本地路径
 		File apkfile = new File(filePath);
@@ -251,9 +246,8 @@ public class DownloadUtils
 		return intent;
 	}
 
-
 	/**
-	 * 将文件转换成uri(支持7.0)
+	 * 将文件转换成uri
 	 * @param mContext
 	 * @param file
 	 * @return
@@ -268,46 +262,4 @@ public class DownloadUtils
 		return fileUri;
 	}
 
-
-	/**
-	 *  10、删除指定的文件
-	 * @param filePath 文件路径
-	 * @return 若删除成功，则返回True；反之，则返回False
-	 */
-	public static boolean delFile(String filePath) {
-		return new File(filePath).delete();
-	}
-
-	/**
-	 *  11、删除指定的文件夹
-	 * @param dirPath 文件夹路径
-	 * @param delFile 文件夹中是否包含文件
-	 * @return 若删除成功，则返回True；反之，则返回False
-	 */
-	public static boolean delDir(String dirPath, boolean delFile) {
-		if (delFile) {
-			File file = new File(dirPath);
-			if (file.isFile()) {
-				return file.delete();
-			} else if (file.isDirectory()) {
-				if (file.listFiles().length == 0) {
-					return file.delete();
-				} else {
-					int zFiles = file.listFiles().length;
-					File[] delfile = file.listFiles();
-					for (int i = 0; i < zFiles; i++) {
-						if (delfile[i].isDirectory()) {
-							delDir(delfile[i].getAbsolutePath(), true);
-						}
-						delfile[i].delete();
-					}
-					return file.delete();
-				}
-			} else {
-				return false;
-			}
-		} else {
-			return new File(dirPath).delete();
-		}
-	}
 }

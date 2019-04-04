@@ -88,23 +88,24 @@ public class NotificationCompatFragment extends BaseFragment {
                 LinNotify.show(activity, StringUtils.getString(et_notification_title), StringUtils.getString(etNotificationContent), null);
                 break;
             case R.id.btn_notification_send:
-                LinNotify.showMuch(activity, StringUtils.getString(et_notification_title), StringUtils.getString(etNotificationContent), MainActivity.class);
+
+                LinNotify.showMuch(activity, StringUtils.getString(et_notification_title), StringUtils.getString(etNotificationContent), null);
                 break;
             case R.id.btn_notification_channel_send_one:
-                LinNotify.show(activity, StringUtils.getString(et_notification_title), StringUtils.getString(etNotificationContent), LinNotify.OTHER_MESSAGE, MainActivity.class);
+                LinNotify.show(activity, StringUtils.getString(et_notification_title), StringUtils.getString(etNotificationContent), LinNotify.OTHER_MESSAGE, null);
                 break;
             case R.id.btn_notification_channel_send:
-                LinNotify.showMuch(activity, StringUtils.getString(et_notification_title), StringUtils.getString(etNotificationContent), LinNotify.OTHER_MESSAGE, MainActivity.class);
+                LinNotify.showMuch(activity, StringUtils.getString(et_notification_title), StringUtils.getString(etNotificationContent), LinNotify.OTHER_MESSAGE, null);
                 break;
             case R.id.btn_notification_custom:
                 mViews.setTextViewText(R.id.tv_custom_notify_number,++progress+"0%");
                 mViews.setProgressBar(R.id.pb_custom_notify,10,progress,false);
-                LinNotify.show(activity, StringUtils.getString(et_notification_title), StringUtils.getString(etNotificationContent),mViews, null);
+                LinNotify.show(activity,"", "",mViews, null);
                 break;
             case R.id.btn_notification_much_custom:
                 mViews.setTextViewText(R.id.tv_custom_notify_number,++progress+"0%");
                 mViews.setProgressBar(R.id.pb_custom_notify,10,progress,false);
-                LinNotify.showMuch(activity, StringUtils.getString(et_notification_title), StringUtils.getString(etNotificationContent),mViews, null);
+                LinNotify.showMuch(activity, "", "",mViews, null);
                 break;
         }
     }

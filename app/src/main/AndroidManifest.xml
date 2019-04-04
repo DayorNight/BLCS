@@ -54,7 +54,15 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/WeChatStorageActivity"
             />
-
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
         <!--友盟统计-->
         <meta-data android:value="5b98c6f98f4a9d317b00002f" android:name="UMENG_APPKEY"/>
         <meta-data android:value="${UMENG_CHANNEL_VALUE}"  android:name="UMENG_CHANNEL"  />
