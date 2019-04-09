@@ -1,16 +1,7 @@
 package blcs.lwb.utils.fragment;
 
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
-import android.content.Intent;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.Icon;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.NotificationCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
@@ -19,14 +10,11 @@ import android.widget.RemoteViews;
 
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.lwbtool.utils.LinNotify;
+import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.lwbtool.utils.StringUtils;
-import blcs.lwb.utils.MainActivity;
 import blcs.lwb.utils.R;
 import butterknife.BindView;
 import butterknife.OnClick;
-
-import static android.content.Context.NOTIFICATION_SERVICE;
-import static android.support.v4.app.NotificationCompat.PRIORITY_MIN;
 
 public class NotificationCompatFragment extends BaseFragment {
     @BindView(R.id.et_notification_title)

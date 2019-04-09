@@ -194,8 +194,7 @@ public class DownloadUtils
 	private static void sendNotify()
 	{
 		Intent intent = new Intent();
-		nullIntent = PendingIntent.getActivity(mContext, 0,
-				intent, 0);
+		nullIntent = PendingIntent.getActivity(mContext, 0, intent, 0);
 		mNotifiviews = new RemoteViews(mContext.getPackageName(),
 				R.layout.custom_notify);
 		mNotifiviews.setViewVisibility(R.id.tv_custom_notify_number, View.VISIBLE);

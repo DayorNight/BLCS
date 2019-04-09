@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="@dimen/space_line"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@mipmap/empty_icon" />
 
     <TextView
         android:id="@+id/tv_custom_notify"
@@ -19,28 +19,22 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/iv_custom_notify"
         android:text="正在下载"
+        android:layout_marginRight="@dimen/sp_stander"
         android:textColor="@color/black" />
-
     <TextView
         android:id="@+id/tv_custom_notify_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_custom_notify"
-        android:layout_toRightOf="@+id/iv_custom_notify"
-        android:layout_marginRight="@dimen/space_line"
-        android:layout_marginTop="@dimen/space_line2"
-        android:layout_centerVertical="true"
-        android:textColor="@color/black"
-        android:text="0%" />
-
+        android:layout_toRightOf="@+id/tv_custom_notify"
+        android:text="1000"
+        android:textColor="@color/gray"
+        />
     <ProgressBar
         android:id="@+id/pb_custom_notify"
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_toRightOf="@+id/tv_custom_notify_number"
         android:layout_below="@+id/tv_custom_notify"
         android:layout_marginTop="@dimen/space_line2"
-        android:progress="10"
-        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/iv_custom_notify"
         android:progressDrawable="@drawable/pb_notify_custom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
