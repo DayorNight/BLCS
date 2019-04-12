@@ -4,19 +4,20 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.provider.MediaStore;
 
 import java.io.File;
 
 /**
- *  TODO 手机组件调用工具类
+ * TODO 手机组件调用工具类
  * 1、调用系统发短信界面
  * 2、判断是否为连击
  * 3、获取手机型号
  * 4、获取手机品牌
  * 5、拍照打开照相机！
  * 6、打开相册
- *
+ * 7、打开权限管理界面
  */
 
 public class PhoneUtil {
@@ -28,6 +29,7 @@ public class PhoneUtil {
 
     /**
      * 1、调用系统发短信界面
+     *
      * @param activity    Activity
      * @param phoneNumber 手机号码
      * @param smsContent  短信内容
@@ -45,7 +47,8 @@ public class PhoneUtil {
 
     /**
      * 2、判断是否为连击
-     * @return  boolean
+     *
+     * @return boolean
      */
     public static boolean isFastDoubleClick() {
         long time = System.currentTimeMillis();
@@ -58,9 +61,10 @@ public class PhoneUtil {
     }
 
     /**
-     *  3、获取手机型号
-     * @param context  上下文
-     * @return   String
+     * 3、获取手机型号
+     *
+     * @param context 上下文
+     * @return String
      */
     public static String getMobileModel(Context context) {
         try {
@@ -72,9 +76,10 @@ public class PhoneUtil {
     }
 
     /**
-     *  4、获取手机品牌
-     * @param context  上下文
-     * @return  String
+     * 4、获取手机品牌
+     *
+     * @param context 上下文
+     * @return String
      */
     public static String getMobileBrand(Context context) {
         try {
@@ -87,9 +92,10 @@ public class PhoneUtil {
     }
 
     /**
-     *  5、拍照打开照相机！
-     * @param requestcode   返回值
-     * @param activity   上下文
+     * 5、拍照打开照相机！
+     *
+     * @param requestcode 返回值
+     * @param activity    上下文
      * @param fileName    生成的图片文件的路径
      */
     public static void toTakePhoto(int requestcode, Activity activity, String fileName) {
@@ -114,14 +120,22 @@ public class PhoneUtil {
     }
 
     /**
-     *  6、打开相册
-     * @param requestcode  响应码
-     * @param activity  上下文
+     * 6、打开相册
+     *
+     * @param requestcode 响应码
+     * @param activity    上下文
      */
-    public static void toTakePicture(int requestcode, Activity activity){
+    public static void toTakePicture(int requestcode, Activity activity) {
         Intent intent = new Intent(Intent.ACTION_PICK, null);
         intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
         activity.startActivityForResult(intent, requestcode);
     }
 
+
+    /**
+     * 7、打开权限管理界面
+     */
+    public static void toPermission(Context context) {
+        LinToPermission.init(context).jumpPermissionPage();
+    }
 }

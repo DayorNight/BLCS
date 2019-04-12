@@ -38,26 +38,27 @@ import static android.support.v4.app.NotificationCompat.PRIORITY_MIN;
 public class DownloadUtils
 {
 	private static int FILE_LEN = 0;
-	private static Context mContext;
 	private static RemoteViews mNotifiviews;
 	public static String APK_UPGRADE = Environment
 			.getExternalStorageDirectory() + "/DownLoad/apk/BLCS.apk";
 	private static PendingIntent nullIntent;
+	private static Context mContext;
 
 	/**
 	 * 判断8.0 安装权限
 	 */
-	public static void downApk(Activity context, String url) {
+	public static void downApk(Context context, String url) {
+		mContext = context;
 		if (Build.VERSION.SDK_INT >= 26) {
 			boolean b = context.getPackageManager().canRequestPackageInstalls();
 			if (b) {
-				downloadAPK(context, url, null);
+				downloadAPK( url, null);
 			} else {
 				//请求安装未知应用来源的权限
-				startInstallPermissionSettingActivity(context);
+				startInstallPermissionSettingActivity();
 			}
 		} else {
-			downloadAPK(context, url, null);
+			downloadAPK( url, null);
 		}
 	}
 
@@ -65,19 +66,18 @@ public class DownloadUtils
 	 * 开启安装APK权限(适配8.0)
 	 */
 	@RequiresApi(api = Build.VERSION_CODES.O)
-	public static void startInstallPermissionSettingActivity(Activity context) {
-		Uri packageURI = Uri.parse("package:" + context.getApplication().getPackageName());
+	public static void startInstallPermissionSettingActivity() {
+		Uri packageURI = Uri.parse("package:" + mContext.getPackageName());
 		Intent intent = new Intent(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES, packageURI);
-		context.startActivity(intent);
+		mContext.startActivity(intent);
 	}
 
 	/**
 	 * 下载APK文件
 	 */
-	public static void downloadAPK(Context context, String url,String localAddress)
+	private static void downloadAPK( String url,String localAddress)
 	{
 		// 下载
-		mContext = context;
 		if (localAddress != null)
 		{
 			APK_UPGRADE = localAddress;
@@ -97,7 +97,9 @@ public class DownloadUtils
 		@Override
 		protected Void doInBackground(String... params)
 		{
+
 			String apkUrl = params[0];
+			LogUtils.e(apkUrl);
 			InputStream is = null;
 			FileOutputStream fos = null;
 			try
@@ -122,7 +124,7 @@ public class DownloadUtils
 					apkFile.getParentFile().mkdirs();
 				}
 				fos = new FileOutputStream(apkFile);
-				byte[] buffer = new byte[1024];
+				byte[] buffer = new byte[8024];
 				int len = 0;
 				int loadedLen = 0;// 当前已下载文件大小
 				// 更新10次
@@ -199,7 +201,7 @@ public class DownloadUtils
 				R.layout.custom_notify);
 		mNotifiviews.setViewVisibility(R.id.tv_custom_notify_number, View.VISIBLE);
 		mNotifiviews.setViewVisibility(R.id.pb_custom_notify, View.VISIBLE);
-        LinNotify.show(mContext,"","",mNotifiviews,LinNotify.NEW_MESSAGE,nullIntent);
+        LinNotify.show(mContext,"","",mNotifiviews,LinNotify.NEW_MESSAGE,null);
 	}
 
 	private static void updateNotify(int loadedLen)
@@ -209,34 +211,32 @@ public class DownloadUtils
 		mNotifiviews.setProgressBar(R.id.pb_custom_notify, FILE_LEN, loadedLen,
 				false);
 
-		LinNotify.show(mContext,"","",mNotifiviews,LinNotify.NEW_MESSAGE,nullIntent);
+		LinNotify.show(mContext,"","",mNotifiviews,LinNotify.NEW_MESSAGE,null);
 	}
 
 	private static void finishNotify()
 	{
 		mNotifiviews.setTextViewText(R.id.tv_custom_notify_number,  "100%");
-//		Intent installAppIntent = getInstallAppIntent(mContext, APK_UPGRADE);
-//		PendingIntent contentIntent = PendingIntent.getActivity(mContext, 0,installAppIntent, 0);
+		Intent installAppIntent = getInstallAppIntent( APK_UPGRADE);
+		PendingIntent contentIntent = PendingIntent.getActivity(mContext, 0,installAppIntent, 0);
 		mNotifiviews.setTextViewText(R.id.tv_title, "下载完成，请点击完成升级");
 		mNotifiviews.setViewVisibility(R.id.tv_custom_notify_number, View.INVISIBLE);
 		mNotifiviews.setViewVisibility(R.id.pb_custom_notify, View.INVISIBLE);
-		LinNotify.show(mContext,"","",mNotifiviews,LinNotify.NEW_MESSAGE,nullIntent);
+		LinNotify.show(mContext,"","",mNotifiviews,LinNotify.NEW_MESSAGE,contentIntent);
 	}
 
 	/**
 	 * 调往系统APK安装界面（适配7.0）
-	 * @param context
-	 * @param filePath
 	 * @return
 	 */
-	public static Intent getInstallAppIntent(Context context, String filePath) {
+	public static Intent getInstallAppIntent( String filePath) {
 		//apk文件的本地路径
 		File apkfile = new File(filePath);
 		if (!apkfile.exists()) {
 			return null;
 		}
 		Intent intent = new Intent(Intent.ACTION_VIEW);
-		Uri contentUri = getUriForFile(context, apkfile);
+		Uri contentUri = getUriForFile(apkfile);
 		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
 			intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
@@ -247,11 +247,10 @@ public class DownloadUtils
 
 	/**
 	 * 将文件转换成uri
-	 * @param mContext
-	 * @param file
 	 * @return
 	 */
-	public static Uri getUriForFile(Context mContext, File file) {
+	public static Uri getUriForFile( File file) {
+		LogUtils.e(mContext.getPackageName());
 		Uri fileUri = null;
 		if (Build.VERSION.SDK_INT >= 24) {
 			fileUri = FileProvider.getUriForFile(mContext, mContext.getPackageName() + ".fileprovider", file);

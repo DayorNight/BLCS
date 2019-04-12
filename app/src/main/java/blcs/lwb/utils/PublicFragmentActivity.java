@@ -3,12 +3,15 @@ package blcs.lwb.utils;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
 import blcs.lwb.lwbtool.base.BasePresenter;
+import blcs.lwb.lwbtool.utils.LinPermission;
+import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.lwbtool.utils.RxToast;
 import blcs.lwb.utils.fragment.BaseFragment;
 import blcs.lwb.utils.mvp.BaseFragmentActivity;
@@ -82,5 +85,4 @@ public class PublicFragmentActivity extends BaseFragmentActivity implements IPub
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
-
 }

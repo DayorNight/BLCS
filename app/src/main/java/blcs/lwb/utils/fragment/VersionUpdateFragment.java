@@ -1,7 +1,10 @@
 package blcs.lwb.utils.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +13,8 @@ import android.widget.TextView;
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.lwbtool.utils.AppUtils;
 import blcs.lwb.lwbtool.utils.DownloadUtils;
+import blcs.lwb.lwbtool.utils.LinPermission;
+import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.lwbtool.utils.RxToast;
 import blcs.lwb.lwbtool.utils.dialog.dialogFragment.BaseDialogFragment;
 import blcs.lwb.lwbtool.utils.dialog.dialogFragment.LinCustomDialogFragment;
@@ -19,6 +24,11 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
+import okhttp3.Request;
+
+import static android.app.Activity.RESULT_CANCELED;
+import static android.app.Activity.RESULT_FIRST_USER;
+import static android.app.Activity.RESULT_OK;
 
 public class VersionUpdateFragment extends BaseFragment {
     @BindView(R.id.tv_version_name)
@@ -34,7 +44,7 @@ public class VersionUpdateFragment extends BaseFragment {
     @Override
     protected void initView() {
         tvVersionName.setText(AppUtils.getAppName(activity));
-        tvVersionCode.setText("Version "+AppUtils.getVersionName(activity));
+        tvVersionCode.setText("Version " + AppUtils.getVersionName(activity));
 
     }
 
@@ -57,21 +67,27 @@ public class VersionUpdateFragment extends BaseFragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.ll_version_update_function:
-                RxToast.info(activity,getString(R.string.function_unopen));
+                RxToast.info(activity, getString(R.string.function_unopen));
                 break;
             case R.id.ll_version_update:
-                LinCustomDialogFragment.init().setTitle("发现新版本")
-                        .setContent("是否更新?")
-                        .setType(LinCustomDialogFragment.TYPE_CANCLE)
-                        .setOnClickListener(new LinCustomDialogFragment.OnSureCancleListener() {
-                            @Override
-                            public void clickSure(String EdiText) {
-                                DownloadUtils.downApk(activity, Constants.InstallApk);
-                            }
-                            @Override
-                            public void clickCancle() {
-                            }
-                        }).show(getFragmentManager());
+//                RxToast.info(activity,"已经是最新版本");
+                if (LinPermission.checkPermission(activity, 7)) {
+                    LinCustomDialogFragment.init().setTitle("发现新版本")
+                            .setContent("是否更新?")
+                            .setType(LinCustomDialogFragment.TYPE_CANCLE)
+                            .setOnClickListener(new LinCustomDialogFragment.OnSureCancleListener() {
+                                @Override
+                                public void clickSure(String EdiText) {
+                                    DownloadUtils.downApk(activity, Constants.InstallApk);
+                                }
+                                @Override
+                                public void clickCancle() {
+
+                                }
+                            }).show(getFragmentManager());
+                } else {
+                    LinPermission.requestPermission(activity, 7);
+                }
                 break;
         }
     }
