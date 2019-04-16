@@ -5,7 +5,7 @@ import android.os.Environment;
 public class Constants {
 
 //    public final static String InstallApk="http://xxxxxxxxxxx/BLCS.apk";
-    public final static String InstallApk="http://103.115.44.168:7777/xqd.apk";
+    public final static String InstallApk="http://gdown.baidu.com/data/wisegame/70ae12a140e7a7a8/baidushoujiweishi_4050.apk";
     /**
      *  intent
      */

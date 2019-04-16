@@ -9,7 +9,7 @@
     <ImageView
         style="@style/wrap_wrap"
         android:layout_marginBottom="@dimen/space_line3"
-        android:src="@mipmap/ic_launcher"/>
+        android:src="@mipmap/ic_app512"/>
     <TextView
         android:id="@+id/tv_version_name"
         style="@style/wrap_wrap"

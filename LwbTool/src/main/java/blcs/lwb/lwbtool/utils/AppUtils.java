@@ -171,7 +171,7 @@ public class AppUtils
         Uri uri;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             String packageName = context.getPackageName();
-            uri = FileProvider.getUriForFile(context, packageName + ".fileProvider", new File(filePath));
+            uri = FileProvider.getUriForFile(context, packageName + ".fileprovider", new File(filePath));
         } else {
             uri = Uri.fromFile(new File(filePath));
         }

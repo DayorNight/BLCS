@@ -1,8 +1,5 @@
 package blcs.lwb.lwbtool.utils;
 
-import android.app.Activity;
-import android.app.Notification;
-import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
@@ -12,12 +9,10 @@ import android.os.Build;
 import android.os.Environment;
 import android.provider.Settings;
 import android.support.annotation.RequiresApi;
-import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.FileProvider;
 import android.view.View;
 import android.widget.RemoteViews;
 import android.widget.Toast;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -26,16 +21,12 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.SocketTimeoutException;
 import java.net.URL;
-
 import blcs.lwb.lwbtool.R;
-
-import static android.os.Build.VERSION_CODES.N;
-import static android.support.v4.app.NotificationCompat.PRIORITY_MIN;
 
 /**
  * 下载工具类（开发中一般用于APK应用升级）
  */
-public class DownloadUtils
+public class LinDownloadAPk
 {
 	private static int FILE_LEN = 0;
 	private static RemoteViews mNotifiviews;
@@ -99,11 +90,9 @@ public class DownloadUtils
 		{
 
 			String apkUrl = params[0];
-			LogUtils.e(apkUrl);
 			InputStream is = null;
 			FileOutputStream fos = null;
-			try
-			{
+			try {
 				URL url = new URL(apkUrl);
 				HttpURLConnection conn = (HttpURLConnection) url
 						.openConnection();
@@ -210,18 +199,18 @@ public class DownloadUtils
 		mNotifiviews.setTextViewText(R.id.tv_custom_notify_number, progress + "%");
 		mNotifiviews.setProgressBar(R.id.pb_custom_notify, FILE_LEN, loadedLen,
 				false);
-
 		LinNotify.show(mContext,"","",mNotifiviews,LinNotify.NEW_MESSAGE,null);
 	}
 
 	private static void finishNotify()
 	{
 		mNotifiviews.setTextViewText(R.id.tv_custom_notify_number,  "100%");
-		Intent installAppIntent = getInstallAppIntent( APK_UPGRADE);
+		Intent installAppIntent = getInstallAppIntent(APK_UPGRADE);
 		PendingIntent contentIntent = PendingIntent.getActivity(mContext, 0,installAppIntent, 0);
-		mNotifiviews.setTextViewText(R.id.tv_title, "下载完成，请点击完成升级");
+		mNotifiviews.setTextViewText(R.id.tv_custom_notify_finish, "下载完成，请点击进行安装");
 		mNotifiviews.setViewVisibility(R.id.tv_custom_notify_number, View.INVISIBLE);
-		mNotifiviews.setViewVisibility(R.id.pb_custom_notify, View.INVISIBLE);
+		mNotifiviews.setViewVisibility(R.id.pb_custom_notify, View.GONE);
+		mNotifiviews.setViewVisibility(R.id.tv_custom_notify_finish, View.VISIBLE);
 		LinNotify.show(mContext,"","",mNotifiviews,LinNotify.NEW_MESSAGE,contentIntent);
 	}
 
@@ -249,15 +238,13 @@ public class DownloadUtils
 	 * 将文件转换成uri
 	 * @return
 	 */
-	public static Uri getUriForFile( File file) {
-		LogUtils.e(mContext.getPackageName());
+	public static Uri getUriForFile(File file) {
 		Uri fileUri = null;
-		if (Build.VERSION.SDK_INT >= 24) {
-			fileUri = FileProvider.getUriForFile(mContext, mContext.getPackageName() + ".fileprovider", file);
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+			fileUri = FileProvider.getUriForFile(mContext, mContext.getPackageName()+".fileprovider", file);
 		} else {
 			fileUri = Uri.fromFile(file);
 		}
 		return fileUri;
 	}
-
 }

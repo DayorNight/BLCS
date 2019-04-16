@@ -17,9 +17,9 @@ public class Constants {
 
     //设置默认超时时间
     public static final int DEFAULT_TIME=10;
-    public final static  String BaseUrl = "http://pndatsn5v.bkt.clouddn.com/";
-    public final static  String retrofit = "retrofit.txt";
-    public final static  String retrofitList = "retrofit_list.txt";
+    public final static  String BaseUrl = "http://120.78.186.81/api/";
+    public final static  String retrofit = "values/5";
+    public final static  String retrofitList = "values";
     /**
      * SP
      */

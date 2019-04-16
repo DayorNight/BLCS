@@ -18,7 +18,8 @@
 ### View-仿微信功能-存储空间
 ![Image text](https://github.com/DayorNight/BLCS/blob/master/png/View-仿微信功能-存储空间.gif)
 
-
+### Other-版本更新
+![Image text](https://github.com/DayorNight/BLCS/blob/master/png/Other-版本更新.gif)
 
 #### 子菜单
 
@@ -54,13 +55,12 @@
 > 20.标签列表LabelList
 
 ###### 其他
-> 1.采用MVP模式
-> 2.友盟统计
-> 3.友盟多渠道打包
-> 4.APK签名打包
-> 5.全局异常捕获
-> 6.内存泄漏检测
-> 7.Rxjava+Retrofit封装
+> 1.博客
+> 2.版本更新
+> 3.全局异常捕获
+> 4.内存泄漏检测
+> 5.Rxjava+Retrofit封装
+
 
 ###### 引用开源库：
 > 1.butterknife
@@ -78,6 +78,7 @@
 > 13.banner
 > 14.androidsvg
 > 15.PickerView
+
 
 ###### 集成第三方：
 > 1、友盟统计

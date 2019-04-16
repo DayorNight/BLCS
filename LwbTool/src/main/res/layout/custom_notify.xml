@@ -37,7 +37,18 @@
         android:layout_toRightOf="@+id/iv_custom_notify"
         android:progressDrawable="@drawable/pb_notify_custom"
         android:layout_width="match_parent"
+        android:visibility="gone"
         android:layout_height="wrap_content" />
-
+    <TextView
+        android:id="@+id/tv_custom_notify_finish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_line2"
+        android:layout_below="@+id/tv_custom_notify"
+        android:layout_toRightOf="@+id/iv_custom_notify"
+        android:textSize="@dimen/sp_big1"
+        android:textColor="@color/black"
+        android:visibility="gone"
+        android:text="@string/app_name"/>
 
 </RelativeLayout>
