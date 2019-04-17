@@ -53,6 +53,7 @@
 > 18.通知NotificationCompat
 > 19.选择器Picker
 > 20.标签列表LabelList
+> 21.声音与震动
 
 ###### 其他
 > 1.博客

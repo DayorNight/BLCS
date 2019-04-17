@@ -10,8 +10,14 @@
 
     <!--应用大小获取-->
     <uses-permission android:name="android.permission.GET_PACKAGE_SIZE" />
+    <!--震动权限-->
+    <uses-permission android:name="android.permission.VIBRATE" />
 
-    <application>
+
+    <!--android P(9.0)将要求默认使用加密连接(1.使用https /2.target降低至27 /3.允许使用http  配置networkSecurityConfig   )  -->
+    <application
+        android:networkSecurityConfig="@xml/network_security_config"
+        >
 
         <provider
             android:name="android.support.v4.content.FileProvider"

@@ -106,11 +106,16 @@ public abstract class BaseDialogFragment extends DialogFragment {
 
     public void show(FragmentManager fragmentManager) {
         setGravity(Gravity.CENTER);
-        show(fragmentManager, TAG);
+        if(!isAdded()){
+            show(fragmentManager, TAG);
+        }
+
     }
 
     public void show(FragmentManager fragmentManager, int Gravity) {
         setGravity(Gravity);
-        show(fragmentManager, TAG);
+        if(!isAdded()){
+            show(fragmentManager, TAG);
+        }
     }
 }

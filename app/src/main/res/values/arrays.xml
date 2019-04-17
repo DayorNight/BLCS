@@ -38,6 +38,7 @@
         <item>通知NotificationCompat</item>
         <item>选择器Picker</item>
         <item>标签列表LabelList</item>
+        <item>声音与震动</item>
     </string-array>
     <!--other-->
     <string-array name="Other">

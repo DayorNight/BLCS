@@ -1,4 +1,4 @@
-package blcs.lwb.lwbtool;
+package blcs.lwb.lwbtool.JunitText;
 
 
 import org.junit.After;

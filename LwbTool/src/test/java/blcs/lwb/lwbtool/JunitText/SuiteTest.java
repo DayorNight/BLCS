@@ -1,10 +1,7 @@
-package all;
+package blcs.lwb.lwbtool.JunitText;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
-
-import blcs.lwb.utils.AnotationTest;
-import blcs.lwb.utils.DemoTest;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({AnotationTest.class,DemoTest.class})

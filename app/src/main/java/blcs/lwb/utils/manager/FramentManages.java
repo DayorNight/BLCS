@@ -53,6 +53,7 @@ import blcs.lwb.utils.fragment.ProgressBarFragment;
 import blcs.lwb.utils.fragment.RecyclerViewFragment;
 import blcs.lwb.utils.fragment.RxjavaRetrofitFragment;
 import blcs.lwb.utils.fragment.ScreenUtilsFragment;
+import blcs.lwb.utils.fragment.SoundAndVibrationFragment;
 import blcs.lwb.utils.fragment.StringUtilsFragment;
 import blcs.lwb.utils.fragment.ToolbarFragment;
 import blcs.lwb.utils.fragment.TurnTableViewFragment;
@@ -131,6 +132,7 @@ public class FramentManages {
     public final static String Picker = "选择器Picker";
     public final static String VersionUpdate = "版本更新";
     public final static String LabelList = "标签列表LabelList";
+    public final static String SoundAndVibration = "声音与震动";
 
     /**
      * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -252,6 +254,8 @@ public class FramentManages {
                 return new VersionUpdateFragment();
             case FramentManages.LabelList:
                 return new LabelListFragment();
+            case FramentManages.SoundAndVibration:
+                return new SoundAndVibrationFragment();
 
 //			case FramentManages.UtilsDetail://工具详情界面
 //				return new HomeTab1DetailFragment();

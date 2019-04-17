@@ -23,6 +23,7 @@ import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
 import blcs.lwb.lwbtool.utils.MyUtils;
+import blcs.lwb.lwbtool.utils.RxTool.RxVibrateTool;
 
 
 /**

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Lin_vertical"
+    android:background="@mipmap/ic4">
+
+    <Button
+        android:id="@+id/btn_sound"
+        style="@style/Button_alpha"
+        android:text="提示音"
+        />
+    <Button
+        android:id="@+id/btn_system_beep"
+        style="@style/Button_alpha"
+        android:text="系统提示音"
+        />
+
+    <Button
+        android:id="@+id/btn_music_beep"
+        style="@style/Button_alpha"
+        android:text="播放音频文件"
+        />
+
+    <Button
+        android:id="@+id/btn_vibration"
+        style="@style/Button_alpha"
+        android:text="震动"
+        />
+
+    <android.support.v7.widget.SwitchCompat
+        android:id="@+id/sc_sound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space_line"
+        android:textOff="关"
+        app:showText="true"
+        android:textOn="开"
+        android:checked="true"
+        android:text="声音"
+        />
+
+    <android.support.v7.widget.SwitchCompat
+        android:id="@+id/sc_vibration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space_line"
+        android:textOff="关"
+        android:shadowColor="@color/white"
+        app:showText="true"
+        android:textOn="开"
+        android:checked="true"
+        android:text="震动"
+        />
+
+</LinearLayout>

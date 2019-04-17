@@ -6,13 +6,13 @@ import android.os.Vibrator;
 /**
  *
  * @author Vondear
- * @date 2017/7/25
  * 震动帮助类
  * androidManifest.xml中加入 以下权限
  * <uses-permission android:name="android.permission.VIBRATE" />
  */
 public class RxVibrateTool {
     private static Vibrator vibrator;
+    private static Boolean isVibrator = true;
 
     /**
      * 简单震动
@@ -21,6 +21,7 @@ public class RxVibrateTool {
      */
     @SuppressWarnings("static-access")
     public static void vibrateOnce(Context context, int millisecond) {
+        if(!isVibrator) return;
         vibrator = (Vibrator) context.getSystemService(context.VIBRATOR_SERVICE);
         vibrator.vibrate(millisecond);
     }
@@ -39,6 +40,7 @@ public class RxVibrateTool {
      */
     @SuppressWarnings("static-access")
     public static void vibrateComplicated(Context context, long[] pattern, int repeate) {
+        if(!isVibrator) return;
         vibrator = (Vibrator) context.getSystemService(context.VIBRATOR_SERVICE);
         vibrator.vibrate(pattern, repeate);
     }
@@ -50,5 +52,12 @@ public class RxVibrateTool {
         if (vibrator != null) {
             vibrator.cancel();
         }
+    }
+
+    /**
+     * 是否开始震动
+     */
+    public static void isVibrate(boolean vibrate) {
+        isVibrator=vibrate;
     }
 }
