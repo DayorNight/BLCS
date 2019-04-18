@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 import blcs.lwb.lwbtool.Constants;
 import blcs.lwb.lwbtool.retrofit.use.ApiUrl;
+import blcs.lwb.lwbtool.utils.LinSSLCertificate;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -62,6 +63,8 @@ public class RetrofitUtils {
                     .readTimeout(Constants.DEFAULT_TIME, TimeUnit.SECONDS)//设置读取超时时间
                     .connectTimeout(Constants.DEFAULT_TIME, TimeUnit.SECONDS)//设置请求超时时间
                     .writeTimeout(Constants.DEFAULT_TIME,TimeUnit.SECONDS)//设置写入超时时间
+//                    .hostnameVerifier(new LinSSLCertificate.TrustAllHostnameVerifier())
+//                    .sslSocketFactory(LinSSLCertificate.createSSLSocketFactory(), LinSSLCertificate.createTrustAllManager())
                     .addInterceptor(new LogInterceptor())//添加打印拦截器
                     .retryOnConnectionFailure(true)//设置出现错误进行重新连接。
                     .build();
