@@ -53,6 +53,18 @@ public class LinPermission {
     }
 
     /**
+     * 检查是否有所有权限
+     */
+    public static boolean checkPermission(Activity context, int[] codes) {
+        for (int code : codes){
+            if(!checkPermission(context, code)){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
      * 申请单一权限（指定开启某个权限）
      */
     public static void requestPermission(Activity context, int code) {

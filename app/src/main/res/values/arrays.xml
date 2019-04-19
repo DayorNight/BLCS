@@ -14,7 +14,6 @@
         <item>IntentUtils</item>
         <item>StringUtils</item>
         <item>ScreenUtils</item>
-
     </string-array>
     <!--View-->
     <string-array name="View">
@@ -47,6 +46,8 @@
         <item>全局异常捕获</item>
         <item>内存泄漏检测</item>
         <item>Rxjava+Retrofit封装</item>
+        <item>调用系统功能</item>
+
     </string-array>
 
     <!--BottomNavigationView-->

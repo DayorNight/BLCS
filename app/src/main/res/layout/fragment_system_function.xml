@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Lin_vertical"
+    android:background="@mipmap/ic4"
+    >
+    <Button
+        android:id="@+id/btn_voice"
+        style="@style/Button_alpha"
+        android:text="调用系统语音"/>
+    <Button
+        android:id="@+id/btn_video"
+        style="@style/Button_alpha"
+        android:text="调用系统录像"/>
+    <Button
+        android:id="@+id/btn_camera"
+        style="@style/Button_alpha"
+        android:text="调用系统相机"/>
+</LinearLayout>
