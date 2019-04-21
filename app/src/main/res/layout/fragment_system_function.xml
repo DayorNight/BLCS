@@ -1,19 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/Lin_vertical"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/match_wrap"
     android:background="@mipmap/ic4"
     >
-    <Button
-        android:id="@+id/btn_voice"
-        style="@style/Button_alpha"
-        android:text="调用系统语音"/>
-    <Button
-        android:id="@+id/btn_video"
-        style="@style/Button_alpha"
-        android:text="调用系统录像"/>
-    <Button
-        android:id="@+id/btn_camera"
-        style="@style/Button_alpha"
-        android:text="调用系统相机"/>
-</LinearLayout>
+    <LinearLayout
+        style="@style/Lin_vertical"
+        >
+        <Button
+            android:id="@+id/btn_voice"
+            style="@style/Button_alpha"
+            android:text="调用系统语音" />
+
+        <Button
+            android:id="@+id/btn_video"
+            style="@style/Button_alpha"
+            android:text="调用系统录像" />
+
+        <Button
+            android:id="@+id/btn_camera"
+            style="@style/Button_alpha"
+            android:text="调用系统相机" />
+
+        <Button
+            android:id="@+id/btn_alarm"
+            style="@style/Button_alpha"
+            android:text="调用闹钟" />
+
+        <Button
+            android:id="@+id/btn_set_time"
+            style="@style/Button_alpha"
+            android:text="调用定时器" />
+
+        <Button
+            android:id="@+id/btn_calendar"
+            style="@style/Button_alpha"
+            android:text="调用日历" />
+
+        <Button
+            android:id="@+id/btn_pick"
+            style="@style/Button_alpha"
+            android:text="调用联系人" />
+
+        <Button
+            android:id="@+id/btn_email"
+            style="@style/Button_alpha"
+            android:text="调用邮箱" />
+
+        <Button
+            android:id="@+id/btn_selectImage"
+            style="@style/Button_alpha"
+            android:text="调用选择图片" />
+
+    </LinearLayout>
+</ScrollView>

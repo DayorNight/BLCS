@@ -20,6 +20,9 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.SEND_SMS"/>
 
+    <!--闹钟-->
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
