@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--自定义View属性-->
         <declare-styleable name="labels_view">
             <attr name="selectType" format="enum">
                 <enum name="NONE" value="1" />
@@ -19,4 +20,42 @@
             <attr name="wordMargin" format="dimension" />
             <attr name="labelBackground" format="reference|color" />
         </declare-styleable>
+
+    <!--&lt;!&ndash;自定义属性总结&ndash;&gt;-->
+    <!--<declare-styleable name="custom_view">-->
+        <!--&lt;!&ndash;引用&ndash;&gt;-->
+        <!--<attr name="color_text" format="color"/>-->
+        <!--&lt;!&ndash;引用&ndash;&gt;-->
+        <!--<attr name="background_view" format="reference"/>-->
+        <!--&lt;!&ndash;尺寸&ndash;&gt;-->
+        <!--<attr name="size_text" format="dimension"/>-->
+        <!--&lt;!&ndash;布尔值&ndash;&gt;-->
+        <!--<attr name="focusable" format="boolean"/>-->
+        <!--&lt;!&ndash;字符串&ndash;&gt;-->
+        <!--<attr name="content" format="string"/>-->
+        <!--&lt;!&ndash;整型&ndash;&gt;-->
+        <!--<attr name="count" format="integer"/>-->
+        <!--&lt;!&ndash;浮点数&ndash;&gt;-->
+        <!--<attr name="alpha" format="float"/>-->
+        <!--&lt;!&ndash;百分比&ndash;&gt;-->
+        <!--<attr name="pivotX" format="fraction"/>-->
+        <!--&lt;!&ndash;枚举&ndash;&gt;-->
+        <!--<attr name="orientation" format="enum">-->
+            <!--<enum name="horizontal" value="0" />-->
+            <!--<enum name="vertical" value="1" />-->
+        <!--</attr>-->
+        <!--&lt;!&ndash;位运算&ndash;&gt;-->
+        <!--<attr name="mode" format="flags">-->
+            <!--<attr name="windowSoftInputMode">-->
+                <!--<flag name = "stateUnspecified" value = "0" />-->
+                <!--<flag name = "stateUnchanged" value = "1" />-->
+                <!--<flag name = "stateHidden" value = "2" />-->
+                <!--<flag name = "stateAlwaysHidden" value = "3" />-->
+                <!--<flag name = "stateVisible" value = "4" />-->
+                <!--<flag name = "stateAlwaysVisible" value = "5" />-->
+            <!--</attr>-->
+        <!--</attr>-->
+        <!--&lt;!&ndash;指定多种类型值&ndash;&gt;-->
+        <!--<attr name="all_attribute" format="color|reference|dimension|boolean|string|integer|float|fraction"/>-->
+    <!--</declare-styleable>-->
 </resources>

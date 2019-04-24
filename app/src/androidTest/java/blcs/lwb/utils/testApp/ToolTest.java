@@ -42,18 +42,11 @@ public class ToolTest {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         context.startActivity(intent);
 
-        UiObject view = mDevice.findObject(new UiSelector().text("View"));
+        UiObject view = mDevice.findObject(new UiSelector().text("工具"));
         view.click();
-        UiObject other = mDevice.findObject(new UiSelector().text("其他"));
-        other.click();
-        UiObject tool = mDevice.findObject(new UiSelector().text("工具"));
-        tool.click();
 
-//        LinUiAutomato.setLong();
-//        UiObject UiOther = LinUiAutomato.getUiObjectByText("其他");
-//        UiOther.click();
-//        LinUiAutomato.setLong();
-//        UiObject UiView = LinUiAutomato.getUiObjectByText("View");
-//        UiView.click();
+        UiObject linView = mDevice.findObject(new UiSelector().textContains("LinView"));
+        linView.click();
+        sleep(10000);
     }
 }

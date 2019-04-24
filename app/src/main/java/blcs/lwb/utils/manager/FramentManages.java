@@ -33,6 +33,7 @@ import blcs.lwb.utils.fragment.IntentUtilsFragment;
 import blcs.lwb.utils.fragment.JavaDesignPatternFragment;
 import blcs.lwb.utils.fragment.LabelListFragment;
 import blcs.lwb.utils.fragment.LeakCanaryFragment;
+import blcs.lwb.utils.fragment.LinViewFragment;
 import blcs.lwb.utils.fragment.MagicIndicator.BadgeTabFragment;
 import blcs.lwb.utils.fragment.MagicIndicator.CustomNavigatorFragment;
 import blcs.lwb.utils.fragment.MagicIndicator.DynamicTabFragment;
@@ -135,6 +136,7 @@ public class FramentManages {
     public final static String LabelList = "标签列表LabelList";
     public final static String SoundAndVibration = "声音与震动";
     public final static String SystemFunction = "调用系统功能";
+    public final static String LinView = "LinView";
 
     /**
      * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -260,6 +262,8 @@ public class FramentManages {
                 return new SoundAndVibrationFragment();
             case FramentManages.SystemFunction:
                 return new SystemFunctionFragment();
+            case FramentManages.LinView:
+                return new LinViewFragment();
 
 //			case FramentManages.UtilsDetail://工具详情界面
 //				return new HomeTab1DetailFragment();

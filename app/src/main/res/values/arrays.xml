@@ -14,6 +14,7 @@
         <item>IntentUtils</item>
         <item>StringUtils</item>
         <item>ScreenUtils</item>
+        <item>LinView</item>
     </string-array>
     <!--View-->
     <string-array name="View">
