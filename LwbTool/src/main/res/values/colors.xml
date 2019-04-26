@@ -7,8 +7,10 @@
     <color name="green">#33b422</color>
     <color name="blue">#303F9F</color>
     <color name="black">#000000</color>
+    <color name="cyan">#89CDF0</color>
     <color name="yellow">#ffd400</color>
     <color name="gray">#c0c0c0</color>
+    <color name="e4">#E4E8EB</color>
     <color name="red">#ff0000</color>
     <color name="bg_default">#EDEDED</color>
     <color name="triangle">#aa72d572</color>

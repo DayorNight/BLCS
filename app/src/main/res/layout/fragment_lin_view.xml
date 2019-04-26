@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <blcs.lwb.lwbtool.View.base.LinView
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <blcs.lwb.lwbtool.View.customView.LinView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <blcs.lwb.lwbtool.View.customView.WeChatFlowPieView
+        android:id="@+id/wcpv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 </LinearLayout>

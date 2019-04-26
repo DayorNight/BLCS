@@ -50,7 +50,6 @@ public class ExampleInstrumentedTest {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         context.startActivity(intent);
 
-
         // 等待应用程序启动
         mDevice.wait(Until.hasObject(By.pkg(packageName).depth(0)), 3);
 
