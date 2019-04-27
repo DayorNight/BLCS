@@ -11,8 +11,8 @@ import blcs.lwb.utils.R;
 
 public class HomeTabAdapter extends BaseQuickAdapter<String,BaseViewHolder> {
 
-    public HomeTabAdapter( @Nullable List<String> data) {
-        super(R.layout.textview, data);
+    public HomeTabAdapter() {
+        super(R.layout.textview);
     }
 
     @Override

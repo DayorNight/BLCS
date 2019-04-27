@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import blcs.lwb.lwbtool.Constants;
+import blcs.lwb.lwbtool.bean.VersionBean;
 import blcs.lwb.lwbtool.retrofit.BaseResponse;
 import io.reactivex.Observable;
 import okhttp3.MultipartBody;
@@ -42,6 +43,14 @@ public interface ApiUrl {
 
     @GET(Constants.retrofitList)
     Observable<BaseResponse<List<Demo>>> getDemoList();
+
+
+    @GET(Constants.version)
+    Observable<BaseResponse<List<VersionBean>>> getVersionList();
+
+    @GET(Constants.versionLast)
+    Observable<BaseResponse<VersionBean>> getVersion();
+
 
 
     /**

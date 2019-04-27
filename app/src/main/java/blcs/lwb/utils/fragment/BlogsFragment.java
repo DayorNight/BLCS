@@ -29,7 +29,7 @@ public class BlogsFragment extends BaseFragment {
 
     @Override
     protected void initView() {
-        HomeTabAdapter adapter = new HomeTabAdapter(MyUtils.getArray(activity, R.array.BLOGS));
+        HomeTabAdapter adapter = new HomeTabAdapter();
         RecyclerUtil.init(activity, OrientationHelper.VERTICAL, adapter, toolRecyclerView);
         adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
@@ -37,6 +37,7 @@ public class BlogsFragment extends BaseFragment {
                MyUtils.toUrl(BlogsFragment.this,MyUtils.getArray(activity, R.array.BLOGS).get(position),MyUtils.getArray(activity, R.array.URL_BLOGS).get(position));
             }
         });
+        adapter.setNewData(MyUtils.getArray(activity, R.array.BLOGS));
     }
 
     @Override

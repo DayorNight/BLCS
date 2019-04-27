@@ -20,7 +20,7 @@ public class Constants {
     public final static  String retrofitList = "values";
     public final static  String version = "version";
     public final static  String versionLast = "version/last";
-    public final static  String versionSave = "version/save";
+
 
     /**
      * SP

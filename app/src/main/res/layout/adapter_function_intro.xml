@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Lin_vertical"
+    android:padding="@dimen/space_line2">
+    <TextView
+        android:id="@+id/tv_adapter_function_name"
+        android:textSize="@dimen/sp_big2"
+        style="@style/wrap_wrap"
+        android:textColor="@color/black"
+        android:text="@string/app_name"/>
+    <TextView
+        android:id="@+id/tv_adapter_function_time"
+        android:textSize="@dimen/sp_small"
+        style="@style/wrap_wrap"
+        android:text="@string/app_name"/>
+</LinearLayout>

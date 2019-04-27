@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import blcs.lwb.lwbtool.bean.VersionBean;
 import blcs.lwb.lwbtool.retrofit.MyObserver;
 import blcs.lwb.lwbtool.retrofit.RetrofitUtils;
 import blcs.lwb.lwbtool.retrofit.RxHelper;
@@ -22,6 +23,23 @@ import okhttp3.RequestBody;
 public class RequestUtils {
 
     /**
+     * 获取新版本
+     */
+    public static void getVersion(RxFragment context, MyObserver<VersionBean> observer){
+        RetrofitUtils.getApiUrl()
+                .getVersion().compose(RxHelper.observableIO2Main(context))
+                .subscribe(observer);
+    }
+    /**
+     * 版本介绍
+     */
+    public static void getVersionList(RxFragment context, MyObserver<List<VersionBean>> observer){
+        RetrofitUtils.getApiUrl()
+                .getVersionList().compose(RxHelper.observableIO2Main(context))
+                .subscribe(observer);
+    }
+
+ /**
      * Get 请求demo
      * @param context
      * @param observer
