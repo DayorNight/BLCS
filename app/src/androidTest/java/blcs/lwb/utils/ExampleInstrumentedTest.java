@@ -74,7 +74,7 @@ public class ExampleInstrumentedTest {
 //          匹配
 //            mDevice.click(width*6/10,height*8/10);
             mDevice.click(1000,780);
-            sleep(5000);
+            sleep(2000);
 //          自动
 //            mDevice.click(50,height*2/10);
             mDevice.click(55,300);
