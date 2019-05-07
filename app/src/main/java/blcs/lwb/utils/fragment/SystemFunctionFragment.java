@@ -93,8 +93,10 @@ public class SystemFunctionFragment extends BaseFragment {
                 composeEmail(new String[]{"我是邮件"}, "小标题");
                 break;
             case R.id.btn_selectImage:
+//                Intent intent = new Intent(Intent.ACTION_PICK);
                 Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
                 intent.setType("image/*");
+//                intent.setType("image/*;video/*");
                 to(intent);
                 break;
         }

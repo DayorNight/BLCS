@@ -77,4 +77,12 @@
         <item name="android:orientation">horizontal</item>
     </style>
 
+
+    <style name="text_sql" parent="wrap_wrap">
+        <item name="android:layout_marginLeft">@dimen/space_line</item>
+        <item name="android:textSize">@dimen/standard_title</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+    </style>
 </resources>
