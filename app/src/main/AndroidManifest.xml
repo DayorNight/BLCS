@@ -48,6 +48,7 @@
             android:label="PublicFragmentActivity"
             android:launchMode="singleTask"
             android:hardwareAccelerated="true"
+            android:windowSoftInputMode="stateAlwaysHidden"
             />
 
         <activity

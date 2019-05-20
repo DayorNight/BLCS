@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/match_wrap">
+    <LinearLayout style="@style/Lin_vertical">
+        <TextView
+            style="@style/wrap_wrap"
+            android:textColor="@color/black"
+            android:layout_marginLeft="@dimen/space_line2"
+            android:text="请在下面输入要插入/删除/修改/查询的数据"/>
+        <LinearLayout
+            style="@style/Lin_horizontal"
+            android:layout_marginLeft="@dimen/space_line2"
+            android:layout_marginRight="@dimen/space_line2">
+            <TextView
+                style="@style/wrap_wrap"
+                android:text="name：" />
+            <EditText
+                android:id="@+id/et_sql_name"
+                style="@style/wrap_wrap"
+                android:maxLength="4"
+                android:layout_weight="1" />
+
+            <TextView
+                style="@style/wrap_wrap"
+                android:text="address：" />
+            <EditText
+                android:id="@+id/et_sql_address"
+                style="@style/wrap_wrap"
+                android:maxLength="4"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/Lin_vertical"
+            android:padding="@dimen/space_line">
+            <Spinner
+                android:id="@+id/sp_sql"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <EditText
+                android:id="@+id/et_sql_id"
+                style="@style/wrap_wrap"
+                android:layout_marginLeft="@dimen/space_line2"
+                android:inputType="number"
+                android:hint="修改请在这里输入要修改的ID"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/Lin_horizontal">
+            <Button
+                android:id="@+id/btn_sql_insert"
+                style="@style/text_sql"
+                android:text="插入"
+                android:layout_weight="1"
+                android:textColor="@color/white" />
+            <Button
+                android:id="@+id/btn_sql_delete"
+                style="@style/text_stander"
+                android:text="删除"
+                android:layout_weight="1"
+                android:textColor="@color/white" />
+            <Button
+                android:id="@+id/btn_sql_update"
+                style="@style/text_stander"
+                android:text="修改"
+                android:layout_weight="1"
+                android:textColor="@color/white" />
+            <Button
+                android:id="@+id/btn_sql_query"
+                style="@style/text_stander"
+                android:layout_weight="1"
+                android:text="查询"
+                android:textColor="@color/white" />
+        </LinearLayout>
+        <LinearLayout
+            style="@style/Lin_horizontal"
+            android:padding="@dimen/space_line"
+            android:background="@color/brown">
+            <TextView
+                style="@style/text_sql"
+                android:text="Id"/>
+            <TextView
+                style="@style/text_sql"
+                android:text="Name"/>
+            <TextView
+                style="@style/text_sql"
+                android:text="Address"/>
+        </LinearLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_sql_show"
+            android:background="@color/gray"
+            style="@style/match_wrap"/>
+    </LinearLayout>
+</ScrollView>

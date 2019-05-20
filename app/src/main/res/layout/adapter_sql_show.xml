@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/space_line"
+    android:orientation="horizontal">
+    <TextView
+        android:id="@+id/tv_adapter_sql_id"
+        style="@style/text_sql"
+        android:layout_width="80dp"
+        />
+    <TextView
+        android:id="@+id/tv_adapter_sql_name"
+        style="@style/text_sql"
+        android:layout_width="80dp"
+        />
+    <TextView
+        android:id="@+id/tv_adapter_sql_address"
+        style="@style/text_sql"
+        android:layout_width="80dp"
+        />
+</LinearLayout>

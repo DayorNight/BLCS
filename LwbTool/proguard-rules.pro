@@ -810,7 +810,7 @@ public static final int *;
 -keep class com.amap.api.navi.**{*;}
 -keep class com.autonavi.**{*;}
 ## ----------------------------------
-##    获取应用大小  AIDL混淆配置
+## 获取应用大小  AIDL混淆配置
 ## ----------------------------------
 -keepnames public interface android.content.pm.IPackageStatsObserver { *; }
 -keepnames public interface android.content.pm.IPackageDataObserver { *; }
@@ -818,6 +818,14 @@ public static final int *;
 -keep class android.content.pm.IPackageStatsObserver
 
 ## ----------------------------------
-##
+## 数据库Litepal: https://github.com/LitePalFramework/LitePal
 ## ----------------------------------
-
+-keep class org.litepal.** {
+    *;
+}
+-keep class * extends org.litepal.crud.DataSupport {
+    *;
+}
+-keep class * extends org.litepal.crud.LitePalSupport {
+    *;
+}

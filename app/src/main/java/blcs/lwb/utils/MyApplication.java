@@ -6,6 +6,8 @@ import android.content.Context;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
 
+import org.litepal.LitePal;
+
 import blcs.lwb.lwbtool.base.BaseApplication;
 import blcs.lwb.lwbtool.utils.MultiLanguageUtils;
 import blcs.lwb.lwbtool.utils.LinNotify;
@@ -24,6 +26,8 @@ public class MyApplication extends BaseApplication {
         registerActivityLifecycleCallbacks(MultiLanguageUtils.callbacks);
         //通知栏初始化
         LinNotify.setNotificationChannel(context);
+        //数据库
+        LitePal.initialize(this);
     }
 
     public static  Context getContext(){

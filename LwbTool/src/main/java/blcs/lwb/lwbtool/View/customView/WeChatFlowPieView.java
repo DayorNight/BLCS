@@ -9,18 +9,40 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 import blcs.lwb.lwbtool.R;
+
+/**
+ * 仿微信存储空间自定义View
+ */
 public class WeChatFlowPieView extends View {
     private Paint paint;
     private Paint textPaint;
     private Paint text1Paint;
+    private long currentData;
+    private long otherData;
+    private long otherCatch;
     private int currentAngle;
     private int otherAngle;
     private int otherCatchAngle;
+    //左边距
+    private int RectX = 200 ;
+    //定义聊天数据大圆的半径
+    private int radius = 210 ;
+    //定义其他大圆的半径
+    private int other_radius = 200 ;
+    //    原点纵坐标
+    private int circleY =300;
+    //    画圆起点
+    private int startAngle =270;
+    //    矩形大小
+    private int RectSize =50;
+    //    拼图与底部文字距离
+    private int space =50;
+    //    矩形Y坐标
+    private int RectY =circleY+radius+space;
 
     public WeChatFlowPieView(Context context) {
         super(context);
     }
-
     public WeChatFlowPieView(Context context, AttributeSet attrs) {
         super(context, attrs);
         initPaint();
@@ -41,7 +63,7 @@ public class WeChatFlowPieView extends View {
         // 默认宽/高的设定并无固定依据,根据需要灵活设置
         // 类似TextView,ImageView等针对wrap_content均在onMeasure()对设置默认宽 / 高值有特殊处理,具体读者可以自行查看
         int mWidth = 400;
-        int mHeight = 1200;
+        int mHeight = 800;
         // 当布局参数设置为wrap_content时，设置默认值
         if (getLayoutParams().width == ViewGroup.LayoutParams.WRAP_CONTENT && getLayoutParams().height == ViewGroup.LayoutParams.WRAP_CONTENT) {
             setMeasuredDimension(mWidth, mHeight);
@@ -56,7 +78,6 @@ public class WeChatFlowPieView extends View {
     private void initPaint() {
         paint = new Paint();
         paint.setStyle(Paint.Style.FILL_AND_STROKE);
-        paint.setColor(getResources().getColor(R.color.cyan));
         textPaint = new Paint();
         textPaint.setStyle(Paint.Style.FILL_AND_STROKE);
         textPaint.setColor(getResources().getColor(R.color.gray));
@@ -68,48 +89,41 @@ public class WeChatFlowPieView extends View {
         text1Paint.setTypeface(Typeface.DEFAULT_BOLD);
     }
 
-    private int x = 200 ;
-    //定义聊天数据大圆的半径
-    private int radius = 210 ;
-    //定义其他大圆的半径
-    private int other_radius = 200 ;
-    private int leftText = x + 70 ;
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        int y = getHeight() / 2;
-
-
-        RectF rectF1 = new RectF(getWidth()/2-x,100,getWidth()/2+x,300+x);
-        canvas.drawArc(rectF1,270 + currentAngle + otherAngle,otherCatchAngle,true,paint);
-
-        //其他
-        canvas.drawRect(x,y-50+210,x+50,y+210,paint);
-        canvas.drawText("其他（缓存）",leftText,y+200,textPaint);
-        canvas.drawText(""+otherCatchAngle,getWidth()-x,y+200,text1Paint);
-
+        int x = getWidth() / 2;
         //当前账号
         paint.setColor(getResources().getColor(R.color.green));
-        RectF rectF = new RectF(getWidth()/2-210,300 -210,getWidth()/2+210,300+210);
-        canvas.drawArc(rectF,270,currentAngle,true,paint);
-        canvas.drawRect(x,y-50+70,x+50,y+70,paint);
-        canvas.drawText("当前账号聊天数据",leftText,y+60,textPaint);
-        canvas.drawText(""+currentAngle,getWidth()-x,y+60,text1Paint);
+        RectF rectF = new RectF(x-radius,circleY - radius,x+radius,circleY+radius);
+        canvas.drawArc(rectF,startAngle,currentAngle,true,paint);
+        canvas.drawRect(RectX,RectY,RectX+RectSize,RectY+RectSize,paint);
+        canvas.drawText("当前账号聊天数据",RectX+70,RectY+RectSize-10,textPaint);
+        canvas.drawText(""+currentAngle,getWidth()-RectX,RectY+RectSize-10,text1Paint);
 
         //其他账号
         paint.setColor(getResources().getColor(R.color.e4));
-        canvas.drawArc(rectF,270 + currentAngle,otherAngle,true,paint);
-        canvas.drawRect(x,y-50+140,x+50,y+140,paint);
-        canvas.drawText("其他账号聊天数据",leftText,y+130,textPaint);
-        canvas.drawText(""+otherAngle,getWidth()-x,y+130,text1Paint);
+        canvas.drawArc(rectF,startAngle + currentAngle,otherAngle,true,paint);
+        canvas.drawRect(RectX,RectY+RectSize+20,RectX+RectSize,RectY+RectSize*2+20,paint);
+        canvas.drawText("其他账号聊天数据",RectX+70,RectY+RectSize*2+10,textPaint);
+        canvas.drawText(""+otherAngle,getWidth()-RectX,RectY+RectSize*2+10,text1Paint);
+
+        //其他
+        paint.setColor(getResources().getColor(R.color.cyan));
+        RectF rectF1 = new RectF(x-other_radius,circleY - other_radius,x+other_radius,circleY+other_radius);
+        canvas.drawArc(rectF1,startAngle + currentAngle + otherAngle,otherCatchAngle,true,paint);
+        canvas.drawRect(RectX,RectY+RectSize*2+40,RectX+RectSize,RectY+RectSize*3+40,paint);
+        canvas.drawText("其他（缓存）",RectX+70,RectY+RectSize*3+30,textPaint);
+        canvas.drawText(""+otherCatchAngle,getWidth()-RectX,RectY+RectSize*3+30,text1Paint);
         canvas.save();
     }
 
-
     public void setData(long currentData,long otherData,long otherCatch){
-
         long allData = currentData + otherData + otherCatch;
+        this.currentData=currentData;
+        this.otherData=otherData;
+        this.otherCatch=otherCatch;
         this.currentAngle = (int)(currentData % allData * 36) ;
         this.otherAngle = (int)(otherData % allData*36);
         this.otherCatchAngle = 360 - currentAngle - otherAngle;

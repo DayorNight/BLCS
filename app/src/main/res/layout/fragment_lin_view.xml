@@ -7,7 +7,10 @@
     <blcs.lwb.lwbtool.View.customView.LinView
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
+    <TextView
+        style="@style/wrap_wrap"
+        android:textColor="@color/black"
+        android:text="仿微信存储空间"/>
     <blcs.lwb.lwbtool.View.customView.WeChatFlowPieView
         android:id="@+id/wcpv"
         android:layout_width="match_parent"

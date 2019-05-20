@@ -43,14 +43,11 @@ public final class FileUtils
 	public static long fileLen = 0;
 	private static final String SDCARD_ROOT = Environment.getExternalStorageDirectory().getAbsolutePath() + "/";
 	public static final String FILE_ROOT = SDCARD_ROOT + "animetaste/download/";
-
 	private static final long LOW_STORAGE_THRESHOLD = 1024 * 1024 * 10;
 
 	/**
 	 * 1、删除文件/文件夹，如果是文件夹，会连同他的子目录一起删除
-	 * 
-	 * @param filePath
-	 *            文件路径
+	 * @param filePath 文件路径
 	 */
 	public static void delFilesFromPath(File filePath)
 	{
@@ -90,6 +87,11 @@ public final class FileUtils
 		return getFileLenFromPath(filePath);
 	}
 
+	/**
+	 * 传入文件夹
+	 * @param filePath
+	 * @return
+	 */
 	private static long getFileLenFromPath(File filePath)
 	{
 		File[] files = filePath.listFiles();
@@ -191,12 +193,10 @@ public final class FileUtils
 
 	/**
 	 *  6、新建一个文件目录
-	 * 
 	 * @throws IOException
 	 */
 	public static void mkdir() throws IOException
 	{
-
 		File file = new File(FILE_ROOT);
 		if (!file.exists() || !file.isDirectory())
 			file.mkdirs();

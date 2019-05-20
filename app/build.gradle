@@ -31,8 +31,8 @@ android {
         applicationId "blcs.lwb.utils"
         minSdkVersion 18
         targetSdkVersion 28
-        versionCode 3
-        versionName "1.0.3"
+        versionCode 4
+        versionName "1.0.4"
         flavorDimensions "versionCode"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"

@@ -31,6 +31,8 @@
 > 5.LogUtils
 > 6.StringUtils
 > 7.ScreenUtils
+> 8.LinView
+> 9.FileUtils
 
 ###### View
 > 1.仿微信功能及控件

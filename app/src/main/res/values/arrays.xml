@@ -15,6 +15,7 @@
         <item>StringUtils</item>
         <item>ScreenUtils</item>
         <item>LinView</item>
+        <item>FileUtils</item>
     </string-array>
     <!--View-->
     <string-array name="View">
@@ -48,6 +49,7 @@
         <item>内存泄漏检测</item>
         <item>Rxjava+Retrofit封装</item>
         <item>调用系统功能</item>
+        <item>SQLite</item>
 
     </string-array>
 

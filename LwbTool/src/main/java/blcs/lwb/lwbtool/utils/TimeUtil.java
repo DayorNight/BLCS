@@ -206,7 +206,6 @@ public class TimeUtil {
      * TODO 1、获取时间,hh:mm:ss
      *
      * @param date
-     * @return
      */
     public static String getTime(Date date) {
         return date == null ? "" : getTime(date.getTime());
@@ -214,7 +213,6 @@ public class TimeUtil {
 
     /**
      * 获取时间,hh:mm:ss
-     *
      * @param date
      * @return
      */
