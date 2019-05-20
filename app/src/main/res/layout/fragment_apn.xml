@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@mipmap/ic4"
+    android:padding="@dimen/space_line3"
+    style="@style/Lin_vertical"
+    >
+    <Button
+        android:id="@+id/btn_apn_check_permission"
+        style="@style/Button_ww"
+        android:layout_marginRight="@dimen/space_line3"
+        android:text="检查权限"/>
+
+    <TextView
+        android:id="@+id/tv_apn_show_permission"
+        android:textColor="@color/white"
+        style="@style/text_stander"/>
+    <Button
+        android:id="@+id/btn_apn_add"
+        style="@style/Button_ww"
+        android:layout_marginRight="@dimen/space_line3"
+        android:text="添加APN"/>
+</LinearLayout>

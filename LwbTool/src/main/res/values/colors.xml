@@ -16,6 +16,7 @@
     <color name="triangle">#aa72d572</color>
     <color name="circle">#aa738ffe</color>
     <color name="transparent">#00000000</color>
+    <color name="alpha_gray">#22c0c0c0</color>
     <color name="rect">#aae84e40</color>
     <color name="brown">#7a583e</color>
     <color name="hint">#eeeeee</color>

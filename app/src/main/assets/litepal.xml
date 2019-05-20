@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+
+    <dbname value="Blcs" />
+    <version value="1" />
+
+    <list>
+        <mapping class="blcs.lwb.utils.bean.SqliteDemo" />
+    </list>
+
+</litepal>

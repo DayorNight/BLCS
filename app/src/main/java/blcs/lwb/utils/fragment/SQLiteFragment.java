@@ -1,6 +1,7 @@
 package blcs.lwb.utils.fragment;
 
 import android.app.Activity;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
@@ -12,6 +13,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+
+import org.litepal.LitePal;
+import org.litepal.crud.callback.SaveCallback;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +44,7 @@ public class SQLiteFragment extends BaseFragment {
     @BindView(R.id.sp_sql)
     Spinner spSql;
     private SQLiteShowAdapter mAdapter;
+    private SQLiteDatabase db;
 
     @Override
     protected int bindLayout() {
@@ -67,6 +72,7 @@ public class SQLiteFragment extends BaseFragment {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {}
         });
+
     }
 
     @Override
@@ -89,22 +95,22 @@ public class SQLiteFragment extends BaseFragment {
         String address = etSqlAddress.getText().toString().trim();
         switch (view.getId()) {
             case R.id.btn_sql_insert:
-                LinSQL.insert(name, address);
+                LinSQL.insert(name, address,type,mAdapter);
                 break;
             case R.id.btn_sql_delete:
-                LinSQL.delete(name, address);
+                LinSQL.delete(name, address,type,mAdapter);
                 break;
             case R.id.btn_sql_update:
-                if(TextUtils.isEmpty(id)){
-                    RxToast.info(activity,"请输入Id" );
-                    return;
-                }
-                LinSQL.update(Integer.parseInt(id),name,address);
+                LinSQL.update(Integer.parseInt(id),name,address,type,mAdapter);
                 break;
             case R.id.btn_sql_query:
-                List<SqliteDemo> query = LinSQL.query(name,address);
+                List<SqliteDemo> query = LinSQL.query(name,address,type);
                 mAdapter.setNewData(query);
                 break;
         }
+        etSqlId.setText("");
+        etSqlName.setText("");
+        etSqlAddress.setText("");
     }
+
 }

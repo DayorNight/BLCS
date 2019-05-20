@@ -32,7 +32,7 @@
         </LinearLayout>
 
         <LinearLayout
-            style="@style/Lin_horizontal"
+            style="@style/Lin_vertical"
             android:padding="@dimen/space_line">
             <Spinner
                 android:id="@+id/sp_sql"

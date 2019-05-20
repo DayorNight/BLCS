@@ -1,25 +1,13 @@
 package blcs.lwb.lwbtool;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
-import android.support.test.uiautomator.By;
-import android.support.test.uiautomator.UiDevice;
-import android.support.test.uiautomator.UiObject;
-import android.support.test.uiautomator.UiScrollable;
-import android.support.test.uiautomator.UiSelector;
-import android.support.test.uiautomator.Until;
-import android.support.v7.widget.RecyclerView;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static org.hamcrest.core.IsNull.notNullValue;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Instrumented test, which will execute on an Android device.

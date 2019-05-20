@@ -7,13 +7,16 @@
     <TextView
         android:id="@+id/tv_adapter_sql_id"
         style="@style/text_sql"
+        android:layout_width="80dp"
         />
     <TextView
         android:id="@+id/tv_adapter_sql_name"
         style="@style/text_sql"
+        android:layout_width="80dp"
         />
     <TextView
         android:id="@+id/tv_adapter_sql_address"
         style="@style/text_sql"
+        android:layout_width="80dp"
         />
 </LinearLayout>

@@ -41,7 +41,7 @@ public class ToolTest {
         // 清除以前的实例
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         context.startActivity(intent);
-
+iem
         UiObject view = mDevice.findObject(new UiSelector().text("工具"));
         view.click();
 

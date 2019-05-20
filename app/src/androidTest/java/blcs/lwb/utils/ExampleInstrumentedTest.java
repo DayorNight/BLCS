@@ -10,7 +10,7 @@ import android.support.test.uiautomator.UiObject;
 import android.support.test.uiautomator.UiScrollable;
 import android.support.test.uiautomator.UiSelector;
 import android.support.test.uiautomator.Until;
-import android.support.v7.widget.RecyclerView;
+
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -60,11 +60,11 @@ public class ExampleInstrumentedTest {
         UiObject btn = mDevice.findObject(new UiSelector().text("计算").className(Button.class));
         UiObject tvResult = mDevice.findObject(new UiSelector().resourceId("me.shihao.espressotests:id/textView").className(TextView.class));
         UiObject btnRecycleView = mDevice.findObject(new UiSelector().text("RecycleView").className(Button.class));
-        UiScrollable recycleview = new UiScrollable(new UiSelector().className(RecyclerView.class).resourceId("me.shihao.espressotests:id/recycleview"));
-        UiObject item5 = recycleview.getChild(new UiSelector().text("Item 5"));
+//        UiScrollable recycleview = new UiScrollable(new UiSelector().className(RecyclerView.class).resourceId("me.shihao.espressotests:id/recycleview"));
+//        UiObject item5 = recycleview.getChild(new UiSelector().text("Item 5"));
         UiObject btnConfirm = mDevice.findObject(new UiSelector().text("确定").className(Button.class));
-        UiObject item = mDevice.findObject(new UiSelector().className(RecyclerView.class).resourceId("me.shihao.espressotests:id/recycleview")
-                .childSelector(new UiSelector().text("Item 2")));
+//        UiObject item = mDevice.findObject(new UiSelector().className(RecyclerView.class).resourceId("me.shihao.espressotests:id/recycleview")
+//                .childSelector(new UiSelector().text("Item 2")));
         //往里面输入字符2
         edt1.setText("2");
         //通过id找到输入框二
@@ -74,16 +74,16 @@ public class ExampleInstrumentedTest {
         btn.click();
         //执行点击事件跳转到另一个界面
         btnRecycleView.click();
-        //滑动到底部
-        recycleview.flingForward();
-        //滑动到顶部
-        recycleview.flingBackward();
-        //点击Item 5，然后会弹出一个对话框
-        item5.click();
-        //点击确定关闭对话框
-        btnConfirm.click();
-        //点击弹出对话框
-        item.click();
+//        //滑动到底部
+//        recycleview.flingForward();
+//        //滑动到顶部
+//        recycleview.flingBackward();
+//        //点击Item 5，然后会弹出一个对话框
+//        item5.click();
+//        //点击确定关闭对话框
+//        btnConfirm.click();
+//        //点击弹出对话框
+//        item.click();
         //点击返回关闭对话框
         mDevice.pressBack();
     }

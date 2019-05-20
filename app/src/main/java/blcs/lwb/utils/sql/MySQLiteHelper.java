@@ -8,7 +8,7 @@ import android.util.Log;
 
 public class MySQLiteHelper extends SQLiteOpenHelper {
     private static final String TAG = "MySQLiteHelper";
-    public static final String sql = "create table test (id integer primary key autoincrement, name text(4),address text(5))";
+    public static final String sql = "create table SqliteDemo (id integer primary key autoincrement, name text(4),address text(5))";
     public static final String sql1 = "create table test1 (id integer primary key autoincrement, name text(4),address text(5))";
     public MySQLiteHelper(@Nullable Context context, @Nullable String name,  @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
