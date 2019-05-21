@@ -1,32 +1,23 @@
 package blcs.lwb.utils.fragment;
 
-import android.app.Activity;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
-
-import org.litepal.LitePal;
-import org.litepal.crud.callback.SaveCallback;
-
 import java.util.ArrayList;
 import java.util.List;
 import blcs.lwb.lwbtool.base.BasePresenter;
-import blcs.lwb.lwbtool.utils.EditTextUtils;
 import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.lwbtool.utils.RecyclerUtil;
-import blcs.lwb.lwbtool.utils.RxToast;
+import blcs.lwb.utils.bean.SqliteDemo;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.adapter.SQLiteShowAdapter;
-import blcs.lwb.utils.bean.SqliteDemo;
 import blcs.lwb.utils.sql.LinSQL;
 import butterknife.BindView;
 import butterknife.OnClick;

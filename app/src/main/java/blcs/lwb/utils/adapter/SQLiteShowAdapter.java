@@ -1,8 +1,9 @@
 package blcs.lwb.utils.adapter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import blcs.lwb.utils.R;
+
 import blcs.lwb.utils.bean.SqliteDemo;
+import blcs.lwb.utils.R;
 
 public class SQLiteShowAdapter extends BaseQuickAdapter<SqliteDemo, BaseViewHolder> {
     public SQLiteShowAdapter() {

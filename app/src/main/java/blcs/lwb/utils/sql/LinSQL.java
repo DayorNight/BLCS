@@ -5,21 +5,19 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.text.TextUtils;
-
 import org.litepal.LitePal;
-import org.litepal.crud.async.FindMultiExecutor;
 import org.litepal.crud.callback.SaveCallback;
 import org.litepal.crud.callback.UpdateOrDeleteCallback;
-
 import java.util.ArrayList;
 import java.util.List;
 
-import blcs.lwb.lwbtool.utils.LogUtils;
-import blcs.lwb.utils.adapter.SQLiteShowAdapter;
 import blcs.lwb.utils.bean.SqliteDemo;
+import blcs.lwb.utils.adapter.SQLiteShowAdapter;
 
 public class LinSQL {
     private static MySQLiteHelper blcs;
+
+    private static String Table="SqliteDemo";
 
     public static void init(Context context) {
         if (blcs == null) {
@@ -39,7 +37,7 @@ public class LinSQL {
         if (TextUtils.isEmpty(name) && TextUtils.isEmpty(address)) return;
         if (type == 0) {
             String insert = new StringBuilder()
-                    .append("insert into test (name,address) values ('")
+                    .append("insert into SqliteDemo (name,address) values ('")
                     .append(name).append("','").append(address).append("')")
                     .toString();
             getDb().execSQL(insert);
@@ -47,7 +45,7 @@ public class LinSQL {
             ContentValues contentValues = new ContentValues();
             contentValues.put("name", name);
             contentValues.put("address", address);
-            getDb().insert("test", null, contentValues);
+            getDb().insert(Table, null, contentValues);
         } else if (type == 2){
             new SqliteDemo(name,address).saveAsync().listen(new SaveCallback() {
                 @Override
@@ -67,20 +65,20 @@ public class LinSQL {
         if (type == 0) {
             String delete;
             if (TextUtils.isEmpty(Name) || TextUtils.isEmpty(Address)) {
-                delete = new StringBuilder().append("delete from test where name = '").append(Name)
+                delete = new StringBuilder().append("delete from SqliteDemo where name = '").append(Name)
                         .append("' or address = '").append(Address).append("'")
                         .toString();
             } else {
-                delete = new StringBuilder().append("delete from test where name = '").append(Name)
+                delete = new StringBuilder().append("delete from SqliteDemo where name = '").append(Name)
                         .append("' and address = '").append(Address).append("'")
                         .toString();
             }
             getDb().execSQL(delete);
         } else if (type == 1) {
             if (TextUtils.isEmpty(Name) || TextUtils.isEmpty(Address)) {
-                getDb().delete("test", "name = ? or address = ?", new String[]{Name, Address});
+                getDb().delete(Table, "name = ? or address = ?", new String[]{Name, Address});
             } else {
-                getDb().delete("test", "name = ? and address = ?", new String[]{Name, Address});
+                getDb().delete(Table, "name = ? and address = ?", new String[]{Name, Address});
             }
         } else if (type == 2) {
             if (TextUtils.isEmpty(Name) || TextUtils.isEmpty(Address)) {
@@ -109,7 +107,7 @@ public class LinSQL {
     public static void update(int Id, String Name, String Address, int type, SQLiteShowAdapter mAdapter) {
         if (TextUtils.isEmpty(Name) && TextUtils.isEmpty(Address)) return;
         if (type == 0) {
-            String update = new StringBuilder().append("update test set name = '").append(Name)
+            String update = new StringBuilder().append("update SqliteDemo set name = '").append(Name)
                     .append("' , address = '").append(Address)
                     .append("' where id = ").append(Id)
                     .toString();
@@ -118,7 +116,7 @@ public class LinSQL {
             ContentValues contentValues = new ContentValues();
             contentValues.put("name", Name);
             contentValues.put("address", Address);
-            getDb().update("test", contentValues, "id = ?", new String[]{String.valueOf(Id)});
+            getDb().update(Table, contentValues, "id = ?", new String[]{String.valueOf(Id)});
         } else if (type == 2) {
             ContentValues contentValues = new ContentValues();
             contentValues.put("name", Name);
@@ -141,21 +139,21 @@ public class LinSQL {
         String selection = null;
         String[] str = null;
         if (TextUtils.isEmpty(Name) & TextUtils.isEmpty(Address)) {//查询全部
-            query = "select * from test";
+            query = "select * from SqliteDemo";
             selection = null;
             str = null;
         } else if (TextUtils.isEmpty(Name)) {//根据地址查询
-            query = new StringBuilder().append("select * from test where address = '")
+            query = new StringBuilder().append("select * from SqliteDemo where address = '")
                     .append(Address).append("'").toString();
             selection = "address = ?";
             str = new String[]{Address};
         } else if (TextUtils.isEmpty(Address)) {//根据名字查询
-            query = new StringBuilder().append("select * from test where name = '")
+            query = new StringBuilder().append("select * from SqliteDemo where name = '")
                     .append(Name).append("'").toString();
             selection = "name = ?";
             str = new String[]{Name};
         } else {//根据名字和地址查询
-            query = new StringBuilder().append("select * from test where name = '")
+            query = new StringBuilder().append("select * from SqliteDemo where name = '")
                     .append(Name).append("' and address = '").append(Address).append("'").toString();
             selection = "name = ? and address = ?";
             str = new String[]{Name, Address};
@@ -165,7 +163,7 @@ public class LinSQL {
         if (type == 0) {
             cursor = getDb().rawQuery(query, null);
         } else if (type == 1) {
-            cursor = getDb().query("test", null, selection, str, null, null, null);
+            cursor = getDb().query(Table, null, selection, str, null, null, null);
         } else if (type == 2){
             List<SqliteDemo> allAsync;
             if(str==null){

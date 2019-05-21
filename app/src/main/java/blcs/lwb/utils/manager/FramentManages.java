@@ -30,6 +30,7 @@ import blcs.lwb.utils.fragment.DialogBottomFragment;
 import blcs.lwb.utils.fragment.DrawerLayoutFragment;
 import blcs.lwb.utils.fragment.EditTextUtilsFragment;
 import blcs.lwb.utils.fragment.FileUtilsFragment;
+import blcs.lwb.utils.fragment.FunciotnIntroFragment;
 import blcs.lwb.utils.fragment.IntentUtilsFragment;
 import blcs.lwb.utils.fragment.JavaDesignPatternFragment;
 import blcs.lwb.utils.fragment.LabelListFragment;
@@ -141,6 +142,7 @@ public class FramentManages {
     public final static String LinView = "LinView";
     public final static String FileUtils = "FileUtils";
     public final static String SQLite = "SQLite";
+    public final static String FunciotnIntro = "功能介绍";
 
     /**
      * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -268,10 +270,13 @@ public class FramentManages {
                 return new SystemFunctionFragment();
             case FramentManages.LinView:
                 return new LinViewFragment();
+            case FramentManages.FunciotnIntro:
+                return new FunciotnIntroFragment();
             case FramentManages.FileUtils:
                 return new FileUtilsFragment();
             case FramentManages.SQLite:
                 return new SQLiteFragment();
+
 
 //			case FramentManages.UtilsDetail://工具详情界面
 //				return new HomeTab1DetailFragment();
