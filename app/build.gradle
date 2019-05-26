@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
 
 def keystoreFilepath = ""
 def keystorePSW = ""
@@ -70,6 +71,13 @@ android {
         }
     }
 
+    greendao {
+        schemaVersion 1 //数据库版本号
+        // 设置DaoMaster、DaoSession、Dao 包名
+        daoPackage 'blcs.lwb.utils.greendao'
+        targetGenDir 'src/main/java'
+    }
+
     compileOptions {
         targetCompatibility 1.8
         sourceCompatibility 1.8
@@ -94,4 +102,7 @@ dependencies {
     implementation 'com.umeng.sdk:analytics:latest.integration'
     // ========glide=======
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+
+    // 数据库可视化工具
+    debugImplementation 'com.amitshekhar.android:debug-db-encrypt:1.0.6'
 }

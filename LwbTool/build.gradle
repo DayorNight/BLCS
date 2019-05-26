@@ -80,6 +80,9 @@ dependencies {
     api 'com.contrarywind:Android-PickerView:4.1.7'
     // litepal
     api 'org.litepal.android:java:3.0.0'
-
+    // ========greendao=======
+    api 'org.greenrobot:greendao:3.2.2'
+    // 数据库可视化工具
+    debugImplementation 'com.amitshekhar.android:debug-db-encrypt:1.0.6'
 
 }

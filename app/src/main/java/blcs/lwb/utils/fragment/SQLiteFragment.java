@@ -1,6 +1,5 @@
 package blcs.lwb.utils.fragment;
 
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
@@ -15,9 +14,12 @@ import java.util.List;
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.lwbtool.utils.RecyclerUtil;
+import blcs.lwb.utils.MyApplication;
+import blcs.lwb.utils.bean.GreenDao;
 import blcs.lwb.utils.bean.SqliteDemo;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.adapter.SQLiteShowAdapter;
+import blcs.lwb.utils.greendao.DaoSession;
 import blcs.lwb.utils.sql.LinSQL;
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -35,7 +37,6 @@ public class SQLiteFragment extends BaseFragment {
     @BindView(R.id.sp_sql)
     Spinner spSql;
     private SQLiteShowAdapter mAdapter;
-    private SQLiteDatabase db;
 
     @Override
     protected int bindLayout() {
@@ -97,6 +98,7 @@ public class SQLiteFragment extends BaseFragment {
             case R.id.btn_sql_query:
                 List<SqliteDemo> query = LinSQL.query(name,address,type);
                 mAdapter.setNewData(query);
+
                 break;
         }
         etSqlId.setText("");

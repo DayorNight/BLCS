@@ -5,24 +5,32 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.text.TextUtils;
+
+import org.greenrobot.greendao.query.WhereCondition;
 import org.litepal.LitePal;
 import org.litepal.crud.callback.SaveCallback;
 import org.litepal.crud.callback.UpdateOrDeleteCallback;
 import java.util.ArrayList;
 import java.util.List;
 
+import blcs.lwb.utils.MyApplication;
+import blcs.lwb.utils.bean.GreenDao;
 import blcs.lwb.utils.bean.SqliteDemo;
 import blcs.lwb.utils.adapter.SQLiteShowAdapter;
+import blcs.lwb.utils.greendao.DaoSession;
+import blcs.lwb.utils.greendao.GreenDaoDao;
 
 public class LinSQL {
     private static MySQLiteHelper blcs;
 
     private static String Table="SqliteDemo";
+    private static DaoSession daoSession;
 
     public static void init(Context context) {
         if (blcs == null) {
             blcs = new MySQLiteHelper(context, "Blcs", null, 1);
             blcs.getWritableDatabase();
+            daoSession = MyApplication.getDaoSession();
         }
     }
 
@@ -47,13 +55,21 @@ public class LinSQL {
             contentValues.put("address", address);
             getDb().insert(Table, null, contentValues);
         } else if (type == 2){
-            new SqliteDemo(name,address).saveAsync().listen(new SaveCallback() {
+            SqliteDemo sqliteDemo = new SqliteDemo();
+            sqliteDemo.setName(name);
+            sqliteDemo.setAddress(address);
+            sqliteDemo.saveAsync().listen(new SaveCallback() {
                 @Override
                 public void onFinish(boolean success) {
                     List<SqliteDemo> all = LitePal.findAll(SqliteDemo.class);
                     mAdapter.setNewData(all);
                 }
             });
+        } else if (type == 3){
+            GreenDao demo = new GreenDao();
+            demo.setName(name);
+            demo.setAddress(address);
+            daoSession.insert(demo);
         }
     }
 
@@ -98,6 +114,19 @@ public class LinSQL {
                     }
                 });
             }
+        } else if (type == 3){
+            List<GreenDao> demo = null ;
+            if (TextUtils.isEmpty(Name) || TextUtils.isEmpty(Address)) {
+                demo = daoSession.queryRaw(GreenDao.class, "where NAME = ? or ADDRESS = ?", Name, Address);
+            }else {
+                demo = daoSession.queryRaw(GreenDao.class, "where NAME = ? and ADDRESS = ?", Name, Address);
+            }
+            if(demo!=null){
+                for (GreenDao bean :demo){
+                    daoSession.delete(bean);
+                }
+            }
+
         }
     }
 
@@ -128,6 +157,12 @@ public class LinSQL {
                     mAdapter.setNewData(all);
                 }
             });
+        } else if (type == 3) {
+            List<GreenDao> demos = daoSession.queryRaw(GreenDao.class, "where _id = ?", "" + Id);
+            GreenDao demo = demos.get(0);
+            demo.setName(Name);
+            demo.setAddress(Address);
+            daoSession.update(demo);
         }
     }
 
@@ -135,6 +170,7 @@ public class LinSQL {
      * 查询
      */
     public static List<SqliteDemo> query(String Name, String Address, int type) {
+        ArrayList<SqliteDemo> dats = new ArrayList<>();
         String query = null;
         String selection = null;
         String[] str = null;
@@ -158,30 +194,50 @@ public class LinSQL {
             selection = "name = ? and address = ?";
             str = new String[]{Name, Address};
         }
-
         Cursor cursor = null;
         if (type == 0) {
             cursor = getDb().rawQuery(query, null);
         } else if (type == 1) {
             cursor = getDb().query(Table, null, selection, str, null, null, null);
         } else if (type == 2){
-            List<SqliteDemo> allAsync;
             if(str==null){
-                allAsync= LitePal.findAll(SqliteDemo.class);
+                return LitePal.findAll(SqliteDemo.class);
             }else if(str.length ==1){
-                allAsync = LitePal.where(selection, str[0]).find(SqliteDemo.class);
+                return LitePal.where(selection, str[0]).find(SqliteDemo.class);
             }else{
-                allAsync= LitePal.where(selection, Name, Address).find(SqliteDemo.class);
+                return LitePal.where(selection, Name, Address).find(SqliteDemo.class);
             }
-            return allAsync;
+        } else if (type == 3){
+            List<GreenDao> greenDaoBeans;
+            if(str==null){
+                greenDaoBeans = daoSession.loadAll(GreenDao.class);
+            }else if (TextUtils.isEmpty(Address)){
+                greenDaoBeans =  daoSession.queryRaw(GreenDao.class, "where NAME = ?", Name);
+            }else if (TextUtils.isEmpty(Name)){
+                greenDaoBeans =  daoSession.queryRaw(GreenDao.class, "where ADDRESS = ?", Address);
+            }else{
+                greenDaoBeans = daoSession.queryRaw(GreenDao.class, "where NAME = ? and ADDRESS = ?", Name,Address);
+            }
+
+            for (GreenDao bean:greenDaoBeans){
+                SqliteDemo demo = new SqliteDemo();
+                demo.setId(bean.getId());
+                demo.setName(bean.getName());
+                demo.setAddress(bean.getAddress());
+                dats.add(demo);
+            }
+            return dats;
         }
 
-        ArrayList<SqliteDemo> dats = new ArrayList<>();
         while (cursor.moveToNext()) {
-            int id = cursor.getInt(cursor.getColumnIndex("id"));
+            SqliteDemo sqliteDemo = new SqliteDemo();
+            long id = cursor.getLong(cursor.getColumnIndex("id"));
             String name = cursor.getString(cursor.getColumnIndex("name"));
             String address = cursor.getString(cursor.getColumnIndex("address"));
-            dats.add(new SqliteDemo(id, name, address));
+            sqliteDemo.setId(id);
+            sqliteDemo.setName(name);
+            sqliteDemo.setAddress(address);
+            dats.add(sqliteDemo);
         }
         return dats;
     }

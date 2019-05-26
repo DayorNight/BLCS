@@ -2,6 +2,7 @@ package blcs.lwb.utils;
 
 
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
@@ -11,9 +12,10 @@ import org.litepal.LitePal;
 import blcs.lwb.lwbtool.base.BaseApplication;
 import blcs.lwb.lwbtool.utils.MultiLanguageUtils;
 import blcs.lwb.lwbtool.utils.LinNotify;
+import blcs.lwb.utils.greendao.DaoMaster;
+import blcs.lwb.utils.greendao.DaoSession;
 
 public class MyApplication extends BaseApplication {
-
 
     public static MyApplication context;
 
@@ -28,6 +30,21 @@ public class MyApplication extends BaseApplication {
         LinNotify.setNotificationChannel(context);
         //数据库
         LitePal.initialize(this);
+        //GreenDao
+        initGreenDao();
+
+    }
+
+    private void initGreenDao() {
+        DaoMaster.DevOpenHelper helper = new DaoMaster.DevOpenHelper(this, "Blcs2.db");
+        SQLiteDatabase db = helper.getWritableDatabase();
+        DaoMaster daoMaster = new DaoMaster(db);
+        daoSession = daoMaster.newSession();
+    }
+
+    private static DaoSession daoSession;
+    public static DaoSession getDaoSession() {
+        return daoSession;
     }
 
     public static  Context getContext(){
