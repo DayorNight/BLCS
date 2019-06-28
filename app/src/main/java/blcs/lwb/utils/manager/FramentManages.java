@@ -52,6 +52,7 @@ import blcs.lwb.utils.fragment.OnCrashFragment;
 import blcs.lwb.utils.fragment.OpenGlSquareFragment;
 import blcs.lwb.utils.fragment.OpenGlTriangleFragment;
 import blcs.lwb.utils.fragment.PickerFragment;
+import blcs.lwb.utils.fragment.PopupWindowFragment;
 import blcs.lwb.utils.fragment.ProgressBarFragment;
 import blcs.lwb.utils.fragment.RecyclerViewFragment;
 import blcs.lwb.utils.fragment.RxjavaRetrofitFragment;
@@ -143,6 +144,7 @@ public class FramentManages {
     public final static String FileUtils = "FileUtils";
     public final static String SQLite = "SQLite";
     public final static String FunciotnIntro = "功能介绍";
+    public final static String PopupWindow = "PopupWindow";
 
     /**
      * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -276,7 +278,8 @@ public class FramentManages {
                 return new FileUtilsFragment();
             case FramentManages.SQLite:
                 return new SQLiteFragment();
-
+            case FramentManages.PopupWindow:
+                return new PopupWindowFragment();
 
 //			case FramentManages.UtilsDetail://工具详情界面
 //				return new HomeTab1DetailFragment();
