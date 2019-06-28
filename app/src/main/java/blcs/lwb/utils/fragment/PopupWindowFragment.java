@@ -6,6 +6,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.lwbtool.utils.LinPopup;
@@ -14,14 +15,16 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 public class PopupWindowFragment extends BaseFragment {
-    @BindView(R.id.btn_pop)
-    Button btnPop;
-    @BindView(R.id.btn_pop1)
-    Button btnPop1;
-    @BindView(R.id.btn_pop2)
-    Button btnPop2;
-    @BindView(R.id.btn_pop3)
-    Button btnPop3;
+    @BindView(R.id.btn_up)
+    Button btn_up;
+    @BindView(R.id.btn_down)
+    Button btn_down;
+    @BindView(R.id.btn_left)
+    Button btn_left;
+    @BindView(R.id.btn_right)
+    Button btn_right;
+    @BindView(R.id.tv_pos)
+    TextView tv_pos;
 
     @Override
     protected int bindLayout() {
@@ -49,34 +52,24 @@ public class PopupWindowFragment extends BaseFragment {
 
     }
 
-    @OnClick({R.id.btn_pop, R.id.btn_pop1, R.id.btn_pop2, R.id.btn_pop3})
+    @OnClick({R.id.btn_up, R.id.btn_down, R.id.btn_left, R.id.btn_right})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.btn_pop:
-                if(LinPopup.get().isShowing()){
-                    LinPopup.get().dismiss();
-                }
-                LinPopup.get().showAsDropDown(btnPop);
-                break;
-            case R.id.btn_pop1:
-                if(LinPopup.get().isShowing()){
-                    LinPopup.get().dismiss();
-                }
-                LinPopup.get().showAsDropDown(btnPop1, 10, 30);
-                break;
-            case R.id.btn_pop2:
-                if(LinPopup.get().isShowing()){
-                    LinPopup.get().dismiss();
-                }
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                    LinPopup.get().showAsDropDown(btnPop2, 10,30 , Gravity.RIGHT);
+            case R.id.btn_up:
+                if(!LinPopup.get().isShowing()){
+                    LinPopup.get().showAsDropDown(tv_pos, 100,-100 );
                 }
                 break;
-            case R.id.btn_pop3:
-                if(LinPopup.get().isShowing()){
-                    LinPopup.get().dismiss();
+            case R.id.btn_down:
+                if(!LinPopup.get().isShowing()){
+                    LinPopup.get().showAsDropDown(tv_pos);
                 }
-                LinPopup.get().showAtLocation(btnPop3, Gravity.CENTER, 0, 0);
+                break;
+            case R.id.btn_left:
+
+                break;
+            case R.id.btn_right:
+
                 break;
         }
     }

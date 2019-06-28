@@ -123,6 +123,12 @@
 
 
     <!--博客-->
+    <string name="URL_study02">https://www.jianshu.com/p/5ac84e8497b5</string>
+    <string name="URL_study01">https://www.jianshu.com/p/967bfa0234f9</string>
+    <string name="URL_LinDownloadAPk">https://www.jianshu.com/p/3e5af8827157</string>
+    <string name="URL_LinNotify">https://www.jianshu.com/p/bc2917c3bca8</string>
+    <string name="URL_LinCustomDialog">https://www.jianshu.com/p/ee84b1c2a325</string>
+    <string name="URL_AppSizeUtils">https://www.jianshu.com/p/d97c0de8bc18</string>
     <string name="URL_MultiLanguage">https://www.jianshu.com/p/0f957ead4fa0</string>
     <string name="URL_FontSize">https://www.jianshu.com/p/f13b08da22d1</string>
     <string name="URL_JUnit">https://www.jianshu.com/p/762890234f82</string>

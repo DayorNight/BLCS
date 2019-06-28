@@ -40,6 +40,7 @@
         <item>选择器Picker</item>
         <item>标签列表LabelList</item>
         <item>声音与震动</item>
+        <item>PopupWindow</item>
     </string-array>
     <!--other-->
     <string-array name="Other">
@@ -125,6 +126,12 @@
 
     <!--博客-->
     <string-array name="BLOGS">
+        <item>Android 数据库知识回顾</item>
+        <item>Android 《Android移动性能实战》学习笔记</item>
+        <item>Android 下载安装应用APK封装（适配8.0）</item>
+        <item>Android Notification通知简单封装（适配8.0）</item>
+        <item>Android 仿RxDialog自定义DialogFragment</item>
+        <item>Android 获取App应用、缓存、数据等大小适配8.0（仿微信存储空间）</item>
         <item>Android 仿微信多语言切换</item>
         <item>Android 仿微信全局字体大小调整</item>
         <item>Android JUnit单元测试</item>
@@ -142,6 +149,12 @@
 
     <!--博客URL-->
     <string-array name="URL_BLOGS">
+        <item>@string/URL_study02</item>
+        <item>@string/URL_study01</item>
+        <item>@string/URL_LinDownloadAPk</item>
+        <item>@string/URL_LinNotify</item>
+        <item>@string/URL_LinCustomDialog</item>
+        <item>@string/URL_AppSizeUtils</item>
         <item>@string/URL_MultiLanguage</item>
         <item>@string/URL_FontSize</item>
         <item>@string/URL_JUnit</item>
