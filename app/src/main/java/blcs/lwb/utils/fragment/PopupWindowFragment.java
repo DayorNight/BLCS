@@ -10,19 +10,12 @@ import android.widget.TextView;
 
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.lwbtool.utils.LinPopup;
+import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.utils.R;
 import butterknife.BindView;
 import butterknife.OnClick;
 
 public class PopupWindowFragment extends BaseFragment {
-    @BindView(R.id.btn_up)
-    Button btn_up;
-    @BindView(R.id.btn_down)
-    Button btn_down;
-    @BindView(R.id.btn_left)
-    Button btn_left;
-    @BindView(R.id.btn_right)
-    Button btn_right;
     @BindView(R.id.tv_pos)
     TextView tv_pos;
 
@@ -48,28 +41,61 @@ public class PopupWindowFragment extends BaseFragment {
     }
 
     @Override
-    public void popBackListener(int returnCode, Bundle bundle) {
+    public void popBackListener(int returnCode, Bundle bundle) { }
 
-    }
-
-    @OnClick({R.id.btn_up, R.id.btn_down, R.id.btn_left, R.id.btn_right})
+    @OnClick({R.id.btn_up_left, R.id.btn_up_right, R.id.btn_down_left, R.id.btn_down_right,
+            R.id.btn_up_center,R.id.btn_down_center,R.id.btn_left_center,R.id.btn_right_center,
+            R.id.btn_left_up,R.id.btn_left_down,R.id.btn_right_up,R.id.btn_right_down,
+            R.id.btn_up,R.id.btn_down,R.id.btn_left,R.id.btn_right})
     public void onViewClicked(View view) {
         switch (view.getId()) {
+            case R.id.btn_up_left:
+                LinPopup.showUpLeft(tv_pos);
+                break;
+            case R.id.btn_up_right:
+                LinPopup.showUpRight(tv_pos);
+                break;
+            case R.id.btn_down_left:
+                LinPopup.showDownLeft(tv_pos);
+                break;
+            case R.id.btn_down_right:
+                LinPopup.showDownRight(tv_pos);
+                break;
+            case R.id.btn_up_center:
+                LinPopup.showUpCenter(tv_pos);
+                break;
+            case R.id.btn_down_center:
+                LinPopup.showDownCenter(tv_pos);
+                break;
+            case R.id.btn_left_center:
+                LinPopup.showLeftCenter(tv_pos);
+                break;
+            case R.id.btn_right_center:
+                LinPopup.showRightCenter(tv_pos);
+                break;
+            case R.id.btn_left_up:
+                LinPopup.showLeftUp(tv_pos);
+                break;
+            case R.id.btn_left_down:
+                LinPopup.showLeftDown(tv_pos);
+                break;
+            case R.id.btn_right_up:
+                LinPopup.showRightUp(tv_pos);
+                break;
+            case R.id.btn_right_down:
+                LinPopup.showRightDown(tv_pos);
+                break;
             case R.id.btn_up:
-                if(!LinPopup.get().isShowing()){
-                    LinPopup.get().showAsDropDown(tv_pos, 100,-100 );
-                }
+                LinPopup.showUp(activity);
                 break;
             case R.id.btn_down:
-                if(!LinPopup.get().isShowing()){
-                    LinPopup.get().showAsDropDown(tv_pos);
-                }
+                LinPopup.showDown(activity);
                 break;
             case R.id.btn_left:
-
+                LinPopup.showLeft(activity);
                 break;
             case R.id.btn_right:
-
+                LinPopup.showRight(activity);
                 break;
         }
     }

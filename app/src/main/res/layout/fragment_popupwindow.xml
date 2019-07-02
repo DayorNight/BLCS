@@ -5,15 +5,109 @@
     android:background="@color/gray"
     android:orientation="vertical">
     <LinearLayout
+        android:id="@+id/ll_popup_1"
         style="@style/Lin_horizontal">
         <TextView
             style="@style/text_stander"
             android:text="显示方向："/>
         <Button
+            android:id="@+id/btn_up_left"
+            style="@style/wrap_wrap"
+            android:layout_weight="1"
+            android:text="上左"/>
+        <Button
+            android:id="@+id/btn_up_right"
+            style="@style/wrap_wrap"
+            android:layout_weight="1"
+            android:text="上右"/>
+        <Button
+            style="@style/wrap_wrap"
+            android:id="@+id/btn_down_left"
+            android:layout_weight="1"
+            android:text="下左"/>
+        <Button
+            style="@style/wrap_wrap"
+            android:id="@+id/btn_down_right"
+            android:layout_weight="1"
+            android:text="下右"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_popup_2"
+        android:layout_below="@+id/ll_popup_1"
+        style="@style/Lin_horizontal">
+        <TextView
+            style="@style/text_stander"
+            android:text="显示方向："/>
+        <Button
+            android:id="@+id/btn_up_center"
+            style="@style/wrap_wrap"
+            android:layout_weight="1"
+            android:text="上中"/>
+        <Button
+            style="@style/wrap_wrap"
+            android:id="@+id/btn_down_center"
+            android:layout_weight="1"
+            android:text="下中"/>
+        <Button
+            style="@style/wrap_wrap"
+            android:id="@+id/btn_left_center"
+            android:layout_weight="1"
+            android:text="左中"/>
+        <Button
+            style="@style/wrap_wrap"
+            android:id="@+id/btn_right_center"
+            android:layout_weight="1"
+            android:text="右中"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_popup_3"
+        android:layout_below="@+id/ll_popup_2"
+        style="@style/Lin_horizontal">
+        <TextView
+            style="@style/text_stander"
+            android:text="显示方向："/>
+        <Button
+            android:id="@+id/btn_left_up"
+            style="@style/wrap_wrap"
+            android:layout_weight="1"
+            android:text="左上"/>
+        <Button
+            android:id="@+id/btn_left_down"
+            style="@style/wrap_wrap"
+            android:layout_weight="1"
+            android:text="左下"/>
+        <Button
+            style="@style/wrap_wrap"
+            android:id="@+id/btn_right_up"
+            android:layout_weight="1"
+            android:text="右上"/>
+        <Button
+            style="@style/wrap_wrap"
+            android:id="@+id/btn_right_down"
+            android:layout_weight="1"
+            android:text="右下"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_popup_4"
+        android:layout_below="@+id/ll_popup_3"
+        style="@style/Lin_horizontal">
+        <TextView
+            style="@style/text_stander"
+            android:text="相对屏幕："/>
+        <Button
             android:id="@+id/btn_up"
             style="@style/wrap_wrap"
             android:layout_weight="1"
             android:text="上"/>
+        <Button
+            android:id="@+id/btn_left"
+            style="@style/wrap_wrap"
+            android:layout_weight="1"
+            android:text="左"/>
         <Button
             style="@style/wrap_wrap"
             android:id="@+id/btn_down"
@@ -21,16 +115,10 @@
             android:text="下"/>
         <Button
             style="@style/wrap_wrap"
-            android:id="@+id/btn_left"
-            android:layout_weight="1"
-            android:text="左"/>
-        <Button
-            style="@style/wrap_wrap"
             android:id="@+id/btn_right"
             android:layout_weight="1"
             android:text="右"/>
     </LinearLayout>
-
     <TextView
         android:id="@+id/tv_pos"
         android:layout_width="150dp"
