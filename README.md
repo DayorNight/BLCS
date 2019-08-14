@@ -56,6 +56,9 @@
 > 19.选择器Picker
 > 20.标签列表LabelList
 > 21.声音与震动
+> 22.PopupWindow
+> 23.放大镜
+> 24.刮刮卡
 
 ###### 其他
 > 1.博客
@@ -81,7 +84,6 @@
 > 13.banner
 > 14.androidsvg
 > 15.PickerView
-
 
 ###### 集成第三方：
 > 1、友盟统计
