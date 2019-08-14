@@ -17,6 +17,7 @@ package blcs.lwb.lwbtool.utils;
 import android.annotation.SuppressLint;
 import android.support.annotation.Nullable;
 import android.util.Log;
+import android.widget.TextView;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -60,6 +61,7 @@ import java.util.TimeZone;
  * 29、获取本月份的天数
  * 30、获取指定月份的天数
  * 31、根据年 月 获取对应的月份 天数
+ * 32、时间的格式化
  */
 public class TimeUtil {
     private static final String TAG = "TimeUtil";
@@ -934,4 +936,24 @@ public class TimeUtil {
         return maxDate;
     }
 
+    /**
+     * 时间的格式化
+     * @param textView
+     * @param millisecond
+     */
+    public static void updateTime(TextView textView, int millisecond) {
+        int second = millisecond / 1000; //总共换算的秒
+        int hh = second / 3600;  //小时
+        int mm = second % 3600 / 60; //分钟
+        int ss = second % 60; //时分秒中的秒的得数
+
+        String str = null;
+        if (hh != 0) {
+            //如果是个位数的话，前面可以加0  时分秒
+            str = String.format("%02d:%02d:%02d", hh, mm, ss);
+        } else {
+            str = String.format("%02d:%02d", mm, ss);
+        }
+        textView.setText(str);
+    }
 }

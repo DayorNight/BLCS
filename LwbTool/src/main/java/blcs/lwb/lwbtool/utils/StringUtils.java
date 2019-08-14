@@ -29,6 +29,7 @@ import java.util.regex.Pattern;
  * 12、将字符串格式化为带两位小数的字符串
  * 13、字符串转换成double
  * 14、字符串转换成整数
+ * 15、读取baseurl
  */
 public class StringUtils {
 	private static final String TAG = "StringUtil";
@@ -701,5 +702,25 @@ public class StringUtils {
 				return 0;
 			}
 		}
+	}
+
+
+	/**
+	 * 读取baseurl
+	 * @param url
+	 * @return
+	 */
+	public static String getBasUrl(String url) {
+		String head = "";
+		int index = url.indexOf("://");
+		if (index != -1) {
+			head = url.substring(0, index + 3);
+			url = url.substring(index + 3);
+		}
+		index = url.indexOf("/");
+		if (index != -1) {
+			url = url.substring(0, index + 1);
+		}
+		return head + url;
 	}
 }

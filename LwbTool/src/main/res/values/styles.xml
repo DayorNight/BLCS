@@ -208,4 +208,13 @@
         <item name="android:windowAnimationStyle">@style/Animation_Bottom_Dialog</item>
     </style>
 
+    <declare-styleable name="ScratchCard">
+        <attr name="size" format="float"/>
+        <attr name="preBackground" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="LoupeView">
+        <attr name="radius" format="integer|reference"/>
+        <attr name="scale" format="integer|reference"/>
+    </declare-styleable>
 </resources>

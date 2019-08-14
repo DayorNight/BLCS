@@ -41,6 +41,8 @@
         <item>标签列表LabelList</item>
         <item>声音与震动</item>
         <item>PopupWindow</item>
+        <item>放大镜</item>
+        <item>刮刮卡</item>
     </string-array>
     <!--other-->
     <string-array name="Other">
@@ -126,6 +128,7 @@
 
     <!--博客-->
     <string-array name="BLOGS">
+        <item>Android ObjectBox开源数据库框架学习笔记</item>
         <item>Android 数据库知识回顾</item>
         <item>Android 《Android移动性能实战》学习笔记</item>
         <item>Android 下载安装应用APK封装（适配8.0）</item>
@@ -149,6 +152,7 @@
 
     <!--博客URL-->
     <string-array name="URL_BLOGS">
+        <item>@string/URL_study03</item>
         <item>@string/URL_study02</item>
         <item>@string/URL_study01</item>
         <item>@string/URL_LinDownloadAPk</item>

@@ -13,8 +13,7 @@
     <!--TYPE_SURE  TYPE_CANCLE-->
     <RelativeLayout
         style="@style/match_wrap"
-        android:background="@drawable/dialog_fragment_center_radious"
-        >
+        android:background="@drawable/dialog_fragment_center_radious">
         <LinearLayout
             android:id="@+id/ll_dialog_fragment_sure"
             style="@style/match_wrap"

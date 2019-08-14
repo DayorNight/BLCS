@@ -36,6 +36,7 @@ import blcs.lwb.utils.fragment.JavaDesignPatternFragment;
 import blcs.lwb.utils.fragment.LabelListFragment;
 import blcs.lwb.utils.fragment.LeakCanaryFragment;
 import blcs.lwb.utils.fragment.LinViewFragment;
+import blcs.lwb.utils.fragment.LoupeViewFragment;
 import blcs.lwb.utils.fragment.MagicIndicator.BadgeTabFragment;
 import blcs.lwb.utils.fragment.MagicIndicator.CustomNavigatorFragment;
 import blcs.lwb.utils.fragment.MagicIndicator.DynamicTabFragment;
@@ -57,6 +58,7 @@ import blcs.lwb.utils.fragment.ProgressBarFragment;
 import blcs.lwb.utils.fragment.RecyclerViewFragment;
 import blcs.lwb.utils.fragment.RxjavaRetrofitFragment;
 import blcs.lwb.utils.fragment.SQLiteFragment;
+import blcs.lwb.utils.fragment.ScratchCardViewFragment;
 import blcs.lwb.utils.fragment.ScreenUtilsFragment;
 import blcs.lwb.utils.fragment.SoundAndVibrationFragment;
 import blcs.lwb.utils.fragment.StringUtilsFragment;
@@ -145,6 +147,8 @@ public class FramentManages {
     public final static String SQLite = "SQLite";
     public final static String FunciotnIntro = "功能介绍";
     public final static String PopupWindow = "PopupWindow";
+    public final static String LoupeView = "放大镜";
+    public final static String ScratchCardView = "刮刮卡";
 
     /**
      * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -280,6 +284,10 @@ public class FramentManages {
                 return new SQLiteFragment();
             case FramentManages.PopupWindow:
                 return new PopupWindowFragment();
+            case FramentManages.LoupeView:
+                return new LoupeViewFragment();
+            case FramentManages.ScratchCardView:
+                return new ScratchCardViewFragment();
 
 //			case FramentManages.UtilsDetail://工具详情界面
 //				return new HomeTab1DetailFragment();
