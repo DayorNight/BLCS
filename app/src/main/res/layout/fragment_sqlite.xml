@@ -42,7 +42,7 @@
             <EditText
                 android:id="@+id/et_sql_id"
                 style="@style/wrap_wrap"
-                android:layout_marginLeft="@dimen/space_line2"
+                android:layout_marginLeft="@dimen/space_line"
                 android:inputType="number"
                 android:hint="修改请在这里输入要修改的ID"
                 />

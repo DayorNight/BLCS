@@ -1,6 +1,8 @@
 package blcs.lwb.utils.bean;
 
+import org.litepal.annotation.Column;
 import org.litepal.crud.LitePalSupport;
+
 public class SqliteDemo extends LitePalSupport {
     private Long id;
     private String name;
