@@ -81,6 +81,7 @@
         <item>看书</item>
     </string-array>
     <!--小游戏图片-->
+
     <string-array name="imgs">
         <item>img_climb</item>
         <item>img_game</item>
@@ -173,5 +174,46 @@
         <item>@string/URL_APK_Sign</item>
         <item>@string/URL_Arithmetic</item>
         <item>@string/URL_DesignMode</item>
+    </string-array>
+
+    <!--RecyclerView title-->
+    <string-array name="Recycler_title">
+        <item>Animation</item>
+        <item>MultipleItem</item>
+        <item>Header/Footer</item>
+        <item>PullToRefresh</item>
+        <item>Section</item>
+        <item>EmptyView</item>
+        <item>DragAndSwipe</item>
+        <item>ItemClick</item>
+        <item>ExpandableItem</item>
+        <item>UpFetchData</item>
+    </string-array>
+
+    <!--RecyclerView Image-->
+    <string-array name="Recycler_Image">
+        <item>gv_animation</item>
+        <item>gv_multipleltem</item>
+        <item>gv_header_and_footer</item>
+        <item>gv_pulltorefresh</item>
+        <item>gv_section</item>
+        <item>gv_empty</item>
+        <item>gv_drag_and_swipe</item>
+        <item>gv_item_click</item>
+        <item>gv_expandable</item>
+        <item>gv_animation</item>
+    </string-array>
+    <!--RecyclerView Fragment-->
+    <string-array name="Recycler_fragment">
+        <item>AnimationRecycler</item>
+        <item>MultipleItemRecycler</item>
+        <item>Header/FooterRecycler</item>
+        <item>PullToRefreshRecycler</item>
+        <item>SectionRecycler</item>
+        <item>EmptyViewRecycler</item>
+        <item>DragAndSwipeRecycler</item>
+        <item>ItemClickRecycler</item>
+        <item>ExpandableItemRecycler</item>
+        <item>UpFetchDataRecycler</item>
     </string-array>
 </resources>

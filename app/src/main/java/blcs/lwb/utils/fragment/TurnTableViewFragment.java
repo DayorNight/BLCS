@@ -15,6 +15,7 @@ import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.lwbtool.View.LuckPanLayout;
 import blcs.lwb.lwbtool.View.RotatePan;
 import blcs.lwb.lwbtool.base.BasePresenter;
+import blcs.lwb.lwbtool.utils.MyUtils;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.adapter.TurnTableAdapter;
 import butterknife.BindView;
@@ -60,8 +61,6 @@ public class TurnTableViewFragment extends BaseFragment {
         adapter.setOnItemClick(new TurnTableAdapter.OnItemClickListener() {
             @Override
             public void onclick(CompoundButton box, int pos, boolean isChecked) {
-                LogUtils.e("pos:"+pos);
-                LogUtils.e("isChecked:"+isChecked);
                 if(isChecked){
                     if(!checked_Strs.contains(strs[pos])){
                         checked_Strs.add(strs[pos]);

@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/Lin_vertical">
-    <Button
-        style="@style/Button_wrap"
-        android:text="RecyclerView介绍"/>
     <include layout="@layout/tool_recyclerview"/>
-
 </LinearLayout>

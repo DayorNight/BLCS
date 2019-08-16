@@ -9,8 +9,8 @@ import blcs.lwb.utils.R;
 
 public class RecyclerAdapter extends BaseQuickAdapter<HomeItem ,BaseViewHolder>{
 
-    public RecyclerAdapter(int layoutResId, @Nullable List<HomeItem> data) {
-        super(layoutResId, data);
+    public RecyclerAdapter(int layoutResId) {
+        super(layoutResId);
     }
 
     @Override
