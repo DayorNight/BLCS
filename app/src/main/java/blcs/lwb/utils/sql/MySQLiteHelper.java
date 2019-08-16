@@ -13,7 +13,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     public MySQLiteHelper(@Nullable Context context, @Nullable String name,  @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
-
     /**
      * 创建表
      */
@@ -22,7 +21,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         Log.i(TAG, "onCreate: " );
         db.execSQL(sql);
     }
-
     /**
      * 版本更新的时候调用
      */
@@ -35,5 +33,4 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
                 break;
         }
     }
-
 }

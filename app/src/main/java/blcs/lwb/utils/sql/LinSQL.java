@@ -5,14 +5,11 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.text.TextUtils;
-
-import org.greenrobot.greendao.query.WhereCondition;
 import org.litepal.LitePal;
 import org.litepal.crud.callback.SaveCallback;
 import org.litepal.crud.callback.UpdateOrDeleteCallback;
 import java.util.ArrayList;
 import java.util.List;
-
 import blcs.lwb.utils.MyApplication;
 import blcs.lwb.utils.bean.GreenDao;
 import blcs.lwb.utils.bean.SqliteDemo;
@@ -22,15 +19,15 @@ import blcs.lwb.utils.greendao.GreenDaoDao;
 
 public class LinSQL {
     private static MySQLiteHelper blcs;
-
     private static String Table="SqliteDemo";
     private static DaoSession daoSession;
+    private static GreenDaoDao greenDaoDao;
 
     public static void init(Context context) {
         if (blcs == null) {
             blcs = new MySQLiteHelper(context, "Blcs", null, 1);
-            blcs.getWritableDatabase();
             daoSession = MyApplication.getDaoSession();
+            greenDaoDao = daoSession.getGreenDaoDao();
         }
     }
 
@@ -70,6 +67,7 @@ public class LinSQL {
             demo.setName(name);
             demo.setAddress(address);
             daoSession.insert(demo);
+            greenDaoDao.insert(demo);
         }
     }
 
@@ -124,6 +122,7 @@ public class LinSQL {
             if(demo!=null){
                 for (GreenDao bean :demo){
                     daoSession.delete(bean);
+                    greenDaoDao.delete(bean);
                 }
             }
 
@@ -163,6 +162,7 @@ public class LinSQL {
             demo.setName(Name);
             demo.setAddress(Address);
             daoSession.update(demo);
+            greenDaoDao.update(demo);
         }
     }
 
