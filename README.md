@@ -2,7 +2,7 @@
 ## 首页显示
 作者随笔博客： [CSDN](https://blog.csdn.net/cs_lwb) | [简书](https://www.jianshu.com/u/d9db60dc00d0)
 ### APK体验下载地址
-![Image text](https://github.com/DayorNight/File/blob/master/png/BLCS.png)
+![Image text](https://github.com/DayorNight/File/blob/master/BLCS.png)
 
 ## 目录
 
@@ -20,16 +20,17 @@
 ## 效果展示——View
 
 ### 1.1仿微信功能-字体大小
-![Image text](https://github.com/DayorNight/File/blob/master/png/View-仿微信功能-字体大小.gif)
+![Image text](https://github.com/DayorNight/File/blob/master/View-仿微信功能-字体大小.gif)
 ### 1.2仿微信功能-存储空间
-![Image text](https://github.com/DayorNight/File/blob/master/png/View-仿微信功能-存储空间.gif)
+![Image text](https://github.com/DayorNight/File/blob/master/View-仿微信功能-存储空间.gif)
 ### 1.3仿微信功能-多语言
-![Image text](https://github.com/DayorNight/File/blob/master/png/View-仿微信功能-多语言.gif)
+![Image text](https://github.com/DayorNight/File/blob/master/View-仿微信功能-多语言.gif)
 ### 2.BottomNavigationView
 
 ### 3.RecyclerView
+
 ### 4.DialogFragment
-![Image text](https://github.com/DayorNight/File/blob/master/png/View-DialogFragment.gif)
+![Image text](https://github.com/DayorNight/File/blob/master/View-DialogFragment.gif)
 ### 5.toolbar
 ### 6.RxToast
 ### 7.转盘小游戏
@@ -44,7 +45,7 @@
 ### 16.蛛网等级及颜色选取
 ### 17.Banner轮播图
 ### 18.通知NotificationCompat
-![Image text](https://github.com/DayorNight/File/blob/master/png/View-通知NotificationCompat.gif)
+![Image text](https://github.com/DayorNight/File/blob/master/View-通知NotificationCompat.gif)
 ### 19.选择器Picker
 ### 20.标签列表LabelList
 ### 21.声音与震动
@@ -56,7 +57,7 @@
 ## 效果展示——其他
 
 ### 1.版本更新
-![Image text](https://github.com/DayorNight/File/blob/master/png/Other-版本更新.gif)
+![Image text](https://github.com/DayorNight/File/blob/master/Other-版本更新.gif)
 ### 2.全局异常捕获
 ### 3.调用系统功能
 ### 4.SQLite
