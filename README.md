@@ -9,10 +9,15 @@
 ## 效果展示——工具
 
 ### 1.AppUtils
+![Image text](https://github.com/DayorNight/File/blob/master/1.AppUtils.gif)
 ### 2.BitmapUtils
+![Image text](https://github.com/DayorNight/File/blob/master/2.BitmapUtils.gif)
 ### 3.EditTextUtils
+![Image text](https://github.com/DayorNight/File/blob/master/3.EditTextUtils.gif)
 ### 4.IntentUtils
+![Image text](https://github.com/DayorNight/File/blob/master/4.IntentUtils.gif)
 ### 5.StringUtils
+![Image text](https://github.com/DayorNight/File/blob/master/5.StringUtils.gif)
 ### 6.ScreenUtils
 ### 7.LinView
 ### 8.FileUitls
@@ -20,48 +25,72 @@
 ## 效果展示——View
 
 ### 1.1仿微信功能-字体大小
-![Image text](https://github.com/DayorNight/File/blob/master/View-仿微信功能-字体大小.gif)
+![Image text](https://github.com/DayorNight/File/blob/master/1.1仿微信功能-字体大小.gif)
 ### 1.2仿微信功能-存储空间
-![Image text](https://github.com/DayorNight/File/blob/master/View-仿微信功能-存储空间.gif)
+![Image text](https://github.com/DayorNight/File/blob/master/1.2仿微信功能-存储空间.gif)
 ### 1.3仿微信功能-多语言
-![Image text](https://github.com/DayorNight/File/blob/master/View-仿微信功能-多语言.gif)
+![Image text](https://github.com/DayorNight/File/blob/master/1.3仿微信功能-多语言.gif)
 ### 2.BottomNavigationView
-
+![Image text](https://github.com/DayorNight/File/blob/master/2.BottomNavigationView.gif)
 ### 3.RecyclerView
-
+![Image text](https://github.com/DayorNight/File/blob/master/3.RecyclerView.gif)
 ### 4.DialogFragment
-![Image text](https://github.com/DayorNight/File/blob/master/View-DialogFragment.gif)
+![Image text](https://github.com/DayorNight/File/blob/master/4.DialogFragment.gif)
 ### 5.toolbar
+![Image text](https://github.com/DayorNight/File/blob/master/5.toolbar.gif)
 ### 6.RxToast
+![Image text](https://github.com/DayorNight/File/blob/master/6.RxToast.gif)
 ### 7.转盘小游戏
+![Image text](https://github.com/DayorNight/File/blob/master/7.转盘小游戏.gif)
 ### 8.跑马灯/水波纹/标签
-### 9.滑动菜单/悬浮按钮
+![Image text](https://github.com/DayorNight/File/blob/master/8.跑马灯/水波纹/标签.gif)
+### 9.侧滑菜单/悬浮按钮
+![Image text](https://github.com/DayorNight/File/blob/master/9.侧滑菜单/悬浮按钮.gif)
 ### 10.ViewPage指示器
+![Image text](https://github.com/DayorNight/File/blob/master/10.ViewPage指示器.gif)
 ### 11.ViewPage
-### 12.OpenGl三角形
-### 13.OpenGl矩形
+![Image text](https://github.com/DayorNight/File/blob/master/11.ViewPage.gif)
+### 12-13.OpenGl
+![Image text](https://github.com/DayorNight/File/blob/master/12-13.OpenGl.gif)
 ### 14.常用Dialog
+![Image text](https://github.com/DayorNight/File/blob/master/14.常用Dialog.gif)
 ### 15.进度条
+![Image text](https://github.com/DayorNight/File/blob/master/15.进度条.gif)
 ### 16.蛛网等级及颜色选取
+![Image text](https://github.com/DayorNight/File/blob/master/16.蛛网等级及颜色选取.gif)
 ### 17.Banner轮播图
+![Image text](https://github.com/DayorNight/File/blob/master/17.Banner轮播图.gif)
 ### 18.通知NotificationCompat
-![Image text](https://github.com/DayorNight/File/blob/master/View-通知NotificationCompat.gif)
+![Image text](https://github.com/DayorNight/File/blob/master/18.通知NotificationCompat.gif)
 ### 19.选择器Picker
+![Image text](https://github.com/DayorNight/File/blob/master/19.选择器Picker.gif)
 ### 20.标签列表LabelList
+![Image text](https://github.com/DayorNight/File/blob/master/20.标签列表LabelList.gif)
 ### 21.声音与震动
+![Image text](https://github.com/DayorNight/File/blob/master/21.声音与震动.gif)
 ### 22.PopupWindow
+![Image text](https://github.com/DayorNight/File/blob/master/22.PopupWindow.gif)
 ### 23.放大镜
+![Image text](https://github.com/DayorNight/File/blob/master/23.放大镜.gif)
 ### 24.刮刮卡
-
+![Image text](https://github.com/DayorNight/File/blob/master/24.刮刮卡.gif)
 
 ## 效果展示——其他
 
-### 1.版本更新
-![Image text](https://github.com/DayorNight/File/blob/master/Other-版本更新.gif)
-### 2.全局异常捕获
-### 3.调用系统功能
-### 4.SQLite
-
+### 1.博客
+![Image text](https://github.com/DayorNight/File/blob/master/1.博客.gif)
+### 2.版本更新
+![Image text](https://github.com/DayorNight/File/blob/master/1.版本更新.gif)
+### 3.全局异常捕获
+![Image text](https://github.com/DayorNight/File/blob/master/3.全局异常捕获.gif)
+### 4.内存泄漏检测
+![Image text](https://github.com/DayorNight/File/blob/master/4.内存泄漏检测.gif)
+### 5.Rxjava+Retrofit封装
+![Image text](https://github.com/DayorNight/File/blob/master/5.Rxjava+Retrofit封装.gif)
+### 6.调用系统功能
+![Image text](https://github.com/DayorNight/File/blob/master/6.调用系统功能.gif)
+### 7.SQLite
+![Image text](https://github.com/DayorNight/File/blob/master/7.SQLite.gif)
 
 #### 子菜单
 
@@ -108,6 +137,7 @@
 > 4.内存泄漏检测
 > 5.Rxjava+Retrofit封装
 > 6.调用系统功能
+> 7.SQLite
 
 ###### 引用开源库：
 > 1.butterknife

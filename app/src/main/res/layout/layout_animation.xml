@@ -21,9 +21,9 @@
         <ImageView
             android:id="@+id/adapter_item_img"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/Img_big"
+            android:layout_height="wrap_content"
             android:scaleType="centerCrop"
-            android:src="@mipmap/ic1"/>
+            android:src="@mipmap/animation_img1"/>
 
         <TextView
             android:id="@+id/tweetName"

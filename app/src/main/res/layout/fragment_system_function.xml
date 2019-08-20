@@ -9,7 +9,7 @@
         <Button
             android:id="@+id/btn_voice"
             style="@style/Button_alpha"
-            android:text="调用系统语音" />
+            android:text="调用系统录音" />
 
         <Button
             android:id="@+id/btn_video"

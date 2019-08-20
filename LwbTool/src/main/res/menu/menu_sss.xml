@@ -7,25 +7,25 @@
     <item
         android:enabled="true"
         android:id="@+id/action_1"
-        android:icon="@mipmap/ic_check_white_48dp"
+        android:icon="@mipmap/img_climb"
         android:title="布局一"
         app:showAsAction="ifRoom" />
     <item
         android:enabled="true"
         android:id="@+id/action_2"
-        android:icon="@mipmap/ic_check_white_48dp"
+        android:icon="@mipmap/img_book"
         android:title="布局二"
         app:showAsAction="ifRoom" />
     <item
         android:enabled="true"
         android:id="@+id/action_3"
-        android:icon="@mipmap/ic_check_white_48dp"
-        android:title="布局三"
+        android:icon="@mipmap/ic_error_outline_white_48dp"
+        android:title="选项一"
         app:showAsAction="never" />
     <item
         android:enabled="true"
         android:id="@+id/action_4"
-        android:icon="@mipmap/ic_check_white_48dp"
-        android:title="布局四"
+        android:icon="@mipmap/ic_error_outline_white_48dp"
+        android:title="选项二"
         app:showAsAction="never" />
 </menu>

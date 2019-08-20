@@ -111,7 +111,7 @@ public class FramentManages {
     public final static String CustomActivityOnCrash = "全局异常捕获";
     public final static String LeakCanary = "内存泄漏检测";
     public final static String RxjavaRetrofit = "Rxjava+Retrofit封装";
-    public final static String DrawerLayout = "滑动菜单/悬浮按钮";
+    public final static String DrawerLayout = "侧滑菜单/悬浮按钮";
     public final static String MagicIndicator = "ViewPager指示器";
     public final static String ScrollableTab = "指示器1";
     public final static String FixedTab = "指示器2";

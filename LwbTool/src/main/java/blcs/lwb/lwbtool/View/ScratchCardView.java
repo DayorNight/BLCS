@@ -20,6 +20,7 @@ import blcs.lwb.lwbtool.R;
 
 /**
  * 刮刮乐
+ * 注：前景图太大可能会出现问题
  */
 public class ScratchCardView extends android.support.v7.widget.AppCompatImageView {
     //橡皮檫大小
@@ -42,12 +43,12 @@ public class ScratchCardView extends android.support.v7.widget.AppCompatImageVie
         //禁用硬件加速
         setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         //属性设置
-        initAttr(context, attrs);
+        initAttrs(context, attrs);
         //画笔设置
         initPaint();
     }
 
-    private void initAttr(Context context, AttributeSet attrs) {
+    private void initAttrs(Context context, AttributeSet attrs) {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ScratchCard);
         size = typedArray.getFloat(R.styleable.ScratchCard_size, 50f);
         Drawable drawable = typedArray.getDrawable(R.styleable.ScratchCard_preBackground);

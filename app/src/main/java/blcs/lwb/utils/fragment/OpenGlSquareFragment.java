@@ -69,6 +69,8 @@ public class OpenGlSquareFragment extends BaseFragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        square.destroy();
+        if(square!=null){
+            square.destroy();
+        }
     }
 }

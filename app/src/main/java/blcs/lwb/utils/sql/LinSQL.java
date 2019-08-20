@@ -66,7 +66,7 @@ public class LinSQL {
             GreenDao demo = new GreenDao();
             demo.setName(name);
             demo.setAddress(address);
-            daoSession.insert(demo);
+//            daoSession.insert(demo);
             greenDaoDao.insert(demo);
         }
     }
@@ -121,7 +121,7 @@ public class LinSQL {
             }
             if(demo!=null){
                 for (GreenDao bean :demo){
-                    daoSession.delete(bean);
+//                    daoSession.delete(bean);
                     greenDaoDao.delete(bean);
                 }
             }
@@ -161,7 +161,7 @@ public class LinSQL {
             GreenDao demo = demos.get(0);
             demo.setName(Name);
             demo.setAddress(Address);
-            daoSession.update(demo);
+//            daoSession.update(demo);
             greenDaoDao.update(demo);
         }
     }

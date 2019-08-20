@@ -217,4 +217,22 @@
         <attr name="radius" format="integer|reference"/>
         <attr name="scale" format="integer|reference"/>
     </declare-styleable>
+
+    <!--Toolbar 标题字体大小颜色-->
+    <style name="Toolbar_Title" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/blue</item>
+    </style>
+    <!--Toolbar 标题字体大小颜色-->
+    <style name="Toolbar_SubTitle" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/brown</item>
+    </style>
+
+    <!--溢出菜单颜色、背景、显示位置-->
+    <style name="Toolbar_PopupMenu" parent="ThemeOverlay.AppCompat">
+        <item name="android:colorBackground">@color/blue</item>
+        <item name="android:textColor">@color/brown</item>
+        <item name="overlapAnchor">false</item>
+    </style>
 </resources>

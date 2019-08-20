@@ -43,7 +43,7 @@ public class AnimationRecyclerFragment extends BaseFragment {
     protected void initView() {
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(activity));
-        mAdapter = new AnimationAdapter(R.layout.layout_animation, MyUtils.getArray(activity, R.array.games));
+        mAdapter = new AnimationAdapter(R.layout.layout_animation, MyUtils.getArray(activity, R.array.View));
         mAdapter.openLoadAnimation();//开启动画
         mRecyclerView.setAdapter(mAdapter);
         mAdapter.isFirstOnly(false);

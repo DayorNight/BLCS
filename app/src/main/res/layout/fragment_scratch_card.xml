@@ -10,6 +10,6 @@
         android:layout_height="match_parent"
         android:src="@mipmap/ic_app512"
         app:size = "100"
-        app:preBackground = "@mipmap/ic4"
+        app:preBackground = "@mipmap/ic_loupe"
         />
 </LinearLayout>

@@ -1,10 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <!--app:buttonGravity 导航栏图标位置-->
+    <!--app:contentInsetStartWithNavigation logo与导航栏图标的距离 -->
+    <!--app:logo 图标-->
+    <!--app:logoDescription logo描述-->
+    <!--app:maxButtonHeight 设置导航栏图标最大高度-->
+    <!--app:navigationContentDescription 导航栏描述-->
+    <!--app:navigationIcon 设置导航栏图标-->
+    <!--app:popupTheme 设置弹出菜单的样式-->
+    <!--app:subtitle 小标题-->
+    <!--app:subtitleTextAppearance 子标题字体-->
+    <!--app:subtitleTextColor 子标题颜色-->
+    <!--app:title 设置标题-->
+    <!--app:titleMargin  标题与边缘距离-->
+    <!--app:titleMarginBottom 标题与底部边缘距离-->
+    <!--app:titleMarginEnd 标题与右边距离-->
+    <!--app:titleMarginStart 标题与左边距离-->
+    <!--app:titleMarginTop 标题与上边距离-->
+    <!--app:titleTextAppearance 标题字体-->
+    <!--app:titleTextColor 标题颜色-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blue"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:textSize="@dimen/sp_big2"
+        android:text="xml实现Toolbar"/>
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        app:logo="@mipmap/ic_launcher_round"
+        app:navigationIcon="@mipmap/ic_back"
+        app:title="Toolbar"
+        app:subtitle="@string/app_name"
+        app:titleTextColor="@color/blue"
+        app:subtitleTextColor="@color/brown"
+        app:logoDescription="这是标题"
+        app:navigationContentDescription="@string/app_name"
+        app:buttonGravity="bottom|top"
+        app:maxButtonHeight="50dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:popupTheme="@style/activityAnimation">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/red"
+            android:text="自定义控件"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:src="@mipmap/ic_info_outline_white_48dp"/>
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blue"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:textSize="@dimen/sp_big2"
+        android:text="代码实现Toolbar"/>
     <android.support.v7.widget.Toolbar
         android:id="@+id/tool_bar"
-        android:background="@color/blue"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-</android.support.constraint.ConstraintLayout>
+        android:layout_height="wrap_content"
+        android:background="@color/gray" />
+</LinearLayout>
