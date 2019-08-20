@@ -33,7 +33,8 @@
 ### 2.BottomNavigationView
 ![Image text](https://github.com/DayorNight/File/blob/master/2.BottomNavigationView.gif)
 ### 3.RecyclerView
-![Image text](https://github.com/DayorNight/File/blob/master/3.RecyclerView.gif)
+![Image text](https://github.com/DayorNight/File/blob/master/3.RecyclerView(1).gif)
+![Image text](https://github.com/DayorNight/File/blob/master/3.RecyclerView(2).gif)
 ### 4.DialogFragment
 ![Image text](https://github.com/DayorNight/File/blob/master/4.DialogFragment.gif)
 ### 5.toolbar
@@ -43,9 +44,9 @@
 ### 7.转盘小游戏
 ![Image text](https://github.com/DayorNight/File/blob/master/7.转盘小游戏.gif)
 ### 8.跑马灯/水波纹/标签
-![Image text](https://github.com/DayorNight/File/blob/master/8.跑马灯/水波纹/标签.gif)
+![Image text](https://github.com/DayorNight/File/blob/master/8.跑马灯水波纹标签.gif)
 ### 9.侧滑菜单/悬浮按钮
-![Image text](https://github.com/DayorNight/File/blob/master/9.侧滑菜单/悬浮按钮.gif)
+![Image text](https://github.com/DayorNight/File/blob/master/9.侧滑菜单悬浮按钮.gif)
 ### 10.ViewPage指示器
 ![Image text](https://github.com/DayorNight/File/blob/master/10.ViewPage指示器.gif)
 ### 11.ViewPage
