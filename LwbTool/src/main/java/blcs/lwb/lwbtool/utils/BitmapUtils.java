@@ -11,6 +11,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.ThumbnailUtils;
+import android.os.Environment;
 import android.text.TextUtils;
 import android.view.View;
 
@@ -37,6 +38,7 @@ import java.lang.ref.WeakReference;
  * 11、根据文件路径获取指定大小的Bitmap对象
  * 12、获取指定大小的Bitmap对象
  * 13、将压缩的bitmap保存到SDCard卡临时文件夹，用于上传
+ * 14、保存图片
  */
 public class BitmapUtils
 {
@@ -263,5 +265,36 @@ public class BitmapUtils
 			e1.printStackTrace();
 		}
 		return f;
+	}
+
+	/**
+	 *  14、保存图片
+	 */
+	public static boolean saveBitmap(Bitmap mBitmap, String path, String imgName) {
+		String sdStatus = Environment.getExternalStorageState();
+		if (!sdStatus.equals(Environment.MEDIA_MOUNTED)) { // 检测sd是否可用
+			return false;
+		}
+		FileOutputStream b = null;
+		File file = new File(path);
+		file.mkdirs();// 创建文件夹
+		String fileName = path + imgName;
+//        delFile(path, imgName);//删除本地旧图
+		try {
+			b = new FileOutputStream(fileName);
+			mBitmap.compress(Bitmap.CompressFormat.JPEG, 100, b);// 把数据写入文件
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				b.flush();
+				b.close();
+
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+		}
+		return true;
 	}
 }

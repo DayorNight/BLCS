@@ -1,13 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/Lin_vertical"
-    android:background="@mipmap/ic4">
-    <Button
-        android:id="@+id/btn_file_exist"
-        style="@style/Button_alpha"
-        android:text="判断文件是否存在"/>
-    <Button
-        android:id="@+id/btn_file_size"
-        style="@style/Button_alpha"
-        android:text="获取文件大小"/>
-</LinearLayout>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@mipmap/ic4"
+    style="@style/match_match">
+
+    <LinearLayout
+        style="@style/Lin_vertical">
+        <Button
+            android:id="@+id/btn_getRootFile"
+            style="@style/Button_alpha"
+            android:text="获取SD卡根目录" />
+        <TextView
+            android:id="@+id/tv_showRootFile"
+            style="@style/TextView_wrap"
+            android:visibility="gone"/>
+        <Button
+            android:id="@+id/btn_new_fileCatalog"
+            style="@style/Button_alpha"
+            android:text="新建一个文件目录" />
+
+        <Button
+            android:id="@+id/btn_new_folder"
+            style="@style/Button_alpha"
+            android:text="创建文件夹" />
+
+        <Button
+            android:id="@+id/btn_new_file"
+            style="@style/Button_alpha"
+            android:text="创建文件" />
+
+        <Button
+            android:id="@+id/btn_file_exist"
+            style="@style/Button_alpha"
+            android:text="判断文件是否存在" />
+
+        <Button
+            android:id="@+id/btn_file_getSize"
+            style="@style/Button_alpha"
+            android:text="获取文件大小" />
+
+        <Button
+            android:id="@+id/btn_file_getName"
+            style="@style/Button_alpha"
+            android:text="获得文件名" />
+
+        <Button
+            android:id="@+id/btn_file_copyName"
+            style="@style/Button_alpha"
+            android:text="复制文件" />
+
+        <Button
+            android:id="@+id/btn_delete_file"
+            style="@style/Button_alpha"
+            android:text="删除文件" />
+    </LinearLayout>
+</ScrollView>

@@ -30,13 +30,14 @@ import static blcs.lwb.lwbtool.utils.camera.RxCrashTool.sdCardIsAvailable;
  * 4、将文件大小显示为GB,MB等形式
  * 5、获得文件名
  * 6、新建一个文件目录
- * 7、保存图片
+ *
  * 8、在指定的位置创建指定的文件
  * 9、在指定的位置创建文件夹
  * 10、删除指定的文件
  * 11、删除指定的文件夹
  * 12、复制文件/文件夹 若要进行文件夹复制，请勿将目标文件夹置于源文件夹中
- * 13、写入文件
+ * 13、获取SD卡根目录
+ * 14、获取本应用图片缓存目录
  */
 public final class FileUtils
 {
@@ -202,36 +203,7 @@ public final class FileUtils
 			file.mkdirs();
 	}
 	public static String SDPATH = Environment.getExternalStorageDirectory() + "/formats/";// 获取文件夹
-	/**
-	 *  7、保存图片
- 	 */
-	public static boolean saveBitmap(Bitmap mBitmap, String path, String imgName) {
-		String sdStatus = Environment.getExternalStorageState();
-		if (!sdStatus.equals(Environment.MEDIA_MOUNTED)) { // 检测sd是否可用
-			return false;
-		}
-		FileOutputStream b = null;
-		File file = new File(path);
-		file.mkdirs();// 创建文件夹
-		String fileName = path + imgName;
-//        delFile(path, imgName);//删除本地旧图
-		try {
-			b = new FileOutputStream(fileName);
-			mBitmap.compress(Bitmap.CompressFormat.JPEG, 100, b);// 把数据写入文件
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				b.flush();
-				b.close();
 
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-
-		}
-		return true;
-	}
 
 	/**
 	 * 8、在指定的位置创建指定的文件
@@ -356,47 +328,8 @@ public final class FileUtils
 	}
 
 
-//	/**
-//	 * 13、写入文件
-//	 *
-//	 * @param file
-//	 * @param info
-//	 * @throws IOException
-//	 */
-//	public static void writeCache(ResponseBody responseBody, File file, DownloadInfo info) throws IOException {
-//		if (!file.getParentFile().exists())
-//			file.getParentFile().mkdirs();
-//		long allLength;
-//		if (info.getContentLength() == 0) {
-//			allLength = responseBody.contentLength();
-//		} else {
-//			allLength = info.getContentLength();
-//		}
-//
-//		FileChannel channelOut = null;
-//		RandomAccessFile randomAccessFile = null;
-//		randomAccessFile = new RandomAccessFile(file, "rwd");
-//		channelOut = randomAccessFile.getChannel();
-//		MappedByteBuffer mappedBuffer = channelOut.map(FileChannel.MapMode.READ_WRITE,
-//				info.getReadLength(), allLength - info.getReadLength());
-//		byte[] buffer = new byte[1024 * 4];
-//		int len;
-//		int record = 0;
-//		while ((len = responseBody.byteStream().read(buffer)) != -1) {
-//			mappedBuffer.put(buffer, 0, len);
-//			record += len;
-//		}
-//		responseBody.byteStream().close();
-//		if (channelOut != null) {
-//			channelOut.close();
-//		}
-//		if (randomAccessFile != null) {
-//			randomAccessFile.close();
-//		}
-//	}
-
 	/**
-	 * 14得到SD卡根目录.
+	 * 13.得到SD卡根目录.
 	 */
 	public static File getRootPath() {
 		File path = null;
@@ -409,9 +342,7 @@ public final class FileUtils
 	}
 
 	/**
-	 * 15获取的目录默认没有最后的”/”,需要自己加上
-	 * 获取本应用图片缓存目录
-	 *
+	 * 14、获取本应用图片缓存目录
 	 * @return
 	 */
 	public static File getCacheFolder(Context context) {
@@ -422,23 +353,4 @@ public final class FileUtils
 		return folder;
 	}
 
-	/**
-	 * 关闭IO
-	 *
-	 * @param closeables closeable
-	 */
-	public static void closeIO(Closeable... closeables) {
-		if (closeables == null) {
-			return;
-		}
-		try {
-			for (Closeable closeable : closeables) {
-				if (closeable != null) {
-					closeable.close();
-				}
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
 }
