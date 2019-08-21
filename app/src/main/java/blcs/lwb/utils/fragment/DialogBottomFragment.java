@@ -134,7 +134,6 @@ public class DialogBottomFragment extends BaseFragment {
                             }
                         }).show(getFragmentManager());
                 break;
-
             case R.id.btn_dialog_custom_loading:
                 comDialog.setType(LinCustomDialogFragment.TYPE_LOADING).show(getFragmentManager());
                 break;

@@ -6,8 +6,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import blcs.lwb.lwbtool.utils.DensityUtils;
 import blcs.lwb.lwbtool.utils.ScreenUtils;
 import blcs.lwb.lwbtool.base.BasePresenter;
+import blcs.lwb.lwbtool.utils.dialog.dialogFragment.LinCustomDialogFragment;
 import blcs.lwb.utils.R;
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -29,10 +31,8 @@ public class ScreenUtilsFragment extends BaseFragment {
     Button btnGetSnapShotWithoutStatusBar;
     @BindView(R.id.btn_getScreenSize)
     Button btnGetScreenSize;
-    @BindView(R.id.img_getSnapShotWithStatusBar)
-    ImageView imgGetSnapShotWithStatusBar;
-    @BindView(R.id.img_getSnapShotWithoutStatusBar)
-    ImageView imgGetSnapShotWithoutStatusBar;
+
+    private LinCustomDialogFragment dialogFragment;
 
 
     @Override
@@ -42,7 +42,7 @@ public class ScreenUtilsFragment extends BaseFragment {
 
     @Override
     protected void initView() {
-
+        dialogFragment = LinCustomDialogFragment.init();
     }
 
     @Override
@@ -79,12 +79,10 @@ public class ScreenUtilsFragment extends BaseFragment {
                 btnGetStatusHeight.setText(getString(R.string.getStatusHeight)+ ScreenUtils.getStatusHeight(activity));
                 break;
             case R.id.btn_getSnapShotWithStatusBar:
-                imgGetSnapShotWithStatusBar.setImageBitmap(ScreenUtils.getSnapShotWithStatusBar(activity));
-                imgGetSnapShotWithStatusBar.setVisibility(View.VISIBLE);
+                dialogFragment.setImage(ScreenUtils.getSnapShotWithStatusBar(activity)).setImagePadding(DensityUtils.dip2px(activity, 50)).setType(LinCustomDialogFragment.TYPE_IMAGE).show(getFragmentManager());
                 break;
             case R.id.btn_getSnapShotWithoutStatusBar:
-                imgGetSnapShotWithoutStatusBar.setImageBitmap(ScreenUtils.getSnapShotWithoutStatusBar(activity));
-                imgGetSnapShotWithoutStatusBar.setVisibility(View.VISIBLE);
+                dialogFragment.setImage(ScreenUtils.getSnapShotWithoutStatusBar(activity)).setImagePadding(DensityUtils.dip2px(activity, 50)).setType(LinCustomDialogFragment.TYPE_IMAGE).show(getFragmentManager());
                 break;
             case R.id.btn_getScreenSize:
                 btnGetScreenSize.setText(getString(R.string.getScreenSize)+ ScreenUtils.getScreenSize(activity));

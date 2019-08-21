@@ -29,23 +29,11 @@
             android:id="@+id/btn_getSnapShotWithStatusBar"
             style="@style/Button_wrap"
             android:text="@string/getSnapShotWithStatusBar"/>
-        <ImageView
-            android:id="@+id/img_getSnapShotWithStatusBar"
-            android:layout_gravity="center_horizontal"
-            android:visibility="gone"
-            android:layout_margin="@dimen/bottom_space"
-            style="@style/wrap_wrap"
-            />
+
         <Button
             android:id="@+id/btn_getSnapShotWithoutStatusBar"
             style="@style/Button_wrap"
             android:text="@string/getSnapShotWithoutStatusBar"/>
-        <ImageView
-            android:id="@+id/img_getSnapShotWithoutStatusBar"
-            android:layout_gravity="center_horizontal"
-            android:visibility="gone"
-            android:layout_margin="@dimen/bottom_space"
-            style="@style/wrap_wrap" />
         <Button
             android:id="@+id/btn_getScreenSize"
             style="@style/Button_wrap"

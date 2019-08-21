@@ -1,5 +1,6 @@
 package blcs.lwb.lwbtool.utils.dialog.dialogFragment;
 
+import android.graphics.Bitmap;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -19,6 +20,8 @@ public class LinCustomDialogFragment extends BaseDialogFragment implements View.
     private static LinCustomDialogFragment customDialogFragment;
 
     private int mipmap;
+    private int size = 0;
+    private Bitmap bitmap = null;
     private String title;
     private String content;
     private int DialogType;
@@ -71,8 +74,13 @@ public class LinCustomDialogFragment extends BaseDialogFragment implements View.
         switch (DialogType) {
             case TYPE_IMAGE:
                 ll_dialog_fragment.setBackgroundColor(getActivity().getResources().getColor(R.color.transparent));
+                iv_dialog_fragment.setPadding(0, size, 0, size);
                 iv_dialog_fragment.setVisibility(View.VISIBLE);
-                iv_dialog_fragment.setImageResource(mipmap);
+                if (bitmap==null){
+                    iv_dialog_fragment.setImageResource(mipmap);
+                }else{
+                    iv_dialog_fragment.setImageBitmap(bitmap);
+                }
                 setGravity(Gravity.CENTER_HORIZONTAL);
                 break;
             case TYPE_SURE:
@@ -101,7 +109,11 @@ public class LinCustomDialogFragment extends BaseDialogFragment implements View.
                 break;
             case TYPE_IMAGE_BIG:
                 rl_dialog_fragment_big.setVisibility(View.VISIBLE);
-                rx_dialog_fragment_big.setImage(ImageSource.resource(mipmap));
+                if(bitmap!=null){
+                    rx_dialog_fragment_big.setImage(ImageSource.bitmap(bitmap));
+                }else{
+                    rx_dialog_fragment_big.setImage(ImageSource.resource(mipmap));
+                }
                 iv_dialog_fragment_close.setOnClickListener(this);
                 setGravity(Gravity.NO_GRAVITY);
                 break;
@@ -122,6 +134,21 @@ public class LinCustomDialogFragment extends BaseDialogFragment implements View.
      */
     public LinCustomDialogFragment setImage(int mipmap) {
         this.mipmap = mipmap;
+        this.bitmap = null;
+        return this;
+    }
+    /**
+     * 设置图片
+     */
+    public LinCustomDialogFragment setImage(Bitmap bitmap) {
+        this.bitmap = bitmap;
+        return this;
+    }
+    /**
+     * 设置图片padding
+     */
+    public LinCustomDialogFragment setImagePadding(int size) {
+        this.size = size;
         return this;
     }
 
