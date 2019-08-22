@@ -151,4 +151,10 @@ public abstract class BaseFragment extends RxFragment implements IPopBackStackLi
     public void addFrament(String alias, Bundle bundle) {
         fragmentManager.addFrament(R.id.fr_contain, activity, alias, bundle, true);
     }
+
+    public void addFrament(String alias,String fragmentTitle) {
+        Bundle bundle = new Bundle();
+        bundle.putString(Constants.Item_Name,fragmentTitle);
+        fragmentManager.addFrament(R.id.fr_contain, activity, alias, bundle, true);
+    }
 }

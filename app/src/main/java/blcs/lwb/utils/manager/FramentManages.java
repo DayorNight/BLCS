@@ -35,7 +35,11 @@ import blcs.lwb.utils.fragment.IntentUtilsFragment;
 import blcs.lwb.utils.fragment.JavaDesignPatternFragment;
 import blcs.lwb.utils.fragment.LabelListFragment;
 import blcs.lwb.utils.fragment.LeakCanaryFragment;
+import blcs.lwb.utils.fragment.LinCleanDataFragment;
+import blcs.lwb.utils.fragment.LinCommonFragment;
+import blcs.lwb.utils.fragment.LinCountyFragment;
 import blcs.lwb.utils.fragment.LinViewFragment;
+import blcs.lwb.utils.fragment.ListFragment;
 import blcs.lwb.utils.fragment.LoupeViewFragment;
 import blcs.lwb.utils.fragment.MagicIndicator.BadgeTabFragment;
 import blcs.lwb.utils.fragment.MagicIndicator.CustomNavigatorFragment;
@@ -85,6 +89,7 @@ public class FramentManages {
      * 片段名
      */
     public final static String Demo = "我的片段";
+    public final static String ListDemo = "ListFragment";
     public final static String String_Utils = "StringUtils";
     public final static String EditText_Utils = "EditTextUtils";
     public final static String Intent_Utils = "IntentUtils";
@@ -149,6 +154,9 @@ public class FramentManages {
     public final static String PopupWindow = "PopupWindow";
     public final static String LoupeView = "放大镜";
     public final static String ScratchCardView = "刮刮卡";
+    public final static String LinCommon = "LinCommon";
+    public final static String LinCleanData = "LinCleanData";
+    public final static String LinCounty = "地区选择";
 
     /**
      * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -164,6 +172,8 @@ public class FramentManages {
                 return null;
             case FramentManages.Demo:
                 return new MyFragment();
+            case FramentManages.ListDemo:
+                return new ListFragment();
             case FramentManages.String_Utils:
                 return new StringUtilsFragment();
             case FramentManages.EditText_Utils:
@@ -288,6 +298,12 @@ public class FramentManages {
                 return new LoupeViewFragment();
             case FramentManages.ScratchCardView:
                 return new ScratchCardViewFragment();
+            case FramentManages.LinCommon:
+                return new LinCommonFragment();
+            case FramentManages.LinCleanData:
+                return new LinCleanDataFragment();
+            case FramentManages.LinCounty:
+                return new LinCountyFragment();
 
 //			case FramentManages.UtilsDetail://工具详情界面
 //				return new HomeTab1DetailFragment();

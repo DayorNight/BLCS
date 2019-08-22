@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/match_wrap"
+    android:background="@mipmap/ic4">
+    <LinearLayout style="@style/Lin_vertical">
+        <Button
+            android:id="@+id/btn_get_allCache"
+            style="@style/Button_alpha"
+            android:text="获取所有的缓存数据"/>
+        <Button
+            android:id="@+id/btn_clean_allCache"
+            style="@style/Button_alpha"
+            android:text="清除所有缓存"/>
+        <Button
+            android:id="@+id/btn_clean_appData"
+            style="@style/Button_alpha"
+            android:text="清除本应用内部缓存"/>
+        <Button
+            android:id="@+id/btn_clean_dataBases"
+            style="@style/Button_alpha"
+            android:text="清除本应用全部数据库"/>
+        <Button
+            android:id="@+id/btn_clean_sp"
+            style="@style/Button_alpha"
+            android:text="清除本应用SharedPreference"/>
+        <Button
+            android:id="@+id/btn_clean_dataBases_name"
+            style="@style/Button_alpha"
+            android:text="按名字清除本应用数据库"/>
+        <Button
+            android:id="@+id/btn_clean_content"
+            style="@style/Button_alpha"
+            android:text="清除/data/data/com.xxx.xxx/files下的内容"/>
+        <Button
+            android:id="@+id/btn_clean_cache_content"
+            style="@style/Button_alpha"
+            android:text="清除外部cache下的内容"/>
+        <Button
+            android:id="@+id/btn_clean_custom_file"
+            style="@style/Button_alpha"
+            android:text="清除自己定义路径下的文件"/>
+        <Button
+            android:id="@+id/btn_clean_alldata"
+            style="@style/Button_alpha"
+            android:text="清除本应用全部的数据"/>
+    </LinearLayout>
+</ScrollView>

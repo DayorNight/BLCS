@@ -2,6 +2,7 @@ package blcs.lwb.lwbtool.utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
@@ -11,8 +12,10 @@ import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.ThumbnailUtils;
+import android.net.Uri;
 import android.os.Environment;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 
 import java.io.ByteArrayOutputStream;
@@ -22,6 +25,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.lang.ref.WeakReference;
+
+import static com.chad.library.adapter.base.listener.SimpleClickListener.TAG;
 
 /**
  * TODO 图片处理工具类
@@ -39,9 +44,11 @@ import java.lang.ref.WeakReference;
  * 12、获取指定大小的Bitmap对象
  * 13、将压缩的bitmap保存到SDCard卡临时文件夹，用于上传
  * 14、保存图片
+ * 145、保存照片到SD卡上面
  */
 public class BitmapUtils
 {
+	private static final String TAG = "BitmapUtils";
 	/**
 	 * 1、Bitmap转化为Drawable
 	 */
@@ -150,7 +157,32 @@ public class BitmapUtils
 		Bitmap newbm = Bitmap.createBitmap(bm, 0, 0, width, height, matrix, true);
 		return newbm;
 	}
+	/**TODO 照片裁剪
+	 * @param context
+	 * @param requestCode
+	 * @param fileUri
+	 * @param width
+	 * @param height
+	 */
+	public static void startPhotoZoom(Activity context, int requestCode, Uri fileUri, int width, int height) {
+		 Intent intent = new Intent("com.android.camera.action.CROP");
+		intent.setDataAndType(fileUri, "image/*");
+		// crop为true是设置在开启的intent中设置显示的view可以剪裁
+		intent.putExtra("crop", "true");
 
+		// aspectX aspectY 是宽高的比例
+		intent.putExtra("aspectX", 1);
+		intent.putExtra("aspectY", 1);
+
+		// outputX,outputY 是剪裁图片的宽高
+		intent.putExtra("outputX", width);
+		intent.putExtra("outputY", height);
+		intent.putExtra("return-data", true);
+		IntentUtils.toActivity(context, intent, requestCode);
+	}
+	public static void startPhotoZoom(Activity context, int requestCode, String path, int width, int height) {
+		startPhotoZoom(context, requestCode, Uri.fromFile(new File(path)), width, height);
+	}
 	/**
 	 *  9、获得本地的图片
 	 * @param url
@@ -296,5 +328,58 @@ public class BitmapUtils
 
 		}
 		return true;
+	}
+
+	/**TODO 保存照片到SD卡上面
+	 * @param path
+	 * @param photoName
+	 * @param formSuffix
+	 * @param photoBitmap
+	 */
+	public static String savePhotoToSDCard(String path, String photoName, String formSuffix, Bitmap photoBitmap) {
+		if (photoBitmap == null || StringUtils.isNotEmpty(path, true) == false
+				|| StringUtils.isNotEmpty(StringUtils.getTrimedString(photoName)
+				+ StringUtils.getTrimedString(formSuffix), true) == false) {
+			Log.e(TAG, "savePhotoToSDCard photoBitmap == null || StringUtils.isNotEmpty(path, true) == false" +
+					"|| StringUtils.isNotEmpty(photoName, true) == false) >> return null" );
+			return null;
+		}
+
+		if (android.os.Environment.getExternalStorageState().equals(
+				android.os.Environment.MEDIA_MOUNTED)) {
+			File dir = new File(path);
+			if (!dir.exists()) {
+				dir.mkdirs();
+			}
+			File photoFile = new File(path, photoName + "." + formSuffix); // 在指定路径下创建文件
+			FileOutputStream fileOutputStream = null;
+			try {
+				fileOutputStream = new FileOutputStream(photoFile);
+				if (photoBitmap != null) {
+					if (photoBitmap.compress(Bitmap.CompressFormat.JPEG, 100,
+							fileOutputStream)) {
+						fileOutputStream.flush();
+						Log.i(TAG, "savePhotoToSDCard<<<<<<<<<<<<<<\n" + photoFile.getAbsolutePath() + "\n>>>>>>>>> succeed!");
+					}
+				}
+			} catch (FileNotFoundException e) {
+				Log.e(TAG, "savePhotoToSDCard catch (FileNotFoundException e) {\n " + e.getMessage());
+				photoFile.delete();
+				//				e.printStackTrace();
+			} catch (IOException e) {
+				Log.e(TAG, "savePhotoToSDCard catch (IOException e) {\n " + e.getMessage());
+				photoFile.delete();
+				//				e.printStackTrace();
+			} finally {
+				try {
+					fileOutputStream.close();
+				} catch (IOException e) {
+					Log.e(TAG, "savePhotoToSDCard } catch (IOException e) {\n " + e.getMessage());
+					//					e.printStackTrace();
+				}
+			}
+			return photoFile.getAbsolutePath();
+		}
+		return null;
 	}
 }

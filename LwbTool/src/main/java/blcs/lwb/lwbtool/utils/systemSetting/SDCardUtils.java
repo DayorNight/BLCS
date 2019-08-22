@@ -9,7 +9,7 @@ import java.io.File;
 /**
  * TODO SD卡相关的辅助类
  * @author CPC
- * 1判断SDCard是否可用
+ * 1判断SDCard是否可用/检测Sdcard是否存在
  * 2获取SD卡路径
  * 3获取SD卡的剩余容量 单位byte
  * 4获取指定路径所在空间的剩余可用容量字节数，单位byte
@@ -40,6 +40,13 @@ public class SDCardUtils
         return Environment.getExternalStorageState().equals(
                 Environment.MEDIA_MOUNTED);
 
+    }
+    /**
+     * TODO 检测Sdcard是否存在
+     * @return
+     */
+    public static boolean isExitsSdcard() {
+        return android.os.Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED);
     }
 
     /**

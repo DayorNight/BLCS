@@ -26,6 +26,7 @@ public class LinPermission {
     public static final int CODE_STORAGE = 7;//文件操作
     public static final int CODE_SMS = 8;//短信操作
     public static final int APN_SETTINGS = 9;//短信操作
+    public static final int CALL_PHONE = 10;//打电话
     public static final int RequestCode_Permission = 100;
 
     private static final String[] requestPermissions = {
@@ -39,7 +40,8 @@ public class LinPermission {
 //            Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
             Manifest.permission.SEND_SMS,
-            Manifest.permission.WRITE_APN_SETTINGS
+            Manifest.permission.WRITE_APN_SETTINGS,
+            Manifest.permission.CALL_PHONE
     };
 
     /**

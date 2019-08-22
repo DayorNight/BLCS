@@ -1,4 +1,4 @@
-package blcs.lwb.lwbtool.utils;
+package blcs.lwb.lwbtool.utils.crash;
 
 import android.content.Context;
 import android.content.pm.PackageInfo;
@@ -20,6 +20,7 @@ import java.util.Map;
 import java.util.TreeSet;
 
 import blcs.lwb.lwbtool.manager.AppManager;
+import blcs.lwb.lwbtool.utils.LogUtils;
 
 /**
  * 全局异常捕获类
@@ -89,7 +90,6 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
             //退出程序
             AppManager.getAppManager().AppExit(mContext);
         }
-
     }
 
     /**

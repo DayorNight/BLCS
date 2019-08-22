@@ -1,5 +1,6 @@
 package blcs.lwb.lwbtool.utils;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Environment;
@@ -30,22 +31,22 @@ import static blcs.lwb.lwbtool.utils.camera.RxCrashTool.sdCardIsAvailable;
  * 4、将文件大小显示为GB,MB等形式
  * 5、获得文件名
  * 6、新建一个文件目录
- *
+ * 7、获取本应用图片缓存目录
  * 8、在指定的位置创建指定的文件
  * 9、在指定的位置创建文件夹
  * 10、删除指定的文件
  * 11、删除指定的文件夹
  * 12、复制文件/文件夹 若要进行文件夹复制，请勿将目标文件夹置于源文件夹中
  * 13、获取SD卡根目录
- * 14、获取本应用图片缓存目录
  */
 public final class FileUtils
 {
 	public static long fileLen = 0;
-	private static final String SDCARD_ROOT = Environment.getExternalStorageDirectory().getAbsolutePath() + "/";
-	public static final String FILE_ROOT = SDCARD_ROOT + "animetaste/download/";
+	public static final String SDCARD_ROOT = Environment.getExternalStorageDirectory().getAbsolutePath() + "/";
+	public static final String FILE_ROOT = SDCARD_ROOT + "Blcs/";
+	public static final String FILE = SDCARD_ROOT + "A_Blcs";
 	private static final long LOW_STORAGE_THRESHOLD = 1024 * 1024 * 10;
-
+	public static String SDPATH = Environment.getExternalStorageDirectory() + "/formats/";// 获取文件夹
 	/**
 	 * 1、删除文件/文件夹，如果是文件夹，会连同他的子目录一起删除
 	 * @param filePath 文件路径
@@ -75,6 +76,16 @@ public final class FileUtils
 		}
 	}
 
+	/**
+	 * 14.删除文件 这里仅仅会删除某个文件夹下的文件，假设传入的directory是个文件，将不做处理
+     */
+	public static void deleteFilesByDirectory(File directory) {
+		if (directory != null && directory.exists() && directory.isDirectory()) {
+			for (File item : directory.listFiles()) {
+				item.delete();
+			}
+		}
+	}
 	/**
 	 * 2、获得文件或者文件夹中文件的大小
 	 * 
@@ -109,10 +120,6 @@ public final class FileUtils
 			}
 		}
 		return fileLen;
-	}
-
-	private FileUtils()
-	{
 	}
 
 	/**
@@ -196,13 +203,19 @@ public final class FileUtils
 	 *  6、新建一个文件目录
 	 * @throws IOException
 	 */
-	public static void mkdir() throws IOException
+	public static void mkdir(Activity context) throws IOException
 	{
 		File file = new File(FILE_ROOT);
-		if (!file.exists() || !file.isDirectory())
+		if (file.exists()){
+			RxToast.error(context, "文件已存在");
+			return;
+		}
+
+		if (!file.isDirectory())
 			file.mkdirs();
+
+		RxToast.error(context, "文件创建成功");
 	}
-	public static String SDPATH = Environment.getExternalStorageDirectory() + "/formats/";// 获取文件夹
 
 
 	/**
@@ -329,7 +342,7 @@ public final class FileUtils
 
 
 	/**
-	 * 13.得到SD卡根目录.
+	 * 13.SD卡根目录.
 	 */
 	public static File getRootPath() {
 		File path = null;

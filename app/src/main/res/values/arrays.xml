@@ -16,6 +16,8 @@
         <item>ScreenUtils</item>
         <item>LinView</item>
         <item>FileUtils</item>
+        <item>LinCommon</item>
+        <item>LinCleanData</item>
     </string-array>
     <!--View-->
     <string-array name="View">

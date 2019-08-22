@@ -4,19 +4,29 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import blcs.lwb.lwbtool.base.BasePresenter;
+import blcs.lwb.lwbtool.retrofit.RxHelper;
+import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.utils.bean.HomeItem;
 import blcs.lwb.utils.Constants;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.adapter.RecyclerAdapter;
 import blcs.lwb.utils.utils.MyUtils;
 import butterknife.BindView;
+import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
 
 public class RecyclerViewFragment extends BaseFragment {
 
@@ -42,9 +52,7 @@ public class RecyclerViewFragment extends BaseFragment {
         mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                Bundle bundle = new Bundle();
-                bundle.putString(Constants.Item_Name,titles.get(position));
-                addFrament(fragment.get(position),bundle);
+                addFrament(fragment.get(position), titles.get(position));
             }
         });
 
@@ -52,26 +60,25 @@ public class RecyclerViewFragment extends BaseFragment {
     }
 
     private void initData() {
-        new Thread(new Runnable() {
+
+        Observable.create(new ObservableOnSubscribe<List<HomeItem>>() {
             @Override
-            public void run() {
+            public void subscribe(ObservableEmitter<List<HomeItem>> observableEmitter) throws Exception {
                 fragment = MyUtils.getArray(activity, R.array.Recycler_fragment);
                 titles = MyUtils.getArray(activity, R.array.Recycler_title);
                 ArrayList<String> images = MyUtils.getArray(activity, R.array.Recycler_Image);
                 for (int i = 0; i < titles.size(); i++) {
                     int mipmap = activity.getResources().getIdentifier(images.get(i), "mipmap", activity.getPackageName());
-                    mDataList.add(new HomeItem(titles.get(i),mipmap));
+                    mDataList.add(new HomeItem(titles.get(i), mipmap));
                 }
-                //刷新UI
-                recyclerView.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        if(mAdapter!=null) mAdapter.setNewData(mDataList);
-                    }
-                });
+                observableEmitter.onNext(mDataList);
             }
-        }).start();
-
+        }).compose(RxHelper.observableIO2Main(this)).subscribe(new Consumer<List<HomeItem>>() {
+            @Override
+            public void accept(List<HomeItem> s) throws Exception {
+                if (mAdapter != null) mAdapter.setNewData(s);
+            }
+        });
     }
 
     @Override

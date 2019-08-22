@@ -11,16 +11,22 @@ import blcs.lwb.lwbtool.bean.AllCityBean;
 import blcs.lwb.lwbtool.bean.CityPickerBean;
 import blcs.lwb.lwbtool.bean.CountryBean;
 
+/**
+ * 获取国家名称
+ * 获取省份
+ * 根据省份获取市区
+ * 获取县
+ * 获取三级联动数据
+ */
 public class LinCountry {
 
     /**
-     * 获取国家
+     * 获取国家名称
      */
     public static List<CountryBean> getCountry(Context context) {
         String json = MyUtils.getJson(context, "country.json");
         return JSON.parseArray(json, CountryBean.class);
     }
-
 
     /**
      * 获取省份

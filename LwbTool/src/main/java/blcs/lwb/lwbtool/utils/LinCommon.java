@@ -49,7 +49,6 @@ import blcs.lwb.lwbtool.R;
  * 5、发送邮件
  * 6、打开网站
  * 7、复制文字
- * 8、启动新Activity方法，向左滑入效果
  * 9、显示与关闭进度弹窗方法
  * 10、快捷显示short toast方法，
  * 11、照片裁剪
@@ -57,33 +56,48 @@ import blcs.lwb.lwbtool.R;
  * 13、检测网络是否可用
  * 14、检测Sdcard是否存在
  * 15、获取顶层 Activity
- * 16、检查是否有位置权限
- * 17、检查是否有权限
  * 18、自定义显示Toast时间
  * 19、定制Toast的布局显示
  */
-public class CommonUtil {
-	private static final String TAG = "CommonUtil";
+public class LinCommon {
+	private static final String TAG = "LinCommon";
 
-	public CommonUtil() {/* 不能实例化**/}
+	public LinCommon() {/* 不能实例化**/}
 
 	private static Intent intent = null;
 
 	//电话<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 	/** TODO 打电话
 	 * @param context
 	 * @param phone
 	 */
 	public static void call(Activity context, String phone) {
-		if (StringUtils.isNotEmpty(phone, true)) {
-			Uri uri = Uri.parse("tel:" + phone.trim());
-			intent  = new Intent(Intent.ACTION_CALL, uri);
-			IntentUtils.toActivity(context, intent);
-			return;
+		if(LinPermission.checkPermission(context, 10)){
+			if (StringUtils.isPhone(phone)) {
+				Uri uri = Uri.parse("tel:" + phone.trim());
+				intent  = new Intent(Intent.ACTION_CALL, uri);
+				IntentUtils.toActivity(context, intent);
+				return;
+			}else{
+				showShortToast(context, "请输入正确的电话号码");
+			}
+		}else{
+			LinPermission.requestPermission(context, 10);
 		}
-		showShortToast(context, "请先选择号码哦~");
 	}
 
+	/**
+	 * 跳转打电话界面
+	 * @param context
+	 * @param phone
+	 */
+	public static void callPhone(Activity context,String phone) {
+		Intent intent = new Intent(Intent.ACTION_DIAL);
+		Uri data = Uri.parse("tel:" + phone);
+		intent.setData(data);
+		IntentUtils.toActivity(context, intent);
+	}
 	//电话>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 	//信息<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -110,7 +124,7 @@ public class CommonUtil {
 	 * @param phone
 	 */
 	public static void toMessageChat(Activity context, String phone){
-		if (context == null || StringUtils.isNotEmpty(phone, true) == false) {
+		if (context == null || !StringUtils.isPhone(phone)) {
 			Log.e(TAG, "sendMessage  context == null || StringUtils.isNotEmpty(phone, true) == false) >> return;");
 			return;
 		}
@@ -146,15 +160,14 @@ public class CommonUtil {
 	 * @param context
 	 * @param emailAddress
 	 */
-	public static void sendEmail(Activity context, String emailAddress) {
-		if (context == null || StringUtils.isNotEmpty(emailAddress, true) == false) {
-			Log.e(TAG, "sendEmail  context == null || StringUtils.isNotEmpty(emailAddress, true) == false >> return;");
-			return;
-		}
-
-		intent = new Intent(Intent.ACTION_SENDTO); 
+	public static void sendEmail(Activity context, String emailAddress,String content) {
+		if(!StringUtils.isEmail(emailAddress)){
+		    showShortToast(context, "请输入正确的邮箱");
+		    return;
+        }
+		intent = new Intent(Intent.ACTION_SENDTO);
 		intent.setData(Uri.parse("mailto:"+ emailAddress));//缺少"mailto:"前缀导致找不到应用崩溃
-		intent.putExtra(Intent.EXTRA_TEXT, "内容");  //最近在MIUI7上无内容导致无法跳到编辑邮箱界面
+		intent.putExtra(Intent.EXTRA_TEXT, content);  //最近在MIUI7上无内容导致无法跳到编辑邮箱界面
 		IntentUtils.toActivity(context, intent, -1);
 	}
 	
@@ -209,7 +222,7 @@ public class CommonUtil {
 	/**TODO 展示加载进度条,无标题
 	 * @param dialogMessage
 	 */
-	public void showProgressDialog(Activity context, String dialogMessage){
+	public static void showProgressDialog(Activity context, String dialogMessage){
 		showProgressDialog(context, null, dialogMessage);
 	}
 	/**TODO 展示加载进度条
@@ -289,118 +302,6 @@ public class CommonUtil {
 	//show short toast 方法>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
-
-
-	public static void startPhotoZoom(Activity context, int requestCode, String path, int width, int height) {
-		startPhotoZoom(context, requestCode, Uri.fromFile(new File(path)), width, height);
-	}
-	/**TODO 照片裁剪
-	 * @param context
-	 * @param requestCode
-	 * @param fileUri
-	 * @param width
-	 * @param height
-	 */
-	public static void startPhotoZoom(Activity context, int requestCode, Uri fileUri, int width, int height) {
-		intent = new Intent("com.android.camera.action.CROP");
-		intent.setDataAndType(fileUri, "image/*");
-		// crop为true是设置在开启的intent中设置显示的view可以剪裁
-		intent.putExtra("crop", "true");
-
-		// aspectX aspectY 是宽高的比例
-		intent.putExtra("aspectX", 1);
-		intent.putExtra("aspectY", 1);
-
-		// outputX,outputY 是剪裁图片的宽高
-		intent.putExtra("outputX", width);
-		intent.putExtra("outputY", height);
-		intent.putExtra("return-data", true);
-		Log.i(TAG, "startPhotoZoom"+ fileUri +" uri");
-		IntentUtils.toActivity(context, intent, requestCode);
-	}
-
-	/**TODO 保存照片到SD卡上面
-	 * @param path
-	 * @param photoName
-	 * @param formSuffix 
-	 * @param photoBitmap
-	 */
-	public static String savePhotoToSDCard(String path, String photoName, String formSuffix, Bitmap photoBitmap) {
-		if (photoBitmap == null || StringUtils.isNotEmpty(path, true) == false 
-				|| StringUtils.isNotEmpty(StringUtils.getTrimedString(photoName)
-						+ StringUtils.getTrimedString(formSuffix), true) == false) {
-			Log.e(TAG, "savePhotoToSDCard photoBitmap == null || StringUtils.isNotEmpty(path, true) == false" +
-					"|| StringUtils.isNotEmpty(photoName, true) == false) >> return null" );
-			return null;
-		}
-
-		if (android.os.Environment.getExternalStorageState().equals(
-				android.os.Environment.MEDIA_MOUNTED)) {
-			File dir = new File(path);
-			if (!dir.exists()) {
-				dir.mkdirs();
-			}
-			File photoFile = new File(path, photoName + "." + formSuffix); // 在指定路径下创建文件
-			FileOutputStream fileOutputStream = null;
-			try {
-				fileOutputStream = new FileOutputStream(photoFile);
-				if (photoBitmap != null) {
-					if (photoBitmap.compress(Bitmap.CompressFormat.JPEG, 100,
-							fileOutputStream)) {
-						fileOutputStream.flush();
-						Log.i(TAG, "savePhotoToSDCard<<<<<<<<<<<<<<\n" + photoFile.getAbsolutePath() + "\n>>>>>>>>> succeed!");
-					}
-				}
-			} catch (FileNotFoundException e) {
-				Log.e(TAG, "savePhotoToSDCard catch (FileNotFoundException e) {\n " + e.getMessage());
-				photoFile.delete();
-				//				e.printStackTrace();
-			} catch (IOException e) {
-				Log.e(TAG, "savePhotoToSDCard catch (IOException e) {\n " + e.getMessage());
-				photoFile.delete();
-				//				e.printStackTrace();
-			} finally {
-				try {
-					fileOutputStream.close();
-				} catch (IOException e) {
-					Log.e(TAG, "savePhotoToSDCard } catch (IOException e) {\n " + e.getMessage());
-					//					e.printStackTrace();
-				}
-			}
-			return photoFile.getAbsolutePath();
-		}
-		return null;
-	}
-
-
-
-	/**
-	 * TODO 检测网络是否可用
-	 * 
-	 * @param context
-	 * @return
-	 */
-	public static boolean isNetWorkConnected(Context context) {
-		if (context != null) {
-			ConnectivityManager mConnectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-			NetworkInfo mNetworkInfo = mConnectivityManager.getActiveNetworkInfo();
-			if (mNetworkInfo != null) {
-				return mNetworkInfo.isAvailable();
-			}
-		}
-
-		return false;
-	}
-
-	/**
-	 * TODO 检测Sdcard是否存在
-	 * 
-	 * @return
-	 */
-	public static boolean isExitsSdcard() {
-		return android.os.Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED);
-	}
-
 	/**TODO 获取顶层 Activity
 	 * @param context
 	 * @return
@@ -411,39 +312,6 @@ public class CommonUtil {
         List<RunningTaskInfo> runningTaskInfos = manager.getRunningTasks(1);
 
 		return runningTaskInfos == null ? "" : runningTaskInfos.get(0).topActivity.getClassName();
-	}
-
-
-	/**TODO 检查是否有位置权限
-	 * @param context
-	 * @return
-	 */
-	public static boolean isHasLocationPermission(Context context){
-		return isHasPermission(context, "android.permission.ACCESS_COARSE_LOCATION") || isHasPermission(context, "android.permission.ACCESS_FINE_LOCATION");
-	}
-	/**TODO 检查是否有权限
-	 * @param context
-	 * @param name
-	 * @return
-	 */
-	public static boolean isHasPermission(Context context, String name){
-		try {
-			return PackageManager.PERMISSION_GRANTED == context.getPackageManager().checkPermission(name, context.getPackageName());
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		return false;
-	}
-
-	/**
-	 * TODO 自定义显示Toast时间
-	 * @param context 上下文
-	 * @param message 显示消息
-	 * @param duration 显示时间
-	 */
-	public static void show(Context context, CharSequence message, int duration)
-	{
-			Toast.makeText(context, message, duration).show();
 	}
 
 	private static Toast toast;
@@ -464,7 +332,7 @@ public class CommonUtil {
 		View view = LayoutInflater.from(context).inflate(layout, null);
 		// toast.setBackground();
 		toast.setView(view);
-		toast.setGravity(Gravity.TOP, 0, 60);
+		toast.setGravity(Gravity.BOTTOM, 0, 60);
 		toast.setDuration(Toast.LENGTH_LONG);
 		toast.show();
 	}

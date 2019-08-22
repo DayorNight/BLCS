@@ -5,15 +5,22 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.io.File;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.lwbtool.utils.FileUtils;
 import blcs.lwb.lwbtool.utils.LinDownloadAPk;
 import blcs.lwb.lwbtool.utils.LogUtils;
+import blcs.lwb.lwbtool.utils.RxToast;
 import blcs.lwb.utils.R;
+import blcs.lwb.utils.manager.FramentManages;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -21,9 +28,8 @@ import butterknife.Unbinder;
 
 public class FileUtilsFragment extends BaseFragment {
 
-    @BindView(R.id.tv_showRootFile)
-    TextView tv_showRootFile;
-
+    @BindView(R.id.btn_file_getSize)
+    Button btn_file_getSize;
     @Override
     protected int bindLayout() {
         return R.layout.fragment_file_utils;
@@ -46,30 +52,32 @@ public class FileUtilsFragment extends BaseFragment {
 
     }
 
-    @OnClick({R.id.btn_getRootFile, R.id.btn_new_fileCatalog, R.id.btn_new_folder, R.id.btn_new_file, R.id.btn_file_exist,
-            R.id.btn_file_getSize, R.id.btn_file_getName, R.id.btn_file_copyName, R.id.btn_delete_file})
+    @OnClick({R.id.btn_getRootFile, R.id.btn_new_fileCatalog, R.id.btn_new_file,
+            R.id.btn_file_getSize, R.id.btn_delete_file})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_getRootFile://获取SD卡根目录
-                LogUtils.e(FileUtils.getRootPath()+"  "+FileUtils.getRootPath().getPath());
-                tv_showRootFile.setVisibility(View.VISIBLE);
-                tv_showRootFile.setText(FileUtils.getRootPath().getName());
+                addFrament(FramentManages.ListDemo, "手机存储");
                 break;
             case R.id.btn_new_fileCatalog://新建一个文件目录
-                break;
-            case R.id.btn_new_folder://创建一个文件夹
+                try {
+                    FileUtils.mkdir(activity);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 break;
             case R.id.btn_new_file://创建一个文件
-                break;
-            case R.id.btn_file_exist://判断文件是否存在
+                FileUtils.mkDir(FileUtils.FILE);
+                RxToast.success(activity, "文件创建成功");
                 break;
             case R.id.btn_file_getSize://获取文件大小
-                break;
-            case R.id.btn_file_getName://获得文件名
-                break;
-            case R.id.btn_file_copyName://复制文件
+                String size = FileUtils.size(new File(FileUtils.SDCARD_ROOT + "Android"));
+                btn_file_getSize.setText("获取文件大小: "+size);
                 break;
             case R.id.btn_delete_file://删除文件
+                boolean b = FileUtils.delFile(FileUtils.FILE);
+                if(b) RxToast.success(activity, "删除成功");
+                else RxToast.error(activity, "删除失败");
                 break;
         }
     }

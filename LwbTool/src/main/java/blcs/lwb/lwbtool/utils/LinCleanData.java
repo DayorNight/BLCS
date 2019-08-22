@@ -9,9 +9,7 @@ import java.math.BigDecimal;
 /**
  * 清除缓存/数据
  * 1.获取所有的缓存数据
- * 2.获取文件大小
  * 3.清除所有缓存
- * 4.删除文件
  * 5.单位格式化
  * 6.清除本应用内部缓存(/data/data/com.xxx.xxx/cache)
  * 7.清除本应用全部数据库(/data/data/com.xxx.xxx/databases)
@@ -21,70 +19,27 @@ import java.math.BigDecimal;
  * 11.清除外部cache下的内容(/mnt/sdcard/android/data/com.xxx.xxx/cache)
  * 12.清除自己定义路径下的文件。使用需小心。请不要误删。并且仅仅支持文件夹下的文件删除
  * 13.清除本应用全部的数据
- * 14.删除方法 这里仅仅会删除某个文件夹下的文件，假设传入的directory是个文件，将不做处理
  */
 public class LinCleanData {
     /**
      * 1.获取所有的缓存数据
      */
-    public static String getAllCacheSize(Context context) throws Exception {
-        long cacheSize = getFolderSize(context.getCacheDir());
+    public static String getAllCacheSize(Context context) {
+        long cacheSize = FileUtils.getFileLen(context.getCacheDir());
         if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
-            cacheSize += getFolderSize(context.getExternalCacheDir());
+            cacheSize += FileUtils.getFileLen(context.getExternalCacheDir());
         }
         return getFormatSize(cacheSize);
-    }
-
-    /**
-     *  2.获取文件大小
-     *   Context.getExternalFilesDir() --> SDCard/Android/data/你的应用的包名/files/ 文件夹，一般放一些长时间保存的数据
-     *   Context.getExternalCacheDir() --> SDCard/Android/data/你的应用包名/cache/文件夹，一般存放暂时缓存数据
-     */
-    public static long getFolderSize(File file) throws Exception {
-        long size = 0;
-        try {
-            File[] fileList = file.listFiles();
-            for (int i = 0; i < fileList.length; i++) {
-                // 假设以下还有文件
-                if (fileList[i].isDirectory()) {
-                    size = size + getFolderSize(fileList[i]);
-                } else {
-                    size = size + fileList[i].length();
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return size;
     }
 
     /**
      * 3.清除所有缓存
      */
     public static void clearAllCache(Context context) {
-        deleteDir(context.getCacheDir());
+        FileUtils.delFilesFromPath(context.getCacheDir());
         if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
-            deleteDir(context.getExternalCacheDir());
+            FileUtils.delFilesFromPath(context.getExternalCacheDir());
         }
-    }
-
-    /**
-     * 4.删除文件
-     */
-    private static boolean deleteDir(File dir) {
-        if(dir == null){
-            return false;
-        }
-        if (dir != null && dir.isDirectory()) {
-            String[] children = dir.list();
-            for (int i = 0; i < children.length; i++) {
-                boolean success = deleteDir(new File(dir, children[i]));
-                if (!success) {
-                    return false;
-                }
-            }
-        }
-        return dir.delete();
     }
 
     /**
@@ -126,14 +81,14 @@ public class LinCleanData {
      *  6.清除本应用内部缓存(/data/data/com.xxx.xxx/cache)
      */
     public static void cleanInternalCache(Context context) {
-        deleteFilesByDirectory(context.getCacheDir());
+        FileUtils.deleteFilesByDirectory(context.getCacheDir());
     }
 
     /**
      *  7.清除本应用全部数据库(/data/data/com.xxx.xxx/databases)
      */
     public static void cleanDatabases(Context context) {
-        deleteFilesByDirectory(new File("/data/data/"
+        FileUtils.deleteFilesByDirectory(new File("/data/data/"
                 + context.getPackageName() + "/databases"));
     }
 
@@ -141,7 +96,7 @@ public class LinCleanData {
      * 8.清除本应用SharedPreference(/data/data/com.xxx.xxx/shared_prefs)
      */
     public static void cleanSharedPreference(Context context) {
-        deleteFilesByDirectory(new File("/data/data/"
+        FileUtils.deleteFilesByDirectory(new File("/data/data/"
                 + context.getPackageName() + "/shared_prefs"));
     }
 
@@ -156,7 +111,7 @@ public class LinCleanData {
      *  10.清除/data/data/com.xxx.xxx/files下的内容
      */
     public static void cleanFiles(Context context) {
-        deleteFilesByDirectory(context.getFilesDir());
+        FileUtils.deleteFilesByDirectory(context.getFilesDir());
     }
 
     /**
@@ -165,7 +120,7 @@ public class LinCleanData {
     public static void cleanExternalCache(Context context) {
         if (Environment.getExternalStorageState().equals(
                 Environment.MEDIA_MOUNTED)) {
-            deleteFilesByDirectory(context.getExternalCacheDir());
+            FileUtils.deleteFilesByDirectory(context.getExternalCacheDir());
         }
     }
 
@@ -173,7 +128,7 @@ public class LinCleanData {
      * 12.清除自己定义路径下的文件。使用需小心。请不要误删。并且仅仅支持文件夹下的文件删除
      */
     public static void cleanCustomCache(String filePath) {
-        deleteFilesByDirectory(new File(filePath));
+        FileUtils.deleteFilesByDirectory(new File(filePath));
     }
 
     /**
@@ -190,14 +145,4 @@ public class LinCleanData {
         }
     }
 
-    /**
-     * 14.删除方法 这里仅仅会删除某个文件夹下的文件，假设传入的directory是个文件，将不做处理
-     */
-    private static void deleteFilesByDirectory(File directory) {
-        if (directory != null && directory.exists() && directory.isDirectory()) {
-            for (File item : directory.listFiles()) {
-                item.delete();
-            }
-        }
-    }
 }

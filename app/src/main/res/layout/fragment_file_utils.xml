@@ -9,48 +9,25 @@
             android:id="@+id/btn_getRootFile"
             style="@style/Button_alpha"
             android:text="获取SD卡根目录" />
-        <TextView
-            android:id="@+id/tv_showRootFile"
-            style="@style/TextView_wrap"
-            android:visibility="gone"/>
+
         <Button
             android:id="@+id/btn_new_fileCatalog"
             style="@style/Button_alpha"
-            android:text="新建一个文件目录" />
-
-        <Button
-            android:id="@+id/btn_new_folder"
-            style="@style/Button_alpha"
-            android:text="创建文件夹" />
+            android:text="新建一个文件目录(Blcs)" />
 
         <Button
             android:id="@+id/btn_new_file"
             style="@style/Button_alpha"
-            android:text="创建文件" />
-
-        <Button
-            android:id="@+id/btn_file_exist"
-            style="@style/Button_alpha"
-            android:text="判断文件是否存在" />
+            android:text="创建文件(A_Blcs)" />
 
         <Button
             android:id="@+id/btn_file_getSize"
             style="@style/Button_alpha"
-            android:text="获取文件大小" />
-
-        <Button
-            android:id="@+id/btn_file_getName"
-            style="@style/Button_alpha"
-            android:text="获得文件名" />
-
-        <Button
-            android:id="@+id/btn_file_copyName"
-            style="@style/Button_alpha"
-            android:text="复制文件" />
+            android:text="获取文件大小(Android)" />
 
         <Button
             android:id="@+id/btn_delete_file"
             style="@style/Button_alpha"
-            android:text="删除文件" />
+            android:text="删除文件(A_Blcs)" />
     </LinearLayout>
 </ScrollView>
