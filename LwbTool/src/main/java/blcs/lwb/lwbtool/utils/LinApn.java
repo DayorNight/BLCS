@@ -30,8 +30,8 @@ public class LinApn {
 
     //检查权限
     public static Boolean checkPermission(Activity activity){
-        if(!LinPermission.checkPermission(activity, 9)){
-            LinPermission.requestPermission(activity,9 );
+        if(!LinPermission.checkPermission(activity,9)){
+            LinPermission.requestPermission(activity,9);
             return false;
         }
         return true;

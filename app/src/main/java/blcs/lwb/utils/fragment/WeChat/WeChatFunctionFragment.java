@@ -53,7 +53,6 @@ public class WeChatFunctionFragment extends BaseFragment {
                 String item = (String) adapter.getItem(position);
                 Bundle bundle = new Bundle();
                 bundle.putString(Constants.Item_Name,item);
-                LogUtils.e(item);
                 switch (item){
                     case FramentManages.FontSize:
                         IntentUtils.toActivity(activity,new Intent(activity, FontSizeActivity.class));
@@ -62,7 +61,8 @@ public class WeChatFunctionFragment extends BaseFragment {
                         IntentUtils.toActivity(activity,new Intent(activity, WeChatStorageActivity.class));
                         break;
                     case FramentManages.MultiLanguage:
-                        addFrament(FramentManages.MultiLanguage,bundle);
+                    case FramentManages.LinCounty:
+                        addFrament(item,bundle);
                         break;
                     default:
                         RxToast.info(activity,getString(R.string.function_unopen));

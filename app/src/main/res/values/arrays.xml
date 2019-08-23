@@ -18,6 +18,7 @@
         <item>FileUtils</item>
         <item>LinCommon</item>
         <item>LinCleanData</item>
+        <item>LinPermission</item>
     </string-array>
     <!--View-->
     <string-array name="View">
@@ -126,6 +127,7 @@
         <item>字体大小</item>
         <item>存储空间</item>
         <item>多语言</item>
+        <item>地区选择</item>
 
     </string-array>
 

@@ -72,8 +72,9 @@ public class LinCommon {
 	 * @param context
 	 * @param phone
 	 */
+
 	public static void call(Activity context, String phone) {
-		if(LinPermission.checkPermission(context, 10)){
+		if(LinPermission.checkPermission(context,2)){
 			if (StringUtils.isPhone(phone)) {
 				Uri uri = Uri.parse("tel:" + phone.trim());
 				intent  = new Intent(Intent.ACTION_CALL, uri);
@@ -83,7 +84,7 @@ public class LinCommon {
 				showShortToast(context, "请输入正确的电话号码");
 			}
 		}else{
-			LinPermission.requestPermission(context, 10);
+			LinPermission.requestPermission(context,2);
 		}
 	}
 

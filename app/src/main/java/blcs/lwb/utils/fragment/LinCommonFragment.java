@@ -45,7 +45,7 @@ public class LinCommonFragment extends BaseFragment {
         String message = etMessage.getText().toString();
         switch (view.getId()) {
             case R.id.btn_play_call:
-                LinCommon.callPhone(activity, message);
+                LinCommon.callPhone(activity,message);
                 break;
             case R.id.btn_send_message:
                 LinCommon.toMessageChat(activity, message);

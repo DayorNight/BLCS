@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import blcs.lwb.lwbtool.bean.AllCityBean;
+import blcs.lwb.lwbtool.bean.CityBean;
 import blcs.lwb.lwbtool.bean.CityPickerBean;
 import blcs.lwb.lwbtool.bean.CountryBean;
 
@@ -107,4 +108,49 @@ public class LinCountry {
         cityPickerBean.setCounty(optionsCounty);
         return cityPickerBean;
     }
+
+    /**
+     * 获取省份
+     */
+    public static List<CityBean> getProvince1(Context context) {
+        String json = MyUtils.getJson(context, "province1.json");
+        return JSON.parseArray(json, CityBean.class);
+    }
+
+    /**
+     * 获取城市
+     */
+    public static List<CityBean> getCity(Context context) {
+        String json = MyUtils.getJson(context, "city1.json");
+        return JSON.parseArray(json, CityBean.class);
+    }
+
+    /**
+     * 根据i获取城市
+     */
+    public static List<CityBean> getCityByI(Context context,String i) {
+        ArrayList<CityBean> citys = new ArrayList<>();
+        List<CityBean> city = getCity(context);
+        for (CityBean bean:city){
+            if(i.equals(bean.getP())){
+                citys.add(bean);
+            }
+        }
+        return citys;
+    }
+
+    /**
+     * 根据省份名获取城市
+     */
+    public static List<CityBean> getCityByProvince(Context context,String province) {
+        List<CityBean> provinceBean = getProvince1(context);
+        for(CityBean proBean:provinceBean){
+            if (proBean.getN().equals(province)){
+                return getCityByI(context,proBean.getI());
+            }
+        }
+        return null;
+    }
+
+
 }

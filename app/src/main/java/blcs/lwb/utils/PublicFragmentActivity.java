@@ -3,16 +3,10 @@ package blcs.lwb.utils;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import blcs.lwb.lwbtool.base.BasePresenter;
-import blcs.lwb.lwbtool.utils.LinPermission;
-import blcs.lwb.lwbtool.utils.LogUtils;
-import blcs.lwb.lwbtool.utils.RxToast;
 import blcs.lwb.utils.fragment.BaseFragment;
 import blcs.lwb.utils.mvp.BaseFragmentActivity;
 import blcs.lwb.utils.mvp.presenter.PublicFragmentPresenter;
@@ -48,7 +42,6 @@ public class PublicFragmentActivity extends BaseFragmentActivity implements IPub
 
     @Override
     public void Toolbar_init() {
-
         tlToolbar.setNavigationIcon(R.mipmap.ic_back_white);
         tlToolbar.inflateMenu(R.menu.menu_multi_language);
         tlToolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -72,7 +65,7 @@ public class PublicFragmentActivity extends BaseFragmentActivity implements IPub
         String towhere = intent.getStringExtra(Constants.Intent_Go);
         if (towhere != null) {
             Bundle bundle = intent.getExtras();
-            fragmentManager.addFrament(R.id.fr_contain, this, towhere, bundle, true);
+            fragmentManager.addFrament(R.id.fr_contain, this, towhere, bundle, false);
         } else {
             this.finish();
         }
