@@ -144,6 +144,22 @@
     <string name="URL_APK_Sign">https://blog.csdn.net/cs_lwb/article/details/81386595</string>
     <string name="URL_Arithmetic">https://www.jianshu.com/p/a43bd0f44f65</string>
     <string name="URL_DesignMode">https://www.jianshu.com/p/c4c550b8d849</string>
+    <string name="whetherConnectWifi">是否连接WIFI </string>
+    <string name="whetherConnectMobileNewWork">是否连接移动网络</string>
+    <string name="whetherConnectNetWork">是否有网络连接</string>
+    <string name="toNetWorkSetting">打开网络设置界面</string>
+    <string name="getNetWorkStatus">获取网络状态</string>
+    <string name="getDeviceInfo">获取设备信息</string>
+    <string name="getAllCatchData">获取所有的缓存数据</string>
+    <string name="cleanAllCache">清除所有缓存</string>
+    <string name="cleanAppInternalCache">清除本应用内部缓存</string>
+    <string name="cleanAppAllData">清除本应用全部数据库</string>
+    <string name="cleanAppSp">清除本应用SharedPreference</string>
+    <string name="quareCleanAppData">按名字清除本应用数据库</string>
+    <string name="data_data_com_xxx_xxx_files">cleanFilesContent</string>
+    <string name="cleanExternalCacheContent">清除外部cache下的内容</string>
+    <string name="cleanCustomFile">清除自己定义路径下的文件</string>
+    <string name="cleanAllData">清除本应用全部的数据</string>
 
 
 </resources>

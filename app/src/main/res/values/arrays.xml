@@ -19,6 +19,8 @@
         <item>LinCommon</item>
         <item>LinCleanData</item>
         <item>LinPermission</item>
+        <item>LinNetStatus</item>
+        <item>LinPhone</item>
     </string-array>
     <!--View-->
     <string-array name="View">

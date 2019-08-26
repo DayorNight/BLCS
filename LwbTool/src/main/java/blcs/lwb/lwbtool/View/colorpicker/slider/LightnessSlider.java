@@ -9,6 +9,7 @@ import android.util.AttributeSet;
 
 import blcs.lwb.lwbtool.View.colorpicker.builder.PaintBuilder;
 import blcs.lwb.lwbtool.View.colorpicker.spider.ColorPickerView;
+import blcs.lwb.lwbtool.utils.ColorsUtil;
 import blcs.lwb.lwbtool.utils.MyUtils;
 
 /**
@@ -59,7 +60,7 @@ public class LightnessSlider extends AbsCustomSlider {
 
     @Override
     protected void drawHandle(Canvas canvas, float x, float y) {
-        solid.setColor(MyUtils.colorAtLightness(color, value));
+        solid.setColor(ColorsUtil.colorAtLightness(color, value));
         canvas.drawCircle(x, y, handleRadius, clearingStroke);
         canvas.drawCircle(x, y, handleRadius * 0.75f, solid);
     }
@@ -70,7 +71,7 @@ public class LightnessSlider extends AbsCustomSlider {
 
     public void setColor(int color) {
         this.color = color;
-        this.value = MyUtils.lightnessOfColor(color);
+        this.value = ColorsUtil.lightnessOfColor(color);
         if (bar != null) {
             updateBar();
             invalidate();

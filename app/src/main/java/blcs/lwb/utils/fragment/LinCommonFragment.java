@@ -40,16 +40,10 @@ public class LinCommonFragment extends BaseFragment {
 
     }
 
-    @OnClick({R.id.btn_play_call, R.id.btn_send_message, R.id.btn_share_message, R.id.btn_send_email, R.id.btn_open_web, R.id.btn_copy_font, R.id.btn_show_progress, R.id.btn_custom_dialog})
+    @OnClick({R.id.btn_share_message, R.id.btn_send_email, R.id.btn_open_web, R.id.btn_copy_font, R.id.btn_show_progress, R.id.btn_custom_dialog})
     public void onViewClicked(View view) {
         String message = etMessage.getText().toString();
         switch (view.getId()) {
-            case R.id.btn_play_call:
-                LinCommon.callPhone(activity,message);
-                break;
-            case R.id.btn_send_message:
-                LinCommon.toMessageChat(activity, message);
-                break;
             case R.id.btn_share_message:
                 LinCommon.shareInfo(activity, message);
                 break;

@@ -38,7 +38,9 @@ import blcs.lwb.utils.fragment.LeakCanaryFragment;
 import blcs.lwb.utils.fragment.LinCleanDataFragment;
 import blcs.lwb.utils.fragment.LinCommonFragment;
 import blcs.lwb.utils.fragment.LinCountyFragment;
+import blcs.lwb.utils.fragment.LinNetStatusFragment;
 import blcs.lwb.utils.fragment.LinPermissionFragment;
+import blcs.lwb.utils.fragment.LinPhoneFragment;
 import blcs.lwb.utils.fragment.LinViewFragment;
 import blcs.lwb.utils.fragment.ListFragment;
 import blcs.lwb.utils.fragment.LoupeViewFragment;
@@ -159,6 +161,8 @@ public class FramentManages {
     public final static String LinCleanData = "LinCleanData";
     public final static String LinCounty = "地区选择";
     public final static String LinPermission = "LinPermission";
+    public final static String LinNetStatus = "LinNetStatus";
+    public final static String LinPhone = "LinPhone";
 
     /**
      * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -308,6 +312,10 @@ public class FramentManages {
                 return new LinCountyFragment();
             case FramentManages.LinPermission:
                 return new LinPermissionFragment();
+            case FramentManages.LinNetStatus:
+                return new LinNetStatusFragment();
+            case FramentManages.LinPhone:
+                return new LinPhoneFragment();
         }
     }
 

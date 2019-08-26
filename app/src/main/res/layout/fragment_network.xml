@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Lin_vertical"
+    android:background="@mipmap/ic4"
+    >
+    <Button
+        android:id="@+id/btn_network_wifi"
+        style="@style/Button_alpha"
+        android:text="@string/whetherConnectWifi"/>
+    <Button
+        android:id="@+id/btn_network_mobile"
+        style="@style/Button_alpha"
+        android:text="@string/whetherConnectMobileNewWork"/>
+    <Button
+        android:id="@+id/btn_network_connect"
+        style="@style/Button_alpha"
+        android:text="@string/whetherConnectNetWork"/>
+    <Button
+        android:id="@+id/btn_network_setting"
+        style="@style/Button_alpha"
+        android:text="@string/toNetWorkSetting"/>
+    <Button
+        android:id="@+id/btn_network_status"
+        style="@style/Button_alpha"
+        android:text="@string/getNetWorkStatus"/>
+
+</LinearLayout>

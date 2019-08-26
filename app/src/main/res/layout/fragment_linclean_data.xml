@@ -6,42 +6,42 @@
         <Button
             android:id="@+id/btn_get_allCache"
             style="@style/Button_alpha"
-            android:text="获取所有的缓存数据"/>
+            android:text="@string/getAllCatchData"/>
         <Button
             android:id="@+id/btn_clean_allCache"
             style="@style/Button_alpha"
-            android:text="清除所有缓存"/>
+            android:text="@string/cleanAllCache"/>
         <Button
             android:id="@+id/btn_clean_appData"
             style="@style/Button_alpha"
-            android:text="清除本应用内部缓存"/>
+            android:text="@string/cleanAppInternalCache"/>
         <Button
             android:id="@+id/btn_clean_dataBases"
             style="@style/Button_alpha"
-            android:text="清除本应用全部数据库"/>
+            android:text="@string/cleanAppAllData"/>
         <Button
             android:id="@+id/btn_clean_sp"
             style="@style/Button_alpha"
-            android:text="清除本应用SharedPreference"/>
+            android:text="@string/cleanAppSp"/>
         <Button
             android:id="@+id/btn_clean_dataBases_name"
             style="@style/Button_alpha"
-            android:text="按名字清除本应用数据库"/>
+            android:text="@string/quareCleanAppData"/>
         <Button
             android:id="@+id/btn_clean_content"
             style="@style/Button_alpha"
-            android:text="清除/data/data/com.xxx.xxx/files下的内容"/>
+            android:text="@string/data_data_com_xxx_xxx_files"/>
         <Button
             android:id="@+id/btn_clean_cache_content"
             style="@style/Button_alpha"
-            android:text="清除外部cache下的内容"/>
+            android:text="@string/cleanExternalCacheContent"/>
         <Button
             android:id="@+id/btn_clean_custom_file"
             style="@style/Button_alpha"
-            android:text="清除自己定义路径下的文件"/>
+            android:text="@string/cleanCustomFile"/>
         <Button
             android:id="@+id/btn_clean_alldata"
             style="@style/Button_alpha"
-            android:text="清除本应用全部的数据"/>
+            android:text="@string/cleanAllData"/>
     </LinearLayout>
 </ScrollView>

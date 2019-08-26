@@ -13,7 +13,6 @@ import android.text.TextUtils;
 /**
  * TODO 获取网络状态
  * 
- * @author CPC
  * 1、是否连接wifi
  * 2、是否连接移动网络
  * 3、是否有网络连接，不管是wifi还是数据流量
@@ -21,9 +20,8 @@ import android.text.TextUtils;
  * 5、获取网络状态，wifi,wap,2g,3g.
  * 6、跳转到网络设置页面
  */
-public class NetStatusUtils
+public class LinNetStatus
 {
-
 	/** 没有网络 */
 	public static final int NETWORKTYPE_INVALID = 0;
 	/** wap网络 */
@@ -100,19 +98,21 @@ public class NetStatusUtils
 	 */
 	public static void openSetting(Activity activity)
 	{
-		Intent intent = new Intent("/");
-		ComponentName cm = new ComponentName("com.android.settings", "com.android.settings.WirelessSettings");
-		intent.setComponent(cm);
-		intent.setAction("android.intent.action.VIEW");
-		activity.startActivityForResult(intent, 0);
+		Intent intent = null;
+		if(android.os.Build.VERSION.SDK_INT > 10){  // 3.0以上
+			intent = new Intent(android.provider.Settings.ACTION_WIRELESS_SETTINGS);
+		}else{
+			intent = new Intent();
+			intent.setClassName("com.android.settings", "com.android.settings.WirelessSettings");
+		}
+		IntentUtils.toActivity(activity, intent);
 	}
-
 
 	/**
 	 * 获取网络状态，wifi,wap,2g,3g.
-	 *
 	 * @param context 上下文
-	 * @return int 网络状态 {@link #NETWORKTYPE_2G},{@link #NETWORKTYPE_3G},          *{@link #NETWORKTYPE_INVALID},{@link #NETWORKTYPE_WAP}* <p>{@link #NETWORKTYPE_WIFI}
+	 * @return int 网络状态 {@link #NETWORKTYPE_2G},{@link #NETWORKTYPE_3G},
+	 * {@link #NETWORKTYPE_INVALID},{@link #NETWORKTYPE_WAP}* <p>{@link #NETWORKTYPE_WIFI}
 	 */
 	public static int getNetWorkType(Context context) {
 		ConnectivityManager manager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -178,12 +178,5 @@ public class NetStatusUtils
 				return false;
 		}
 	}
-	/**
-	 * 跳转到网络设置页面
-	 * @param activity
-	 */
-	public static void GoSetting(Activity activity){
-		Intent intent = new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS);
-		activity.startActivity(intent);
-	}
+
 }

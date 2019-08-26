@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import blcs.lwb.lwbtool.R;
+import blcs.lwb.lwbtool.utils.ColorsUtil;
 import blcs.lwb.lwbtool.utils.DensityUtils;
 import blcs.lwb.lwbtool.utils.MyUtils;
 
@@ -188,7 +189,7 @@ public class RxCobwebView extends View {
         //蛛网等级描边颜色
         mSpiderLevelStrokeColor = a.getColor(R.styleable.RxCobwebView_spiderLevelColor, getResources().getColor(R.color.custom_progress_orange_progress));
         //蛛网等级颜色
-        mSpiderLevelColor = MyUtils.changeColorAlpha(mSpiderLevelStrokeColor, (255 / 2));
+        mSpiderLevelColor = ColorsUtil.changeColorAlpha(mSpiderLevelStrokeColor, (255 / 2));
         //是否需要 蛛网等级描边
         mSpiderLevelStroke = a.getBoolean(R.styleable.RxCobwebView_spiderLevelStroke, true);
         //是否需要 蛛网等级描边
@@ -213,7 +214,7 @@ public class RxCobwebView extends View {
             if (scale < 1) {
                 scale = 1;
             }
-            paint.setColor(MyUtils.changeColorAlpha(mSpiderColor, (255 / (mSpiderMaxLevel + 1) * (mSpiderMaxLevel - i - 1) + 255 / scale) % 255));
+            paint.setColor(ColorsUtil.changeColorAlpha(mSpiderColor, (255 / (mSpiderMaxLevel + 1) * (mSpiderMaxLevel - i - 1) + 255 / scale) % 255));
             //设置实心
             paint.setStyle(Paint.Style.FILL);
             levelPaintList.add(paint);
@@ -358,7 +359,7 @@ public class RxCobwebView extends View {
         if (mSpiderLevelStroke) {
             if (scoreStrokePaint == null) {
                 scoreStrokePaint = new Paint();
-                scoreStrokePaint.setColor(MyUtils.changeColorAlpha(levelPaintList.get(mSpiderMaxLevel - 1).getColor(), 50));
+                scoreStrokePaint.setColor(ColorsUtil.changeColorAlpha(levelPaintList.get(mSpiderMaxLevel - 1).getColor(), 50));
                 scoreStrokePaint.setStyle(Paint.Style.STROKE);
                 scoreStrokePaint.setAntiAlias(true);
                 if (mSpiderLevelStrokeWidth > 0) {
@@ -463,7 +464,7 @@ public class RxCobwebView extends View {
 
     public void setSpiderLevelColor(int spiderLevelColor) {
         mSpiderLevelStrokeColor = spiderLevelColor;
-        mSpiderLevelColor = MyUtils.changeColorAlpha(mSpiderLevelStrokeColor, (255 / 2));
+        mSpiderLevelColor = ColorsUtil.changeColorAlpha(mSpiderLevelStrokeColor, (255 / 2));
         invalidate();
     }
 

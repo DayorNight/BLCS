@@ -21,6 +21,7 @@ import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.lwbtool.utils.FileUtils;
 import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.lwbtool.utils.RecyclerUtil;
+import blcs.lwb.lwbtool.utils.RxToast;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.adapter.ListAdapter;
 import butterknife.BindView;
@@ -49,7 +50,11 @@ public class ListFragment extends BaseFragment {
                 String fileName = (String) adapter.getData().get(position);
                 LogUtils.e(fileName);
                 File file = new File(FileUtils.SDCARD_ROOT + fileName);
-                listAdapter.setNewData(Arrays.asList( file.list()));
+                if(file!=null&&file.list()!=null&&file.list().length>0){
+                    listAdapter.setNewData(Arrays.asList( file.list()));
+                }else {
+                    RxToast.info(activity, "没有文件");
+                }
             }
         });
     }

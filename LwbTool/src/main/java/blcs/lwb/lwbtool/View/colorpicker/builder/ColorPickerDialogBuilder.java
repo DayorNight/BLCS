@@ -20,6 +20,7 @@ import blcs.lwb.lwbtool.View.colorpicker.renderer.ColorWheelRenderer;
 import blcs.lwb.lwbtool.View.colorpicker.slider.AlphaSlider;
 import blcs.lwb.lwbtool.View.colorpicker.slider.LightnessSlider;
 import blcs.lwb.lwbtool.View.colorpicker.spider.ColorPickerView;
+import blcs.lwb.lwbtool.utils.ColorsUtil;
 import blcs.lwb.lwbtool.utils.MyUtils;
 
 /**
@@ -241,7 +242,7 @@ public class ColorPickerDialogBuilder {
 
             pickerContainer.addView(colorEdit, layoutParamsForColorEdit);
 
-            colorEdit.setText(MyUtils.getHexString(getStartColor(initialColor), isAlphaSliderEnabled));
+            colorEdit.setText(ColorsUtil.getHexString(getStartColor(initialColor), isAlphaSliderEnabled));
             colorPickerView.setColorEdit(colorEdit);
         }
         if (isPreviewEnabled) {

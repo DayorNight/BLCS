@@ -17,16 +17,6 @@
             android:textColorHint="@color/white" />
 
         <Button
-            android:id="@+id/btn_play_call"
-            style="@style/Button_alpha"
-            android:text="打电话" />
-
-        <Button
-            android:id="@+id/btn_send_message"
-            style="@style/Button_alpha"
-            android:text="发送信息" />
-
-        <Button
             android:id="@+id/btn_share_message"
             style="@style/Button_alpha"
             android:text="分享信息" />

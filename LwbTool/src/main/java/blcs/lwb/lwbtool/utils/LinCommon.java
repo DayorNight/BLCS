@@ -42,9 +42,6 @@ import java.util.List;
 import blcs.lwb.lwbtool.R;
 
 /**TODO 通用操作类
- * 1、打电话
- * 2、发送信息，多号码
- * 3、发送信息，单个号码
  * 4、分享信息
  * 5、发送邮件
  * 6、打开网站
@@ -65,77 +62,6 @@ public class LinCommon {
 	public LinCommon() {/* 不能实例化**/}
 
 	private static Intent intent = null;
-
-	//电话<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-	/** TODO 打电话
-	 * @param context
-	 * @param phone
-	 */
-
-	public static void call(Activity context, String phone) {
-		if(LinPermission.checkPermission(context,2)){
-			if (StringUtils.isPhone(phone)) {
-				Uri uri = Uri.parse("tel:" + phone.trim());
-				intent  = new Intent(Intent.ACTION_CALL, uri);
-				IntentUtils.toActivity(context, intent);
-				return;
-			}else{
-				showShortToast(context, "请输入正确的电话号码");
-			}
-		}else{
-			LinPermission.requestPermission(context,2);
-		}
-	}
-
-	/**
-	 * 跳转打电话界面
-	 * @param context
-	 * @param phone
-	 */
-	public static void callPhone(Activity context,String phone) {
-		Intent intent = new Intent(Intent.ACTION_DIAL);
-		Uri data = Uri.parse("tel:" + phone);
-		intent.setData(data);
-		IntentUtils.toActivity(context, intent);
-	}
-	//电话>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-	//信息<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-	/**TODO 发送信息，多号码
-	 * @param context
-	 * @param phoneList
-	 */
-	public static void toMessageChat(Activity context, List<String> phoneList){
-		if (context == null || phoneList == null || phoneList.size() <= 0) {
-			Log.e(TAG, "sendMessage context == null || phoneList == null || phoneList.size() <= 0 " +
-					">> showShortToast(context, 请先选择号码哦~); return; ");
-			showShortToast(context, "请先选择号码哦~");
-			return;
-		}
-
-		String phones = "";
-		for (int i = 0; i < phoneList.size(); i++) {
-			phones += phoneList.get(i) + ";";
-		}
-		toMessageChat(context, phones);
-	}
-	/**TODO 发送信息，单个号码
-	 * @param context
-	 * @param phone
-	 */
-	public static void toMessageChat(Activity context, String phone){
-		if (context == null || !StringUtils.isPhone(phone)) {
-			Log.e(TAG, "sendMessage  context == null || StringUtils.isNotEmpty(phone, true) == false) >> return;");
-			return;
-		}
-
-		intent = new Intent(Intent.ACTION_VIEW);  
-		intent.putExtra("address", phone);
-		intent.setType("vnd.android-dir/mms-sms");
-		IntentUtils.toActivity(context, intent);
-
-	}
 
 	//信息>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 

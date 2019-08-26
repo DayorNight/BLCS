@@ -1,15 +1,9 @@
 package blcs.lwb.utils.fragment;
 
-import android.content.Intent;
-import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
-
-import java.util.List;
-
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.lwbtool.bean.VersionBean;
 import blcs.lwb.lwbtool.retrofit.MyObserver;

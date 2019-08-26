@@ -1,5 +1,7 @@
 package blcs.lwb.lwbtool.utils;
 
+import android.graphics.Color;
+
 /**
  * Created by lwb on 2017/12/26.
  * ColorsUtil 工具类
@@ -355,4 +357,45 @@ public class ColorsUtil {
      * 低光
      */
     public static final int LOWLIGHT = 0x33000000;
+
+
+    /**
+     * 修改颜色透明度
+     * @param color
+     * @param alpha
+     * @return
+     */
+    public static int changeColorAlpha(int color, int alpha) {
+        int red = Color.red(color);
+        int green = Color.green(color);
+        int blue = Color.blue(color);
+        return Color.argb(alpha, red, green, blue);
+    }
+    public static String getHexString(int color, boolean showAlpha) {
+        int base = showAlpha ? 0xFFFFFFFF : 0xFFFFFF;
+        String format = showAlpha ? "#%08X" : "#%06X";
+        return String.format(format, (base & color)).toUpperCase();
+    }
+    public static int colorAtLightness(int color, float lightness) {
+        float[] hsv = new float[3];
+        Color.colorToHSV(color, hsv);
+        hsv[2] = lightness;
+        return Color.HSVToColor(hsv);
+    }
+    public static int adjustAlpha(float alpha, int color) {
+        return alphaValueAsInt(alpha) << 24 | (0x00ffffff & color);
+    }
+    public static int alphaValueAsInt(float alpha) {
+        return Math.round(alpha * 255);
+    }
+
+    public static float getAlphaPercent(int argb) {
+        return Color.alpha(argb) / 255f;
+    }
+
+    public static float lightnessOfColor(int color) {
+        float[] hsv = new float[3];
+        Color.colorToHSV(color, hsv);
+        return hsv[2];
+    }
 }

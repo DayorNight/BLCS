@@ -60,14 +60,7 @@
             android:text="8.短信权限"/>
 
     </LinearLayout>
-    <LinearLayout
-        style="@style/Lin_horizontal">
-        <CheckBox
-            android:id="@+id/cb_permission_9"
-            android:layout_weight="1"
-            style="@style/wrap_wrap"
-            android:text="9.APN权限"/>
-    </LinearLayout>
+
 
     <Button
         android:id="@+id/btn_permission_check"

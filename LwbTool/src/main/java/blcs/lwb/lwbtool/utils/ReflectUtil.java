@@ -89,7 +89,6 @@ public class ReflectUtil {
     /**
      * 2、把字段名称第一个字母换成大写
      * @param fieldName     字段名称
-     * @return
      * @throws Exception    异常处理
      */
     private static String getMethodName(String fieldName) throws Exception {

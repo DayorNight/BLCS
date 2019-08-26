@@ -124,7 +124,6 @@ public final class FileUtils
 
 	/**
 	 * 3、获得文件的大小，显示格式为GB形式
-	 * 
 	 * @param filePath
 	 * @return
 	 */

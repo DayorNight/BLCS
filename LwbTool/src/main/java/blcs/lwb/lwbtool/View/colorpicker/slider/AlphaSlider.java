@@ -8,6 +8,7 @@ import android.util.AttributeSet;
 
 import blcs.lwb.lwbtool.View.colorpicker.builder.PaintBuilder;
 import blcs.lwb.lwbtool.View.colorpicker.spider.ColorPickerView;
+import blcs.lwb.lwbtool.utils.ColorsUtil;
 import blcs.lwb.lwbtool.utils.MyUtils;
 
 /**
@@ -80,7 +81,7 @@ public class AlphaSlider extends AbsCustomSlider {
 
     public void setColor(int color) {
         this.color = color;
-        this.value = MyUtils.getAlphaPercent(color);
+        this.value = ColorsUtil.getAlphaPercent(color);
         if (bar != null) {
             updateBar();
             invalidate();

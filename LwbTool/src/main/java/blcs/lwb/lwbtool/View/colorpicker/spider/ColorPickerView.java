@@ -29,6 +29,7 @@ import blcs.lwb.lwbtool.View.colorpicker.renderer.ColorWheelRenderOption;
 import blcs.lwb.lwbtool.View.colorpicker.renderer.ColorWheelRenderer;
 import blcs.lwb.lwbtool.View.colorpicker.slider.AlphaSlider;
 import blcs.lwb.lwbtool.View.colorpicker.slider.LightnessSlider;
+import blcs.lwb.lwbtool.utils.ColorsUtil;
 import blcs.lwb.lwbtool.utils.MyUtils;
 
 
@@ -350,9 +351,9 @@ public class ColorPickerView extends View {
     public int getSelectedColor() {
         int color = 0;
         if (currentColorCircle != null) {
-            color = MyUtils.colorAtLightness(currentColorCircle.getColor(), this.lightness);
+            color = ColorsUtil.colorAtLightness(currentColorCircle.getColor(), this.lightness);
         }
-        return MyUtils.adjustAlpha(this.alpha, color);
+        return ColorsUtil.adjustAlpha(this.alpha, color);
     }
 
     public void setSelectedColor(int previewNumber) {
@@ -386,7 +387,7 @@ public class ColorPickerView extends View {
         float[] hsv = new float[3];
         Color.colorToHSV(color, hsv);
 
-        this.alpha = MyUtils.getAlphaPercent(color);
+        this.alpha = ColorsUtil.getAlphaPercent(color);
         this.lightness = hsv[2];
         this.initialColors[this.colorSelection] = color;
         this.initialColor = color;
@@ -402,9 +403,9 @@ public class ColorPickerView extends View {
         int lastSelectedColor = getSelectedColor();
 
         this.lightness = lightness;
-        this.initialColor = Color.HSVToColor(MyUtils.alphaValueAsInt(this.alpha), currentColorCircle.getHsvWithLightness(lightness));
+        this.initialColor = Color.HSVToColor(ColorsUtil.alphaValueAsInt(this.alpha), currentColorCircle.getHsvWithLightness(lightness));
         if (this.colorEdit != null) {
-            this.colorEdit.setText(MyUtils.getHexString(this.initialColor, this.alphaSlider != null));
+            this.colorEdit.setText(ColorsUtil.getHexString(this.initialColor, this.alphaSlider != null));
         }
         if (this.alphaSlider != null && this.initialColor != null) {
             this.alphaSlider.setColor(this.initialColor);
@@ -426,9 +427,9 @@ public class ColorPickerView extends View {
         int lastSelectedColor = getSelectedColor();
 
         this.alpha = alpha;
-        this.initialColor = Color.HSVToColor(MyUtils.alphaValueAsInt(this.alpha), currentColorCircle.getHsvWithLightness(this.lightness));
+        this.initialColor = Color.HSVToColor(ColorsUtil.alphaValueAsInt(this.alpha), currentColorCircle.getHsvWithLightness(this.lightness));
         if (this.colorEdit != null) {
-            this.colorEdit.setText(MyUtils.getHexString(this.initialColor, this.alphaSlider != null));
+            this.colorEdit.setText(ColorsUtil.getHexString(this.initialColor, this.alphaSlider != null));
         }
         if (this.lightnessSlider != null && this.initialColor != null) {
             this.lightnessSlider.setColor(this.initialColor);
@@ -574,7 +575,7 @@ public class ColorPickerView extends View {
         if (colorEdit == null) {
             return;
         }
-        colorEdit.setText(MyUtils.getHexString(argb, this.alphaSlider != null));
+        colorEdit.setText(ColorsUtil.getHexString(argb, this.alphaSlider != null));
     }
 
     private void setColorToSliders(int selectedColor) {

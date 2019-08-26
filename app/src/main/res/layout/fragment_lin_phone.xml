@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/match_wrap"
+    android:background="@mipmap/ic4">
+    <LinearLayout style="@style/Lin_vertical">
+        <Button
+            android:id="@+id/btn_phone_status"
+            style="@style/Button_alpha"
+            android:text="@string/getDeviceInfo" />
+        <TextView
+            android:id="@+id/tv_phone_show"
+            style="@style/text_stander"
+            android:scrollbars="vertical"
+            android:text="@string/app_name"
+            android:textSize="@dimen/sp_12" />
+    </LinearLayout>
+</ScrollView>
