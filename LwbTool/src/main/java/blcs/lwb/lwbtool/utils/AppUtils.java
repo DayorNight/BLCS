@@ -33,12 +33,6 @@ import java.util.List;
 public class AppUtils
 {
 
-    private AppUtils()
-    {
-		/* cannot be instantiated */
-        throw new UnsupportedOperationException("cannot be instantiated");
-    }
-
     /**
      * 获取包名
      * @param context

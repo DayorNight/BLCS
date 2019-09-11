@@ -4,6 +4,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.utils.fragment.HomeOtherFragment;
 import blcs.lwb.utils.fragment.HomeUtilsFragment;
 import blcs.lwb.utils.fragment.HomeViewFragment;
@@ -14,20 +18,19 @@ import blcs.lwb.utils.fragment.HomeViewFragment;
  */
 
 public class ViewPagerHomeAdapter extends FragmentPagerAdapter {
+    private List<Fragment> fragments =  new ArrayList<>();
 
     public ViewPagerHomeAdapter(FragmentManager fm) {
         super(fm);
+        fragments.clear();
+        fragments.add(new HomeUtilsFragment());
+        fragments.add(new HomeViewFragment());
+        fragments.add(new HomeOtherFragment());
     }
 
     @Override
     public Fragment getItem(int pos) {
-        if(pos==0){
-            return new HomeUtilsFragment();
-        }else if (pos == 1){
-            return new HomeViewFragment();
-        }else {
-            return new HomeOtherFragment();
-        }
+        return fragments.get(pos);
     }
 
     @Override

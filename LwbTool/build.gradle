@@ -84,6 +84,8 @@ dependencies {
     api 'org.greenrobot:greendao:3.2.2'
     // 数据库可视化工具
     debugImplementation 'com.amitshekhar.android:debug-db-encrypt:1.0.6'
+    // 腾讯开源UI库 https://qmuiteam.com/android/get-started/
+    api 'com.qmuiteam:qmui:1.4.0'
     // 申请权限
 //    api "org.permissionsdispatcher:permissionsdispatcher:4.5.0"
 //    annotationProcessor "org.permissionsdispatcher:permissionsdispatcher-processor:4.5.0"

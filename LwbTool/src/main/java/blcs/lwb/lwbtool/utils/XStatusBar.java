@@ -18,7 +18,7 @@ import blcs.lwb.lwbtool.R;
 /**
  * 状态栏工具类
  *
- * 设置状态栏沉浸式或者状态栏颜色
+ * 设置状态栏LinKeyBoard或者状态栏颜色
  */
 public class XStatusBar {
     public static final int DEFAULT_STATUS_BAR_ALPHA = 112;
@@ -112,7 +112,7 @@ public class XStatusBar {
      */
     public static void setTranslucent(Activity activity) {
         setTranslucent(activity, DEFAULT_STATUS_BAR_ALPHA);
-    }
+}
 
     /**
      * 使状态栏半透明
@@ -256,7 +256,6 @@ public class XStatusBar {
 
     /**
      * 为DrawerLayout 布局设置状态栏变色(5.0以下无半透明效果,不建议使用)
-     *
      * @param activity     需要设置的activity
      * @param drawerLayout DrawerLayout
      * @param color        状态栏颜色值

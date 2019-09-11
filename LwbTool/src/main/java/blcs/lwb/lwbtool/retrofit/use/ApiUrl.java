@@ -44,14 +44,11 @@ public interface ApiUrl {
     @GET(Constants.retrofitList)
     Observable<BaseResponse<List<Demo>>> getDemoList();
 
-
     @GET(Constants.version)
     Observable<BaseResponse<List<VersionBean>>> getVersionList();
 
     @GET(Constants.versionLast)
     Observable<BaseResponse<VersionBean>> getVersion();
-
-
 
     /**
      * TODO Get请求
@@ -85,8 +82,9 @@ public interface ApiUrl {
     @POST("auth/login")
     @FormUrlEncoded
     Observable<Demo> postUser(@Field("username") String username, @Field("password") String password);
+
     //多个参数
-    Observable<Demo> postUser(@FieldMap Map<String, String> map);
+    Observable<Demo> postUser(@FieldMap Map<String, Object> map);
 
     /**
      * TODO DELETE

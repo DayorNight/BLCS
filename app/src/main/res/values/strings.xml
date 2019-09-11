@@ -161,5 +161,6 @@
     <string name="cleanCustomFile">清除自己定义路径下的文件</string>
     <string name="cleanAllData">清除本应用全部的数据</string>
 
+    <string name="QMUI_Android">https://qmuiteam.com/android</string>
 
 </resources>

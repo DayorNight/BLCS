@@ -47,6 +47,7 @@ public class LoupeView extends android.support.v7.widget.AppCompatImageView {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.LoupeView);
         radius = typedArray.getInt(R.styleable.LoupeView_radius, 100);
         SCALE = typedArray.getInt(R.styleable.LoupeView_scale, 3);
+        typedArray.recycle();
     }
 
     private void initPaint() {

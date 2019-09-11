@@ -163,6 +163,7 @@ public class FramentManages {
     public final static String LinPermission = "LinPermission";
     public final static String LinNetStatus = "LinNetStatus";
     public final static String LinPhone = "LinPhone";
+    public final static String QMUI_Android = "腾讯开源UI库《QMUI_Android》";
 
     /**
      * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -177,6 +178,7 @@ public class FramentManages {
             default:
                 return null;
             case FramentManages.Demo:
+//            case FramentManages.QMUI_Android:
                 return new MyFragment();
             case FramentManages.ListDemo:
                 return new ListFragment();
@@ -316,6 +318,8 @@ public class FramentManages {
                 return new LinNetStatusFragment();
             case FramentManages.LinPhone:
                 return new LinPhoneFragment();
+
+//                return new QMUI_AndroidFragment();
         }
     }
 

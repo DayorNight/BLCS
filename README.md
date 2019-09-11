@@ -15,8 +15,10 @@
 ###### 其他
 > 1.博客 ★ 2.版本更新 ★ 3.全局异常捕获 ★ 4.内存泄漏检测 ★ 5.Rxjava+Retrofit封装 ★ 6.调用系统功能 ★ 7.SQLite
 ###### 引用开源库：
-> 1.butterknife ★ 2.AgentWeb ★ 3.BaseRecyclerViewAdapterHelper ★ 4.glide ★ 5.MarqueeView ★ 5.MarqueeView ★ 6.MagicIndicator ★ 7.MagicIndicator ★ 8.zxing
- ★ 9.retrofit2 ★ 10.rxjava2 ★ 11.rxlifecycle2 ★ 12.fastjson ★ 13.banner ★ 14.androidsvg ★ 15.PickerView
+> [1.butterknife](https://github.com/JakeWharton/butterknife) ★ 2.AgentWeb ★ 3.BaseRecyclerViewAdapterHelper ★ 4.glide ★ 5.MarqueeView
+★ 6.MagicIndicator  ★ 7.zxing ★ 8.retrofit2 ★ 9.rxjava2 ★ 10.rxlifecycle2 ★ 11.fastjson
+★ 12.banner ★ 13.androidsvg ★ 14.PickerView ★ [14.retrofit](https://github.com/square/retrofit)
+ ★ [15.banner]
 ###### 集成第三方：
 > 1、友盟统计
 

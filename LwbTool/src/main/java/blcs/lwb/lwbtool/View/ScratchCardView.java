@@ -53,6 +53,7 @@ public class ScratchCardView extends android.support.v7.widget.AppCompatImageVie
         size = typedArray.getFloat(R.styleable.ScratchCard_size, 50f);
         Drawable drawable = typedArray.getDrawable(R.styleable.ScratchCard_preBackground);
         if (drawable != null) preBitmap = ((BitmapDrawable) drawable).getBitmap();
+        typedArray.recycle();
     }
 
     private void initPaint() {

@@ -37,6 +37,7 @@ public abstract class BaseFragment extends RxFragment implements IPopBackStackLi
     public FramentManages fragmentManager;
     private BasePresenter baseP;
     private Unbinder bind;
+    public Bundle arguments;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -52,7 +53,7 @@ public abstract class BaseFragment extends RxFragment implements IPopBackStackLi
                 baseP.onAttach(this);
             }
             //每个Activity的中间标题必须都用这个id
-            Bundle arguments = getArguments();
+            arguments = getArguments();
             if (arguments != null) {
                 String title = (String) arguments.get(Constants.Item_Name);
                 activity.tlToolbar.setTitle(title);
