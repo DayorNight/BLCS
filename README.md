@@ -12,13 +12,14 @@
 > 1.仿微信功能及控件 ★ 2.BottomNavigationView ★ 3.RecyclerView ★ 4.DialogFragment ★ 5.toolbar ★ 6.RxToast ★ 7.转盘小游戏 ★ 8.跑马灯/水波纹/标签 ★ 
 9.滑动菜单/悬浮按钮 ★ 10.ViewPager指示器 ★ 11.ViewPager ★ 12.OpenGl三角形 ★ 13.OpenGl矩形 ★ 14.常用Dialog ★ 15.进度条 ★ 16.蛛网等级及颜色选取
  ★ 17.Banner轮播图 ★ 18.通知NotificationCompat ★ 19.选择器Picker ★ 20.标签列表LabelList ★ 21.声音与震动 ★ 22.PopupWindow ★ 23.放大镜 ★ 24.刮刮卡
+  ★ 25.腾讯开源UI库《QMUI_Android》 ★ 26.开源图表库《MPAndroidChart》
 ###### 其他
 > 1.博客 ★ 2.版本更新 ★ 3.全局异常捕获 ★ 4.内存泄漏检测 ★ 5.Rxjava+Retrofit封装 ★ 6.调用系统功能 ★ 7.SQLite
 ###### 引用开源库：
 > [1.butterknife](https://github.com/JakeWharton/butterknife) ★ 2.AgentWeb ★ 3.BaseRecyclerViewAdapterHelper ★ 4.glide ★ 5.MarqueeView
 ★ 6.MagicIndicator  ★ 7.zxing ★ 8.retrofit2 ★ 9.rxjava2 ★ 10.rxlifecycle2 ★ 11.fastjson
 ★ 12.banner ★ 13.androidsvg ★ 14.PickerView ★ [14.retrofit](https://github.com/square/retrofit)
- ★ [15.banner]
+ ★ [15.banner] ★ [16.QMUI_Android](https://qmuiteam.com/android) ★ [17.MPAndroidChart](https://github.com/PhilJay/MPAndroidChart)
 ###### 集成第三方：
 > 1、友盟统计
 
@@ -77,9 +78,10 @@
 ![Image text](https://github.com/DayorNight/File/blob/master/View/20.标签列表LabelList.gif)
 ![Image text](https://github.com/DayorNight/File/blob/master/View/21.声音与震动.gif)
 ![Image text](https://github.com/DayorNight/File/blob/master/View/22.PopupWindow.gif)
-### ★ 23.放大镜 ★ 24.刮刮卡
+### ★ 23.放大镜 ★ 24.刮刮卡 ★ 25.腾讯开源UI库《QMUI_Android》
 ![Image text](https://github.com/DayorNight/File/blob/master/View/23.放大镜.gif)
 ![Image text](https://github.com/DayorNight/File/blob/master/View/24.刮刮卡.gif)
+### ★ 26.开源图表库《MPAndroidChart》
 ## 效果展示——其他
 ### ★ 1.博客 ★ 2.版本更新 ★ 3.全局异常捕获
 ![Image text](https://github.com/DayorNight/File/blob/master/Other/1.博客.gif)

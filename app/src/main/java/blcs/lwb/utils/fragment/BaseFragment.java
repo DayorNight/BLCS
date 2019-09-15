@@ -11,6 +11,7 @@ import com.trello.rxlifecycle2.components.support.RxFragment;
 
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.lwbtool.base.BaseView;
+import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.utils.Constants;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.manager.FramentManages;

@@ -78,12 +78,6 @@ public class HomeOtherFragment extends Fragment implements IHomeTabView{
                 String item = (String) adapter.getItem(position);
                 Bundle bundle = new Bundle();
                 bundle.putString(Constants.Item_Name,item);
-                switch (item){
-                    case FramentManages.Demo:
-                        bundle.putString(Constants.URL, getString(R.string.QMUI_Android));
-                        break;
-                        default:break;
-                }
                 MyUtils.toFragment(activity,bundle,item);
             }
         });

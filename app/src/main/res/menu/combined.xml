@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/actionToggleLineValues"
+        android:title="Toggle Line Values">
+    </item>
+    <item
+        android:id="@+id/actionToggleBarValues"
+        android:title="Toggle Bar Values">
+    </item>
+    <item
+        android:id="@+id/actionRemoveDataSet"
+        android:title="Remove Data Set">
+    </item>
+
+</menu>

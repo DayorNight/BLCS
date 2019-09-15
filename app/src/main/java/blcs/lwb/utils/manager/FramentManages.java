@@ -44,6 +44,13 @@ import blcs.lwb.utils.fragment.LinPhoneFragment;
 import blcs.lwb.utils.fragment.LinViewFragment;
 import blcs.lwb.utils.fragment.ListFragment;
 import blcs.lwb.utils.fragment.LoupeViewFragment;
+import blcs.lwb.utils.fragment.MPAndroidChart.BarCharts2Fragment;
+import blcs.lwb.utils.fragment.MPAndroidChart.BarChartsFragment;
+import blcs.lwb.utils.fragment.MPAndroidChart.LineChartsFragment;
+import blcs.lwb.utils.fragment.MPAndroidChart.OtherChartsFragment;
+import blcs.lwb.utils.fragment.MPAndroidChart.PieChartsFragment;
+import blcs.lwb.utils.fragment.MPAndroidChart.ScrollingChartsFragment;
+import blcs.lwb.utils.fragment.MPAndroidChartFragment;
 import blcs.lwb.utils.fragment.MagicIndicator.BadgeTabFragment;
 import blcs.lwb.utils.fragment.MagicIndicator.CustomNavigatorFragment;
 import blcs.lwb.utils.fragment.MagicIndicator.DynamicTabFragment;
@@ -164,6 +171,13 @@ public class FramentManages {
     public final static String LinNetStatus = "LinNetStatus";
     public final static String LinPhone = "LinPhone";
     public final static String QMUI_Android = "腾讯开源UI库《QMUI_Android》";
+    public final static String MPAndroidChart = "开源图表库《MPAndroidChart》";
+    public final static String LineCharts = "LineCharts";
+    public final static String BarCharts = "BarCharts";
+    public final static String BarCharts2 = "BarCharts2";
+    public final static String PieCharts = "PieCharts";
+    public final static String OtherCharts = "OtherCharts";
+    public final static String ScrollingCharts = "ScrollingCharts";
 
     /**
      * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -178,7 +192,7 @@ public class FramentManages {
             default:
                 return null;
             case FramentManages.Demo:
-//            case FramentManages.QMUI_Android:
+            case FramentManages.QMUI_Android:
                 return new MyFragment();
             case FramentManages.ListDemo:
                 return new ListFragment();
@@ -318,6 +332,20 @@ public class FramentManages {
                 return new LinNetStatusFragment();
             case FramentManages.LinPhone:
                 return new LinPhoneFragment();
+            case FramentManages.MPAndroidChart:
+                return new MPAndroidChartFragment();
+            case FramentManages.LineCharts:
+                return new LineChartsFragment();
+            case FramentManages.BarCharts:
+                return new BarChartsFragment();
+            case FramentManages.BarCharts2:
+                return new BarCharts2Fragment();
+            case FramentManages.PieCharts:
+                return new PieChartsFragment();
+            case FramentManages.OtherCharts:
+                return new OtherChartsFragment();
+            case FramentManages.ScrollingCharts:
+                return new ScrollingChartsFragment();
 
 //                return new QMUI_AndroidFragment();
         }

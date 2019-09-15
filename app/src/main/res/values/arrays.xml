@@ -48,6 +48,8 @@
         <item>PopupWindow</item>
         <item>放大镜</item>
         <item>刮刮卡</item>
+        <item>腾讯开源UI库《QMUI_Android》</item>
+        <item>开源图表库《MPAndroidChart》</item>
     </string-array>
     <!--other-->
     <string-array name="Other">
