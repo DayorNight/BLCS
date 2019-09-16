@@ -21,7 +21,6 @@ public class RxQrBarTool {
 
     /**
      * 解析图片中的 二维码 或者 条形码
-     *
      * @param photo 待解析的图片
      * @return Result 解析结果，解析识别时返回NULL
      */

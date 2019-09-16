@@ -50,6 +50,7 @@
         <item>刮刮卡</item>
         <item>腾讯开源UI库《QMUI_Android》</item>
         <item>开源图表库《MPAndroidChart》</item>
+        <item>条形码/二维码</item>
     </string-array>
     <!--other-->
     <string-array name="Other">

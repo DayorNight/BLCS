@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.fragment.AppUtilsFragment;
 import blcs.lwb.utils.fragment.BannerFragment;
+import blcs.lwb.utils.fragment.BarQrCodeFragment;
 import blcs.lwb.utils.fragment.BaseAdapterFragment.AnimationRecyclerFragment;
 import blcs.lwb.utils.fragment.BaseAdapterFragment.DragAndSwipeFragment;
 import blcs.lwb.utils.fragment.BaseAdapterFragment.EmptyViewFragment;
@@ -178,6 +179,7 @@ public class FramentManages {
     public final static String PieCharts = "PieCharts";
     public final static String OtherCharts = "OtherCharts";
     public final static String ScrollingCharts = "ScrollingCharts";
+    public final static String BarQrCode = "条形码/二维码";
 
     /**
      * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -346,6 +348,8 @@ public class FramentManages {
                 return new OtherChartsFragment();
             case FramentManages.ScrollingCharts:
                 return new ScrollingChartsFragment();
+            case FramentManages.BarQrCode:
+                return new BarQrCodeFragment();
 
 //                return new QMUI_AndroidFragment();
         }
