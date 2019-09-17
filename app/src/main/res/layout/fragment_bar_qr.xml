@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     style="@style/Lin_vertical"
+    android:layout_height="match_parent"
     android:gravity="center"
-    android:background="@mipmap/ic4">
+    android:background="@mipmap/ic_bg_1">
 
     <ImageView
         android:id="@+id/iv_bar_qr"

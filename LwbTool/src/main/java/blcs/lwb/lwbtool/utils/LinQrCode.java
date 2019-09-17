@@ -84,8 +84,7 @@ public class LinQrCode {
                 m.setScale(sx, sy);
                 //设置缩放信息
                 //将logo图片按martix设置的信息缩放
-                mBitmap = Bitmap.createBitmap(mBitmap, 0, 0,
-                        mBitmap.getWidth(), mBitmap.getHeight(), m, false);
+                mBitmap = Bitmap.createBitmap(mBitmap, 0, 0, mBitmap.getWidth(), mBitmap.getHeight(), m, false);
             }
             int[] pixels = new int[size * size];
             for (int y = 0; y < size; y++) {
