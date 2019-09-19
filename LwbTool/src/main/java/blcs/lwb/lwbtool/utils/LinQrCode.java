@@ -1,5 +1,7 @@
 package blcs.lwb.lwbtool.utils;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
 import android.widget.ImageView;
@@ -16,12 +18,14 @@ import com.google.zxing.common.BitMatrix;
 import com.google.zxing.common.HybridBinarizer;
 import com.google.zxing.qrcode.QRCodeWriter;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
+import com.yzq.zxinglibrary.android.CaptureActivity;
+import com.yzq.zxinglibrary.bean.ZxingConfig;
+import com.yzq.zxinglibrary.common.Constant;
 
 import java.util.Hashtable;
 import java.util.Vector;
-
-import blcs.lwb.lwbtool.utils.camera.BitmapLuminanceSource;
-import blcs.lwb.lwbtool.utils.camera.RxImageTool;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * 二维码/条形码工具类
@@ -29,38 +33,34 @@ import blcs.lwb.lwbtool.utils.camera.RxImageTool;
  * 2.生成带Logo二维码图片
  * 3.生成条形码
  * 4.解析图片中的 二维码 或者 条形码
+ * 5.跳转扫描页面
  */
 public class LinQrCode {
-    private static int IMAGE_HALFWIDTH = 100;//宽度值，影响中间图片大小
 
     /**
      * 1.生成二维码图片
-     * @param content
-     * @param view
      */
     public static void createQRCode(String content, ImageView view) {
         createQRCode(content, null,view);
     }
     /**
      * 2.生成带Logo二维码图片
-     * @param content
-     * @param mBitmap
-     * @param view
      */
     public static void createQRCode(String content, Bitmap mBitmap,ImageView view) {
-        view.setImageBitmap(createQRCode(content,500,0,mBitmap));
+        view.setImageBitmap(createQRCode(content,500,1,mBitmap));
     }
     /**
-     * 生成带logo的二维码，默认二维码的大小为500，logo为二维码的1/5
+     * 生成带logo的二维码
      * @param url 需要生成二维码的文字、网址等
      * @param size 需要生成二维码的大小（）
      * @param margin 空白边距
+     * @param mBitmap logoSize 文件大小
      * @param mBitmap logo文件
      * @return bitmap
      */
     public static Bitmap createQRCode(String url, int size,int margin, Bitmap mBitmap) {
         try {
-            IMAGE_HALFWIDTH = size/10;
+            int IMAGE_HALFWIDTH = size/10 ;
             Hashtable<EncodeHintType, Object> hints = new Hashtable<>();
             hints.put(EncodeHintType.CHARACTER_SET, "utf-8");
             /*
@@ -89,7 +89,7 @@ public class LinQrCode {
             int[] pixels = new int[size * size];
             for (int y = 0; y < size; y++) {
                 for (int x = 0; x < size; x++) {
-                    if (mBitmap!=null && x > halfW - IMAGE_HALFWIDTH && x < halfW + IMAGE_HALFWIDTH
+                    if (mBitmap != null && x > halfW - IMAGE_HALFWIDTH && x < halfW + IMAGE_HALFWIDTH
                             && y > halfH - IMAGE_HALFWIDTH
                             && y < halfH + IMAGE_HALFWIDTH) {
                         //该位置用于存放图片信息 记录图片每个像素信息
@@ -117,9 +117,10 @@ public class LinQrCode {
 
     /**
      * 3.生成条形码
-     * @param contents 需要生成的内容
-     * @return 条形码的Bitmap
      */
+    public static void createBarCode(String content, ImageView view) {
+        view.setImageBitmap(createBarCode(content));
+    }
     public static Bitmap createBarCode(String contents) {
         return createBarCode(contents, 1000, 300);
     }
@@ -128,9 +129,6 @@ public class LinQrCode {
         view.setImageBitmap(createBarCode(content, codeWidth, codeHeight));
     }
 
-    public static void createBarCode(String content, ImageView view) {
-        view.setImageBitmap(createBarCode(content));
-    }
 
     /**
      * 生成条形码
@@ -140,6 +138,9 @@ public class LinQrCode {
      * @return backgroundColor
      */
     public static Bitmap createBarCode(CharSequence content, int BAR_WIDTH, int BAR_HEIGHT) {
+        if(!isNumberOrAlpha(content+"")){
+            return null;
+        }
         // 条形码的编码类型
         BarcodeFormat barcodeFormat = BarcodeFormat.CODE_128;
         final int backColor = 0xFFFFFFFF;
@@ -177,8 +178,8 @@ public class LinQrCode {
     public static Result decodeFromPhoto(Bitmap photo) {
         Result rawResult = null;
         if (photo != null) {
-            Bitmap smallBitmap = RxImageTool.zoomBitmap(photo, photo.getWidth() / 2, photo.getHeight() / 2);// 为防止原始图片过大导致内存溢出，这里先缩小原图显示，然后释放原始Bitmap占用的内存
-            photo.recycle(); // 释放原始图片占用的内存，防止out of memory异常发生
+            Bitmap smallBitmap = zoomBitmap(photo, photo.getWidth() / 2, photo.getHeight() / 2);// 为防止原始图片过大导致内存溢出，这里先缩小原图显示，然后释放原始Bitmap占用的内存
+//            photo.recycle(); // 释放原始图片占用的内存，防止out of memory异常发生
 
             MultiFormatReader multiFormatReader = new MultiFormatReader();
 
@@ -223,7 +224,73 @@ public class LinQrCode {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+            smallBitmap.recycle();
         }
+
         return rawResult;
+    }
+
+    /**
+     * 5.跳转扫描页面
+     * @param context
+     * @param requestCode 扫描返回码
+     */
+    public static void startScan(Activity context, int requestCode) {
+        Intent intent = new Intent(context, CaptureActivity.class);
+        /*ZxingConfig是配置类
+         *可以设置是否显示底部布局，闪光灯，相册，
+         * 是否播放提示音  震动
+         * 设置扫描框颜色等
+         * 也可以不传这个参数
+         * */
+        ZxingConfig config = new ZxingConfig();
+        // config.setPlayBeep(false);//是否播放扫描声音 默认为true
+        //  config.setShake(false);//是否震动  默认为true
+        // config.setDecodeBarCode(false);//是否扫描条形码 默认为true
+//                                config.setReactColor(R.color.colorAccent);//设置扫描框四个角的颜色 默认为白色
+//                                config.setFrameLineColor(R.color.colorAccent);//设置扫描框边框颜色 默认无色
+//                                config.setScanLineColor(R.color.colorAccent);//设置扫描线的颜色 默认白色
+        config.setFullScreenScan(false);//是否全屏扫描  默认为true  设为false则只会在扫描框中扫描
+        intent.putExtra(Constant.INTENT_ZXING_CONFIG, config);
+        context.startActivityForResult(intent, requestCode);
+    }
+
+    /**
+     * 压缩
+     * @param bitmap
+     * @param width
+     * @param height
+     * @return
+     */
+    public static Bitmap zoomBitmap(Bitmap bitmap, int width, int height) {
+        int w = bitmap.getWidth();
+        int h = bitmap.getHeight();
+        Matrix matrix = new Matrix();
+        float scaleWidth = ((float) width / w);
+        float scaleHeight = ((float) height / h);
+        matrix.postScale(scaleWidth, scaleHeight);
+        return Bitmap.createBitmap(bitmap, 0, 0, w, h, matrix, true);
+    }
+
+    /**判断字符类型是否是号码或字母
+     * @param inputed
+     * @return
+     */
+    public static boolean isNumberOrAlpha(String inputed) {
+        if (inputed == null) {
+            return false;
+        }
+        Pattern pNumber = Pattern.compile("[0-9]*");
+        Matcher mNumber;
+        Pattern pAlpha = Pattern.compile("[a-zA-Z]");
+        Matcher mAlpha;
+        for (int i = 0; i < inputed.length(); i++) {
+            mNumber = pNumber.matcher(inputed.substring(i, i+1));
+            mAlpha = pAlpha.matcher(inputed.substring(i, i+1));
+            if(! mNumber.matches() && ! mAlpha.matches()){
+                return false;
+            }
+        }
+        return true;
     }
 }
