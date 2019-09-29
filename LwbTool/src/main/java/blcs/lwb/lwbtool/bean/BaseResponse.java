@@ -1,4 +1,4 @@
-package blcs.lwb.lwbtool.retrofit;
+package blcs.lwb.lwbtool.bean;
 
 /**
  * 统一响应

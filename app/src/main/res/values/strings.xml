@@ -6,6 +6,7 @@
     <string name="Tool">工具</string>
     <string name="View">View</string>
     <string name="Other">其他</string>
+    <string name="Resources">资源</string>
     <string name="WeChatStorageActivity">存储空间</string>
     <!--发现-->
     <string name="Monments">朋友圈</string>
@@ -144,6 +145,7 @@
     <string name="URL_APK_Sign">https://blog.csdn.net/cs_lwb/article/details/81386595</string>
     <string name="URL_Arithmetic">https://www.jianshu.com/p/a43bd0f44f65</string>
     <string name="URL_DesignMode">https://www.jianshu.com/p/c4c550b8d849</string>
+    <!-->>>>>>>>>>>>博客-->
     <string name="whetherConnectWifi">是否连接WIFI </string>
     <string name="whetherConnectMobileNewWork">是否连接移动网络</string>
     <string name="whetherConnectNetWork">是否有网络连接</string>
@@ -160,7 +162,19 @@
     <string name="cleanExternalCacheContent">清除外部cache下的内容</string>
     <string name="cleanCustomFile">清除自己定义路径下的文件</string>
     <string name="cleanAllData">清除本应用全部的数据</string>
-
     <string name="QMUI_Android">https://qmuiteam.com/android</string>
 
+
+    <!-- 资源链接 -->
+    <string name="Url_NDK">https://developer.android.google.cn/ndk/</string>
+    <string name="Url_Java">https://snailclimb.top/JavaGuide/#/</string>
+    <string name="Url_Android_ui">https://github.com/wasabeef/awesome-android-ui</string>
+    <string name="Url_open_android">https://github.com/open-android/Android</string>
+    <string name="Url_programming_book">https://github.com/justjavac/free-programming-books-zh_CN</string>
+    <string name="Url_open_project">https://github.com/Trinea/android-open-project</string>
+    <string name="Url_qq_course">https://ke.qq.com/course/list?mt=1001&amp;st=2003&amp;tt=3021&amp;price_min=0&amp;price_max=0</string>
+    <string name="Url_jikexueyuan">http://wiki.jikexueyuan.com/list/android/</string>
+    <string name="Url_imooc">https://coding.imooc.com/?c=android</string>
+    <string name="Url_android_training">http://hukai.me/android-training-course-in-chinese/index.html</string>
+    <!-- 资源链接 -->
 </resources>

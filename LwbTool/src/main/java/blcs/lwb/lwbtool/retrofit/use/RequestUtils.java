@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import blcs.lwb.lwbtool.bean.Demo;
 import blcs.lwb.lwbtool.bean.VersionBean;
 import blcs.lwb.lwbtool.retrofit.MyObserver;
 import blcs.lwb.lwbtool.retrofit.RetrofitUtils;

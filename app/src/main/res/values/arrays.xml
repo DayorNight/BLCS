@@ -5,6 +5,7 @@
         <item>@string/Tool</item>
         <item>@string/View</item>
         <item>@string/Other</item>
+        <item>@string/Resources</item>
     </string-array>
     <!--工具栏-->
     <string-array name="Utils">
@@ -62,6 +63,19 @@
         <item>调用系统功能</item>
         <item>SQLite</item>
 
+    </string-array>
+    <!--Resources-->
+    <string-array name="Resources">
+        <item>NDK</item>
+        <item>Java</item>
+        <item>Android UI库</item>
+        <item>开源项目资料与配套视频</item>
+        <item>免费的计算机编程类中文书籍</item>
+        <item>Android 开源项目分类汇总</item>
+        <item>腾讯课堂</item>
+        <item>极客学院</item>
+        <item>慕课网</item>
+        <item>Android官方培训课程</item>
     </string-array>
 
     <!--BottomNavigationView-->
@@ -183,6 +197,22 @@
         <item>@string/URL_APK_Sign</item>
         <item>@string/URL_Arithmetic</item>
         <item>@string/URL_DesignMode</item>
+    </string-array>
+
+
+    <!--资源链接-->
+    <string-array name="Url_Resources">
+        <item>@string/Url_NDK</item>
+        <item>@string/Url_Java</item>
+        <item>@string/Url_Android_ui</item>
+        <item>@string/Url_open_android</item>
+        <item>@string/Url_programming_book</item>
+        <item>@string/Url_open_project</item>
+        <item>@string/Url_qq_course</item>
+        <item>@string/Url_jikexueyuan</item>
+        <item>@string/Url_imooc</item>
+        <item>@string/Url_android_training</item>
+
     </string-array>
 
     <!--RecyclerView title-->

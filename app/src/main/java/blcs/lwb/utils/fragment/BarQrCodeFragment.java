@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.google.zxing.Result;
 import com.yzq.zxinglibrary.common.Constant;
+
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.lwbtool.utils.LinQrCode;
 import blcs.lwb.utils.R;

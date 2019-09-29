@@ -81,7 +81,9 @@ public final class FileUtils
      */
 	public static void deleteFilesByDirectory(File directory) {
 		if (directory != null && directory.exists() && directory.isDirectory()) {
-			for (File item : directory.listFiles()) {
+            File[] files = directory.listFiles();
+            if(files==null){return;}
+            for (File item : files) {
 				item.delete();
 			}
 		}
@@ -107,6 +109,9 @@ public final class FileUtils
 	private static long getFileLenFromPath(File filePath)
 	{
 		File[] files = filePath.listFiles();
+		if (files==null){
+			return 0;
+		}
 
 		for (int i = 0; i < files.length; i++)
 		{

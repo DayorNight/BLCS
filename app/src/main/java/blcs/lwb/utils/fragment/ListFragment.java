@@ -20,6 +20,7 @@ import blcs.lwb.lwbtool.View.DividerItem;
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.lwbtool.utils.FileUtils;
 import blcs.lwb.lwbtool.utils.LogUtils;
+import blcs.lwb.lwbtool.utils.MyUtils;
 import blcs.lwb.lwbtool.utils.RecyclerUtil;
 import blcs.lwb.lwbtool.utils.RxToast;
 import blcs.lwb.utils.R;
@@ -39,6 +40,10 @@ public class ListFragment extends BaseFragment {
     protected void initView() {
 
         String[] list = FileUtils.getRootPath().list();
+        if (list==null){
+            MyUtils.toast(activity,"未读取到SD卡");
+            return;
+        }
         List<String> fileNames = Arrays.asList(list);
         Collections.sort(fileNames);
         ListAdapter listAdapter = new ListAdapter();

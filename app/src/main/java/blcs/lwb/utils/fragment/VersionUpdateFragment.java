@@ -66,22 +66,21 @@ public class VersionUpdateFragment extends BaseFragment {
                     @Override
                     public void onSuccess(VersionBean result) {
                         //判断是否更新
-                        upVersion(result.getVersionName(),result.getApkUrl());
+                        upVersion(result.getVersionName(),result.getVersionNo(),result.getApkUrl());
                     }
                     @Override
                     public void onFailure(Throwable e, String errorMsg) {
-
+                         LogUtils.e(errorMsg);
                     }
                 });
                 break;
         }
     }
 
-    public void upVersion(String name,String url){
-        LogUtils.e("====="+AppUtils.getVersionName(activity));
-        if(AppUtils.getVersionName(activity).equals(name)){
-            RxToast.info(activity,"已经是最新版本");
-        }else{
+    public void upVersion(String name,String code,String url){
+        LogUtils.e("name "+name);
+        LogUtils.e("code "+code);
+        if(AppUtils.getVersionCode(activity)< Integer.parseInt(code)){
             if (LinPermission.checkPermission(activity, 7)) {
                 LinCustomDialogFragment.init().setTitle("发现新版本"+name)
                         .setContent("是否更新?")
@@ -89,7 +88,7 @@ public class VersionUpdateFragment extends BaseFragment {
                         .setOnClickListener(new LinCustomDialogFragment.OnSureCancleListener() {
                             @Override
                             public void clickSure(String EdiText) {
-                                    LinDownloadAPk.downApk(activity, url);
+                                LinDownloadAPk.downApk(activity, url);
                             }
 
                             @Override
@@ -100,6 +99,8 @@ public class VersionUpdateFragment extends BaseFragment {
             } else {
                 LinPermission.requestPermission(activity, 7);
             }
+        }else{
+            RxToast.info(activity,"已经是最新版本");
         }
     }
 }

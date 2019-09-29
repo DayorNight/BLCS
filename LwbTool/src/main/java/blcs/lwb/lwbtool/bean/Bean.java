@@ -1,4 +1,4 @@
-package blcs.lwb.lwbtool.retrofit.use;
+package blcs.lwb.lwbtool.bean;
 
 /**
  * {

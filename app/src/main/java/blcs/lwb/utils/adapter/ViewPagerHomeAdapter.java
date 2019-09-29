@@ -9,6 +9,7 @@ import java.util.List;
 
 import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.utils.fragment.HomeOtherFragment;
+import blcs.lwb.utils.fragment.HomeResourcesFragment;
 import blcs.lwb.utils.fragment.HomeUtilsFragment;
 import blcs.lwb.utils.fragment.HomeViewFragment;
 
@@ -26,6 +27,7 @@ public class ViewPagerHomeAdapter extends FragmentPagerAdapter {
         fragments.add(new HomeUtilsFragment());
         fragments.add(new HomeViewFragment());
         fragments.add(new HomeOtherFragment());
+        fragments.add(new HomeResourcesFragment());
     }
 
     @Override
@@ -35,6 +37,6 @@ public class ViewPagerHomeAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 3;
+        return fragments.size();
     }
 }

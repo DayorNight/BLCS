@@ -4,8 +4,10 @@ import java.util.List;
 import java.util.Map;
 
 import blcs.lwb.lwbtool.Constants;
+import blcs.lwb.lwbtool.bean.Bean;
+import blcs.lwb.lwbtool.bean.Demo;
 import blcs.lwb.lwbtool.bean.VersionBean;
-import blcs.lwb.lwbtool.retrofit.BaseResponse;
+import blcs.lwb.lwbtool.bean.BaseResponse;
 import io.reactivex.Observable;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;

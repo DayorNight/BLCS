@@ -36,7 +36,7 @@ public class MainActivity extends BaseAppCompatActivity implements IMainView {
     BottomNavigationView mainBottom;
     @BindView(R.id.main_viewpage)
     ViewPager mainViewpage;
-    int[] img_menu={R.mipmap.img_util,R.mipmap.img_view,R.mipmap.img_other};
+    int[] img_menu={R.mipmap.img_util,R.mipmap.img_view,R.mipmap.img_other,R.mipmap.img_resources};
     private int pos;//当前页面/
     private float fontSizeScale;
 
