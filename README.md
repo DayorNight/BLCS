@@ -95,8 +95,8 @@
 ![Image text](https://github.com/DayorNight/File/blob/master/Other/1.博客.gif)
 ![Image text](https://github.com/DayorNight/File/blob/master/Other/2.版本更新.gif)
 ![Image text](https://github.com/DayorNight/File/blob/master/Other/3.全局异常捕获.gif)
-### ★ 4.内存泄漏检测 ★ 5.Rxjava+Retrofit封装 ★ 6.调用系统功能
-![Image text](https://github.com/DayorNight/File/blob/master/Other/4.内存泄漏检测.gif)
+### ★ 4.依赖配置 ★ 5.Rxjava+Retrofit封装 ★ 6.调用系统功能
+!
 ![Image text](https://github.com/DayorNight/File/blob/master/Other/5.Rxjava+Retrofit封装.gif)
 ![Image text](https://github.com/DayorNight/File/blob/master/Other/6.调用系统功能.gif)
 ### ★ 7.SQLite

@@ -43,8 +43,6 @@ dependencies {
     api Dp.Marqueeview
     api Dp.AdapterHelper
     debugImplementation Dp.Leakcanary
-    releaseImplementation Dp.LeakcanaryOp
-    debugImplementation Dp.LeakcanarySupport
     api Dp.NavigationBar
     api Dp.MagicIndicator
     api Dp.Fastjson

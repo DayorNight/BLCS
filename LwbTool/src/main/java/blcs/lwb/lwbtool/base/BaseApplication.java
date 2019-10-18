@@ -2,9 +2,6 @@ package blcs.lwb.lwbtool.base;
 
 import android.app.Application;
 
-import com.squareup.leakcanary.LeakCanary;
-
-import blcs.lwb.lwbtool.R;
 import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.lwbtool.utils.crash.CaocConfig;
 import blcs.lwb.lwbtool.utils.crash.CustomActivityOnCrash;
@@ -14,20 +11,8 @@ public abstract class BaseApplication extends Application {
     public void onCreate() {
         super.onCreate();
         initCrash();
-//        initLeakCanary();
     }
 
-    /**
-     * 内存泄漏
-     */
-    private void initLeakCanary(){
-        if (LeakCanary.isInAnalyzerProcess(this)) {
-            // This process is dedicated to LeakCanary for heap analysis.
-            // You should not init your app in this process.
-            return;
-        }
-        LeakCanary.install(this);
-    }
     /**
      * 全局异常捕获
      */

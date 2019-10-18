@@ -6,7 +6,7 @@ import android.support.v7.widget.Toolbar;
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.utils.R;
 
-public class LeakCanaryFragment extends BaseFragment {
+public class DependConfigFragment extends BaseFragment {
     @Override
     public void setMiddleTitle(Toolbar title) {
 

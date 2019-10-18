@@ -35,7 +35,7 @@ import blcs.lwb.utils.fragment.FunciotnIntroFragment;
 import blcs.lwb.utils.fragment.IntentUtilsFragment;
 import blcs.lwb.utils.fragment.JavaDesignPatternFragment;
 import blcs.lwb.utils.fragment.LabelListFragment;
-import blcs.lwb.utils.fragment.LeakCanaryFragment;
+import blcs.lwb.utils.fragment.DependConfigFragment;
 import blcs.lwb.utils.fragment.LinCleanDataFragment;
 import blcs.lwb.utils.fragment.LinCommonFragment;
 import blcs.lwb.utils.fragment.LinCountyFragment;
@@ -125,7 +125,7 @@ public class FramentManages {
     public final static String UpFetchDataRecycler = "UpFetchDataRecycler";
     public final static String MarqueeView = "跑马灯/水波纹/标签";
     public final static String CustomActivityOnCrash = "全局异常捕获";
-    public final static String LeakCanary = "内存泄漏检测";
+    public final static String DependConfig = "依赖配置";
     public final static String RxjavaRetrofit = "Rxjava+Retrofit封装";
     public final static String DrawerLayout = "侧滑菜单/悬浮按钮";
     public final static String MagicIndicator = "ViewPager指示器";
@@ -245,8 +245,8 @@ public class FramentManages {
                 return new MarqueeViewFragment();
             case FramentManages.CustomActivityOnCrash:
                 return new OnCrashFragment();
-            case FramentManages.LeakCanary:
-                return new LeakCanaryFragment();
+            case FramentManages.DependConfig:
+                return new DependConfigFragment();
             case FramentManages.Toolbar:
                 return new ToolbarFragment();
             case FramentManages.DrawerLayout:

@@ -10,37 +10,36 @@
         android:textSize="@dimen/standard_work" />
 
     <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/match_wrap"
         android:layout_marginLeft="@dimen/space_line2"
         android:scrollbars="none">
 
         <LinearLayout style="@style/Lin_vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1、Github地址：\n https://github.com/square/leakcanary \n 2、添加依赖：\n
-        debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.2' \n
-        releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.2' \n
-        debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.2' \n 3、 Application配置：\n if (LeakCanary.isInAnalyzerProcess(this)) { \n      return; \n } \n LeakCanary.install(this);" />
-
             <TextView
                 style="@style/wrap_wrap"
-                android:text=" 4、运行程序后：会在手机界面产生额外的一个应用Leaks" />
-
+                android:text="一、目录" />
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/img_leak_canary" />
-
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_dependconfig"/>
             <TextView
                 style="@style/wrap_wrap"
-                android:text=" 5、打开leaks工具,可查看泄漏情况" />
-
+                android:text="1、新建配置文件" />
             <ImageView
+                style="@style/match_wrap"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_dependconfig1"/>
+            <TextView
                 style="@style/wrap_wrap"
-                android:src="@mipmap/img_leak_canary1" />
+                android:text="2、在根build.gradle添加apply from: 'xxx.gradle'" />
+            <TextView
+                style="@style/wrap_wrap"
+                android:text="3、使用方式" />
+            <ImageView
+                style="@style/match_wrap"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_dependconfig2"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
