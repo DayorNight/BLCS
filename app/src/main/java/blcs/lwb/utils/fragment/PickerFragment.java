@@ -1,5 +1,6 @@
 package blcs.lwb.utils.fragment;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -79,7 +80,6 @@ public class PickerFragment extends BaseFragment {
         initCustomOptionPicker();
         initNoLinkOptionsPicker();
         initCustomTime();
-
     }
 
     @Override
@@ -95,7 +95,7 @@ public class PickerFragment extends BaseFragment {
     public void popBackListener(int returnCode, Bundle bundle) {
     }
 
-    @OnClick({R.id.btn_time_selector, R.id.btn_date_selector,
+    @OnClick({R.id.btn_time_selector,R.id.btn_time_selector1, R.id.btn_date_selector,R.id.btn_date_selector1,
             R.id.btn_date_selector_open, R.id.btn_options_selector_open,
             R.id.btn_pickerview_lunar, R.id.btn_pickerview_time,
             R.id.btn_pickerview_options, R.id.btn_pickerview_CustomTime,
@@ -104,10 +104,16 @@ public class PickerFragment extends BaseFragment {
     public void onViewClicked(View v) {
         switch (v.getId()) {
             case R.id.btn_time_selector://系统时间选择器
-                systemTimePicker();
+                systemTimePicker(AlertDialog.THEME_DEVICE_DEFAULT_LIGHT);
+                break;
+            case R.id.btn_time_selector1://系统时间选择器1
+                systemTimePicker(AlertDialog.THEME_HOLO_LIGHT);
                 break;
             case R.id.btn_date_selector://系统日期选择器
-                systemDatePicker();
+                systemDatePicker(AlertDialog.THEME_DEVICE_DEFAULT_LIGHT);
+                break;
+            case R.id.btn_date_selector1://系统日期选择器1
+                systemDatePicker(AlertDialog.THEME_HOLO_LIGHT);
                 break;
             case R.id.btn_date_selector_open://开源日期选择器
                 openTimePicker();
@@ -187,7 +193,7 @@ public class PickerFragment extends BaseFragment {
 //                        .isRestoreItem(true)//切换时是否还原，设置默认选中第一项。
                 .build();
         //填充数据
-//              pvOptions.setPicker(options1Items, options2Items, options3Items);
+        pvOptions.setPicker(options1Items, options2Items, options1Items);
         optionsPickerView.show();
     }
 
@@ -226,8 +232,8 @@ public class PickerFragment extends BaseFragment {
     /**
      * 系统日期选择器
      */
-    private void systemDatePicker() {
-        LinPicker.showDate(activity, null, new LinPicker.OnDatePickerListener() {
+    private void systemDatePicker(int type) {
+        LinPicker.showDate(activity,type, null, new LinPicker.OnDatePickerListener() {
             @Override
             public void onConfirm(int year, int month, int day) {
                 RxToast.info(activity, year + "-" + month + "-" + day);
@@ -243,8 +249,8 @@ public class PickerFragment extends BaseFragment {
     /**
      * 系统时间选择器
      */
-    private void systemTimePicker() {
-        LinPicker.showTimer(activity, "", new LinPicker.OnTimerPickerListener() {
+    private void systemTimePicker(int type) {
+        LinPicker.showTimer(activity,type, "", new LinPicker.OnTimerPickerListener() {
             @Override
             public void onConfirm(int hour, int minute) {
                 RxToast.info(activity, hour + "-" + minute);

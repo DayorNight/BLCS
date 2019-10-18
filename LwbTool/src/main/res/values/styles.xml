@@ -198,7 +198,12 @@
         <item name="android:windowEnterAnimation">@anim/bottom_dialog_enter</item>
         <item name="android:windowExitAnimation">@anim/bottom_dialog_exit</item>
     </style>
-
+    <declare-styleable name="AttachButton">
+        <!--是否需要自动吸边-->
+        <attr name="customIsAttach" format="boolean" />
+        <!--是否可拖曳-->
+        <attr name="customIsDrag" format="boolean" />
+    </declare-styleable>
     <style name="bottom_dialog" parent="android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item>
         <item name="android:windowNoTitle">true</item>

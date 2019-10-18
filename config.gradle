@@ -1,0 +1,106 @@
+ext {
+    As = [
+            compileSdkVersion: 28,
+            applicationId    : "blcs.lwb.utils",
+            minSdkVersion    : 18,
+            targetSdkVersion : 28,
+            versionCode      : 6,
+            versionName      : "1.0.6",
+    ]
+    Vs = [
+            Constraint            : "1.1.3",
+            Junit                 : "4.12",
+            Espresso              : "3.0.2",
+            Uiautomator           : "2.1.3",
+            Butterknife           : "8.8.1",
+            Glide                 : "4.8.0",
+            DebugDbEncrypt        : "1.0.6",
+            Runner                : "1.0.2",
+            Agentweb              : "4.0.2",
+            Marqueeview           : "1.3.3",
+            AdapterHelper         : "2.9.42",
+            Leakcanary            : "1.6.2",
+            NavigationBar         : "2.0.4",
+            MagicIndicator        : "1.5.0",
+            Fastjson              : "1.1.59.android",
+            Banner                : "1.4.10",
+            Androidsvg            : "1.3",
+            Retrofit2             : "2.5.0",
+            Retrofit2ConverterGson: "2.5.0",
+            Retrofit2Rxjava2      : "1.0.0",
+            Rxlifecycle           : "2.1.0",
+            PickerView            : "4.1.7",
+            Litepal               : "3.0.0",
+            Greendao              : "3.2.2",
+            Qmui                  : "1.4.0",
+            MPAndroidChart        : "v3.1.0",
+            Zxing                 : "2.2.5",
+    ]
+    SupportVersion = "28.0.0-rc02"
+
+    Dp = [
+            SupportV4             : "com.android.support:support-v4:28.0.0-rc02",
+            Recyclerview          : "com.android.support:recyclerview-v7:$SupportVersion",
+            Design                : "com.android.support:design:$SupportVersion",
+            AppcompatV7           : "com.android.support:appcompat-v7:$SupportVersion",
+            // ConstraintLayout布局
+            ConstraintLayout      : "com.android.support.constraint:constraint-layout:$Vs.Constraint",
+            // 测试
+            Junit                 : "junit:junit:$Vs.Junit",
+            Runner                : "com.android.support.test:runner:$Vs.Runner",
+            Espresso              : "com.android.support.test.espresso:espresso-core:$Vs.Espresso",
+            Uiautomator           : "com.android.support.test.uiautomator:uiautomator-v18:$Vs.Uiautomator",
+            // butterknife 依赖注入框架，省去寻找控件的方法findViewById,
+            Butterknife           : "com.jakewharton:butterknife:$Vs.Butterknife",
+            ButterknifeCompiler   : "com.jakewharton:butterknife-compiler:$Vs.Butterknife",
+            // 友盟 分析
+            UmengCommon           : "com.umeng.sdk:common:latest.integration",
+            UmengAnalytics        : "com.umeng.sdk:analytics:latest.integration",
+            // glide 图片加载框架
+            Glide                 : "com.github.bumptech.glide:glide:$Vs.Glide",
+            GlideCompiler         : "com.github.bumptech.glide:compiler:$Vs.Glide",
+            // 数据库可视化工具 可以在线查看数据库
+            DebugDbEncrypt        : "com.amitshekhar.android:debug-db-encrypt:$Vs.DebugDbEncrypt",
+            // AgentWeb:https://github.com/Justson/AgentWeb 一款webView封装框架
+            Agentweb              : "com.just.agentweb:agentweb:$Vs.Agentweb",
+            // 跑马灯 :https://github.com/sunfusheng/MarqueeView
+            Marqueeview           : "com.sunfusheng:marqueeview:$Vs.Marqueeview",
+            // BaseRecyclerViewAdapterHelper:https://github.com/CymChad/BaseRecyclerViewAdapterHelper
+            // 封装baseAdapter 可实现不同的功能 具体查看应用Veiw ->RecyclerView
+            AdapterHelper         : "com.github.CymChad:BaseRecyclerViewAdapterHelper:$Vs.AdapterHelper",
+            // LeakCanary：https://github.com/square/leakcanary 检测内存泄露工具
+            Leakcanary            : "com.squareup.leakcanary:leakcanary-android:$Vs.Leakcanary",
+            LeakcanaryOp          : "com.squareup.leakcanary:leakcanary-android-no-op:$Vs.Leakcanary",
+            LeakcanarySupport     : "com.squareup.leakcanary:leakcanary-support-fragment:$Vs.Leakcanary",
+            // BottomNavigationBar底部导航栏
+            NavigationBar         : "com.ashokvarma.android:bottom-navigation-bar:$Vs.NavigationBar",
+            // MagicIndicator 指示器
+            MagicIndicator        : "com.github.hackware1993:MagicIndicator:$Vs.MagicIndicator",
+            // Fastjson:https://github.com/alibaba/fastjson
+            Fastjson              : "com.alibaba:fastjson:$Vs.Fastjson",
+            // banner:https://github.com/youth5201314/banner 轮播图
+            Banner                : "com.youth.banner:banner:$Vs.Banner",
+            // svg:https://www.jianshu.com/p/64e9598806cb
+            Androidsvg            : "com.caverock:androidsvg-aar:$Vs.Androidsvg",
+            // retrofit网络请求框架
+            Retrofit2             : "com.squareup.retrofit2:retrofit:$Vs.Retrofit2",
+            // retrofit添加Json解析返回数据
+            Retrofit2ConverterGson: "com.squareup.retrofit2:converter-gson:$Vs.Retrofit2",
+            // retrofit添加Rxjava支持
+            Retrofit2Rxjava2      : "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$Vs.Retrofit2Rxjava2",
+            // rxlifecycle框架 管理生命周期
+            Rxlifecycle           : "com.trello.rxlifecycle2:rxlifecycle-components:$Vs.Rxlifecycle",
+            // PickerView https://github.com/Bigkoo/Android-PickerView 选择器弹窗
+            PickerView            : "com.contrarywind:Android-PickerView:$Vs.PickerView",
+            // 开源数据库
+            Litepal               : "org.litepal.android:java:$Vs.Litepal",
+            Greendao              : "org.greenrobot:greendao:$Vs.Greendao",
+            // 腾讯开源UI库 https://qmuiteam.com/android/get-started/
+            Qmui                  : "com.qmuiteam:qmui:$Vs.Qmui",
+            // MPAndroid图表库 https://github.com/PhilJay/MPAndroidChart
+            MPAndroidChart        : "com.github.PhilJay:MPAndroidChart:$Vs.MPAndroidChart",
+            // 二维码相关功能 https://github.com/yuzhiqiang1993/zxing
+            Zxing                 : "com.github.yuzhiqiang1993:zxing:$Vs.Zxing",
+
+    ]
+}

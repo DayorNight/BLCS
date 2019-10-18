@@ -180,6 +180,7 @@ public class FramentManages {
     public final static String OtherCharts = "OtherCharts";
     public final static String ScrollingCharts = "ScrollingCharts";
     public final static String BarQrCode = "条形码/二维码";
+    public final static String SearchView = "搜索框";
 
     /**
      * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -350,7 +351,8 @@ public class FramentManages {
                 return new ScrollingChartsFragment();
             case FramentManages.BarQrCode:
                 return new BarQrCodeFragment();
-
+            case FramentManages.SearchView:
+                return new SearchViewFragment();
 //                return new QMUI_AndroidFragment();
         }
     }

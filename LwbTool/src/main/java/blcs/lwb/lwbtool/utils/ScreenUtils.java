@@ -22,9 +22,11 @@ import android.graphics.Rect;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 
 /**
  * TODO 屏幕相关类
@@ -155,5 +157,35 @@ public class ScreenUtils {
 			}
 		}
 		return screenSize;
+	}
+
+
+	/**
+	 * 获取虚拟功能键高度
+	 */
+	public static int getVirtualBarHeigh(Context context) {
+		int vh = 0;
+		WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+		Display display = windowManager.getDefaultDisplay();
+		DisplayMetrics dm = new DisplayMetrics();
+		try {
+			@SuppressWarnings("rawtypes")
+			Class c = Class.forName("android.view.Display");
+			@SuppressWarnings("unchecked")
+			Method method = c.getMethod("getRealMetrics", DisplayMetrics.class);
+			method.invoke(display, dm);
+			vh = dm.heightPixels - windowManager.getDefaultDisplay().getHeight();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return vh;
+	}
+	public static int getVirtualBarHeigh(Activity activity) {
+		int titleHeight = 0;
+		Rect frame = new Rect();
+		activity.getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);
+		int statusHeight = frame.top;
+		titleHeight = activity.getWindow().findViewById(Window.ID_ANDROID_CONTENT).getTop() - statusHeight;
+		return titleHeight;
 	}
 }

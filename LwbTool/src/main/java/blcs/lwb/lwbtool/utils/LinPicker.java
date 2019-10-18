@@ -16,6 +16,8 @@ import blcs.lwb.lwbtool.R;
 
 /**
  * 选择器
+ * 日期选择器
+ * 时间选择器
  */
 public class LinPicker {
     public final static int TYPE_DATY_HIDE_YEAR = 1;
@@ -25,9 +27,9 @@ public class LinPicker {
     /**
      * 日期选择器
      */
-    public static void showDate(Context context,String title,OnDatePickerListener onDateTimePickerListener){
+    public static void showDate(Context context,int type,String title,OnDatePickerListener onDateTimePickerListener){
         Calendar calendar = Calendar.getInstance();
-        showDate(context,title,AlertDialog.THEME_HOLO_LIGHT,0,calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DATE),onDateTimePickerListener);
+        showDate(context,title,type,0,calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DATE),onDateTimePickerListener);
     }
 
     /**
@@ -110,21 +112,21 @@ public class LinPicker {
 
 
     /**
-     * 显示时间选择器
+     * 时间选择器
      */
-    public static void showTimer(Context context, String title,final OnTimerPickerListener onTimerPickerListener){
+    public static void showTimer(Context context,int type, String title,final OnTimerPickerListener onTimerPickerListener){
         Calendar calendar = Calendar.getInstance();
-        showTimer(context,title,AlertDialog.THEME_HOLO_LIGHT,calendar.get(Calendar.HOUR),calendar.get(Calendar.MINUTE),true,onTimerPickerListener);
+        showTimer(context,title,type,calendar.get(Calendar.HOUR),calendar.get(Calendar.MINUTE),true,onTimerPickerListener);
     }
 
     /**
-     * 显示时间选择器
+     * 时间选择器
      */
     public static void showTimer(Context context, String title, int hour, int minute, final OnTimerPickerListener onTimerPickerListener){
         showTimer(context,title,AlertDialog.THEME_HOLO_LIGHT,hour,minute,true,onTimerPickerListener);
     }
     /**
-     * 显示时间选择器
+     * 时间选择器
      * @param title 标题
      * @param alertDialog 背景：AlertDialog.THEME_HOLO_DARK
      * @param hour 小时

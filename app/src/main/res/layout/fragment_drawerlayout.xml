@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drawer_layout"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <!--主菜单-->
@@ -16,13 +17,21 @@
             android:layout_height="wrap_content"
             android:text="@string/DrawerLayout" />
 
+        <blcs.lwb.lwbtool.View.DragFloatButton
+            android:id="@+id/dragFloatButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@mipmap/img_book"
+            />
+
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/floatingActionButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
-            android:elevation="8dp"
-            android:src="@mipmap/img_book" />
+            android:layout_margin="@dimen/dp_10"
+            android:src="@mipmap/img_sleep" />
     </FrameLayout>
     <!--侧滑菜单-->
     <android.support.design.widget.NavigationView

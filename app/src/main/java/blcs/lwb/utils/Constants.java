@@ -4,8 +4,8 @@ import android.os.Environment;
 
 public class Constants {
 
-//    public final static String InstallApk="http://xxxxxxxxxxx/BLCS.apk";
-    public final static String InstallApk="http://gdown.baidu.com/data/wisegame/ebc26cf5e1754340/changyonggongjulei_4.apk";
+
+    public final static String InstallApk="https://blcs.oss-cn-shenzhen.aliyuncs.com/app/BLCS.apk";
     /**
      *  intent
      */

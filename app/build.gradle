@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'org.greenrobot.greendao'
-
+//隐藏签名信息 ======》
 def keystoreFilepath = ""
 def keystorePSW = ""
 def keystoreAlias = ""
@@ -16,7 +16,7 @@ if(keystoreFilepath){
     keystoreAliasPSW = properties.getProperty("keystore.alias_password")
     keyfile = file(keystoreFilepath)
 }
-
+//《======
 
 android {
     signingConfigs {
@@ -27,13 +27,13 @@ android {
             storePassword keystoreAliasPSW
         }
     }
-    compileSdkVersion 28
+    compileSdkVersion As.compileSdkVersion
     defaultConfig {
-        applicationId "blcs.lwb.utils"
-        minSdkVersion 18
-        targetSdkVersion 28
-        versionCode 6
-        versionName "1.0.6"
+        applicationId As.applicationId
+        minSdkVersion As.minSdkVersion
+        targetSdkVersion As.targetSdkVersion
+        versionCode As.versionCode
+        versionName As.versionName
         flavorDimensions "versionCode"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -50,7 +50,6 @@ android {
         debug {
             debuggable true
             minifyEnabled false
-
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -87,24 +86,14 @@ android {
 dependencies {
     // ========基本关联=======
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    testImplementation 'junit:junit:4.12'
-
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    androidTestImplementation 'com.android.support.test.uiautomator:uiautomator-v18:2.1.3'
-
-    // ========关联工具=======
     implementation project(':LwbTool')
-    // ========关联butterknife=======
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-    //==============友盟================
-    implementation 'com.umeng.sdk:common:latest.integration'
-    implementation 'com.umeng.sdk:analytics:latest.integration'
-    // ========glide=======
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
-
-    // 数据库可视化工具
-    debugImplementation 'com.amitshekhar.android:debug-db-encrypt:1.0.6'
-
-
+    implementation Dp.ConstraintLayout
+    testImplementation Dp.Junit
+    androidTestImplementation Dp.Espresso
+    androidTestImplementation Dp.Uiautomator
+    annotationProcessor Dp.ButterknifeCompiler
+    implementation Dp.UmengCommon
+    implementation Dp.UmengAnalytics
+    annotationProcessor Dp.GlideCompiler
+    debugImplementation Dp.DebugDbEncrypt
 }

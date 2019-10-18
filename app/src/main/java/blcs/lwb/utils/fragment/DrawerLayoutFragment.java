@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import blcs.lwb.lwbtool.View.DragFloatButton;
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.utils.R;
 import butterknife.BindView;
@@ -18,6 +19,8 @@ import butterknife.OnClick;
 public class DrawerLayoutFragment extends BaseFragment {
     @BindView(R.id.floatingActionButton)
     FloatingActionButton floatingActionButton;
+    @BindView(R.id.dragFloatButton)
+    DragFloatButton dragFloatButton;
     @BindView(R.id.btn_start)
     Button btnStart;
     @BindView(R.id.drawer_layout)
@@ -30,7 +33,6 @@ public class DrawerLayoutFragment extends BaseFragment {
 
     @Override
     protected void initView() {
-
     }
 
     @Override
@@ -49,7 +51,7 @@ public class DrawerLayoutFragment extends BaseFragment {
     }
 
 
-    @OnClick({R.id.btn_start, R.id.floatingActionButton})
+    @OnClick({R.id.btn_start, R.id.floatingActionButton,R.id.dragFloatButton})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_start:
