@@ -20,6 +20,7 @@ import android.view.View;
 import android.view.Window;
 
 import blcs.lwb.lwbtool.R;
+import blcs.lwb.lwbtool.manager.AppManager;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
@@ -40,6 +41,7 @@ public abstract class BaseActivity<T extends BaseView, P extends BasePresenter<T
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        AppManager.getAppManager().addActivity(this);
 //		requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(bindLayout());
         bind = ButterKnife.bind(this);

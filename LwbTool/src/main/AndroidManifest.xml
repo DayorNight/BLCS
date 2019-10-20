@@ -22,13 +22,7 @@
         </provider> <!-- 全局异常捕获 -->
         <activity
             android:name=".utils.crash.DefaultErrorActivity"
-            android:process=":error_activity" />
-
-        <provider
-            android:name=".utils.crash.CaocInitProvider"
-            android:authorities="${applicationId}.customactivityoncrashinitprovider"
-            android:exported="false"
-            android:initOrder="101" />
+            android:process=":error_activity"/>
     </application>
 
 </manifest>

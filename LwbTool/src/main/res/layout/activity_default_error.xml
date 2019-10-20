@@ -2,48 +2,43 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/match_match"
-    android:gravity="center">
+    >
+    <ImageView
+        android:id="@+id/img_error_crash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/ic_error"/>
 
-    <ScrollView
-        style="@style/match_wrap"
-        tools:ignore="UselessParent">
+    <TextView
+        android:id="@+id/tv_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="发现一个错误"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/img_error_crash"/>
+    <LinearLayout android:layout_below="@+id/tv_tip"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/space_line2"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_error_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/space_line2"
+            android:text="查看详情"
+            android:textColor="@android:color/holo_red_dark"/>
+        <Button
+            android:id="@+id/btn_restart_app"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_tip"
+            android:layout_toRightOf="@+id/btn_error_details"
+            android:text="重启APP"/>
+    </LinearLayout>
 
-        <LinearLayout
-            style="@style/match_wrap"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="@dimen/space_line2"
-            >
-            <ImageView
-                android:id="@+id/img_error_crash"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@null"
-                android:src="@mipmap/ic_error" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/space_line2"
-                android:gravity="center"
-                android:text="@string/error_occurred"
-                android:textSize="@dimen/standard_title"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/btn_restart_app"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/space_line2"
-                android:text="@string/restart_app" />
-
-            <Button
-                android:id="@+id/btn_error_details"
-                style="?borderlessButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/error_details"
-                android:textColor="@color/red" />
-        </LinearLayout>
-    </ScrollView>
 </RelativeLayout>
