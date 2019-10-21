@@ -16,10 +16,7 @@
 ###### 其他
 > 1.博客 ★ 2.版本更新 ★ 3.全局异常捕获 ★ 4.内存泄漏检测 ★ 5.Rxjava+Retrofit封装 ★ 6.调用系统功能 ★ 7.SQLite
 ###### 资源
-> [1.NDK](https://developer.android.google.cn/ndk/) ★ [2.Java](https://snailclimb.top/JavaGuide/#/) ★ [3.Android UI库](https://github.com/wasabeef/awesome-android-ui)
- ★ [4.开源项目资料与配套视频](https://github.com/open-android/Android) ★ [5.免费的计算机编程类中文书籍](https://github.com/justjavac/free-programming-books-zh_CN)
- ★ [6.Android 开源项目分类汇总](https://github.com/Trinea/android-open-project) ★ [7.腾讯课堂](https://ke.qq.com/course/list?mt=1001&amp;st=2003&amp;tt=3021&amp;price_min=0&amp;price_max=0)
- ★ [8.极客学院](http://wiki.jikexueyuan.com/list/android/) ★ [9.慕课网](https://coding.imooc.com/?c=android) ★ [10.Android官方培训课程](http://hukai.me/android-training-course-in-chinese/index.html)
+> 1.Google网站 ★ 2.GitHub资源归类项目 ★ 3.学习网站 ★ 4.相关语言
 ###### 引用开源库：
 > ★ [1.butterknife](https://github.com/JakeWharton/butterknife) ★ [2.AgentWeb](https://github.com/Justson/AgentWeb) ★ [3.BaseRecyclerViewAdapterHelper](https://github.com/CymChad/BaseRecyclerViewAdapterHelper)
 ★ [4.glide](https://github.com/bumptech/glide) ★ [5.MarqueeView](https://github.com/sunfusheng/MarqueeView) ★ [6.MagicIndicator](https://github.com/hackware1993/MagicIndicator)
@@ -96,7 +93,7 @@
 ![Image text](https://github.com/DayorNight/File/blob/master/Other/2.版本更新.gif)
 ![Image text](https://github.com/DayorNight/File/blob/master/Other/3.全局异常捕获.gif)
 ### ★ 4.依赖配置 ★ 5.Rxjava+Retrofit封装 ★ 6.调用系统功能
-!
+
 ![Image text](https://github.com/DayorNight/File/blob/master/Other/5.Rxjava+Retrofit封装.gif)
 ![Image text](https://github.com/DayorNight/File/blob/master/Other/6.调用系统功能.gif)
 ### ★ 7.SQLite

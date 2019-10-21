@@ -78,4 +78,5 @@ public class PublicFragmentActivity extends BaseFragmentActivity implements IPub
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
+
 }

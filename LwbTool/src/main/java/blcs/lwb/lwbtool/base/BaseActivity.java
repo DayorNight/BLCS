@@ -76,5 +76,6 @@ public abstract class BaseActivity<T extends BaseView, P extends BasePresenter<T
             presenter = null;
         }
         bind.unbind();
+        AppManager.getAppManager().finishActivity(this);
     }
 }

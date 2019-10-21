@@ -67,16 +67,9 @@
     </string-array>
     <!--Resources-->
     <string-array name="Resources">
-        <item>NDK</item>
-        <item>Java</item>
-        <item>Android UI库</item>
-        <item>开源项目资料与配套视频</item>
-        <item>免费的计算机编程类中文书籍</item>
-        <item>Android 开源项目分类汇总</item>
-        <item>腾讯课堂</item>
-        <item>极客学院</item>
-        <item>慕课网</item>
-        <item>Android官方培训课程</item>
+        <item>学习语言</item>
+        <item>学习网站</item>
+        <item>GitHub资源归类</item>
     </string-array>
 
     <!--BottomNavigationView-->
@@ -201,21 +194,63 @@
     </string-array>
 
 
-    <!--资源链接-->
-    <string-array name="Url_Resources">
-        <item>@string/Url_NDK</item>
-        <item>@string/Url_Java</item>
-        <item>@string/Url_Android_ui</item>
-        <item>@string/Url_open_android</item>
-        <item>@string/Url_programming_book</item>
-        <item>@string/Url_open_project</item>
-        <item>@string/Url_qq_course</item>
-        <item>@string/Url_jikexueyuan</item>
-        <item>@string/Url_imooc</item>
-        <item>@string/Url_android_training</item>
-
+    <!--学习语言-->
+    <string-array name="LearnLanguage">
+        <item>Android官方课程</item>
+        <item>NDK</item>
+        <item>Kotlin</item>
+        <item>Java</item>
+        <item>Git</item>
     </string-array>
-
+    <string-array name="Url_LearnLanguage">
+        <item>@string/Url_Android</item>
+        <item>@string/Url_NDK</item>
+        <item>@string/Url_Kotlin</item>
+        <item>@string/Url_Java</item>
+        <item>@string/Url_Git</item>
+    </string-array>
+    <!--学习网站-->
+    <string-array name="LearnWebsite">
+        <item>开源项目资料与配套视频</item>
+        <item>免费的计算机编程类中文书籍</item>
+        <item>开源项目分类汇总</item>
+        <item>开源UI项目分类</item>
+        <item>AndroidUI库</item>
+    </string-array>
+    <string-array name="Url_LearnWebsite">
+        <item>@string/Url_GitDemo1</item>
+        <item>@string/Url_GitDemo2</item>
+        <item>@string/Url_GitDemo3</item>
+        <item>@string/Url_GitDemo4</item>
+        <item>@string/Url_GitDemo5</item>
+    </string-array>
+    <!--GitHub项目-->
+    <string-array name="GitHubSources">
+        <item>Google Android网站</item>
+        <item>Google Android国内版</item>
+        <item>Androi dWeekly</item>
+        <item>Android Hive</item>
+        <item>Android 开发工具</item>
+        <item>腾讯课堂</item>
+        <item>极客学院</item>
+        <item>谷粒学院</item>
+        <item>慕课网</item>
+        <item>尚硅谷</item>
+        <item>站酷</item>
+    </string-array>
+    <string-array name="Url_GitHubSources">
+        <item>@string/Url_Google</item>
+        <item>@string/Url_GoogleChina</item>
+        <item>@string/Url_AndroidWeekly</item>
+        <item>@string/Url_AndroidHive</item>
+        <item>@string/Url_Androidtool</item>
+        <item>@string/Url_Tx</item>
+        <item>@string/Url_JK</item>
+        <item>@string/Url_GL</item>
+        <item>@string/Url_MK</item>
+        <item>@string/Url_GG</item>
+        <item>@string/Url_zc</item>
+    </string-array>
     <!--RecyclerView title-->
     <string-array name="Recycler_title">
         <item>Animation</item>
@@ -256,4 +291,6 @@
         <item>ExpandableItemRecycler</item>
         <item>UpFetchDataRecycler</item>
     </string-array>
+
+
 </resources>

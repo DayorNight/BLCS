@@ -36,7 +36,6 @@ public class HomeResourcesFragment extends Fragment implements IHomeTabView{
     private HomeTabAdapter adapter;
     private HomeTabPresenter presenter;
     private FragmentActivity activity;
-    private ArrayList<String> urls;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -67,7 +66,7 @@ public class HomeResourcesFragment extends Fragment implements IHomeTabView{
         adapter = new HomeTabAdapter();
         RecyclerUtil.init(activity,OrientationHelper.VERTICAL,adapter,recycler);
         adapter.setNewData(MyUtils.getArray(activity, R.array.Resources));
-        urls = MyUtils.getArray(activity, R.array.Url_Resources);
+
 
     }
 
@@ -79,8 +78,7 @@ public class HomeResourcesFragment extends Fragment implements IHomeTabView{
                 String item = (String) adapter.getItem(position);
                 Bundle bundle = new Bundle();
                 bundle.putString(Constants.Item_Name,item);
-                bundle.putString(Constants.URL, urls.get(position));
-                MyUtils.toDemo(activity,bundle);
+                MyUtils.toFragment(activity,bundle,item);
             }
         });
     }

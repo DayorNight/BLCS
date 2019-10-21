@@ -84,6 +84,7 @@ public abstract class BaseFragmentActivity extends AppCompatActivity implements 
 		super.onDestroy();
 		baseP.onDetch();
         bind.unbind();
+		AppManager.getAppManager().finishActivity(this);
 	}
 	private boolean isOnKeyLongPress = false;
 	@Override

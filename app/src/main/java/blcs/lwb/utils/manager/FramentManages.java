@@ -36,6 +36,7 @@ import blcs.lwb.utils.fragment.IntentUtilsFragment;
 import blcs.lwb.utils.fragment.JavaDesignPatternFragment;
 import blcs.lwb.utils.fragment.LabelListFragment;
 import blcs.lwb.utils.fragment.DependConfigFragment;
+import blcs.lwb.utils.fragment.LearnWebsiteFragment;
 import blcs.lwb.utils.fragment.LinCleanDataFragment;
 import blcs.lwb.utils.fragment.LinCommonFragment;
 import blcs.lwb.utils.fragment.LinCountyFragment;
@@ -181,6 +182,9 @@ public class FramentManages {
     public final static String ScrollingCharts = "ScrollingCharts";
     public final static String BarQrCode = "条形码/二维码";
     public final static String SearchView = "搜索框";
+    public final static String LearnLanguage = "学习语言";
+    public final static String LearnWebsite = "学习网站";
+    public final static String GitHubSources = "GitHub资源归类";
 
     /**
      * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -353,7 +357,10 @@ public class FramentManages {
                 return new BarQrCodeFragment();
             case FramentManages.SearchView:
                 return new SearchViewFragment();
-//                return new QMUI_AndroidFragment();
+            case FramentManages.LearnLanguage:
+            case FramentManages.GitHubSources:
+            case FramentManages.LearnWebsite:
+                return new LearnWebsiteFragment();
         }
     }
 
