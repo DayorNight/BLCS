@@ -19,9 +19,6 @@ import android.support.test.uiautomator.UiObjectNotFoundException;
 import android.support.test.uiautomator.UiScrollable;
 import android.support.test.uiautomator.UiSelector;
 import android.view.KeyEvent;
-
-import org.junit.runner.RunWith;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;

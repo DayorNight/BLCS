@@ -76,8 +76,8 @@ public class LinCommon {
 		}
 
 		intent = new Intent(Intent.ACTION_SEND);
-		intent.setType("text/plain");   
-		intent.putExtra(Intent.EXTRA_SUBJECT, "选择分享方式");   
+		intent.setType("text/plain");
+		intent.putExtra(Intent.EXTRA_SUBJECT, "选择分享方式");
 		intent.putExtra(Intent.EXTRA_TEXT, toShare.trim());    
 		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		IntentUtils.toActivity(context, intent, -1);
