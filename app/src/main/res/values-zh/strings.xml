@@ -124,6 +124,9 @@
 
 
     <!--博客-->
+    <string name="URL_android10">https://www.jianshu.com/p/d25bcbb08665</string>
+    <string name="URL_studyResource">https://www.jianshu.com/p/3e71c3337dc5</string>
+    <string name="URL_customView">https://www.jianshu.com/p/b6b0d0af0714</string>
     <string name="URL_study03">https://www.jianshu.com/p/e9996296a982</string>
     <string name="URL_study02">https://www.jianshu.com/p/5ac84e8497b5</string>
     <string name="URL_study01">https://www.jianshu.com/p/967bfa0234f9</string>
@@ -169,18 +172,22 @@
     <string name="Url_Kotlin">https://www.kotlincn.net/docs/reference/extensions.html</string>
     <string name="Url_Java">https://snailclimb.top/JavaGuide/#/</string>
     <string name="Url_Git">https://git-scm.com/book/zh/v2</string>
-    <!-- 学习网站 -->
+    <!-- GitHub资源归类 -->
     <string name="Url_GitDemo1">https://github.com/open-android/Android</string>
     <string name="Url_GitDemo2">https://github.com/justjavac/free-programming-books-zh_CN</string>
     <string name="Url_GitDemo3">https://github.com/Trinea/android-open-project</string>
     <string name="Url_GitDemo4">https://github.com/Tim9Liu9/TimLiu-Android#UI</string>
     <string name="Url_GitDemo5">https://github.com/wasabeef/awesome-android-ui</string>
-    <!-- GitHub资源归类 -->
+    <string name="Url_GitDemo6">https://github.com/CyC2018/CS-Notes</string>
+    <string name="Url_GitDemo7">https://github.com/alibaba/p3c</string>
+    <string name="Url_GitDemo8">https://github.com/doocs/advanced-java</string>
+    <!-- 学习网站 -->
     <string name="Url_Google">https://developer.android.google.cn/</string>
     <string name="Url_GoogleChina">https://developers.google.cn/china/</string>
     <string name="Url_AndroidWeekly">https://androidweekly.net/</string>
     <string name="Url_AndroidHive">https://www.androidhive.info/</string>
     <string name="Url_Androidtool">https://www.androiddevtools.cn/</string>
+    <string name="Url_Chinagdg">https://chinagdg.org/</string>
     <string name="Url_Tx">https://ke.qq.com/course/list?mt=1001&amp;st=2003&amp;tt=3021&amp;price_min=0&amp;price_max=0</string>
     <string name="Url_JK">http://wiki.jikexueyuan.com/list/android/</string>
     <string name="Url_GL">http://www.gulixueyuan.com/path/android</string>

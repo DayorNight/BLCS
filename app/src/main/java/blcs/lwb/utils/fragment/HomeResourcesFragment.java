@@ -66,8 +66,6 @@ public class HomeResourcesFragment extends Fragment implements IHomeTabView{
         adapter = new HomeTabAdapter();
         RecyclerUtil.init(activity,OrientationHelper.VERTICAL,adapter,recycler);
         adapter.setNewData(MyUtils.getArray(activity, R.array.Resources));
-
-
     }
 
     @Override

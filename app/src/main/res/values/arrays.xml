@@ -146,6 +146,9 @@
 
     <!--博客-->
     <string-array name="BLOGS">
+        <item>Android 10文档阅读总结</item>
+        <item>Android 学习资源收集</item>
+        <item>Android 自定义控件基础</item>
         <item>Android ObjectBox开源数据库框架学习笔记</item>
         <item>Android 数据库知识回顾</item>
         <item>Android 《Android移动性能实战》学习笔记</item>
@@ -170,6 +173,9 @@
 
     <!--博客URL-->
     <string-array name="URL_BLOGS">
+        <item>@string/URL_android10</item>
+        <item>@string/URL_studyResource</item>
+        <item>@string/URL_customView</item>
         <item>@string/URL_study03</item>
         <item>@string/URL_study02</item>
         <item>@string/URL_study01</item>
@@ -211,26 +217,12 @@
     </string-array>
     <!--学习网站-->
     <string-array name="LearnWebsite">
-        <item>开源项目资料与配套视频</item>
-        <item>免费的计算机编程类中文书籍</item>
-        <item>开源项目分类汇总</item>
-        <item>开源UI项目分类</item>
-        <item>AndroidUI库</item>
-    </string-array>
-    <string-array name="Url_LearnWebsite">
-        <item>@string/Url_GitDemo1</item>
-        <item>@string/Url_GitDemo2</item>
-        <item>@string/Url_GitDemo3</item>
-        <item>@string/Url_GitDemo4</item>
-        <item>@string/Url_GitDemo5</item>
-    </string-array>
-    <!--GitHub项目-->
-    <string-array name="GitHubSources">
         <item>Google Android网站</item>
         <item>Google Android国内版</item>
-        <item>Androi dWeekly</item>
+        <item>Android Weekly</item>
         <item>Android Hive</item>
         <item>Android 开发工具</item>
+        <item>谷歌开发者社区</item>
         <item>腾讯课堂</item>
         <item>极客学院</item>
         <item>谷粒学院</item>
@@ -238,18 +230,40 @@
         <item>尚硅谷</item>
         <item>站酷</item>
     </string-array>
-    <string-array name="Url_GitHubSources">
+    <string-array name="Url_LearnWebsite">
         <item>@string/Url_Google</item>
         <item>@string/Url_GoogleChina</item>
         <item>@string/Url_AndroidWeekly</item>
         <item>@string/Url_AndroidHive</item>
         <item>@string/Url_Androidtool</item>
+        <item>@string/Url_Chinagdg</item>
         <item>@string/Url_Tx</item>
         <item>@string/Url_JK</item>
         <item>@string/Url_GL</item>
         <item>@string/Url_MK</item>
         <item>@string/Url_GG</item>
         <item>@string/Url_zc</item>
+    </string-array>
+    <!--GitHub项目-->
+    <string-array name="GitHubSources">
+        <item>开源项目资料与配套视频</item>
+        <item>免费的计算机编程类中文书籍</item>
+        <item>Android 开源项目分类汇总</item>
+        <item>开源UI项目分类</item>
+        <item>AndroidUI库</item>
+        <item>技术面试必备CS-Notes</item>
+        <item>教你如何码出高效代码p3c</item>
+        <item>Java 工程师进阶知识</item>
+    </string-array>
+    <string-array name="Url_GitHubSources">
+        <item>@string/Url_GitDemo1</item>
+        <item>@string/Url_GitDemo2</item>
+        <item>@string/Url_GitDemo3</item>
+        <item>@string/Url_GitDemo4</item>
+        <item>@string/Url_GitDemo5</item>
+        <item>@string/Url_GitDemo6</item>
+        <item>@string/Url_GitDemo7</item>
+        <item>@string/Url_GitDemo8</item>
     </string-array>
     <!--RecyclerView title-->
     <string-array name="Recycler_title">

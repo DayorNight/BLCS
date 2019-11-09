@@ -37,7 +37,6 @@ public class MainActivity extends BaseAppCompatActivity implements IMainView {
     @BindView(R.id.main_viewpage)
     ViewPager mainViewpage;
     int[] img_menu={R.mipmap.img_util,R.mipmap.img_view,R.mipmap.img_other,R.mipmap.img_resources};
-    private int pos;//当前页面/
     private float fontSizeScale;
 
     @Override
@@ -69,7 +68,6 @@ public class MainActivity extends BaseAppCompatActivity implements IMainView {
         mainBottom.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                pos =  menuItem.getItemId();
                 switch (menuItem.getItemId()) {
                     case 0:
                         mainViewpage.setCurrentItem(0);
@@ -102,7 +100,6 @@ public class MainActivity extends BaseAppCompatActivity implements IMainView {
             }
             @Override
             public void onPageSelected(int position) {
-                pos = position;
                 mainBottom.setSelectedItemId(position);
             }
             @Override

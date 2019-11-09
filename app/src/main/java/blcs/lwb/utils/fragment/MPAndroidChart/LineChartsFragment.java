@@ -149,7 +149,7 @@ public class LineChartsFragment extends DemoBase implements SeekBar.OnSeekBarCha
             // add limit lines
             yAxis.addLimitLine(ll1);
             yAxis.addLimitLine(ll2);
-            //xAxis.addLimitLine(llXAxis);
+//            xAxis.addLimitLine(llXAxis);
         }
 
         // add data
@@ -168,7 +168,7 @@ public class LineChartsFragment extends DemoBase implements SeekBar.OnSeekBarCha
     }
 
     private void initMenu() {
-        //设置menu
+        //设置menuseekBar2
         activity.tlToolbar.inflateMenu(R.menu.line);
         //菜单点击事件
         activity.tlToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
@@ -322,9 +322,7 @@ public class LineChartsFragment extends DemoBase implements SeekBar.OnSeekBarCha
     }
 
     private void setData(int count, float range) {
-
         ArrayList<Entry> values = new ArrayList<>();
-
         for (int i = 0; i < count; i++) {
 
             float val = (float) (Math.random() * range) - 30;
@@ -333,8 +331,7 @@ public class LineChartsFragment extends DemoBase implements SeekBar.OnSeekBarCha
 
         LineDataSet set1;
 
-        if (chart.getData() != null &&
-                chart.getData().getDataSetCount() > 0) {
+        if (chart.getData() != null && chart.getData().getDataSetCount() > 0) {
             set1 = (LineDataSet) chart.getData().getDataSetByIndex(0);
             set1.setValues(values);
             set1.notifyDataSetChanged();
