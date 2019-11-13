@@ -8,85 +8,87 @@ import android.support.v4.app.FragmentTransaction;
 import java.util.ArrayList;
 
 import blcs.lwb.utils.R;
-import blcs.lwb.utils.fragment.AppUtilsFragment;
-import blcs.lwb.utils.fragment.BannerFragment;
-import blcs.lwb.utils.fragment.BarQrCodeFragment;
-import blcs.lwb.utils.fragment.BaseAdapterFragment.AnimationRecyclerFragment;
-import blcs.lwb.utils.fragment.BaseAdapterFragment.DragAndSwipeFragment;
-import blcs.lwb.utils.fragment.BaseAdapterFragment.EmptyViewFragment;
-import blcs.lwb.utils.fragment.BaseAdapterFragment.ExpandableItemFragment;
-import blcs.lwb.utils.fragment.BaseAdapterFragment.Header_FooterFragment;
-import blcs.lwb.utils.fragment.BaseAdapterFragment.ItemClickRecyclerFragment;
-import blcs.lwb.utils.fragment.BaseAdapterFragment.MultipleItemRecyclerFragment;
-import blcs.lwb.utils.fragment.BaseAdapterFragment.PullToRefreshFragment;
-import blcs.lwb.utils.fragment.BaseAdapterFragment.SectionFragment;
-import blcs.lwb.utils.fragment.BaseAdapterFragment.UpFetchDataFragment;
+import blcs.lwb.utils.fragment.otherFragment.Jetpack.DataBindingFragment;
+import blcs.lwb.utils.fragment.otherFragment.Jetpack.LifecycleFragment;
+import blcs.lwb.utils.fragment.viewFragment.BannerFragment;
+import blcs.lwb.utils.fragment.viewFragment.BarQrCodeFragment;
+import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.AnimationRecyclerFragment;
+import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.DragAndSwipeFragment;
+import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.EmptyViewFragment;
+import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.ExpandableItemFragment;
+import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.Header_FooterFragment;
+import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.ItemClickRecyclerFragment;
+import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.MultipleItemRecyclerFragment;
+import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.PullToRefreshFragment;
+import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.SectionFragment;
+import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.UpFetchDataFragment;
 import blcs.lwb.utils.fragment.BaseFragment;
-import blcs.lwb.utils.fragment.BitmapUtilsFragment;
-import blcs.lwb.utils.fragment.BlogsFragment;
-import blcs.lwb.utils.fragment.BottomNavigationFragment;
-import blcs.lwb.utils.fragment.Color_SpiderFragment;
-import blcs.lwb.utils.fragment.Common_DialogFragment;
-import blcs.lwb.utils.fragment.DialogBottomFragment;
-import blcs.lwb.utils.fragment.DrawerLayoutFragment;
-import blcs.lwb.utils.fragment.EditTextUtilsFragment;
-import blcs.lwb.utils.fragment.FileUtilsFragment;
-import blcs.lwb.utils.fragment.FunciotnIntroFragment;
-import blcs.lwb.utils.fragment.IntentUtilsFragment;
-import blcs.lwb.utils.fragment.JavaDesignPatternFragment;
-import blcs.lwb.utils.fragment.LabelListFragment;
-import blcs.lwb.utils.fragment.DependConfigFragment;
+import blcs.lwb.utils.fragment.toolFragment.BitmapUtilsFragment;
+import blcs.lwb.utils.fragment.otherFragment.BlogsFragment;
+import blcs.lwb.utils.fragment.viewFragment.BottomNavigationFragment;
+import blcs.lwb.utils.fragment.viewFragment.Color_SpiderFragment;
+import blcs.lwb.utils.fragment.viewFragment.Common_DialogFragment;
+import blcs.lwb.utils.fragment.viewFragment.DialogBottomFragment;
+import blcs.lwb.utils.fragment.viewFragment.DrawerLayoutFragment;
+import blcs.lwb.utils.fragment.toolFragment.EditTextUtilsFragment;
+import blcs.lwb.utils.fragment.toolFragment.FileUtilsFragment;
+import blcs.lwb.utils.fragment.otherFragment.FunciotnIntroFragment;
+import blcs.lwb.utils.fragment.toolFragment.IntentUtilsFragment;
+import blcs.lwb.utils.fragment.otherFragment.Jetpack.JetpackFragment;
+import blcs.lwb.utils.fragment.viewFragment.LabelListFragment;
+import blcs.lwb.utils.fragment.otherFragment.DependConfigFragment;
 import blcs.lwb.utils.fragment.LearnWebsiteFragment;
-import blcs.lwb.utils.fragment.LinCleanDataFragment;
-import blcs.lwb.utils.fragment.LinCommonFragment;
-import blcs.lwb.utils.fragment.LinCountyFragment;
-import blcs.lwb.utils.fragment.LinNetStatusFragment;
-import blcs.lwb.utils.fragment.LinPermissionFragment;
-import blcs.lwb.utils.fragment.LinPhoneFragment;
-import blcs.lwb.utils.fragment.LinViewFragment;
+import blcs.lwb.utils.fragment.toolFragment.LinCleanDataFragment;
+import blcs.lwb.utils.fragment.toolFragment.LinCommonFragment;
+import blcs.lwb.utils.fragment.viewFragment.LinCountyFragment;
+import blcs.lwb.utils.fragment.toolFragment.LinNetStatusFragment;
+import blcs.lwb.utils.fragment.toolFragment.LinPermissionFragment;
+import blcs.lwb.utils.fragment.toolFragment.LinPhoneFragment;
+import blcs.lwb.utils.fragment.toolFragment.LinViewFragment;
 import blcs.lwb.utils.fragment.ListFragment;
-import blcs.lwb.utils.fragment.LoupeViewFragment;
-import blcs.lwb.utils.fragment.MPAndroidChart.BarCharts2Fragment;
-import blcs.lwb.utils.fragment.MPAndroidChart.BarChartsFragment;
-import blcs.lwb.utils.fragment.MPAndroidChart.LineChartsFragment;
-import blcs.lwb.utils.fragment.MPAndroidChart.OtherChartsFragment;
-import blcs.lwb.utils.fragment.MPAndroidChart.PieChartsFragment;
-import blcs.lwb.utils.fragment.MPAndroidChart.ScrollingChartsFragment;
-import blcs.lwb.utils.fragment.MPAndroidChartFragment;
-import blcs.lwb.utils.fragment.MagicIndicator.BadgeTabFragment;
-import blcs.lwb.utils.fragment.MagicIndicator.CustomNavigatorFragment;
-import blcs.lwb.utils.fragment.MagicIndicator.DynamicTabFragment;
-import blcs.lwb.utils.fragment.MagicIndicator.FixedTabFragment;
-import blcs.lwb.utils.fragment.MagicIndicator.FragmentContainerFragment;
-import blcs.lwb.utils.fragment.MagicIndicator.LoadCustomLayoutFragment;
-import blcs.lwb.utils.fragment.MagicIndicator.MagicIndicatorFragment;
-import blcs.lwb.utils.fragment.MagicIndicator.NoTabOnlyIndicatorFragment;
-import blcs.lwb.utils.fragment.MagicIndicator.ScrollableTabFragment;
-import blcs.lwb.utils.fragment.MarqueeViewFragment;
+import blcs.lwb.utils.fragment.viewFragment.LoupeViewFragment;
+import blcs.lwb.utils.fragment.viewFragment.MPAndroidChart.BarCharts2Fragment;
+import blcs.lwb.utils.fragment.viewFragment.MPAndroidChart.BarChartsFragment;
+import blcs.lwb.utils.fragment.viewFragment.MPAndroidChart.LineChartsFragment;
+import blcs.lwb.utils.fragment.viewFragment.MPAndroidChart.OtherChartsFragment;
+import blcs.lwb.utils.fragment.viewFragment.MPAndroidChart.PieChartsFragment;
+import blcs.lwb.utils.fragment.viewFragment.MPAndroidChart.ScrollingChartsFragment;
+import blcs.lwb.utils.fragment.viewFragment.MPAndroidChartFragment;
+import blcs.lwb.utils.fragment.viewFragment.MagicIndicator.BadgeTabFragment;
+import blcs.lwb.utils.fragment.viewFragment.MagicIndicator.CustomNavigatorFragment;
+import blcs.lwb.utils.fragment.viewFragment.MagicIndicator.DynamicTabFragment;
+import blcs.lwb.utils.fragment.viewFragment.MagicIndicator.FixedTabFragment;
+import blcs.lwb.utils.fragment.viewFragment.MagicIndicator.FragmentContainerFragment;
+import blcs.lwb.utils.fragment.viewFragment.MagicIndicator.LoadCustomLayoutFragment;
+import blcs.lwb.utils.fragment.viewFragment.MagicIndicator.MagicIndicatorFragment;
+import blcs.lwb.utils.fragment.viewFragment.MagicIndicator.NoTabOnlyIndicatorFragment;
+import blcs.lwb.utils.fragment.viewFragment.MagicIndicator.ScrollableTabFragment;
+import blcs.lwb.utils.fragment.viewFragment.MarqueeViewFragment;
 import blcs.lwb.utils.fragment.MyFragment;
-import blcs.lwb.utils.fragment.NotificationCompatFragment;
-import blcs.lwb.utils.fragment.OnCrashFragment;
-import blcs.lwb.utils.fragment.OpenGlSquareFragment;
-import blcs.lwb.utils.fragment.OpenGlTriangleFragment;
-import blcs.lwb.utils.fragment.PickerFragment;
-import blcs.lwb.utils.fragment.PopupWindowFragment;
-import blcs.lwb.utils.fragment.ProgressBarFragment;
-import blcs.lwb.utils.fragment.RecyclerViewFragment;
-import blcs.lwb.utils.fragment.RxjavaRetrofitFragment;
-import blcs.lwb.utils.fragment.SQLiteFragment;
-import blcs.lwb.utils.fragment.ScratchCardViewFragment;
-import blcs.lwb.utils.fragment.ScreenUtilsFragment;
-import blcs.lwb.utils.fragment.SoundAndVibrationFragment;
-import blcs.lwb.utils.fragment.StringUtilsFragment;
-import blcs.lwb.utils.fragment.SystemFunctionFragment;
-import blcs.lwb.utils.fragment.ToolbarFragment;
-import blcs.lwb.utils.fragment.TurnTableViewFragment;
-import blcs.lwb.utils.fragment.VersionUpdateFragment;
-import blcs.lwb.utils.fragment.Viewpage.SwipeCardFragment;
-import blcs.lwb.utils.fragment.Viewpage.ViewpageFragment;
-import blcs.lwb.utils.fragment.Viewpage.jellyViewPagerFragment;
-import blcs.lwb.utils.fragment.WeChat.MultiLanguageFragment;
-import blcs.lwb.utils.fragment.WeChat.WeChatFunctionFragment;
+import blcs.lwb.utils.fragment.viewFragment.NotificationCompatFragment;
+import blcs.lwb.utils.fragment.otherFragment.OnCrashFragment;
+import blcs.lwb.utils.fragment.viewFragment.OpenGlSquareFragment;
+import blcs.lwb.utils.fragment.viewFragment.OpenGlTriangleFragment;
+import blcs.lwb.utils.fragment.viewFragment.PickerFragment;
+import blcs.lwb.utils.fragment.viewFragment.PopupWindowFragment;
+import blcs.lwb.utils.fragment.viewFragment.ProgressBarFragment;
+import blcs.lwb.utils.fragment.viewFragment.RecyclerViewFragment;
+import blcs.lwb.utils.fragment.otherFragment.RxjavaRetrofitFragment;
+import blcs.lwb.utils.fragment.otherFragment.SQLiteFragment;
+import blcs.lwb.utils.fragment.viewFragment.ScratchCardViewFragment;
+import blcs.lwb.utils.fragment.toolFragment.ScreenUtilsFragment;
+import blcs.lwb.utils.fragment.viewFragment.SoundAndVibrationFragment;
+import blcs.lwb.utils.fragment.toolFragment.StringUtilsFragment;
+import blcs.lwb.utils.fragment.otherFragment.SystemFunctionFragment;
+import blcs.lwb.utils.fragment.viewFragment.ToolbarFragment;
+import blcs.lwb.utils.fragment.viewFragment.TurnTableViewFragment;
+import blcs.lwb.utils.fragment.otherFragment.VersionUpdateFragment;
+import blcs.lwb.utils.fragment.viewFragment.Viewpage.SwipeCardFragment;
+import blcs.lwb.utils.fragment.viewFragment.Viewpage.ViewpageFragment;
+import blcs.lwb.utils.fragment.viewFragment.Viewpage.jellyViewPagerFragment;
+import blcs.lwb.utils.fragment.viewFragment.WeChat.MultiLanguageFragment;
+import blcs.lwb.utils.fragment.viewFragment.WeChat.WeChatFunctionFragment;
+import blcs.lwb.utils.fragment.toolFragment.AppUtilsFragment;
 import blcs.lwb.utils.mvp.BaseFragmentActivity;
 
 /**
@@ -102,32 +104,50 @@ public class FramentManages {
      */
     public final static String Demo = "我的片段";
     public final static String ListDemo = "ListFragment";
-    public final static String String_Utils = "StringUtils";
+    public final static String LearnLanguage = "学习语言";
+    public final static String LearnWebsite = "学习网站";
+    public final static String GitHubSources = "GitHub资源归类";
+    /**
+     * 工具
+     */
+    public final static String App_Utils = "AppUtils";
+    public final static String Bitmap_Utils = "BitmapUtils";
     public final static String EditText_Utils = "EditTextUtils";
     public final static String Intent_Utils = "IntentUtils";
-    public final static String App_Utils = "AppUtils";
+    public final static String String_Utils = "StringUtils";
     public final static String Screen_Utils = "ScreenUtils";
-    public final static String Bitmap_Utils = "BitmapUtils";
-    public final static String RxToast = "RxToast";
-    public final static String Toolbar = "toolbar";
+    public final static String LinView = "LinView";
+    public final static String FileUtils = "FileUtils";
+    public final static String LinCommon = "LinCommon";
+    public final static String LinCleanData = "LinCleanData";
+    public final static String LinPermission = "LinPermission";
+    public final static String LinNetStatus = "LinNetStatus";
+    public final static String LinPhone = "LinPhone";
+    /**
+     * View
+     */
+    public final static String WeChatFunction = "仿微信功能及控件";
+        public final static String FontSize = "字体大小";
+        public final static String MultiLanguage = "多语言";
+        public final static String WeChatStorage = "存储空间";
+        public final static String LinCounty = "地区选择";
     public final static String BottomNavigation = "BottomNavigationView";
     public final static String RecyclerView = "RecyclerView";
+        public final static String AnimationRecycler = "AnimationRecycler";
+        public final static String MultipleItemRecycler = "MultipleItemRecycler";
+        public final static String Header_FooterRecycler = "Header/FooterRecycler";
+        public final static String PullToRefreshRecycler = "PullToRefreshRecycler";
+        public final static String SectionRecycler = "SectionRecycler";
+        public final static String EmptyViewRecycler = "EmptyViewRecycler";
+        public final static String DragAndSwipeRecycler = "DragAndSwipeRecycler";
+        public final static String ItemClickRecycler = "ItemClickRecycler";
+        public final static String ExpandableItemRecycler = "ExpandableItemRecycler";
+        public final static String UpFetchDataRecycler = "UpFetchDataRecycler";
+    public final static String DialogFragment = "DialogFragment";
+    public final static String Toolbar = "toolbar";
+    public final static String RxToast = "RxToast";
     public final static String TurnTableView = "转盘小游戏";
-    public final static String JavaDesignPattern = "Java常用设计模式";
-    public final static String AnimationRecycler = "AnimationRecycler";
-    public final static String MultipleItemRecycler = "MultipleItemRecycler";
-    public final static String Header_FooterRecycler = "Header/FooterRecycler";
-    public final static String PullToRefreshRecycler = "PullToRefreshRecycler";
-    public final static String SectionRecycler = "SectionRecycler";
-    public final static String EmptyViewRecycler = "EmptyViewRecycler";
-    public final static String DragAndSwipeRecycler = "DragAndSwipeRecycler";
-    public final static String ItemClickRecycler = "ItemClickRecycler";
-    public final static String ExpandableItemRecycler = "ExpandableItemRecycler";
-    public final static String UpFetchDataRecycler = "UpFetchDataRecycler";
     public final static String MarqueeView = "跑马灯/水波纹/标签";
-    public final static String CustomActivityOnCrash = "全局异常捕获";
-    public final static String DependConfig = "依赖配置";
-    public final static String RxjavaRetrofit = "Rxjava+Retrofit封装";
     public final static String DrawerLayout = "侧滑菜单/悬浮按钮";
     public final static String MagicIndicator = "ViewPager指示器";
     public final static String ScrollableTab = "指示器1";
@@ -147,44 +167,36 @@ public class FramentManages {
     public final static String ProgressBar = "进度条";
     public final static String Color_Spider = "蛛网等级及颜色选取";
     public final static String Banner = "Banner轮播图";
-    public final static String WeChatFunction = "仿微信功能及控件";
-    public final static String FontSize = "字体大小";
-    public final static String MultiLanguage = "多语言";
-    public final static String WeChatStorage = "存储空间";
-    public final static String DialogFragment = "DialogFragment";
-    public final static String BLOGS = "博客";
     public final static String NotificationCompat = "通知NotificationCompat";
     public final static String Picker = "选择器Picker";
-    public final static String VersionUpdate = "版本更新";
     public final static String LabelList = "标签列表LabelList";
     public final static String SoundAndVibration = "声音与震动";
-    public final static String SystemFunction = "调用系统功能";
-    public final static String LinView = "LinView";
-    public final static String FileUtils = "FileUtils";
-    public final static String SQLite = "SQLite";
-    public final static String FunciotnIntro = "功能介绍";
     public final static String PopupWindow = "PopupWindow";
     public final static String LoupeView = "放大镜";
     public final static String ScratchCardView = "刮刮卡";
-    public final static String LinCommon = "LinCommon";
-    public final static String LinCleanData = "LinCleanData";
-    public final static String LinCounty = "地区选择";
-    public final static String LinPermission = "LinPermission";
-    public final static String LinNetStatus = "LinNetStatus";
-    public final static String LinPhone = "LinPhone";
     public final static String QMUI_Android = "腾讯开源UI库《QMUI_Android》";
     public final static String MPAndroidChart = "开源图表库《MPAndroidChart》";
-    public final static String LineCharts = "LineCharts";
-    public final static String BarCharts = "BarCharts";
-    public final static String BarCharts2 = "BarCharts2";
-    public final static String PieCharts = "PieCharts";
-    public final static String OtherCharts = "OtherCharts";
-    public final static String ScrollingCharts = "ScrollingCharts";
+        public final static String LineCharts = "LineCharts";
+        public final static String BarCharts = "BarCharts";
+        public final static String BarCharts2 = "BarCharts2";
+        public final static String PieCharts = "PieCharts";
+        public final static String OtherCharts = "OtherCharts";
+        public final static String ScrollingCharts = "ScrollingCharts";
     public final static String BarQrCode = "条形码/二维码";
-    public final static String SearchView = "搜索框";
-    public final static String LearnLanguage = "学习语言";
-    public final static String LearnWebsite = "学习网站";
-    public final static String GitHubSources = "GitHub资源归类";
+    /**
+     * 其他
+     */
+    public final static String BLOGS = "博客";
+    public final static String VersionUpdate = "版本更新";
+        public final static String FunciotnIntro = "功能介绍";
+    public final static String CustomActivityOnCrash = "全局异常捕获";
+    public final static String DependConfig = "依赖配置";
+    public final static String RxjavaRetrofit = "Rxjava+Retrofit封装";
+    public final static String SystemFunction = "调用系统功能";
+    public final static String SQLite = "SQLite";
+    public final static String Jetpack = "Jetpack架构组件";
+    public final static String DataBinding = "DataBinding";
+    public final static String Lifecycle = "Lifecycle";
 
     /**
      * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -223,8 +235,6 @@ public class FramentManages {
                 return new RecyclerViewFragment();
             case FramentManages.TurnTableView:
                 return new TurnTableViewFragment();
-            case FramentManages.JavaDesignPattern:
-                return new JavaDesignPatternFragment();
             case FramentManages.AnimationRecycler:
                 return new AnimationRecyclerFragment();
             case FramentManages.MultipleItemRecycler:
@@ -355,12 +365,16 @@ public class FramentManages {
                 return new ScrollingChartsFragment();
             case FramentManages.BarQrCode:
                 return new BarQrCodeFragment();
-            case FramentManages.SearchView:
-                return new SearchViewFragment();
             case FramentManages.LearnLanguage:
             case FramentManages.GitHubSources:
             case FramentManages.LearnWebsite:
                 return new LearnWebsiteFragment();
+            case FramentManages.Jetpack:
+                return new JetpackFragment();
+            case FramentManages.DataBinding:
+                return new DataBindingFragment();
+            case FramentManages.Lifecycle:
+                return new LifecycleFragment();
         }
     }
 

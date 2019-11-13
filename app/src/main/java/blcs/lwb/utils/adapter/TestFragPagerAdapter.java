@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import blcs.lwb.utils.Constants;
-import blcs.lwb.utils.fragment.Viewpage.PageFragment;
+import blcs.lwb.utils.fragment.viewFragment.Viewpage.PageFragment;
 
 
 public class TestFragPagerAdapter extends FragmentPagerAdapter {

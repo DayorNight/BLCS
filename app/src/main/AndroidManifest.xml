@@ -61,12 +61,12 @@
             />
 
         <activity
-            android:name=".fragment.WeChat.FontSizeActivity"
+            android:name=".fragment.viewFragment.WeChat.FontSizeActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/FontSizeActivity"
             />
         <activity
-            android:name=".fragment.WeChat.WeChatStorageActivity"
+            android:name=".fragment.viewFragment.WeChat.WeChatStorageActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/WeChatStorageActivity"
             />

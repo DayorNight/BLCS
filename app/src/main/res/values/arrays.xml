@@ -63,6 +63,7 @@
         <item>Rxjava+Retrofit封装</item>
         <item>调用系统功能</item>
         <item>SQLite</item>
+        <item>Jetpack架构组件</item>
 
     </string-array>
     <!--Resources-->

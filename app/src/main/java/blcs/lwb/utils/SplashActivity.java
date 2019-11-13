@@ -1,8 +1,6 @@
 package blcs.lwb.utils;
 
 
-import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,7 +8,7 @@ import android.widget.TextView;
 
 import blcs.lwb.lwbtool.base.BaseActivity;
 import blcs.lwb.lwbtool.base.BasePresenter;
-import blcs.lwb.utils.fragment.IntentUtilsFragment;
+import blcs.lwb.utils.fragment.toolFragment.IntentUtilsFragment;
 import butterknife.BindView;
 import butterknife.OnClick;
 
