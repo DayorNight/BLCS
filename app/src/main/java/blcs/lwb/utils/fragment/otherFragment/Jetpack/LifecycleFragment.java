@@ -20,6 +20,7 @@ public class LifecycleFragment extends BaseFragment {
     @Override
     protected void initView() {
         getLifecycle().addObserver(new MyObserver());
+        
     }
 
     @Override
