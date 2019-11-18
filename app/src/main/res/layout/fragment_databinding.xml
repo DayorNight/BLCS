@@ -1,15 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <TextView
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+    <data>
+        <import type="android.support.v7.widget.LinearLayoutManager"/>
+        <variable
+            name="name"
+            type="String" />
+        <variable
+            name="content"
+            type="String" />
+        <variable
+            name="click"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="manager"
+            type="LinearLayoutManager"/>
+        <variable
+            name="listAdapter"
+            type="blcs.lwb.utils.adapter.ListAdapter"/>
+    </data>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text = "DataBinding"
-        />
-</android.support.constraint.ConstraintLayout>
+        android:background= "@color/white"
+        android:gravity = "center"
+        android:orientation = "vertical"
+        >
+        <EditText
+            style="@style/wrap_wrap"
+            android:gravity = "center"
+            android:ems="7"
+            android:text="@={content}"
+            />
+        <Button
+            style="@style/wrap_wrap"
+            android:onClick="@{click}"
+            android:text = "add"
+            />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_dataBind"
+            style="@style/match_match"
+            app:layoutManager="@{manager}"
+            app:adapter="@{listAdapter}"
+
+            />
+    </LinearLayout>
+</layout>
