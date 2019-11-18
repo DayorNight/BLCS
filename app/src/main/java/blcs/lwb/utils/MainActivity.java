@@ -136,5 +136,4 @@ public class MainActivity extends BaseAppCompatActivity implements IMainView {
         res.updateConfiguration(config,res.getDisplayMetrics());
         return res;
     }
-
 }
