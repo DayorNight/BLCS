@@ -8,6 +8,8 @@ import android.support.v4.app.FragmentTransaction;
 import java.util.ArrayList;
 
 import blcs.lwb.utils.R;
+import blcs.lwb.utils.fragment.otherFragment.LiveDataFragment;
+import blcs.lwb.utils.fragment.otherFragment.ViewModelFragment;
 import blcs.lwb.utils.fragment.otherFragment.Jetpack.DataBindingFragment;
 import blcs.lwb.utils.fragment.otherFragment.Jetpack.LifecycleFragment;
 import blcs.lwb.utils.fragment.viewFragment.BannerFragment;
@@ -197,6 +199,8 @@ public class FramentManages {
     public final static String Jetpack = "Jetpack架构组件";
     public final static String DataBinding = "DataBinding";
     public final static String Lifecycle = "Lifecycle";
+    public final static String LiveData = "LiveData";
+    public final static String ViewModel = "ViewModel";
 
     /**
      * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -375,6 +379,10 @@ public class FramentManages {
                 return new DataBindingFragment();
             case FramentManages.Lifecycle:
                 return new LifecycleFragment();
+            case FramentManages.LiveData:
+                return new LiveDataFragment();
+            case FramentManages.ViewModel:
+                return new ViewModelFragment();
         }
     }
 

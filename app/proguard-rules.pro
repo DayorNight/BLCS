@@ -830,3 +830,9 @@ public static java.lang.String TABLENAME;
 -keep public interface net.sqlcipher.database.**
 -dontwarn net.sqlcipher.database.**
 -dontwarn org.greenrobot.greendao.**
+
+## ----------------------------------
+##          XmlResourceParser
+## ----------------------------------
+-keep class org.xmlpull.v1.** { *;}
+-dontwarn org.xmlpull.v1.**
