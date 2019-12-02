@@ -1,37 +1,26 @@
-package blcs.lwb.utils.fragment.otherFragment;
+package blcs.lwb.utils.fragment.otherFragment.Jetpack;
 
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.Observer;
 import android.net.NetworkInfo;
-import android.net.sip.SipSession;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.lwbtool.utils.NetworkLiveData;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.fragment.BaseFragment;
+import blcs.lwb.utils.utils.MyUtils;
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
+import butterknife.OnClick;
 
 public class LiveDataFragment extends BaseFragment {
-    @BindView(R.id.tv_livedata_network)
-    TextView tvLivedataNetwork;
-    @BindView(R.id.et_livedata)
-    EditText etLivedata;
+    @BindView(R.id.tv_liveData_netWork)
+    TextView tvLiveDataNetWork;
     @BindView(R.id.tv_livedata)
     TextView tvLivedata;
-    private MutableLiveData<String> currentName;
-
     @Override
     protected int bindLayout() {
         return R.layout.fragment_livedata;
@@ -44,13 +33,13 @@ public class LiveDataFragment extends BaseFragment {
             public void onChanged(@Nullable NetworkInfo networkInfo) {
                 if (networkInfo != null && networkInfo.isConnected()) {
                     String type = networkInfo.getTypeName();
-                    tvLivedataNetwork.setText("监听网络状态改变:"+type);
+                    tvLiveDataNetWork.setText("监听网络状态改变:"+type);
                 }
             }
         });
 
         // 1.创建一个LiveData实例来保存数据
-        currentName = new MutableLiveData<String>();
+        MutableLiveData<String> currentName = new MutableLiveData<String>();
         // 2.创建Observer监听数据改变
         final Observer<String> nameObserver = new Observer<String>() {
             @Override
@@ -59,28 +48,12 @@ public class LiveDataFragment extends BaseFragment {
                 tvLivedata.setText(newName);
             }
         };
-        // 添加Observer
+        // 3.添加Observer
         currentName.observe(this, nameObserver);
+        // 设置值
+//        currentName.setValue("xxxx");
 
-        etLivedata.addTextChangedListener(watcher);
     }
-
-    private TextWatcher watcher = new TextWatcher() {
-        @Override
-        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-        }
-
-        @Override
-        public void onTextChanged(CharSequence s, int start, int before, int count) {
-            currentName.setValue(s.toString());
-        }
-
-        @Override
-        public void afterTextChanged(Editable s) {
-
-        }
-    };
     @Override
     public void setMiddleTitle(Toolbar title) {
 
@@ -95,5 +68,8 @@ public class LiveDataFragment extends BaseFragment {
     public void popBackListener(int returnCode, Bundle bundle) {
 
     }
-
+    @OnClick(R.id.btn_liveData)
+    public void click(){
+        MyUtils.toUrl(this,"LiveData",getString(R.string.URL_LiveData));
+    }
 }

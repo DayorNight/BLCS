@@ -20,6 +20,7 @@ import android.widget.Toast;
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.fragment.BaseFragment;
+import blcs.lwb.utils.utils.MyUtils;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -56,12 +57,19 @@ public class LifecycleFragment extends BaseFragment {
     public void popBackListener(int returnCode, Bundle bundle) {
 
     }
-    @OnClick(R.id.btn_send)
+    @OnClick({R.id.btn_send,R.id.btn_lifeCycle})
     public void send(View view){
-        Intent intent = new Intent();
-        intent.setAction("xxx");
-        intent.putExtra("content", "广播1号");
-        activity.sendBroadcast(intent);
+        switch (view.getId()){
+            case R.id.btn_send:
+                Intent intent = new Intent();
+                intent.setAction("xxx");
+                intent.putExtra("content", "广播1号");
+                activity.sendBroadcast(intent);
+                break;
+            case R.id.btn_lifeCycle:
+                MyUtils.toUrl(this,"LifeCycle",getString(R.string.URL_Lifecycle1));
+                break;
+        }
     }
 
     class MyObserver implements LifecycleObserver {

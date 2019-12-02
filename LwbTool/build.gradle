@@ -67,4 +67,5 @@ dependencies {
     api Dp.Qmui
     api Dp.MPAndroidChart
     api Dp.Zxing
+    api Dp.LifecycleViewModel
 }

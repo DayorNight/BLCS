@@ -147,6 +147,12 @@
 
     <!--博客-->
     <string-array name="BLOGS">
+        <item>Android Jetpack架构组件之ViewModel入门到精通</item>
+        <item>Android Jetpack架构组件之LiveData</item>
+        <item>Android Jetpack架构组件之Lifecycle源码分析</item>
+        <item>Android Jetpack架构组件之Lifecycle入门</item>
+        <item>Android Espresso入门到自动搞定</item>
+        <item>Android ButterKnife入门到放弃</item>
         <item>Android 10文档阅读总结</item>
         <item>Android 学习资源收集</item>
         <item>Android 自定义控件基础</item>
@@ -174,6 +180,12 @@
 
     <!--博客URL-->
     <string-array name="URL_BLOGS">
+        <item>@string/URL_ViewModel</item>
+        <item>@string/URL_LiveData</item>
+        <item>@string/URL_Lifecycle2</item>
+        <item>@string/URL_Lifecycle1</item>
+        <item>@string/URL_Espresso</item>
+        <item>@string/URL_ButterKnife</item>
         <item>@string/URL_android10</item>
         <item>@string/URL_studyResource</item>
         <item>@string/URL_customView</item>

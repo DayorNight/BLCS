@@ -1,33 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    style="@style/match_match"
     android:background="@color/white"
+    android:padding="@dimen/space_line2"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <TextView
-        android:id="@+id/tv_livedata_network"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/btn_liveData"
+        style="@style/Button_alpha"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="Jetpack架构组件之LiveData"/>
+    <TextView
+        android:id="@+id/tv_liveData_netWork"
+        style="@style/text_stander"
+        android:padding="@dimen/space_line2"
+        app:layout_constraintTop_toBottomOf="@+id/btn_liveData"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:textSize="@dimen/standard_title"
-        android:text="监听网络状态改变"/>
-    <EditText
-        android:id="@+id/et_livedata"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/tv_livedata_network"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:hint="监听数据变化"/>
+        android:text="监听网络状态改变:"
+        />
     <TextView
         android:id="@+id/tv_livedata"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/et_livedata"
+        style="@style/wrap_wrap"
+        app:layout_constraintTop_toBottomOf="@+id/tv_liveData_netWork"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        android:text="1.创建一个LiveData实例来保存数据
+        \nMutableLiveData&lt;String&gt; currentName = new MutableLiveData&lt;String&gt;();
+        \n
+        \n2.创建Observer监听数据改变
+        \nfinal Observer&lt;String&gt; nameObserver = new Observer&lt;String&gt;() {
+            \n@Override\n
+            public void onChanged(@Nullable final String newName) {\n
+                //更新UI操作\n
+                nameTextView.setText(newName);\n
+            }\n
+        };
+        \n3.添加Observer
+        \n        currentName.observe(this, nameObserver);
+        \n4.设置值
+        \n        currentName.setValue('xxxx');"
         />
 </android.support.constraint.ConstraintLayout>

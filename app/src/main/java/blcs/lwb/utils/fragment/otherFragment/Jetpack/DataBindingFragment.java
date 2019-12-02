@@ -16,6 +16,7 @@ import blcs.lwb.utils.R;
 import blcs.lwb.utils.adapter.ListAdapter;
 import blcs.lwb.utils.databinding.FragmentDatabindingBinding;
 import blcs.lwb.utils.fragment.BaseFragment;
+import blcs.lwb.utils.utils.MyUtils;
 
 public class DataBindingFragment extends BaseFragment implements View.OnClickListener {
 
@@ -61,7 +62,15 @@ public class DataBindingFragment extends BaseFragment implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
-        listAdapter.addData(bind.getContent());
-        bind.setContent("");
+        switch (v.getId()){
+            case R.id.btn_dataBinding:
+                MyUtils.toUrl(this,"DataBinding",getString(R.string.URL_DataBinding));
+                break;
+            case R.id.btn_dataBinding_add:
+                listAdapter.addData(bind.getContent());
+                bind.setContent("");
+                break;
+        }
+
     }
 }

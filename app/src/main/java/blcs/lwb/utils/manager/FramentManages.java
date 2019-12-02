@@ -8,10 +8,10 @@ import android.support.v4.app.FragmentTransaction;
 import java.util.ArrayList;
 
 import blcs.lwb.utils.R;
-import blcs.lwb.utils.fragment.otherFragment.LiveDataFragment;
-import blcs.lwb.utils.fragment.otherFragment.ViewModelFragment;
 import blcs.lwb.utils.fragment.otherFragment.Jetpack.DataBindingFragment;
 import blcs.lwb.utils.fragment.otherFragment.Jetpack.LifecycleFragment;
+import blcs.lwb.utils.fragment.otherFragment.Jetpack.LiveDataFragment;
+import blcs.lwb.utils.fragment.otherFragment.Jetpack.ViewModelFragment;
 import blcs.lwb.utils.fragment.viewFragment.BannerFragment;
 import blcs.lwb.utils.fragment.viewFragment.BarQrCodeFragment;
 import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.AnimationRecyclerFragment;

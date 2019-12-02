@@ -26,6 +26,11 @@
         android:gravity = "center"
         android:orientation = "vertical"
         >
+        <Button
+            android:id="@+id/btn_dataBinding"
+            style="@style/Button_alpha"
+            android:onClick="@{click}"
+            android:text="Jetpack架构组件之数据绑定"/>
         <EditText
             style="@style/wrap_wrap"
             android:gravity = "center"
@@ -33,6 +38,7 @@
             android:text="@={content}"
             />
         <Button
+            android:id="@+id/btn_dataBinding_add"
             style="@style/wrap_wrap"
             android:onClick="@{click}"
             android:text = "add"

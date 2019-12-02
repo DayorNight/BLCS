@@ -124,6 +124,12 @@
 
 
     <!--博客-->
+    <string name="URL_ViewModel">https://www.jianshu.com/p/bc34c2db244f</string>
+    <string name="URL_LiveData">https://www.jianshu.com/p/6651046cd4d8</string>
+    <string name="URL_Lifecycle2">https://www.jianshu.com/p/798354ed17b9</string>
+    <string name="URL_Lifecycle1">https://www.jianshu.com/p/7491750f7988</string>
+    <string name="URL_Espresso">https://www.jianshu.com/p/5639c7224490</string>
+    <string name="URL_ButterKnife">https://www.jianshu.com/p/db412b48f4db</string>
     <string name="URL_android10">https://www.jianshu.com/p/d25bcbb08665</string>
     <string name="URL_studyResource">https://www.jianshu.com/p/3e71c3337dc5</string>
     <string name="URL_customView">https://www.jianshu.com/p/b6b0d0af0714</string>
@@ -194,4 +200,6 @@
     <string name="Url_MK">https://coding.imooc.com/?c=android</string>
     <string name="Url_GG">http://www.atguigu.com/android_video.shtml#android</string>
     <string name="Url_zc">https://www.zcool.com.cn/work/ZMzY0MDAwMjA=.html</string>
+
+    <string name="viewModel">1.添加依赖： implementation androidx.lifecycle:lifecycle-extensions:2.1.0 \n 2.继承ViewModel或AndroidViewModel \n 3.使用： ViewModelProviders.of(this).get(DemoViewModel.class)</string>
 </resources>

@@ -2,12 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/match_match"
     android:orientation = "vertical"
-    android:padding="15dp"
+    android:padding="@dimen/space_line2"
     android:background = "@color/white"
     >
+    <Button
+        android:id="@+id/btn_lifeCycle"
+        style="@style/Button_alpha"
+        android:text="Jetpack架构组件之Lifecycle入门"/>
     <TextView
         style="@style/text_stander"
-        android:text = "监听到的生命周期变化："
+        android:layout_marginTop="@dimen/space_line2"
+        android:text="监听到的生命周期变化："
         />
     <TextView
         android:id = "@+id/tv_lifecycle"
@@ -16,5 +21,13 @@
         android:id = "@+id/btn_send"
         style="@style/wrap_wrap"
         android:text = "发送广播Demo" />
-
+    <TextView
+        style="@style/wrap_wrap"
+        android:text=" 1.添加依赖：
+        \n implementation 'androidx.appcompat:appcompat:1.1.0'
+        \n
+        \n 2.定义观察者MyObserver
+        \n
+        \n 3.添加观察者
+        \n getLifecycle().addObserver(new MyObserver());"/>
 </LinearLayout>

@@ -35,6 +35,7 @@ ext {
             Qmui                  : "1.4.0",
             MPAndroidChart        : "v3.1.0",
             Zxing                 : "2.2.5",
+            lifeViewModel         : "1.1.0",
     ]
     SupportVersion = "28.0.0-rc02"
 
@@ -90,6 +91,7 @@ ext {
             Retrofit2ConverterGson: "com.squareup.retrofit2:converter-gson:$Vs.Retrofit2",
             // retrofit添加Rxjava支持
             Retrofit2Rxjava2      : "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$Vs.Retrofit2Rxjava2",
+            LifecycleViewModel    : "android.arch.lifecycle:extensions:$Vs.lifeViewModel",
             // rxlifecycle框架 管理生命周期
             Rxlifecycle           : "com.trello.rxlifecycle2:rxlifecycle-components:$Vs.Rxlifecycle",
             // PickerView https://github.com/Bigkoo/Android-PickerView 选择器弹窗
