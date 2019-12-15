@@ -17,8 +17,11 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
+/**
+ * 清除输入法管理器泄漏
+ */
 public class LeakCanaryUtils {
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    @androidx.annotation.RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public static void fixFocusedViewLeak(Application application) {
 
         // Don't know about other versions yet.
@@ -125,7 +128,9 @@ public class LeakCanaryUtils {
         }
 
         @Override public boolean queueIdle() {
-            clearInputMethodManagerLeak();
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                clearInputMethodManagerLeak();
+            }
             return false;
         }
 

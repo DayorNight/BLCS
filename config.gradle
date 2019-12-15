@@ -37,10 +37,10 @@ ext {
             Zxing                 : "2.2.5",
             lifeViewModel         : "1.1.0",
     ]
-    SupportVersion = "28.0.0-rc02"
+    SupportVersion = "28.0.0"
 
     Dp = [
-            SupportV4             : "com.android.support:support-v4:28.0.0-rc02",
+            SupportV4             : "com.android.support:support-v4:$SupportVersion",
             Recyclerview          : "com.android.support:recyclerview-v7:$SupportVersion",
             Design                : "com.android.support:design:$SupportVersion",
             AppcompatV7           : "com.android.support:appcompat-v7:$SupportVersion",
@@ -105,6 +105,8 @@ ext {
             MPAndroidChart        : "com.github.PhilJay:MPAndroidChart:$Vs.MPAndroidChart",
             // 二维码相关功能 https://github.com/yuzhiqiang1993/zxing
             Zxing                 : "com.github.yuzhiqiang1993:zxing:$Vs.Zxing",
+            room                  : "android.arch.persistence.room:compiler:$Vs.lifeViewModel"
+
 
     ]
 }

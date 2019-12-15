@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LwbTool</string>
+    <string name="FileNoExist">找不到该文件</string>
+    <string name="installApkError">解析软件包时出现问题</string>
+    <string name="marquee">单个跑马灯介绍：宽度大于字符串长度，注意触摸事件，ellipsize="marquee"，限制很多。有需要需重新自定义</string>
+    <string name="empty_network_error">Network error, Click Retry</string>
+    <string name="empty_no_data">There is no data, Click Retry</string>
+    <string name="error_title">Something went wrong!</string>
+    <string name="error_occurred">An unexpected error occurred.\nSorry for the inconvenience.</string>
+    <string name="error_details">Error details</string>
+    <string name="error_information">Error information</string>
+    <string name="unknown_exception">Unknown exception</string>
+    <string name="restart_app">Restart app</string>
+    <string name="close_app">关闭</string>
+    <string name="error_details_copy">复制</string>
+    <string name="loading">请稍后...正在加载，请稍后...正在加载，请稍后...正在加载，请稍后...正在加载，请稍后...正在加载，请稍后...正在加载，请稍后...正在加载，请稍后...正在加载，请稍后...正在加载，请稍后...正在加载，请稍后...正在加载，请稍后...正在加载，请稍后...正在加载，请稍后...正在加载，请稍后...正在加载，请稍后...正在加载，请稍后...正在加载，请稍后...正在加载，请稍后...</string>
+    <string name="No_SupportOpenGL2">设备不支持OpenGL ES</string>
+    <string name="android_origin">Android是一种基于Linux的自由及开放源代码的操作系统，主要使用于移动设备，如智能手机和平板电脑，由Google公司和开放手机联盟领导及开发。尚未有统一中文名称，中国大陆地区较多人使用“安卓”或“安致”。Android操作系统最初由Andy Rubin开发，主要支持手机。2005年8月由Google收购注资。2007年11月，Google与84家硬件制造商、软件开发商及电信营运商组建开放手机联盟共同研发改良Android系统。随后Google以Apache开源许可证的授权方式，发布了Android的源代码。第一部Android智能手机发布于2008年10月。Android逐渐扩展到平板电脑及其他领域上，如电视、数码相机、游戏机等。2011年第一季度，Android在全球的市场份额首次超过塞班系统，跃居全球第一。 2013年的第四季度，Android平台手机的全球市场份额已经达到78.1%。[1] 2013年09月24日谷歌开发的操作系统Android在迎来了5岁生日，全世界采用这款系统的设备数量已经达到10亿台。</string>
+    <string name="copy">复制</string>
+    <string name="reStart">重启</string>
+    <item name="tag_key_data" type="id"/>
+    <item name="tag_key_position" type="id"/>
+</resources>

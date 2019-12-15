@@ -76,7 +76,7 @@ public class RecyclerViewFragment extends BaseFragment {
             }
         }).compose(RxHelper.observableIO2Main(this)).subscribe(new Consumer<List<HomeItem>>() {
             @Override
-            public void accept(List<HomeItem> s) throws Exception {
+            public void accept(List<HomeItem> s) {
                 if (mAdapter != null) mAdapter.setNewData(s);
             }
         });

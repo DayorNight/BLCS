@@ -88,7 +88,7 @@ public class LinCleanData {
      *  7.清除本应用全部数据库(/data/data/com.xxx.xxx/databases)
      */
     public static void cleanDatabases(Context context) {
-        FileUtils.deleteFilesByDirectory(new File("/data/data/"
+        FileUtils.deleteFilesByDirectory(new File(context.getFilesDir().getPath()
                 + context.getPackageName() + "/databases"));
     }
 
@@ -96,7 +96,7 @@ public class LinCleanData {
      * 8.清除本应用SharedPreference(/data/data/com.xxx.xxx/shared_prefs)
      */
     public static void cleanSharedPreference(Context context) {
-        FileUtils.deleteFilesByDirectory(new File("/data/data/"
+        FileUtils.deleteFilesByDirectory(new File(context.getFilesDir().getPath()
                 + context.getPackageName() + "/shared_prefs"));
     }
 

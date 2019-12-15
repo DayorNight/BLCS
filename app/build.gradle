@@ -1,5 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'org.greenrobot.greendao'
+
+
 //隐藏签名信息 ======》
 def keystoreFilepath = ""
 def keystorePSW = ""
@@ -100,4 +102,5 @@ dependencies {
     implementation Dp.UmengAnalytics
     annotationProcessor Dp.GlideCompiler
     debugImplementation Dp.DebugDbEncrypt
+    annotationProcessor Dp.room
 }

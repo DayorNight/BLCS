@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/gray"
+    style="@style/match_match"
+    android:orientation="vertical">
+    <LinearLayout
+        android:gravity="center"
+        style="@style/Lin_horizontal">
+    <Button
+        android:id="@+id/btn_room_Add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADD"
+        />
+    <Button
+        android:id="@+id/btn_room_Delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        />
+    <Button
+        android:id="@+id/btn_room_Update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        />
+    <Button
+        android:id="@+id/btn_room_Query"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Query"
+        />
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_room"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

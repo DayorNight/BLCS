@@ -14,14 +14,11 @@ import java.util.List;
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.lwbtool.utils.RecyclerUtil;
-import blcs.lwb.utils.MyApplication;
-import blcs.lwb.utils.bean.GreenDao;
 import blcs.lwb.utils.bean.SqliteDemo;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.adapter.SQLiteShowAdapter;
 import blcs.lwb.utils.fragment.BaseFragment;
-import blcs.lwb.utils.greendao.DaoSession;
-import blcs.lwb.utils.sql.LinSQL;
+import blcs.lwb.utils.Db.LinSQL;
 import butterknife.BindView;
 import butterknife.OnClick;
 

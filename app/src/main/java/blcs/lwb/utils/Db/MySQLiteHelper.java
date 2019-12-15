@@ -1,4 +1,4 @@
-package blcs.lwb.utils.sql;
+package blcs.lwb.utils.Db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

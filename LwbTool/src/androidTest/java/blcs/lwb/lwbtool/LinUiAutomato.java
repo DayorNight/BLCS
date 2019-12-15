@@ -29,7 +29,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
-import blcs.lwb.lwbtool.utf7.Utf7ImeHelper;
 import blcs.lwb.lwbtool.utils.AppUtils;
 import static org.junit.Assert.assertEquals;
 
@@ -516,11 +515,6 @@ public class LinUiAutomato extends UiAutomatorTestCase {
         pressTimes(KeyEvent.KEYCODE_DEL, name.length());
         //如果光标在最开始
 //		pressTimes(KeyEvent.KEYCODE_FORWARD_DEL, name.length());
-    }
-
-    //写入文本
-    public static void writeTextByResourceId(String id, String text) throws UiObjectNotFoundException {
-        getUiObjectByResourceId(id).setText(Utf7ImeHelper.e(text));
     }
 
     /**

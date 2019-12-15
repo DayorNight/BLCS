@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/iv"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center">
-    <Button
-        android:id="@+id/btn_close"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="关闭"/>
+    android:visibility="gone"
+    android:scaleType="fitXY"
+    />
 
-    <TextView
-        android:id="@+id/tv_request"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="欢迎界面"/>
-</LinearLayout>

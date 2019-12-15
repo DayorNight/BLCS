@@ -35,15 +35,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/AppThemeBg"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:launchMode="singleTask">
+            android:label="@string/SplashActivity"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".MainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTask"/>
 
         <activity
             android:name=".PublicFragmentActivity"
@@ -52,12 +58,6 @@
             android:launchMode="singleTask"
             android:hardwareAccelerated="true"
             android:windowSoftInputMode="stateAlwaysHidden"
-            />
-
-        <activity
-            android:name=".SplashActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="@string/SplashActivity"
             />
 
         <activity

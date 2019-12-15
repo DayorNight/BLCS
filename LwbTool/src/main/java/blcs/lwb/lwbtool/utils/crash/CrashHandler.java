@@ -13,6 +13,7 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
 import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 import blcs.lwb.lwbtool.BuildConfig;
 import blcs.lwb.lwbtool.manager.AppManager;
@@ -47,7 +48,7 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
     /**
      * 格式化时间
      */
-    private SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
+    private SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss", Locale.CHINA);
 
     private String TAG = this.getClass().getSimpleName();
 

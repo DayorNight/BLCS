@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import com.umeng.analytics.MobclickAgent;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import blcs.lwb.lwbtool.base.BaseAppCompatActivity;
@@ -88,6 +89,8 @@ public class MainActivity extends BaseAppCompatActivity implements IMainView {
                 return true;
             }
         });
+
+        HashMap<Object, Object> objectObjectHashMap = new HashMap<>();
     }
 
     @Override

@@ -65,7 +65,7 @@ public class Common_DialogFragment extends BaseFragment {
                 break;
             case R.id.button_DialogSure:
                 final RxDialogSure rxDialogSure = new RxDialogSure(getActivity());
-                rxDialogSure.getLogoView().setImageResource(R.mipmap.logo);
+                rxDialogSure.getLogoView().setImageResource(R.mipmap.img_sleep);
                 rxDialogSure.getSureView().setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -76,7 +76,7 @@ public class Common_DialogFragment extends BaseFragment {
                 break;
             case R.id.button_DialogSureCancle:
                 final RxDialogSureCancel rxDialogSureCancel = new RxDialogSureCancel(getActivity());
-                rxDialogSureCancel.getTitleView().setBackgroundResource(R.mipmap.logo);
+                rxDialogSureCancel.getTitleView().setBackgroundResource(R.mipmap.img_sleep);
                 rxDialogSureCancel.getSureView().setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -93,7 +93,7 @@ public class Common_DialogFragment extends BaseFragment {
                 break;
             case R.id.button_DialogEditTextSureCancle:
                 final RxDialogEditSureCancel rxDialogEditSureCancel = new RxDialogEditSureCancel(getActivity());
-                rxDialogEditSureCancel.getTitleView().setBackgroundResource(R.mipmap.logo);
+                rxDialogEditSureCancel.getTitleView().setBackgroundResource(R.mipmap.img_sleep);
                 rxDialogEditSureCancel.getSureView().setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

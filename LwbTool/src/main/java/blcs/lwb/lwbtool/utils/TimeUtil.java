@@ -23,6 +23,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 import java.util.TimeZone;
 
 /**
@@ -950,9 +951,9 @@ public class TimeUtil {
         String str = null;
         if (hh != 0) {
             //如果是个位数的话，前面可以加0  时分秒
-            str = String.format("%02d:%02d:%02d", hh, mm, ss);
+            str = String.format(Locale.CHINA,"%02d:%02d:%02d", hh, mm, ss);
         } else {
-            str = String.format("%02d:%02d", mm, ss);
+            str = String.format(Locale.CHINA,"%02d:%02d", mm, ss);
         }
         textView.setText(str);
     }

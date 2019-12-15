@@ -178,7 +178,7 @@
     <string name="Url_Android">http://hukai.me/android-training-course-in-chinese/index.html</string>
     <string name="Url_NDK">https://developer.android.google.cn/ndk/</string>
     <string name="Url_Kotlin">https://www.kotlincn.net/docs/reference/extensions.html</string>
-    <string name="Url_Java">https://snailclimb.top/JavaGuide/#/</string>
+    <string name="Url_Java">https://snailclimb.gitee.io/javaguide/#/?id=java</string>
     <string name="Url_Git">https://git-scm.com/book/zh/v2</string>
     <!-- GitHub资源归类 -->
     <string name="Url_GitDemo1">https://github.com/open-android/Android</string>

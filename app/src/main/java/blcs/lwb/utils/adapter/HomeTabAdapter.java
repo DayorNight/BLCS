@@ -18,7 +18,6 @@ public class HomeTabAdapter extends BaseQuickAdapter<String,BaseViewHolder> {
 
     @Override
     protected void convert(BaseViewHolder helper, String item) {
-        LogUtils.e("=-------"+item);
         helper.setText(R.id.tv_item_home_name,(helper.getAdapterPosition()+1)+"→"+item);
     }
 
