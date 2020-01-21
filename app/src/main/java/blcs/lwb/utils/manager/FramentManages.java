@@ -31,6 +31,7 @@ import blcs.lwb.utils.fragment.otherFragment.BlogsFragment;
 import blcs.lwb.utils.fragment.viewFragment.BottomNavigationFragment;
 import blcs.lwb.utils.fragment.viewFragment.Color_SpiderFragment;
 import blcs.lwb.utils.fragment.viewFragment.Common_DialogFragment;
+import blcs.lwb.utils.fragment.viewFragment.CoordinatorLayoutFragment;
 import blcs.lwb.utils.fragment.viewFragment.DialogBottomFragment;
 import blcs.lwb.utils.fragment.viewFragment.DrawerLayoutFragment;
 import blcs.lwb.utils.fragment.toolFragment.EditTextUtilsFragment;
@@ -186,6 +187,7 @@ public class FramentManages {
         public final static String OtherCharts = "OtherCharts";
         public final static String ScrollingCharts = "ScrollingCharts";
     public final static String BarQrCode = "条形码/二维码";
+    public final static String CoordinatorLayout = "CoordinatorLayout";
     /**
      * 其他
      */
@@ -387,6 +389,8 @@ public class FramentManages {
                 return new ViewModelFragment();
             case FramentManages.Room:
                 return new RoomFragment();
+            case FramentManages.CoordinatorLayout:
+                return new CoordinatorLayoutFragment();
         }
     }
 
