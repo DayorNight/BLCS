@@ -122,8 +122,8 @@
     <string name="save">保存</string>
     <string name="Multi_Language">多语言</string>
 
-
     <!--博客-->
+    <string name="URL_Navigation">https://www.jianshu.com/p/230427ae6830</string>
     <string name="URL_ViewModel">https://www.jianshu.com/p/bc34c2db244f</string>
     <string name="URL_LiveData">https://www.jianshu.com/p/6651046cd4d8</string>
     <string name="URL_Lifecycle2">https://www.jianshu.com/p/798354ed17b9</string>

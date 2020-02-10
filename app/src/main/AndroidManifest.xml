@@ -39,7 +39,6 @@
             android:name=".SplashActivity"
             android:theme="@style/AppThemeBg"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="@string/SplashActivity"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

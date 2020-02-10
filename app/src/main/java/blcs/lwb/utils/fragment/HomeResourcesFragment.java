@@ -46,6 +46,7 @@ public class HomeResourcesFragment extends Fragment implements IHomeTabView{
             bind = ButterKnife.bind(this, mView);
             presenter = new HomeTabPresenter(this);
             presenter.init();
+
         }
         return mView;
     }

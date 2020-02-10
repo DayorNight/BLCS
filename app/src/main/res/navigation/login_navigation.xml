@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_navigation"
+    app:startDestination="@id/navigationDemo1Fragment">
+
+    <fragment
+        android:id="@+id/navigationDemo1Fragment"
+        android:name="blcs.lwb.utils.fragment.otherFragment.Jetpack.NavigationDemo1Fragment"
+        tools:layout="@layout/fragment_navigation_demo1" >
+        <action
+            android:id="@+id/action_navigationDemo1Fragment_to_navigationDemo2Fragment"
+            app:destination="@id/navigationDemo2Fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/navigationDemo2Fragment"
+        android:name="blcs.lwb.utils.fragment.otherFragment.Jetpack.NavigationDemo2Fragment"
+        tools:layout="@layout/fragment_navigation_demo2" />
+
+</navigation>

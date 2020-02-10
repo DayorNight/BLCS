@@ -68,4 +68,6 @@ dependencies {
     api Dp.MPAndroidChart
     api Dp.Zxing
     api Dp.LifecycleViewModel
+    api Dp.navigation
+    api Dp.navigationUI
 }

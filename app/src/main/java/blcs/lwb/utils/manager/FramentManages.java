@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentTransaction;
 import java.util.ArrayList;
 
 import blcs.lwb.utils.R;
+import blcs.lwb.utils.fragment.otherFragment.Jetpack.NavigationFragment;
 import blcs.lwb.utils.fragment.otherFragment.Jetpack.RoomFragment;
 import blcs.lwb.utils.fragment.otherFragment.Jetpack.DataBindingFragment;
 import blcs.lwb.utils.fragment.otherFragment.Jetpack.LifecycleFragment;
@@ -203,6 +204,7 @@ public class FramentManages {
         public final static String DataBinding = "DataBinding";
         public final static String Lifecycle = "Lifecycle";
         public final static String LiveData = "LiveData";
+        public final static String Navigation = "Navigation";
         public final static String ViewModel = "ViewModel";
         public final static String Room = "Room";
 
@@ -385,6 +387,8 @@ public class FramentManages {
                 return new LifecycleFragment();
             case FramentManages.LiveData:
                 return new LiveDataFragment();
+            case FramentManages.Navigation:
+                return new NavigationFragment();
             case FramentManages.ViewModel:
                 return new ViewModelFragment();
             case FramentManages.Room:

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/match_match"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".fragment.otherFragment.Jetpack.NavigationDemo1Fragment">
+
+    <TextView
+        style="@style/wrap_wrap"
+        android:textSize="@dimen/standard_title"
+        android:text="第一页" />
+    <Button
+        android:id="@+id/btn_go"
+        style="@style/wrap_wrap"
+        android:textSize="@dimen/standard_title"
+        android:text="第二页"/>
+
+</LinearLayout>

@@ -36,6 +36,7 @@ ext {
             MPAndroidChart        : "v3.1.0",
             Zxing                 : "2.2.5",
             lifeViewModel         : "1.1.0",
+            navigation            : "1.0.0-alpha01",
     ]
     SupportVersion = "28.0.0"
 
@@ -105,8 +106,9 @@ ext {
             MPAndroidChart        : "com.github.PhilJay:MPAndroidChart:$Vs.MPAndroidChart",
             // 二维码相关功能 https://github.com/yuzhiqiang1993/zxing
             Zxing                 : "com.github.yuzhiqiang1993:zxing:$Vs.Zxing",
-            room                  : "android.arch.persistence.room:compiler:$Vs.lifeViewModel"
-
-
+            room                  : "android.arch.persistence.room:compiler:$Vs.lifeViewModel",
+            //navigation
+            navigation            : "android.arch.navigation:navigation-fragment:$Vs.navigation",
+            navigationUI          : "android.arch.navigation:navigation-ui:$Vs.navigation"
     ]
 }
