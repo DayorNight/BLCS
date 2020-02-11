@@ -124,6 +124,7 @@
 
 
     <!--博客-->
+    <string name="URL_Paging">https://www.jianshu.com/p/10bf4bf59122</string>
     <string name="URL_Navigation">https://www.jianshu.com/p/230427ae6830</string>
     <string name="URL_ViewModel">https://www.jianshu.com/p/bc34c2db244f</string>
     <string name="URL_LiveData">https://www.jianshu.com/p/6651046cd4d8</string>

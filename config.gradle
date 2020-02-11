@@ -37,6 +37,7 @@ ext {
             Zxing                 : "2.2.5",
             lifeViewModel         : "1.1.0",
             navigation            : "1.0.0-alpha01",
+            paging                : "1.0.0",
     ]
     SupportVersion = "28.0.0"
 
@@ -109,6 +110,8 @@ ext {
             room                  : "android.arch.persistence.room:compiler:$Vs.lifeViewModel",
             //navigation
             navigation            : "android.arch.navigation:navigation-fragment:$Vs.navigation",
-            navigationUI          : "android.arch.navigation:navigation-ui:$Vs.navigation"
+            navigationUI          : "android.arch.navigation:navigation-ui:$Vs.navigation",
+            //paging
+            paging                : "android.arch.paging:runtime:$Vs.paging"
     ]
 }

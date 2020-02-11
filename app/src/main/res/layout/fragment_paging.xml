@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/match_match"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="@dimen/space_line2">
+
+    <Button
+        android:id="@+id/btn_paging"
+        style="@style/Button_alpha"
+        android:text="Jetpack架构组件之paging入门" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_paging"
+        style="@style/match_match"/>
+</LinearLayout>

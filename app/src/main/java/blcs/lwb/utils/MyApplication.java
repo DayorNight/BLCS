@@ -1,6 +1,7 @@
 package blcs.lwb.utils;
 
 
+import android.arch.persistence.room.Room;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
@@ -12,13 +13,13 @@ import org.litepal.LitePal;
 import blcs.lwb.lwbtool.base.BaseApplication;
 import blcs.lwb.lwbtool.utils.MultiLanguageUtils;
 import blcs.lwb.lwbtool.utils.LinNotify;
+import blcs.lwb.utils.Db.RoomDbManager;
 import blcs.lwb.utils.greendao.DaoMaster;
 import blcs.lwb.utils.greendao.DaoSession;
 
 public class MyApplication extends BaseApplication {
 
     public static MyApplication context;
-
     @Override
     public void onCreate() {
         super.onCreate();
@@ -32,7 +33,12 @@ public class MyApplication extends BaseApplication {
         LitePal.initialize(this);
         //GreenDao
         initGreenDao();
+        //Room
+        initRoom();
+    }
 
+    private void initRoom() {
+       RoomDbManager.build(this);
     }
 
     private void initGreenDao() {
@@ -50,6 +56,7 @@ public class MyApplication extends BaseApplication {
     public static  Context getContext(){
         return context;
     }
+
     /**
      * 友盟统计集成
      */

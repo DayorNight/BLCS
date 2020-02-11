@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.fragment.otherFragment.Jetpack.NavigationFragment;
+import blcs.lwb.utils.fragment.otherFragment.Jetpack.PagingFragment;
 import blcs.lwb.utils.fragment.otherFragment.Jetpack.RoomFragment;
 import blcs.lwb.utils.fragment.otherFragment.Jetpack.DataBindingFragment;
 import blcs.lwb.utils.fragment.otherFragment.Jetpack.LifecycleFragment;
@@ -205,6 +206,7 @@ public class FramentManages {
         public final static String Lifecycle = "Lifecycle";
         public final static String LiveData = "LiveData";
         public final static String Navigation = "Navigation";
+        public final static String Paging = "Paging";
         public final static String ViewModel = "ViewModel";
         public final static String Room = "Room";
 
@@ -389,6 +391,8 @@ public class FramentManages {
                 return new LiveDataFragment();
             case FramentManages.Navigation:
                 return new NavigationFragment();
+            case FramentManages.Paging:
+                return new PagingFragment();
             case FramentManages.ViewModel:
                 return new ViewModelFragment();
             case FramentManages.Room:

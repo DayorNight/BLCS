@@ -1,5 +1,7 @@
 package blcs.lwb.utils.Db;
 
+import android.arch.paging.DataSource;
+import android.arch.paging.PagedList;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
@@ -27,4 +29,7 @@ public interface StudentDao {
 
     @Query("SELECT * FROM Student")
     List<Student> getAll();
+
+    @Query("SELECT * FROM Student")
+    DataSource.Factory<Integer, Student> getAllStudent();
 }

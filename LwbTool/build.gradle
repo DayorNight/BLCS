@@ -70,4 +70,5 @@ dependencies {
     api Dp.LifecycleViewModel
     api Dp.navigation
     api Dp.navigationUI
+    api Dp.paging
 }

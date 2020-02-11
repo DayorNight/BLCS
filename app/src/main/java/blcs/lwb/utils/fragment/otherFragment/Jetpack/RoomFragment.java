@@ -20,6 +20,7 @@ import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.lwbtool.utils.RecyclerUtil;
 import blcs.lwb.utils.Db.RoomDbManager;
 import blcs.lwb.utils.Db.StudentDao;
+import blcs.lwb.utils.MyApplication;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.adapter.RoomAdapter;
 import blcs.lwb.utils.bean.Student;
@@ -37,7 +38,7 @@ public class RoomFragment extends BaseFragment {
     private StudentDao studentDao;
     @BindView(R.id.rv_room)
     RecyclerView rv;
-    private RoomDbManager roomDb;
+
     private RoomAdapter roomAdapter;
     private int code = 0;
     private int UpdateCode = 0;
@@ -50,12 +51,7 @@ public class RoomFragment extends BaseFragment {
 
     @Override
     protected void initView() {
-        //创建数据库
-        if (roomDb == null) {
-            roomDb = Room.databaseBuilder(activity.getApplicationContext(),
-                    RoomDbManager.class, "room_blcs").build();
-        }
-        studentDao = roomDb.getStudentDao();
+        studentDao = RoomDbManager.roomDb.getStudentDao();
         roomAdapter = new RoomAdapter();
         RecyclerUtil.init(activity, LinearLayoutManager.VERTICAL, roomAdapter, rv);
     }
