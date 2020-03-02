@@ -15,6 +15,7 @@ import blcs.lwb.utils.fragment.otherFragment.Jetpack.DataBindingFragment;
 import blcs.lwb.utils.fragment.otherFragment.Jetpack.LifecycleFragment;
 import blcs.lwb.utils.fragment.otherFragment.Jetpack.LiveDataFragment;
 import blcs.lwb.utils.fragment.otherFragment.Jetpack.ViewModelFragment;
+import blcs.lwb.utils.fragment.otherFragment.Jetpack.WorkManagerFragment;
 import blcs.lwb.utils.fragment.viewFragment.BannerFragment;
 import blcs.lwb.utils.fragment.viewFragment.BarQrCodeFragment;
 import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.AnimationRecyclerFragment;
@@ -209,6 +210,7 @@ public class FramentManages {
         public final static String Paging = "Paging";
         public final static String ViewModel = "ViewModel";
         public final static String Room = "Room";
+        public final static String WorkManager = "WorkManager";
 
     /**
      * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
@@ -397,6 +399,8 @@ public class FramentManages {
                 return new ViewModelFragment();
             case FramentManages.Room:
                 return new RoomFragment();
+            case FramentManages.WorkManager:
+                return new WorkManagerFragment();
             case FramentManages.CoordinatorLayout:
                 return new CoordinatorLayoutFragment();
         }

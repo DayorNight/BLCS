@@ -103,4 +103,5 @@ dependencies {
     annotationProcessor Dp.GlideCompiler
     debugImplementation Dp.DebugDbEncrypt
     annotationProcessor Dp.room
+
 }

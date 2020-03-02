@@ -71,4 +71,5 @@ dependencies {
     api Dp.navigation
     api Dp.navigationUI
     api Dp.paging
+    api Dp.workManager
 }

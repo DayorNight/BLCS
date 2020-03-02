@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/match_match"
+    android:background="@color/white"
+    android:padding="@dimen/space_line2">
+    <Button
+        android:id="@+id/btn_viewModel"
+        style="@style/Button_alpha"
+        android:text="Jetpack架构组件之WorkManager入门"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/btn_click"
+        style="@style/Button_standard"
+        app:layout_constraintTop_toBottomOf="@+id/btn_viewModel"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="@dimen/space_line2"
+        android:text="提交请求"/>
+    <TextView
+        android:id="@+id/tv_describe"
+        style="@style/text_stander"
+        app:layout_constraintTop_toBottomOf="@+id/btn_click"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="@dimen/space_line2"
+        android:text="充电情况下执行："/>
+    <TextView
+        android:id="@+id/tv_text"
+        style="@style/text_stander"
+        android:textColor="@color/green"
+        app:layout_constraintTop_toTopOf="@+id/tv_describe"
+        app:layout_constraintLeft_toRightOf="@+id/tv_describe"
+        android:text="未执行"/>
+    <TextView
+        style="@style/text_stander"
+        android:textColor="@color/gray"
+        android:text="使用三步骤：\n步骤1：创建后台任务
+        \n创建一个类继承Worker并重写doWork()方法
+        \n步骤2：构建一次性请求或周期性请求
+        \nOneTimeWorkRequest request = new OneTimeWorkRequest.Builder(UploadWorker.class).build()
+        \nPeriodicWorkRequest request = new PeriodicWorkRequest.Builder(UploadWorker.class,1, TimeUnit.HOURS).build();
+        \n步骤3：提交请求
+        \nWorkManager.getInstance().enqueue(request); "
+        android:layout_marginTop="@dimen/space_line2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_text"/>
+
+
+</android.support.constraint.ConstraintLayout>

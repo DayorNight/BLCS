@@ -38,6 +38,7 @@ ext {
             lifeViewModel         : "1.1.0",
             navigation            : "1.0.0-alpha01",
             paging                : "1.0.0",
+            workManager           : "1.0.1",
     ]
     SupportVersion = "28.0.0"
 
@@ -112,6 +113,8 @@ ext {
             navigation            : "android.arch.navigation:navigation-fragment:$Vs.navigation",
             navigationUI          : "android.arch.navigation:navigation-ui:$Vs.navigation",
             //paging
-            paging                : "android.arch.paging:runtime:$Vs.paging"
+            paging                : "android.arch.paging:runtime:$Vs.paging",
+            //paging
+            workManager           : "android.arch.work:work-runtime:$Vs.workManager"
     ]
 }

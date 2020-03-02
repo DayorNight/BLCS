@@ -105,6 +105,11 @@ public abstract class BaseFragment extends RxFragment implements IPopBackStackLi
         }
     }
 
+
+    @Override
+    public void popBackListener(int returnCode, Bundle bundle) {
+        //TODO 需要返回监听的请重写该方法
+    }
     /**
      * 调用这个方法实现后退，指定返回码和数据
      *
