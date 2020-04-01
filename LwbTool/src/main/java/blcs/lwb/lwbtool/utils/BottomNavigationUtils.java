@@ -58,7 +58,6 @@ public class BottomNavigationUtils {
     /**
      * 添加Item
      * @param view
-     *
      */
     public static void addItem(BottomNavigationView view,int groupID,int itemID,int orderID,String text){
         view.getMenu().add(groupID, itemID, orderID, text);

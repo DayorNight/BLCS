@@ -1,6 +1,7 @@
 package blcs.lwb.lwbtool.utils;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
@@ -10,12 +11,17 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Process;
 import android.support.v4.content.FileProvider;
 import android.text.TextUtils;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -199,6 +205,75 @@ public class AppUtils
             firstTime=secondTime;
         }else{
             context.finish();
+        }
+    }
+    /**
+     * 9.获取进程号对应的进程名
+     * @param pid 进程号
+     * @return 进程名
+     */
+    public static String getProcessName(int pid) {
+        BufferedReader reader = null;
+        try {
+            reader = new BufferedReader(new FileReader("/proc/" + pid + "/cmdline"));
+            String processName = reader.readLine();
+            if (!TextUtils.isEmpty(processName)) {
+                processName = processName.trim();
+            }
+            return processName;
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
+        } finally {
+            try {
+                if (reader != null) {
+                    reader.close();
+                }
+            } catch (IOException exception) {
+                exception.printStackTrace();
+            }
+        }
+        return null;
+    }
+
+    /**
+     * 10、判断是否在主进程
+     */
+    public static boolean isMainProcess(Context context) {
+        ActivityManager am = (ActivityManager)context.getSystemService("activity");
+        String mainProcessName = context.getPackageName();
+        int myPid = Process.myPid();
+        List<ActivityManager.RunningAppProcessInfo> processInfos = am.getRunningAppProcesses();
+        if (processInfos == null) {
+            List<ActivityManager.RunningServiceInfo> processList = am.getRunningServices(2147483647);
+            if (processList == null) {
+                return false;
+            } else {
+                Iterator var9 = processList.iterator();
+
+                ActivityManager.RunningServiceInfo rsi;
+                do {
+                    if (!var9.hasNext()) {
+                        return false;
+                    }
+
+                    rsi = (ActivityManager.RunningServiceInfo)var9.next();
+                } while(rsi.pid != myPid || !mainProcessName.equals(rsi.service.getPackageName()));
+
+                return true;
+            }
+        } else {
+            Iterator var5 = processInfos.iterator();
+
+            ActivityManager.RunningAppProcessInfo info;
+            do {
+                if (!var5.hasNext()) {
+                    return false;
+                }
+
+                info = (ActivityManager.RunningAppProcessInfo)var5.next();
+            } while(info.pid != myPid || !mainProcessName.equals(info.processName));
+
+            return true;
         }
     }
 }

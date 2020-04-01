@@ -240,4 +240,20 @@
         <item name="android:textColor">@color/brown</item>
         <item name="overlapAnchor">false</item>
     </style>
+
+    <!--SelectedRangeView -->
+    <declare-styleable name="view_selected_range">
+        <attr name="circleR" format="integer|reference"/>
+        <attr name="AcircleValue" format="integer|reference"/>
+        <attr name="BcircleValue" format="integer|reference"/>
+        <attr name="valueRange" format="integer|reference"/>
+        <attr name="progressBarHeight" format="integer|reference"/>
+        <attr name="progressColor" format="color|reference"/>
+        <attr name="selectedColor" format="color|reference"/>
+        <attr name="circleCorlor" format="color|reference"/>
+        <attr name="circleShadowCorlor" format="color|reference"/>
+        <attr name="shadowWidth" format="float|reference"/>
+        <attr name="starValue" format="integer|reference"/>
+    </declare-styleable>
+
 </resources>
