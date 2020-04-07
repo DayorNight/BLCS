@@ -42,6 +42,7 @@ import blcs.lwb.utils.fragment.toolFragment.FileUtilsFragment;
 import blcs.lwb.utils.fragment.otherFragment.FunciotnIntroFragment;
 import blcs.lwb.utils.fragment.toolFragment.IntentUtilsFragment;
 import blcs.lwb.utils.fragment.otherFragment.Jetpack.JetpackFragment;
+import blcs.lwb.utils.fragment.viewFragment.FloatingWindowFragment;
 import blcs.lwb.utils.fragment.viewFragment.LabelListFragment;
 import blcs.lwb.utils.fragment.otherFragment.DependConfigFragment;
 import blcs.lwb.utils.fragment.LearnWebsiteFragment;
@@ -191,6 +192,7 @@ public class FramentManages {
         public final static String ScrollingCharts = "ScrollingCharts";
     public final static String BarQrCode = "条形码/二维码";
     public final static String CoordinatorLayout = "CoordinatorLayout";
+    public final static String FloatingWindow = "悬浮窗口";
     /**
      * 其他
      */
@@ -403,6 +405,8 @@ public class FramentManages {
                 return new WorkManagerFragment();
             case FramentManages.CoordinatorLayout:
                 return new CoordinatorLayoutFragment();
+            case FramentManages.FloatingWindow:
+                return new FloatingWindowFragment();
         }
     }
 

@@ -18,7 +18,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.SEND_SMS"/>
-
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.CALL_PHONE"/>
 
     <!--闹钟-->
@@ -70,6 +70,7 @@
             android:label="@string/WeChatStorageActivity"
             />
 
+        <service android:name=".fragment.viewFragment.FloatingWindowService"/>
         <!--友盟统计-->
         <meta-data android:value="5b98c6f98f4a9d317b00002f" android:name="UMENG_APPKEY"/>
         <meta-data android:value="${UMENG_CHANNEL_VALUE}"  android:name="UMENG_CHANNEL"  />
