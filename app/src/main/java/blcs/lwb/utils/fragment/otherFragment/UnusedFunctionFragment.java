@@ -14,6 +14,7 @@ import blcs.lwb.lwbtool.utils.MyUtils;
 import blcs.lwb.lwbtool.utils.RecyclerUtil;
 import blcs.lwb.lwbtool.utils.RxToast;
 import blcs.lwb.lwbtool.utils.TimeUtil;
+import blcs.lwb.utils.BuildConfig;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.adapter.UnuserdAdapter;
 import blcs.lwb.utils.fragment.BaseFragment;
@@ -47,7 +48,7 @@ public class UnusedFunctionFragment extends BaseFragment {
             switch (data){
                 case "切换请求地址":
                     //添加列表
-                    if (alertDialog==null){
+                    if (alertDialog==null&& BuildConfig.DEBUG){
                         alertDialog = new AlertDialog.Builder(getActivity())
                                 .setTitle("选择环境")
                                 .setItems(items, (dialogInterface, i) -> {
