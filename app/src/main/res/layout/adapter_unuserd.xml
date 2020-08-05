@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/text_stander"
+    android:id="@+id/tv_adapter_unuser"
+    android:padding="@dimen/space_line2"
+    android:text="@string/app_name"/>
+

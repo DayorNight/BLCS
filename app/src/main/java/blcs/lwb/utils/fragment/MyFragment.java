@@ -24,14 +24,10 @@ public class MyFragment extends BaseFragment implements IMyFragment {
     private AgentWeb mAgentWeb;
 
     @Override
-    public void setMiddleTitle(Toolbar title) {
-
-    }
+    public void setMiddleTitle(Toolbar title) { }
 
     @Override
-    protected void initView() {
-
-    }
+    protected void initView() { }
 
     @Override
     protected BasePresenter bindPresenter() {

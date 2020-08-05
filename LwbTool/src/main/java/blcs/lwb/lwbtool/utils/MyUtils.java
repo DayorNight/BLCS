@@ -19,7 +19,7 @@ import java.io.InputStreamReader;
 
 public class MyUtils {
     private  static long firstTime=0;
-    private static final int MIN_DELAY_TIME= 1000; // 两次点击间隔不能少于1000ms
+    private static final int MIN_DELAY_TIME= 500; // 两次点击间隔不能少于1000ms
     private static long lastClickTime = 0;
 
     /**

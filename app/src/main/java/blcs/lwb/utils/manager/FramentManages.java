@@ -16,6 +16,7 @@ import blcs.lwb.utils.fragment.otherFragment.Jetpack.LifecycleFragment;
 import blcs.lwb.utils.fragment.otherFragment.Jetpack.LiveDataFragment;
 import blcs.lwb.utils.fragment.otherFragment.Jetpack.ViewModelFragment;
 import blcs.lwb.utils.fragment.otherFragment.Jetpack.WorkManagerFragment;
+import blcs.lwb.utils.fragment.otherFragment.UnusedFunctionFragment;
 import blcs.lwb.utils.fragment.viewFragment.BannerFragment;
 import blcs.lwb.utils.fragment.viewFragment.BarQrCodeFragment;
 import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.AnimationRecyclerFragment;
@@ -198,6 +199,7 @@ public class FramentManages {
      */
     public final static String BLOGS = "博客";
     public final static String VersionUpdate = "版本更新";
+    public final static String UnusedFunction = "不常用功能";
         public final static String FunciotnIntro = "功能介绍";
     public final static String CustomActivityOnCrash = "全局异常捕获";
     public final static String DependConfig = "依赖配置";
@@ -333,6 +335,8 @@ public class FramentManages {
                 return new PickerFragment();
             case FramentManages.VersionUpdate:
                 return new VersionUpdateFragment();
+            case FramentManages.UnusedFunction:
+                return new UnusedFunctionFragment();
             case FramentManages.LabelList:
                 return new LabelListFragment();
             case FramentManages.SoundAndVibration:

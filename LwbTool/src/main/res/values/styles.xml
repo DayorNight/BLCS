@@ -193,7 +193,6 @@
         <attr name="spiderNameSize" format="dimension"/>
     </declare-styleable>
 
-
     <style name="Animation_Bottom_Dialog">
         <item name="android:windowEnterAnimation">@anim/bottom_dialog_enter</item>
         <item name="android:windowExitAnimation">@anim/bottom_dialog_exit</item>

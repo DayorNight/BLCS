@@ -59,6 +59,7 @@
     <string-array name="Other">
         <item>博客</item>
         <item>版本更新</item>
+        <item>不常用功能</item>
         <item>全局异常捕获</item>
         <item>依赖配置</item>
         <item>Rxjava+Retrofit封装</item>
