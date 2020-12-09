@@ -1,0 +1,47 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdkVersion As.compileSdkVersion
+
+    defaultConfig {
+        applicationId As.applicationId2
+        minSdkVersion As.minSdkVersion
+        targetSdkVersion As.targetSdkVersion
+        versionCode As.versionCode
+        versionName As.versionName
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.4.21"
+    /*测试*/
+    androidTestImplementation Dp.Runner
+    androidTestImplementation Dp.Espresso
+    testImplementation Dp.Junit
+    /*卡顿优化*/
+    debugImplementation 'com.github.markzhai:blockcanary-android:1.5.0'
+    /*内存优化*/
+    debugImplementation Dp.Leakcanary
+    /*约束布局*/
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0-alpha1'
+}

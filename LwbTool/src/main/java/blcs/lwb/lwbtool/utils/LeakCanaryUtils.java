@@ -21,7 +21,7 @@ import java.lang.reflect.Method;
  * 清除输入法管理器泄漏
  */
 public class LeakCanaryUtils {
-    @androidx.annotation.RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public static void fixFocusedViewLeak(Application application) {
 
         // Don't know about other versions yet.

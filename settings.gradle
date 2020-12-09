@@ -1,1 +1,2 @@
+include ':appkotlin'
 include ':app', ':LwbTool'
