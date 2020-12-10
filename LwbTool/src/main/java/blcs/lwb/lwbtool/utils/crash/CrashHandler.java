@@ -6,7 +6,6 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 
-
 import java.io.File;
 import java.io.FilenameFilter;
 import java.io.PrintWriter;
@@ -54,7 +53,6 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
 
     private static CrashHandler mInstance;
 
-
     private CrashHandler(Context context) {
         init(context);
     }
@@ -87,7 +85,6 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
             addCustomInfo();
             //处理错误日志
             saveCrashInfo2File(ex);
-            mDefaultHandler.uncaughtException(thread, ex);
     }
 
     /**

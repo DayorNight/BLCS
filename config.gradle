@@ -56,7 +56,7 @@ ext {
             Runner                : "androidx.test:runner:$Vs.Runner",
             Espresso              : "com.android.support.test.espresso:espresso-core:$Vs.Espresso",
             Uiautomator           : "com.android.support.test.uiautomator:uiautomator-v18:$Vs.Uiautomator",
-            rules                 : "com.android.support.test:rules:$Vs.Runner",
+            rules                 : "androidx.test:rules:$Vs.Runner",
             EspressoWeb           : "com.android.support.test.espresso:espresso-web:$Vs.Espresso",
             EspressoContrib       : "com.android.support.test.espresso:espresso-contrib:$Vs.Espresso",
             // butterknife        依赖注入框架，省去寻找控件的方法findViewById

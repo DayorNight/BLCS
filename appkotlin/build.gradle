@@ -44,4 +44,6 @@ dependencies {
     debugImplementation Dp.Leakcanary
     /*约束布局*/
     implementation 'androidx.constraintlayout:constraintlayout:2.1.0-alpha1'
+    /*mmkv替代SP*/
+    implementation 'com.tencent:mmkv-static:1.2.6'
 }

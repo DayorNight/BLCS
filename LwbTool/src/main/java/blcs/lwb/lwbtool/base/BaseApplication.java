@@ -2,7 +2,6 @@ package blcs.lwb.lwbtool.base;
 
 import android.app.Application;
 
-import blcs.lwb.lwbtool.BuildConfig;
 import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.lwbtool.utils.crash.CrashHandler;
 

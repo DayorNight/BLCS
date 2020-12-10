@@ -2,7 +2,10 @@ package blcs.lwb.kotlin
 
 import android.app.Application
 import android.content.Context
+import android.util.Log
+import blcs.lwb.kotlin.Common.CrashHandler
 import com.github.moduth.blockcanary.BlockCanary
+import com.tencent.mmkv.MMKV
 
 class BlcsApp : Application() {
     companion object {
@@ -10,13 +13,27 @@ class BlcsApp : Application() {
         fun getContext(): Context {
             return app!!
         }
+
+        private const val TAG = "BlcsApp"
     }
 
     override fun onCreate() {
         super.onCreate()
         app = this
-        // 卡顿初始化
+        /**
+         * 异常捕获上传
+         */
+        CrashHandler.init(this)
+        /**
+         * 卡顿初始化
+         */
         BlockCanary.install(this, AppBlockCanaryMr()).start()
+        /**
+         * MMKV
+         */
+        val rootDir: String = MMKV.initialize(this)
+        Log.e(Companion.TAG, "onCreate: $rootDir")
+
 
     }
 }

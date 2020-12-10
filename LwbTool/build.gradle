@@ -33,7 +33,6 @@ dependencies {
     api Dp.Design
     api Dp.Recyclerview
     api Dp.SupportV4
-    api Dp.rules
     //测试 Junit / Uiautomator / espresso
     testImplementation Dp.Junit
     api Dp.rules
