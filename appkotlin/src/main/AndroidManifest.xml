@@ -29,9 +29,7 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider> <!-- 全局异常捕获 -->
-        <activity
-            android:name=".Common.DefaultErrorActivity"
-            android:process=":error_activity"/>
+
     </application>
 
 </manifest>

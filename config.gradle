@@ -2,7 +2,7 @@ ext {
     As = [
             compileSdkVersion: 30,
             applicationId    : "blcs.lwb.utils",
-            minSdkVersion    : 16,
+            minSdkVersion    : 21,
             targetSdkVersion : 30,
             versionCode      : 6,
             versionName      : "1.0.6",

@@ -3,7 +3,7 @@ package blcs.lwb.kotlin
 import android.app.Application
 import android.content.Context
 import android.util.Log
-import blcs.lwb.kotlin.Common.CrashHandler
+import blcs.lwb.kotlin.Crash.Cockroach
 import com.github.moduth.blockcanary.BlockCanary
 import com.tencent.mmkv.MMKV
 
@@ -23,7 +23,7 @@ class BlcsApp : Application() {
         /**
          * 异常捕获上传
          */
-        CrashHandler.init(this)
+        Cockroach.init(this,null)
         /**
          * 卡顿初始化
          */

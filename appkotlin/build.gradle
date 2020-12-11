@@ -46,4 +46,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.0-alpha1'
     /*mmkv替代SP*/
     implementation 'com.tencent:mmkv-static:1.2.6'
+    /*android P开启反射*/
+    implementation 'me.weishu:free_reflection:3.0.1'
+
 }

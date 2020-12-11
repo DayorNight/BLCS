@@ -10,7 +10,7 @@ import java.util.*
  * Created by lwb on 2018/1/3.
  * Activity管理类：用于管理Activity和退出程序
  */
-class AppManager private constructor() {
+class MrActivity private constructor() {
 
     companion object {
         // Activity栈
@@ -20,8 +20,8 @@ class AppManager private constructor() {
          * 单一实例
          */
         @JvmStatic
-        val instance: AppManager by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
-            AppManager() }
+        val instance: MrActivity by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
+            MrActivity() }
         /**
          * 重启应用
          * @param activity
