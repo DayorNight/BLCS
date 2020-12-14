@@ -1,15 +1,17 @@
 package blcs.lwb.kotlin.Crash
 
-import android.app.Activity
 import android.content.Context
-import android.content.DialogInterface
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.os.Build
 import android.util.Log
+import android.util.TypedValue
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import blcs.lwb.kotlin.BuildConfig
-import blcs.lwb.kotlin.Common.MrActivity
 import blcs.lwb.kotlin.Common.AppUtils
+import blcs.lwb.kotlin.manage.MrActivity
+import blcs.lwb.kotlin.R
 import java.io.PrintWriter
 import java.io.StringWriter
 import java.io.Writer
@@ -17,36 +19,48 @@ import java.io.Writer
 class DefaultCrashCallBack : ICrashCallBack {
     private val MAX_STACK_TRACE_SIZE = 131071 //128 KB - 1
     private val TAG = "DefaultCrashCallBack"
-    lateinit var deviceInfo: StringBuilder;
-
+    lateinit var deviceInfo: StringBuilder
+    private var exception :Throwable? = null
     /**
      * 异常捕获处理
      */
-    override fun uncaughtException(ctx: Context, t: Thread, e: Throwable) {
+    override fun uncaughtException(ctx: Context, t: Thread,throwable: Throwable ) {
+        if (throwable is Exception){
+             exception = throwable as Exception
+        }
         deviceInfo = StringBuilder()
         val writer: Writer = StringWriter()
         val printWriter = PrintWriter(writer)
         /*打印日志*/
-        e.printStackTrace(printWriter)
+        exception?.printStackTrace(printWriter)
         printWriter.close()
         var stackTraceString = writer.toString()
         if (stackTraceString.length > MAX_STACK_TRACE_SIZE) {
             val disclaimer = " [stack trace too large]"
             stackTraceString = stackTraceString.substring(0, MAX_STACK_TRACE_SIZE - disclaimer.length) + disclaimer
         }
-        deviceInfo.append("\n").append("----------------------------BUG-----------------------\n")
-                .append(stackTraceString).append("\n")
-                .append("----------------------------END-----------------------\n")
+        deviceInfo.append(" \n-----------BUG----------\n")
+                .append(stackTraceString)
+                .append("\n-----------END----------\n")
         if (BuildConfig.DEBUG) {
-            e.printStackTrace()
+            exception?.printStackTrace()
             Log.e(TAG, deviceInfo.toString())
             /*弹窗*/
-            val activity = MrActivity.instance.currentActivity()
-            AlertDialog.Builder(activity!!)
-                    .setTitle("错误信息")
-                    .setMessage(deviceInfo.toString())
-                    .setPositiveButton("重启", { dialog, which -> MrActivity.restartApp(activity!!) })
-                    .setNeutralButton("确定", { dialog, which ->  }).show()
+            try {
+                val activity = MrActivity.instance.currentActivity()
+                val dialog = AlertDialog.Builder(activity!!)
+                        .setTitle("错误信息")
+                        .setMessage(deviceInfo.toString())
+                        .setPositiveButton("重启", { dialog, which -> MrActivity.restartApp(activity!!) })
+                        .setNeutralButton("确定", { dialog, which -> }).show()
+                val content: TextView? = dialog.findViewById(android.R.id.message)
+                val title: TextView? = dialog.findViewById(R.id.alertTitle)
+                title?.setTextColor(Color.RED)
+                content?.setTextSize(TypedValue.COMPLEX_UNIT_PX, ctx.resources.getDimension(R.dimen.standard_weak))
+                title?.setTextSize(TypedValue.COMPLEX_UNIT_PX, ctx.resources.getDimension(R.dimen.standard_work))
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
         } else {
             val pi = ctx.packageManager.getPackageInfo(ctx.packageName, PackageManager.GET_ACTIVITIES)
             val versionName = if (pi.versionName == null) "null" else pi.versionName
@@ -60,12 +74,13 @@ class DefaultCrashCallBack : ICrashCallBack {
                     .append("生产厂商：").append(Build.MANUFACTURER).append("\n")
                     .append("Android SDK版本：").append(Build.VERSION.SDK_INT).append("\n")
                     .append("硬件名：").append(Build.HARDWARE).append("\n")
-                    .append("----------------------------BUG-----------------------").append("\n")
+                    .append("-----------BUG----------").append("\n")
                     .append(stackTraceString).append("\n")
-                    .append("----------------------------END-----------------------").append("\n")
+                    .append("-----------END----------").append("\n")
             upLoadService(ctx, deviceInfo.toString())
         }
     }
+
 
     /**
      * 错误汇报

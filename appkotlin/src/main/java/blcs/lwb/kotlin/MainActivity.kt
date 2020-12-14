@@ -1,11 +1,9 @@
 package blcs.lwb.kotlin
 
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import blcs.lwb.kotlin.Common.MrActivity
+import blcs.lwb.kotlin.manage.MrActivity
 
 class MainActivity : AppCompatActivity() {
     private  val TAG = "MainActivity"
@@ -16,6 +14,13 @@ class MainActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.tv_main).setOnClickListener {
 //            try {
                 throw RuntimeException("xxxxxxxxx")
+//            } catch (e: Exception) {
+//                Log.e(TAG, "onCreate: "+e.message )
+//            }
+        }
+        findViewById<TextView>(R.id.tv_main1).setOnClickListener {
+//            try {
+                throw RuntimeException("11111111")
 //            } catch (e: Exception) {
 //                Log.e(TAG, "onCreate: "+e.message )
 //            }

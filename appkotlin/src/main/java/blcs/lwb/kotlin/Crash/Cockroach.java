@@ -3,6 +3,7 @@ package blcs.lwb.kotlin.Crash;
 import android.content.Context;
 import android.os.Build;
 import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 
 import org.jetbrains.annotations.NotNull;
@@ -39,15 +40,20 @@ public final class Cockroach {
         /*解除 android P 反射限制*/
         Reflection.unseal(ctx);
         initActivityKiller();
-        Thread.setDefaultUncaughtExceptionHandler((t, e) -> {
-            Log.e(TAG, "uncaughtException:Thread " + t.getName());
-            Log.e(TAG, "uncaughtException:Throwable " + e.getMessage());
-            try {
-                iCrashCallBack.uncaughtException(ctx,t, e);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-                Log.e(TAG, "Exception: " + t.getStackTrace());
+        Thread.setDefaultUncaughtExceptionHandler((thread, throwable) -> {
+            iCrashCallBack.uncaughtException(ctx, thread, throwable);
+            //主线程闪退抛出
+            if (thread == Looper.getMainLooper().getThread()) {
+                while (true) {
+                    try {
+                        //异常处理
+                        Looper.loop();
+                    } catch (Exception exception) {
+                        iCrashCallBack.uncaughtException(ctx, thread,exception);
+                    }
+                }
             }
+
         });
     }
 

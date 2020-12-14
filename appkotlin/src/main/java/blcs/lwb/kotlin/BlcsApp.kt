@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.util.Log
 import blcs.lwb.kotlin.Crash.Cockroach
+import blcs.lwb.kotlin.manage.MrAppBlockCanary
 import com.github.moduth.blockcanary.BlockCanary
 import com.tencent.mmkv.MMKV
 
@@ -27,7 +28,7 @@ class BlcsApp : Application() {
         /**
          * 卡顿初始化
          */
-        BlockCanary.install(this, AppBlockCanaryMr()).start()
+        BlockCanary.install(this, MrAppBlockCanary()).start()
         /**
          * MMKV
          */

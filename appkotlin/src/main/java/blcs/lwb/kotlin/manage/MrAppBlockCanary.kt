@@ -1,11 +1,14 @@
-package blcs.lwb.kotlin
+package blcs.lwb.kotlin.manage
 
 import blcs.lwb.kotlin.Common.AppUtils
 import blcs.lwb.kotlin.Common.LinNetStatus
 import com.github.moduth.blockcanary.BlockCanaryContext
 import java.io.File
 
-class AppBlockCanaryMr : BlockCanaryContext() {
+/**
+ * 卡顿管理
+ */
+class MrAppBlockCanary : BlockCanaryContext() {
     /**
      * 设置限定符
      */

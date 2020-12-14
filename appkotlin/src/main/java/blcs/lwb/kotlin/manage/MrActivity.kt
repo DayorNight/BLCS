@@ -1,4 +1,4 @@
-package blcs.lwb.kotlin.Common
+package blcs.lwb.kotlin.manage
 
 import android.app.Activity
 import android.content.Intent
@@ -21,7 +21,8 @@ class MrActivity private constructor() {
          */
         @JvmStatic
         val instance: MrActivity by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
-            MrActivity() }
+            MrActivity()
+        }
         /**
          * 重启应用
          * @param activity
