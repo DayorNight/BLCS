@@ -18,13 +18,7 @@ class MainActivity : AppCompatActivity() {
 //                Log.e(TAG, "onCreate: "+e.message )
 //            }
         }
-        findViewById<TextView>(R.id.tv_main1).setOnClickListener {
-//            try {
-                throw RuntimeException("11111111")
-//            } catch (e: Exception) {
-//                Log.e(TAG, "onCreate: "+e.message )
-//            }
-        }
+
     }
 
 
