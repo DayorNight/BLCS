@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-android-extensions'
 }
 
 android {
@@ -12,7 +13,6 @@ android {
         targetSdkVersion As.targetSdkVersion
         versionCode As.versionCode
         versionName As.versionName
-
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
@@ -29,26 +29,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
 }
 
 dependencies {
-
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.4.21"
-    /*测试*/
-    androidTestImplementation Dp.Runner
-    androidTestImplementation Dp.Espresso
-    testImplementation Dp.Junit
-    /*卡顿优化*/
-    debugImplementation 'com.github.markzhai:blockcanary-android:1.5.0'
-    /*内存优化*/
-    debugImplementation Dp.Leakcanary
-    /*约束布局*/
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.0-alpha1'
-    /*mmkv替代SP*/
-    implementation 'com.tencent:mmkv-static:1.2.6'
-    /*android P开启反射*/
-    implementation 'me.weishu:free_reflection:3.0.1'
-    /*AndroidAutoSize 屏幕适配*/
-    implementation 'me.jessyan:autosize:1.2.1'
-
+    implementation project(path: ':comLibs')
 }

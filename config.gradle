@@ -21,7 +21,7 @@ ext {
             Agentweb              : "4.0.2",
             Marqueeview           : "1.3.3",
             AdapterHelper         : "2.9.42",
-            Leakcanary            : "2.5",
+            Leakcanary            : '2.6',
             NavigationBar         : "2.0.4",
             MagicIndicator        : "1.5.0",
             Fastjson              : "1.1.59.android",

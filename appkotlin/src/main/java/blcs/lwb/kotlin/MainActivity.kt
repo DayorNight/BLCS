@@ -1,25 +1,18 @@
 package blcs.lwb.kotlin
 
 import android.os.Bundle
-import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
-import blcs.lwb.kotlin.manage.MrActivity
+import com.blcs.comlibs.base.BaseActivity
+import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
-    private  val TAG = "MainActivity"
+public class MainActivity() : BaseActivity(){
+    override fun initUI() {
+        super.initUI()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        MrActivity.instance.addActivity(this)
-        findViewById<TextView>(R.id.tv_main).setOnClickListener {
-//            try {
-                throw RuntimeException("xxxxxxxxx")
-//            } catch (e: Exception) {
-//                Log.e(TAG, "onCreate: "+e.message )
-//            }
-        }
-
+        tv_main?.text = "xxxxxx"
+        tv_main.setOnClickListener { throw RuntimeException("xxxxxxxxxx") }
     }
-
-
 }

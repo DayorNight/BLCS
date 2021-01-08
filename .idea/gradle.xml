@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/LwbTool" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/appkotlin" />
+            <option value="$PROJECT_DIR$/comLibs" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
