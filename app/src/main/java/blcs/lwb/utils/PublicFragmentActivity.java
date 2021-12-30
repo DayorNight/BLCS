@@ -4,9 +4,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 
 import blcs.lwb.lwbtool.base.BasePresenter;
+import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.utils.fragment.BaseFragment;
 import blcs.lwb.utils.mvp.BaseFragmentActivity;
 import blcs.lwb.utils.mvp.presenter.PublicFragmentPresenter;
@@ -63,6 +65,7 @@ public class PublicFragmentActivity extends BaseFragmentActivity implements IPub
     public void Show_Fragment() {
         Intent intent = getIntent();
         String towhere = intent.getStringExtra(Constants.Intent_Go);
+        LogUtils.i(towhere);
         if (towhere != null) {
             Bundle bundle = intent.getExtras();
             fragmentManager.addFrament(R.id.fr_contain, this, towhere, bundle, false);

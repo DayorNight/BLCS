@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <Button
+        android:id="@+id/btn_recorder"
+        android:layout_width="match_parent"
+        style="@style/Button_standard"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="录屏"
+        android:textStyle="bold"
+        android:textSize="@dimen/standard_title"
+        />
+    <Button
+        android:id="@+id/btn_playing"
+        android:layout_width="match_parent"
+        style="@style/Button_standard"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="播放视频"
+        android:textStyle="bold"
+        android:textSize="@dimen/standard_title"
+        />
+    <Button
+        android:id="@+id/btn_audio"
+        android:layout_width="match_parent"
+        style="@style/Button_standard"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="播放音频"
+        android:textStyle="bold"
+        android:textSize="@dimen/standard_title"
+        />
+</LinearLayout>

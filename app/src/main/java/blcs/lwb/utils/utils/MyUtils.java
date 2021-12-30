@@ -135,4 +135,14 @@ public class MyUtils {
     public static void toFragment(Activity activity,Bundle bundle,String tag){
         IntentUtils.toActivity(activity,PublicFragmentActivity.createIntent(activity,tag, bundle));
     }
+
+    /**
+     * 跳转指定Fragment
+     */
+    public static void toFragment(Activity activity,String tag){
+        Bundle bundle = new Bundle();
+        bundle.putString(Constants.Item_Name,tag);
+        IntentUtils.toActivity(activity,PublicFragmentActivity.createIntent(activity,tag, bundle));
+    }
+
 }

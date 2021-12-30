@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Button
+    android:id="@+id/btn_string"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginTop="@dimen/dp_10"
+    style="@style/Button_standard">
+</Button>
