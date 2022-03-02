@@ -3,7 +3,7 @@
 作者随笔博客： [CSDN](https://blog.csdn.net/cs_lwb)  ★  [简书](https://www.jianshu.com/u/d9db60dc00d0)
 ### APK体验下载地址
 ![Image text](https://github.com/DayorNight/File/blob/master/BLCS1.png)
-
+密码：BLCS
 #### 子菜单
 ###### 工具
 > 1.AppUtils ★ 2.BitmapUtils ★ 3.EditTextUtils ★ 4.IntentUtils ★ 5.StringUtils ★ 6.ScreenUtils ★ 7.LinView ★ 8.FileUtils ★ 9.LinCommon
