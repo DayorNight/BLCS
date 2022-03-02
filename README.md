@@ -2,7 +2,7 @@
 ## 首页显示
 作者随笔博客： [CSDN](https://blog.csdn.net/cs_lwb)  ★  [简书](https://www.jianshu.com/u/d9db60dc00d0)
 ### APK体验下载地址
-![Image text](https://github.com/DayorNight/File/blob/master/BLCS.png)
+![Image text](https://github.com/DayorNight/File/blob/master/BLCS1.png)
 
 #### 子菜单
 ###### 工具
