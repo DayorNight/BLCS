@@ -17,6 +17,8 @@ import blcs.lwb.utils.fragment.otherFragment.Jetpack.LiveDataFragment;
 import blcs.lwb.utils.fragment.otherFragment.Jetpack.ViewModelFragment;
 import blcs.lwb.utils.fragment.otherFragment.Jetpack.WorkManagerFragment;
 import blcs.lwb.utils.fragment.otherFragment.UnusedFunctionFragment;
+import blcs.lwb.utils.fragment.viewFragment.AudioAndVideoFragment;
+import blcs.lwb.utils.fragment.viewFragment.AudioFragment;
 import blcs.lwb.utils.fragment.viewFragment.BannerFragment;
 import blcs.lwb.utils.fragment.viewFragment.BarQrCodeFragment;
 import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.AnimationRecyclerFragment;
@@ -79,8 +81,10 @@ import blcs.lwb.utils.fragment.otherFragment.OnCrashFragment;
 import blcs.lwb.utils.fragment.viewFragment.OpenGlSquareFragment;
 import blcs.lwb.utils.fragment.viewFragment.OpenGlTriangleFragment;
 import blcs.lwb.utils.fragment.viewFragment.PickerFragment;
+import blcs.lwb.utils.fragment.viewFragment.PlayingFragment;
 import blcs.lwb.utils.fragment.viewFragment.PopupWindowFragment;
 import blcs.lwb.utils.fragment.viewFragment.ProgressBarFragment;
+import blcs.lwb.utils.fragment.viewFragment.RecorderFragment;
 import blcs.lwb.utils.fragment.viewFragment.RecyclerViewFragment;
 import blcs.lwb.utils.fragment.otherFragment.RxjavaRetrofitFragment;
 import blcs.lwb.utils.fragment.otherFragment.SQLiteFragment;
@@ -194,6 +198,11 @@ public class FramentManages {
     public final static String BarQrCode = "条形码/二维码";
     public final static String CoordinatorLayout = "CoordinatorLayout";
     public final static String FloatingWindow = "悬浮窗口";
+    public final static String AudioAndVideo = "音视频";
+    public final static String Recorder = "录屏";
+    public final static String Playing = "播放视频";
+    public final static String Audio = "播放音频";
+
     /**
      * 其他
      */
@@ -411,6 +420,14 @@ public class FramentManages {
                 return new CoordinatorLayoutFragment();
             case FramentManages.FloatingWindow:
                 return new FloatingWindowFragment();
+            case FramentManages.AudioAndVideo:
+                return new AudioAndVideoFragment();
+            case FramentManages.Recorder:
+                return new RecorderFragment();
+            case FramentManages.Playing:
+                return new PlayingFragment();
+            case FramentManages.Audio:
+                return new AudioFragment();
         }
     }
 

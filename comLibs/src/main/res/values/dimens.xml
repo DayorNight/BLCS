@@ -1,0 +1,61 @@
+<resources>
+    <!--边距-->
+    <dimen name="space_line">6dp</dimen>
+    <!--双倍边距-->
+    <dimen name="space_line2">12dp</dimen>
+    <!--三倍边距-->
+    <dimen name="space_line3">18dp</dimen>
+    <!--标题-->
+    <dimen name="standard_title">20sp</dimen>
+    <!--重要字体-->
+    <dimen name="Importan_work">16sp</dimen>
+    <!--标准字体-->
+    <dimen name="standard_work">14sp</dimen>
+    <!--小字体-->
+    <dimen name="standard_weak">10sp</dimen>
+    <!--图片-->
+    <dimen name="Img_big">42dp</dimen>
+    <!--小图片-->
+    <dimen name="Img_min">24dp</dimen>
+    <!--底部高度-->
+    <dimen name="bottom_space">58dp</dimen>
+    <!--标题高度-->
+    <dimen name="title_height">48dp</dimen>
+
+    <dimen name="page_drag_min_width">80dp</dimen>
+    <dimen name="page_drag_max_height">100dp</dimen>
+    <dimen name="small_navigator_height">5dp</dimen>
+    <dimen name="navigator_margin_top">5dp</dimen>
+    <dimen name="common_navigator_height">45dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+
+
+    <dimen name="default_slider_height">36dp</dimen>
+    <dimen name="default_slider_margin">24dp</dimen>
+    <dimen name="default_slider_bar_height">4dp</dimen>
+    <dimen name="default_slider_handler_radius">10dp</dimen>
+    <dimen name="default_padding_side">24dp</dimen>
+    <dimen name="default_preview_height">40dp</dimen>
+    <dimen name="default_preview_image_height">36dp</dimen>
+    <dimen name="default_slider_margin_btw_title">20dp</dimen>
+
+
+    <!--字体大小 及倍数-->
+    <!--0.875=14/16 -->
+    <dimen name="sp_small">14sp</dimen>
+    <!--1  标准-->
+    <dimen name="sp_stander">16sp</dimen>
+    <!--1.125=18/16-->
+    <dimen name="sp_big1">18sp</dimen>
+    <!--1.25=20/16-->
+    <dimen name="sp_big2">20sp</dimen>
+    <!--1.375=22/16-->
+    <dimen name="sp_big3">22sp</dimen>
+    <!--1.5=24/16-->
+    <dimen name="sp_big4">24sp</dimen>
+    <!--1.625=26/16-->
+    <dimen name="sp_big5">26sp</dimen>
+    <!--1.75=28/16-->
+    <dimen name="sp_big6">28sp</dimen>
+</resources>

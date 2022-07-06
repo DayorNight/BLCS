@@ -103,5 +103,5 @@ dependencies {
     annotationProcessor Dp.GlideCompiler
     debugImplementation Dp.DebugDbEncrypt
     annotationProcessor Dp.room
-
+    implementation 'com.airbnb.android:lottie:2.7.0'
 }

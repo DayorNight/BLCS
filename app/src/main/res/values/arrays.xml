@@ -54,6 +54,7 @@
         <item>条形码/二维码</item>
         <item>CoordinatorLayout</item>
         <item>悬浮窗口</item>
+        <item>音视频</item>
     </string-array>
     <!--other-->
     <string-array name="Other">
