@@ -141,9 +141,6 @@ public class ReflectUtil {
         if(field == null || TextUtils.isEmpty(fieldName)){
             throw new IllegalArgumentException("params is illegal");
         }
-        if (fieldName.equals(field.getName())) {
-            return true;
-        }
-        return false;
+        return fieldName.equals(field.getName());
     }
 }

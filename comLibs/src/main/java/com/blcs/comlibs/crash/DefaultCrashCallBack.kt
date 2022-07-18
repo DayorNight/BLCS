@@ -26,7 +26,7 @@ class DefaultCrashCallBack : ICrashCallBack {
      */
     override fun uncaughtException(ctx: Context, t: Thread,throwable: Throwable ) {
         if (throwable is Exception){
-             exception = throwable as Exception
+             exception = throwable
         }
         deviceInfo = StringBuilder()
         val writer: Writer = StringWriter()
@@ -51,7 +51,7 @@ class DefaultCrashCallBack : ICrashCallBack {
                 val dialog = AlertDialog.Builder(activity!!)
                         .setTitle("错误信息")
                         .setMessage(deviceInfo.toString())
-                        .setPositiveButton("重启", { dialog, which -> MrActivity.restartApp(activity!!) })
+                        .setPositiveButton("重启", { dialog, which -> MrActivity.restartApp(activity) })
                         .setNeutralButton("确定", { dialog, which -> }).show()
                 val content: TextView? = dialog.findViewById(android.R.id.message)
                 val title: TextView? = dialog.findViewById(R.id.alertTitle)

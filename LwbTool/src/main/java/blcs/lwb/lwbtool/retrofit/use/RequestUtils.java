@@ -1,7 +1,7 @@
 package blcs.lwb.lwbtool.retrofit.use;
 
-import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
-import com.trello.rxlifecycle2.components.support.RxFragment;
+import com.trello.rxlifecycle4.components.support.RxFragment;
+import com.trello.rxlifecycle4.components.support.RxAppCompatActivity;
 
 import java.io.File;
 import java.util.HashMap;
@@ -13,7 +13,7 @@ import blcs.lwb.lwbtool.bean.VersionBean;
 import blcs.lwb.lwbtool.retrofit.MyObserver;
 import blcs.lwb.lwbtool.retrofit.RetrofitUtils;
 import blcs.lwb.lwbtool.retrofit.RxHelper;
-import io.reactivex.Observer;
+import io.reactivex.rxjava3.core.Observer;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -47,7 +47,8 @@ public class RequestUtils {
      */
     public static void getDemo(RxFragment context, MyObserver<Demo> observer){
         RetrofitUtils.getApiUrl()
-                .getDemo().compose(RxHelper.observableIO2Main(context))
+                .getDemo()
+                .compose(RxHelper.observableIO2Main(context))
                 .subscribe(observer);
     }
 

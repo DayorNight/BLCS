@@ -1,15 +1,12 @@
 package blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment;
 
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import com.chad.library.adapter.base.entity.MultiItemEntity;
-
 import java.util.ArrayList;
 import java.util.Random;
-
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.utils.bean.Person;
 import blcs.lwb.utils.R;
@@ -79,9 +76,9 @@ public class ExpandableItemFragment extends BaseFragment {
             for (int j = 0; j < lv1Count; j++) {
                 Level1Item lv1 = new Level1Item("Level 1 item: " + j, "(no animation)");
                 for (int k = 0; k < personCount; k++) {
-                    lv1.addSubItem(new Person(nameList[k], random.nextInt(40)));
+//                    lv1.addSubItem(new Person(nameList[k], random.nextInt(40)));
                 }
-                lv0.addSubItem(lv1);
+//                lv0.addSubItem(lv1);
             }
             res.add(lv0);
         }

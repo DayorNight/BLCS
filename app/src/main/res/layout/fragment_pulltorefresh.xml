@@ -4,13 +4,13 @@
     style="@style/match_match"
     android:background="@color/white"
     >
-    <android.support.v4.widget.SwipeRefreshLayout
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipeLayout"
         style="@style/match_match"
         android:orientation="vertical"
         >
 
         <include layout="@layout/tool_recyclerview"/>
-    </android.support.v4.widget.SwipeRefreshLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </FrameLayout>

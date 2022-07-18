@@ -32,7 +32,7 @@
         style="@style/TextView_wrap"
         android:text="@string/addImte"
         />
-    <android.support.design.widget.BottomNavigationView
+    <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bnv_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

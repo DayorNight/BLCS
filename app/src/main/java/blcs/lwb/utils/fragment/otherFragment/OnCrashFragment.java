@@ -1,7 +1,7 @@
 package blcs.lwb.utils.fragment.otherFragment;
 
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.widget.Button;
 
 import blcs.lwb.lwbtool.base.BasePresenter;

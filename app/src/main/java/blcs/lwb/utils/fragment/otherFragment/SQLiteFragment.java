@@ -1,9 +1,9 @@
 package blcs.lwb.utils.fragment.otherFragment;
 
 import android.os.Bundle;
-import android.support.v7.widget.OrientationHelper;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.recyclerview.widget.OrientationHelper;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -41,7 +41,7 @@ public class SQLiteFragment extends BaseFragment {
         return R.layout.fragment_sqlite;
     }
     private int type ;
-    private List<String> datas = new ArrayList<>();
+    private final List<String> datas = new ArrayList<>();
     @Override
     protected void initView() {
         LinSQL.init(activity.getApplicationContext());

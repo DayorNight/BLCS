@@ -1,14 +1,15 @@
 package blcs.lwb.utils.fragment.viewFragment;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 
@@ -35,12 +36,12 @@ public class CoordinatorLayoutFragment extends BaseFragment {
     @Override
     protected void initView() {
         toolbar.setTitle("CoordinatorLayout");
-        activity.setSupportActionBar(toolbar);
+//        activity.setSupportActionBar(toolbar);
 
         ArrayList<String> array = MyUtils.getArray(getActivity(), R.array.games);
         ListAdapter mAdapter = new ListAdapter();
         RecyclerUtil.init(getActivity(),LinearLayoutManager.VERTICAL,mAdapter,rvCoordinator);
-        mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+        mAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 Snackbar.make(fbBotton, array.get(position), Snackbar.LENGTH_LONG)

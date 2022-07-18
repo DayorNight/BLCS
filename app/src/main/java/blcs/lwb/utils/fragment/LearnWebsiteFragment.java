@@ -1,12 +1,15 @@
 package blcs.lwb.utils.fragment;
 
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
+
 import java.util.ArrayList;
 import java.util.List;
 import blcs.lwb.lwbtool.base.BasePresenter;
@@ -33,7 +36,7 @@ public class LearnWebsiteFragment extends BaseFragment {
         mRecyclerView.setAdapter(mAdapter);
         List<String> data = getData();
         mAdapter.setNewData(data);
-        mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+        mAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 MyUtils.toUrl(LearnWebsiteFragment.this,data.get(position),dataUrl.get(position));

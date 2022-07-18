@@ -1,15 +1,9 @@
 package blcs.lwb.lwbtool.retrofit;
 
-
-import android.support.annotation.NonNull;
-
-import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
-
+import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory;
 import java.util.concurrent.TimeUnit;
-
 import blcs.lwb.lwbtool.Constants;
 import blcs.lwb.lwbtool.retrofit.use.ApiUrl;
-import blcs.lwb.lwbtool.utils.LinSSLCertificate;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -44,12 +38,11 @@ public class RetrofitUtils {
     /**
      * 初始化Retrofit
      */
-    @NonNull
     private Retrofit initRetrofit(OkHttpClient client) {
         return new Retrofit.Builder()
                     .client(client)
                     .baseUrl(Constants.BaseUrl)
-                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                    .addCallAdapterFactory(CoroutineCallAdapterFactory.create())
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
     }
@@ -57,7 +50,6 @@ public class RetrofitUtils {
     /**
      * 初始化okhttp
      */
-    @NonNull
     private OkHttpClient initOkHttp() {
         return new OkHttpClient().newBuilder()
                     .readTimeout(Constants.DEFAULT_TIME, TimeUnit.SECONDS)//设置读取超时时间

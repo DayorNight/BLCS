@@ -4,8 +4,8 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
-import android.support.v7.widget.Toolbar;
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
@@ -47,7 +47,7 @@ public class FixedTabFragment extends BaseFragment {
     @BindView(R.id.view_pager)
     ViewPager mViewPager;
     private static final String[] CHANNELS = new String[]{"KITKAT", "NOUGAT", "DONUT"};
-    private List<String> mDataList = Arrays.asList(CHANNELS);
+    private final List<String> mDataList = Arrays.asList(CHANNELS);
     @Override
     public void setMiddleTitle(Toolbar title) {
 

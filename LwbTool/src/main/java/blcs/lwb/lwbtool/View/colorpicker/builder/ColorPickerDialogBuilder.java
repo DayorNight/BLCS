@@ -28,9 +28,9 @@ import blcs.lwb.lwbtool.utils.MyUtils;
  * @date 2018/6/11 11:36:40 整合修改
  */
 public class ColorPickerDialogBuilder {
-    private AlertDialog.Builder builder;
-    private LinearLayout pickerContainer;
-    private ColorPickerView colorPickerView;
+    private final AlertDialog.Builder builder;
+    private final LinearLayout pickerContainer;
+    private final ColorPickerView colorPickerView;
     private LightnessSlider lightnessSlider;
     private AlphaSlider alphaSlider;
     private EditText colorEdit;
@@ -42,7 +42,7 @@ public class ColorPickerDialogBuilder {
     private boolean isPreviewEnabled = false;
     private int pickerCount = 1;
     private int defaultMargin = 0;
-    private Integer[] initialColor = new Integer[]{null, null, null, null, null};
+    private final Integer[] initialColor = new Integer[]{null, null, null, null, null};
 
     private ColorPickerDialogBuilder(Context context) {
         this(context, 0);

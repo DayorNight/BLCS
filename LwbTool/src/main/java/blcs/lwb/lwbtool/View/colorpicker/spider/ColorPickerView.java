@@ -46,27 +46,27 @@ public class ColorPickerView extends View {
 
     private float lightness = 1;
     private float alpha = 1;
-    private int backgroundColor = 0x00000000;
+    private final int backgroundColor = 0x00000000;
 
-    private Integer initialColors[] = new Integer[]{null, null, null, null, null};
+    private Integer[] initialColors = new Integer[]{null, null, null, null, null};
     private int colorSelection = 0;
     private Integer initialColor;
     private Integer pickerTextColor;
-    private Paint colorWheelFill = PaintBuilder.newPaint().color(0).build();
-    private Paint selectorStroke1 = PaintBuilder.newPaint().color(0xffffffff).build();
-    private Paint selectorStroke2 = PaintBuilder.newPaint().color(0xff000000).build();
-    private Paint alphaPatternPaint = PaintBuilder.newPaint().build();
+    private final Paint colorWheelFill = PaintBuilder.newPaint().color(0).build();
+    private final Paint selectorStroke1 = PaintBuilder.newPaint().color(0xffffffff).build();
+    private final Paint selectorStroke2 = PaintBuilder.newPaint().color(0xff000000).build();
+    private final Paint alphaPatternPaint = PaintBuilder.newPaint().build();
     private ColorCircle currentColorCircle;
 
-    private ArrayList<OnColorChangedListener> colorChangedListeners = new ArrayList<>();
-    private ArrayList<OnColorSelectedListener> listeners = new ArrayList<>();
+    private final ArrayList<OnColorChangedListener> colorChangedListeners = new ArrayList<>();
+    private final ArrayList<OnColorSelectedListener> listeners = new ArrayList<>();
 
     private LightnessSlider lightnessSlider;
     private AlphaSlider alphaSlider;
     private EditText colorEdit;
     private LinearLayout colorPreview;
     private ColorWheelRenderer renderer;
-    private TextWatcher colorTextChange = new TextWatcher() {
+    private final TextWatcher colorTextChange = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
         }

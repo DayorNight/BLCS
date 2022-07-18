@@ -7,16 +7,17 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-import com.trello.rxlifecycle2.components.support.RxFragment;
+import androidx.appcompat.widget.Toolbar;
+
+import com.trello.rxlifecycle4.components.support.RxFragment;
 
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.lwbtool.base.BaseView;
-import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.utils.Constants;
+import blcs.lwb.utils.PublicFragmentActivity;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.manager.FramentManages;
 import blcs.lwb.utils.Interfaces.IPopBackStackListener;
-import blcs.lwb.utils.PublicFragmentActivity;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
@@ -47,7 +48,7 @@ public abstract class BaseFragment extends RxFragment implements IPopBackStackLi
             mView = inflater.inflate(bindLayout(), container, false);
             mView.setClickable(true);
             activity = (PublicFragmentActivity) getActivity();// 获得activity的对象
-            fragmentManager = activity.fragmentManager;//片段管理
+            fragmentManager =  activity.fragmentManager;
             bind = ButterKnife.bind(this, mView);
             baseP = bindPresenter();
             if (baseP != null) {
@@ -82,7 +83,7 @@ public abstract class BaseFragment extends RxFragment implements IPopBackStackLi
     /**
      * 中心的标题设置
      */
-    public abstract void setMiddleTitle(android.support.v7.widget.Toolbar title);
+    public abstract void setMiddleTitle(Toolbar title);
 
     /**
      * 绑定P层

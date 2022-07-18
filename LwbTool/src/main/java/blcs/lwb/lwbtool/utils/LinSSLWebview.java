@@ -19,7 +19,7 @@ import okhttp3.Response;
  * setWebViewClient(new LinSSLWebview(getActivity()))
  */
 public class LinSSLWebview extends WebViewClient {
-    private Context context;
+    private final Context context;
 
     public LinSSLWebview(Context context) {
         this.context = context;

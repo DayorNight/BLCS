@@ -2,7 +2,7 @@ package blcs.lwb.utils.fragment.toolFragment;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -33,8 +33,8 @@ public class IntentUtilsFragment extends BaseFragment {
     @BindView(R.id.et_input_args)
     EditText etInputArgs;
     public static final String Key="args";
-    private static int RequestCode =400;
-    private static int RequestCode1 =401;
+    private static final int RequestCode =400;
+    private static final int RequestCode1 =401;
 
     @Override
     public void setMiddleTitle(Toolbar title) {

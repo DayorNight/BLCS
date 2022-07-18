@@ -1,64 +1,77 @@
 ext {
     As = [
-            compileSdkVersion: 30,
+            compileSdkVersion: 28,
             applicationId    : "blcs.lwb.utils",
             minSdkVersion    : 21,
-            targetSdkVersion : 30,
+            targetSdkVersion : 28,
             versionCode      : 6,
             versionName      : "1.0.6",
             /*appkotlin*/
-            applicationId2    : "blcs.lwb.kotlin",
+            applicationId2   : "blcs.lwb.kotlin",
     ]
     Vs = [
-            Constraint            : "1.1.3",
+            Constraint            : "2.1.3",
             Junit                 : "4.13.1",
-            Espresso              : "3.0.2",
+            Espresso              : "3.4.0",
             Uiautomator           : "2.1.3",
-            Butterknife           : "8.8.1",
-            Glide                 : "4.8.0",
+            Butterknife           : "10.2.3",
+            Glide                 : "4.13.2",
             DebugDbEncrypt        : "1.0.6",
             Runner                : "1.3.0",
             Agentweb              : "4.0.2",
             Marqueeview           : "1.3.3",
-            AdapterHelper         : "2.9.42",
+            AdapterHelper         : "3.0.7",
             Leakcanary            : '2.6',
             NavigationBar         : "2.0.4",
             MagicIndicator        : "1.5.0",
             Fastjson              : "1.1.59.android",
             Banner                : "1.4.10",
             Androidsvg            : "1.3",
-            Retrofit2             : "2.5.0",
+            Retrofit2             : "2.9.0",
             Retrofit2ConverterGson: "2.5.0",
-            Retrofit2Rxjava2      : "1.0.0",
-            Rxlifecycle           : "2.1.0",
+            Retrofit2Rxjava2      : "0.9.2",
+            Rxlifecycle           : "4.0.2",
             PickerView            : "4.1.9",
             Litepal               : "3.0.0",
-            Greendao              : "3.2.2",
+            Greendao              : "3.3.0",
             Qmui                  : "1.4.0",
             MPAndroidChart        : "v3.1.0",
             Zxing                 : "2.2.5",
-            lifeViewModel         : "1.1.0",
-            navigation            : "1.0.0-alpha01",
-            paging                : "1.0.0",
-            workManager           : "1.0.1",
+            lifeViewModel         : "1.5.0",
+            navigation            : "1.5.0",
+            paging                : "1.5.0",
+            workManager           : "1.5.0",
+            blockCanary           : "1.5.0",
+            lottie                : "3.6.0",
+            rv                    : "1.2.1",
+            supportV4             : "1.0.0",
+            material              : "1.0.0-beta01",
+            appcompat             : "1.1.0",
+            fragmentktx           : "1.1.0",
+            activityktx           : "1.1.0",
+            corektx               : "1.1.0",
+            coroutines            : "1.1.0",
     ]
-    SupportVersion = "28.0.0"
 
     Dp = [
-            SupportV4             : "com.android.support:support-v4:$SupportVersion",
-            Recyclerview          : "com.android.support:recyclerview-v7:$SupportVersion",
-            Design                : "com.android.support:design:$SupportVersion",
-            AppcompatV7           : "com.android.support:appcompat-v7:$SupportVersion",
+            SupportV4             : "androidx.legacy:legacy-support-v4:$Vs.supportV4",
+            fragmentktx           : "androidx.fragment:fragment-ktx:$Vs.fragmentktx",
+            activityktx           : "androidx.activity:activity-ktx:$Vs.fragmentktx",
+            corektx               : "androidx.core:core-ktx:$Vs.corektx",
+            coroutines            : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$Vs.coroutines",
+            Recyclerview          : "androidx.recyclerview:recyclerview:$Vs.rv",
+            Design                : "androidx.compose.material:material:$Vs.material",
+            AppcompatV7           : "androidx.appcompat:appcompat:$Vs.appcompat",
             // ConstraintLayout布局
-            ConstraintLayout      : "com.android.support.constraint:constraint-layout:$Vs.Constraint",
+            ConstraintLayout      : "androidx.constraintlayout:constraintlayout:$Vs.Constraint",
             // 测试
             Junit                 : "junit:junit:$Vs.Junit",
             Runner                : "androidx.test:runner:$Vs.Runner",
-            Espresso              : "com.android.support.test.espresso:espresso-core:$Vs.Espresso",
+            Espresso              : "androidx.test.espresso:espresso-core:$Vs.Espresso",
             Uiautomator           : "com.android.support.test.uiautomator:uiautomator-v18:$Vs.Uiautomator",
             rules                 : "androidx.test:rules:$Vs.Runner",
-            EspressoWeb           : "com.android.support.test.espresso:espresso-web:$Vs.Espresso",
-            EspressoContrib       : "com.android.support.test.espresso:espresso-contrib:$Vs.Espresso",
+//            EspressoWeb           : "com.android.support.test.espresso:espresso-web:$Vs.Espresso",
+//            EspressoContrib       : "com.android.support.test.espresso:espresso-contrib:$Vs.Espresso",
             // butterknife        依赖注入框架，省去寻找控件的方法findViewById
 
             Butterknife           : "com.jakewharton:butterknife:$Vs.Butterknife",
@@ -95,10 +108,10 @@ ext {
             // retrofit添加Json解析返回数据
             Retrofit2ConverterGson: "com.squareup.retrofit2:converter-gson:$Vs.Retrofit2",
             // retrofit添加Rxjava支持
-            Retrofit2Rxjava2      : "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$Vs.Retrofit2Rxjava2",
+            Retrofit2Rxjava2      : "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$Vs.Retrofit2Rxjava2",
             LifecycleViewModel    : "android.arch.lifecycle:extensions:$Vs.lifeViewModel",
             // rxlifecycle框架 管理生命周期
-            Rxlifecycle           : "com.trello.rxlifecycle2:rxlifecycle-components:$Vs.Rxlifecycle",
+            Rxlifecycle           : "com.trello.rxlifecycle4:rxlifecycle-components:$Vs.Rxlifecycle",
             // PickerView https://github.com/Bigkoo/Android-PickerView 选择器弹窗
             PickerView            : "com.contrarywind:Android-PickerView:$Vs.PickerView",
             // 开源数据库
@@ -117,6 +130,10 @@ ext {
             //paging
             paging                : "android.arch.paging:runtime:$Vs.paging",
             //paging
-            workManager           : "android.arch.work:work-runtime:$Vs.workManager"
+            workManager           : "android.arch.work:work-runtime:$Vs.workManager",
+            //blockcanary
+            blockCanary           : "com.github.markzhai:blockcanary-android:$Vs.blockCanary",
+            //lottie
+            lottie                : "com.airbnb.android:lottie:$Vs.lottie"
     ]
 }

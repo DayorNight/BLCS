@@ -31,7 +31,6 @@ import android.renderscript.Allocation;
 import android.renderscript.Element;
 import android.renderscript.RenderScript;
 import android.renderscript.ScriptIntrinsicBlur;
-import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.ImageView;
 
@@ -417,7 +416,7 @@ public class RxImageTool {
      * @param str 字符串
      * @return
      */
-    public static boolean isNullString(@Nullable String str) {
+    public static boolean isNullString(String str) {
         return str == null || str.length() == 0 || "null".equals(str);
     }
 
@@ -1027,15 +1026,15 @@ public class RxImageTool {
         int wh = w * h;
         int div = radius + radius + 1;
 
-        int r[] = new int[wh];
-        int g[] = new int[wh];
-        int b[] = new int[wh];
+        int[] r = new int[wh];
+        int[] g = new int[wh];
+        int[] b = new int[wh];
         int rsum, gsum, bsum, x, y, i, p, yp, yi, yw;
-        int vmin[] = new int[Math.max(w, h)];
+        int[] vmin = new int[Math.max(w, h)];
 
         int divsum = (div + 1) >> 1;
         divsum *= divsum;
-        int dv[] = new int[256 * divsum];
+        int[] dv = new int[256 * divsum];
         for (i = 0; i < 256 * divsum; i++) {
             dv[i] = (i / divsum);
         }

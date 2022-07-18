@@ -4,8 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
+
+import androidx.appcompat.widget.Toolbar;
+
 import blcs.lwb.lwbtool.base.BaseFragment;
 import blcs.lwb.lwbtool.base.BaseFragmentActivity;
 import blcs.lwb.lwbtool.base.BasePresenter;

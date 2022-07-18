@@ -6,15 +6,15 @@ import android.content.res.ColorStateList;
 import android.widget.RadioButton;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
+import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 
 import blcs.lwb.lwbtool.utils.SPUtils;
 import blcs.lwb.utils.Constants;
 import blcs.lwb.utils.R;
 
-public class MultiLanguageAdapter extends BaseQuickAdapter<String,BaseViewHolder> {
+public class MultiLanguageAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
 
-    private Activity activity;
+    private final Activity activity;
     public MultiLanguageAdapter(Activity activity) {
         super(R.layout.adapter_multi_language);
         this.activity = activity;

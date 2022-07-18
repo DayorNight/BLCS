@@ -1,39 +1,27 @@
 package blcs.lwb.utils.fragment.toolFragment;
 
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
+
+import androidx.appcompat.widget.Toolbar;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.lwbtool.retrofit.RxHelper;
 import blcs.lwb.lwbtool.utils.FileUtils;
 import blcs.lwb.lwbtool.utils.LinCommon;
-import blcs.lwb.lwbtool.utils.LinDownloadAPk;
-import blcs.lwb.lwbtool.utils.LogUtils;
-import blcs.lwb.lwbtool.utils.RxToast;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.fragment.BaseFragment;
 import blcs.lwb.utils.manager.FramentManages;
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
-import butterknife.Unbinder;
-import io.reactivex.Observable;
-import io.reactivex.ObservableEmitter;
-import io.reactivex.ObservableOnSubscribe;
-import io.reactivex.Observer;
-import io.reactivex.functions.Consumer;
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.ObservableEmitter;
+import io.reactivex.rxjava3.core.ObservableOnSubscribe;
+import io.reactivex.rxjava3.functions.Consumer;
 
 public class FileUtilsFragment extends BaseFragment {
 

@@ -3,8 +3,8 @@ package blcs.lwb.utils.fragment.viewFragment.MagicIndicator;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
-import android.support.v7.widget.Toolbar;
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -33,7 +33,7 @@ public class LoadCustomLayoutFragment extends BaseFragment {
     ViewPager mViewPager;
     @BindView(R.id.magic_indicator1)
     MagicIndicator magicIndicator1;
-    private List<String> mDataList = Arrays.asList(CHANNELS);
+    private final List<String> mDataList = Arrays.asList(CHANNELS);
 
 
     @Override

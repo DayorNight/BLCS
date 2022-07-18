@@ -25,8 +25,8 @@ public class RxShapeView extends View {
     private static final float mTriangle2Circle = 0.25555555f;
 
     private Shape mShape = Shape.SHAPE_CIRCLE;
-    private Interpolator mInterpolator = new DecelerateInterpolator();
-    private ArgbEvaluator mArgbEvaluator = new ArgbEvaluator();
+    private final Interpolator mInterpolator = new DecelerateInterpolator();
+    private final ArgbEvaluator mArgbEvaluator = new ArgbEvaluator();
 
     private int mTriangleColor;
     private int mCircleColor;
@@ -35,7 +35,7 @@ public class RxShapeView extends View {
     /**
      * 用赛贝尔曲线画圆
      */
-    private float mMagicNumber = 0.55228475f;
+    private final float mMagicNumber = 0.55228475f;
 
     public RxShapeView(Context context) {
         super(context);

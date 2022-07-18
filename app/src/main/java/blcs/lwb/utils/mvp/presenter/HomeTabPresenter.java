@@ -5,7 +5,7 @@ import blcs.lwb.utils.mvp.view.IHomeTabView;
 
 public class HomeTabPresenter extends BasePresenter<IHomeTabView> {
 
-    private IHomeTabView v;
+    private final IHomeTabView v;
     public HomeTabPresenter(IHomeTabView v){
         this.v = v;
         onAttach(v);

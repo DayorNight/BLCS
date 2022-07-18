@@ -1,13 +1,14 @@
 package blcs.lwb.utils.fragment.viewFragment;
 
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
+
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,19 +23,17 @@ import blcs.lwb.utils.adapter.RecyclerAdapter;
 import blcs.lwb.utils.fragment.BaseFragment;
 import blcs.lwb.utils.utils.MyUtils;
 import butterknife.BindView;
-import io.reactivex.Observable;
-import io.reactivex.ObservableEmitter;
-import io.reactivex.ObservableOnSubscribe;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.functions.Consumer;
-import io.reactivex.schedulers.Schedulers;
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.ObservableEmitter;
+import io.reactivex.rxjava3.core.ObservableOnSubscribe;
+import io.reactivex.rxjava3.functions.Consumer;
 
 public class RecyclerViewFragment extends BaseFragment {
 
     @BindView(R.id.tool_recyclerView)
     RecyclerView recyclerView;
 
-    private ArrayList<HomeItem> mDataList = new ArrayList<>();
+    private final ArrayList<HomeItem> mDataList = new ArrayList<>();
     private ArrayList<String> titles;
     private ArrayList<String> fragment;
     private RecyclerAdapter mAdapter;
@@ -50,7 +49,7 @@ public class RecyclerViewFragment extends BaseFragment {
         mAdapter = new RecyclerAdapter(R.layout.home_item_view);
         recyclerView.setAdapter(mAdapter);
         //点击事件
-        mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+        mAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 addFrament(fragment.get(position), titles.get(position));

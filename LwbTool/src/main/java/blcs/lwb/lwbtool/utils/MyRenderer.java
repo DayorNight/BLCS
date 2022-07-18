@@ -26,7 +26,7 @@ import static android.opengl.GLES20.glVertexAttribPointer;
  */
 
 public class MyRenderer implements GLSurfaceView.Renderer {
-    private Context context;
+    private final Context context;
     private int program;
     private static final String V_POSITION = "vPosition";
     private int aPositionLocation;

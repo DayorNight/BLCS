@@ -2,24 +2,24 @@ package blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment;
 
 import android.graphics.Canvas;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
 
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
-import com.chad.library.adapter.base.callback.ItemDragAndSwipeCallback;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.chad.library.adapter.base.listener.OnItemDragListener;
 import com.chad.library.adapter.base.listener.OnItemSwipeListener;
+import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 
 import java.util.ArrayList;
 
+import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.lwbtool.utils.RxToast;
-import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.adapter.BaseDemoAdapter.ItemDragAdapter;
 import blcs.lwb.utils.fragment.BaseFragment;
@@ -48,20 +48,20 @@ public class DragAndSwipeFragment extends BaseFragment {
         //回调方法
         initListen();
         //拖拽和删除回调方法
-        ItemDragAndSwipeCallback itemCallback = new ItemDragAndSwipeCallback(mAdapter);
-        ItemTouchHelper mItemTouchHelper = new ItemTouchHelper(itemCallback);
-        mItemTouchHelper.attachToRecyclerView(mRecyclerView);
+//        DragAndSwipeCallback itemCallback = new DragAndSwipeCallback(mAdapter);
+//        ItemTouchHelper mItemTouchHelper = new ItemTouchHelper(itemCallback);
+//        mItemTouchHelper.attachToRecyclerView(mRecyclerView);
         //mItemDragAndSwipeCallback.setDragMoveFlags(ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT | ItemTouchHelper.UP | ItemTouchHelper.DOWN);
-        itemCallback.setSwipeMoveFlags(ItemTouchHelper.START|ItemTouchHelper.END);
-        //// 开启滑动删除
-        mAdapter.enableSwipeItem();
-        mAdapter.setOnItemSwipeListener(onItemSwipeListener);
-        //开启拖拽
-        mAdapter.enableDragItem(mItemTouchHelper);
-        mAdapter.setOnItemDragListener(listener);
+//        itemCallback.setSwipeMoveFlags(ItemTouchHelper.START|ItemTouchHelper.END);
+//        //// 开启滑动删除
+//        mAdapter.enableSwipeItem();
+//        mAdapter.setOnItemSwipeListener(onItemSwipeListener);
+//        //开启拖拽
+//        mAdapter.enableDragItem(mItemTouchHelper);
+//        mAdapter.setOnItemDragListener(listener);
 
         mRecyclerView.setAdapter(mAdapter);
-        mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+        mAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 RxToast.info(activity,String.valueOf(position));

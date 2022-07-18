@@ -28,30 +28,10 @@ class MrAppBlockCanary : BlockCanaryContext() {
     }
 
     /**
-     * 配置监视器持续时间
-     */
-    override fun provideMonitorDuration(): Int {
-        return super.provideMonitorDuration()
-    }
-
-    /**
-     * 配置保存路径
-     */
-    override fun providePath(): String {
-        return super.providePath()
-    }
-
-    /**
      * 日志保存
      */
     override fun upload(zippedFile: File?) {
         super.upload(zippedFile)
     }
 
-    /**
-     * 白名单
-     */
-    override fun provideWhiteList(): MutableList<String> {
-        return super.provideWhiteList()
-    }
 }

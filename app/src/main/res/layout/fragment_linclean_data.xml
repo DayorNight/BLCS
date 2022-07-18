@@ -1,47 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/match_wrap"
-    android:background="@mipmap/ic4">
-    <LinearLayout style="@style/Lin_vertical">
-        <Button
-            android:id="@+id/btn_get_allCache"
-            style="@style/Button_alpha"
-            android:text="@string/getAllCatchData"/>
-        <Button
-            android:id="@+id/btn_clean_allCache"
-            style="@style/Button_alpha"
-            android:text="@string/cleanAllCache"/>
-        <Button
-            android:id="@+id/btn_clean_appData"
-            style="@style/Button_alpha"
-            android:text="@string/cleanAppInternalCache"/>
-        <Button
-            android:id="@+id/btn_clean_dataBases"
-            style="@style/Button_alpha"
-            android:text="@string/cleanAppAllData"/>
-        <Button
-            android:id="@+id/btn_clean_sp"
-            style="@style/Button_alpha"
-            android:text="@string/cleanAppSp"/>
-        <Button
-            android:id="@+id/btn_clean_dataBases_name"
-            style="@style/Button_alpha"
-            android:text="@string/quareCleanAppData"/>
-        <Button
-            android:id="@+id/btn_clean_content"
-            style="@style/Button_alpha"
-            android:text="@string/data_data_com_xxx_xxx_files"/>
-        <Button
-            android:id="@+id/btn_clean_cache_content"
-            style="@style/Button_alpha"
-            android:text="@string/cleanExternalCacheContent"/>
-        <Button
-            android:id="@+id/btn_clean_custom_file"
-            style="@style/Button_alpha"
-            android:text="@string/cleanCustomFile"/>
-        <Button
-            android:id="@+id/btn_clean_alldata"
-            style="@style/Button_alpha"
-            android:text="@string/cleanAllData"/>
-    </LinearLayout>
-</ScrollView>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable name="content" type="String"/>
+    </data>
+
+    <ScrollView
+        style="@style/match_wrap"
+        android:background="@mipmap/ic4">
+        <LinearLayout style="@style/Lin_vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="@{content}"
+                android:textSize="@dimen/sp_big1"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btn_get_allCache"
+                style="@style/Button_alpha"
+                android:text="@string/getAllCatchData" />
+
+            <Button
+                android:id="@+id/btn_clean_allCache"
+                style="@style/Button_alpha"
+                android:text="@string/cleanAllCache" />
+
+            <Button
+                android:id="@+id/btn_clean_appData"
+                style="@style/Button_alpha"
+                android:text="@string/cleanAppInternalCache" />
+
+            <Button
+                android:id="@+id/btn_clean_dataBases"
+                style="@style/Button_alpha"
+                android:text="@string/cleanAppAllData" />
+
+            <Button
+                android:id="@+id/btn_clean_sp"
+                style="@style/Button_alpha"
+                android:text="@string/cleanAppSp" />
+
+            <Button
+                android:id="@+id/btn_clean_dataBases_name"
+                style="@style/Button_alpha"
+                android:text="@string/quareCleanAppData" />
+
+            <Button
+                android:id="@+id/btn_clean_content"
+                style="@style/Button_alpha"
+                android:text="@string/data_data_com_xxx_xxx_files" />
+
+            <Button
+                android:id="@+id/btn_clean_cache_content"
+                style="@style/Button_alpha"
+                android:text="@string/cleanExternalCacheContent" />
+
+            <Button
+                android:id="@+id/btn_clean_custom_file"
+                style="@style/Button_alpha"
+                android:text="@string/cleanCustomFile" />
+
+            <Button
+                android:id="@+id/btn_clean_alldata"
+                style="@style/Button_alpha"
+                android:text="@string/cleanAllData" />
+        </LinearLayout>
+    </ScrollView>
+</layout>

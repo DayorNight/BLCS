@@ -1,11 +1,13 @@
 package blcs.lwb.utils.fragment.viewFragment;
 
 import android.os.Bundle;
-import android.support.v7.widget.OrientationHelper;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.recyclerview.widget.OrientationHelper;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
+
 import java.util.Arrays;
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.lwbtool.utils.RecyclerUtil;
@@ -35,7 +37,7 @@ public class MPAndroidChartFragment extends BaseFragment {
         MpAndroidChartAdapter mAdapter = new MpAndroidChartAdapter();
         RecyclerUtil.init(activity, OrientationHelper.VERTICAL, mAdapter, toolRecyclerView,true);
         mAdapter.setNewData(Arrays.asList(str));
-        mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+        mAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 Bundle bundle = new Bundle();

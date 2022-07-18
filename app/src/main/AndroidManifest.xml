@@ -53,12 +53,10 @@
         <activity
             android:name=".PublicFragmentActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="PublicFragmentActivity"
             android:launchMode="singleTask"
             android:hardwareAccelerated="true"
             android:windowSoftInputMode="stateAlwaysHidden"
             />
-
         <activity
             android:name=".fragment.viewFragment.WeChat.FontSizeActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"

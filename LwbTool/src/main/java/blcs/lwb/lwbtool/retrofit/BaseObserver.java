@@ -2,8 +2,7 @@ package blcs.lwb.lwbtool.retrofit;
 
 import blcs.lwb.lwbtool.bean.BaseResponse;
 import blcs.lwb.lwbtool.utils.LogUtils;
-import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
+import io.reactivex.rxjava3.core.Observer;
 
 /**
  * 数据返回统一处理  参考https://www.jianshu.com/p/ff619fea7e22
@@ -33,10 +32,6 @@ public abstract class BaseObserver<T> implements Observer<BaseResponse<T>> {
 
     }
 
-    @Override
-    public void onSubscribe(Disposable d) {
-
-    }
 
     public abstract void onSuccess(T result);
 

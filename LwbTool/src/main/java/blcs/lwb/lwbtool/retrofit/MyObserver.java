@@ -5,18 +5,17 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.widget.Toast;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.rxjava3.disposables.Disposable;
 
 /**
  * Observer加入加载框
  * @param <T>
  */
 public abstract class MyObserver<T> extends BaseObserver<T> {
-    private boolean mShowDialog;
+    private final boolean mShowDialog;
     private ProgressDialog dialog;
-    private Context mContext;
+    private final Context mContext;
     private Disposable d;
 
     public MyObserver(Context context, Boolean showDialog) {
@@ -28,22 +27,22 @@ public abstract class MyObserver<T> extends BaseObserver<T> {
         this(context,true);
     }
 
-    @Override
-    public void onSubscribe(Disposable d) {
-        this.d = d;
-        if (!isConnected(mContext)) {
-            Toast.makeText(mContext,"未连接网络",Toast.LENGTH_SHORT).show();
-            if (d.isDisposed()) {
-                d.dispose();
-            }
-        } else {
-            if (dialog == null && mShowDialog == true) {
-                dialog = new ProgressDialog(mContext);
-                dialog.setMessage("正在加载中");
-                dialog.show();
-            }
-        }
-    }
+    //    @Override
+//    public void onSubscribe(Disposable d) {
+//        this.d = d;
+//        if (!isConnected(mContext)) {
+//            Toast.makeText(mContext,"未连接网络",Toast.LENGTH_SHORT).show();
+//            if (d.isDisposed()) {
+//                d.dispose();
+//            }
+//        } else {
+//            if (dialog == null && mShowDialog == true) {
+//                dialog = new ProgressDialog(mContext);
+//                dialog.setMessage("正在加载中");
+//                dialog.show();
+//            }
+//        }
+//    }
     @Override
     public void onError(Throwable e) {
         if (d.isDisposed()) {

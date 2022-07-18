@@ -28,7 +28,7 @@
         android:text="震动"
         />
 
-    <android.support.v7.widget.SwitchCompat
+    <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/sc_sound"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -40,7 +40,7 @@
         android:text="声音"
         />
 
-    <android.support.v7.widget.SwitchCompat
+    <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/sc_vibration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

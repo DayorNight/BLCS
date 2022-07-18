@@ -1,7 +1,11 @@
 package blcs.lwb.utils.adapter.BaseDemoAdapter.provider;
 
-import com.chad.library.adapter.base.entity.AbstractExpandableItem;
 import com.chad.library.adapter.base.entity.MultiItemEntity;
+import com.chad.library.adapter.base.entity.node.BaseExpandNode;
+import com.chad.library.adapter.base.entity.node.BaseNode;
+
+import java.util.List;
+
 import blcs.lwb.utils.bean.Person;
 import blcs.lwb.utils.adapter.BaseDemoAdapter.ExpandableItemAdapter;
 
@@ -9,7 +13,7 @@ import blcs.lwb.utils.adapter.BaseDemoAdapter.ExpandableItemAdapter;
  * Created by luoxw on 2016/8/10.
  */
 
-public class Level1Item extends AbstractExpandableItem<Person> implements MultiItemEntity {
+public class Level1Item extends BaseExpandNode implements MultiItemEntity {
     public String title;
     public String subTitle;
 
@@ -24,7 +28,7 @@ public class Level1Item extends AbstractExpandableItem<Person> implements MultiI
     }
 
     @Override
-    public int getLevel() {
-        return 1;
+    public List<BaseNode> getChildNode() {
+        return null;
     }
 }

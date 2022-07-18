@@ -5,7 +5,7 @@ import blcs.lwb.utils.mvp.view.IMainView;
 
 public class MainPresenter extends BasePresenter<IMainView> {
 
-    private IMainView v;
+    private final IMainView v;
     public MainPresenter(IMainView v){
         this.v = v;
         initMenu();

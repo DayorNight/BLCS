@@ -39,11 +39,11 @@ public abstract class AnimationLayout extends FrameLayout implements IAnimationL
 
     protected CurveEvaluatorRecord mEvaluatorRecord;
 
-    public AnimationLayout(@NonNull Context context) {
+    public AnimationLayout(Context context) {
         this(context, null);
     }
 
-    public AnimationLayout(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public AnimationLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         // 初始化
         this.init();

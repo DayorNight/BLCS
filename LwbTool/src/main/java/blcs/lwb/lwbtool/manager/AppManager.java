@@ -3,8 +3,6 @@ package blcs.lwb.lwbtool.manager;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.util.Log;
 
 import java.util.Stack;
@@ -110,7 +108,7 @@ public class AppManager {
      * 重启应用
      * @param activity
      */
-    public static void restartApp(@NonNull Activity activity) {
+    public static void restartApp(Activity activity) {
         Intent intent1 = new Intent(activity, getRestartActivityClass(activity));
         intent1.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
         if (intent1.getComponent() != null) {
@@ -127,8 +125,7 @@ public class AppManager {
      * @param context
      * @return
      */
-    @Nullable
-    private static Class<? extends Activity> getRestartActivityClass(@NonNull Activity context) {
+    private static Class<? extends Activity> getRestartActivityClass(Activity context) {
         Intent intent = context.getPackageManager().getLaunchIntentForPackage(context.getPackageName());
         if (intent != null && intent.getComponent() != null) {
             try {

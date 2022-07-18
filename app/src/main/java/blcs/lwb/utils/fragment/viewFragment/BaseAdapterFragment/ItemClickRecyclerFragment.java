@@ -1,11 +1,16 @@
 package blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment;
 
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemChildClickListener;
+import com.chad.library.adapter.base.listener.OnItemChildLongClickListener;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
+import com.chad.library.adapter.base.listener.OnItemLongClickListener;
+
 import blcs.lwb.lwbtool.utils.RxToast;
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.utils.R;
@@ -31,19 +36,19 @@ public class ItemClickRecyclerFragment extends BaseFragment {
     protected void initView() {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(activity));
         mAdapter = new AnimationAdapter(R.layout.layout_animation, MyUtils.getArray(activity, R.array.games));
-        mAdapter.openLoadAnimation(mAdapter.SCALEIN);
+//        mAdapter.openLoadAnimation(mAdapter.SCALEIN);
         mRecyclerView.setAdapter(mAdapter);
         initClick();
     }
     //点击事件
     private void initClick() {
-        mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+        mAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 RxToast.info(activity,"onItemClick"+position);
             }
         });
-        mAdapter.setOnItemLongClickListener(new BaseQuickAdapter.OnItemLongClickListener() {
+        mAdapter.setOnItemLongClickListener(new OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(BaseQuickAdapter adapter, View view, int position) {
                 RxToast.info(activity,"onItemLongClick"+position);
@@ -51,14 +56,14 @@ public class ItemClickRecyclerFragment extends BaseFragment {
             }
         });
 
-        mAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+        mAdapter.setOnItemChildClickListener(new OnItemChildClickListener() {
             @Override
             public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
                 RxToast.info(activity,"onItemChildClick"+position);
             }
         });
 
-        mAdapter.setOnItemChildLongClickListener(new BaseQuickAdapter.OnItemChildLongClickListener() {
+        mAdapter.setOnItemChildLongClickListener(new OnItemChildLongClickListener() {
             @Override
             public boolean onItemChildLongClick(BaseQuickAdapter adapter, View view, int position) {
                 RxToast.info(activity,"onItemChildLongClick"+position);

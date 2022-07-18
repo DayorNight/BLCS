@@ -1,16 +1,18 @@
 package blcs.lwb.utils.mvp;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
 
 import com.umeng.analytics.MobclickAgent;
 
 import blcs.lwb.lwbtool.manager.AppManager;
 import blcs.lwb.lwbtool.utils.EditTextUtils;
-import blcs.lwb.lwbtool.R;
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.utils.manager.FramentManages;
 import butterknife.ButterKnife;
@@ -20,7 +22,7 @@ import interfaces.OnFinishListener;
 /**
  * FragmentActivity
  */
-public abstract class BaseFragmentActivity extends AppCompatActivity implements OnFinishListener {
+public abstract class BaseFragmentActivity extends FragmentActivity implements OnFinishListener {
 	protected BasePresenter baseP;// P层 自己在强转
 	public FramentManages fragmentManager ;
 	/**

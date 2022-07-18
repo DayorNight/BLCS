@@ -1,6 +1,5 @@
 package blcs.lwb.lwbtool.utils;
 
-import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -649,7 +648,7 @@ public class StringUtils {
 	 * @param str 字符串
 	 * @return
 	 */
-	public static boolean isNullString(@Nullable String str) {
+	public static boolean isNullString(String str) {
 		return str == null || str.length() == 0 || "null".equals(str);
 	}
 

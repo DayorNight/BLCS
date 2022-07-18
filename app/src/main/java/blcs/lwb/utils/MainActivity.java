@@ -3,29 +3,23 @@ package blcs.lwb.utils;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Build;
-import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import androidx.annotation.RequiresApi;
+import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.umeng.analytics.MobclickAgent;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 import blcs.lwb.lwbtool.base.BaseAppCompatActivity;
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.lwbtool.utils.LeakCanaryUtils;
-import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.lwbtool.utils.SPUtils;
 import blcs.lwb.utils.adapter.ViewPagerHomeAdapter;
-import blcs.lwb.utils.fragment.HomeOtherFragment;
-import blcs.lwb.utils.fragment.HomeUtilsFragment;
-import blcs.lwb.utils.fragment.HomeViewFragment;
 import blcs.lwb.utils.mvp.presenter.MainPresenter;
 import blcs.lwb.utils.mvp.view.IMainView;
 import blcs.lwb.utils.utils.MyUtils;
@@ -68,7 +62,7 @@ public class MainActivity extends BaseAppCompatActivity implements IMainView {
 
         mainBottom.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case 0:
                         mainViewpage.setCurrentItem(0);

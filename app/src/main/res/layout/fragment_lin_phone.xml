@@ -12,6 +12,6 @@
             style="@style/text_stander"
             android:scrollbars="vertical"
             android:text="@string/app_name"
-            android:textSize="@dimen/sp_12" />
+            android:textSize="@dimen/sp_small" />
     </LinearLayout>
 </ScrollView>

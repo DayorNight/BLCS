@@ -39,15 +39,17 @@ dependencies {
     androidTestImplementation Dp.Runner
     androidTestImplementation Dp.Espresso
     androidTestImplementation Dp.Uiautomator
-    androidTestImplementation Dp.EspressoWeb
-    androidTestImplementation Dp.EspressoContrib
+//    androidTestImplementation Dp.EspressoWeb
+//    androidTestImplementation Dp.EspressoContrib
 
     api Dp.Butterknife
     annotationProcessor Dp.ButterknifeCompiler
     api Dp.Agentweb
     api Dp.Marqueeview
     api Dp.AdapterHelper
+    //内存与卡顿监测工具
     debugImplementation Dp.Leakcanary
+    debugImplementation Dp.blockCanary
     api Dp.NavigationBar
     api Dp.MagicIndicator
     api Dp.Fastjson
@@ -71,4 +73,6 @@ dependencies {
     api Dp.navigationUI
     api Dp.paging
     api Dp.workManager
+    /*lottie json动画*/
+    api Dp.lottie
 }

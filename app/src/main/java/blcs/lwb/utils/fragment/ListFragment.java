@@ -1,15 +1,16 @@
 package blcs.lwb.utils.fragment;
 
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.OrientationHelper;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.OrientationHelper;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
 
 import java.io.File;
 import java.util.Arrays;
@@ -49,7 +50,7 @@ public class ListFragment extends BaseFragment {
         ListAdapter listAdapter = new ListAdapter();
         RecyclerUtil.init(activity, OrientationHelper.VERTICAL, listAdapter, toolRecyclerView);
         listAdapter.setNewData(fileNames);
-        listAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+        listAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 String fileName = (String) adapter.getData().get(position);

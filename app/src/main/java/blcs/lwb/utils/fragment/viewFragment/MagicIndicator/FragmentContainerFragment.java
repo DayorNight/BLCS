@@ -3,10 +3,11 @@ package blcs.lwb.utils.fragment.viewFragment.MagicIndicator;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import android.view.View;
 import android.widget.FrameLayout;
 
@@ -34,8 +35,8 @@ public class FragmentContainerFragment extends BaseFragment {
     @BindView(R.id.fragment_container)
     FrameLayout fragmentContainer;
     private static final String[] CHANNELS = new String[]{"KITKAT", "NOUGAT", "DONUT"};
-    private List<Fragment> mFragments = new ArrayList<Fragment>();
-    private FragmentContainerHelper mFragmentContainerHelper = new FragmentContainerHelper();
+    private final List<Fragment> mFragments = new ArrayList<Fragment>();
+    private final FragmentContainerHelper mFragmentContainerHelper = new FragmentContainerHelper();
 
     @Override
     public void setMiddleTitle(Toolbar title) {

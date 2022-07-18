@@ -3,8 +3,8 @@ package blcs.lwb.utils.fragment.viewFragment.MagicIndicator;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
-import android.support.v7.widget.Toolbar;
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
@@ -59,7 +59,7 @@ public class ScrollableTabFragment extends BaseFragment {
 
 
     private static final String[] CHANNELS = new String[]{"CUPCAKE", "DONUT", "ECLAIR", "GINGERBREAD", "HONEYCOMB", "ICE_CREAM_SANDWICH", "JELLY_BEAN", "KITKAT", "LOLLIPOP", "M", "NOUGAT"};
-    private List<String> mDataList = Arrays.asList(CHANNELS);
+    private final List<String> mDataList = Arrays.asList(CHANNELS);
 
     
     @Override

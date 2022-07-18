@@ -8,7 +8,7 @@ import android.graphics.Color;
  */
 public class ColorCircle {
     private float x, y;
-    private float[] hsv = new float[3];
+    private final float[] hsv = new float[3];
     private float[] hsvClone;
     private int color;
 

@@ -1,9 +1,9 @@
 package blcs.lwb.utils.fragment.viewFragment.WeChat;
 
 import android.graphics.Color;
-import android.support.v7.widget.OrientationHelper;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.recyclerview.widget.OrientationHelper;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -28,7 +28,7 @@ public class WeChatStorageActivity extends BaseActivity {
     RecyclerView rv_storage;
     @BindView(R.id.tl_toolbar)
     Toolbar tlToolbar;
-    private List<StorageSpace> datas = new ArrayList<>();
+    private final List<StorageSpace> datas = new ArrayList<>();
     private WeChatStorageAdapter mAdapter;
     @Override
     protected BasePresenter bindPresenter() {

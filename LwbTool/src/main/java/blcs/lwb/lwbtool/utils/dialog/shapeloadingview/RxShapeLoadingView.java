@@ -108,7 +108,7 @@ public class RxShapeLoadingView extends FrameLayout {
 
     private AnimatorSet mAnimatorSet = null;
 
-    private Runnable mFreeFallRunnable = new Runnable() {
+    private final Runnable mFreeFallRunnable = new Runnable() {
         @Override
         public void run() {
             freeFall();

@@ -683,7 +683,7 @@ public class LinUiAutomato extends UiAutomatorTestCase {
             sum += blueColor.get(i);
         }
 //		output(sum/blueColor.size());
-        return sum/blueColor.size() > 200?true:false;
+        return sum / blueColor.size() > 200;
     }
     /*
      * 图像对比
@@ -710,7 +710,7 @@ public class LinUiAutomato extends UiAutomatorTestCase {
         }
         double differ = total*1.0/times;
         output(differ);
-        return differ > 0.99?true:false;//返回统计结果
+        return differ > 0.99;//返回统计结果
     }
     //获取视频播放进度条
     public static double getVideoProgress(Bitmap bitmap) {

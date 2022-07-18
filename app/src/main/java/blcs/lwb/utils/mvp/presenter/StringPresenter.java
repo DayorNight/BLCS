@@ -5,7 +5,7 @@ import blcs.lwb.utils.mvp.view.IStringView;
 
 public class StringPresenter extends BasePresenter<IStringView> {
 
-    private IStringView v;
+    private final IStringView v;
 
     public StringPresenter(IStringView v) {
         this.v = v;

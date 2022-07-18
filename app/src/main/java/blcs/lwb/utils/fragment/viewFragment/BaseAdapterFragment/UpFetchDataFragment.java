@@ -1,9 +1,9 @@
 package blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment;
 
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import java.util.ArrayList;
@@ -32,17 +32,17 @@ public class UpFetchDataFragment extends BaseFragment {
         mRecyclerView.setAdapter(mAdapter);
         datas.addAll(MyUtils.getArray(activity, R.array.Other));
         mAdapter.setNewData(datas);
-        mAdapter.setUpFetchEnable(true);
+//        mAdapter.setUpFetchEnable(true);
         /**
          * start fetch when scroll to position 2, default is 1.
          */
-        mAdapter.setStartUpFetchPosition(2);
-        mAdapter.setUpFetchListener(new BaseQuickAdapter.UpFetchListener() {
-            @Override
-            public void onUpFetch() {
-                startUpFetch();
-            }
-        });
+//        mAdapter.setStartUpFetchPosition(2);
+//        mAdapter.setUpFetchListener(new BaseQuickAdapter.UpFetchListener() {
+//            @Override
+//            public void onUpFetch() {
+//                startUpFetch();
+//            }
+//        });
     }
 
     private int count;
@@ -52,7 +52,7 @@ public class UpFetchDataFragment extends BaseFragment {
         /**
          * set fetching on when start network request.
          */
-        mAdapter.setUpFetching(true);
+//        mAdapter.setUpFetching(true);
         /**
          * get data from internet.
          */
@@ -63,12 +63,12 @@ public class UpFetchDataFragment extends BaseFragment {
                 /**
                  * set fetching off when network request ends.
                  */
-                mAdapter.setUpFetching(false);
+//                mAdapter.setUpFetching(false);
                 /**
                  * set fetch enable false when you don't need anymore.
                  */
                 if (count > 5) {
-                    mAdapter.setUpFetchEnable(false);
+//                    mAdapter.setUpFetchEnable(false);
                 }
             }
         }, 300);

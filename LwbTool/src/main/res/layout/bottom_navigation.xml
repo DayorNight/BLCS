@@ -9,7 +9,7 @@
     <!--itemTextColor导航栏中文字的颜色-->
     <!--app:labelVisibilityMode="labeled"  显示文字 取消动画-->
 
-    <android.support.design.widget.BottomNavigationView
+    <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_weight="1"
         style="@style/match_wrap"
         android:id="@+id/bottomNavigationView"

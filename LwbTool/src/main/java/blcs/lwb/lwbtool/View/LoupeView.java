@@ -13,9 +13,12 @@ import android.graphics.drawable.shapes.OvalShape;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+
+import androidx.appcompat.widget.AppCompatImageView;
+
 import blcs.lwb.lwbtool.R;
 
-public class LoupeView extends android.support.v7.widget.AppCompatImageView {
+public class LoupeView extends AppCompatImageView {
     //半径
     private float radius;
     //缩放大小

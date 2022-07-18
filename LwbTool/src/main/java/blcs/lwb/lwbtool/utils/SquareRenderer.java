@@ -61,7 +61,7 @@ public class SquareRenderer implements GLSurfaceView.Renderer{
     private int mTexCoordHandle;
     private int mTexSamplerHandle;
     private int mTexName;
-    private Context mContext;
+    private final Context mContext;
 
     public SquareRenderer(Context context) {
         this.mContext = context;

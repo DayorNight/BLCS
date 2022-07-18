@@ -1,13 +1,14 @@
 package blcs.lwb.utils.utils;
 
 import android.app.Application;
-import android.arch.lifecycle.AndroidViewModel;
-import android.support.annotation.NonNull;
+
+import androidx.lifecycle.AndroidViewModel;
+
 import blcs.lwb.utils.R;
 
 public class DemoViewModel extends AndroidViewModel {
     public String tip = "ViewModel生命周期";
-    public DemoViewModel(@NonNull Application application) {
+    public DemoViewModel(Application application) {
         super(application);
     }
 

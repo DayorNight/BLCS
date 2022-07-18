@@ -68,7 +68,7 @@ android {
     applicationVariants.all { variant ->
         variant.outputs.all {
             def formattedDate = new Date().format('yyyy_MM_dd')
-            outputFileName = rootProject.getName() + "-" + variant.flavorName + "-" + buildType.name + "-" + formattedDate + "-v" + defaultConfig.versionName + "-" + defaultConfig.versionCode + ".apk";
+            outputFileName = rootProject.getName() + "-" + variant.flavorName + "-" + buildType.name + "-" + formattedDate + "-v" + defaultConfig.versionName + "-" + defaultConfig.versionCode + ".apk"
         }
     }
 
@@ -84,8 +84,8 @@ android {
         sourceCompatibility 1.8
     }
 
-    dataBinding{
-        enabled = true
+    buildFeatures {
+        dataBinding true
     }
 }
 
@@ -103,5 +103,8 @@ dependencies {
     annotationProcessor Dp.GlideCompiler
     debugImplementation Dp.DebugDbEncrypt
     annotationProcessor Dp.room
-    implementation 'com.airbnb.android:lottie:2.7.0'
+    implementation Dp.fragmentktx
+    implementation Dp.activityktx
+//    implementation Dp.corektx
+//    implementation Dp.coroutines
 }

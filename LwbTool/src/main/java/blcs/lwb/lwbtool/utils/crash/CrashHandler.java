@@ -47,9 +47,9 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
     /**
      * 格式化时间
      */
-    private SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss", Locale.CHINA);
+    private final SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss", Locale.CHINA);
 
-    private String TAG = this.getClass().getSimpleName();
+    private final String TAG = this.getClass().getSimpleName();
 
     private static CrashHandler mInstance;
 

@@ -48,7 +48,7 @@ public class FloatingWindowService extends Service {
         layoutParams.height = 600;
     }
 
-    @Nullable
+
     @Override
     public IBinder onBind(Intent intent) {
         return null;

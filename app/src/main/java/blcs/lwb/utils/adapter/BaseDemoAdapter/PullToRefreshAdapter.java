@@ -1,15 +1,15 @@
 package blcs.lwb.utils.adapter.BaseDemoAdapter;
 
-import android.support.annotation.Nullable;
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
+import com.chad.library.adapter.base.viewholder.BaseViewHolder;
+
 import java.util.List;
 
 import blcs.lwb.utils.R;
 
 public class PullToRefreshAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
 
-    public PullToRefreshAdapter(int layoutResId, @Nullable List<String> data) {
+    public PullToRefreshAdapter(int layoutResId, List<String> data) {
         super(layoutResId, data);
     }
 

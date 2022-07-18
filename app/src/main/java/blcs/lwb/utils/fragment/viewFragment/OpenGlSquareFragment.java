@@ -2,7 +2,7 @@ package blcs.lwb.utils.fragment.viewFragment;
 
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.widget.Toast;
 
 import blcs.lwb.lwbtool.base.BasePresenter;

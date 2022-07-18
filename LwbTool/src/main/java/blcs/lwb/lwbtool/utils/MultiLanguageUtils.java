@@ -8,10 +8,11 @@ import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.LocaleList;
-import android.support.v4.os.ConfigurationCompat;
-import android.support.v4.os.LocaleListCompat;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
+
+import androidx.core.os.ConfigurationCompat;
+import androidx.core.os.LocaleListCompat;
 
 import java.util.Locale;
 
@@ -115,11 +116,7 @@ public class MultiLanguageUtils {
         String country = locale.getCountry();
         String sp_language = (String) SPUtils.get(context, Constants.SP_LANGUAGE,"");
         String sp_country = (String) SPUtils.get(context, Constants.SP_COUNTRY,"");
-        if (language.equals(sp_language) && country.equals(sp_country)) {
-            return true;
-        } else {
-            return false;
-        }
+        return language.equals(sp_language) && country.equals(sp_country);
     }
 
     /**
@@ -128,11 +125,7 @@ public class MultiLanguageUtils {
     public static boolean isSameLocal(Locale appLocale, String sp_language, String sp_country) {
         String appLanguage = appLocale.getLanguage();
         String appCountry = appLocale.getCountry();
-        if (appLanguage.equals(sp_language) && appCountry.equals(sp_country)) {
-            return true;
-        } else {
-            return false;
-        }
+        return appLanguage.equals(sp_language) && appCountry.equals(sp_country);
     }
     /**
      * 保存多语言信息到sp中

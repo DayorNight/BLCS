@@ -26,7 +26,7 @@ class LikeAnimView @JvmOverloads constructor(context: Context?, attrs: Attribute
      */
     override fun init() {
         super.init()
-        mLikeRes = mutableListOf();
+        mLikeRes = mutableListOf()
     }
 
     /**

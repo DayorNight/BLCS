@@ -11,8 +11,8 @@ import blcs.lwb.lwbtool.View.colorpicker.builder.PaintBuilder;
  * @date 2018/6/11 11:36:40 整合修改
  */
 public class SimpleColorWheelRenderer extends AbsColorWheelRenderer {
-    private Paint selectorFill = PaintBuilder.newPaint().build();
-    private float[] hsv = new float[3];
+    private final Paint selectorFill = PaintBuilder.newPaint().build();
+    private final float[] hsv = new float[3];
 
     @Override
     public void draw() {

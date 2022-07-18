@@ -1,12 +1,11 @@
 package blcs.lwb.utils.fragment.otherFragment.Jetpack;
 
-import android.arch.lifecycle.Observer;
 import android.content.Context;
-import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.Observer;
 import androidx.work.Constraints;
 import androidx.work.Data;
 import androidx.work.OneTimeWorkRequest;
@@ -103,9 +102,9 @@ public class WorkManagerFragment extends BaseFragment {
 
         //进阶5:监听工作状态
         WorkManager.getInstance().getWorkInfoByIdLiveData(request1.getId())
-                .observe(this, new Observer<WorkInfo>() {
+                .observe((LifecycleOwner) this, new Observer<WorkInfo>() {
                     @Override
-                    public void onChanged(@Nullable WorkInfo workInfo) {
+                    public void onChanged(WorkInfo workInfo) {
                         if (workInfo != null && (workInfo.getState() == WorkInfo.State.SUCCEEDED)){
                             tvText.setText(workInfo.getOutputData().getString(DateKey));
                         }
@@ -146,7 +145,7 @@ public class WorkManagerFragment extends BaseFragment {
      */
     public static class MyWorker extends Worker {
 
-        public MyWorker(@NonNull Context context, @NonNull WorkerParameters params) {
+        public MyWorker(Context context, WorkerParameters params) {
             super(context, params);
         }
 

@@ -312,7 +312,7 @@ public final class FileUtils
 				}
 				if (temp.isFile()) {
 					FileInputStream input = new FileInputStream(temp);
-					FileOutputStream output = new FileOutputStream(target + File.separator + temp.getName().toString());
+					FileOutputStream output = new FileOutputStream(target + File.separator + temp.getName());
 					byte[] b = new byte[1024];
 					int len;
 					while ((len = input.read(b)) != -1) {

@@ -1,11 +1,12 @@
 package blcs.lwb.utils.fragment.otherFragment.Jetpack;
 
-import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.Observer;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Observer;
+
 import android.widget.TextView;
 
 import blcs.lwb.lwbtool.base.BasePresenter;
@@ -28,9 +29,9 @@ public class LiveDataFragment extends BaseFragment {
 
     @Override
     protected void initView() {
-        NetworkLiveData.getInstance(activity).observe(this, new Observer<NetworkInfo>() {
+        NetworkLiveData.getInstance(activity).observe((LifecycleOwner) this, new Observer<NetworkInfo>() {
             @Override
-            public void onChanged(@Nullable NetworkInfo networkInfo) {
+            public void onChanged(NetworkInfo networkInfo) {
                 if (networkInfo != null && networkInfo.isConnected()) {
                     String type = networkInfo.getTypeName();
                     tvLiveDataNetWork.setText("监听网络状态改变:"+type);
@@ -43,13 +44,13 @@ public class LiveDataFragment extends BaseFragment {
         // 2.创建Observer监听数据改变
         final Observer<String> nameObserver = new Observer<String>() {
             @Override
-            public void onChanged(@Nullable final String newName) {
+            public void onChanged(final String newName) {
                 //更新UI操作
                 tvLivedata.setText(newName);
             }
         };
         // 3.添加Observer
-        currentName.observe(this, nameObserver);
+        currentName.observe((LifecycleOwner) this, nameObserver);
         // 设置值
 //        currentName.setValue("xxxx");
 

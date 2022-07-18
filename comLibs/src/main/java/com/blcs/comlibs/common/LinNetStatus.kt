@@ -98,7 +98,7 @@ object LinNetStatus {
             val networkCapabilities = manager.getNetworkCapabilities(manager.activeNetwork)
             if (networkCapabilities!!.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)) {
                 return "WIFI"
-            } else if (networkCapabilities!!.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)) {
+            } else if (networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)) {
                 return getMobileNetwork(context)
             }
         } else {

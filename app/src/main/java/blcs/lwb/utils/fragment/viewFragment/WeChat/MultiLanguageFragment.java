@@ -3,13 +3,15 @@ package blcs.lwb.utils.fragment.viewFragment.WeChat;
 import android.annotation.SuppressLint;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
-import android.support.v7.widget.OrientationHelper;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.recyclerview.widget.OrientationHelper;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.RadioButton;
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -34,7 +36,7 @@ import butterknife.BindView;
 public class MultiLanguageFragment extends BaseFragment {
     @BindView(R.id.tool_recyclerView)
     RecyclerView mRecyclerView;
-    private List<String> datas = new ArrayList<>();
+    private final List<String> datas = new ArrayList<>();
     //    private MultiLanguageAdapter mAdapter;
     private RadioButton radioButton; //记录上一个点击事件
     private int checkPos;
@@ -97,14 +99,14 @@ public class MultiLanguageFragment extends BaseFragment {
 
         mAdapter = new MultiLanguageAdapter(activity);
         RecyclerUtil.init(activity, OrientationHelper.VERTICAL, mAdapter, mRecyclerView);
-        mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+        mAdapter.setOnItemClickListener(new OnItemClickListener() {
             @SuppressLint("NewApi")
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 checkPos = position;
                 if (radioButton == null) {//第一次点击取消选中转态
                     int pos = (int) SPUtils.get(activity, Constants.SP_MultiLanguage, 0);
-                    RadioButton radioButton = (RadioButton) adapter.getViewByPosition(mRecyclerView, pos, R.id.rb_multi_language);
+                    RadioButton radioButton = (RadioButton) adapter.getViewByPosition(pos, R.id.rb_multi_language);
                     radioButton.setButtonTintList((ColorStateList) getResources().getColorStateList(R.color.gray1));
                     radioButton.setChecked(false);
                 } else {

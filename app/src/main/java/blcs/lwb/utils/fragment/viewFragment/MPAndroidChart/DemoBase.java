@@ -5,14 +5,16 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.ActivityCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
+import androidx.core.app.ActivityCompat;
+
 import com.github.mikephil.charting.charts.Chart;
-import androidx.annotation.NonNull;
+import com.google.android.material.snackbar.Snackbar;
+
 import blcs.lwb.utils.MyApplication;
 import blcs.lwb.utils.fragment.BaseFragment;
 
@@ -52,7 +54,7 @@ public abstract class DemoBase extends BaseFragment implements ActivityCompat.On
 
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         if (requestCode == PERMISSION_STORAGE) {
             if (grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 saveToGallery();

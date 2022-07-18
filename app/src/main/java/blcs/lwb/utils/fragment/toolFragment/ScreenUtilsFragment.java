@@ -1,7 +1,7 @@
 package blcs.lwb.utils.fragment.toolFragment;
 
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -80,10 +80,10 @@ public class ScreenUtilsFragment extends BaseFragment {
                 btnGetStatusHeight.setText(getString(R.string.getStatusHeight)+ ScreenUtils.getStatusHeight(activity));
                 break;
             case R.id.btn_getSnapShotWithStatusBar:
-                dialogFragment.setImage(ScreenUtils.getSnapShotWithStatusBar(activity)).setImagePadding(DensityUtils.dip2px(activity, 50)).setType(LinCustomDialogFragment.TYPE_IMAGE).show(getFragmentManager());
+                dialogFragment.setImage(ScreenUtils.getSnapShotWithStatusBar(activity)).setImagePadding(DensityUtils.dip2px(activity, 50)).setType(LinCustomDialogFragment.TYPE_IMAGE).show(getParentFragmentManager());
                 break;
             case R.id.btn_getSnapShotWithoutStatusBar:
-                dialogFragment.setImage(ScreenUtils.getSnapShotWithoutStatusBar(activity)).setImagePadding(DensityUtils.dip2px(activity, 50)).setType(LinCustomDialogFragment.TYPE_IMAGE).show(getFragmentManager());
+                dialogFragment.setImage(ScreenUtils.getSnapShotWithoutStatusBar(activity)).setImagePadding(DensityUtils.dip2px(activity, 50)).setType(LinCustomDialogFragment.TYPE_IMAGE).show(getParentFragmentManager());
                 break;
             case R.id.btn_getScreenSize:
                 btnGetScreenSize.setText(getString(R.string.getScreenSize)+ ScreenUtils.getScreenSize(activity));

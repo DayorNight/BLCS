@@ -1,9 +1,10 @@
 package blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment;
 
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -13,7 +14,6 @@ import java.util.List;
 
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.utils.R;
-import blcs.lwb.utils.adapter.BaseDemoAdapter.DemoMultipleItemRvAdapter;
 import blcs.lwb.utils.adapter.BaseDemoAdapter.MultipleItem;
 import blcs.lwb.utils.adapter.BaseDemoAdapter.MultipleItemQuickAdapter;
 import blcs.lwb.utils.adapter.BaseDemoAdapter.NormalMultipleEntity;
@@ -33,7 +33,7 @@ public class MultipleItemRecyclerFragment extends BaseFragment {
     RadioButton rbMultiple1;
     private List<MultipleItem> multipleItemData;
     private MultipleItemQuickAdapter mAdapter;
-    private DemoMultipleItemRvAdapter multipleItemAdapter;
+//    private DemoMultipleItemRvAdapter multipleItemAdapter;
 
     @Override
     public void setMiddleTitle(Toolbar title) {
@@ -54,7 +54,7 @@ public class MultipleItemRecyclerFragment extends BaseFragment {
                         mRecyclerView.setAdapter(mAdapter);
                         break;
                     case R.id.rb_multiple2:
-                        mRecyclerView.setAdapter(multipleItemAdapter);
+//                        mRecyclerView.setAdapter(multipleItemAdapter);
                         break;
                 }
             }
@@ -62,32 +62,32 @@ public class MultipleItemRecyclerFragment extends BaseFragment {
     }
 
     private void initDemoMultipleItemRvAdapter() {
-        multipleItemAdapter = new DemoMultipleItemRvAdapter(MyUtils.getNormalMultipleEntities());
-        multipleItemAdapter.setSpanSizeLookup(new BaseQuickAdapter.SpanSizeLookup() {
-            @Override
-            public int getSpanSize(GridLayoutManager gridLayoutManager, int position) {
-                int type = MyUtils.getNormalMultipleEntities().get(position).type;
-                if (type == NormalMultipleEntity.SINGLE_TEXT) {
-                    return MultipleItem.TEXT_SPAN_SIZE;
-                } else if (type == NormalMultipleEntity.SINGLE_IMG) {
-                    return MultipleItem.IMG_SPAN_SIZE;
-                } else {
-                    return MultipleItem.IMG_TEXT_SPAN_SIZE;
-                }
-            }
-        });
+//        multipleItemAdapter = new DemoMultipleItemRvAdapter(MyUtils.getNormalMultipleEntities());
+//        multipleItemAdapter.setSpanSizeLookup(new BaseQuickAdapter.SpanSizeLookup() {
+//            @Override
+//            public int getSpanSize(GridLayoutManager gridLayoutManager, int position) {
+//                int type = MyUtils.getNormalMultipleEntities().get(position).type;
+//                if (type == NormalMultipleEntity.SINGLE_TEXT) {
+//                    return MultipleItem.TEXT_SPAN_SIZE;
+//                } else if (type == NormalMultipleEntity.SINGLE_IMG) {
+//                    return MultipleItem.IMG_SPAN_SIZE;
+//                } else {
+//                    return MultipleItem.IMG_TEXT_SPAN_SIZE;
+//                }
+//            }
+//        });
     }
 
     private void initMultipleItemQuickAdapter() {
         multipleItemData = MyUtils.getMultipleItemData();
-        mAdapter = new MultipleItemQuickAdapter(activity, multipleItemData);
-        mAdapter.setSpanSizeLookup(new BaseQuickAdapter.SpanSizeLookup() {
-            @Override
-            public int getSpanSize(GridLayoutManager gridLayoutManager, int position) {
-                return multipleItemData.get(position).getSpanSize();//占用列数
-            }
-        });
-        mRecyclerView.setAdapter(mAdapter);
+//        mAdapter = new MultipleItemQuickAdapter(activity, multipleItemData);
+//        mAdapter.setSpanSizeLookup(new BaseQuickAdapter.SpanSizeLookup() {
+//            @Override
+//            public int getSpanSize(GridLayoutManager gridLayoutManager, int position) {
+//                return multipleItemData.get(position).getSpanSize();//占用列数
+//            }
+//        });
+//        mRecyclerView.setAdapter(mAdapter);
     }
 
     @Override

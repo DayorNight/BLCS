@@ -14,6 +14,7 @@ import android.os.Build
 import android.os.Process
 import android.text.TextUtils
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.core.content.FileProvider
 import java.io.BufferedReader
 import java.io.File
@@ -71,11 +72,12 @@ object AppUtils {
      * int
      * @return 当前应用的版本号
      */
-    fun getVersionCode(context: Context): Int {
+    @RequiresApi(Build.VERSION_CODES.P)
+    fun getVersionCode(context: Context): Long {
         return try {
             val manager = context.packageManager
             val info = manager.getPackageInfo(context.packageName, 0)
-            info.versionCode
+            info.longVersionCode
         } catch (e: Exception) {
             e.printStackTrace()
             1
@@ -220,7 +222,7 @@ object AppUtils {
      * 10、判断是否在主进程
      */
     fun isMainProcess(context: Context): Boolean {
-        val am = context.getSystemService("activity") as ActivityManager
+        val am = context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
         val mainProcessName = context.packageName
         val myPid = Process.myPid()
         val processInfos = am.runningAppProcesses

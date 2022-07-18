@@ -22,7 +22,7 @@ public enum Style {
     MULTIPLE_PULSE_RING(14);
 
     @SuppressWarnings({"FieldCanBeLocal", "unused"})
-    private int value;
+    private final int value;
 
     Style(int value) {
         this.value = value;

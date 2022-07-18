@@ -4,9 +4,10 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.media.MediaRecorder;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
 import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;

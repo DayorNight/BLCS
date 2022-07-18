@@ -1,25 +1,33 @@
 package blcs.lwb.lwbtool.retrofit;
 
 
+
 import android.content.Context;
 
-import com.trello.rxlifecycle2.android.ActivityEvent;
-import com.trello.rxlifecycle2.components.RxActivity;
-import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
-import com.trello.rxlifecycle2.components.support.RxFragment;
-import com.trello.rxlifecycle2.components.support.RxFragmentActivity;
+import com.trello.rxlifecycle4.android.ActivityEvent;
+import com.trello.rxlifecycle4.components.RxActivity;
+import com.trello.rxlifecycle4.components.support.RxAppCompatActivity;
+import com.trello.rxlifecycle4.components.support.RxFragment;
+import com.trello.rxlifecycle4.components.support.RxFragmentActivity;
 
-import io.reactivex.FlowableTransformer;
-import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
-import io.reactivex.ObservableTransformer;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.schedulers.Schedulers;
+
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.core.FlowableTransformer;
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.ObservableSource;
+import io.reactivex.rxjava3.core.ObservableTransformer;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 
 /**
  * 调度类
  */
 public class RxHelper {
+
+    public static <T> FlowableTransformer<T, T> flowableTransformerIO2Main(final RxFragment fragment) {
+        return upstream -> upstream.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread()).compose(fragment.<T>bindToLifecycle());
+    }
+
 
     public static <T> ObservableTransformer<T, T> observableIO2Main(final Context context) {
         return upstream -> {

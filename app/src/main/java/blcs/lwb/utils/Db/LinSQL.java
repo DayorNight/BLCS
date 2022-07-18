@@ -19,7 +19,7 @@ import blcs.lwb.utils.greendao.GreenDaoDao;
 
 public class LinSQL {
     private static MySQLiteHelper blcs;
-    private static String Table="SqliteDemo";
+    private static final String Table="SqliteDemo";
     private static DaoSession daoSession;
     private static GreenDaoDao greenDaoDao;
 

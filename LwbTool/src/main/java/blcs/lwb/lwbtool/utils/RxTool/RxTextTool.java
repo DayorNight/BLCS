@@ -6,10 +6,6 @@ import android.graphics.BlurMaskFilter;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.support.annotation.ColorInt;
-import android.support.annotation.DrawableRes;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.text.Layout.Alignment;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
@@ -34,6 +30,9 @@ import android.text.style.UnderlineSpan;
 import android.widget.TextView;
 
 
+import androidx.annotation.ColorInt;
+import androidx.annotation.DrawableRes;
+
 import blcs.lwb.lwbtool.utils.camera.RxTool;
 
 import static android.graphics.BlurMaskFilter.Blur;
@@ -51,13 +50,13 @@ public class RxTextTool {
      * @param text 样式字符串文本
      * @return {@link Builder}
      */
-    public static Builder getBuilder(@NonNull CharSequence text) {
+    public static Builder getBuilder(CharSequence text) {
         return new Builder(text);
     }
 
     public static class Builder {
 
-        private int defaultValue = 0x12000000;
+        private final int defaultValue = 0x12000000;
         private CharSequence text;
 
         private int flag;
@@ -105,10 +104,10 @@ public class RxTextTool {
         private float radius;
         private Blur style;
 
-        private SpannableStringBuilder mBuilder;
+        private final SpannableStringBuilder mBuilder;
 
 
-        private Builder(@NonNull CharSequence text) {
+        private Builder(CharSequence text) {
             this.text = text;
             flag = Spanned.SPAN_EXCLUSIVE_EXCLUSIVE;
             foregroundColor = defaultValue;
@@ -299,7 +298,7 @@ public class RxTextTool {
          *                   </ul>
          * @return {@link Builder}
          */
-        public Builder setFontFamily(@Nullable String fontFamily) {
+        public Builder setFontFamily(String fontFamily) {
             this.fontFamily = fontFamily;
             return this;
         }
@@ -315,7 +314,7 @@ public class RxTextTool {
          *              </ul>
          * @return {@link Builder}
          */
-        public Builder setAlign(@Nullable Alignment align) {
+        public Builder setAlign(Alignment align) {
             this.align = align;
             return this;
         }
@@ -326,7 +325,7 @@ public class RxTextTool {
          * @param bitmap 图片位图
          * @return {@link Builder}
          */
-        public Builder setBitmap(@NonNull Bitmap bitmap) {
+        public Builder setBitmap(Bitmap bitmap) {
             this.bitmap = bitmap;
             imageIsBitmap = true;
             return this;
@@ -338,7 +337,7 @@ public class RxTextTool {
          * @param drawable 图片资源
          * @return {@link Builder}
          */
-        public Builder setDrawable(@NonNull Drawable drawable) {
+        public Builder setDrawable(Drawable drawable) {
             this.drawable = drawable;
             imageIsDrawable = true;
             return this;
@@ -350,7 +349,7 @@ public class RxTextTool {
          * @param uri 图片uri
          * @return {@link Builder}
          */
-        public Builder setUri(@NonNull Uri uri) {
+        public Builder setUri(Uri uri) {
             this.uri = uri;
             imageIsUri = true;
             return this;
@@ -375,7 +374,7 @@ public class RxTextTool {
          * @param clickSpan 点击事件
          * @return {@link Builder}
          */
-        public Builder setClickSpan(@NonNull ClickableSpan clickSpan) {
+        public Builder setClickSpan(ClickableSpan clickSpan) {
             this.clickSpan = clickSpan;
             return this;
         }
@@ -387,7 +386,7 @@ public class RxTextTool {
          * @param url 超链接
          * @return {@link Builder}
          */
-        public Builder setUrl(@NonNull String url) {
+        public Builder setUrl(String url) {
             this.url = url;
             return this;
         }
@@ -419,7 +418,7 @@ public class RxTextTool {
          * @param text 样式字符串文本
          * @return {@link Builder}
          */
-        public Builder append(@NonNull CharSequence text) {
+        public Builder append(CharSequence text) {
             setSpan();
             this.text = text;
             return this;

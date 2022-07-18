@@ -1,7 +1,6 @@
 package blcs.lwb.utils.adapter;
-
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
+import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 
 import blcs.lwb.utils.R;
 
@@ -9,7 +8,7 @@ import blcs.lwb.utils.R;
  * 仿微信功能列表
  */
 
-public class WeChatAdapter extends BaseQuickAdapter<String,BaseViewHolder>{
+public class WeChatAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
 
     public WeChatAdapter() {
         super(R.layout.adapter_wechat);

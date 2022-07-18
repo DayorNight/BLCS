@@ -2,12 +2,15 @@ package blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
+
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,14 +59,15 @@ public class EmptyViewFragment extends BaseFragment {
 //        关联加载布局
 //        mAdapter.setEmptyView(R.layout.loading_view, (ViewGroup) mRecyclerView.getParent());
         //没有数据显示页面
-        notDataView = getLayoutInflater().inflate(R.layout.empty_view, (ViewGroup) mRecyclerView.getParent(), false);
+
+        notDataView = LayoutInflater.from(getActivity()).inflate(R.layout.empty_view, (ViewGroup) mRecyclerView.getParent(), false);
         //没有网络显示页面
-        errorView = getLayoutInflater().inflate(R.layout.error_view, (ViewGroup) mRecyclerView.getParent(), false);
+        errorView = LayoutInflater.from(getActivity()).inflate(R.layout.error_view, (ViewGroup) mRecyclerView.getParent(), false);
         mAdapter.setEmptyView(notDataView);
         errorView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mAdapter.setEmptyView(R.layout.loading_view, (ViewGroup) mRecyclerView.getParent());
+                mAdapter.setEmptyView(R.layout.loading_view);
                 notDataView.postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -76,7 +80,7 @@ public class EmptyViewFragment extends BaseFragment {
         notDataView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mAdapter.setEmptyView(R.layout.loading_view, (ViewGroup) mRecyclerView.getParent());
+                mAdapter.setEmptyView(R.layout.loading_view);
                 notDataView.postDelayed(new Runnable() {
                     @Override
                     public void run() {

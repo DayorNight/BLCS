@@ -8,7 +8,7 @@ import android.support.test.espresso.contrib.RecyclerViewActions;
 import android.support.test.espresso.core.internal.deps.guava.collect.Iterables;
 import android.support.test.runner.lifecycle.ActivityLifecycleMonitorRegistry;
 import android.support.test.runner.lifecycle.Stage;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.ListView;

@@ -12,15 +12,16 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
-import android.support.v4.view.GestureDetectorCompat;
-import android.support.v4.view.ViewCompat;
-import android.support.v4.widget.ScrollerCompat;
 import android.util.AttributeSet;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.Toast;
+
+import androidx.core.view.GestureDetectorCompat;
+import androidx.core.view.ViewCompat;
+import androidx.core.widget.ScrollerCompat;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,13 +36,13 @@ import blcs.lwb.lwbtool.R;
  */
 public class RotatePan extends View {
 
-    private Context context;
+    private final Context context;
 
     private int panNum = 0;
 
-    private Paint dPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-    private Paint sPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-    private Paint textPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private final Paint dPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private final Paint sPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private final Paint textPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private int InitAngle = 0;
     private int radius = 0;
     private int verPanRadius;
@@ -50,9 +51,10 @@ public class RotatePan extends View {
     private Integer[] images;
     private String[] strs;
     private List<Bitmap> bitmaps = new ArrayList<>();
-    private GestureDetectorCompat mDetector;
-    private ScrollerCompat scroller;
-    private int screenWidth, screeHeight;
+    private final GestureDetectorCompat mDetector;
+    private final ScrollerCompat scroller;
+    private final int screenWidth;
+    private final int screeHeight;
 
     //旋转一圈所需要的时间
     private static final long ONE_WHEEL_TIME = 500;

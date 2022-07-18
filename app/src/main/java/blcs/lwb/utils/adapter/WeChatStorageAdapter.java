@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
+import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 
 import blcs.lwb.lwbtool.utils.RxToast;
 import blcs.lwb.utils.bean.StorageSpace;
@@ -17,8 +17,8 @@ import blcs.lwb.utils.R;
  * Created by mrd on 2019/2/27.
  */
 
-public class WeChatStorageAdapter extends BaseQuickAdapter<StorageSpace,BaseViewHolder> {
-    private Activity activity;
+public class WeChatStorageAdapter extends BaseQuickAdapter<StorageSpace, BaseViewHolder> {
+    private final Activity activity;
     public WeChatStorageAdapter(Activity activity ) {
         super(R.layout.adapter_wechat_storage);
         this.activity = activity;
@@ -34,8 +34,6 @@ public class WeChatStorageAdapter extends BaseQuickAdapter<StorageSpace,BaseView
         storage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int tag = (int) v.getTag();
-                Log.e(TAG, "onClick: "+tag);
                 RxToast.info(activity,activity.getString(R.string.function_unopen));
             }
         });

@@ -1,9 +1,9 @@
 package blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment;
 
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.CompoundButton;
@@ -42,34 +42,34 @@ public class AnimationRecyclerFragment extends BaseFragment {
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(activity));
         mAdapter = new AnimationAdapter(R.layout.layout_animation, MyUtils.getArray(activity, R.array.View));
-        mAdapter.openLoadAnimation();//开启动画
+//        mAdapter.openLoadAnimation();//开启动画
         mRecyclerView.setAdapter(mAdapter);
-        mAdapter.isFirstOnly(false);
+        mAdapter.isAnimationFirstOnly();
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                switch (position) {
-                    case 0:
-                        mAdapter.openLoadAnimation(BaseQuickAdapter.ALPHAIN);
-                        break;
-                    case 1:
-                        mAdapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
-                        break;
-                    case 2:
-                        mAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_BOTTOM);
-                        break;
-                    case 3:
-                        mAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_LEFT);
-                        break;
-                    case 4:
-                        mAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_RIGHT);
-                        break;
-                    case 5:
-                        mAdapter.openLoadAnimation(new CustomAnimation());
-                        break;
-                    default:
-                        break;
-                }
+//                switch (position) {
+//                    case 0:
+//                        mAdapter.openLoadAnimation(BaseQuickAdapter.ALPHAIN);
+//                        break;
+//                    case 1:
+//                        mAdapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
+//                        break;
+//                    case 2:
+//                        mAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_BOTTOM);
+//                        break;
+//                    case 3:
+//                        mAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_LEFT);
+//                        break;
+//                    case 4:
+//                        mAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_RIGHT);
+//                        break;
+//                    case 5:
+//                        mAdapter.openLoadAnimation(new CustomAnimation());
+//                        break;
+//                    default:
+//                        break;
+//                }
                 mRecyclerView.setAdapter(mAdapter);
             }
 
@@ -81,11 +81,11 @@ public class AnimationRecyclerFragment extends BaseFragment {
         switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(final CompoundButton buttonView, final boolean isChecked) {
-                if (isChecked) {
-                    mAdapter.isFirstOnly(true);
-                } else {
-                    mAdapter.isFirstOnly(false);
-                }
+//                if (isChecked) {
+//                    mAdapter.isFirstOnly(true);
+//                } else {
+//                    mAdapter.isFirstOnly(false);
+//                }
                 mAdapter.notifyDataSetChanged();
             }
         });

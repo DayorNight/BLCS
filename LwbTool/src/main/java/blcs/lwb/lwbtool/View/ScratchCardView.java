@@ -16,13 +16,16 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+
+import androidx.appcompat.widget.AppCompatImageView;
+
 import blcs.lwb.lwbtool.R;
 
 /**
  * 刮刮乐
  * 注：前景图太大可能会出现问题
  */
-public class ScratchCardView extends android.support.v7.widget.AppCompatImageView {
+public class ScratchCardView extends AppCompatImageView {
     //橡皮檫大小
     private float size;
     //前景图

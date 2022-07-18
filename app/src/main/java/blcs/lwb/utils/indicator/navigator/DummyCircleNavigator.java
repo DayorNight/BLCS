@@ -24,8 +24,8 @@ public class DummyCircleNavigator extends View implements IPagerNavigator {
     private int mCircleCount;
 
     private int mCurrentIndex;
-    private List<PointF> mCirclePoints = new ArrayList<PointF>();
-    private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private final List<PointF> mCirclePoints = new ArrayList<PointF>();
+    private final Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
     public DummyCircleNavigator(Context context) {
         super(context);

@@ -1,10 +1,11 @@
 package blcs.lwb.lwbtool.base;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import blcs.lwb.lwbtool.R;
 import blcs.lwb.lwbtool.utils.EditTextUtils;

@@ -2,10 +2,11 @@ package blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -28,7 +29,7 @@ public class PullToRefreshFragment extends BaseFragment {
     @BindView(R.id.swipeLayout)
     SwipeRefreshLayout mRefresh;
     private PullToRefreshAdapter mAdapter;
-    private int mNextRequestPage = 1;
+    private final int mNextRequestPage = 1;
 
     private static final int PAGE_SIZE = 6;
     @Override
@@ -43,21 +44,21 @@ public class PullToRefreshFragment extends BaseFragment {
         addHeadView();
 //        mRefresh.setRefreshing(true);
         //添加点击事件
-        mAdapter.setEnableLoadMore(false);
+//        mAdapter.setEnableLoadMore(false);
 //        mRefresh.setRefreshing(true);
-        mRecyclerView.addOnItemTouchListener(new OnItemClickListener() {
-            @Override
-            public void onSimpleItemClick(final BaseQuickAdapter adapter, final View view, final int position) {
-                Toast.makeText(activity, Integer.toString(position), Toast.LENGTH_LONG).show();
-            }
-        });
-        mAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
-            @Override
-            public void onLoadMoreRequested() {
-                LogUtils.e("------Load-------");
-                loadMore();
-            }
-        });
+//        mRecyclerView.addOnItemTouchListener(new OnItemClickListener() {
+//            @Override
+//            public void onSimpleItemClick(final BaseQuickAdapter adapter, final View view, final int position) {
+//                Toast.makeText(activity, Integer.toString(position), Toast.LENGTH_LONG).show();
+//            }
+//        });
+//        mAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
+//            @Override
+//            public void onLoadMoreRequested() {
+//                LogUtils.e("------Load-------");
+//                loadMore();
+//            }
+//        });
         mRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -72,7 +73,7 @@ public class PullToRefreshFragment extends BaseFragment {
     private void initAdapter() {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(activity));
         mAdapter = new PullToRefreshAdapter(R.layout.item_img_text_view, MyUtils.getArray(activity,R.array.games));
-        mAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_LEFT);
+//        mAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_LEFT);
         mRecyclerView.setAdapter(mAdapter);
     }
 
@@ -80,7 +81,7 @@ public class PullToRefreshFragment extends BaseFragment {
      * 添加头部
      */
     private void addHeadView() {
-        View headView = getLayoutInflater().inflate(R.layout.head_view, (ViewGroup) mRecyclerView.getParent(), false);
+        View headView = getActivity().getLayoutInflater().inflate(R.layout.head_view, (ViewGroup) mRecyclerView.getParent(), false);
         headView.findViewById(R.id.iv).setVisibility(View.GONE);
         ((TextView) headView.findViewById(R.id.tv)).setText("change load view");
         headView.setOnClickListener(new View.OnClickListener() {
@@ -98,7 +99,7 @@ public class PullToRefreshFragment extends BaseFragment {
      */
     private void refresh() {
         mRefresh.setRefreshing(false);
-        mAdapter.setEnableLoadMore(true);
+//        mAdapter.setEnableLoadMore(true);
 
     }
 

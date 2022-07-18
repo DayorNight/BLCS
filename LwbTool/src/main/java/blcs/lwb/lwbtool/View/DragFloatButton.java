@@ -2,17 +2,12 @@ package blcs.lwb.lwbtool.View;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.ViewGroup;
-import android.view.animation.BounceInterpolator;
 import android.view.animation.DecelerateInterpolator;
-
-
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import blcs.lwb.lwbtool.R;
-import blcs.lwb.lwbtool.utils.LogUtils;
 
 public class DragFloatButton extends FloatingActionButton {
 
@@ -30,12 +25,12 @@ public class DragFloatButton extends FloatingActionButton {
         this(context, null);
     }
 
-    public DragFloatButton(Context context, @Nullable AttributeSet attrs) {
+    public DragFloatButton(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
         initAttrs(context, attrs);
     }
 
-    public DragFloatButton(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public DragFloatButton(Context context,AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initAttrs(context, attrs);
     }
@@ -89,11 +84,7 @@ public class DragFloatButton extends FloatingActionButton {
                         float differenceValueY = mRawY - mLastRawY;
                         //判断是否为拖动操作
                         if (!isDrag) {
-                            if (Math.sqrt(differenceValueX * differenceValueX + differenceValueY * differenceValueY) < 2) {
-                                isDrag = false;
-                            } else {
-                                isDrag = true;
-                            }
+                            isDrag = !(Math.sqrt(differenceValueX * differenceValueX + differenceValueY * differenceValueY) < 2);
                         }
                         //获取手指按下的距离与控件本身X轴的距离
                         float ownX = getX();

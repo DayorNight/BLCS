@@ -1,7 +1,4 @@
 package blcs.lwb.utils;
-
-
-import android.arch.persistence.room.Room;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 

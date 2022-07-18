@@ -5,7 +5,7 @@ import interfaces.IPublicFragment;
 
 public class PublicFragmentPresenter extends BasePresenter<IPublicFragment> {
 
-    private IPublicFragment v;
+    private final IPublicFragment v;
     public PublicFragmentPresenter(IPublicFragment v){
         this.v = v;
         init();

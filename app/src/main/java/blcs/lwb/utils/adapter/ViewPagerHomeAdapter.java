@@ -1,13 +1,12 @@
 package blcs.lwb.utils.adapter;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.utils.fragment.HomeOtherFragment;
 import blcs.lwb.utils.fragment.HomeResourcesFragment;
 import blcs.lwb.utils.fragment.HomeUtilsFragment;
@@ -19,7 +18,7 @@ import blcs.lwb.utils.fragment.HomeViewFragment;
  */
 
 public class ViewPagerHomeAdapter extends FragmentPagerAdapter {
-    private List<Fragment> fragments =  new ArrayList<>();
+    private final List<Fragment> fragments =  new ArrayList<>();
 
     public ViewPagerHomeAdapter(FragmentManager fm) {
         super(fm);

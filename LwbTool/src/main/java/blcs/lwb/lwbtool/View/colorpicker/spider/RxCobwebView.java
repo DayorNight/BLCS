@@ -8,7 +8,6 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PointF;
 import android.graphics.Rect;
-import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -74,7 +73,7 @@ public class RxCobwebView extends View {
 
     private GestureDetector mDetector;
 
-    private Context mContext;
+    private final Context mContext;
 
     private Scroller mScroller;
     private float mFlingPoint;
@@ -433,7 +432,7 @@ public class RxCobwebView extends View {
         return mSpiderList;
     }
 
-    public void setSpiderList(@NonNull List<ModelSpider> spiderList) {
+    public void setSpiderList(List<ModelSpider> spiderList) {
         mSpiderList = spiderList;
         mSpiderNumber = mSpiderList.size();
         invalidate();

@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
-        <import type="android.support.v7.widget.LinearLayoutManager"/>
+        <import type="androidx.recyclerview.widget.LinearLayoutManager"/>
         <variable
             name="name"
             type="String" />
@@ -44,12 +44,11 @@
             android:onClick="@{click}"
             android:text = "add"
             />
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv_dataBind"
-            style="@style/match_match"
-            app:layoutManager="@{manager}"
-            app:adapter="@{listAdapter}"
-
-            />
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/rv_dataBind"-->
+<!--            style="@style/match_match"-->
+<!--            app:layoutManager="@{manager}"-->
+<!--            app:adapter="@{listAdapter}"-->
+<!--            />-->
     </LinearLayout>
 </layout>

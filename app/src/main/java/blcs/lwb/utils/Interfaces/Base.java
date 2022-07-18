@@ -4,16 +4,16 @@ import android.os.Bundle;
 
 public interface Base
 {
-	public interface IBaseView
+	interface IBaseView
 	{
 
 	}
 
-	public interface IBaseFrament extends IBaseView
+	interface IBaseFrament extends IBaseView
 	{
 	}
 
-	public interface IBaseActivity extends IBaseView
+	interface IBaseActivity extends IBaseView
 	{
 		/**
 		 * 显示Frament的操作
@@ -30,7 +30,7 @@ public interface Base
 
 	}
 
-	public interface IModel
+	interface IModel
 	{
 
 	}

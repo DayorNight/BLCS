@@ -7,14 +7,14 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 
 import com.google.zxing.Result;
 import com.yzq.zxinglibrary.common.Constant;
@@ -35,7 +35,7 @@ public class BarQrCodeFragment extends BaseFragment {
     ImageView ivBarQr;
     @BindView(R.id.tv_code)
     TextView tvCode;
-    private int REQUEST_CODE = 200;
+    private final int REQUEST_CODE = 200;
     @Override
     protected int bindLayout() {
         return R.layout.fragment_bar_qr;
@@ -114,7 +114,7 @@ public class BarQrCodeFragment extends BaseFragment {
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         //权限申请成功
         if (requestCode == REQUEST_CODE && grantResults[0] == PackageManager.PERMISSION_GRANTED) {

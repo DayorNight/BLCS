@@ -3,7 +3,7 @@ package blcs.lwb.utils.fragment.viewFragment;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -97,7 +97,7 @@ public class ProgressBarFragment extends BaseFragment {
     LinearLayout activityRoundProgressBar;
     private double progress;
     private int progress1;
-    private int money1 = 10000;
+    private final int money1 = 10000;
     private int mRxRoundProgress;
 
     Handler mRxRoundPdHandler = new Handler() {
@@ -128,7 +128,7 @@ public class ProgressBarFragment extends BaseFragment {
     };
 
 
-    private int mRxRoundPdMax = 100;
+    private final int mRxRoundPdMax = 100;
 
     @Override
     public void setMiddleTitle(Toolbar title) {

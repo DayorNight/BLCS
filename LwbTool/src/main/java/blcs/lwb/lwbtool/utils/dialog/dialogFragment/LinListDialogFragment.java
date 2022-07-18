@@ -1,11 +1,14 @@
 package blcs.lwb.lwbtool.utils.dialog.dialogFragment;
 
 import android.os.Bundle;
-import android.support.v7.widget.OrientationHelper;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.OrientationHelper;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import java.util.ArrayList;
 import blcs.lwb.lwbtool.R;
@@ -45,9 +48,9 @@ public class LinListDialogFragment extends BaseDialogFragment {
         mAdapter = new DialogFragmentAdapter();
         RecyclerUtil.init(getActivity(), OrientationHelper.VERTICAL, mAdapter, rv,false);
         mAdapter.setNewData(datas);
-        mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+        mAdapter.setOnItemClickListener(new com.chad.library.adapter.base.listener.OnItemClickListener() {
             @Override
-            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+            public void onItemClick(BaseQuickAdapter<?, ?> adapter, View view, int position) {
                 if (linstener != null) {
                     linstener.onItemClick(adapter, view, position);
                 }

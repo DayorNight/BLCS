@@ -52,7 +52,7 @@ open class BaseApp : Application() {
         strategy.appChannel =AppUtils.getChannel(this)  //设置渠道
         strategy.appVersion=AppUtils.getVersionName(this)    //App的版本
         strategy.appPackageName=AppUtils.getAppPackageName(this) //App的包名
-        CrashReport.initCrashReport(getApplicationContext(), constants.Bugly_AppID, BuildConfig.DEBUG, strategy);
+        CrashReport.initCrashReport(applicationContext, constants.Bugly_AppID, BuildConfig.DEBUG, strategy)
         /**
          * 监听H5 异常 建议在WebChromeClient的onProgressChanged函数中调用接口：
          * autoInject 是否自动注入Bugly.js文件

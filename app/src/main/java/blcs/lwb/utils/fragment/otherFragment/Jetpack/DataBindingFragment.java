@@ -1,11 +1,13 @@
 package blcs.lwb.utils.fragment.otherFragment.Jetpack;
 
-import android.databinding.BindingAdapter;
-import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+
+import androidx.databinding.BindingAdapter;
+import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -21,7 +23,7 @@ import blcs.lwb.utils.utils.MyUtils;
 public class DataBindingFragment extends BaseFragment implements View.OnClickListener {
 
     private FragmentDatabindingBinding bind;
-    private List<String> datas = new ArrayList<>();
+    private final List<String> datas = new ArrayList<>();
     private ListAdapter listAdapter;
 
     @Override
@@ -32,7 +34,7 @@ public class DataBindingFragment extends BaseFragment implements View.OnClickLis
     @Override
     protected void initView() {
         bind = DataBindingUtil.bind(mView);
-        bind.setLifecycleOwner(this);
+        bind.setLifecycleOwner((LifecycleOwner) this);
         bind.setClick(this);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false);
         listAdapter = new ListAdapter();

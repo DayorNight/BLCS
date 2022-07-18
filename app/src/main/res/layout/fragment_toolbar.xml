@@ -31,7 +31,7 @@
         android:layout_marginLeft="@dimen/dp_10"
         android:textSize="@dimen/sp_big2"
         android:text="xml实现Toolbar"/>
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/gray"
@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dp_10"
             android:src="@mipmap/ic_info_outline_white_48dp"/>
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
     <TextView
         android:layout_width="wrap_content"
@@ -67,7 +67,7 @@
         android:layout_marginLeft="@dimen/dp_10"
         android:textSize="@dimen/sp_big2"
         android:text="代码实现Toolbar"/>
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/tool_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

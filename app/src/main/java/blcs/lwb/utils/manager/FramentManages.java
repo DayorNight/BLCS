@@ -2,11 +2,11 @@ package blcs.lwb.utils.manager;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
+
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import java.util.ArrayList;
-
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.fragment.otherFragment.Jetpack.NavigationFragment;
 import blcs.lwb.utils.fragment.otherFragment.Jetpack.PagingFragment;
@@ -110,7 +110,7 @@ import blcs.lwb.utils.mvp.BaseFragmentActivity;
  * @author WESTAKE
  */
 public class FramentManages {
-    private ArrayList<BaseFragment> list_Frament;// 保存当前Activity的Frament
+    private final ArrayList<BaseFragment> list_Frament;// 保存当前Activity的Frament
     public FragmentManager fm;// 片段管理器
     /**
      * 片段名

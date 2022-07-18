@@ -15,11 +15,11 @@ public class NumericWheelAdapter extends AbstractWheelTextAdapter {
     private static final int DEFAULT_MIN_VALUE = 0;
     
     // Values
-    private int minValue;
-    private int maxValue;
+    private final int minValue;
+    private final int maxValue;
     
     // format
-    private String format;
+    private final String format;
     
     /**
      * Constructor

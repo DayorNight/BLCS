@@ -42,7 +42,7 @@ public class PaintBuilder {
     }
 
     public static class PaintHolder {
-        private Paint paint;
+        private final Paint paint;
 
         private PaintHolder() {
             this.paint = new Paint(Paint.ANTI_ALIAS_FLAG);

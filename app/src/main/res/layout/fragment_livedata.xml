@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/match_match"
     android:background="@color/white"
     android:padding="@dimen/space_line2"
@@ -31,7 +31,7 @@
         \n2.创建Observer监听数据改变
         \nfinal Observer&lt;String&gt; nameObserver = new Observer&lt;String&gt;() {
             \n@Override\n
-            public void onChanged(@Nullable final String newName) {\n
+            public void onChanged(final String newName) {\n
                 //更新UI操作\n
                 nameTextView.setText(newName);\n
             }\n
@@ -41,4 +41,4 @@
         \n4.设置值
         \n        currentName.setValue('xxxx');"
         />
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

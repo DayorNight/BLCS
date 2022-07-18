@@ -37,8 +37,6 @@ import android.os.Build.VERSION;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.MediaStore;
-import android.support.annotation.AnyThread;
-import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -47,6 +45,8 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewParent;
+
+import androidx.annotation.AnyThread;
 
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Field;
@@ -267,7 +267,7 @@ public class RxScaleImageView extends View {
     // Long click listener
     private OnLongClickListener onLongClickListener;
     // Long click handler
-    private Handler handler;
+    private final Handler handler;
     // Paint objects created once and reused for efficiency
     private Paint bitmapPaint;
     private Paint debugPaint;
@@ -277,11 +277,11 @@ public class RxScaleImageView extends View {
     private ScaleAndTranslate satTemp;
     private Matrix matrix;
     private RectF sRect;
-    private float[] srcArray = new float[8];
-    private float[] dstArray = new float[8];
+    private final float[] srcArray = new float[8];
+    private final float[] dstArray = new float[8];
 
     //The logical density of the display
-    private float density;
+    private final float density;
 
 
     public RxScaleImageView(Context context, AttributeSet attr) {
@@ -613,7 +613,7 @@ public class RxScaleImageView extends View {
      * Handle touch events. One finger pans, and two finger pinch and zoom plus panning.
      */
     @Override
-    public boolean onTouchEvent(@NonNull MotionEvent event) {
+    public boolean onTouchEvent(MotionEvent event) {
         // During non-interruptible anims, ignore all touch events
         if (anim != null && !anim.interruptible) {
             requestDisallowInterceptTouchEvent(true);
@@ -661,7 +661,7 @@ public class RxScaleImageView extends View {
     }
 
     @SuppressWarnings("deprecation")
-    private boolean onTouchEventInternal(@NonNull MotionEvent event) {
+    private boolean onTouchEventInternal(MotionEvent event) {
         int touchCount = event.getPointerCount();
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
@@ -2877,7 +2877,7 @@ public class RxScaleImageView extends View {
 
     private static class ScaleAndTranslate {
         private float scale;
-        private PointF vTranslate;
+        private final PointF vTranslate;
 
         private ScaleAndTranslate(float scale, PointF vTranslate) {
             this.scale = scale;

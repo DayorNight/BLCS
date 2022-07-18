@@ -7,7 +7,6 @@ import android.graphics.BlurMaskFilter;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -53,7 +52,7 @@ public class SelectedRangeView extends View {
         super(context);
         init();
     }
-    public SelectedRangeView(Context context, @Nullable AttributeSet attrs) {
+    public SelectedRangeView(Context context,AttributeSet attrs) {
         super(context, attrs);
         // 需禁用硬件加速
         setLayerType(LAYER_TYPE_SOFTWARE, null);
@@ -64,7 +63,7 @@ public class SelectedRangeView extends View {
     /**
      * 定义属性
      */
-    private void initAttrs(Context context, @Nullable AttributeSet attrs) {
+    private void initAttrs(Context context,AttributeSet attrs) {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.view_selected_range);
         circleRadius = typedArray.getDimension(R.styleable.view_selected_range_circleR, 60);
         AcircleValue = typedArray.getInteger(R.styleable.view_selected_range_AcircleValue, 0);

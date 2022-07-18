@@ -11,7 +11,7 @@
         android:id="@+id/btn_paging"
         style="@style/Button_alpha"
         android:text="Jetpack架构组件之paging入门" />
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_paging"
         style="@style/match_match"/>
 </LinearLayout>

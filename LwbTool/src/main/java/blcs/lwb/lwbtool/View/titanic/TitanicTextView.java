@@ -24,7 +24,7 @@ import blcs.lwb.lwbtool.R;
 public class TitanicTextView extends TextView {
 
     public interface AnimationSetupCallback {
-        public void onSetupAnimation(TitanicTextView titanicTextView);
+        void onSetupAnimation(TitanicTextView titanicTextView);
     }
 
     // callback fired at first onSizeChanged

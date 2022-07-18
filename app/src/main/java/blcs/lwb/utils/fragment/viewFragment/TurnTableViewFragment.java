@@ -1,10 +1,11 @@
 package blcs.lwb.utils.fragment.viewFragment;
 
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.OrientationHelper;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.OrientationHelper;
+import androidx.recyclerview.widget.RecyclerView;
 import android.widget.CompoundButton;
 
 import java.util.ArrayList;
@@ -31,8 +32,8 @@ public class TurnTableViewFragment extends BaseFragment {
     RecyclerView rlProject;
     private String[] strs ;
     private String[] imgs ;
-    private List<String> checked_Strs=new ArrayList<>();
-    private List<String> checked_imgs=new ArrayList<>();
+    private final List<String> checked_Strs=new ArrayList<>();
+    private final List<String> checked_imgs=new ArrayList<>();
     private TurnTableAdapter adapter;
 
     @Override
@@ -53,9 +54,11 @@ public class TurnTableViewFragment extends BaseFragment {
         });
     }
 
+
+
     private void initRecyclerView() {
         LinearLayoutManager manager = new LinearLayoutManager(activity);
-        manager.setOrientation(OrientationHelper.HORIZONTAL);
+        manager.setOrientation(LinearLayoutManager.HORIZONTAL);
         rlProject.setLayoutManager(manager);
         adapter = new TurnTableAdapter(Arrays.asList(strs));
         rlProject.setAdapter(adapter);
