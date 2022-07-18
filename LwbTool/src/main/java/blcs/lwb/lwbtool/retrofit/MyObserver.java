@@ -5,6 +5,10 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.widget.Toast;
+
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
 
 import io.reactivex.rxjava3.disposables.Disposable;
 
@@ -16,7 +20,7 @@ public abstract class MyObserver<T> extends BaseObserver<T> {
     private final boolean mShowDialog;
     private ProgressDialog dialog;
     private final Context mContext;
-    private Disposable d;
+    private Subscription subscription;
 
     public MyObserver(Context context, Boolean showDialog) {
         mContext = context;
@@ -27,36 +31,31 @@ public abstract class MyObserver<T> extends BaseObserver<T> {
         this(context,true);
     }
 
-    //    @Override
-//    public void onSubscribe(Disposable d) {
-//        this.d = d;
-//        if (!isConnected(mContext)) {
-//            Toast.makeText(mContext,"未连接网络",Toast.LENGTH_SHORT).show();
-//            if (d.isDisposed()) {
-//                d.dispose();
-//            }
-//        } else {
-//            if (dialog == null && mShowDialog == true) {
-//                dialog = new ProgressDialog(mContext);
-//                dialog.setMessage("正在加载中");
-//                dialog.show();
-//            }
-//        }
-//    }
+    @Override
+    public void onSubscribe(Subscription s) {
+        this.subscription = s;
+        if (!isConnected(mContext)) {
+            Toast.makeText(mContext,"未连接网络",Toast.LENGTH_SHORT).show();
+            subscription.cancel();
+        } else {
+            if (dialog == null && mShowDialog == true) {
+                dialog = new ProgressDialog(mContext);
+                dialog.setMessage("正在加载中");
+                dialog.show();
+            }
+        }
+    }
+
     @Override
     public void onError(Throwable e) {
-        if (d.isDisposed()) {
-            d.dispose();
-        }
+        subscription.cancel();
         hidDialog();
         super.onError(e);
     }
 
     @Override
     public void onComplete() {
-        if (d.isDisposed()) {
-            d.dispose();
-        }
+        subscription.cancel();
         hidDialog();
         super.onComplete();
     }

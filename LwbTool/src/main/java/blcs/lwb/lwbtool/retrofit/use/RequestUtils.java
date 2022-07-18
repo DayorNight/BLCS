@@ -1,7 +1,11 @@
 package blcs.lwb.lwbtool.retrofit.use;
 
+import android.content.Context;
+
 import com.trello.rxlifecycle4.components.support.RxFragment;
 import com.trello.rxlifecycle4.components.support.RxAppCompatActivity;
+
+import org.reactivestreams.Subscriber;
 
 import java.io.File;
 import java.util.HashMap;
@@ -13,6 +17,7 @@ import blcs.lwb.lwbtool.bean.VersionBean;
 import blcs.lwb.lwbtool.retrofit.MyObserver;
 import blcs.lwb.lwbtool.retrofit.RetrofitUtils;
 import blcs.lwb.lwbtool.retrofit.RxHelper;
+import io.reactivex.rxjava3.core.Flowable;
 import io.reactivex.rxjava3.core.Observer;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -26,17 +31,17 @@ public class RequestUtils {
     /**
      * 获取新版本
      */
-    public static void getVersion(RxFragment context, MyObserver<VersionBean> observer){
+    public static void getVersion(Context context, MyObserver<VersionBean> observer){
         RetrofitUtils.getApiUrl()
-                .getVersion().compose(RxHelper.observableIO2Main(context))
+                .getVersion().compose(RxHelper.FlowableIO2Main(context))
                 .subscribe(observer);
     }
     /**
      * 版本介绍
      */
-    public static void getVersionList(RxFragment context, MyObserver<List<VersionBean>> observer){
+    public static void getVersionList(Context context, MyObserver<List<VersionBean>> observer){
         RetrofitUtils.getApiUrl()
-                .getVersionList().compose(RxHelper.observableIO2Main(context))
+                .getVersionList().compose(RxHelper.FlowableIO2Main(context))
                 .subscribe(observer);
     }
 
@@ -45,10 +50,10 @@ public class RequestUtils {
      * @param context
      * @param observer
      */
-    public static void getDemo(RxFragment context, MyObserver<Demo> observer){
+    public static void getDemo(Context context, MyObserver<Demo> observer){
         RetrofitUtils.getApiUrl()
                 .getDemo()
-                .compose(RxHelper.observableIO2Main(context))
+                .compose(RxHelper.FlowableIO2Main(context))
                 .subscribe(observer);
     }
 
@@ -57,9 +62,9 @@ public class RequestUtils {
      * @param context
      * @param observer
      */
-    public static void getDemoList(RxFragment context, MyObserver<List<Demo>> observer){
+    public static void getDemoList(Context context, MyObserver<List<Demo>> observer){
         RetrofitUtils.getApiUrl()
-                .getDemoList().compose(RxHelper.observableIO2Main(context))
+                .getDemoList().compose(RxHelper.FlowableIO2Main(context))
                 .subscribe(observer);
     }
     /**
@@ -67,9 +72,9 @@ public class RequestUtils {
      * @param context
      * @param consumer
      */
-    public static void postDemo(RxAppCompatActivity context, String name, String password, Observer<Demo> consumer){
+    public static void postDemo(RxAppCompatActivity context, String name, String password, Subscriber<Demo> consumer){
         RetrofitUtils.getApiUrl()
-                .postUser(name,password).compose(RxHelper.observableIO2Main(context))
+                .postUser(name,password).compose(RxHelper.FlowableIO2Main(context))
                 .subscribe(consumer);
     }
     /**
@@ -77,12 +82,12 @@ public class RequestUtils {
      * @param context
      * @param consumer
      */
-    public static void putDemo(RxFragment context, String access_token,Observer<Demo> consumer){
+    public static void putDemo(Context context, String access_token,Subscriber<Demo> consumer){
         Map<String, String> headers = new HashMap<String, String>();
         headers.put("Accept","application/json");
         headers.put("Authorization",access_token);
         RetrofitUtils.getApiUrl()
-                .put(headers,"厦门").compose(RxHelper.observableIO2Main(context))
+                .put(headers,"厦门").compose(RxHelper.FlowableIO2Main(context))
                 .subscribe(consumer);
     }
     /**
@@ -90,9 +95,9 @@ public class RequestUtils {
      * @param context
      * @param consumer
      */
-    public static void deleteDemo(RxFragment context, String access_token,Observer<Demo> consumer){
+    public static void deleteDemo(Context context, String access_token,Subscriber<Demo> consumer){
         RetrofitUtils.getApiUrl()
-                .delete(access_token,1).compose(RxHelper.observableIO2Main(context))
+                .delete(access_token,1).compose(RxHelper.FlowableIO2Main(context))
                 .subscribe(consumer);
     }
 
@@ -101,7 +106,7 @@ public class RequestUtils {
      * @param context
      * @param observer
      */
-    public static void upImagView(RxFragment context, String  access_token,String str, Observer<Demo>  observer){
+    public static void upImagView(Context context, String  access_token,String str, Subscriber<Demo>  observer){
         File file = new File(str);
 //        File file = new File(imgPath);
         Map<String,String> header = new HashMap<String, String>();
@@ -113,7 +118,7 @@ public class RequestUtils {
 //                RequestBody.create(MediaType.parse("multipart/form-data"), file);
         MultipartBody.Part body =
                 MultipartBody.Part.createFormData("file", file.getName(), reqFile);
-        RetrofitUtils.getApiUrl().uploadImage(header,body).compose(RxHelper.observableIO2Main(context))
+        RetrofitUtils.getApiUrl().uploadImage(header,body).compose(RxHelper.FlowableIO2Main(context))
                 .subscribe(observer);
     }
 
@@ -121,7 +126,7 @@ public class RequestUtils {
      * 上传多张图片
      * @param files
      */
-    public static void upLoadImg(RxFragment context,String access_token,List<File> files, Observer<Demo>  observer1){
+    public static void upLoadImg(Context context,String access_token,List<File> files, Subscriber<Demo>  observer1){
         Map<String,String> header = new HashMap<String, String>();
         header.put("Accept","application/json");
         header.put("Authorization",access_token);
@@ -133,7 +138,7 @@ public class RequestUtils {
             builder.addFormDataPart("file", file.getName(), photoRequestBody);
         }
         List<MultipartBody.Part> parts = builder.build().parts();
-        RetrofitUtils.getApiUrl().uploadImage1(header,parts).compose(RxHelper.observableIO2Main(context))
+        RetrofitUtils.getApiUrl().uploadImage1(header,parts).compose(RxHelper.FlowableIO2Main(context))
                 .subscribe(observer1);
     }
 }

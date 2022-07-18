@@ -1,11 +1,11 @@
 package blcs.lwb.lwbtool.retrofit;
 
-import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory;
 import java.util.concurrent.TimeUnit;
 import blcs.lwb.lwbtool.Constants;
 import blcs.lwb.lwbtool.retrofit.use.ApiUrl;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
@@ -14,6 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitUtils {
     private static final String TAG = "RetrofitUtils";
     private static ApiUrl mApiUrl;
+
     /**
      * 单例模式
      */
@@ -27,11 +28,12 @@ public class RetrofitUtils {
         }
         return mApiUrl;
     }
+
     private RetrofitUtils(){}
 
     public ApiUrl getRetrofit() {
         // 初始化Retrofit
-        ApiUrl apiUrl = initRetrofit(initOkHttp()) .create(ApiUrl.class);
+        ApiUrl apiUrl = initRetrofit(initOkHttp()).create(ApiUrl.class);
         return apiUrl;
     }
 
@@ -42,7 +44,7 @@ public class RetrofitUtils {
         return new Retrofit.Builder()
                     .client(client)
                     .baseUrl(Constants.BaseUrl)
-                    .addCallAdapterFactory(CoroutineCallAdapterFactory.create())
+                    .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
     }

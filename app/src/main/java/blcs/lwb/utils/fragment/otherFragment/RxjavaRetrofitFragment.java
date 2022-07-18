@@ -56,11 +56,7 @@ public class RxjavaRetrofitFragment extends BaseFragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_retrofit_get:
-                RequestUtils.getDemo(this,new MyObserver<Demo>(activity) {
-                    @Override
-                    public void onSubscribe(@NonNull Disposable d) {
-
-                    }
+                RequestUtils.getDemo(getContext(),new MyObserver<Demo>(activity) {
 
                     @Override
                     public void onSuccess(Demo result) {
@@ -74,12 +70,7 @@ public class RxjavaRetrofitFragment extends BaseFragment {
                 });
                 break;
             case R.id.btn_retrofit_getList:
-                RequestUtils.getDemoList(this,new MyObserver<List<Demo>>(activity) {
-                    @Override
-                    public void onSubscribe(@NonNull Disposable d) {
-
-                    }
-
+                RequestUtils.getDemoList(getContext(),new MyObserver<List<Demo>>(activity) {
                     @Override
                         public void onSuccess(List<Demo> result) {
                             tvRetrofit.setText(result.toString());

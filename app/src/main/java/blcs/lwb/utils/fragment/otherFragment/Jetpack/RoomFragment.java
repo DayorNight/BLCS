@@ -38,8 +38,8 @@ public class RoomFragment extends BaseFragment {
     RecyclerView rv;
 
     private RoomAdapter roomAdapter;
-    private int code = 0;
-    private int UpdateCode = 0;
+    private final int code = 0;
+    private final int UpdateCode = 0;
     private int method = 0;
 
     @Override

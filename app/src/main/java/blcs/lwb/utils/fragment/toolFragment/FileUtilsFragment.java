@@ -18,6 +18,9 @@ import blcs.lwb.utils.fragment.BaseFragment;
 import blcs.lwb.utils.manager.FramentManages;
 import butterknife.BindView;
 import butterknife.OnClick;
+import io.reactivex.rxjava3.core.Flowable;
+import io.reactivex.rxjava3.core.FlowableEmitter;
+import io.reactivex.rxjava3.core.FlowableOnSubscribe;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.ObservableEmitter;
 import io.reactivex.rxjava3.core.ObservableOnSubscribe;
@@ -65,18 +68,8 @@ public class FileUtilsFragment extends BaseFragment {
                 LinCommon.showShortToast(activity,"文件创建成功");
                 break;
             case R.id.btn_file_getSize://获取文件大小
-                Observable.create(new ObservableOnSubscribe<String>() {
-                    @Override
-                    public void subscribe(ObservableEmitter<String> observableEmitter) throws Exception {
-                        String size = FileUtils.size(new File(FileUtils.SDCARD_ROOT + "Android"));
-                        observableEmitter.onNext(size);
-                    }
-                }).compose(RxHelper.observableIO2Main(activity)).subscribe(new Consumer<String>() {
-                    @Override
-                    public void accept(String size) throws Exception {
-                        btn_file_getSize.setText("获取文件大小: "+size);
-                    }
-                });
+                String size = FileUtils.size(new File(FileUtils.SDCARD_ROOT + "Android"));
+                Flowable.just(size).subscribe(s -> btn_file_getSize.setText("获取文件大小: "+s));
                 break;
             case R.id.btn_delete_file://删除文件
                 boolean b = FileUtils.delFile(FileUtils.FILE);

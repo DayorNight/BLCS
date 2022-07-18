@@ -3,6 +3,8 @@ package blcs.lwb.lwbtool.retrofit;
 import android.util.Log;
 import java.io.IOException;
 import java.util.Locale;
+
+import okhttp3.Connection;
 import okhttp3.Interceptor;
 import okhttp3.Request;
 

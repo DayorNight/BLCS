@@ -21,16 +21,6 @@ import blcs.lwb.utils.fragment.viewFragment.AudioAndVideoFragment;
 import blcs.lwb.utils.fragment.viewFragment.AudioFragment;
 import blcs.lwb.utils.fragment.viewFragment.BannerFragment;
 import blcs.lwb.utils.fragment.viewFragment.BarQrCodeFragment;
-import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.AnimationRecyclerFragment;
-import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.DragAndSwipeFragment;
-import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.EmptyViewFragment;
-import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.ExpandableItemFragment;
-import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.Header_FooterFragment;
-import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.ItemClickRecyclerFragment;
-import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.MultipleItemRecyclerFragment;
-import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.PullToRefreshFragment;
-import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.SectionFragment;
-import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.UpFetchDataFragment;
 import blcs.lwb.utils.fragment.BaseFragment;
 import blcs.lwb.utils.fragment.toolFragment.BitmapUtilsFragment;
 import blcs.lwb.utils.fragment.otherFragment.BlogsFragment;
@@ -262,26 +252,6 @@ public class FramentManages {
                 return new RecyclerViewFragment();
             case FramentManages.TurnTableView:
                 return new TurnTableViewFragment();
-            case FramentManages.AnimationRecycler:
-                return new AnimationRecyclerFragment();
-            case FramentManages.MultipleItemRecycler:
-                return new MultipleItemRecyclerFragment();
-            case FramentManages.Header_FooterRecycler:
-                return new Header_FooterFragment();
-            case FramentManages.PullToRefreshRecycler:
-                return new PullToRefreshFragment();
-            case FramentManages.SectionRecycler:
-                return new SectionFragment();
-            case FramentManages.EmptyViewRecycler:
-                return new EmptyViewFragment();
-            case FramentManages.DragAndSwipeRecycler:
-                return new DragAndSwipeFragment();
-            case FramentManages.ItemClickRecycler:
-                return new ItemClickRecyclerFragment();
-            case FramentManages.ExpandableItemRecycler:
-                return new ExpandableItemFragment();
-            case FramentManages.UpFetchDataRecycler:
-                return new UpFetchDataFragment();
             case FramentManages.MarqueeView:
                 return new MarqueeViewFragment();
             case FramentManages.CustomActivityOnCrash:

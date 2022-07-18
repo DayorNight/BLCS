@@ -29,7 +29,7 @@
     <dimen name="common_navigator_height">45dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
-
+    <dimen name="dp_10">10dp</dimen>
 
     <dimen name="default_slider_height">36dp</dimen>
     <dimen name="default_slider_margin">24dp</dimen>

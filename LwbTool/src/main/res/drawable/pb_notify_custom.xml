@@ -9,7 +9,7 @@
 
         <shape>
 
-            <corners android:radius="@dimen/dp_10"></corners>
+            <corners android:radius="10dp"></corners>
             <solid android:color="@color/gray"></solid>
 
         </shape>
@@ -28,7 +28,7 @@
                     android:angle="45"
                     android:endColor="@color/colorPrimary"
                     android:startColor="@color/colorPrimary"></gradient>
-                <corners android:radius="@dimen/dp_10"></corners>
+                <corners android:radius="10dp"></corners>
 
             </shape>
 

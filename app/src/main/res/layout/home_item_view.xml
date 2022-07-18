@@ -27,7 +27,8 @@
                 android:id="@+id/itme_iv_icon"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@mipmap/gv_animation"/>
+                android:src="@mipmap/ic_launcher"
+                />
 
             <TextView
                 android:id="@+id/item_tv_title"
