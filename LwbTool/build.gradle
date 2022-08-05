@@ -41,9 +41,8 @@ dependencies {
     androidTestImplementation Dp.Uiautomator
 //    androidTestImplementation Dp.EspressoWeb
 //    androidTestImplementation Dp.EspressoContrib
-
     api Dp.Butterknife
-    annotationProcessor Dp.ButterknifeCompiler
+
     api Dp.Agentweb
     api Dp.Marqueeview
     api Dp.AdapterHelper
@@ -56,7 +55,7 @@ dependencies {
     api Dp.Banner
     api Dp.Androidsvg
     api Dp.Glide
-    annotationProcessor Dp.GlideCompiler
+
     api Dp.Retrofit2
     api Dp.Retrofit2ConverterGson
     api Dp.Retrofit2Rxjava2
@@ -75,4 +74,10 @@ dependencies {
     api Dp.workManager
     /*lottie json动画*/
     api Dp.lottie
+    api Dp.ConstraintLayout
+    api Dp.UmengCommon
+    api Dp.UmengAnalytics
+    api Dp.fragmentktx
+    api Dp.activityktx
+
 }

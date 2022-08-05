@@ -93,18 +93,10 @@ dependencies {
     // ========基本关联=======
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':LwbTool')
-    implementation Dp.ConstraintLayout
-    testImplementation Dp.Junit
-    androidTestImplementation Dp.Espresso
-    androidTestImplementation Dp.Uiautomator
+
     annotationProcessor Dp.ButterknifeCompiler
-    implementation Dp.UmengCommon
-    implementation Dp.UmengAnalytics
     annotationProcessor Dp.GlideCompiler
-    debugImplementation Dp.DebugDbEncrypt
     annotationProcessor Dp.room
-    implementation Dp.fragmentktx
-    implementation Dp.activityktx
-//    implementation Dp.corektx
-//    implementation Dp.coroutines
+    annotationProcessor Dp.ButterknifeCompiler
+    annotationProcessor Dp.GlideCompiler
 }
