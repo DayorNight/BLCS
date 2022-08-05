@@ -29,7 +29,8 @@ dependencies {
     implementation files('libs/rebound-core.jar')
     implementation files('libs/nineoldandroids-2.4.0.jar')
     //noinspection GradleCompatible
-    api Dp.AppcompatV7
+    api Dp.Appcompat
+    api Dp.kotlin
     api Dp.Design
     api Dp.Recyclerview
     api Dp.SupportV4
@@ -79,5 +80,5 @@ dependencies {
     api Dp.UmengAnalytics
     api Dp.fragmentktx
     api Dp.activityktx
-
+    api Dp.roomkt
 }

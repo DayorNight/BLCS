@@ -35,7 +35,7 @@ public class MyApplication extends BaseApplication {
     }
 
     private void initRoom() {
-       RoomDbManager.build(this);
+//       RoomDbManager.build(this);
     }
 
     private void initGreenDao() {

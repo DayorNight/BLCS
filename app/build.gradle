@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'org.greenrobot.greendao'
+apply plugin: 'kotlin-android'
 
 
 //隐藏签名信息 ======》
@@ -96,7 +97,6 @@ dependencies {
 
     annotationProcessor Dp.ButterknifeCompiler
     annotationProcessor Dp.GlideCompiler
-    annotationProcessor Dp.room
     annotationProcessor Dp.ButterknifeCompiler
     annotationProcessor Dp.GlideCompiler
 }
