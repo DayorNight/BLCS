@@ -11,7 +11,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.0'
+        classpath 'com.android.tools.build:gradle:4.0.1'
         classpath 'org.greenrobot:greendao-gradle-plugin:3.3.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.32"
         classpath 'com.tencent.bugly:symtabfileuploader:2.2.1'

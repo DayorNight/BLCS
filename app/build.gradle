@@ -57,11 +57,6 @@ android {
         }
     }
 //    多渠道打包
-    productFlavors {
-        wandoujia {}
-        xiaomi {}
-        pugongying {}
-    }
     productFlavors.all { flavor ->
         flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
     }
@@ -96,7 +91,6 @@ dependencies {
     implementation project(':LwbTool')
 
     annotationProcessor Dp.ButterknifeCompiler
-    annotationProcessor Dp.GlideCompiler
     annotationProcessor Dp.ButterknifeCompiler
     annotationProcessor Dp.GlideCompiler
 }
