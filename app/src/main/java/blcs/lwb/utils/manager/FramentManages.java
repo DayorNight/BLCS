@@ -3,6 +3,7 @@ package blcs.lwb.utils.manager;
 import android.app.Activity;
 import android.os.Bundle;
 
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -100,7 +101,7 @@ import blcs.lwb.utils.mvp.BaseFragmentActivity;
  * @author WESTAKE
  */
 public class FramentManages {
-    private final ArrayList<BaseFragment> list_Frament;// 保存当前Activity的Frament
+    private final ArrayList<Fragment> list_Frament;// 保存当前Activity的Frament
     public FragmentManager fm;// 片段管理器
     /**
      * 片段名
@@ -223,7 +224,7 @@ public class FramentManages {
         fm = activity.getSupportFragmentManager();
     }
 
-    private BaseFragment getFrament(Activity activity, String alias) {
+    private Fragment getFrament(Activity activity, String alias) {
         switch (alias) {
             default:
                 return null;
@@ -409,7 +410,7 @@ public class FramentManages {
      * @param alias    别名
      */
     public void replaceFrament(int viewId, BaseFragmentActivity activity, String alias) {
-        BaseFragment base = getFrament(activity, alias);
+        Fragment base = getFrament(activity, alias);
         if (base == null) {
             return;
         }
@@ -433,7 +434,7 @@ public class FramentManages {
      */
     public void addFrament(int viewId, BaseFragmentActivity activity, String alias,
                            Bundle bundle, boolean isAnim) {
-        BaseFragment base = getFrament(activity, alias);
+        Fragment base = getFrament(activity, alias);
         if (base == null) {
             return;
         }
@@ -469,7 +470,7 @@ public class FramentManages {
      *
      * @return
      */
-    public BaseFragment getLastFrament() {
+    public Fragment getLastFrament() {
         if (list_Frament.size() - 1 >= 0) {
             return list_Frament.get(list_Frament.size() - 1);
         } else {
@@ -482,7 +483,7 @@ public class FramentManages {
      *
      * @return
      */
-    public ArrayList<BaseFragment> getAllFrament() {
+    public ArrayList<Fragment> getAllFrament() {
         return list_Frament;
     }
 

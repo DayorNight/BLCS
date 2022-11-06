@@ -1,64 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/match_match">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <LinearLayout
-        style="@style/Lin_vertical"
-        android:padding="@dimen/space_line">
+    <data>
+        <variable
+            name="apkPath"
+            type="String" />
+        <variable
+            name="click"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="packageName"
+            type="String" />
+        <variable
+            name="versionName"
+            type="String" />
+        <variable
+            name="versionCode"
+            type="String" />
+        <variable
+            name="installedPackages"
+            type="String" />
+        <variable
+            name="channel"
+            type="String" />
+    </data>
 
-        <Button
-            android:id="@+id/btn_getPackage"
-            style="@style/Button_wrap"
-            android:text="@string/getPackage" />
-
-        <Button
-            android:id="@+id/btn_getVersionName"
-            style="@style/Button_wrap"
-            android:text="@string/getVersionName" />
-
-        <Button
-            android:id="@+id/btn_getVersionCode"
-            style="@style/Button_wrap"
-            android:text="@string/getVersionCode" />
-
-        <Button
-            android:id="@+id/btn_getInstalledPackages"
-            style="@style/Button_wrap"
-            android:text="@string/getInstalledPackages" />
-
-        <TextView
-            android:id="@+id/tv_getInstalledPackages"
-            style="@style/standerd_text" />
+    <ScrollView style="@style/match_match">
 
         <LinearLayout
-            style="@style/Lin_horizontal">
-        <Button
-            android:id="@+id/btn_getApplicationIcon"
-            style="@style/Button_wrap"
-            android:layout_weight="1"
-            android:text="@string/getApplicationIcon" />
-            <ImageView
-                android:id="@+id/img_getApplicationIcon"
-                style="@style/wrap_wrap" />
+            style="@style/Lin_vertical"
+            android:padding="@dimen/space_line">
+
+            <Button
+                android:id="@+id/btn_getPackage"
+                style="@style/Button_wrap"
+                android:onClick="@{click}"
+                android:text="@{packageName}" />
+
+            <Button
+                android:id="@+id/btn_getVersionName"
+                style="@style/Button_wrap"
+                android:onClick="@{click}"
+                android:text="@{versionName}" />
+
+            <Button
+                android:id="@+id/btn_getVersionCode"
+                style="@style/Button_wrap"
+                android:onClick="@{click}"
+                android:text="@{versionCode}" />
+
+            <Button
+                android:id="@+id/btn_getInstalledPackages"
+                style="@style/Button_wrap"
+                android:onClick="@{click}"
+                android:text="@string/getInstalledPackages" />
+
+            <TextView
+                android:id="@+id/tv_getInstalledPackages"
+                android:text="@{installedPackages}"
+                style="@style/standerd_text" />
+
+            <LinearLayout style="@style/Lin_horizontal">
+
+                <Button
+                    android:id="@+id/btn_getApplicationIcon"
+                    style="@style/Button_wrap"
+                    android:layout_weight="1"
+                    android:onClick="@{click}"
+                    android:text="@string/getApplicationIcon" />
+
+                <ImageView
+                    android:id="@+id/img_getApplicationIcon"
+                    style="@style/wrap_wrap" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/et_installApk"
+                style="@style/EditText_text"
+                android:hint="@string/input_path"
+                android:text="@={apkPath}" />
+
+            <Button
+                android:id="@+id/btn_installApk"
+                style="@style/Button_wrap"
+                android:onClick="@{click}"
+                android:text="@string/installAPK" />
+
+
+            <Button
+                android:id="@+id/btn_getChannel"
+                android:onClick="@{click}"
+                style="@style/Button_wrap"
+                android:text="@{channel}" />
+
+
         </LinearLayout>
-
-        <EditText
-            android:id="@+id/et_installApk"
-            style="@style/EditText_text"
-            android:hint="@string/input_path"
-            android:text="" />
-
-        <Button
-            android:id="@+id/btn_installApk"
-            style="@style/Button_wrap"
-            android:text="@string/installAPK" />
-
-
-        <Button
-            android:id="@+id/btn_getChannel"
-            style="@style/Button_wrap"
-            android:text="@string/getChannel" />
-
-
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
+</layout>

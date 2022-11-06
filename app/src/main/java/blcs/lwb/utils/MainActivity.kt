@@ -1,136 +1,73 @@
-package blcs.lwb.utils;
+package blcs.lwb.utils
 
-import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.os.Build;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.content.res.Resources
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.viewpager.widget.ViewPager.OnPageChangeListener
+import blcs.lwb.lwbtool.utils.LeakCanaryUtils
+import blcs.lwb.lwbtool.utils.SPUtils
+import blcs.lwb.utils.adapter.ViewPagerHomeAdapter
+import blcs.lwb.utils.databinding.ActivityMainBinding
+import blcs.lwb.utils.utils.MyUtils
 
-import androidx.annotation.RequiresApi;
-import androidx.viewpager.widget.ViewPager;
+class MainActivity : AppCompatActivity() {
+    lateinit var bind :ActivityMainBinding
+    var imgMenu = intArrayOf(R.mipmap.img_util, R.mipmap.img_view, R.mipmap.img_other, R.mipmap.img_resources)
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.umeng.analytics.MobclickAgent;
-
-import java.util.HashMap;
-import java.util.List;
-
-import blcs.lwb.lwbtool.base.BaseAppCompatActivity;
-import blcs.lwb.lwbtool.base.BasePresenter;
-import blcs.lwb.lwbtool.utils.LeakCanaryUtils;
-import blcs.lwb.lwbtool.utils.SPUtils;
-import blcs.lwb.utils.adapter.ViewPagerHomeAdapter;
-import blcs.lwb.utils.mvp.presenter.MainPresenter;
-import blcs.lwb.utils.mvp.view.IMainView;
-import blcs.lwb.utils.utils.MyUtils;
-import butterknife.BindView;
-
-public class MainActivity extends BaseAppCompatActivity implements IMainView {
-
-    @BindView(R.id.main_bottom)
-    BottomNavigationView mainBottom;
-    @BindView(R.id.main_viewpage)
-    ViewPager mainViewpage;
-    int[] img_menu={R.mipmap.img_util,R.mipmap.img_view,R.mipmap.img_other,R.mipmap.img_resources};
-    private float fontSizeScale;
-
-    @Override
-    protected BasePresenter bindPresenter() {
-        return new MainPresenter(this);
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        bind = DataBindingUtil.setContentView(this,R.layout.activity_main)
+        initBottomMenu()
+        initViewPage()
     }
 
-    @Override
-    protected int bindLayout() {
-        return R.layout.activity_main;
-    }
-
-    @Override
-    public void Title() {
-
-    }
-
-    @Override
-    public void BottomMenu() {
-        fontSizeScale = (float) SPUtils.get(this, Constants.SP_FontScale, 0.0f);
-        List<String> menus = MyUtils.getArray(this,R.array.bottom_menu);
-        Menu menu = mainBottom.getMenu();
-        for (int i = 0; i < menus.size(); i++) {
-            menu.add(1, i, i, menus.get(i));
-            MenuItem item = menu.findItem(i);
-            item.setIcon(img_menu[i]);
+    private fun initBottomMenu() {
+        val menus = MyUtils.getArray(this, R.array.bottom_menu)
+        val menu = bind.mainBottom.menu
+        for (i in menus.indices) {
+            menu.add(1, i, i, menus[i])
+            val item = menu.findItem(i)
+            item.setIcon(imgMenu[i])
         }
-
-        mainBottom.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(MenuItem menuItem) {
-                switch (menuItem.getItemId()) {
-                    case 0:
-                        mainViewpage.setCurrentItem(0);
-                        break;
-                    case 1:
-                        mainViewpage.setCurrentItem(1);
-                        break;
-                    case 2:
-                        mainViewpage.setCurrentItem(2);
-                        break;
-                    case 3:
-                        mainViewpage.setCurrentItem(3);
-                        break;
-                    case 4:
-                        mainViewpage.setCurrentItem(4);
-                        break;
-                }
-                return true;
+        bind.mainBottom.setOnNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                0 -> bind.mainViewpage.currentItem = 0
+                1 -> bind.mainViewpage.currentItem = 1
+                2 -> bind.mainViewpage.currentItem = 2
+                3 -> bind.mainViewpage.currentItem = 3
+                4 -> bind.mainViewpage.currentItem = 4
             }
-        });
-
-        HashMap<Object, Object> objectObjectHashMap = new HashMap<>();
-    }
-
-    @Override
-    public void ViewPage() {
-        ViewPagerHomeAdapter adapter = new ViewPagerHomeAdapter(getSupportFragmentManager());
-        mainViewpage.setAdapter(adapter);
-        mainViewpage.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-            }
-            @Override
-            public void onPageSelected(int position) {
-                mainBottom.setSelectedItemId(position);
-            }
-            @Override
-            public void onPageScrollStateChanged(int state) {}
-        });
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        MobclickAgent.onResume(this);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        MobclickAgent.onPause(this);
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        LeakCanaryUtils.fixFocusedViewLeak(getApplication());
-    }
-
-    @Override
-    public Resources getResources() {
-        Resources res =super.getResources();
-        Configuration config = res.getConfiguration();
-        if(fontSizeScale>0.5){
-            config.fontScale= fontSizeScale;//1 设置正常字体大小的倍数
+            true
         }
-        res.updateConfiguration(config,res.getDisplayMetrics());
-        return res;
+    }
+
+    private fun initViewPage() {
+        val adapter = ViewPagerHomeAdapter(supportFragmentManager)
+        bind.mainViewpage.adapter = adapter
+        bind.mainViewpage.addOnPageChangeListener(object : OnPageChangeListener {
+            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {}
+            override fun onPageSelected(position: Int) {
+                bind.mainBottom.selectedItemId = position
+            }
+
+            override fun onPageScrollStateChanged(state: Int) {}
+        })
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        LeakCanaryUtils.fixFocusedViewLeak(application)
+    }
+
+    override fun getResources(): Resources {
+        val fontSizeScale = SPUtils.get(this, Constants.SP_FontScale, 0.0f) as Float
+        val res = super.getResources()
+        val config = res.configuration
+        if (fontSizeScale > 0.5) {
+            config.fontScale = fontSizeScale //1 设置正常字体大小的倍数
+        }
+        res.updateConfiguration(config, res.displayMetrics)
+        return res
     }
 }

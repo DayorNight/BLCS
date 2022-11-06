@@ -1,37 +1,21 @@
-package blcs.lwb.utils;
+package blcs.lwb.utils
 
-import android.widget.ImageView;
-import blcs.lwb.lwbtool.base.BaseActivity;
-import blcs.lwb.lwbtool.base.BasePresenter;
-import blcs.lwb.lwbtool.utils.IntentUtils;
-import blcs.lwb.lwbtool.utils.XStatusBar;
-import butterknife.BindView;
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import blcs.lwb.lwbtool.utils.IntentUtils
+import blcs.lwb.lwbtool.utils.XStatusBar
+import blcs.lwb.utils.databinding.ActivitySplashBinding
 
-public class SplashActivity extends BaseActivity {
-    private static final String TAG = "SplashActivity";
-    @BindView(R.id.iv)
-    ImageView iv;
+class SplashActivity : AppCompatActivity() {
 
-    @Override
-    protected BasePresenter bindPresenter() {
-        return null;
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val bind = DataBindingUtil.setContentView<ActivitySplashBinding>(this, R.layout.activity_splash)
+        XStatusBar.setTransparent(this)
+        bind.root.postDelayed({
+            IntentUtils.toActivity(this@SplashActivity, MainActivity::class.java, true)
+            finish()
+        }, 3000)
     }
-
-    @Override
-    public void initView() {
-        XStatusBar.setTransparent(this);
-        iv.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                IntentUtils.toActivity(SplashActivity.this, MainActivity.class, true);
-                finish();
-            }
-        }, 3000);
-    }
-
-    @Override
-    public int bindLayout() {
-        return R.layout.activity_splash;
-    }
-
 }

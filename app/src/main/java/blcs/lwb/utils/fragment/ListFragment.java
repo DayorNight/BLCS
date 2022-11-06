@@ -1,6 +1,8 @@
 package blcs.lwb.utils.fragment;
 
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.OrientationHelper;
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.listener.OnItemClickListener;
 
 import java.io.File;
 import java.util.Arrays;
@@ -24,6 +25,7 @@ import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.lwbtool.utils.MyUtils;
 import blcs.lwb.lwbtool.utils.RecyclerUtil;
 import blcs.lwb.lwbtool.utils.RxToast;
+import blcs.lwb.utils.Interfaces.OnItemClickListener;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.adapter.ListAdapter;
 import butterknife.BindView;
@@ -50,12 +52,11 @@ public class ListFragment extends BaseFragment {
         ListAdapter listAdapter = new ListAdapter();
         RecyclerUtil.init(activity, OrientationHelper.VERTICAL, listAdapter, toolRecyclerView);
         listAdapter.setNewData(fileNames);
-        listAdapter.setOnItemClickListener(new OnItemClickListener() {
+        listAdapter.setOnItemClickListener(new OnItemClickListener<String>() {
             @Override
-            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                String fileName = (String) adapter.getData().get(position);
-                LogUtils.e(fileName);
-                File file = new File(FileUtils.SDCARD_ROOT + fileName);
+            public void onItemClick(@NonNull RecyclerView.ViewHolder viewHolder, int pos, String content) {
+                LogUtils.e(content);
+                File file = new File(FileUtils.SDCARD_ROOT + content);
                 if(file!=null&&file.list()!=null&&file.list().length>0){
                     listAdapter.setNewData(Arrays.asList( file.list()));
                 }else {

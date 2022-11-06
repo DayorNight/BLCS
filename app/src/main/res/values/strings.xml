@@ -122,6 +122,9 @@
     <string name="save">保存</string>
     <string name="Multi_Language">多语言</string>
 
+    <string name="dataBind_price">价格：%.2f元</string>
+    <string name="dataBind_person">人数：%d人</string>
+
 
     <!--博客-->
     <string name="URL_Paging">https://www.jianshu.com/p/10bf4bf59122</string>

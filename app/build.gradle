@@ -1,6 +1,10 @@
-apply plugin: 'com.android.application'
-apply plugin: 'org.greenrobot.greendao'
-apply plugin: 'kotlin-android'
+plugins {
+    id 'com.android.application'
+    id 'org.greenrobot.greendao'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+}
 
 
 //隐藏签名信息 ======》

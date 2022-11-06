@@ -26,7 +26,7 @@ public class LinSQL {
     public static void init(Context context) {
         if (blcs == null) {
             blcs = new MySQLiteHelper(context, "Blcs", null, 1);
-            daoSession = MyApplication.getDaoSession();
+            daoSession = MyApplication.Companion.getDaoSession();
             greenDaoDao = daoSession.getGreenDaoDao();
         }
     }

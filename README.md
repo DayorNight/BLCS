@@ -26,7 +26,7 @@
 ★ [16.banner](https://github.com/youth5201314/banner) ★ [17.QMUI_Android](https://qmuiteam.com/android) ★ [18.MPAndroidChart](https://github.com/PhilJay/MPAndroidChart)
 ★ [19.LeakCanary](https://github.com/square/leakcanary)
 ###### 集成第三方：
-> 1、友盟统计
+
 
 ## 目录
 ## 效果展示——工具

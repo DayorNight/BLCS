@@ -57,7 +57,7 @@ public class LinCleanDataFragment extends BaseFragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_get_allCache:
-                String allCacheSize = LinCleanData.getAllCacheSize(MyApplication.context);
+                String allCacheSize = LinCleanData.getAllCacheSize(MyApplication.Companion.getContext());
                 bind.setContent(allCacheSize);
                 break;
             case R.id.btn_clean_allCache:

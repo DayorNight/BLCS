@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 
+import androidx.fragment.app.Fragment;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -115,11 +117,11 @@ public class MyUtils {
     /**
      * 跳转Url
      */
-    public static void toUrl(BaseFragment activity,String title,String url){
+    public static void toUrl(Fragment fragment, String title, String url){
         Bundle bundle = new Bundle();
         bundle.putString(Constants.Item_Name,title);
         bundle.putString(Constants.URL, url);
-        activity.addFrament(R.id.fr_contain,  FramentManages.Demo, bundle, true);
+        ((BaseFragment)fragment).addFrament(R.id.fr_contain,  FramentManages.Demo, bundle, true);
     }
 
     /**

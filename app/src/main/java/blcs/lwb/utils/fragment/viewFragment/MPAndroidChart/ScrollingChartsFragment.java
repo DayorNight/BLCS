@@ -47,15 +47,15 @@ public class ScrollingChartsFragment extends DemoBase {
         for (int i = 0; i < 30; i++) {
 
             if (i % 3 == 0) {
-                list.add(new LineChartItem(generateDataLine(i + 1), MyApplication.getContext()));
+                list.add(new LineChartItem(generateDataLine(i + 1), MyApplication.Companion.getContext()));
             } else if (i % 3 == 1) {
-                list.add(new BarChartItem(generateDataBar(i + 1), MyApplication.getContext()));
+                list.add(new BarChartItem(generateDataBar(i + 1), MyApplication.Companion.getContext()));
             } else if (i % 3 == 2) {
-                list.add(new PieChartItem(generateDataPie(), MyApplication.getContext()));
+                list.add(new PieChartItem(generateDataPie(), MyApplication.Companion.getContext()));
             }
         }
 
-        ChartDataAdapter cda = new ChartDataAdapter(MyApplication.getContext(), list);
+        ChartDataAdapter cda = new ChartDataAdapter(MyApplication.Companion.getContext(), list);
         lv.setAdapter(cda);
     }
 

@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
 
 import com.trello.rxlifecycle4.components.support.RxFragment;
 
@@ -24,7 +25,7 @@ import butterknife.Unbinder;
 /**
  * BaseFrament
  */
-public abstract class BaseFragment extends RxFragment implements IPopBackStackListener, BaseView {
+public abstract class BaseFragment extends Fragment implements IPopBackStackListener, BaseView {
     private Bundle BackBundle;
     /**
      * 该fragment全局视图，不能在子Fragment中创建
@@ -98,8 +99,8 @@ public abstract class BaseFragment extends RxFragment implements IPopBackStackLi
         super.onDestroy();
         bind.unbind();
         if (fragmentManager.getLastFrament() != null) {
-            fragmentManager.getLastFrament().popBackListener(returnCode, BackBundle);
-            fragmentManager.getLastFrament().setMiddleTitle(activity.tlToolbar);
+            ((BaseFragment)(fragmentManager.getLastFrament())).popBackListener(returnCode, BackBundle);
+            ((BaseFragment)(fragmentManager.getLastFrament())).setMiddleTitle(activity.tlToolbar);
         }
         if (baseP != null) {
             baseP.onDetch();

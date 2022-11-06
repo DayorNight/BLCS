@@ -1,78 +1,58 @@
-package blcs.lwb.utils.fragment.otherFragment.Jetpack;
+package blcs.lwb.utils.fragment.otherFragment.Jetpack
 
-import android.os.Bundle;
+import android.graphics.Paint
+import android.view.View
+import android.widget.Toast
+import androidx.lifecycle.Observer
+import blcs.lwb.utils.viewmodel.CommonViewModel
+import blcs.lwb.utils.R
+import androidx.recyclerview.widget.LinearLayoutManager
+import blcs.lwb.lwbtool.base.BaseVMFragment
+import blcs.lwb.utils.adapter.ListAdapter
+import blcs.lwb.utils.utils.MyUtils
+import blcs.lwb.utils.databinding.FragmentDatabindingBinding
 
-import androidx.databinding.BindingAdapter;
-import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.LifecycleOwner;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.appcompat.widget.Toolbar;
-import android.view.View;
+class DataBindingFragment : BaseVMFragment<FragmentDatabindingBinding, CommonViewModel>(), View.OnClickListener {
 
-import java.util.ArrayList;
-import java.util.List;
+    override fun getViewModelClass() = CommonViewModel::class.java
 
-import blcs.lwb.lwbtool.base.BasePresenter;
-import blcs.lwb.utils.R;
-import blcs.lwb.utils.adapter.ListAdapter;
-import blcs.lwb.utils.databinding.FragmentDatabindingBinding;
-import blcs.lwb.utils.fragment.BaseFragment;
-import blcs.lwb.utils.utils.MyUtils;
+    override fun getLayoutId() = R.layout.fragment_databinding
 
-public class DataBindingFragment extends BaseFragment implements View.OnClickListener {
-
-    private FragmentDatabindingBinding bind;
-    private final List<String> datas = new ArrayList<>();
-    private ListAdapter listAdapter;
-
-    @Override
-    protected int bindLayout() {
-        return R.layout.fragment_databinding;
+    private val listAdapter by lazy {
+        ListAdapter()
     }
 
-    @Override
-    protected void initView() {
-        bind = DataBindingUtil.bind(mView);
-        bind.setLifecycleOwner((LifecycleOwner) this);
-        bind.setClick(this);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false);
-        listAdapter = new ListAdapter();
-        bind.setManager(linearLayoutManager);
-        bind.setListAdapter(listAdapter);
-
-    }
-    //自定义属性 设置适配器
-    @BindingAdapter("adapter")
-    public static void setAdapter(RecyclerView view, RecyclerView.Adapter adapter) {
-        view.setAdapter(adapter);
-    }
-    @Override
-    public void setMiddleTitle(Toolbar title) {
-
+    override fun observerData() {
+        super.observerData()
+        viewModel.loadState.observe(this, Observer { newState->
+            println("newState ---> $newState")
+            Toast.makeText(context,newState.toString(),Toast.LENGTH_SHORT).show()
+        })
+        viewModel.contentList.observe(this, Observer { datas->
+            listAdapter.setNewData(datas)
+        })
     }
 
-    @Override
-    protected BasePresenter bindPresenter() {
-        return null;
+    override fun loadData() {
+        super.loadData()
+        viewModel.loadData()
     }
 
-    @Override
-    public void popBackListener(int returnCode, Bundle bundle) {
-
+    override fun initView() {
+        binding.tvPersion.paint.flags = Paint.STRIKE_THRU_TEXT_FLAG
+        binding.person = 123
+        binding.price = 1234.0f
+        binding.lifecycleOwner = this
+        binding.click = this
+        binding.manager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+        binding.listAdapter = listAdapter
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.btn_dataBinding:
-                MyUtils.toUrl(this,"DataBinding",getString(R.string.URL_DataBinding));
-                break;
-            case R.id.btn_dataBinding_add:
-                listAdapter.addData(bind.getContent());
-                bind.setContent("");
-                break;
+    override fun onClick(v: View) {
+        when (v.id) {
+            R.id.btn_dataBinding_add -> listAdapter.addData(binding.content.toString())
         }
-
     }
+
+
 }

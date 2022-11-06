@@ -189,7 +189,8 @@ public class AppUtils
             PackageManager pm = context.getPackageManager();
             ApplicationInfo appInfo = pm.getApplicationInfo(context.getPackageName(), PackageManager.GET_META_DATA);
             return appInfo.metaData.getString("UMENG_CHANNEL");
-        } catch (PackageManager.NameNotFoundException ignored) {
+        } catch (Exception exception) {
+
         }
         return "";
     }

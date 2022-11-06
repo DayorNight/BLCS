@@ -43,8 +43,8 @@ public abstract class DemoBase extends BaseFragment implements ActivityCompat.On
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        tfRegular = Typeface.createFromAsset(MyApplication.getContext().getAssets(), "OpenSans-Regular.ttf");
-        tfLight = Typeface.createFromAsset(MyApplication.getContext().getAssets(), "OpenSans-Light.ttf");
+        tfRegular = Typeface.createFromAsset(MyApplication.Companion.getContext().getAssets(), "OpenSans-Regular.ttf");
+        tfLight = Typeface.createFromAsset(MyApplication.Companion.getContext().getAssets(), "OpenSans-Light.ttf");
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 
