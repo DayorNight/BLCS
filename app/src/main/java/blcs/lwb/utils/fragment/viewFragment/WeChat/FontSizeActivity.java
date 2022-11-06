@@ -3,7 +3,7 @@ package blcs.lwb.utils.fragment.viewFragment.WeChat;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Color;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;

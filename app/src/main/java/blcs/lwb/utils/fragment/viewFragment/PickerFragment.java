@@ -4,7 +4,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -48,8 +48,8 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 public class PickerFragment extends BaseFragment {
-    private ArrayList<ProvinceBean> options1Items = new ArrayList<>();
-    private ArrayList<ArrayList<String>> options2Items = new ArrayList<>();
+    private final ArrayList<ProvinceBean> options1Items = new ArrayList<>();
+    private final ArrayList<ArrayList<String>> options2Items = new ArrayList<>();
     private TimePickerView cusomPvTime;
     private TimePickerView pvTime, pvCustomTime, pvCustomLunar;
     private OptionsPickerView pvOptions, pvCustomOptions, pvNoLinkOptions;

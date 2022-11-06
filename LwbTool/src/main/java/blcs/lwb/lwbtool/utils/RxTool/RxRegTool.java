@@ -1,7 +1,4 @@
 package blcs.lwb.lwbtool.utils.RxTool;
-
-import android.support.annotation.Nullable;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -10,7 +7,6 @@ import java.util.Hashtable;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import static blcs.lwb.lwbtool.utils.RxTool.RxConstTool.REGEX_CHZ;
 import static blcs.lwb.lwbtool.utils.RxTool.RxConstTool.REGEX_DATE;
 import static blcs.lwb.lwbtool.utils.RxTool.RxConstTool.REGEX_EMAIL;
@@ -386,7 +382,7 @@ public class RxRegTool {
         return !isNullString(string) && Pattern.matches(regex, string);
     }
 
-    public static boolean isNullString(@Nullable String str) {
+    public static boolean isNullString(String str) {
         return str == null || str.length() == 0 || "null".equals(str);
     }
 

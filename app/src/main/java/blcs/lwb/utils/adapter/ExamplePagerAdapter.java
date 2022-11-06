@@ -1,11 +1,12 @@
 package blcs.lwb.utils.adapter;
 
 import android.graphics.Color;
-import android.support.v4.view.PagerAdapter;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.viewpager.widget.PagerAdapter;
 
 import java.util.List;
 
@@ -14,7 +15,7 @@ import java.util.List;
  */
 
 public class ExamplePagerAdapter extends PagerAdapter {
-    private List<String> mDataList;
+    private final List<String> mDataList;
 
     public ExamplePagerAdapter(List<String> dataList) {
         mDataList = dataList;

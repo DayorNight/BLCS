@@ -14,9 +14,9 @@ import blcs.lwb.lwbtool.R;
  * @author vondear
  */
 public class RxDialogAcfunVideoLoading extends RxDialog {
-    private ProgressBar loading_progressBar;
-    private TextView tv_reminder;
-    private String[] loadingText = {"对的，坚持；错的，放弃！", "你若安好，便是晴天。", "走得太快，灵魂都跟不上了。", "生气是拿别人的错误惩罚自己。", "让未来到来，让过去过去。", "每一种创伤，都是一种成熟。"};
+    private final ProgressBar loading_progressBar;
+    private final TextView tv_reminder;
+    private final String[] loadingText = {"对的，坚持；错的，放弃！", "你若安好，便是晴天。", "走得太快，灵魂都跟不上了。", "生气是拿别人的错误惩罚自己。", "让未来到来，让过去过去。", "每一种创伤，都是一种成熟。"};
 
     public RxDialogAcfunVideoLoading(Context context) {
         super(context);

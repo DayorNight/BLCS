@@ -4,8 +4,9 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.graphics.RectF;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
+
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.SeekBar;
@@ -149,10 +150,7 @@ public class BarChartsFragment extends DemoBase implements SeekBar.OnSeekBarChan
                         break;
                     }
                     case R.id.actionTogglePinch: {
-                        if (chart.isPinchZoomEnabled())
-                            chart.setPinchZoom(false);
-                        else
-                            chart.setPinchZoom(true);
+                        chart.setPinchZoom(!chart.isPinchZoomEnabled());
 
                         chart.invalidate();
                         break;

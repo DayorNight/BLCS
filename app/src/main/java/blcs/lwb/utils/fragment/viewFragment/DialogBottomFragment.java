@@ -1,7 +1,7 @@
 package blcs.lwb.utils.fragment.viewFragment;
 
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -75,25 +75,25 @@ public class DialogBottomFragment extends BaseFragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_dialog_default:
-                init.show(getFragmentManager());
+                init.show(getParentFragmentManager());
                 break;
             case R.id.btn_dialog_top:
-                init.show(getFragmentManager(),Gravity.TOP);
+                init.show(getParentFragmentManager(),Gravity.TOP);
                 break;
             case R.id.btn_dialog_bottom:
-                init.show(getFragmentManager(),Gravity.BOTTOM);
+                init.show(getParentFragmentManager(),Gravity.BOTTOM);
                 break;
             case R.id.btn_dialog_left:
-                init.show(getFragmentManager(),Gravity.LEFT);
+                init.show(getParentFragmentManager(),Gravity.LEFT);
                 break;
             case R.id.btn_dialog_right:
-                init.show(getFragmentManager(),Gravity.RIGHT);
+                init.show(getParentFragmentManager(),Gravity.RIGHT);
                 break;
             case R.id.btn_dialog_center:
-                init.show(getFragmentManager(),Gravity.CENTER);
+                init.show(getParentFragmentManager(),Gravity.CENTER);
                 break;
             case R.id.btn_dialog_custom_image:
-                comDialog.setImage(R.mipmap.img_view).setType(LinCustomDialogFragment.TYPE_IMAGE).show(getFragmentManager());
+                comDialog.setImage(R.mipmap.img_view).setType(LinCustomDialogFragment.TYPE_IMAGE).show(getParentFragmentManager());
                 break;
             case R.id.btn_dialog_custom_sure:
                 comDialog.setTitle("提示").
@@ -104,7 +104,7 @@ public class DialogBottomFragment extends BaseFragment {
                             public void clickSure() {
                                 RxToast.info(activity,"确定");
                             }
-                        }).show(getFragmentManager());
+                        }).show(getParentFragmentManager());
                 break;
             case R.id.btn_dialog_custom_cancle:
                 comDialog.setTitle(getString(R.string.app_name)).
@@ -119,7 +119,7 @@ public class DialogBottomFragment extends BaseFragment {
                             public void clickCancle() {
                                 RxToast.info(activity,"取消");
                             }
-                        }).show(getFragmentManager());
+                        }).show(getParentFragmentManager());
                 break;
             case R.id.btn_dialog_custom_editext:
                 comDialog.setTitle(getString(R.string.app_name)).
@@ -133,13 +133,13 @@ public class DialogBottomFragment extends BaseFragment {
                             public void clickCancle() {
                                 RxToast.info(activity,"取消");
                             }
-                        }).show(getFragmentManager());
+                        }).show(getParentFragmentManager());
                 break;
             case R.id.btn_dialog_custom_loading:
-                comDialog.setType(LinCustomDialogFragment.TYPE_LOADING).show(getFragmentManager());
+                comDialog.setType(LinCustomDialogFragment.TYPE_LOADING).show(getParentFragmentManager());
                 break;
             case R.id.btn_dialog_custom_big_image:
-                comDialog.setImage(R.mipmap.ic1).setType(LinCustomDialogFragment.TYPE_IMAGE_BIG).show(getFragmentManager());
+                comDialog.setImage(R.mipmap.ic1).setType(LinCustomDialogFragment.TYPE_IMAGE_BIG).show(getParentFragmentManager());
                 break;
         }
     }

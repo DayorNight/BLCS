@@ -1,7 +1,7 @@
 package blcs.lwb.utils.fragment.viewFragment;
 
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.widget.SeekBar;
 
 import java.util.ArrayList;
@@ -39,7 +39,7 @@ public class Color_SpiderFragment extends BaseFragment implements SeekBar.OnSeek
     LightnessSlider vLightnessSliderLevel;
     @BindView(R.id.v_alpha_slider_level)
     AlphaSlider vAlphaSliderLevel;
-    private String[] nameStrs = {
+    private final String[] nameStrs = {
             "金钱", "能力", "美貌", "智慧", "交际",
             "口才", "力量", "智力", "体力", "体质",
             "敏捷", "精神", "耐力", "精通", "急速",

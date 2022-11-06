@@ -1,6 +1,5 @@
 package blcs.lwb.utils.adapter.BaseDemoAdapter.provider;
 
-import com.chad.library.adapter.base.entity.AbstractExpandableItem;
 import com.chad.library.adapter.base.entity.MultiItemEntity;
 
 import blcs.lwb.utils.adapter.BaseDemoAdapter.ExpandableItemAdapter;
@@ -8,7 +7,7 @@ import blcs.lwb.utils.adapter.BaseDemoAdapter.ExpandableItemAdapter;
 /**
  * Created by luoxw on 2016/8/10.
  */
-public class Level0Item extends AbstractExpandableItem<Level1Item> implements MultiItemEntity {
+public class Level0Item implements MultiItemEntity {
     public String title;
     public String subTitle;
 
@@ -22,8 +21,4 @@ public class Level0Item extends AbstractExpandableItem<Level1Item> implements Mu
         return ExpandableItemAdapter.TYPE_LEVEL_0;
     }
 
-    @Override
-    public int getLevel() {
-        return 0;
-    }
 }

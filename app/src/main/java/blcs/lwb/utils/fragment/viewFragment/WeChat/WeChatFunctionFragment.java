@@ -2,12 +2,13 @@ package blcs.lwb.utils.fragment.viewFragment.WeChat;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.OrientationHelper;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.recyclerview.widget.OrientationHelper;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
 
 import blcs.lwb.lwbtool.base.BasePresenter;
 
@@ -46,7 +47,7 @@ public class WeChatFunctionFragment extends BaseFragment {
         RecyclerUtil.init(activity,OrientationHelper.VERTICAL,mAdapter,mRecycyler);
         mAdapter.setNewData(MyUtils.getArray(activity, R.array.WeChat_Function));
 
-        mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+        mAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 String item = (String) adapter.getItem(position);

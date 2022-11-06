@@ -9,7 +9,8 @@ import android.content.pm.PackageStats;
 import android.os.Build;
 import android.os.storage.StorageManager;
 import android.os.storage.StorageVolume;
-import android.support.annotation.RequiresApi;
+
+import androidx.annotation.RequiresApi;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
@@ -97,7 +98,7 @@ public class AppSizeUtils {
      */
     public void getAppsize(Context context) {
         try {
-            Method method = PackageManager.class.getMethod("getPackageSizeInfo", new Class[]{String.class, IPackageStatsObserver.class});
+            Method method = PackageManager.class.getMethod("getPackageSizeInfo", String.class, IPackageStatsObserver.class);
             // 调用 getPackageSizeInfo 方法，需要两个参数：1、需要检测的应用包名；2、回调
             method.invoke(context.getPackageManager(), context.getPackageName(), new IPackageStatsObserver.Stub() {
                 @Override

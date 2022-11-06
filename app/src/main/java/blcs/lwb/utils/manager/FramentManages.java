@@ -2,11 +2,12 @@ package blcs.lwb.utils.manager;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import java.util.ArrayList;
-
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.fragment.otherFragment.Jetpack.NavigationFragment;
 import blcs.lwb.utils.fragment.otherFragment.Jetpack.PagingFragment;
@@ -21,16 +22,6 @@ import blcs.lwb.utils.fragment.viewFragment.AudioAndVideoFragment;
 import blcs.lwb.utils.fragment.viewFragment.AudioFragment;
 import blcs.lwb.utils.fragment.viewFragment.BannerFragment;
 import blcs.lwb.utils.fragment.viewFragment.BarQrCodeFragment;
-import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.AnimationRecyclerFragment;
-import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.DragAndSwipeFragment;
-import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.EmptyViewFragment;
-import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.ExpandableItemFragment;
-import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.Header_FooterFragment;
-import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.ItemClickRecyclerFragment;
-import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.MultipleItemRecyclerFragment;
-import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.PullToRefreshFragment;
-import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.SectionFragment;
-import blcs.lwb.utils.fragment.viewFragment.BaseAdapterFragment.UpFetchDataFragment;
 import blcs.lwb.utils.fragment.BaseFragment;
 import blcs.lwb.utils.fragment.toolFragment.BitmapUtilsFragment;
 import blcs.lwb.utils.fragment.otherFragment.BlogsFragment;
@@ -110,7 +101,7 @@ import blcs.lwb.utils.mvp.BaseFragmentActivity;
  * @author WESTAKE
  */
 public class FramentManages {
-    private ArrayList<BaseFragment> list_Frament;// 保存当前Activity的Frament
+    private final ArrayList<Fragment> list_Frament;// 保存当前Activity的Frament
     public FragmentManager fm;// 片段管理器
     /**
      * 片段名
@@ -233,7 +224,7 @@ public class FramentManages {
         fm = activity.getSupportFragmentManager();
     }
 
-    private BaseFragment getFrament(Activity activity, String alias) {
+    private Fragment getFrament(Activity activity, String alias) {
         switch (alias) {
             default:
                 return null;
@@ -262,26 +253,6 @@ public class FramentManages {
                 return new RecyclerViewFragment();
             case FramentManages.TurnTableView:
                 return new TurnTableViewFragment();
-            case FramentManages.AnimationRecycler:
-                return new AnimationRecyclerFragment();
-            case FramentManages.MultipleItemRecycler:
-                return new MultipleItemRecyclerFragment();
-            case FramentManages.Header_FooterRecycler:
-                return new Header_FooterFragment();
-            case FramentManages.PullToRefreshRecycler:
-                return new PullToRefreshFragment();
-            case FramentManages.SectionRecycler:
-                return new SectionFragment();
-            case FramentManages.EmptyViewRecycler:
-                return new EmptyViewFragment();
-            case FramentManages.DragAndSwipeRecycler:
-                return new DragAndSwipeFragment();
-            case FramentManages.ItemClickRecycler:
-                return new ItemClickRecyclerFragment();
-            case FramentManages.ExpandableItemRecycler:
-                return new ExpandableItemFragment();
-            case FramentManages.UpFetchDataRecycler:
-                return new UpFetchDataFragment();
             case FramentManages.MarqueeView:
                 return new MarqueeViewFragment();
             case FramentManages.CustomActivityOnCrash:
@@ -439,7 +410,7 @@ public class FramentManages {
      * @param alias    别名
      */
     public void replaceFrament(int viewId, BaseFragmentActivity activity, String alias) {
-        BaseFragment base = getFrament(activity, alias);
+        Fragment base = getFrament(activity, alias);
         if (base == null) {
             return;
         }
@@ -463,7 +434,7 @@ public class FramentManages {
      */
     public void addFrament(int viewId, BaseFragmentActivity activity, String alias,
                            Bundle bundle, boolean isAnim) {
-        BaseFragment base = getFrament(activity, alias);
+        Fragment base = getFrament(activity, alias);
         if (base == null) {
             return;
         }
@@ -499,7 +470,7 @@ public class FramentManages {
      *
      * @return
      */
-    public BaseFragment getLastFrament() {
+    public Fragment getLastFrament() {
         if (list_Frament.size() - 1 >= 0) {
             return list_Frament.get(list_Frament.size() - 1);
         } else {
@@ -512,7 +483,7 @@ public class FramentManages {
      *
      * @return
      */
-    public ArrayList<BaseFragment> getAllFrament() {
+    public ArrayList<Fragment> getAllFrament() {
         return list_Frament;
     }
 

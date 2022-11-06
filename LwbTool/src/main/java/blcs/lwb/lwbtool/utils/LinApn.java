@@ -16,12 +16,12 @@ public class LinApn {
     /**
      * 当前连接APN
      * */
-    private Uri APN_URI_NOW =Uri.parse("content://telephony/carriers/current");
+    private final Uri APN_URI_NOW =Uri.parse("content://telephony/carriers/current");
     /**
      * 所有APN
      * */
-    private Uri APN_URI = Uri.parse("content://telephony/carriers");
-    private Uri CURRENT_APN_URI = Uri.parse("content://telephony/carriers/preferapn");
+    private final Uri APN_URI = Uri.parse("content://telephony/carriers");
+    private final Uri CURRENT_APN_URI = Uri.parse("content://telephony/carriers/preferapn");
     // 新增一个cmnet接入点
 
     public LinApn(Context context){
@@ -53,7 +53,7 @@ public class LinApn {
         values.put("type", "default");
         values.put("numeric", NUMERIC);
         values.put("mcc", NUMERIC.substring(0, 3));
-        values.put("mnc", NUMERIC.substring(3, NUMERIC.length()));
+        values.put("mnc", NUMERIC.substring(3));
         //代理
         values.put("proxy", "");
         //端口

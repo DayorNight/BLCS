@@ -3,8 +3,8 @@ package blcs.lwb.utils.fragment.viewFragment.MagicIndicator;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
-import android.support.v7.widget.Toolbar;
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 
 import net.lucode.hackware.magicindicator.MagicIndicator;
@@ -32,7 +32,7 @@ public class DynamicTabFragment extends BaseFragment {
     MagicIndicator mMagicIndicator;
     @BindView(R.id.view_pager)
     ViewPager mViewPager;
-    private List<String> mDataList = new ArrayList<String>(Arrays.asList(CHANNELS));
+    private final List<String> mDataList = new ArrayList<String>(Arrays.asList(CHANNELS));
     private CommonNavigator mCommonNavigator;
     @Override
     public void setMiddleTitle(Toolbar title) {

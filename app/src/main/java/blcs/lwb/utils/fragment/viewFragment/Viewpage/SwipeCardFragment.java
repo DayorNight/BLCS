@@ -1,9 +1,10 @@
 package blcs.lwb.utils.fragment.viewFragment.Viewpage;
 
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.support.v7.widget.helper.ItemTouchHelper;
+
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 
 import java.util.ArrayList;
 
@@ -21,7 +22,7 @@ public class SwipeCardFragment extends BaseFragment {
     @BindView(R.id.tool_recyclerView)
     RecyclerView activityReview;
     private SwipeCardAdapter mAdatper;
-    private ArrayList<SwipeCardBean> mList=new ArrayList<>();
+    private final ArrayList<SwipeCardBean> mList=new ArrayList<>();
     @Override
     public void setMiddleTitle(Toolbar title) {
 

@@ -46,10 +46,7 @@ public class LinNetStatus
 			ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
 			NetworkInfo info = cm.getActiveNetworkInfo();
 			int type = info.getType();
-			if (ConnectivityManager.TYPE_WIFI == type)
-			{
-				return true;
-			}
+            return ConnectivityManager.TYPE_WIFI == type;
 		}
 		return false;
 	}
@@ -67,10 +64,7 @@ public class LinNetStatus
 			ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
 			NetworkInfo info = cm.getActiveNetworkInfo();
 			int type = info.getType();
-			if (ConnectivityManager.TYPE_MOBILE == type)
-			{
-				return true;
-			}
+            return ConnectivityManager.TYPE_MOBILE == type;
 		}
 		return false;
 	}

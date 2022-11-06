@@ -1,7 +1,10 @@
 package blcs.lwb.utils.fragment.toolFragment;
 
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
+import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ViewDataBinding;
+
 import android.view.View;
 import android.widget.Button;
 
@@ -10,6 +13,7 @@ import blcs.lwb.lwbtool.utils.FileUtils;
 import blcs.lwb.lwbtool.utils.LinCleanData;
 import blcs.lwb.utils.MyApplication;
 import blcs.lwb.utils.R;
+import blcs.lwb.utils.databinding.FragmentLincleanDataBinding;
 import blcs.lwb.utils.fragment.BaseFragment;
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -20,6 +24,7 @@ public class LinCleanDataFragment extends BaseFragment {
     Button btn_get_allCache;
     @BindView(R.id.btn_clean_allCache)
     Button btn_clean_allCache;
+    private FragmentLincleanDataBinding bind;
 
 
     @Override
@@ -29,6 +34,7 @@ public class LinCleanDataFragment extends BaseFragment {
 
     @Override
     protected void initView() {
+        bind = DataBindingUtil.bind(mView);
 
     }
 
@@ -51,7 +57,8 @@ public class LinCleanDataFragment extends BaseFragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_get_allCache:
-                LinCleanData.getAllCacheSize(MyApplication.context);
+                String allCacheSize = LinCleanData.getAllCacheSize(MyApplication.Companion.getContext());
+                bind.setContent(allCacheSize);
                 break;
             case R.id.btn_clean_allCache:
                 LinCleanData.clearAllCache(activity);

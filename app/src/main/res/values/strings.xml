@@ -122,6 +122,9 @@
     <string name="save">保存</string>
     <string name="Multi_Language">多语言</string>
 
+    <string name="dataBind_price">价格：%.2f元</string>
+    <string name="dataBind_person">人数：%d人</string>
+
 
     <!--博客-->
     <string name="URL_Paging">https://www.jianshu.com/p/10bf4bf59122</string>
@@ -207,7 +210,5 @@
     <string name="Url_zc">https://www.zcool.com.cn/work/ZMzY0MDAwMjA=.html</string>
     <string name="viewModel">1.添加依赖： implementation androidx.lifecycle:lifecycle-extensions:2.1.0 \n 2.继承ViewModel或AndroidViewModel \n 3.使用： ViewModelProviders.of(this).get(DemoViewModel.class)</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

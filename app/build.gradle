@@ -1,5 +1,10 @@
-apply plugin: 'com.android.application'
-apply plugin: 'org.greenrobot.greendao'
+plugins {
+    id 'com.android.application'
+    id 'org.greenrobot.greendao'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+}
 
 
 //隐藏签名信息 ======》
@@ -56,11 +61,6 @@ android {
         }
     }
 //    多渠道打包
-    productFlavors {
-        wandoujia {}
-        xiaomi {}
-        pugongying {}
-    }
     productFlavors.all { flavor ->
         flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
     }
@@ -68,7 +68,7 @@ android {
     applicationVariants.all { variant ->
         variant.outputs.all {
             def formattedDate = new Date().format('yyyy_MM_dd')
-            outputFileName = rootProject.getName() + "-" + variant.flavorName + "-" + buildType.name + "-" + formattedDate + "-v" + defaultConfig.versionName + "-" + defaultConfig.versionCode + ".apk";
+            outputFileName = rootProject.getName() + "-" + variant.flavorName + "-" + buildType.name + "-" + formattedDate + "-v" + defaultConfig.versionName + "-" + defaultConfig.versionCode + ".apk"
         }
     }
 
@@ -84,8 +84,8 @@ android {
         sourceCompatibility 1.8
     }
 
-    dataBinding{
-        enabled = true
+    buildFeatures {
+        dataBinding true
     }
 }
 
@@ -93,15 +93,8 @@ dependencies {
     // ========基本关联=======
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':LwbTool')
-    implementation Dp.ConstraintLayout
-    testImplementation Dp.Junit
-    androidTestImplementation Dp.Espresso
-    androidTestImplementation Dp.Uiautomator
+
     annotationProcessor Dp.ButterknifeCompiler
-    implementation Dp.UmengCommon
-    implementation Dp.UmengAnalytics
+    annotationProcessor Dp.ButterknifeCompiler
     annotationProcessor Dp.GlideCompiler
-    debugImplementation Dp.DebugDbEncrypt
-    annotationProcessor Dp.room
-    implementation 'com.airbnb.android:lottie:2.7.0'
 }

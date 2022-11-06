@@ -3,7 +3,7 @@ package blcs.lwb.utils.fragment.viewFragment.MPAndroidChart;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -47,15 +47,15 @@ public class ScrollingChartsFragment extends DemoBase {
         for (int i = 0; i < 30; i++) {
 
             if (i % 3 == 0) {
-                list.add(new LineChartItem(generateDataLine(i + 1), MyApplication.getContext()));
+                list.add(new LineChartItem(generateDataLine(i + 1), MyApplication.Companion.getContext()));
             } else if (i % 3 == 1) {
-                list.add(new BarChartItem(generateDataBar(i + 1), MyApplication.getContext()));
+                list.add(new BarChartItem(generateDataBar(i + 1), MyApplication.Companion.getContext()));
             } else if (i % 3 == 2) {
-                list.add(new PieChartItem(generateDataPie(), MyApplication.getContext()));
+                list.add(new PieChartItem(generateDataPie(), MyApplication.Companion.getContext()));
             }
         }
 
-        ChartDataAdapter cda = new ChartDataAdapter(MyApplication.getContext(), list);
+        ChartDataAdapter cda = new ChartDataAdapter(MyApplication.Companion.getContext(), list);
         lv.setAdapter(cda);
     }
 
@@ -88,9 +88,9 @@ public class ScrollingChartsFragment extends DemoBase {
             super(context, 0, objects);
         }
 
-        @NonNull
+
         @Override
-        public View getView(int position, View convertView, @NonNull ViewGroup parent) {
+        public View getView(int position, View convertView, ViewGroup parent) {
             //noinspection ConstantConditions
             return getItem(position).getView(position, convertView, getContext());
         }

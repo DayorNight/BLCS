@@ -1,122 +1,93 @@
 ext {
     As = [
-            compileSdkVersion: 30,
+            compileSdkVersion: 28,
             applicationId    : "blcs.lwb.utils",
             minSdkVersion    : 21,
-            targetSdkVersion : 30,
+            targetSdkVersion : 28,
             versionCode      : 6,
             versionName      : "1.0.6",
-            /*appkotlin*/
-            applicationId2    : "blcs.lwb.kotlin",
     ]
-    Vs = [
-            Constraint            : "1.1.3",
-            Junit                 : "4.13.1",
-            Espresso              : "3.0.2",
-            Uiautomator           : "2.1.3",
-            Butterknife           : "8.8.1",
-            Glide                 : "4.8.0",
-            DebugDbEncrypt        : "1.0.6",
-            Runner                : "1.3.0",
-            Agentweb              : "4.0.2",
-            Marqueeview           : "1.3.3",
-            AdapterHelper         : "2.9.42",
-            Leakcanary            : '2.6',
-            NavigationBar         : "2.0.4",
-            MagicIndicator        : "1.5.0",
-            Fastjson              : "1.1.59.android",
-            Banner                : "1.4.10",
-            Androidsvg            : "1.3",
-            Retrofit2             : "2.5.0",
-            Retrofit2ConverterGson: "2.5.0",
-            Retrofit2Rxjava2      : "1.0.0",
-            Rxlifecycle           : "2.1.0",
-            PickerView            : "4.1.9",
-            Litepal               : "3.0.0",
-            Greendao              : "3.2.2",
-            Qmui                  : "1.4.0",
-            MPAndroidChart        : "v3.1.0",
-            Zxing                 : "2.2.5",
-            lifeViewModel         : "1.1.0",
-            navigation            : "1.0.0-alpha01",
-            paging                : "1.0.0",
-            workManager           : "1.0.1",
-    ]
-    SupportVersion = "28.0.0"
 
     Dp = [
-            SupportV4             : "com.android.support:support-v4:$SupportVersion",
-            Recyclerview          : "com.android.support:recyclerview-v7:$SupportVersion",
-            Design                : "com.android.support:design:$SupportVersion",
-            AppcompatV7           : "com.android.support:appcompat-v7:$SupportVersion",
+            kotlin                : "org.jetbrains.kotlin:kotlin-stdlib:1.4.32",
+            SupportV4             : "androidx.legacy:legacy-support-v4:1.0.0",
+            fragmentktx           : "androidx.fragment:fragment-ktx:1.1.0",
+            activityktx           : "androidx.activity:activity-ktx:1.1.0",
+            corektx               : "androidx.core:core-ktx:1.1.0",
+            coroutines            : "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.0",
+            Recyclerview          : "androidx.recyclerview:recyclerview:1.2.1",
+            Design                : "androidx.compose.material:material:1.0.0-beta01",
+            Appcompat             : "androidx.appcompat:appcompat:1.3.1",
             // ConstraintLayout布局
-            ConstraintLayout      : "com.android.support.constraint:constraint-layout:$Vs.Constraint",
+            ConstraintLayout      : "androidx.constraintlayout:constraintlayout:2.1.3",
             // 测试
-            Junit                 : "junit:junit:$Vs.Junit",
-            Runner                : "androidx.test:runner:$Vs.Runner",
-            Espresso              : "com.android.support.test.espresso:espresso-core:$Vs.Espresso",
-            Uiautomator           : "com.android.support.test.uiautomator:uiautomator-v18:$Vs.Uiautomator",
-            rules                 : "androidx.test:rules:$Vs.Runner",
-            EspressoWeb           : "com.android.support.test.espresso:espresso-web:$Vs.Espresso",
-            EspressoContrib       : "com.android.support.test.espresso:espresso-contrib:$Vs.Espresso",
-            // butterknife        依赖注入框架，省去寻找控件的方法findViewById
-
-            Butterknife           : "com.jakewharton:butterknife:$Vs.Butterknife",
-            ButterknifeCompiler   : "com.jakewharton:butterknife-compiler:$Vs.Butterknife",
+            Junit                 : "junit:junit:4.13.1",
+            Runner                : "androidx.test:runner:1.3.0",
+            Espresso              : "androidx.test.espresso:espresso-core:3.4.0",
+            Uiautomator           : "com.android.support.test.uiautomator:uiautomator-v18:2.1.3",
+            rules                 : "androidx.test:rules:1.3.0",
+            Butterknife           : "com.jakewharton:butterknife:10.2.3",
+            ButterknifeCompiler   : "com.jakewharton:butterknife-compiler:10.2.3",
             // 友盟 分析
             UmengCommon           : "com.umeng.sdk:common:latest.integration",
             UmengAnalytics        : "com.umeng.sdk:analytics:latest.integration",
             // glide 图片加载框架
-            Glide                 : "com.github.bumptech.glide:glide:$Vs.Glide",
-            GlideCompiler         : "com.github.bumptech.glide:compiler:$Vs.Glide",
+            Glide                 : "com.github.bumptech.glide:glide:4.13.2",
+            GlideCompiler         : "com.github.bumptech.glide:compiler:4.13.2",
             // 数据库可视化工具 可以在线查看数据库
-            DebugDbEncrypt        : "com.amitshekhar.android:debug-db-encrypt:$Vs.DebugDbEncrypt",
+            DebugDbEncrypt        : "com.amitshekhar.android:debug-db-encrypt:1.0.6",
             // AgentWeb:https://github.com/Justson/AgentWeb 一款webView封装框架
-            Agentweb              : "com.just.agentweb:agentweb:$Vs.Agentweb",
+            Agentweb              : "com.just.agentweb:agentweb:4.0.2",
             // 跑马灯 :https://github.com/sunfusheng/MarqueeView
-            Marqueeview           : "com.sunfusheng:marqueeview:$Vs.Marqueeview",
+            Marqueeview           : "com.sunfusheng:marqueeview:1.3.3",
             // BaseRecyclerViewAdapterHelper:https://github.com/CymChad/BaseRecyclerViewAdapterHelper
             // 封装baseAdapter 可实现不同的功能 具体查看应用Veiw ->RecyclerView
-            AdapterHelper         : "com.github.CymChad:BaseRecyclerViewAdapterHelper:$Vs.AdapterHelper",
+            AdapterHelper         : "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.7",
             // LeakCanary：https://github.com/square/leakcanary 检测内存泄露工具
-            Leakcanary            : "com.squareup.leakcanary:leakcanary-android:$Vs.Leakcanary",
+            Leakcanary            : "com.squareup.leakcanary:leakcanary-android:2.6",
             // BottomNavigationBar底部导航栏
-            NavigationBar         : "com.ashokvarma.android:bottom-navigation-bar:$Vs.NavigationBar",
+            NavigationBar         : "com.ashokvarma.android:bottom-navigation-bar:2.0.4",
             // MagicIndicator 指示器
-            MagicIndicator        : "com.github.hackware1993:MagicIndicator:$Vs.MagicIndicator",
+            MagicIndicator        : "com.github.hackware1993:MagicIndicator:1.5.0",
             // Fastjson:https://github.com/alibaba/fastjson
-            Fastjson              : "com.alibaba:fastjson:$Vs.Fastjson",
+            Fastjson              : "com.alibaba:fastjson:1.1.59.android",
             // banner:https://github.com/youth5201314/banner 轮播图
-            Banner                : "com.youth.banner:banner:$Vs.Banner",
+            Banner                : "com.youth.banner:banner:1.4.10",
             // svg:https://www.jianshu.com/p/64e9598806cb
-            Androidsvg            : "com.caverock:androidsvg-aar:$Vs.Androidsvg",
+            Androidsvg            : "com.caverock:androidsvg-aar:1.3",
             // retrofit网络请求框架
-            Retrofit2             : "com.squareup.retrofit2:retrofit:$Vs.Retrofit2",
+            Retrofit2             : "com.squareup.retrofit2:retrofit:2.9.0",
             // retrofit添加Json解析返回数据
-            Retrofit2ConverterGson: "com.squareup.retrofit2:converter-gson:$Vs.Retrofit2",
+            Retrofit2ConverterGson: "com.squareup.retrofit2:converter-gson:2.9.0",
             // retrofit添加Rxjava支持
-            Retrofit2Rxjava2      : "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$Vs.Retrofit2Rxjava2",
-            LifecycleViewModel    : "android.arch.lifecycle:extensions:$Vs.lifeViewModel",
+            Retrofit2Rxjava2      : "com.squareup.retrofit2:adapter-rxjava3:2.9.0",
+
+            LifecycleViewModel    : "android.arch.lifecycle:extensions:1.5.0",
             // rxlifecycle框架 管理生命周期
-            Rxlifecycle           : "com.trello.rxlifecycle2:rxlifecycle-components:$Vs.Rxlifecycle",
+            Rxlifecycle           : "com.trello.rxlifecycle4:rxlifecycle-components:4.0.2",
             // PickerView https://github.com/Bigkoo/Android-PickerView 选择器弹窗
-            PickerView            : "com.contrarywind:Android-PickerView:$Vs.PickerView",
+            PickerView            : "com.contrarywind:Android-PickerView:4.1.9",
             // 开源数据库
-            Litepal               : "org.litepal.android:java:$Vs.Litepal",
-            Greendao              : "org.greenrobot:greendao:$Vs.Greendao",
+            Litepal               : "org.litepal.android:java:3.0.0",
+            Greendao              : "org.greenrobot:greendao:3.3.0",
             // 腾讯开源UI库 https://qmuiteam.com/android/get-started/
-            Qmui                  : "com.qmuiteam:qmui:$Vs.Qmui",
+            Qmui                  : "com.qmuiteam:qmui:1.4.0",
             // MPAndroid图表库 https://github.com/PhilJay/MPAndroidChart
-            MPAndroidChart        : "com.github.PhilJay:MPAndroidChart:$Vs.MPAndroidChart",
+            MPAndroidChart        : "com.github.PhilJay:MPAndroidChart:v3.1.0",
             // 二维码相关功能 https://github.com/yuzhiqiang1993/zxing
-            Zxing                 : "com.github.yuzhiqiang1993:zxing:$Vs.Zxing",
-            room                  : "android.arch.persistence.room:compiler:$Vs.lifeViewModel",
+            Zxing                 : "com.github.yuzhiqiang1993:zxing:2.2.5",
+            room                  : "androidx.room:room-compiler:2.3.0",
+            roomkt                  : "androidx.room:room-ktx:2.3.0",
             //navigation
-            navigation            : "android.arch.navigation:navigation-fragment:$Vs.navigation",
-            navigationUI          : "android.arch.navigation:navigation-ui:$Vs.navigation",
+            navigation            : "android.arch.navigation:navigation-fragment:1.5.0",
+            navigationUI          : "android.arch.navigation:navigation-ui:1.5.0",
             //paging
-            paging                : "android.arch.paging:runtime:$Vs.paging",
+            paging                : "android.arch.paging:runtime:1.5.0",
             //paging
-            workManager           : "android.arch.work:work-runtime:$Vs.workManager"
+            workManager           : "android.arch.work:work-runtime:1.5.0",
+            //blockcanary
+            blockCanary           : "com.github.markzhai:blockcanary-android:1.5.0",
+            //lottie
+            lottie                : "com.airbnb.android:lottie:3.6.0"
     ]
 }

@@ -6,7 +6,7 @@
               android:gravity="center"
               android:orientation="horizontal">
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
@@ -27,7 +27,8 @@
                 android:id="@+id/itme_iv_icon"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@mipmap/gv_animation"/>
+                android:src="@mipmap/ic_launcher"
+                />
 
             <TextView
                 android:id="@+id/item_tv_title"
@@ -42,6 +43,6 @@
                 android:fontFamily="sans-serif-condensed"
                 />
         </LinearLayout>
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 </LinearLayout>
 

@@ -2,29 +2,25 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="blcs.lwb.utils">
-    <!--友盟统计-->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
-    <!--动态权限申请-->
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <uses-permission android:name="android.permission.READ_CALENDAR"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.BODY_SENSORS"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <!-- 友盟统计 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" /> <!-- 动态权限申请 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.BODY_SENSORS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
-
-    <!--闹钟-->
+    <uses-permission android:name="android.permission.CALL_PHONE" /> <!-- 闹钟 -->
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
-
-    <uses-permission android:name="android.permission.VIBRATE" /> <!-- 震动权限 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:name=".MyApplication"
@@ -35,46 +31,43 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".EmptyActivity"></activity>
         <activity
             android:name=".SplashActivity"
-            android:theme="@style/AppThemeBg"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            >
+            android:theme="@style/AppThemeBg">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:launchMode="singleTask"/>
-
+            android:launchMode="singleTask" />
         <activity
             android:name=".PublicFragmentActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="PublicFragmentActivity"
-            android:launchMode="singleTask"
             android:hardwareAccelerated="true"
-            android:windowSoftInputMode="stateAlwaysHidden"
-            />
-
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name=".fragment.viewFragment.WeChat.FontSizeActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="@string/FontSizeActivity"
-            />
+            android:label="@string/FontSizeActivity" />
         <activity
             android:name=".fragment.viewFragment.WeChat.WeChatStorageActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="@string/WeChatStorageActivity"
-            />
+            android:label="@string/WeChatStorageActivity" />
 
-        <service android:name=".fragment.viewFragment.FloatingWindowService"/>
-        <!--友盟统计-->
-        <meta-data android:value="5b98c6f98f4a9d317b00002f" android:name="UMENG_APPKEY"/>
-        <meta-data android:value="${UMENG_CHANNEL_VALUE}"  android:name="UMENG_CHANNEL"  />
-
+        <service android:name=".fragment.viewFragment.FloatingWindowService" /> <!-- 友盟统计 -->
+<!--        <meta-data-->
+<!--            android:name="UMENG_APPKEY"-->
+<!--            android:value="5b98c6f98f4a9d317b00002f" />-->
+<!--        <meta-data-->
+<!--            android:name="UMENG_CHANNEL"-->
+<!--            android:value="${UMENG_CHANNEL_VALUE}" />-->
     </application>
 
 </manifest>

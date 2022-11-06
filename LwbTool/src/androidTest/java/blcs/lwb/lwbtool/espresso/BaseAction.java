@@ -8,7 +8,7 @@ import android.support.test.espresso.ViewInteraction;
 import android.support.test.espresso.action.MotionEvents;
 import android.support.test.espresso.contrib.RecyclerViewActions;
 import android.support.test.espresso.matcher.BoundedMatcher;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.text.InputType;
 import android.view.MotionEvent;
 import android.view.View;

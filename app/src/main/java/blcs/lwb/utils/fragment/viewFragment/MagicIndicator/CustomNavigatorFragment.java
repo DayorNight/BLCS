@@ -2,8 +2,8 @@ package blcs.lwb.utils.fragment.viewFragment.MagicIndicator;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
-import android.support.v7.widget.Toolbar;
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.widget.Toolbar;
 
 import net.lucode.hackware.magicindicator.MagicIndicator;
 import net.lucode.hackware.magicindicator.ViewPagerHelper;
@@ -29,7 +29,7 @@ public class CustomNavigatorFragment extends BaseFragment {
     @BindView(R.id.magic_indicator3)
     MagicIndicator magicIndicator3;
     private static final String[] CHANNELS = new String[]{"CUPCAKE", "DONUT", "ECLAIR", "GINGERBREAD", "HONEYCOMB", "ICE_CREAM_SANDWICH", "JELLY_BEAN", "KITKAT", "LOLLIPOP", "M", "NOUGAT"};
-    private List<String> mDataList = Arrays.asList(CHANNELS);
+    private final List<String> mDataList = Arrays.asList(CHANNELS);
 
 
     @Override

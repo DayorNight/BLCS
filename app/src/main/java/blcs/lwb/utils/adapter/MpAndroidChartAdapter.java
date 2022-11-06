@@ -1,8 +1,8 @@
 package blcs.lwb.utils.adapter;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 
 public class MpAndroidChartAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
 

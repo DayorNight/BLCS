@@ -1,16 +1,25 @@
 package blcs.lwb.lwbtool.retrofit;
 
+import android.util.Log;
+
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
 import blcs.lwb.lwbtool.bean.BaseResponse;
 import blcs.lwb.lwbtool.utils.LogUtils;
-import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
 
 /**
  * 数据返回统一处理  参考https://www.jianshu.com/p/ff619fea7e22
  * @param <T>
  */
-public abstract class BaseObserver<T> implements Observer<BaseResponse<T>> {
+public abstract class BaseObserver<T> implements Subscriber<BaseResponse<T>> {
     private static final String TAG = "BaseObserver";
+
+//    @Override
+//    public void onSubscribe(Subscription s) {
+//        s.cancel();
+//    }
+
     @Override
     public void onNext(BaseResponse<T> response) {
         LogUtils.e("response " +response.toString() );
@@ -32,12 +41,6 @@ public abstract class BaseObserver<T> implements Observer<BaseResponse<T>> {
     public void onComplete() {
 
     }
-
-    @Override
-    public void onSubscribe(Disposable d) {
-
-    }
-
     public abstract void onSuccess(T result);
 
     public abstract void onFailure(Throwable e,String errorMsg);

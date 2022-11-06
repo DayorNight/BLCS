@@ -5,9 +5,10 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
-import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 import android.util.TypedValue;
+
+import androidx.appcompat.widget.AppCompatTextView;
 
 import blcs.lwb.lwbtool.R;
 import blcs.lwb.lwbtool.utils.DensityUtils;
@@ -21,7 +22,7 @@ public class RedCircleTextView extends AppCompatTextView {
 
     private Paint mPaint;
     private int mNormalSize;
-    private Context context;
+    private final Context context;
 
     public RedCircleTextView(Context context) {
         super(context);

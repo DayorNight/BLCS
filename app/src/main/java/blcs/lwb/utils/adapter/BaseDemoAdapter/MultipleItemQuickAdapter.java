@@ -1,15 +1,14 @@
 package blcs.lwb.utils.adapter.BaseDemoAdapter;
 
-import android.content.Context;
-
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
+import com.chad.library.adapter.base.viewholder.BaseViewHolder;
+
 import java.util.List;
 import blcs.lwb.utils.R;
 
 public class MultipleItemQuickAdapter extends BaseMultiItemQuickAdapter<MultipleItem, BaseViewHolder> {
 
-    public MultipleItemQuickAdapter(Context context, List data) {
+    public MultipleItemQuickAdapter( List data) {
         super(data);
         addItemType(MultipleItem.TEXT, R.layout.item_text_view);
         addItemType(MultipleItem.IMG, R.layout.item_image_view);

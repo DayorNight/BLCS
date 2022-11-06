@@ -1,8 +1,8 @@
 package blcs.lwb.utils.bean;
 
-import android.arch.persistence.room.ColumnInfo;
-import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.PrimaryKey;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 /**
  * 通过@Entity 注解 建立一个表

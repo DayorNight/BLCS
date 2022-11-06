@@ -1,6 +1,5 @@
 package blcs.lwb.lwbtool.utils;
 
-import android.arch.lifecycle.LiveData;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -8,12 +7,14 @@ import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
+import androidx.lifecycle.LiveData;
+
 //Demo1扩展LiveData类(监听网络状态)
 public class NetworkLiveData extends LiveData<NetworkInfo> {
 
     private final Context mContext;
     static NetworkLiveData mNetworkLiveData;
-    private NetworkReceiver mNetworkReceiver;
+    private final NetworkReceiver mNetworkReceiver;
     private final IntentFilter mIntentFilter;
 
     private static final String TAG = "NetworkLiveData";

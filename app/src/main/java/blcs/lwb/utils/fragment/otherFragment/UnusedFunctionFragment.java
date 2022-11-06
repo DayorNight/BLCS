@@ -1,25 +1,20 @@
 package blcs.lwb.utils.fragment.otherFragment;
 
-import android.content.DialogInterface;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.Arrays;
 
 import blcs.lwb.lwbtool.base.BasePresenter;
-import blcs.lwb.lwbtool.utils.LinCommon;
 import blcs.lwb.lwbtool.utils.MyUtils;
 import blcs.lwb.lwbtool.utils.RecyclerUtil;
-import blcs.lwb.lwbtool.utils.RxToast;
-import blcs.lwb.lwbtool.utils.TimeUtil;
 import blcs.lwb.utils.BuildConfig;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.adapter.UnuserdAdapter;
 import blcs.lwb.utils.fragment.BaseFragment;
 import butterknife.BindView;
-import butterknife.BindViews;
 
 /**
  * @Author BLCS
@@ -41,7 +36,7 @@ public class UnusedFunctionFragment extends BaseFragment {
     @Override
     protected void initView() {
         UnuserdAdapter unuserdAdapter = new UnuserdAdapter();
-        RecyclerUtil.init(getContext(), LinearLayoutManager.VERTICAL,unuserdAdapter,rvComment);
+        RecyclerUtil.init(getActivity(), LinearLayoutManager.VERTICAL,unuserdAdapter,rvComment);
         unuserdAdapter.setNewData(Arrays.asList(datas));
         unuserdAdapter.setOnItemClickListener((adapter, view, position) -> {
             String data = (String) adapter.getData().get(position);

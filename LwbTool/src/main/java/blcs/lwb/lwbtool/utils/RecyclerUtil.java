@@ -1,11 +1,11 @@
 package blcs.lwb.lwbtool.utils;
 
 import android.content.Context;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.OrientationHelper;
-import android.support.v7.widget.RecyclerView;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import blcs.lwb.lwbtool.View.DividerItem;
 
@@ -23,7 +23,7 @@ public class RecyclerUtil {
     /**
      * 初始化配置
      */
-    public static void init(Context context, int orientation, RecyclerView.Adapter mAdapter,RecyclerView mRecycyler,boolean showDecoration){
+    public static void init(Context context, int orientation, RecyclerView.Adapter mAdapter, RecyclerView mRecycyler, boolean showDecoration){
         mRecycyler.setLayoutManager(new LinearLayoutManager(context, orientation,false));
         mRecycyler.setAdapter(mAdapter);
         if(showDecoration){

@@ -1,7 +1,7 @@
 package blcs.lwb.utils.fragment.otherFragment;
 
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 import blcs.lwb.lwbtool.base.BasePresenter;
@@ -20,6 +20,8 @@ import blcs.lwb.utils.fragment.BaseFragment;
 import blcs.lwb.utils.manager.FramentManages;
 import butterknife.BindView;
 import butterknife.OnClick;
+import io.reactivex.rxjava3.annotations.NonNull;
+import io.reactivex.rxjava3.disposables.Disposable;
 
 public class VersionUpdateFragment extends BaseFragment {
     @BindView(R.id.tv_version_name)
@@ -63,17 +65,23 @@ public class VersionUpdateFragment extends BaseFragment {
                 addFrament(FramentManages.FunciotnIntro,bundle);
                 break;
             case R.id.ll_version_update:
-                RequestUtils.getVersion(this, new MyObserver<VersionBean>(activity) {
-                    @Override
-                    public void onSuccess(VersionBean result) {
-                        //判断是否更新
-                        upVersion(result.getVersionName(),result.getVersionNo(),result.getApkUrl());
-                    }
-                    @Override
-                    public void onFailure(Throwable e, String errorMsg) {
-                         LogUtils.e(errorMsg);
-                    }
-                });
+                RxToast.info(getActivity(),"地址失效");
+//                RequestUtils.getVersion(this, new MyObserver<VersionBean>(activity) {
+//                    @Override
+//                    public void onSubscribe(@NonNull Disposable d) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onSuccess(VersionBean result) {
+//                        //判断是否更新
+//                        upVersion(result.getVersionName(),result.getVersionNo(),result.getApkUrl());
+//                    }
+//                    @Override
+//                    public void onFailure(Throwable e, String errorMsg) {
+//                         LogUtils.e(errorMsg);
+//                    }
+//                });
                 break;
         }
     }

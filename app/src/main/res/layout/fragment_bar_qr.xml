@@ -44,7 +44,7 @@
         android:textColor="@color/gray"
         android:textColorHint="@color/gray" />
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
@@ -83,6 +83,6 @@
             android:text="扫描二维码/条形码"
             app:layout_constraintLeft_toRightOf="@+id/btn_custom_qrCode"
             app:layout_constraintTop_toTopOf="@+id/btn_custom_qrCode" />
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

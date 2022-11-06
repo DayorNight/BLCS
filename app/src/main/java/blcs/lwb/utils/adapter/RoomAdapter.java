@@ -1,11 +1,7 @@
 package blcs.lwb.utils.adapter;
 
-import android.support.annotation.Nullable;
-
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
-
-import java.util.List;
+import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.bean.Student;

@@ -5,8 +5,6 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Environment;
-import android.support.annotation.NonNull;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -125,7 +123,7 @@ public class RxCrashTool {
      *
      * @param crashDir 崩溃文件存储目录
      */
-    public static void init(@NonNull final File crashDir) {
+    public static void init(final File crashDir) {
         init(crashDir.getAbsolutePath());
     }
 

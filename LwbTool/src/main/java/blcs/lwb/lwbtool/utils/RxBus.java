@@ -1,13 +1,13 @@
 package blcs.lwb.lwbtool.utils;
 
-import io.reactivex.Observable;
-import io.reactivex.Scheduler;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Action;
-import io.reactivex.functions.Consumer;
-import io.reactivex.subjects.PublishSubject;
-import io.reactivex.subjects.Subject;
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.Scheduler;
+import io.reactivex.rxjava3.disposables.Disposable;
+import io.reactivex.rxjava3.functions.Action;
+import io.reactivex.rxjava3.functions.Consumer;
+import io.reactivex.rxjava3.subjects.PublishSubject;
+import io.reactivex.rxjava3.subjects.Subject;
 
 /**
  *          RxBus.getDefault().post(new RxBus.Event<>(1));
@@ -82,11 +82,6 @@ public class RxBus {
     }
 
     public <T> Disposable register(Class<T> eventType, Scheduler scheduler, Consumer<T> onNext, Consumer onError,
-                                   Action onComplete, Consumer onSubscribe) {
-        return toObservable(eventType).observeOn(scheduler).subscribe(onNext, onError, onComplete, onSubscribe);
-    }
-
-    public <T> Disposable register(Class<T> eventType, Scheduler scheduler, Consumer<T> onNext, Consumer onError,
                                    Action onComplete) {
         return toObservable(eventType).observeOn(scheduler).subscribe(onNext, onError, onComplete);
     }
@@ -97,10 +92,6 @@ public class RxBus {
 
     public <T> Disposable register(Class<T> eventType, Consumer<T> onNext) {
         return toObservable(eventType).observeOn(AndroidSchedulers.mainThread()).subscribe(onNext);
-    }
-
-    public <T> Disposable register(Class<T> eventType, Consumer<T> onNext, Consumer onError, Action onComplete, Consumer onSubscribe) {
-        return toObservable(eventType).observeOn(AndroidSchedulers.mainThread()).subscribe(onNext, onError, onComplete, onSubscribe);
     }
 
     public <T> Disposable register(Class<T> eventType, Consumer<T> onNext, Consumer onError, Action onComplete) {
@@ -114,7 +105,7 @@ public class RxBus {
     public static class Event<T> {
         public static final int EVENT_CLOSE_ALL_ACTIVITY = 10001;
 
-        private T data;
+        private final T data;
 
         private int eventCode = -1;
 

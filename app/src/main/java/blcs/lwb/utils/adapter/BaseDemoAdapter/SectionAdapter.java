@@ -1,6 +1,7 @@
 package blcs.lwb.utils.adapter.BaseDemoAdapter;
 import com.chad.library.adapter.base.BaseSectionQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
+import com.chad.library.adapter.base.viewholder.BaseViewHolder;
+
 import java.util.List;
 import blcs.lwb.utils.bean.MySection;
 import blcs.lwb.utils.R;
@@ -11,12 +12,12 @@ public class SectionAdapter extends BaseSectionQuickAdapter<MySection, BaseViewH
         super(layoutResId, sectionHeadResId, data);
     }
 
-    @Override
-    protected void convertHead(BaseViewHolder helper, MySection item) {
-        helper.setText(R.id.header, item.header);
-        helper.setVisible(R.id.more, item.isMore());
-        helper.addOnClickListener(R.id.more);//添加点击事件
-    }
+//    @Override
+//    protected void convertHead(BaseViewHolder helper, MySection item) {
+////        helper.setText(R.id.header, item.header);
+//        helper.setVisible(R.id.more, item.isMore());
+////        helper.addOnClickListener(R.id.more);//添加点击事件
+//    }
 
     @Override
     protected void convert(BaseViewHolder helper, MySection item) {
@@ -31,5 +32,10 @@ public class SectionAdapter extends BaseSectionQuickAdapter<MySection, BaseViewH
 //
 //        }
 //        helper.setText(R.id.tv, video.getName());
+    }
+
+    @Override
+    protected void convertHeader(BaseViewHolder baseViewHolder, MySection mySection) {
+
     }
 }

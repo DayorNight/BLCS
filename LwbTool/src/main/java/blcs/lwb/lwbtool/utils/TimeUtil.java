@@ -15,7 +15,6 @@ limitations under the License.*/
 package blcs.lwb.lwbtool.utils;
 
 import android.annotation.SuppressLint;
-import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -262,22 +261,22 @@ public class TimeUtil {
         String smartTime = "";
 
         if (smartDetail[5] > 0) {
-            smartTime = String.valueOf(smartDetail[5]) + "秒" + smartTime;
+            smartTime = smartDetail[5] + "秒" + smartTime;
         }
         if (smartDetail[4] > 0) {
-            smartTime = String.valueOf(smartDetail[4]) + "分" + smartTime;
+            smartTime = smartDetail[4] + "分" + smartTime;
         }
         if (smartDetail[3] > 8) {
-            smartTime = String.valueOf(smartDetail[3]) + "时" + String.valueOf(smartDetail[4]) + "分";
+            smartTime = smartDetail[3] + "时" + smartDetail[4] + "分";
         }
         if (smartDetail[2] > 1) {
-            smartTime = String.valueOf(smartDetail[2]) + "天" + String.valueOf(smartDetail[3]) + "时";
+            smartTime = smartDetail[2] + "天" + smartDetail[3] + "时";
         }
         if (smartDetail[1] > 1) {
-            smartTime = String.valueOf(smartDetail[1]) + "月" + String.valueOf(smartDetail[2]) + "天";
+            smartTime = smartDetail[1] + "月" + smartDetail[2] + "天";
         }
         if (smartDetail[0] > 1970) {
-            smartTime = String.valueOf(smartDetail[0]) + "年" + smartTime;
+            smartTime = smartDetail[0] + "年" + smartTime;
         }
 
         return smartTime;
@@ -305,7 +304,7 @@ public class TimeUtil {
             if (nowDetails[1] == smartDetail[1]) {//this month
                 long day = nowDetails[2] - smartDetail[2];//between/(24*3600);
                 if (day >= 3) {//fomer day
-                    smartDate = "本月" + String.valueOf(smartDetail[2]) + "日";
+                    smartDate = "本月" + smartDetail[2] + "日";
                 } else if (day >= 2) {//fomer day
                     smartDate = "前天";
                 } else if (day >= 1) {//fomer day
@@ -330,13 +329,13 @@ public class TimeUtil {
                 } else if (day >= -2) {//the day after tomorrow
                     smartDate = "后天";
                 } else {
-                    smartDate = "本月" + String.valueOf(smartDetail[2]) + "日";
+                    smartDate = "本月" + smartDetail[2] + "日";
                 }
             } else {//!!!
-                smartDate = String.valueOf(smartDetail[1]) + "月" + String.valueOf(smartDetail[2]) + "日";
+                smartDate = smartDetail[1] + "月" + smartDetail[2] + "日";
             }
         } else {//!!!
-            smartDate = String.valueOf(smartDetail[0]) + "年" + String.valueOf(smartDetail[1]) + "月";
+            smartDate = smartDetail[0] + "年" + smartDetail[1] + "月";
         }
 
         //		System.out.println("返回智能日期" + smartDate);
@@ -675,11 +674,7 @@ public class TimeUtil {
         if (fomerIsBigger(time, start) && fomerIsBigger(maxTimeDetails, time)) {
             return true;
         }
-        if (fomerIsBigger(time, minTimeDetails) && fomerIsBigger(end, time)) {
-            return true;
-        }
-
-        return false;
+        return fomerIsBigger(time, minTimeDetails) && fomerIsBigger(end, time);
     }
 
     private static SimpleDateFormat sf;
@@ -920,7 +915,7 @@ public class TimeUtil {
      * @param str 字符串
      * @return
      */
-    public static boolean isNullString(@Nullable String str) {
+    public static boolean isNullString(String str) {
         return str == null || str.length() == 0 || "null".equals(str);
     }
 

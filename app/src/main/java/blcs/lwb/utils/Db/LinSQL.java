@@ -19,14 +19,14 @@ import blcs.lwb.utils.greendao.GreenDaoDao;
 
 public class LinSQL {
     private static MySQLiteHelper blcs;
-    private static String Table="SqliteDemo";
+    private static final String Table="SqliteDemo";
     private static DaoSession daoSession;
     private static GreenDaoDao greenDaoDao;
 
     public static void init(Context context) {
         if (blcs == null) {
             blcs = new MySQLiteHelper(context, "Blcs", null, 1);
-            daoSession = MyApplication.getDaoSession();
+            daoSession = MyApplication.Companion.getDaoSession();
             greenDaoDao = daoSession.getGreenDaoDao();
         }
     }

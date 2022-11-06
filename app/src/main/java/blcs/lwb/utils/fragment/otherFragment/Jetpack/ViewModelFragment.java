@@ -1,8 +1,9 @@
 package blcs.lwb.utils.fragment.otherFragment.Jetpack;
 
-import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.ViewModelProviders;
+
 import android.widget.TextView;
 
 import blcs.lwb.lwbtool.base.BasePresenter;

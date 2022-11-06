@@ -4,9 +4,6 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Rect;
 import android.os.Build;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.util.SparseArray;
 import android.view.MotionEvent;
@@ -14,6 +11,10 @@ import android.view.VelocityTracker;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
+
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import com.facebook.rebound.BaseSpringSystem;
 import com.facebook.rebound.SimpleSpringListener;
@@ -33,7 +34,7 @@ public class JellyViewPager extends ViewPager {
 	/**
 	 * 滑动的最低速度
 	 */
-	private static float FLING_VELOCITY = 500;
+	private static final float FLING_VELOCITY = 500;
 	private static final int UNIT = 1000; // 计算速率的单位（毫秒）
 
 	/**
@@ -41,7 +42,7 @@ public class JellyViewPager extends ViewPager {
 	 */
 	private static float OUT_DISTANCE_BOUDARY;
 
-	private static float MAX_DEGREE = 15;
+	private static final float MAX_DEGREE = 15;
 	
 	private float mTouchSlop;
 
@@ -56,7 +57,7 @@ public class JellyViewPager extends ViewPager {
 	private final ExampleSpringListener mSpringListener = new ExampleSpringListener();
 
 	private View currentView;
-	private Rect currentViewRect = new Rect();
+	private final Rect currentViewRect = new Rect();
 	
 	private int currentItem = -1;
 
@@ -67,7 +68,7 @@ public class JellyViewPager extends ViewPager {
 
 	private OnPageChangeListener pageChangeListener;
 	
-	private SparseArray<Object> objs = new SparseArray<Object>();
+	private final SparseArray<Object> objs = new SparseArray<Object>();
 
 	public JellyViewPager(Context context) {
 		super(context);

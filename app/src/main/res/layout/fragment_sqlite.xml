@@ -89,7 +89,7 @@
                 style="@style/text_sql"
                 android:text="Address"/>
         </LinearLayout>
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_sql_show"
             android:background="@color/gray"
             style="@style/match_wrap"/>

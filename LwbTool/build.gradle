@@ -1,4 +1,10 @@
-apply plugin: 'com.android.library'
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+}
+
+
 
 android {
     compileSdkVersion As.compileSdkVersion
@@ -22,6 +28,9 @@ android {
         targetCompatibility 1.8
         sourceCompatibility 1.8
     }
+    buildFeatures {
+        dataBinding true
+    }
 }
 
 dependencies {
@@ -29,7 +38,8 @@ dependencies {
     implementation files('libs/rebound-core.jar')
     implementation files('libs/nineoldandroids-2.4.0.jar')
     //noinspection GradleCompatible
-    api Dp.AppcompatV7
+    api Dp.Appcompat
+    api Dp.kotlin
     api Dp.Design
     api Dp.Recyclerview
     api Dp.SupportV4
@@ -39,22 +49,23 @@ dependencies {
     androidTestImplementation Dp.Runner
     androidTestImplementation Dp.Espresso
     androidTestImplementation Dp.Uiautomator
-    androidTestImplementation Dp.EspressoWeb
-    androidTestImplementation Dp.EspressoContrib
-
+//    androidTestImplementation Dp.EspressoWeb
+//    androidTestImplementation Dp.EspressoContrib
     api Dp.Butterknife
-    annotationProcessor Dp.ButterknifeCompiler
+
     api Dp.Agentweb
     api Dp.Marqueeview
     api Dp.AdapterHelper
+    //内存与卡顿监测工具
     debugImplementation Dp.Leakcanary
+    debugImplementation Dp.blockCanary
     api Dp.NavigationBar
     api Dp.MagicIndicator
     api Dp.Fastjson
     api Dp.Banner
     api Dp.Androidsvg
     api Dp.Glide
-    annotationProcessor Dp.GlideCompiler
+
     api Dp.Retrofit2
     api Dp.Retrofit2ConverterGson
     api Dp.Retrofit2Rxjava2
@@ -71,4 +82,12 @@ dependencies {
     api Dp.navigationUI
     api Dp.paging
     api Dp.workManager
+    /*lottie json动画*/
+    api Dp.lottie
+    api Dp.ConstraintLayout
+    api Dp.UmengCommon
+    api Dp.UmengAnalytics
+    api Dp.fragmentktx
+    api Dp.activityktx
+    api Dp.roomkt
 }

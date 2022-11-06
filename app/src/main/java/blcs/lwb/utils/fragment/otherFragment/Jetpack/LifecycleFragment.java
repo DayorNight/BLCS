@@ -1,19 +1,18 @@
 package blcs.lwb.utils.fragment.otherFragment.Jetpack;
 
 import android.app.Activity;
-import android.arch.lifecycle.Lifecycle;
-import android.arch.lifecycle.LifecycleObserver;
-import android.arch.lifecycle.OnLifecycleEvent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.LifecycleObserver;
+import androidx.lifecycle.OnLifecycleEvent;
+
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,9 +21,7 @@ import blcs.lwb.utils.R;
 import blcs.lwb.utils.fragment.BaseFragment;
 import blcs.lwb.utils.utils.MyUtils;
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
-import butterknife.Unbinder;
 
 public class LifecycleFragment extends BaseFragment {
     @BindView(R.id.tv_lifecycle)
@@ -38,9 +35,9 @@ public class LifecycleFragment extends BaseFragment {
     @Override
     protected void initView() {
         MyObserver myObserver = new MyObserver(this);
-        getLifecycle().addObserver(myObserver);
+//        getLifecycle().addObserver(myObserver);
         BroadCastObserver broadCastObserver = new BroadCastObserver(activity);
-        getLifecycle().addObserver(broadCastObserver);
+//        getLifecycle().addObserver(broadCastObserver);
 
     }
 
@@ -74,7 +71,7 @@ public class LifecycleFragment extends BaseFragment {
 
     class MyObserver implements LifecycleObserver {
         private static final String TAG = "MyObserver";
-        private LifecycleFragment lifecycleFragment;
+        private final LifecycleFragment lifecycleFragment;
         private final StringBuilder stringBuilder;
 
         public MyObserver(LifecycleFragment lifecycleFragment) {
@@ -146,7 +143,7 @@ public class LifecycleFragment extends BaseFragment {
     //广播观察者
     class BroadCastObserver implements LifecycleObserver {
         private static final String TAG = "BroadCastObserver";
-        private Activity mActivity;
+        private final Activity mActivity;
         private MyBroadcastReceiver mBroadcastReceiver;
         public BroadCastObserver(Activity activity) {
             this.mActivity = activity;

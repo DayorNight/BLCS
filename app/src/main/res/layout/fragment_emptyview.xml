@@ -6,7 +6,7 @@
     android:background="@color/white"
     android:orientation="vertical"
     >
-    <android.support.design.widget.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_reset"
         style="@style/wrap_wrap"
         app:backgroundTint="@color/blue"

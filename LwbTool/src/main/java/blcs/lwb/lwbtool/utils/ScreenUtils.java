@@ -130,7 +130,7 @@ public class ScreenUtils {
 		return metrics;
 	}
 	// 状态栏高度
-	private static  int statusBarHeight = 0;
+	private static final int statusBarHeight = 0;
 	// 屏幕像素点
 	private static final Point screenSize = new Point();
 

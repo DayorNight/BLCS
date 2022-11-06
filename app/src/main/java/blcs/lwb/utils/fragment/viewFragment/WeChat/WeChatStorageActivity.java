@@ -1,9 +1,9 @@
 package blcs.lwb.utils.fragment.viewFragment.WeChat;
 
 import android.graphics.Color;
-import android.support.v7.widget.OrientationHelper;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.recyclerview.widget.OrientationHelper;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -28,7 +28,7 @@ public class WeChatStorageActivity extends BaseActivity {
     RecyclerView rv_storage;
     @BindView(R.id.tl_toolbar)
     Toolbar tlToolbar;
-    private List<StorageSpace> datas = new ArrayList<>();
+    private final List<StorageSpace> datas = new ArrayList<>();
     private WeChatStorageAdapter mAdapter;
     @Override
     protected BasePresenter bindPresenter() {
@@ -57,11 +57,11 @@ public class WeChatStorageActivity extends BaseActivity {
                 long sdCardAvailableSize = SDCardUtils.getSDCardAvailableSize();
                 float cound = ((float) appsize / sdCardSize) * 100;
                 String mysize = StringUtils.format2Decimals(String.valueOf(cound));
-                datas.add(new StorageSpace(AppUtils.getAppName(MyApplication.getContext()) + "已用空间", FileUtils.size(appsize), "占据手机" + mysize + "%存储空间", "管理存储空间"));
+                datas.add(new StorageSpace(AppUtils.getAppName(MyApplication.Companion.getContext()) + "已用空间", FileUtils.size(appsize), "占据手机" + mysize + "%存储空间", "管理存储空间"));
                 datas.add(new StorageSpace("手机已用空间", FileUtils.size(sdCardSize - sdCardAvailableSize), "剩余" + FileUtils.size(sdCardAvailableSize) + "可用空间", "使用手机管家，清理系统空间"));
                 mAdapter.setNewData(datas);
             }
-        }).init(MyApplication.getContext());
+        }).init(MyApplication.Companion.getContext());
     }
 
     @Override

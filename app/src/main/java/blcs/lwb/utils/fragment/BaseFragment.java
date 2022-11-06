@@ -7,23 +7,25 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-import com.trello.rxlifecycle2.components.support.RxFragment;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+
+import com.trello.rxlifecycle4.components.support.RxFragment;
 
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.lwbtool.base.BaseView;
-import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.utils.Constants;
+import blcs.lwb.utils.PublicFragmentActivity;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.manager.FramentManages;
 import blcs.lwb.utils.Interfaces.IPopBackStackListener;
-import blcs.lwb.utils.PublicFragmentActivity;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
  * BaseFrament
  */
-public abstract class BaseFragment extends RxFragment implements IPopBackStackListener, BaseView {
+public abstract class BaseFragment extends Fragment implements IPopBackStackListener, BaseView {
     private Bundle BackBundle;
     /**
      * 该fragment全局视图，不能在子Fragment中创建
@@ -47,7 +49,7 @@ public abstract class BaseFragment extends RxFragment implements IPopBackStackLi
             mView = inflater.inflate(bindLayout(), container, false);
             mView.setClickable(true);
             activity = (PublicFragmentActivity) getActivity();// 获得activity的对象
-            fragmentManager = activity.fragmentManager;//片段管理
+            fragmentManager =  activity.fragmentManager;
             bind = ButterKnife.bind(this, mView);
             baseP = bindPresenter();
             if (baseP != null) {
@@ -82,7 +84,7 @@ public abstract class BaseFragment extends RxFragment implements IPopBackStackLi
     /**
      * 中心的标题设置
      */
-    public abstract void setMiddleTitle(android.support.v7.widget.Toolbar title);
+    public abstract void setMiddleTitle(Toolbar title);
 
     /**
      * 绑定P层
@@ -97,8 +99,8 @@ public abstract class BaseFragment extends RxFragment implements IPopBackStackLi
         super.onDestroy();
         bind.unbind();
         if (fragmentManager.getLastFrament() != null) {
-            fragmentManager.getLastFrament().popBackListener(returnCode, BackBundle);
-            fragmentManager.getLastFrament().setMiddleTitle(activity.tlToolbar);
+            ((BaseFragment)(fragmentManager.getLastFrament())).popBackListener(returnCode, BackBundle);
+            ((BaseFragment)(fragmentManager.getLastFrament())).setMiddleTitle(activity.tlToolbar);
         }
         if (baseP != null) {
             baseP.onDetch();

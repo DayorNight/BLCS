@@ -2,7 +2,7 @@ package blcs.lwb.utils.fragment.viewFragment;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -61,7 +61,7 @@ public class NotificationCompatFragment extends BaseFragment {
         super.onResume();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             boolean open = LinNotify.isNotificationEnabled(activity);
-            show_tatus.setText("获取应用是否开启通知状态：" + String.valueOf(open));
+            show_tatus.setText("获取应用是否开启通知状态：" + open);
         }
     }
 

@@ -7,17 +7,20 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.widget.Toast;
 
-import io.reactivex.disposables.Disposable;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
+import io.reactivex.rxjava3.disposables.Disposable;
 
 /**
  * Observer加入加载框
  * @param <T>
  */
 public abstract class MyObserver<T> extends BaseObserver<T> {
-    private boolean mShowDialog;
+    private final boolean mShowDialog;
     private ProgressDialog dialog;
-    private Context mContext;
-    private Disposable d;
+    private final Context mContext;
+    private Subscription subscription;
 
     public MyObserver(Context context, Boolean showDialog) {
         mContext = context;
@@ -29,13 +32,11 @@ public abstract class MyObserver<T> extends BaseObserver<T> {
     }
 
     @Override
-    public void onSubscribe(Disposable d) {
-        this.d = d;
+    public void onSubscribe(Subscription s) {
+        this.subscription = s;
         if (!isConnected(mContext)) {
             Toast.makeText(mContext,"未连接网络",Toast.LENGTH_SHORT).show();
-            if (d.isDisposed()) {
-                d.dispose();
-            }
+            subscription.cancel();
         } else {
             if (dialog == null && mShowDialog == true) {
                 dialog = new ProgressDialog(mContext);
@@ -44,20 +45,17 @@ public abstract class MyObserver<T> extends BaseObserver<T> {
             }
         }
     }
+
     @Override
     public void onError(Throwable e) {
-        if (d.isDisposed()) {
-            d.dispose();
-        }
+        subscription.cancel();
         hidDialog();
         super.onError(e);
     }
 
     @Override
     public void onComplete() {
-        if (d.isDisposed()) {
-            d.dispose();
-        }
+        subscription.cancel();
         hidDialog();
         super.onComplete();
     }

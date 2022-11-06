@@ -1,17 +1,15 @@
 package blcs.lwb.utils.fragment;
 
 
-import android.support.annotation.Nullable;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
-
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
+import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 
 import java.util.List;
-
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.utils.R;
 import butterknife.BindView;
@@ -20,7 +18,7 @@ import butterknife.BindView;
  * @author linweibin
  * @date 2021/12/30
  */
-public abstract class BaseListFragment extends BaseFragment implements BaseQuickAdapter.OnItemClickListener {
+public abstract class BaseListFragment extends BaseFragment implements OnItemClickListener {
     @BindView(R.id.tool_recyclerView)
     RecyclerView mRv;
     private StringAdapter stringAdapter;
@@ -61,7 +59,7 @@ public abstract class BaseListFragment extends BaseFragment implements BaseQuick
         itemClick(adapter,view,position);
     }
 
-    class StringAdapter extends BaseQuickAdapter<String,BaseViewHolder>{
+    class StringAdapter extends BaseQuickAdapter<String, BaseViewHolder>{
         public StringAdapter() {
             super(R.layout.adapter_string);
         }

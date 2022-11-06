@@ -1,24 +1,19 @@
 package blcs.lwb.utils.Db;
 
-import android.arch.persistence.db.SupportSQLiteDatabase;
-import android.arch.persistence.room.Database;
-import android.arch.persistence.room.Room;
-import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
-import android.support.annotation.NonNull;
 
-import java.util.ArrayList;
+import androidx.room.Database;
+import androidx.room.Room;
+import androidx.room.RoomDatabase;
 
-import blcs.lwb.utils.R;
 import blcs.lwb.utils.bean.Student;
-import blcs.lwb.utils.utils.MyUtils;
 
 /**
  * 创建数据库
  * 通过entities 指定数据库中的表
  * version指定当前数据库版本号
  */
-@Database(entities = {Student.class}, version = 1)
+@Database(entities = {Student.class}, version = 1,exportSchema = false)
 public abstract class RoomDbManager extends RoomDatabase {
     public abstract StudentDao getStudentDao();
 

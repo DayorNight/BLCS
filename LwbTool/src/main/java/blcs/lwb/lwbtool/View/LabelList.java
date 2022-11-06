@@ -24,7 +24,7 @@ import blcs.lwb.lwbtool.R;
  */
 public class LabelList extends ViewGroup implements View.OnClickListener {
 
-    private Context mContext;
+    private final Context mContext;
     private ColorStateList mTextColor;
     private float mTextSize;
     private Drawable mLabelBg;
@@ -43,12 +43,12 @@ public class LabelList extends ViewGroup implements View.OnClickListener {
     //用于保存label位置的key
     private static final int KEY_POSITION = R.id.tag_key_position;
 
-    private ArrayList<Object> mLabels = new ArrayList<>();
+    private final ArrayList<Object> mLabels = new ArrayList<>();
     //保存选中的label的位置
-    private ArrayList<Integer> mSelectLabels = new ArrayList<>();
+    private final ArrayList<Integer> mSelectLabels = new ArrayList<>();
 
     //保存必选项。在多选模式下，可以设置必选项，必选项默认选中，不能反选
-    private ArrayList<Integer> mCompulsorys = new ArrayList<>();
+    private final ArrayList<Integer> mCompulsorys = new ArrayList<>();
 
     private OnLabelClickListener mLabelClickListener;
     private OnLabelSelectChangeListener mLabelSelectChangeListener;

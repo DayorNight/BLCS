@@ -2,8 +2,9 @@ package blcs.lwb.lwbtool.manager;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
+
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import java.util.ArrayList;
 
@@ -20,10 +21,10 @@ import interfaces.IAllFragment;
  */
 public class FramentManages
 {
-	private ArrayList<BaseFragment> list_Frament;// 保存当前Activity的Frament
+	private final ArrayList<BaseFragment> list_Frament;// 保存当前Activity的Frament
 	public FragmentManager fm;// 片段管理器
 	private static FramentManages framentManages;
-	private   IAllFragment iFragment;
+	private final IAllFragment iFragment;
 
 	private FramentManages(BaseFragmentActivity activity, IAllFragment iAllFragment){
 		list_Frament = new ArrayList<>();

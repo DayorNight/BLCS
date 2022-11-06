@@ -1,7 +1,7 @@
 package blcs.lwb.utils.fragment;
 
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.widget.LinearLayout;
 
 import com.just.agentweb.AgentWeb;
@@ -49,7 +49,7 @@ public class MyFragment extends BaseFragment implements IMyFragment {
         Bundle arguments = getArguments();
         String url = arguments.getString(Constants.URL);
         LogUtils.e("======="+url);
-        mAgentWeb = AgentWeb.with(this)
+        mAgentWeb = AgentWeb.with(getActivity())
                 .setAgentWebParent(llAgentview, new LinearLayout.LayoutParams(-1, -1))
                 .useDefaultIndicator()
                 .createAgentWeb()

@@ -5,7 +5,7 @@ import blcs.lwb.utils.mvp.view.IMyFragment;
 
 public class MyFragmentPresenter extends BasePresenter<IMyFragment> {
 
-    private IMyFragment v;
+    private final IMyFragment v;
     public MyFragmentPresenter(IMyFragment v){
         this.v = v;
         init();

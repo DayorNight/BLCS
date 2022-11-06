@@ -22,7 +22,7 @@ import java.util.List;
  */
 public class LinToPermission {
     private final String TAG = "PermissionPageManager";
-    private Context mContext;
+    private final Context mContext;
     //自己的项目包名
     private static LinToPermission linToPermission;
 

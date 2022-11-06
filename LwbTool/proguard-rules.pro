@@ -7,7 +7,6 @@
 -dontskipnonpubliclibraryclassmembers # 指定不去忽略非公共库的成员
 -dontpreverify          # 混淆时不做预校验
 -verbose                # 混淆时不记录日志
--ignorewarning          # 忽略警告
 -dontshrink             # 代码优化
 -dontoptimize           # 不优化输入的类文件
 -keepattributes *Annotation*,InnerClasses  # 保留注解不混淆
@@ -358,7 +357,6 @@ public static final int *;
 ## ----------------------------------
 ##     华为推送  https://developer.huawei.com/consumer/cn/service/hms/catalog/huaweipush_agent.html?page=hmssdk_huaweipush_devprepare_agent#5.3%20%E9%85%8D%E7%BD%AE%E6%B7%B7%E6%B7%86%E8%84%9A%E6%9C%AC%EF%BC%88%E5%BF%85%E9%80%89%EF%BC%89
 ## ----------------------------------
--ignorewarning
 -keepattributes *Annotation*
 -keepattributes Exceptions
 -keepattributes InnerClasses
@@ -384,7 +382,6 @@ public static final int *;
 -dontskipnonpubliclibraryclassmembers # 指定不去忽略非公共库的成员
 -dontpreverify          # 混淆时不做预校验
 -verbose                # 混淆时不记录日志
--ignorewarning          # 忽略警告
 -dontshrink             # 代码优化
 -dontoptimize           # 不优化输入的类文件
 -keepattributes *Annotation*,InnerClasses  # 保留注解不混淆
@@ -736,7 +733,6 @@ public static final int *;
 ## ----------------------------------
 ##     华为推送  https://developer.huawei.com/consumer/cn/service/hms/catalog/huaweipush_agent.html?page=hmssdk_huaweipush_devprepare_agent#5.3%20%E9%85%8D%E7%BD%AE%E6%B7%B7%E6%B7%86%E8%84%9A%E6%9C%AC%EF%BC%88%E5%BF%85%E9%80%89%EF%BC%89
 ## ----------------------------------
--ignorewarning
 -keepattributes *Annotation*
 -keepattributes Exceptions
 -keepattributes InnerClasses

@@ -10,7 +10,7 @@ public class MyValueFormatter extends ValueFormatter
 {
 
     private final DecimalFormat mFormat;
-    private String suffix;
+    private final String suffix;
 
     public MyValueFormatter(String suffix) {
         mFormat = new DecimalFormat("###,###,###,##0.0");

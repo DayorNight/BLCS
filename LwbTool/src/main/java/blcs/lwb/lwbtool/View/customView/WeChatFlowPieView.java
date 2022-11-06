@@ -24,21 +24,21 @@ public class WeChatFlowPieView extends View {
     private int otherAngle;
     private int otherCatchAngle;
     //左边距
-    private int RectX = 200 ;
+    private final int RectX = 200 ;
     //定义聊天数据大圆的半径
-    private int radius = 210 ;
+    private final int radius = 210 ;
     //定义其他大圆的半径
-    private int other_radius = 200 ;
+    private final int other_radius = 200 ;
     //    原点纵坐标
-    private int circleY =300;
+    private final int circleY =300;
     //    画圆起点
-    private int startAngle =270;
+    private final int startAngle =270;
     //    矩形大小
-    private int RectSize =50;
+    private final int RectSize =50;
     //    拼图与底部文字距离
-    private int space =50;
+    private final int space =50;
     //    矩形Y坐标
-    private int RectY =circleY+radius+space;
+    private final int RectY =circleY+radius+space;
 
     public WeChatFlowPieView(Context context) {
         super(context);

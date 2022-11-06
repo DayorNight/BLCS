@@ -1,12 +1,15 @@
 package blcs.lwb.utils.fragment.toolFragment;
 
+import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.widget.Toolbar;
+
 import java.util.ArrayList;
 import java.util.List;
 import blcs.lwb.lwbtool.base.BasePresenter;
@@ -43,7 +46,7 @@ public class LinPermissionFragment extends BaseFragment implements CompoundButto
     Button btn_permission_check;
     @BindView(R.id.btn_permission_check_much)
     Button btn_permission_check_much;
-    private List<Integer> codes = new ArrayList<>();
+    private final List<Integer> codes = new ArrayList<>();
     private CheckBox[] cbs;
 
     @Override
@@ -73,6 +76,7 @@ public class LinPermissionFragment extends BaseFragment implements CompoundButto
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @OnClick({R.id.btn_permission_check, R.id.btn_permission_check_much, R.id.btn_permission_applay, R.id.btn_permission_applay_much})
     public void onViewClicked(View view) {
         switch (view.getId()) {
@@ -149,7 +153,7 @@ public class LinPermissionFragment extends BaseFragment implements CompoundButto
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         LinPermission.onRequestPermissionsResult(requestCode, permissions, grantResults, new LinPermission.PermissionsResultListener() {
             @Override

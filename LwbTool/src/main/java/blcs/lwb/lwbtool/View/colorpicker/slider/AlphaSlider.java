@@ -17,10 +17,10 @@ import blcs.lwb.lwbtool.utils.MyUtils;
  */
 public class AlphaSlider extends AbsCustomSlider {
     public int color;
-    private Paint alphaPatternPaint = PaintBuilder.newPaint().build();
-    private Paint barPaint = PaintBuilder.newPaint().build();
-    private Paint solid = PaintBuilder.newPaint().build();
-    private Paint clearingStroke = PaintBuilder.newPaint().color(0xffffffff).xPerMode(PorterDuff.Mode.CLEAR).build();
+    private final Paint alphaPatternPaint = PaintBuilder.newPaint().build();
+    private final Paint barPaint = PaintBuilder.newPaint().build();
+    private final Paint solid = PaintBuilder.newPaint().build();
+    private final Paint clearingStroke = PaintBuilder.newPaint().color(0xffffffff).xPerMode(PorterDuff.Mode.CLEAR).build();
 
     private ColorPickerView colorPicker;
 

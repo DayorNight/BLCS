@@ -1,12 +1,13 @@
 package blcs.lwb.lwbtool.utils;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.pm.PackageManager;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.PermissionChecker;
 import android.util.Log;
+
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.PermissionChecker;
 
 import java.util.ArrayList;
 
@@ -47,6 +48,7 @@ public class LinPermission {
     /**
      * 检查是否有权限
      */
+    @SuppressLint("WrongConstant")
     public static boolean checkPermission(Activity context, int code) {
         try {
             return PackageManager.PERMISSION_GRANTED == PermissionChecker.checkSelfPermission(context, requestPermissions[code]);
@@ -122,7 +124,7 @@ public class LinPermission {
      * 申请结果回调
      * 在Activity的onRequestPermissionsResult中调用
      */
-    public static void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults, PermissionsResultListener listener) {
+    public static void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults, PermissionsResultListener listener) {
         if (requestCode == RequestCode_Permission) {
             for (int i = 0; i < permissions.length; i++) {
                 if (grantResults[i] == PackageManager.PERMISSION_GRANTED) {

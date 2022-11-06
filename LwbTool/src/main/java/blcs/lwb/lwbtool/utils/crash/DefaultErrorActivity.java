@@ -21,14 +21,14 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import blcs.lwb.lwbtool.R;
 import blcs.lwb.lwbtool.manager.AppManager;
@@ -43,7 +43,7 @@ public final class DefaultErrorActivity extends AppCompatActivity implements Vie
 
     @SuppressLint("PrivateResource")
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         AppManager.getAppManager().addActivity(this);
         setContentView(R.layout.activity_default_error);

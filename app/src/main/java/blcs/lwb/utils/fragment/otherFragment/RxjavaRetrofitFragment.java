@@ -1,7 +1,7 @@
 package blcs.lwb.utils.fragment.otherFragment;
 
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
@@ -15,6 +15,8 @@ import blcs.lwb.utils.R;
 import blcs.lwb.utils.fragment.BaseFragment;
 import butterknife.BindView;
 import butterknife.OnClick;
+import io.reactivex.rxjava3.annotations.NonNull;
+import io.reactivex.rxjava3.disposables.Disposable;
 
 /**
  * Created by mrd on 2019/2/28.
@@ -54,7 +56,8 @@ public class RxjavaRetrofitFragment extends BaseFragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_retrofit_get:
-                RequestUtils.getDemo(this,new MyObserver<Demo>(activity) {
+                RequestUtils.getDemo(getContext(),new MyObserver<Demo>(activity) {
+
                     @Override
                     public void onSuccess(Demo result) {
                         tvRetrofit.setText(result.toString());
@@ -67,8 +70,8 @@ public class RxjavaRetrofitFragment extends BaseFragment {
                 });
                 break;
             case R.id.btn_retrofit_getList:
-                RequestUtils.getDemoList(this,new MyObserver<List<Demo>>(activity) {
-                        @Override
+                RequestUtils.getDemoList(getContext(),new MyObserver<List<Demo>>(activity) {
+                    @Override
                         public void onSuccess(List<Demo> result) {
                             tvRetrofit.setText(result.toString());
                         }

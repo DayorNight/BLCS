@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/WorkProject/BLCS/app/src/main/res/layout/activity_splash.xml" value="0.12682069311903565" />
+        <entry key="..\:/WorkProject/BLCS/app/src/main/res/layout/adapter_list.xml" value="0.22916666666666666" />
+        <entry key="..\:/WorkProject/BLCS/app/src/main/res/layout/fragment_app.xml" value="0.22" />
+        <entry key="..\:/WorkProject/BLCS/app/src/main/res/layout/fragment_databinding.xml" value="0.16757246376811594" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
 </project>

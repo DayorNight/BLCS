@@ -30,10 +30,10 @@ import blcs.lwb.lwbtool.utils.DensityUtils;
  */
 public class FontSizeView extends View {
 
-    private int defaultLineColor = Color.rgb(33, 33, 33);
+    private final int defaultLineColor = Color.rgb(33, 33, 33);
     private int defaultLineWidth;
-    private int defaultMax = 5;
-    private int defaultCircleColor = Color.WHITE;
+    private final int defaultMax = 5;
+    private final int defaultCircleColor = Color.WHITE;
     private int defaultCircleRadius;
     // 当前所在位置
     private int currentProgress;
@@ -72,7 +72,7 @@ public class FontSizeView extends View {
     // 滑动过程中x坐标
     private float currentX = 0;
     // 有效数据点
-    private List<Point> points = new ArrayList<>();
+    private final List<Point> points = new ArrayList<>();
 
     private float circleY;
     private float textScaleX;

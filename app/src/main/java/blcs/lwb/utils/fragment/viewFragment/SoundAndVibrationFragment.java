@@ -1,23 +1,19 @@
 package blcs.lwb.utils.fragment.viewFragment;
 
 import android.os.Bundle;
-import android.support.v7.widget.SwitchCompat;
-import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.CompoundButton;
 
+import androidx.appcompat.widget.SwitchCompat;
+import androidx.appcompat.widget.Toolbar;
+
 import blcs.lwb.lwbtool.base.BasePresenter;
-import blcs.lwb.lwbtool.utils.LogUtils;
 import blcs.lwb.lwbtool.utils.RxTool.RxBeepTool;
 import blcs.lwb.lwbtool.utils.RxTool.RxVibrateTool;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.fragment.BaseFragment;
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
-import butterknife.Unbinder;
 
 
 /**

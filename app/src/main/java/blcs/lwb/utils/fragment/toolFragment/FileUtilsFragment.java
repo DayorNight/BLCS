@@ -1,39 +1,30 @@
 package blcs.lwb.utils.fragment.toolFragment;
 
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
+
+import androidx.appcompat.widget.Toolbar;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 import blcs.lwb.lwbtool.base.BasePresenter;
 import blcs.lwb.lwbtool.retrofit.RxHelper;
 import blcs.lwb.lwbtool.utils.FileUtils;
 import blcs.lwb.lwbtool.utils.LinCommon;
-import blcs.lwb.lwbtool.utils.LinDownloadAPk;
-import blcs.lwb.lwbtool.utils.LogUtils;
-import blcs.lwb.lwbtool.utils.RxToast;
 import blcs.lwb.utils.R;
 import blcs.lwb.utils.fragment.BaseFragment;
 import blcs.lwb.utils.manager.FramentManages;
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
-import butterknife.Unbinder;
-import io.reactivex.Observable;
-import io.reactivex.ObservableEmitter;
-import io.reactivex.ObservableOnSubscribe;
-import io.reactivex.Observer;
-import io.reactivex.functions.Consumer;
+import io.reactivex.rxjava3.core.Flowable;
+import io.reactivex.rxjava3.core.FlowableEmitter;
+import io.reactivex.rxjava3.core.FlowableOnSubscribe;
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.ObservableEmitter;
+import io.reactivex.rxjava3.core.ObservableOnSubscribe;
+import io.reactivex.rxjava3.functions.Consumer;
 
 public class FileUtilsFragment extends BaseFragment {
 
@@ -77,18 +68,8 @@ public class FileUtilsFragment extends BaseFragment {
                 LinCommon.showShortToast(activity,"文件创建成功");
                 break;
             case R.id.btn_file_getSize://获取文件大小
-                Observable.create(new ObservableOnSubscribe<String>() {
-                    @Override
-                    public void subscribe(ObservableEmitter<String> observableEmitter) throws Exception {
-                        String size = FileUtils.size(new File(FileUtils.SDCARD_ROOT + "Android"));
-                        observableEmitter.onNext(size);
-                    }
-                }).compose(RxHelper.observableIO2Main(activity)).subscribe(new Consumer<String>() {
-                    @Override
-                    public void accept(String size) throws Exception {
-                        btn_file_getSize.setText("获取文件大小: "+size);
-                    }
-                });
+                String size = FileUtils.size(new File(FileUtils.SDCARD_ROOT + "Android"));
+                Flowable.just(size).subscribe(s -> btn_file_getSize.setText("获取文件大小: "+s));
                 break;
             case R.id.btn_delete_file://删除文件
                 boolean b = FileUtils.delFile(FileUtils.FILE);

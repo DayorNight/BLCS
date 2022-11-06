@@ -3,6 +3,8 @@ package blcs.lwb.lwbtool.retrofit;
 import android.util.Log;
 import java.io.IOException;
 import java.util.Locale;
+
+import okhttp3.Connection;
 import okhttp3.Interceptor;
 import okhttp3.Request;
 
@@ -10,7 +12,7 @@ import okhttp3.Request;
  *  TODO Log拦截器代码
  */
 public class LogInterceptor implements Interceptor {
-    private String TAG = "okhttp";
+    private final String TAG = "okhttp";
 
     @Override
     public okhttp3.Response intercept(Chain chain) throws IOException {

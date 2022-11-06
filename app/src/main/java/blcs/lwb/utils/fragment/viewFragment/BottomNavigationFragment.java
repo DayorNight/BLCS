@@ -1,10 +1,6 @@
 package blcs.lwb.utils.fragment.viewFragment;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,10 +9,15 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
+
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.ashokvarma.bottomnavigation.ShapeBadgeItem;
 import com.ashokvarma.bottomnavigation.TextBadgeItem;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.bottomnavigation.LabelVisibilityMode;
 
 import java.util.List;
 
@@ -66,7 +67,7 @@ public class BottomNavigationFragment extends BaseFragment {
         //设置导航栏菜单项Item选中监听
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            public boolean onNavigationItemSelected(MenuItem item) {
                 String title = item.getTitle().toString();
                 switch (item.getItemId()) {
                     case R.id.item_bottom_1:
@@ -91,27 +92,19 @@ public class BottomNavigationFragment extends BaseFragment {
         cbWRemoveA.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b) {
-                    BottomNavigationUtils.openAnimation(bottomNavigationView,false);
-                } else {
-                    BottomNavigationUtils.openAnimation(bottomNavigationView,true);
-                }
+                BottomNavigationUtils.openAnimation(bottomNavigationView, !b);
             }
         });
 
         cbWRemoveA1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b) {
-                    BottomNavigationUtils.openAnimation(bnvMenu,false);
-                } else {
-                    BottomNavigationUtils.openAnimation(bnvMenu,true);
-                }
+                BottomNavigationUtils.openAnimation(bnvMenu, !b);
             }
         });
         bnvMenu.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            public boolean onNavigationItemSelected(MenuItem item) {
                 String title = item.getTitle().toString();
                 switch (item.getItemId()) {
                     case 0:
@@ -251,7 +244,7 @@ public class BottomNavigationFragment extends BaseFragment {
                 LogUtils.e(""+bnvMenu.getMenu().size());
                 if(bnvMenu.getMenu().size() >0){
                     if(i<2){
-                        bnvMenu.setLabelVisibilityMode(1);
+                        bnvMenu.setLabelVisibilityMode(LabelVisibilityMode.LABEL_VISIBILITY_LABELED);
                     }
                     bnvMenu.getMenu().removeItem(bnvMenu.getMenu().size()-1);
                     i--;

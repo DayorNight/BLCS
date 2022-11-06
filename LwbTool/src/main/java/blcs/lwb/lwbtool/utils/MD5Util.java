@@ -15,6 +15,7 @@ limitations under the License.*/
 package blcs.lwb.lwbtool.utils;
 
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -35,22 +36,19 @@ public class MD5Util {
 		if (StringUtils.isNotEmpty(str, false) == false) {
 			return "";
 		}
-		char hexDigits[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+		char[] hexDigits = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
 				'A', 'B', 'C', 'D', 'E', 'F' };
 		MessageDigest md5 = null;
 		try {
 			md5 = MessageDigest.getInstance("MD5");
-			md5.update(str.getBytes("UTF-8"));
+			md5.update(str.getBytes(StandardCharsets.UTF_8));
 		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();
 			throw new RuntimeException(e.getMessage());
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-			throw new RuntimeException(e.getMessage());
 		}
-		byte[] encodedValue = md5.digest();
+        byte[] encodedValue = md5.digest();
 		int j = encodedValue.length;
-		char finalValue[] = new char[j * 2];
+		char[] finalValue = new char[j * 2];
 		int k = 0;
 		for (int i = 0; i < j; i++) {
 			byte encoded = encodedValue[i];

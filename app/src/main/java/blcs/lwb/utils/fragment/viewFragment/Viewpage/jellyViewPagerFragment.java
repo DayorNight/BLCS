@@ -1,8 +1,8 @@
 package blcs.lwb.utils.fragment.viewFragment.Viewpage;
 
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
-import android.support.v7.widget.Toolbar;
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.widget.Toolbar;
 
 import blcs.lwb.lwbtool.View.JellyViewPager.JellyViewPager;
 import blcs.lwb.lwbtool.base.BasePresenter;

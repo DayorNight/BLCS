@@ -5,8 +5,9 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
+
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.RelativeSizeSpan;
@@ -149,10 +150,7 @@ public class PieChartsFragment extends DemoBase implements SeekBar.OnSeekBarChan
                         break;
                     }
                     case R.id.actionToggleHole: {
-                        if (chart.isDrawHoleEnabled())
-                            chart.setDrawHoleEnabled(false);
-                        else
-                            chart.setDrawHoleEnabled(true);
+                        chart.setDrawHoleEnabled(!chart.isDrawHoleEnabled());
                         chart.invalidate();
                         break;
                     }
@@ -178,10 +176,7 @@ public class PieChartsFragment extends DemoBase implements SeekBar.OnSeekBarChan
                         break;
                     }
                     case R.id.actionDrawCenter: {
-                        if (chart.isDrawCenterTextEnabled())
-                            chart.setDrawCenterText(false);
-                        else
-                            chart.setDrawCenterText(true);
+                        chart.setDrawCenterText(!chart.isDrawCenterTextEnabled());
                         chart.invalidate();
                         break;
                     }

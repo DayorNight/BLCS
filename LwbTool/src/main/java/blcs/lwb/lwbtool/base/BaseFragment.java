@@ -2,10 +2,12 @@ package blcs.lwb.lwbtool.base;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
 
 import blcs.lwb.lwbtool.Constants;
 import blcs.lwb.lwbtool.PublicFragmentActivity;
@@ -61,7 +63,7 @@ public abstract class BaseFragment extends Fragment implements IPopBackStackList
     /**
      * 中心的标题设置
      */
-    public abstract void setMiddleTitle(android.support.v7.widget.Toolbar title);
+    public abstract void setMiddleTitle(Toolbar title);
 
     /**
      * UI

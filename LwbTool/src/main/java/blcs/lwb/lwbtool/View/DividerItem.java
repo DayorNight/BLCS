@@ -5,10 +5,10 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * TODO RecyclerView分割线 缩进  RecyclerView背景改为白色
@@ -41,7 +41,7 @@ public class DividerItem extends RecyclerView.ItemDecoration {
         }
     }
 
-    public void setDrawable(@NonNull Drawable drawable) {
+    public void setDrawable(Drawable drawable) {
         if(drawable == null) {
             throw new IllegalArgumentException("Drawable cannot be null.");
         } else {

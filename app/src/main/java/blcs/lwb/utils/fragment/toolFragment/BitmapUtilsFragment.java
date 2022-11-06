@@ -2,7 +2,7 @@ package blcs.lwb.utils.fragment.toolFragment;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;

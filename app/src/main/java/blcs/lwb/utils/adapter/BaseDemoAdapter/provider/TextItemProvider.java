@@ -2,10 +2,11 @@ package blcs.lwb.utils.adapter.BaseDemoAdapter.provider;
 
 import android.widget.Toast;
 
-import com.chad.library.adapter.base.BaseViewHolder;
 import com.chad.library.adapter.base.provider.BaseItemProvider;
+import com.chad.library.adapter.base.viewholder.BaseViewHolder;
+
 import blcs.lwb.utils.R;
-import blcs.lwb.utils.adapter.BaseDemoAdapter.DemoMultipleItemRvAdapter;
+//import blcs.lwb.utils.adapter.BaseDemoAdapter.DemoMultipleItemRvAdapter;
 import blcs.lwb.utils.adapter.BaseDemoAdapter.NormalMultipleEntity;
 
 /**
@@ -16,31 +17,21 @@ import blcs.lwb.utils.adapter.BaseDemoAdapter.NormalMultipleEntity;
  * @date 2018/3/30  11:39
  */
 
-public class TextItemProvider extends BaseItemProvider<NormalMultipleEntity, BaseViewHolder> {
+public class TextItemProvider extends BaseItemProvider<NormalMultipleEntity> {
 
     @Override
-    public int viewType() {
-        return DemoMultipleItemRvAdapter.TYPE_TEXT;
+    public int getItemViewType() {
+        return 3;
+//        return DemoMultipleItemRvAdapter.TYPE_TEXT;
     }
 
     @Override
-    public int layout() {
+    public int getLayoutId() {
         return R.layout.item_text_view;
     }
 
     @Override
-    public void convert(BaseViewHolder helper, NormalMultipleEntity data, int position) {
+    public void convert(BaseViewHolder helper, NormalMultipleEntity data) {
         helper.setText(R.id.item_multiple_tv, data.content);
-    }
-
-    @Override
-    public void onClick(BaseViewHolder helper, NormalMultipleEntity data, int position) {
-        Toast.makeText(mContext, "click", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public boolean onLongClick(BaseViewHolder helper, NormalMultipleEntity data, int position) {
-        Toast.makeText(mContext, "longClick", Toast.LENGTH_SHORT).show();
-        return true;
     }
 }

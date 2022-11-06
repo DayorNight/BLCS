@@ -1,7 +1,7 @@
 package blcs.lwb.utils.fragment.toolFragment;
 
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.widget.TextView;
 
 import blcs.lwb.lwbtool.View.customView.SelectedRangeView;

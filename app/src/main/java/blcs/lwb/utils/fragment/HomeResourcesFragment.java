@@ -1,17 +1,17 @@
 package blcs.lwb.utils.fragment;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v7.widget.OrientationHelper;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.recyclerview.widget.OrientationHelper;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.chad.library.adapter.base.BaseQuickAdapter;
-
-import java.util.ArrayList;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
 
 import blcs.lwb.lwbtool.utils.RecyclerUtil;
 import blcs.lwb.utils.Constants;
@@ -71,9 +71,9 @@ public class HomeResourcesFragment extends Fragment implements IHomeTabView{
 
     @Override
     public void Recycler_click() {
-        adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+        adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
-            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+            public void onItemClick(@NonNull BaseQuickAdapter<?, ?> adapter, @NonNull View view, int position) {
                 String item = (String) adapter.getItem(position);
                 Bundle bundle = new Bundle();
                 bundle.putString(Constants.Item_Name,item);

@@ -12,9 +12,10 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Process;
-import android.support.v4.content.FileProvider;
 import android.text.TextUtils;
 import android.widget.Toast;
+
+import androidx.core.content.FileProvider;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -188,7 +189,8 @@ public class AppUtils
             PackageManager pm = context.getPackageManager();
             ApplicationInfo appInfo = pm.getApplicationInfo(context.getPackageName(), PackageManager.GET_META_DATA);
             return appInfo.metaData.getString("UMENG_CHANNEL");
-        } catch (PackageManager.NameNotFoundException ignored) {
+        } catch (Exception exception) {
+
         }
         return "";
     }

@@ -18,10 +18,10 @@ import android.widget.RelativeLayout;
  */
 public class LuckPanLayout extends RelativeLayout {
 
-    private Context context;
-    private Paint backgroundPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-    private Paint whitePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-    private Paint yellowPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private final Context context;
+    private final Paint backgroundPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private final Paint whitePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private final Paint yellowPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private int radius;
     private int CircleX,CircleY;
     private Canvas canvas;
@@ -30,7 +30,8 @@ public class LuckPanLayout extends RelativeLayout {
     private RotatePan rotatePan;
     private ImageView startBtn;
 
-    private int screenWidth,screeHeight;
+    private final int screenWidth;
+    private final int screeHeight;
     private int MinValue;
     /**
      * LuckPan 中间对应的Button必须设置tag为 startbtn.

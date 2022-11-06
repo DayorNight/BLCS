@@ -29,13 +29,13 @@ import blcs.lwb.lwbtool.utils.DensityUtils;
  */
 public class RxProgressBar extends View implements Runnable {
 
-    private PorterDuffXfermode xfermode = new PorterDuffXfermode(PorterDuff.Mode.SRC_ATOP);
+    private final PorterDuffXfermode xfermode = new PorterDuffXfermode(PorterDuff.Mode.SRC_ATOP);
 
-    private int DEFAULT_HEIGHT_DP = 35;
+    private final int DEFAULT_HEIGHT_DP = 35;
 
     private int borderWidth;
 
-    private float maxProgress = 100f;
+    private final float maxProgress = 100f;
 
     private Paint textPaint;
 
@@ -331,11 +331,7 @@ public class RxProgressBar extends View implements Runnable {
 
     public void toggle() {
         if (!isFinish) {
-            if (isStop) {
-                setStop(false);
-            } else {
-                setStop(true);
-            }
+            setStop(!isStop);
         }
     }
 

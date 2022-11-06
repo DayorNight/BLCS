@@ -14,18 +14,21 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.Settings;
-import android.support.annotation.RequiresApi;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.NotificationManagerCompat;
 import android.text.TextUtils;
 import android.widget.RemoteViews;
+
+import androidx.annotation.RequiresApi;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import blcs.lwb.lwbtool.R;
 
+import static android.app.Notification.VISIBILITY_PUBLIC;
 import static android.app.PendingIntent.FLAG_UPDATE_CURRENT;
 import static android.content.Context.NOTIFICATION_SERVICE;
-import static android.support.v4.app.NotificationCompat.PRIORITY_DEFAULT;
+import static androidx.core.app.NotificationCompat.PRIORITY_DEFAULT;
 
 /**
  * TODO 通知栏工具 BLCS
@@ -78,7 +81,7 @@ public class LinNotify {
         channel.enableVibration(false);
         //如上设置使手机：静止1秒，震动2秒，静止1秒，震动3秒
 //        channel.setVibrationPattern(new long[]{1000, 2000, 1000,3000});
-        channel.setLockscreenVisibility(Notification.VISIBILITY_PUBLIC);//设置锁屏是否显示通知
+        channel.setLockscreenVisibility(VISIBILITY_PUBLIC);//设置锁屏是否显示通知
         channel.setLightColor(Color.BLUE);
         channel.setBypassDnd(true);//设置是否可以绕过请勿打扰模式
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(
@@ -247,7 +250,7 @@ public class LinNotify {
                 .setDefaults(Notification.PRIORITY_HIGH)// 设置默认的提示音、振动方式、灯光等 使用的默认通知选项
                 .setContentIntent(pendingIntent) // 设置通知的点击事件
                 //锁屏状态下显示通知图标及标题 1、VISIBILITY_PUBLIC 在所有锁定屏幕上完整显示此通知/2、VISIBILITY_PRIVATE 隐藏安全锁屏上的敏感或私人信息/3、VISIBILITY_SECRET 不显示任何部分
-                .setVisibility(Notification.VISIBILITY_PUBLIC)//部分手机没效果
+                .setVisibility(VISIBILITY_PUBLIC)//部分手机没效果
                 .setFullScreenIntent(pendingIntent,true)//悬挂式通知8.0需手动打开
 //                .setColorized(true)
 //                .setGroupSummary(true)//将此通知设置为一组通知的组摘要
