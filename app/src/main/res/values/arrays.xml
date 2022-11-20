@@ -67,6 +67,7 @@
         <item>调用系统功能</item>
         <item>SQLite</item>
         <item>Jetpack架构组件</item>
+        <item>文件IO流</item>
 
     </string-array>
     <!--Resources-->

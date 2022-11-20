@@ -36,6 +36,7 @@ import blcs.lwb.utils.fragment.toolFragment.FileUtilsFragment;
 import blcs.lwb.utils.fragment.otherFragment.FunciotnIntroFragment;
 import blcs.lwb.utils.fragment.toolFragment.IntentUtilsFragment;
 import blcs.lwb.utils.fragment.otherFragment.Jetpack.JetpackFragment;
+import blcs.lwb.utils.fragment.viewFragment.FileIOFragment;
 import blcs.lwb.utils.fragment.viewFragment.FloatingWindowFragment;
 import blcs.lwb.utils.fragment.viewFragment.LabelListFragment;
 import blcs.lwb.utils.fragment.otherFragment.DependConfigFragment;
@@ -215,7 +216,7 @@ public class FramentManages {
         public final static String ViewModel = "ViewModel";
         public final static String Room = "Room";
         public final static String WorkManager = "WorkManager";
-
+    public final static String FILE_IO = "文件IO流";
     /**
      * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
      */
@@ -399,6 +400,8 @@ public class FramentManages {
                 return new PlayingFragment();
             case FramentManages.Audio:
                 return new AudioFragment();
+            case FramentManages.FILE_IO:
+                return new FileIOFragment();
         }
     }
 
