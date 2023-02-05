@@ -59,6 +59,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             buildConfigField "String","SHOW_DEMO","$SHOW_DEMO"
+            buildConfigField "long","SPLASH_TIME","$SPLASH_TIME"
         }
     }
 //    多渠道打包
