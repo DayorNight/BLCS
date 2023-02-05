@@ -2,6 +2,7 @@ package blcs.lwb.utils
 
 import android.content.res.Resources
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener
@@ -20,6 +21,17 @@ class MainActivity : AppCompatActivity() {
         bind = DataBindingUtil.setContentView(this,R.layout.activity_main)
         initBottomMenu()
         initViewPage()
+        initFloatButton()
+    }
+
+    private fun initFloatButton() {
+        BuildConfig.SHOW_DEMO?.isNotEmpty().let {
+            bind.dragFloat.visibility = View.VISIBLE
+            bind.dragFloat.setOnClickListener {
+                MyUtils.toFragment(this,BuildConfig.SHOW_DEMO)
+            }
+        }
+
     }
 
     private fun initBottomMenu() {

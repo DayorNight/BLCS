@@ -52,6 +52,7 @@ import blcs.lwb.utils.fragment.ListFragment;
 import blcs.lwb.utils.fragment.viewFragment.LoupeViewFragment;
 import blcs.lwb.utils.fragment.viewFragment.MPAndroidChart.BarCharts2Fragment;
 import blcs.lwb.utils.fragment.viewFragment.MPAndroidChart.BarChartsFragment;
+import blcs.lwb.utils.fragment.viewFragment.MPAndroidChart.CustomPieChartsFragment;
 import blcs.lwb.utils.fragment.viewFragment.MPAndroidChart.LineChartsFragment;
 import blcs.lwb.utils.fragment.viewFragment.MPAndroidChart.OtherChartsFragment;
 import blcs.lwb.utils.fragment.viewFragment.MPAndroidChart.PieChartsFragment;
@@ -187,6 +188,7 @@ public class FramentManages {
         public final static String PieCharts = "PieCharts";
         public final static String OtherCharts = "OtherCharts";
         public final static String ScrollingCharts = "ScrollingCharts";
+    public final static String CustomPieCharts = "CustomPieCharts";
     public final static String BarQrCode = "条形码/二维码";
     public final static String CoordinatorLayout = "CoordinatorLayout";
     public final static String FloatingWindow = "悬浮窗口";
@@ -360,6 +362,8 @@ public class FramentManages {
                 return new BarCharts2Fragment();
             case FramentManages.PieCharts:
                 return new PieChartsFragment();
+            case FramentManages.CustomPieCharts:
+                return new CustomPieChartsFragment();
             case FramentManages.OtherCharts:
                 return new OtherChartsFragment();
             case FramentManages.ScrollingCharts:
