@@ -16,6 +16,6 @@ class SplashActivity : AppCompatActivity() {
         bind.root.postDelayed({
             IntentUtils.toActivity(this@SplashActivity, MainActivity::class.java, true)
             finish()
-        }, 3000)
+        }, BuildConfig.SPLASH_TIME)
     }
 }

@@ -2,6 +2,7 @@ package blcs.lwb.utils;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import androidx.appcompat.widget.Toolbar;
@@ -46,6 +47,7 @@ public class PublicFragmentActivity extends BaseFragmentActivity implements IPub
     public void Toolbar_init() {
         tlToolbar.setNavigationIcon(R.mipmap.ic_back_white);
         tlToolbar.inflateMenu(R.menu.menu_multi_language);
+        tlToolbar.setTitleTextColor(Color.WHITE);
         tlToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,6 +67,7 @@ public class PublicFragmentActivity extends BaseFragmentActivity implements IPub
     public void Show_Fragment() {
         Intent intent = getIntent();
         String towhere = intent.getStringExtra(Constants.Intent_Go);
+        tlToolbar.setTitle(towhere);
         LogUtils.i(towhere);
         if (towhere != null) {
             Bundle bundle = intent.getExtras();

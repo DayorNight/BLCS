@@ -36,7 +36,7 @@ public class MPAndroidChartFragment extends BaseFragment {
                 "五、Scrolling Charts","Multiple -> Various types of charts as fragments"};
         MpAndroidChartAdapter mAdapter = new MpAndroidChartAdapter();
         RecyclerUtil.init(activity, OrientationHelper.VERTICAL, mAdapter, toolRecyclerView,true);
-        mAdapter.setNewData(Arrays.asList(str));
+        mAdapter.setNewInstance(Arrays.asList(str));
         mAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
