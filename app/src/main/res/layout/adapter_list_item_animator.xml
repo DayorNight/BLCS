@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="name"
+            type="String" />
+        <variable
+            name="click"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:onClick="@{click}"
+        android:background="@drawable/dialog_fragment_center_radious"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/iv_add"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@mipmap/ic_add"/>
+        <TextView
+            android:id="@+id/tv_list_name"
+            style="@style/text_stander"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginRight="@dimen/space_line3"
+            android:text="@{name}"
+            tools:text="数据1"
+            />
+        <ImageView
+            android:id="@+id/iv_del"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@mipmap/ic_del"/>
+        <ImageView
+            android:id="@+id/iv_top"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@mipmap/ic_top"/>
+        <ImageView
+            android:id="@+id/iv_cancel"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@mipmap/ic_cancle"/>
+    </LinearLayout>
+</layout>
