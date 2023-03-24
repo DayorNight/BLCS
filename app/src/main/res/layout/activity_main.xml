@@ -6,43 +6,56 @@
     <data>
 
     </data>
-
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         tools:context=".MainActivity">
-
-        <androidx.appcompat.widget.Toolbar
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/title_height"
-            android:background="@color/colorPrimaryDark">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
 
-            <TextView
-                android:layout_width="wrap_content"
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/title_height"
+                android:background="@color/colorPrimaryDark">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/standard_title"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:text="@string/Title" />
+            </androidx.appcompat.widget.Toolbar>
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/main_viewpage"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textSize="@dimen/standard_title"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:text="@string/Title" />
-        </androidx.appcompat.widget.Toolbar>
+                android:layout_weight="1" />
 
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/main_viewpage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/main_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/bottom_space"
+                android:background="@color/colorPrimary"
+                app:itemIconTint="@drawable/main_bottom"
+                app:itemTextColor="@drawable/main_bottom"
+                app:labelVisibilityMode="labeled" />
+            <!--app:menu="@menu/menu_main"-->
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/main_bottom"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/bottom_space"
-            android:background="@color/colorPrimary"
-            app:itemIconTint="@drawable/main_bottom"
-            app:itemTextColor="@drawable/main_bottom"
-            app:labelVisibilityMode="labeled" />
-        <!--app:menu="@menu/menu_main"-->
+        </LinearLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/drag_float"
+            android:layout_margin="70dp"
+            android:layout_gravity="bottom|right"
+            android:layout_width="wrap_content"
+            android:visibility="gone"
+            android:src="@mipmap/add_icon"
+            android:layout_height="wrap_content"/>
+    </FrameLayout>
 
-    </LinearLayout>
 </layout>

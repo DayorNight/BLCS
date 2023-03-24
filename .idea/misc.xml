@@ -6,7 +6,9 @@
         <entry key="..\:/WorkProject/BLCS/app/src/main/res/layout/activity_splash.xml" value="0.12682069311903565" />
         <entry key="..\:/WorkProject/BLCS/app/src/main/res/layout/adapter_list.xml" value="0.22916666666666666" />
         <entry key="..\:/WorkProject/BLCS/app/src/main/res/layout/fragment_app.xml" value="0.22" />
+        <entry key="..\:/WorkProject/BLCS/app/src/main/res/layout/fragment_audio.xml" value="0.11752887995981919" />
         <entry key="..\:/WorkProject/BLCS/app/src/main/res/layout/fragment_databinding.xml" value="0.16757246376811594" />
+        <entry key="..\:/WorkProject/BLCS/app/src/main/res/layout/fragment_file_io.xml" value="0.33" />
       </map>
     </option>
   </component>

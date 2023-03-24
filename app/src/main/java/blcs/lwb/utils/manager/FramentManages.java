@@ -36,6 +36,7 @@ import blcs.lwb.utils.fragment.toolFragment.FileUtilsFragment;
 import blcs.lwb.utils.fragment.otherFragment.FunciotnIntroFragment;
 import blcs.lwb.utils.fragment.toolFragment.IntentUtilsFragment;
 import blcs.lwb.utils.fragment.otherFragment.Jetpack.JetpackFragment;
+import blcs.lwb.utils.fragment.viewFragment.FileIOFragment;
 import blcs.lwb.utils.fragment.viewFragment.FloatingWindowFragment;
 import blcs.lwb.utils.fragment.viewFragment.LabelListFragment;
 import blcs.lwb.utils.fragment.otherFragment.DependConfigFragment;
@@ -51,6 +52,7 @@ import blcs.lwb.utils.fragment.ListFragment;
 import blcs.lwb.utils.fragment.viewFragment.LoupeViewFragment;
 import blcs.lwb.utils.fragment.viewFragment.MPAndroidChart.BarCharts2Fragment;
 import blcs.lwb.utils.fragment.viewFragment.MPAndroidChart.BarChartsFragment;
+import blcs.lwb.utils.fragment.viewFragment.MPAndroidChart.CustomPieChartsFragment;
 import blcs.lwb.utils.fragment.viewFragment.MPAndroidChart.LineChartsFragment;
 import blcs.lwb.utils.fragment.viewFragment.MPAndroidChart.OtherChartsFragment;
 import blcs.lwb.utils.fragment.viewFragment.MPAndroidChart.PieChartsFragment;
@@ -186,6 +188,7 @@ public class FramentManages {
         public final static String PieCharts = "PieCharts";
         public final static String OtherCharts = "OtherCharts";
         public final static String ScrollingCharts = "ScrollingCharts";
+    public final static String CustomPieCharts = "CustomPieCharts";
     public final static String BarQrCode = "条形码/二维码";
     public final static String CoordinatorLayout = "CoordinatorLayout";
     public final static String FloatingWindow = "悬浮窗口";
@@ -215,7 +218,7 @@ public class FramentManages {
         public final static String ViewModel = "ViewModel";
         public final static String Room = "Room";
         public final static String WorkManager = "WorkManager";
-
+    public final static String FILE_IO = "文件IO流";
     /**
      * 这个在Fragment中不能new出来,只能在Activity中new，每个Activity对应一个List_fragment来管理
      */
@@ -359,6 +362,8 @@ public class FramentManages {
                 return new BarCharts2Fragment();
             case FramentManages.PieCharts:
                 return new PieChartsFragment();
+            case FramentManages.CustomPieCharts:
+                return new CustomPieChartsFragment();
             case FramentManages.OtherCharts:
                 return new OtherChartsFragment();
             case FramentManages.ScrollingCharts:
@@ -399,6 +404,8 @@ public class FramentManages {
                 return new PlayingFragment();
             case FramentManages.Audio:
                 return new AudioFragment();
+            case FramentManages.FILE_IO:
+                return new FileIOFragment();
         }
     }
 
