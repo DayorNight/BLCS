@@ -2,187 +2,191 @@
   [
     {
       "name": "事件分发机制",
-      "url": "https://note.youdao.com/s/OpMue1zU"
+      "url": "https://www.baidu.com/"
     },
     {
       "name": "Handler消息机制",
-      "url": "https://note.youdao.com/s/WovUghsn"
+      "url": "https://www.baidu.com/"
     },
     {
       "name": "绘制流程",
-      "url": "https://note.youdao.com/s/GZlvQuR5"
+      "url": "https://www.baidu.com/"
     },
     {
       "name": "启动流程",
-      "url": "https://note.youdao.com/s/bERAW0ib"
+      "url": "https://www.baidu.com/"
     },
     {
       "name": "binder",
-      "url": "https://note.youdao.com/s/63mx2GXu"
+      "url": "https://www.baidu.com/"
     },
     {
       "name": "jvm内存模型",
-      "url": "https://note.youdao.com/s/GMfXIX01"
+      "url": "https://www.baidu.com/"
     },
     {
       "name": "渲染机制",
-      "url": "https://note.youdao.com/s/2CdZFeFx"
+      "url": "https://www.baidu.com/"
+    },
+    {
+      "name": "动画",
+      "url": "https://www.baidu.com/"
+    },
+    {
+      "name": "进程",
+      "url": "https://www.baidu.com/"
+    },
+    {
+      "name": "垃圾算法",
+      "url": "https://www.baidu.com/"
+    },
+    {
+      "name": "屏幕适配",
+      "url": "https://www.baidu.com/"
+    },
+    {
+      "name": "热修复",
+      "url": "https://www.baidu.com/"
+    },
+    {
+      "name": "线程",
+      "url": "https://www.baidu.com/"
+    },
+    {
+      "name": "自定义View",
+      "url": "https://www.baidu.com/"
     }
   ],
   [
     {
       "name": "性能优化",
-      "url": "https://note.youdao.com/s/ISowu6Jd"
+      "url": "https://www.baidu.com/"
     },
     {
       "name": "卡顿优化",
-      "url": "https://note.youdao.com/s/TglS7LYl"
+      "url": "https://www.baidu.com/"
     },
     {
       "name": "内存优化",
-      "url": "https://note.youdao.com/s/BPdchgSQ"
+      "url": "https://www.baidu.com/"
     },
     {
       "name": "启动优化",
-      "url": "https://note.youdao.com/s/5FnPMpkJ"
+      "url": "https://www.baidu.com/"
     },
     {
       "name": "crash优化",
-      "url": "https://note.youdao.com/s/EX56cNCs"
+      "url": "https://www.baidu.com/"
     },
     {
       "name": "响应优化",
-      "url": "https://note.youdao.com/s/CnZ28ezC"
+      "url": "https://www.baidu.com/"
     },
     {
       "name": "apk瘦身",
-      "url": "https://note.youdao.com/s/BLlVRzRb"
+      "url": "https://www.baidu.com/"
     },
     {
       "name": "网络优化",
-      "url": "https://note.youdao.com/s/aDfJ68Ut"
+      "url": "https://www.baidu.com/"
     },
     {
       "name": "电量优化",
-      "url": "https://note.youdao.com/s/1VKzk6V4"
+      "url": "https://www.baidu.com/"
     }
   ],
   [
     {
-      "name": "动画",
-      "url": "https://note.youdao.com/s/acj0wLYf"
-    },
-    {
-      "name": "进程",
-      "url": "https://note.youdao.com/s/PLZDIPeG"
-    },
-    {
-      "name": "垃圾算法",
-      "url": "https://note.youdao.com/s/3cc5esf7"
-    },
-    {
-      "name": "屏幕适配",
-      "url": "https://note.youdao.com/s/AiO17jTy"
-    },
-    {
-      "name": "热修复",
-      "url": "https://note.youdao.com/s/E53goHKi"
-    },
-    {
-      "name": "线程",
-      "url": "https://note.youdao.com/s/8jxz8aqj"
-    },
-    {
-      "name": "自定义View",
-      "url": "https://note.youdao.com/s/Q38G9O8t"
+      "name": "xxxx",
+      "url": ""
     }
   ],
   [
     {
       "name": "MVC、MVP、MVVM等架构模式",
-      "url": "https://note.youdao.com/s/LZRvWkay"
+      "url": "https://www.baidu.com/"
     },
     {
       "name": "性能优化",
-      "url": "https://note.youdao.com/s/ISowu6Jd"
+      "url": "https://www.baidu.com/"
     },
     {
       "name": "卡顿优化",
-      "url": "https://note.youdao.com/s/TglS7LYl"
+      "url": "https://www.baidu.com/"
     },
     {
       "name": "app启动优化",
-      "url": "https://note.youdao.com/s/5FnPMpkJ"
+      "url": "https://www.baidu.com/"
     },
     {
       "name": "屏幕适配",
-      "url": "https://note.youdao.com/s/AiO17jTy"
+      "url": "https://www.baidu.com/"
     },
     {
       "name": "垃圾回收机制",
-      "url": "https://note.youdao.com/s/V3d54eXJ"
+      "url": "https://www.baidu.com/"
     },
     {
       "name": "JVM内存模型",
-      "url": "https://note.youdao.com/s/GMfXIX01"
+      "url": "https://www.baidu.com/"
     },
     {
       "name": "事件分发机制",
-      "url": ""
+      "url": "https://www.baidu.com/"
     },
     {
       "name": "Handler消息机制",
-      "url": ""
+      "url": "https://www.baidu.com/"
     },
     {
       "name": "View绘制流程",
-      "url": ""
+      "url": "https://www.baidu.com/"
     },
     {
       "name": "多线程",
-      "url": ""
+      "url": "https://www.baidu.com/"
     },
     {
       "name": "设计模式",
-      "url": ""
+      "url": "https://www.baidu.com/"
     },
     {
       "name": "Arouter",
-      "url": ""
+      "url": "https://www.baidu.com/"
     },
     {
       "name": "BlockCanary",
-      "url": ""
+      "url": "https://www.baidu.com/"
     },
     {
       "name": "LeakCanary",
-      "url": ""
+      "url": "https://www.baidu.com/"
     },
     {
       "name": "EventBus",
-      "url": ""
+      "url": "https://www.baidu.com/"
     },
     {
       "name": "Retrofit",
-      "url": ""
+      "url": "https://www.baidu.com/"
     },
     {
       "name": "Okhttp",
-      "url": ""
+      "url": "https://www.baidu.com/"
     }
   ],
   [
     {
       "name": "面试题",
-      "url": "https://note.youdao.com/s/EsSZEPMy"
+      "url": "https://www.baidu.com/"
     },
     {
       "name": "flutter面试",
-      "url": "https://note.youdao.com/s/U8ROO69C"
+      "url": "https://www.baidu.com/"
     },
     {
       "name": "android面试",
-      "url": "https://note.youdao.com/s/Sc1aOnJZ"
+      "url": "https://www.baidu.com/"
     }
   ]
 ]

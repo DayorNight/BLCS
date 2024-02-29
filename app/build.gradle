@@ -62,7 +62,7 @@ android {
             buildConfigField "long","SPLASH_TIME","$SPLASH_TIME"
         }
     }
-//    多渠道打包
+    //    多渠道打包
     productFlavors.all { flavor ->
         flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
     }
