@@ -1,0 +1,188 @@
+[
+  [
+    {
+      "name": "事件分发机制",
+      "url": "https://note.youdao.com/s/OpMue1zU"
+    },
+    {
+      "name": "Handler消息机制",
+      "url": "https://note.youdao.com/s/WovUghsn"
+    },
+    {
+      "name": "绘制流程",
+      "url": "https://note.youdao.com/s/GZlvQuR5"
+    },
+    {
+      "name": "启动流程",
+      "url": "https://note.youdao.com/s/bERAW0ib"
+    },
+    {
+      "name": "binder",
+      "url": "https://note.youdao.com/s/63mx2GXu"
+    },
+    {
+      "name": "jvm内存模型",
+      "url": "https://note.youdao.com/s/GMfXIX01"
+    },
+    {
+      "name": "渲染机制",
+      "url": "https://note.youdao.com/s/2CdZFeFx"
+    }
+  ],
+  [
+    {
+      "name": "性能优化",
+      "url": "https://note.youdao.com/s/ISowu6Jd"
+    },
+    {
+      "name": "卡顿优化",
+      "url": "https://note.youdao.com/s/TglS7LYl"
+    },
+    {
+      "name": "内存优化",
+      "url": "https://note.youdao.com/s/BPdchgSQ"
+    },
+    {
+      "name": "启动优化",
+      "url": "https://note.youdao.com/s/5FnPMpkJ"
+    },
+    {
+      "name": "crash优化",
+      "url": "https://note.youdao.com/s/EX56cNCs"
+    },
+    {
+      "name": "响应优化",
+      "url": "https://note.youdao.com/s/CnZ28ezC"
+    },
+    {
+      "name": "apk瘦身",
+      "url": "https://note.youdao.com/s/BLlVRzRb"
+    },
+    {
+      "name": "网络优化",
+      "url": "https://note.youdao.com/s/aDfJ68Ut"
+    },
+    {
+      "name": "电量优化",
+      "url": "https://note.youdao.com/s/1VKzk6V4"
+    }
+  ],
+  [
+    {
+      "name": "动画",
+      "url": "https://note.youdao.com/s/acj0wLYf"
+    },
+    {
+      "name": "进程",
+      "url": "https://note.youdao.com/s/PLZDIPeG"
+    },
+    {
+      "name": "垃圾算法",
+      "url": "https://note.youdao.com/s/3cc5esf7"
+    },
+    {
+      "name": "屏幕适配",
+      "url": "https://note.youdao.com/s/AiO17jTy"
+    },
+    {
+      "name": "热修复",
+      "url": "https://note.youdao.com/s/E53goHKi"
+    },
+    {
+      "name": "线程",
+      "url": "https://note.youdao.com/s/8jxz8aqj"
+    },
+    {
+      "name": "自定义View",
+      "url": "https://note.youdao.com/s/Q38G9O8t"
+    }
+  ],
+  [
+    {
+      "name": "MVC、MVP、MVVM等架构模式",
+      "url": "https://note.youdao.com/s/LZRvWkay"
+    },
+    {
+      "name": "性能优化",
+      "url": "https://note.youdao.com/s/ISowu6Jd"
+    },
+    {
+      "name": "卡顿优化",
+      "url": "https://note.youdao.com/s/TglS7LYl"
+    },
+    {
+      "name": "app启动优化",
+      "url": "https://note.youdao.com/s/5FnPMpkJ"
+    },
+    {
+      "name": "屏幕适配",
+      "url": "https://note.youdao.com/s/AiO17jTy"
+    },
+    {
+      "name": "垃圾回收机制",
+      "url": "https://note.youdao.com/s/V3d54eXJ"
+    },
+    {
+      "name": "JVM内存模型",
+      "url": "https://note.youdao.com/s/GMfXIX01"
+    },
+    {
+      "name": "事件分发机制",
+      "url": ""
+    },
+    {
+      "name": "Handler消息机制",
+      "url": ""
+    },
+    {
+      "name": "View绘制流程",
+      "url": ""
+    },
+    {
+      "name": "多线程",
+      "url": ""
+    },
+    {
+      "name": "设计模式",
+      "url": ""
+    },
+    {
+      "name": "Arouter",
+      "url": ""
+    },
+    {
+      "name": "BlockCanary",
+      "url": ""
+    },
+    {
+      "name": "LeakCanary",
+      "url": ""
+    },
+    {
+      "name": "EventBus",
+      "url": ""
+    },
+    {
+      "name": "Retrofit",
+      "url": ""
+    },
+    {
+      "name": "Okhttp",
+      "url": ""
+    }
+  ],
+  [
+    {
+      "name": "面试题",
+      "url": "https://note.youdao.com/s/EsSZEPMy"
+    },
+    {
+      "name": "flutter面试",
+      "url": "https://note.youdao.com/s/U8ROO69C"
+    },
+    {
+      "name": "android面试",
+      "url": "https://note.youdao.com/s/Sc1aOnJZ"
+    }
+  ]
+]

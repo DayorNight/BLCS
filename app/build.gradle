@@ -95,6 +95,7 @@ dependencies {
     // ========基本关联=======
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':LwbTool')
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
 
     annotationProcessor Dp.ButterknifeCompiler
     annotationProcessor Dp.ButterknifeCompiler

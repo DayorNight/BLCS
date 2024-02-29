@@ -6,7 +6,8 @@
     <string name="Tool">工具</string>
     <string name="View">View</string>
     <string name="Other">其他</string>
-    <string name="Resources">资源</string>
+<!--    <string name="Resources">资源</string>-->
+    <string name="Me">我的</string>
     <string name="WeChatStorageActivity">存储空间</string>
     <!--发现-->
     <string name="Monments">朋友圈</string>

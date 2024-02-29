@@ -5,7 +5,7 @@
         <item>@string/Tool</item>
         <item>@string/View</item>
         <item>@string/Other</item>
-        <item>@string/Resources</item>
+        <item>@string/Me</item>
     </string-array>
     <!--工具栏-->
     <string-array name="Utils">

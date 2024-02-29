@@ -4,6 +4,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.lwb.android.fragment.MeFragment;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +28,8 @@ public class ViewPagerHomeAdapter extends FragmentPagerAdapter {
         fragments.add(new HomeUtilsFragment());
         fragments.add(new HomeViewFragment());
         fragments.add(new HomeOtherFragment());
-        fragments.add(new HomeResourcesFragment());
+//        fragments.add(new HomeResourcesFragment());
+        fragments.add(new MeFragment());
     }
 
     @Override

@@ -6,19 +6,23 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener
+import blcs.lwb.lwbtool.utils.ColorsUtil
 import blcs.lwb.lwbtool.utils.LeakCanaryUtils
 import blcs.lwb.lwbtool.utils.SPUtils
+import blcs.lwb.lwbtool.utils.XStatusBar
 import blcs.lwb.utils.adapter.ViewPagerHomeAdapter
 import blcs.lwb.utils.databinding.ActivityMainBinding
 import blcs.lwb.utils.utils.MyUtils
 
 class MainActivity : AppCompatActivity() {
-    lateinit var bind :ActivityMainBinding
-    var imgMenu = intArrayOf(R.mipmap.img_util, R.mipmap.img_view, R.mipmap.img_other, R.mipmap.img_resources)
+    lateinit var bind: ActivityMainBinding
+    var imgMenu =
+        intArrayOf(R.mipmap.img_util, R.mipmap.img_view, R.mipmap.img_other, R.mipmap.ic_me)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        bind = DataBindingUtil.setContentView(this,R.layout.activity_main)
+        bind = DataBindingUtil.setContentView(this, R.layout.activity_main)
+//        XStatusBar.setTransparent(this)
         initBottomMenu()
         initViewPage()
         initFloatButton()
@@ -28,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         BuildConfig.SHOW_DEMO?.isNotEmpty().let {
             bind.dragFloat.visibility = View.VISIBLE
             bind.dragFloat.setOnClickListener {
-                MyUtils.toFragment(this,BuildConfig.SHOW_DEMO)
+                MyUtils.toFragment(this, BuildConfig.SHOW_DEMO)
             }
         }
 
@@ -58,9 +62,16 @@ class MainActivity : AppCompatActivity() {
         val adapter = ViewPagerHomeAdapter(supportFragmentManager)
         bind.mainViewpage.adapter = adapter
         bind.mainViewpage.addOnPageChangeListener(object : OnPageChangeListener {
-            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {}
+            override fun onPageScrolled(
+                position: Int,
+                positionOffset: Float,
+                positionOffsetPixels: Int
+            ) {
+            }
+
             override fun onPageSelected(position: Int) {
                 bind.mainBottom.selectedItemId = position
+
             }
 
             override fun onPageScrollStateChanged(state: Int) {}
