@@ -24,7 +24,7 @@ public class LinPhone {
         return context.getResources().getDisplayMetrics().widthPixels;
     }
 
-    /**
+    /**ƒ
      * 获取设备高度（px）
      */
     public static int getDeviceHeight(Context context) {

@@ -62,6 +62,7 @@ import java.util.TimeZone;
  * 30、获取指定月份的天数
  * 31、根据年 月 获取对应的月份 天数
  * 32、时间的格式化
+ * 33、获取当前时区偏移量
  */
 public class TimeUtil {
     private static final String TAG = "TimeUtil";
@@ -951,5 +952,14 @@ public class TimeUtil {
             str = String.format(Locale.CHINA,"%02d:%02d", mm, ss);
         }
         textView.setText(str);
+    }
+
+    /**
+     * 33\获取当前时区偏移量
+     */
+    public static String getTimeZoneSet(){
+        Calendar cal = Calendar.getInstance(Locale.getDefault());
+        int zoneOffset = cal.get(Calendar.ZONE_OFFSET)/(60 * 60 *1000);
+        return  zoneOffset > 0 ? "" + "+" + zoneOffset :String.valueOf(zoneOffset);
     }
 }
